@@ -3,7 +3,7 @@
 <head>
     <title>Cards</title>
 
-    <link rel="stylesheet" type="text/css" href="css/page-cards.css">
+    <link rel="stylesheet" type="text/css" href="css/page-cards-web.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

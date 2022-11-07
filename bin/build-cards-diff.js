@@ -9,7 +9,7 @@ axios.get(url)
     .then(response => {
 
         let oldHtml = response.data
-        let newHtml = fs.readFileSync('./public/cards.html', 'utf8')
+        let newHtml = fs.readFileSync('./public/cards-print.html', 'utf8')
 
         let contents = diff(oldHtml, newHtml)
 
