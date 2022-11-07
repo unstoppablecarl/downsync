@@ -1,0 +1,399 @@
+@import 'base.scss';
+@import 'page.scss';
+
+$light-grey: #ddd;
+
+$mid-grey: #ccc;
+
+$margin: 4pt;
+// 2.5in
+$width: 180pt;
+// 3.5in
+$height: 252pt;
+
+.page-card-inner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    //width: 180pt - ($margin * 2);
+    // hack to fix margin spacing issue
+    width: 230px;
+    height: 252pt - ($margin * 2);
+    padding: $margin;
+    background: #000;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 5.5pt;
+    line-height: 1.4;
+    font-family: $serif;
+}
+
+.card-portrait {
+    float: right;
+    height: 0.375in;
+    margin-left: 4pt;
+}
+
+
+// printer friendly stuff
+.card {
+    background: transparent;
+    border: 1px solid $mid-grey;
+    border-width: 0 1px 1px 0;
+}
+
+.page-inner {
+    border: 1px solid $mid-grey;
+    border-width: 1px 0 0 1px;
+    width: 687.99px;
+}
+
+// end printer friendly stuff
+
+.card-content-container {
+    border-radius: 2pt;
+    padding: 1pt;
+    border-color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+
+.card .card-content-container .content-padding {
+    padding-left: 4pt;
+    padding-right: 4pt;
+}
+
+.card-bg {
+    text-align: center;
+    position: absolute;
+    bottom: 0.18in;
+    left: 0;
+    right: 0;
+    z-index: 0;
+
+    .bg {
+        width: 80%;
+        text-align: center;
+        opacity: 0.1;
+    }
+}
+
+.text-medium {
+    font-style: normal;
+    font-weight: 500;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.keyword {
+    font-style: normal;
+    //text-decoration: underline;
+    font-weight: 500;
+
+}
+
+.cost-icon-svg {
+    vertical-align: middle;
+    height: 10px;
+}
+
+.cost-icon-action,
+.cost-icon-command,
+.cost-icon-command-x2,
+.cost-icon-action-or-command,
+.cost-icon-action-and-command {
+    background: #ebebeb;
+    font-weight: bold;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #b3b3b3;
+}
+
+.cost-icon-command-x2 {
+    width: 15px;
+}
+
+.cost-icon-action-or-command,
+.cost-icon-action-and-command {
+    border-radius: 2px 10px 10px 2px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 3px;
+
+}
+
+.cost-icon-action {
+    border-radius: 2px;
+}
+
+.cost-icon-command,
+.cost-icon-command-x2 {
+    border-radius: 50px;
+    padding-bottom: 1px;
+}
+
+.heading {
+    padding: 4pt 4pt 2pt;
+    font-family: $sansSerif;
+
+    .icon-wrap {
+        width: 0.375in;
+        height: 0.375in;
+    }
+
+    .icon {
+        width: 0.375in;
+        height: 0.375in;
+        float: left;
+        margin-right: 4pt;
+    }
+
+    .title {
+        min-width: 0;
+        min-height: auto;
+        line-height: 1.3;
+
+        .primary-title {
+            display: block;
+            font-size: 9pt;
+            font-weight: 600;
+        }
+
+        .title-note {
+            font-size: 11pt;
+            font-weight: normal;
+        }
+
+        .sub-title {
+            display: block;
+            font-size: 6pt;
+        }
+
+        .faction {
+            font-size: 4pt;
+            margin-top: 2pt;
+        }
+    }
+}
+
+.table-stats {
+    font-size: 6pt;
+    margin-bottom: 1pt;
+
+    font-family: $sansSerif;
+
+    th,
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    th {
+        padding: 0.25em 0;
+        background: $light-grey;
+    }
+
+    td {
+        font-weight: 600;
+    }
+}
+
+.table-actions {
+
+    // cell align to the right hack
+    max-width: 220pt;
+
+    th,
+    td {
+        text-align: center;
+        vertical-align: baseline;
+        width: 100%;
+    }
+
+    th {
+        padding: 0.3em 0.5em;
+        background: $light-grey;
+        font-size: 5pt;
+        font-family: $sansSerif;
+
+        &:first-child {
+            padding-left: 4pt;
+            text-align: left;
+        }
+
+        &:last-child {
+            padding-right: 4pt;
+        }
+    }
+
+
+    .action-row {
+
+        .col-target,
+        .col-rof,
+        .col-range,
+        .col-effect {
+            white-space: nowrap
+        }
+
+        &:first-child td {
+            border-top: 0;
+        }
+
+        td {
+            border-top: 1px solid hsl(0, 0%, 60%);
+            font-family: $sansSerif;
+            padding: 0.4em 0;
+
+
+            &:last-child {
+                padding-right: 2pt;
+            }
+
+            &.col-name,
+            &.col-target,
+            &.col-rof,
+            &.col-range,
+            &.col-effect {
+                font-weight: 500;
+            }
+
+            &.col-cost {
+                padding: 0;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+
+            &.col-target {
+                font-size: 90%;
+                font-weight: bold;
+            }
+
+            &.col-effect {
+                text-transform: uppercase;
+                font-size: 90%;
+                font-weight: bold;
+            }
+        }
+
+        &.action-row-no-stats {
+            .key {
+                font-size: inherit;
+            }
+        }
+    }
+
+
+    .action-description-row td,
+    .action-features-row td {
+        padding-left: 4pt;
+        padding-right: 4pt;
+    }
+
+    .action-description-row td {
+        font-size: 5pt;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    td {
+        &:first-child {
+            padding-left: 4pt;
+            text-align: left;
+        }
+    }
+}
+
+.features {
+    .feature {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        padding: 0 0 0 4pt;
+
+        &::before {
+            display: inline-block;
+            margin: 0 0 0 -4pt;
+            content: '»'
+        }
+    }
+}
+
+.section-heading {
+    font-size: 5pt;
+    margin: 0;
+    background: $light-grey;
+    padding: 1pt 4pt;
+    vertical-align: middle;
+    font-family: $sansSerif;
+    font-weight: bold;
+}
+
+.key-value {
+    margin: 0.5em 0;
+    font-family: $serif;
+    font-weight: normal;
+    font-size: 5pt;
+
+    .key {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 90%;
+        font-family: $sansSerif;
+    }
+
+    .note {
+        font-weight: 500;
+        font-size: 90%;
+        font-family: $sansSerif;
+    }
+
+    .cost-icon-command,
+    .cost-icon-action,
+    .cost-icon-action-and-command,
+    .cost-icon-action-or-command {
+        font-family: "Open Sans", sans-serif;
+        height: auto;
+        font-size: 4pt;
+    }
+
+    .cost-icon-command,
+    .cost-icon-action {
+        width: 8px;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+}
+
+.sub-footer {
+    font-family: $sansSerif;
+    font-size: 3.5pt;
+    color: #808080;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1pt 0;
+    line-height: 1;
+}
+
+
