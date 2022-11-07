@@ -73,7 +73,7 @@ export const REVEAL_AND_DEPLOY = (count, unitName) => {
 export const RUSH = make({
     name: 'Rush',
     note: `COST: ${COST_COMMAND}, movement phase`,
-    desc: 'Up to 4 Spider Drone units in the active Taskforce may perform a double move without forfeiting their action point. A Spider Drone cannot benefit from Rush if it was affected by Scatter this turn.',
+    desc: 'Up to 4 Spider Drone units in the active Taskforce may perform a double move without forfeiting their action point. A Spider Drone cannot benefit from Rush if it was affected by Scatter this round.',
 })
 
 export const SCATTER = make({

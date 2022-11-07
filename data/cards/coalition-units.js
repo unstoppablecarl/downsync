@@ -42,6 +42,7 @@ export const RECON_SCOUT = make({
     defense: 14,
     scan: 8,
     cm: 1,
+    cm_regen: 1,
     actions: [
         SCAN(3, 12),
         MG,
@@ -59,6 +60,7 @@ export const SENTINEL_TAGGER = make({
     defense: 14,
     scan: 7,
     cm: 1,
+    cm_regen: 1,
     actions: [
         BASIC_SCAN,
         CANNON,
@@ -77,6 +79,7 @@ export const SENTINEL_HUNTER = make({
     defense: 14,
     scan: 7,
     cm: 1,
+    cm_regen: 1,
     actions: [
         BASIC_SCAN,
         FUSION_CANNON,
@@ -163,7 +166,7 @@ export const GUARDIAN_MARKSMAN = make({
     defense: 12,
     scan: null,
     cm: 3,
-    cm_regen: 1,
+    cm_regen: 2,
     actions: [
         HMG,
         RAILGUN,
@@ -184,7 +187,7 @@ export const GUARDIAN_DESTROYER = make({
     defense: 12,
     scan: null,
     cm: 3,
-    cm_regen: 1,
+    cm_regen: 2,
     actions: [
         HMG,
         TANK_DESTROYER_CANNON,

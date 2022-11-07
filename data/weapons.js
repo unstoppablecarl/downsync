@@ -11,7 +11,7 @@ import {
     TRAIT_UNSTOPPABLE,
 } from './weapon-traits.js'
 import { TYPE_INFANTRY } from './constants.js'
-import { COST_ACTION, COST_ACTION_AND_COMMAND, COST_ACTION_OR_COMMAND } from './costs.js'
+import { COST_ACTION, COST_ACTION_AND_COMMAND, COST_ACTION_OR_COMMAND, COST_COMMAND } from './costs.js'
 import { DEADLY_VS } from './traits.js'
 
 export const CANNON = make({
@@ -31,16 +31,6 @@ export const MEDIUM_CANNON = make({
     range: 24,
     rof: 2,
     traits: [],
-})
-
-export const SUBMUNITION = make({
-    name: 'Submunition',
-    cost: COST_ACTION_AND_COMMAND,
-    range: 24,
-    rof: 3,
-    traits: [
-        TRAIT_CLUSTERED('3"'),
-    ],
 })
 
 export const TAGGING_AUTOCANNON = make({
@@ -96,17 +86,6 @@ export const SMART_SMALL_ARMS = make({
     rof: 2,
     traits: [
         TRAIT_SMART,
-    ],
-})
-
-export const ADVANCED_SNIPER_RIFLE = make({
-    name: 'Adv. Sniper Rifle',
-    note: 'VS Infantry only',
-    line_break_note: true,
-    range: 12,
-    rof: 1,
-    traits: [
-        TRAIT_ADVANCED,
     ],
 })
 
@@ -228,7 +207,7 @@ export const INFANTRY_GUIDED_MISSILE = make({
 })
 
 export const MICRO_ARTILLERY = make({
-    name: 'Micro Artillery',
+    name: 'Shock Micro Artillery',
     range: 16,
     rof: 2,
     effect: 'STUN',
@@ -237,6 +216,29 @@ export const MICRO_ARTILLERY = make({
         TRAIT_INFANTRY_NETWORK,
     ],
 })
+
+
+export const SHOCK_RIFLE = make({
+    name: 'Shock Rifle',
+    range: 24,
+    rof: 2,
+    effect: 'STUN',
+    traits: [
+        DEADLY_VS('Infantry'),
+    ],
+})
+
+
+export function SNAP_FIRE(weapon) {
+
+    let newWeapon = Object.assign({}, weapon, {
+        name: 'Snap Fire',
+        cost: COST_COMMAND,
+        rof: 1,
+    })
+
+    return make(newWeapon)
+}
 
 function make(weapon) {
 

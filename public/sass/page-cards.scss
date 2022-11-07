@@ -17,6 +17,21 @@ $height: 252pt;
     justify-content: center;
 }
 
+.web-cards {
+    .web-faction-cards {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .sub-footer {
+        display: none;
+    }
+
+    .card {
+        height: auto;
+    }
+}
+
 .card {
     //width: 180pt - ($margin * 2);
     // hack to fix margin spacing issue
@@ -380,7 +395,15 @@ $height: 252pt;
         padding-bottom: 0;
         text-align: center;
     }
+}
 
+.version-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: $sansSerif;
+    font-size: 5pt;
+    color: #666;
 }
 
 .sub-footer {

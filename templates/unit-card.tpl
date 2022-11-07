@@ -177,6 +177,9 @@
         </div>
         {{/if}}
 
+        <div class="version-footer">
+            V{{cardsVersion}}
+        </div>
         <div class="sub-footer">
             GENERATED: {{timestamp}}
         </div>

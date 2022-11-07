@@ -21,7 +21,7 @@ export const TRAIT_CLUSTERED = (radius) => {
 
 export const TRAIT_TARGET_LOCK_EFFECT = make({
     name: 'Target Lock',
-    desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation or Reaction Engagement. A unit can only be target locked once.',
+    desc: 'Units hit by this weapon suffer the LOCK effect (-2 DEF until the end of this Taskforce Activation or Reaction Engagement). A unit can only be target locked once.',
 })
 
 export const TRAIT_LIMITED_VS = (types) => {

@@ -1,105 +1,96 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Bitter", serif;
-}
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif; }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
 
 td,
 th {
-    text-align: left;
-    border: 0;
-    padding: 0;
-}
+  text-align: left;
+  border: 0;
+  padding: 0; }
 
 ul {
-    margin: 0;
-    padding: 0 0 0 0;
-    list-style: none;
-}
+  margin: 0;
+  padding: 0 0 0 0;
+  list-style: none; }
+
+/* DIFF STUFF */
+del {
+  background: pink;
+  color: #690012; }
+
+ins {
+  background: #cafdca;
+  color: #004000;
+  text-decoration: none; }
 
 .page-background {
-    background: #cccccc;
-}
+  background: #cccccc; }
 
 .page-preview {
-    background: white;
-    margin: 0 auto;
-    margin-bottom: 16px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-}
+  background: white;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
 
 @page {
-    margin: 0;
-    size: letter portrait;
-    -webkit-print-color-adjust: exact;
-}
+  margin: 0;
+  size: letter portrait;
+  -webkit-print-color-adjust: exact; }
 
 @media print {
-    .page-preview {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        box-shadow: none;
-        background-color: white;
-    }
-
-    .page-background {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        box-shadow: none;
-        /* Set the background to gray to visualize the page size in the print preview */
-        background-color: gray;
-    }
-}
+  .page-preview {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background-color: white; }
+  .page-background {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    /* Set the background to gray to visualize the page size in the print preview */
+    background-color: gray; } }
 
 /* Center all content within a page */
 .page {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    page-break-after: always;
-    padding: 0;
-}
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  page-break-after: always;
+  padding: 0; }
 
 page[size="Letter"] {
-    width: 612pt;
-    height: 792pt;
-}
+  width: 612pt;
+  height: 792pt; }
 
 .army-list {
-    width: auto;
-}
-
-.army-list th, .army-list td {
+  width: auto; }
+  .army-list th, .army-list td {
     padding: .5em;
-    border: 1px solid #808080;
-}
+    border: 1px solid #808080; }
 
 .page-army-lists {
-    display: block;
-}
+  display: block; }
 
 .page-army-lists-inner {
-    padding: .75in;
-    font-size: 8pt;
-    display: block;
-}
+  padding: .75in;
+  font-size: 8pt;
+  display: block; }
 
 .heading {
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: .2em;
-}
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: .2em; }
 
 /*# sourceMappingURL=maps/page-army-lists.css.map */

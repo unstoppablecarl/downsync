@@ -11,6 +11,8 @@ import {
     MG,
     MICRO_ARTILLERY,
     SHOCK_AUTOCANNON,
+    SHOCK_RIFLE,
+    SNAP_FIRE,
 } from '../weapons.js'
 import {
     ACTIVE_CAMO,
@@ -21,7 +23,7 @@ import {
     PREDATOR,
     REVEAL_AND_DEPLOY,
 } from '../traits.js'
-import { BASIC_SCAN, FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../actions.js'
+import { BASIC_SCAN, FORWARD_OBSERVE, SCAN, TARGET_PAINTER, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../actions.js'
 import { makeUnit } from '../units.js'
 
 export const CLEANSER_TEAM = make({
@@ -59,6 +61,28 @@ export const VECTOR_TEAM = make({
     definitions: [],
 })
 
+
+export const SEEKER_TEAM = make({
+    name: 'Seeker Team',
+    signature: null,
+    type: 'Infantry Sniper Team',
+    speed: 4,
+    targeting: 7,
+    scan: 7,
+    defense: 14,
+    actions: [
+        SCAN(1, 12),
+        SHOCK_RIFLE,
+        TARGET_PAINTER,
+    ],
+    traits: [
+        ACTIVE_CAMO,
+        ALL_TERRAIN,
+        PREDATOR,
+    ],
+    definitions: [],
+})
+
 export const COURIER_TRANSPORT = make({
     name: 'Courier',
     bg: 'courier.png',
@@ -67,7 +91,7 @@ export const COURIER_TRANSPORT = make({
     speed: 7,
     targeting: 6,
     defense: 13,
-    scan: 5,
+    scan: 6,
     cm: 2,
     cm_regen: 2,
     actions: [
@@ -142,6 +166,7 @@ export const MANDIBLE = make({
 
 export const SAMSON_HEAVY_TANK = make({
     name: 'Samson',
+    bg: 'samson.png',
     signature: SIZE_LARGE,
     type: 'Heavy Tank',
     speed: 5,
@@ -152,6 +177,7 @@ export const SAMSON_HEAVY_TANK = make({
     cm_regen: 2,
     actions: [
         HEAVY_AUTO_CANNON,
+        SNAP_FIRE(HEAVY_AUTO_CANNON),
     ],
     traits: [
         PREDATOR,
