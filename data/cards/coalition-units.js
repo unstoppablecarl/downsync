@@ -33,6 +33,7 @@ import { BASIC_SCAN, SCAN, SHROUD, SPOTTER } from '../actions.js'
 import { makeUnit } from '../units.js'
 
 export const RECON_SCOUT = make({
+    slug: 'scout',
     name: 'Scout',
     bg: 'scout.png',
     signature: SIZE_SMALL,
@@ -50,6 +51,7 @@ export const RECON_SCOUT = make({
 })
 
 export const SENTINEL_TAGGER = make({
+    slug: 'sentinel_tagger',
     name: 'Sentinel: Tagger',
     bg: 'sentinel-tagger.png',
     signature: SIZE_SMALL,
@@ -68,6 +70,7 @@ export const SENTINEL_TAGGER = make({
 })
 
 export const SENTINEL_HUNTER = make({
+    slug: 'sentinel_hunter',
     name: 'Sentinel: Hunter',
     bg: 'sentinel-hunter.png',
     signature: SIZE_SMALL,
@@ -87,6 +90,7 @@ export const SENTINEL_HUNTER = make({
 })
 
 export const VIRAGO_TANK = make({
+    slug: 'virago',
     name: 'Virago',
     bg: 'virago.png',
     signature: SIZE_MEDIUM,
@@ -107,6 +111,7 @@ export const VIRAGO_TANK = make({
 })
 
 export const AURORA = make({
+    slug: 'gsv_aurora',
     name: 'GSV: Aurora',
     bg: 'aurora.png',
     signature: SIZE_MEDIUM,
@@ -132,6 +137,7 @@ export const AURORA = make({
 })
 
 export const PHANTOM = make({
+    slug: 'gsv_phantom',
     name: 'GSV: Phantom',
     bg: 'phantom.png',
     signature: SIZE_MEDIUM,
@@ -154,6 +160,7 @@ export const PHANTOM = make({
 })
 
 export const GUARDIAN_MARKSMAN = make({
+    slug: 'guardian_marksman',
     name: 'Guardian: Marksman',
     bg: 'guardian-marksman.png',
     signature: SIZE_LARGE,
@@ -175,6 +182,7 @@ export const GUARDIAN_MARKSMAN = make({
 })
 
 export const GUARDIAN_DESTROYER = make({
+    slug: 'guardian_destroyer',
     name: 'Guardian: Destroyer',
     bg: 'guardian-destroyer.png',
     signature: SIZE_LARGE,
@@ -196,8 +204,9 @@ export const GUARDIAN_DESTROYER = make({
 })
 
 export const SPIDER_DRONE_INFANTRY = make({
+    slug: 'spider_drone_pack',
     name: 'Spider Drone Pack',
-    bg: 'spiderdrone.png',
+    bg: 'spider-drone.png',
     signature: SIZE_SMALL,
     type: 'Robotic Infantry x 4',
     speed: 5,
@@ -217,6 +226,7 @@ export const SPIDER_DRONE_INFANTRY = make({
 
 
 export const RNR_INFANTRY = make({
+    slug: 'rnr_team',
     name: 'R&R Team',
     signature: SIZE_SMALL,
     type: 'Rench & Rifle Infantry x 3',

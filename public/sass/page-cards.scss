@@ -1,15 +1,13 @@
 @import 'base.scss';
 @import 'page.scss';
 
+$scale: 1 !default;
+
 $light-grey: #ddd;
 
 $mid-grey: #ccc;
 
-$margin: 4pt;
-// 2.5in
-$width: 180pt;
-// 3.5in
-$height: 252pt;
+$margin: 4pt * $scale;
 
 .page-card-inner {
     display: flex;
@@ -20,44 +18,28 @@ $height: 252pt;
 .card {
     //width: 180pt - ($margin * 2);
     // hack to fix margin spacing issue
-    width: 230px;
-    height: 252pt - ($margin * 2);
+    width: 230px * $scale;
+    height: 252pt * $scale - ($margin * 2);
     padding: $margin;
     background: #000;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
-    font-size: 5.5pt;
+    font-size: 5.5pt * $scale;
     line-height: 1.4;
     font-family: $serif;
 }
 
 .card-portrait {
     float: right;
-    height: 0.375in;
-    margin-left: 4pt;
+    height: 0.375in * $scale;
+    margin-left: 4pt * $scale;
 }
-
-
-// printer friendly stuff
-.card {
-    background: transparent;
-    border: 1px solid $mid-grey;
-    border-width: 0 1px 1px 0;
-}
-
-.page-inner {
-    border: 1px solid $mid-grey;
-    border-width: 1px 0 0 1px;
-    width: 687.99px;
-}
-
-// end printer friendly stuff
 
 .card-content-container {
     border-radius: 2pt;
-    padding: 1pt;
+    padding: 1pt * $scale;
     border-color: inherit;
     display: flex;
     flex-direction: column;
@@ -68,8 +50,8 @@ $height: 252pt;
 }
 
 .card .card-content-container .content-padding {
-    padding-left: 4pt;
-    padding-right: 4pt;
+    padding-left: 4pt * $scale;
+    padding-right: 4pt * $scale;
 }
 
 .card-bg {
@@ -103,11 +85,6 @@ $height: 252pt;
 
 }
 
-.cost-icon-svg {
-    vertical-align: middle;
-    height: 10px;
-}
-
 .cost-icon-action,
 .cost-icon-command,
 .cost-icon-command-x2,
@@ -116,21 +93,21 @@ $height: 252pt;
     background: #ebebeb;
     font-weight: bold;
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 10px * $scale;
+    height: 10px * $scale;
     border: 1px solid #b3b3b3;
 }
 
 .cost-icon-command-x2 {
-    width: 15px;
+    width: 15px * $scale;
 }
 
 .cost-icon-action-or-command,
 .cost-icon-action-and-command {
     border-radius: 2px 10px 10px 2px;
     width: auto;
-    padding-left: 2px;
-    padding-right: 3px;
+    padding-left: 2px * $scale;
+    padding-right: 3px * $scale;
 
 }
 
@@ -145,19 +122,19 @@ $height: 252pt;
 }
 
 .heading {
-    padding: 4pt 4pt 2pt;
+    padding: 4pt * $scale 4pt * $scale 2pt * $scale;
     font-family: $sansSerif;
 
     .icon-wrap {
-        width: 0.375in;
-        height: 0.375in;
+        width: 0.375in * $scale;
+        height: 0.375in * $scale;
     }
 
     .icon {
-        width: 0.375in;
-        height: 0.375in;
+        width: 0.375in * $scale;
+        height: 0.375in * $scale;
         float: left;
-        margin-right: 4pt;
+        margin-right: 4pt * $scale;
     }
 
     .title {
@@ -167,30 +144,30 @@ $height: 252pt;
 
         .primary-title {
             display: block;
-            font-size: 9pt;
+            font-size: 9pt * $scale;
             font-weight: 600;
         }
 
         .title-note {
-            font-size: 11pt;
+            font-size: 11pt * $scale;
             font-weight: normal;
         }
 
         .sub-title {
             display: block;
-            font-size: 6pt;
+            font-size: 6pt * $scale;
         }
 
         .faction {
-            font-size: 4pt;
-            margin-top: 2pt;
+            font-size: 4pt * $scale;
+            margin-top: 2pt * $scale;
         }
     }
 }
 
 .table-stats {
-    font-size: 6pt;
-    margin-bottom: 1pt;
+    font-size: 6pt * $scale;
+    margin-bottom: 1pt * $scale;
 
     font-family: $sansSerif;
 
@@ -225,16 +202,16 @@ $height: 252pt;
     th {
         padding: 0.3em 0.5em;
         background: $light-grey;
-        font-size: 5pt;
+        font-size: 5pt * $scale;
         font-family: $sansSerif;
 
         &:first-child {
-            padding-left: 4pt;
+            padding-left: 4pt * $scale;
             text-align: left;
         }
 
         &:last-child {
-            padding-right: 4pt;
+            padding-right: 4pt * $scale;
         }
     }
 
@@ -259,7 +236,7 @@ $height: 252pt;
 
 
             &:last-child {
-                padding-right: 2pt;
+                padding-right: 2pt * $scale;
             }
 
             &.col-name,
@@ -298,12 +275,12 @@ $height: 252pt;
 
     .action-description-row td,
     .action-features-row td {
-        padding-left: 4pt;
-        padding-right: 4pt;
+        padding-left: 4pt * $scale;
+        padding-right: 4pt * $scale;
     }
 
     .action-description-row td {
-        font-size: 5pt;
+        font-size: 5pt * $scale;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
 
@@ -314,7 +291,7 @@ $height: 252pt;
 
     td {
         &:first-child {
-            padding-left: 4pt;
+            padding-left: 4pt * $scale;
             text-align: left;
         }
     }
@@ -326,21 +303,21 @@ $height: 252pt;
             margin-top: 0;
         }
 
-        padding: 0 0 0 4pt;
+        padding: 0 0 0 4pt * $scale;
 
         &::before {
             display: inline-block;
-            margin: 0 0 0 -4pt;
+            margin: 0 0 0 -4pt * $scale;
             content: '»'
         }
     }
 }
 
 .section-heading {
-    font-size: 5pt;
+    font-size: 5pt * $scale;
     margin: 0;
     background: $light-grey;
-    padding: 1pt 4pt;
+    padding: 1pt * $scale 4pt * $scale;
     vertical-align: middle;
     font-family: $sansSerif;
     font-weight: bold;
@@ -350,7 +327,7 @@ $height: 252pt;
     margin: 0.5em 0;
     font-family: $serif;
     font-weight: normal;
-    font-size: 5pt;
+    font-size: 5pt * $scale;
 
     .key {
         font-weight: bold;
@@ -371,12 +348,12 @@ $height: 252pt;
     .cost-icon-action-or-command {
         font-family: "Open Sans", sans-serif;
         height: auto;
-        font-size: 4pt;
+        font-size: 4pt * $scale;
     }
 
     .cost-icon-command,
     .cost-icon-action {
-        width: 8px;
+        width: 8px * $scale;
         padding-bottom: 0;
         text-align: center;
     }

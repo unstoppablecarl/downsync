@@ -1,0 +1,20 @@
+$scale: 1;
+
+@import 'base.scss';
+@import 'page.scss';
+@import 'page-cards';
+
+// printer friendly stuff
+.card {
+    background: transparent;
+    border: 1px solid $mid-grey;
+    border-width: 0 1px 1px 0;
+}
+
+.page-inner {
+    border: 1px solid $mid-grey;
+    border-width: 1px 0 0 1px;
+    width: 687.99px;
+}
+
+// end printer friendly stuff

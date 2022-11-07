@@ -2,15 +2,27 @@ import fs from 'fs'
 import templates from './templates.js'
 import { chunk } from './util.js'
 
-export function generateCardPages({
-                                      cardData,
-                                      dest = './public/cards.html',
-                                      cardsPerPage = 9,
-                                  }) {
+export function generateCardPrintPages({
+                                           cardData,
+                                           dest = './public/cards-print.html',
+                                           cardsPerPage = 9,
+                                       }) {
 
     let cardPages = chunk(cardData, cardsPerPage)
-    let out = templates['page-cards']({
+    let out = templates['page-cards-print']({
         cardPages,
+    })
+
+    fs.writeFileSync(dest, out, 'utf8')
+
+}
+
+export function generateCards({
+                                  cardData,
+                                  dest = './public/cards.html',
+                              }) {
+    let out = templates['page-cards']({
+        cardData,
     })
 
     fs.writeFileSync(dest, out, 'utf8')

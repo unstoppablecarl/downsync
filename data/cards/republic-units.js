@@ -25,6 +25,7 @@ import { BASIC_SCAN, FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } f
 import { makeUnit } from '../units.js'
 
 export const CLEANSER_TEAM = make({
+    slug: 'cleanser_team',
     name: 'Cleanser Team',
     signature: null,
     type: 'Infantry Fire Team',
@@ -43,6 +44,7 @@ export const CLEANSER_TEAM = make({
 })
 
 export const VECTOR_TEAM = make({
+    slug: 'vector_team',
     name: 'Vector Team',
     signature: null,
     type: 'Infantry Micro Artillery Team',
@@ -60,6 +62,7 @@ export const VECTOR_TEAM = make({
 })
 
 export const COURIER_TRANSPORT = make({
+    slug: 'courier',
     name: 'Courier',
     bg: 'courier.png',
     signature: SIZE_MEDIUM,
@@ -83,6 +86,7 @@ export const COURIER_TRANSPORT = make({
 })
 
 export const HARBINGER_MEDIUM_RECON = make({
+    slug: 'harbinger',
     name: 'Harbinger',
     bg: 'scorpion.png',
     signature: SIZE_MEDIUM,
@@ -103,6 +107,7 @@ export const HARBINGER_MEDIUM_RECON = make({
 })
 
 export const CRUSADER_MEDIUM_TANK = make({
+    slug: 'crusader',
     name: 'Crusader',
     bg: 'crusader.png',
     signature: SIZE_MEDIUM,
@@ -122,6 +127,7 @@ export const CRUSADER_MEDIUM_TANK = make({
 })
 
 export const MANDIBLE = make({
+    slug: 'mandible',
     name: 'Mandible',
     bg: 'mule.png',
     signature: SIZE_LARGE,
@@ -141,6 +147,7 @@ export const MANDIBLE = make({
 })
 
 export const SAMSON_HEAVY_TANK = make({
+    slug: 'samson',
     name: 'Samson',
     signature: SIZE_LARGE,
     type: 'Heavy Tank',
@@ -161,6 +168,7 @@ export const SAMSON_HEAVY_TANK = make({
 })
 
 export const GOLIATHS = make({
+    slug: 'goliath_squad',
     name: 'Goliath Squad',
     bg: 'goliath-squad.png',
     signature: SIZE_MEDIUM,

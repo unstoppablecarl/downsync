@@ -1,4 +1,4 @@
-<div class="card card-size-25x35 card-unit">
+<div class="card card-unit" id="{{slug}}">
     <div class="card-content-container">
         <div class="heading content-padding">
             <img src="{{icon}}" class="icon">
