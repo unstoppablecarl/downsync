@@ -4,27 +4,34 @@ import diff from 'node-htmldiff'
 //let url1 = 'https://raw.githubusercontent.com/unstoppablecarl/downsync/master/public/cards.html'
 let url1 = 'cards.html'
 
-
 let branchInput = document.getElementById('branch')
 let form = document.getElementById('compare-form')
+let reverseInput = document.getElementById('reverse')
+
 form.addEventListener('submit', click)
 
 let queryParams = getQueryParams()
 
+if (queryParams.reverse) {
+    reverseInput.checked = true
+}
+
 if (queryParams.branch) {
-    loadDiff(queryParams.branch)
+
+    loadDiff(queryParams.branch, reverseInput.checked)
     branchInput.value = queryParams.branch
 }
+
 
 function click(event) {
 
     event.preventDefault()
 
-    loadDiff(branchInput.value)
+    loadDiff(branchInput.value, reverseInput.value)
 
 }
 
-function loadDiff(branch) {
+function loadDiff(branch, reverse) {
     let url2 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/${branch}/public/cards.html`
 
     Promise.all([
@@ -35,6 +42,13 @@ function loadDiff(branch) {
         .then((results) => {
             let oldHtml = results[0].data
             let newHtml = results[1].data
+
+            if (reverse) {
+
+                let temp = oldHtml
+                oldHtml = newHtml
+                newHtml = temp
+            }
 
             document.getElementById('diff').innerHTML = diff(oldHtml, newHtml)
         })
