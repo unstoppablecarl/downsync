@@ -26,6 +26,18 @@ ul {
     list-style: none;
 }
 
+/* DIFF STUFF */
+del {
+    background: pink;
+    color: #690012;
+}
+
+ins {
+    background: #cafdca;
+    color: #004000;
+    text-decoration: none;
+}
+
 .page-background {
     background: #cccccc;
 }

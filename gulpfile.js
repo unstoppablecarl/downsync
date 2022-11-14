@@ -9,6 +9,7 @@ const sass = gulpSass(nodeSass)
 
 export const renderSass = function () {
     return gulp.src([
+            './public/sass/page-index.scss',
             './public/sass/page-cards-print.scss',
             './public/sass/page-cards-web.scss',
             './public/sass/page-army-lists.scss',
@@ -27,12 +28,17 @@ export function buildCode() {
 }
 
 export const watchSass = function () {
-    return gulp.watch(['./public/sass/**/*.scss'], { events: 'all' }, renderSass)
+    return gulp.watch([
+        './public/sass/*.scss',
+        './public/sass/**/*.scss',
+    ], { events: 'all' }, renderSass)
 }
 
 export const watchCode = function () {
     return gulp.watch([
+        './src/*.js',
         './src/**/*.js',
+        './data/*.js',
         './data/**/*.js',
         './templates/*.tpl',
         './templates/*',

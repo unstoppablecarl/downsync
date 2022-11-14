@@ -27,6 +27,18 @@ ul {
   list-style: none;
 }
 
+/* DIFF STUFF */
+del {
+  background: pink;
+  color: #690012;
+}
+
+ins {
+  background: #cafdca;
+  color: #004000;
+  text-decoration: none;
+}
+
 .page-background {
   background: #cccccc;
 }
@@ -107,6 +119,18 @@ ul {
   list-style: none;
 }
 
+/* DIFF STUFF */
+del {
+  background: pink;
+  color: #690012;
+}
+
+ins {
+  background: #cafdca;
+  color: #004000;
+  text-decoration: none;
+}
+
 .page-background {
   background: #cccccc;
 }
@@ -162,14 +186,28 @@ page[size="Letter"] {
 .page-card-inner {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding: 32pt 48pt;
+}
+
+.web-cards .web-faction-cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.web-cards .sub-footer {
+  display: none;
+}
+
+.web-cards .card {
+  height: auto;
 }
 
 .card {
   width: 230px;
   height: 244pt;
   padding: 4pt;
-  background: #000;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -177,6 +215,8 @@ page[size="Letter"] {
   font-size: 5.5pt;
   line-height: 1.4;
   font-family: "Bitter", serif;
+  margin: -1px 0 0 -1px;
+  border: 1px solid #ccc;
 }
 
 .card-portrait {
@@ -485,6 +525,15 @@ page[size="Letter"] {
   text-align: center;
 }
 
+.version-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 5pt;
+  color: #666;
+}
+
 .sub-footer {
   font-family: "Open Sans", sans-serif;
   font-size: 3.5pt;
@@ -496,18 +545,6 @@ page[size="Letter"] {
   right: 0;
   padding: 1pt 0;
   line-height: 1;
-}
-
-.card {
-  background: transparent;
-  border: 1px solid #ccc;
-  border-width: 0 1px 1px 0;
-}
-
-.page-inner {
-  border: 1px solid #ccc;
-  border-width: 1px 0 0 1px;
-  width: 687.99px;
 }
 
 /*# sourceMappingURL=maps/page-cards-print.css.map */

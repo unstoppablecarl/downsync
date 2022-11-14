@@ -12,16 +12,30 @@ $margin: 4pt * $scale;
 .page-card-inner {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 32pt 48pt;
+}
+
+.web-cards {
+    .web-faction-cards {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .sub-footer {
+        display: none;
+    }
+
+    .card {
+        height: auto;
+    }
 }
 
 .card {
-    //width: 180pt - ($margin * 2);
-    // hack to fix margin spacing issue
     width: 230px * $scale;
     height: 252pt * $scale - ($margin * 2);
     padding: $margin;
-    background: #000;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -29,6 +43,8 @@ $margin: 4pt * $scale;
     font-size: 5.5pt * $scale;
     line-height: 1.4;
     font-family: $serif;
+    margin: -1px 0 0 -1px;
+    border: 1px solid $mid-grey;
 }
 
 .card-portrait {
@@ -357,7 +373,15 @@ $margin: 4pt * $scale;
         padding-bottom: 0;
         text-align: center;
     }
+}
 
+.version-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: $sansSerif;
+    font-size: 5pt;
+    color: #666;
 }
 
 .sub-footer {
