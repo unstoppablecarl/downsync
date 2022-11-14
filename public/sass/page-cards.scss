@@ -15,6 +15,12 @@ $margin: 4pt * $scale;
     justify-content: center;
 }
 
+.page-inner {
+    border: 1px solid $mid-grey;
+    border-width: 1px 0 0 1px;
+    width: 687.99px;
+}
+
 .web-cards {
     .web-faction-cards {
         display: flex;
@@ -36,7 +42,6 @@ $margin: 4pt * $scale;
     width: 230px * $scale;
     height: 252pt * $scale - ($margin * 2);
     padding: $margin;
-    background: #000;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -44,6 +49,8 @@ $margin: 4pt * $scale;
     font-size: 5.5pt * $scale;
     line-height: 1.4;
     font-family: $serif;
+    border: 1px solid $mid-grey;
+    border-width: 0 1px 1px 0;
 }
 
 .card-portrait {

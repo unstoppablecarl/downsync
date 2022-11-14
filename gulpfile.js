@@ -28,7 +28,10 @@ export function buildCode() {
 }
 
 export const watchSass = function () {
-    return gulp.watch(['./public/sass/**/*.scss'], { events: 'all' }, renderSass)
+    return gulp.watch([
+        './public/sass/*.scss',
+        './public/sass/**/*.scss',
+    ], { events: 'all' }, renderSass)
 }
 
 export const watchCode = function () {
