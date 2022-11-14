@@ -53,7 +53,8 @@ export const RECON_SCOUT = make({
 
 export const SENTINEL_TAGGER = make({
     slug: 'sentinel_tagger',
-    name: 'Sentinel: Tagger',
+    name: 'Sentinel',
+    variant_name: 'Tagger',
     bg: 'sentinel-tagger.png',
     signature: SIZE_SMALL,
     type: 'Light ' + TYPE_VEHICLE,
@@ -73,7 +74,8 @@ export const SENTINEL_TAGGER = make({
 
 export const SENTINEL_HUNTER = make({
     slug: 'sentinel_hunter',
-    name: 'Sentinel: Hunter',
+    name: 'Sentinel',
+    variant_name: 'Hunter',
     bg: 'sentinel-hunter.png',
     signature: SIZE_SMALL,
     type: 'Light ' + TYPE_VEHICLE,
@@ -113,10 +115,11 @@ export const VIRAGO_TANK = make({
 
 export const AURORA = make({
     slug: 'gsv_aurora',
-    name: 'GSV: Aurora',
+    name: 'GSV',
+    variant_name: 'Aurora',
     bg: 'aurora.png',
     signature: SIZE_MEDIUM,
-    type: 'Support ' + TYPE_VEHICLE,
+    type: 'Ground Support ' + TYPE_VEHICLE,
     speed: 6,
     targeting: 7,
     defense: 13,
@@ -139,10 +142,11 @@ export const AURORA = make({
 
 export const PHANTOM = make({
     slug: 'gsv_phantom',
-    name: 'GSV: Phantom',
+    name: 'GSV',
+    variant_name: 'Phantom',
     bg: 'phantom.png',
     signature: SIZE_MEDIUM,
-    type: 'Stealth Support ' + TYPE_VEHICLE,
+    type: 'Ground Support ' + TYPE_VEHICLE,
     speed: 6,
     targeting: 7,
     defense: 13,
@@ -162,7 +166,8 @@ export const PHANTOM = make({
 
 export const GUARDIAN_MARKSMAN = make({
     slug: 'guardian_marksman',
-    name: 'Guardian: Marksman',
+    name: 'Guardian',
+    variant_name: 'Marksman',
     bg: 'guardian-marksman.png',
     signature: SIZE_LARGE,
     type: 'Heavy Tank',
@@ -184,7 +189,8 @@ export const GUARDIAN_MARKSMAN = make({
 
 export const GUARDIAN_DESTROYER = make({
     slug: 'guardian_destroyer',
-    name: 'Guardian: Destroyer',
+    name: 'Guardian',
+    variant_name: 'Destroyer',
     bg: 'guardian-destroyer.png',
     signature: SIZE_LARGE,
     type: 'Heavy Tank',

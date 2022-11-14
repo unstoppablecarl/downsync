@@ -7,7 +7,11 @@
             {{/if}}
             <div class="title">
                 <div class="primary-title">
-                    {{name}}
+                    {{name}}{{#if variant_name}}:
+                    <span class="variant-title">
+                        {{variant_name}}
+                    </span>
+                    {{/if}}
                 </div>
 
                 <div class="sub-title">

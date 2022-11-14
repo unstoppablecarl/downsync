@@ -116,7 +116,7 @@ export const SHOCK_AUTOCANNON = make({
 
 export const FUSION_CANNON = make({
     name: 'Fusion Cannon',
-    range: 10,
+    range: 12,
     rof: 1,
     traits: [
         TRAIT_SMART,
@@ -167,7 +167,7 @@ export const RAILGUN = make({
 })
 
 export const TANK_DESTROYER_CANNON = make({
-    name: 'Smart Medium Cannon',
+    name: 'Smart Med. Cannon',
     range: 24,
     rof: 2,
     traits: [

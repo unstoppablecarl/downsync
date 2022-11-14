@@ -9,7 +9,7 @@ export const HEAVY_INFANTRY = make({
     slug: 'merc_heavy_infantry',
     name: 'Ryoshi Team',
     signature: SIZE_SMALL,
-    type: 'Heavy Infantry x 3',
+    type: 'Power Armored Infantry x 3',
     speed: 5,
     targeting: 7,
     defense: 13,
@@ -22,7 +22,6 @@ export const HEAVY_INFANTRY = make({
     ],
     traits: [
         REVEAL_AND_DEPLOY(3, 'Ryoshi'),
-        //COUNTERMEASURE_DEFEND('Ryoshi Unit', 'Ryoshi Units'),
         DEFENSE_NET('Ryoshi'),
     ],
 })
@@ -34,7 +33,7 @@ export const MERCENARY_UNITS = [
 function make(unit) {
     const defaults = {
         faction: 'Mercenaries',
-        //icon: 'assets/icon-coalition.svg',
+        icon: 'assets/icon-merc.svg',
     }
 
     unit = Object.assign({}, defaults, unit)

@@ -335,6 +335,10 @@ page[size="Letter"] {
   font-weight: 600;
 }
 
+.heading .title .primary-title .variant-title {
+  font-weight: normal;
+}
+
 .heading .title .title-note {
   font-size: 11pt;
   font-weight: normal;

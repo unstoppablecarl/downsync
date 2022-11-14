@@ -162,7 +162,12 @@ $margin: 4pt * $scale;
             display: block;
             font-size: 9pt * $scale;
             font-weight: 600;
+
+            .variant-title {
+                font-weight: normal;
+            }
         }
+
 
         .title-note {
             font-size: 11pt * $scale;
