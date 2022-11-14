@@ -41,7 +41,7 @@ export const RECON_SCOUT = make({
     speed: 8,
     targeting: 7,
     defense: 14,
-    scan: 8,
+    scan: 7,
     cm: 1,
     cm_regen: 1,
     actions: [
@@ -87,9 +87,7 @@ export const SENTINEL_HUNTER = make({
         BASIC_SCAN,
         FUSION_CANNON,
     ],
-    traits: [
-        //SPEED_BOOST,
-    ],
+    traits: [],
 })
 
 export const VIRAGO_TANK = make({
@@ -103,7 +101,7 @@ export const VIRAGO_TANK = make({
     defense: 13,
     scan: 6,
     cm: 2,
-    cm_regen: 1,
+    cm_regen: 2,
     actions: [
         BASIC_SCAN,
         MEDIUM_CANNON,
@@ -131,8 +129,8 @@ export const AURORA = make({
         SHROUD(12, 1),
     ],
     traits: [
-        DEFENSE_AURA,
         ACTIVE_CAMO,
+        DEFENSE_AURA,
     ],
     definitions: [
         SHROUD_TEMPLATE,
@@ -227,7 +225,6 @@ export const SPIDER_DRONE_INFANTRY = make({
     ],
 })
 
-
 export const RNR_INFANTRY = make({
     slug: 'rnr_team',
     name: 'R&R Team',
@@ -258,7 +255,7 @@ export const COALITION_UNITS = [
     GUARDIAN_DESTROYER,
     GUARDIAN_MARKSMAN,
     SPIDER_DRONE_INFANTRY,
-    //RNR_INFANTRY,
+    RNR_INFANTRY,
 ]
 
 function make(unit) {

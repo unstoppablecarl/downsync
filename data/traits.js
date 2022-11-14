@@ -14,11 +14,12 @@ export const CLEAR_THE_WAY = make({
     desc: 'While within 8" units in the same Taskforce gain All Terrain.',
 })
 
-export const COUNTERMEASURE_DEFEND = (type) => {
+export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
+    typePlural = typePlural || type
     return make({
         name: 'Defend',
         note: `${type}, 4"`,
-        desc: `${type} within 4" can spend Countermeasure Tokens on this unit.`,
+        desc: `${typePlural} within 4" can spend this unit's Countermeasure Tokens.`,
     })
 }
 

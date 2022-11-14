@@ -169,11 +169,14 @@ export const TANK_DESTROYER_CANNON = make({
     ],
 })
 
-export const SMALL_AUTOCANNON = make({
-    name: 'Small Autocannon',
+export const INFANTRY_PARTICLE_RIFLE = make({
+    name: 'Particle Rifle',
     range: 12,
-    rof: 3,
+    rof: 2,
     effect: 'Kill',
+    traits: [
+        TRAIT_SMART,
+    ],
 })
 
 export const HEAVY_AUTO_CANNON = make({

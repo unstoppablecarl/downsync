@@ -27,6 +27,18 @@ ul {
   list-style: none;
 }
 
+/* DIFF STUFF */
+del {
+  background: pink;
+  color: #690012;
+}
+
+ins {
+  background: #cafdca;
+  color: #004000;
+  text-decoration: none;
+}
+
 .page-background {
   background: #cccccc;
 }
@@ -107,6 +119,18 @@ ul {
   list-style: none;
 }
 
+/* DIFF STUFF */
+del {
+  background: pink;
+  color: #690012;
+}
+
+ins {
+  background: #cafdca;
+  color: #004000;
+  text-decoration: none;
+}
+
 .page-background {
   background: #cccccc;
 }
@@ -163,6 +187,19 @@ page[size="Letter"] {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.web-cards .web-faction-cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.web-cards .sub-footer {
+  display: none;
+}
+
+.web-cards .card {
+  height: auto;
 }
 
 .card {
@@ -483,6 +520,15 @@ page[size="Letter"] {
   width: 8px;
   padding-bottom: 0;
   text-align: center;
+}
+
+.version-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 5pt;
+  color: #666;
 }
 
 .sub-footer {

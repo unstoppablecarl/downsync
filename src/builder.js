@@ -4,16 +4,18 @@ import { COALITION_UNITS } from '../data/cards/coalition-units.js'
 import { REPUBLIC_UNITS } from '../data/cards/republic-units.js'
 import { armyLists } from '../data/army-lists.js'
 import { CARDS_VERSION } from './versioning.js'
+import { MERCENARY_UNITS } from '../data/cards/mercenary-units.js'
 
 let coalitionUnits = prepareUnits(COALITION_UNITS)
 let republicUnits = prepareUnits(REPUBLIC_UNITS)
-
+let mercenaryUnits = prepareUnits(MERCENARY_UNITS)
 
 export default function () {
 
     let cardData = [].concat(
         coalitionUnits,
         republicUnits,
+        mercenaryUnits,
     )
 
     generateCards({
@@ -27,6 +29,10 @@ export default function () {
             {
                 faction: 'Republic of Man',
                 factionCards: republicUnits,
+            },
+            {
+                faction: 'Mercenaries',
+                factionCards: mercenaryUnits,
             },
         ],
     })

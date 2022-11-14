@@ -40,15 +40,17 @@ export const TRAIT_SPECIALIZED_VS = (types) => {
     })
 }
 
-export const TRAIT_SMART = make({
-    name: 'Smart',
-    desc: 'Countermeasure rolls attempting to negate this weapon\'s effect are successful on a 5+ (instead of 3+).',
-})
+export const TRAIT_ADVANCED = makeCMMod('Advanced', '4+')
+export const TRAIT_SMART = makeCMMod('Smart', '5+')
+export const TRAIT_UNSTOPPABLE = makeCMMod('Unstoppable', '6+')
 
-export const TRAIT_ADVANCED = make({
-    name: 'Advanced',
-    desc: 'The first Countermeasure roll attempting to negate the effect of an attack from this weapon is successful on a 5+ (instead of 3+).',
-})
+function makeCMMod(name, TN) {
+    return make({
+        name,
+        note: 'CM ' + TN,
+        desc: `Countermeasure rolls attempting to negate this weapon's effect are successful on a ${TN} (instead of 3+).`,
+    })
+}
 
 export const EXTREME_RANGE = make({
     name: 'Extreme Range',
@@ -60,10 +62,6 @@ export const CLOSE_COMBAT = make({
     desc: 'Ignores short range modifiers.',
 })
 
-export const TRAIT_UNSTOPPABLE = make({
-    name: 'Unstoppable',
-    desc: 'Attacks from this weapon ignore all countermeasures.',
-})
 
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',

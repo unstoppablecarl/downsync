@@ -23,7 +23,7 @@ import {
     PREDATOR,
     REVEAL_AND_DEPLOY,
 } from '../traits.js'
-import { BASIC_SCAN, FORWARD_OBSERVE, SCAN, TARGET_PAINTER, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../actions.js'
+import { FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../actions.js'
 import { makeUnit } from '../units.js'
 
 export const CLEANSER_TEAM = make({
@@ -66,16 +66,15 @@ export const VECTOR_TEAM = make({
 
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
-    signature: null,
+    signature: SIZE_MEDIUM,
     type: 'Infantry Sniper Team',
     speed: 4,
     targeting: 7,
     scan: 7,
-    defense: 14,
+    defense: 13,
     actions: [
-        SCAN(1, 12),
+        SCAN(2, 12),
         SHOCK_RIFLE,
-        TARGET_PAINTER,
     ],
     traits: [
         ACTIVE_CAMO,
@@ -98,7 +97,7 @@ export const COURIER_TRANSPORT = make({
     cm: 2,
     cm_regen: 2,
     actions: [
-        BASIC_SCAN,
+        SCAN(2, 12),
         CANNON,
         TRANSPORT_UNLOAD,
         TRANSPORT_LOAD,
@@ -118,7 +117,7 @@ export const HARBINGER_MEDIUM_RECON = make({
     speed: 7,
     targeting: 6,
     defense: 14,
-    scan: 7,
+    scan: 6,
     cm: 1,
     cm_regen: 1,
     actions: [
@@ -180,7 +179,7 @@ export const SAMSON_HEAVY_TANK = make({
     targeting: 6,
     defense: 12,
     scan: null,
-    cm: 3,
+    cm: 4,
     cm_regen: 2,
     actions: [
         HEAVY_AUTO_CANNON,
@@ -220,6 +219,7 @@ export const GOLIATHS = make({
 export const REPUBLIC_UNITS = [
     CLEANSER_TEAM,
     VECTOR_TEAM,
+    SEEKER_TEAM,
     GOLIATHS,
     COURIER_TRANSPORT,
     HARBINGER_MEDIUM_RECON,

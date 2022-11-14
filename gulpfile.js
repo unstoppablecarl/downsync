@@ -9,6 +9,7 @@ const sass = gulpSass(nodeSass)
 
 export const renderSass = function () {
     return gulp.src([
+            './public/sass/page-index.scss',
             './public/sass/page-cards-print.scss',
             './public/sass/page-cards-web.scss',
             './public/sass/page-army-lists.scss',
