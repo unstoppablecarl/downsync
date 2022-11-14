@@ -57,13 +57,13 @@ ins {
 }
 
 @media print {
-  .page-preview {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      box-shadow: none;
-      background-color: white;
-  }
+    .page-preview {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        background-color: white;
+    }
 
     .page-background {
         margin: 0;
@@ -149,13 +149,13 @@ ins {
 }
 
 @media print {
-  .page-preview {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      box-shadow: none;
-      background-color: white;
-  }
+    .page-preview {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        background-color: white;
+    }
 
     .page-background {
         margin: 0;
@@ -205,7 +205,7 @@ page[size="Letter"] {
 }
 
 .card {
-  width: 345px;
+    width: 345px;
     height: 366pt;
     padding: 6pt;
     box-sizing: border-box;
