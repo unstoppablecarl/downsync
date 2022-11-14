@@ -12,13 +12,9 @@ $margin: 4pt * $scale;
 .page-card-inner {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-}
-
-.page-inner {
-    border: 1px solid $mid-grey;
-    border-width: 1px 0 0 1px;
-    width: 687.99px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 32pt 48pt;
 }
 
 .web-cards {
@@ -37,8 +33,6 @@ $margin: 4pt * $scale;
 }
 
 .card {
-    //width: 180pt - ($margin * 2);
-    // hack to fix margin spacing issue
     width: 230px * $scale;
     height: 252pt * $scale - ($margin * 2);
     padding: $margin;
@@ -49,8 +43,8 @@ $margin: 4pt * $scale;
     font-size: 5.5pt * $scale;
     line-height: 1.4;
     font-family: $serif;
+    margin: -1px 0 0 -1px;
     border: 1px solid $mid-grey;
-    border-width: 0 1px 1px 0;
 }
 
 .card-portrait {

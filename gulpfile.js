@@ -36,7 +36,9 @@ export const watchSass = function () {
 
 export const watchCode = function () {
     return gulp.watch([
+        './src/*.js',
         './src/**/*.js',
+        './data/*.js',
         './data/**/*.js',
         './templates/*.tpl',
         './templates/*',
