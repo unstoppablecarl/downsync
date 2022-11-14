@@ -1,4 +1,4 @@
-# downsync-doc-generator
+# Downsync
 
 generate documents for the game Downsync
 
