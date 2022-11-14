@@ -218,9 +218,9 @@ export const SPIDER_DRONE_INFANTRY = make({
         POWER_TOOLS,
     ],
     traits: [
-        REVEAL_AND_DEPLOY(4, 'Spider Drone'),
         SCATTER,
         RUSH,
+        REVEAL_AND_DEPLOY(4, 'Spider Drone'),
         ALL_TERRAIN,
     ],
 })
@@ -239,8 +239,8 @@ export const RNR_INFANTRY = make({
         REPAIR_RENCH,
     ],
     traits: [
-        REVEAL_AND_DEPLOY(3, 'R&R Infantry'),
         CLEAR_THE_WAY,
+        REVEAL_AND_DEPLOY(3, 'R&R Infantry'),
         ALL_TERRAIN,
     ],
 })

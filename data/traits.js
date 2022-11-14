@@ -23,6 +23,14 @@ export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
     })
 }
 
+export const DEFENSE_NET = (type) => {
+    return make({
+        name: 'Defense Net',
+        note: `${type}, 4"`,
+        desc: `When resolving an attack against this unit, it may spent up to 1 Countermeasure token controlled by a friendly ${type} Unit within 4" in addition to its own Countermeasure tokens.`,
+    })
+}
+
 export const DEFENSE_AURA = make({
     name: 'Defense Aura',
     note: '4"',

@@ -1,1 +1,1 @@
-export const CARDS_VERSION = 0
+export const CARDS_VERSION = 1

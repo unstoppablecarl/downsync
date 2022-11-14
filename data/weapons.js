@@ -5,10 +5,10 @@ import {
     TRAIT_CLUSTERED,
     TRAIT_FIRE_SUPPORT,
     TRAIT_INFANTRY_NETWORK,
+    TRAIT_OVERKILL,
     TRAIT_SMART,
     TRAIT_SPECIALIZED_VS,
     TRAIT_TARGET_LOCK_EFFECT,
-    TRAIT_UNSTOPPABLE,
 } from './weapon-traits.js'
 import { TYPE_INFANTRY } from './constants.js'
 import { COST_ACTION, COST_ACTION_AND_COMMAND, COST_ACTION_OR_COMMAND, COST_COMMAND } from './costs.js'
@@ -69,6 +69,12 @@ export const HMG = make({
     range: 12,
     rof: 3,
     traits: [],
+})
+
+export const SMALL_ARMS = make({
+    name: 'Small Arms',
+    range: 6,
+    rof: 2,
 })
 
 export const ADVANCED_SMALL_ARMS = make({
@@ -147,7 +153,7 @@ export const REPAIR_RENCH = make({
     cost: COST_ACTION_OR_COMMAND,
     range: 4,
     effect: '&starf;',
-    desc: 'Remove a STUN Token from, or add a Countermeasure token to a friendly Unit within 4".',
+    desc: 'Remove a STUN Token from a friendly Unit within 4".',
 })
 
 export const RAILGUN = make({
@@ -155,7 +161,7 @@ export const RAILGUN = make({
     range: null,
     rof: 1,
     traits: [
-        TRAIT_UNSTOPPABLE,
+        TRAIT_OVERKILL,
         EXTREME_RANGE,
     ],
 })
@@ -205,7 +211,7 @@ export const INFANTRY_GUIDED_MISSILE = make({
     range: 16,
     rof: 1,
     traits: [
-        TRAIT_ADVANCED,
+        TRAIT_SMART,
     ],
 })
 

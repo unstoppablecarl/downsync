@@ -1,7 +1,7 @@
 import { INFANTRY_PARTICLE_RIFLE } from '../weapons.js'
 import { SIZE_SMALL } from '../constants.js'
 
-import { COUNTERMEASURE_DEFEND, REVEAL_AND_DEPLOY } from '../traits.js'
+import { DEFENSE_NET, REVEAL_AND_DEPLOY } from '../traits.js'
 import { SCAN } from '../actions.js'
 import { makeUnit } from '../units.js'
 
@@ -9,7 +9,7 @@ export const HEAVY_INFANTRY = make({
     slug: 'merc_heavy_infantry',
     name: 'Ryoshi Team',
     signature: SIZE_SMALL,
-    type: 'Heavy Infantry',
+    type: 'Heavy Infantry x 3',
     speed: 5,
     targeting: 7,
     defense: 13,
@@ -22,7 +22,8 @@ export const HEAVY_INFANTRY = make({
     ],
     traits: [
         REVEAL_AND_DEPLOY(3, 'Ryoshi'),
-        COUNTERMEASURE_DEFEND('Ryoshi Unit', 'Ryoshi Units'),
+        //COUNTERMEASURE_DEFEND('Ryoshi Unit', 'Ryoshi Units'),
+        DEFENSE_NET('Ryoshi'),
     ],
 })
 

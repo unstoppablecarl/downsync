@@ -42,7 +42,7 @@ export const TRAIT_SPECIALIZED_VS = (types) => {
 
 export const TRAIT_ADVANCED = makeCMMod('Advanced', '4+')
 export const TRAIT_SMART = makeCMMod('Smart', '5+')
-export const TRAIT_UNSTOPPABLE = makeCMMod('Unstoppable', '6+')
+export const TRAIT_OVERKILL = makeCMMod('Overkill', '6+')
 
 function makeCMMod(name, TN) {
     return make({

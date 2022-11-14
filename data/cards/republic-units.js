@@ -1,7 +1,6 @@
 import { SIZE_LARGE, SIZE_MEDIUM, TYPE_INFANTRY } from '../constants.js'
 import {
     ADVANCED_CANNON,
-    ADVANCED_SMALL_ARMS,
     CANNON,
     CONCUSSION_ARTILLERY,
     HEAVY_ARTILLERY,
@@ -12,6 +11,7 @@ import {
     MICRO_ARTILLERY,
     SHOCK_AUTOCANNON,
     SHOCK_RIFLE,
+    SMALL_ARMS,
     SNAP_FIRE,
 } from '../weapons.js'
 import {
@@ -35,7 +35,7 @@ export const CLEANSER_TEAM = make({
     targeting: 6,
     defense: 13,
     actions: [
-        ADVANCED_SMALL_ARMS,
+        SMALL_ARMS,
         FORWARD_OBSERVE,
         INFANTRY_GUIDED_MISSILE,
     ],
@@ -197,7 +197,7 @@ export const GOLIATHS = make({
     name: 'Goliath Squad',
     bg: 'goliath-squad.png',
     signature: SIZE_MEDIUM,
-    type: 'Power Armored Infantry',
+    type: 'Power Armored Infantry x 3',
     speed: 5,
     targeting: 6,
     defense: 13,
