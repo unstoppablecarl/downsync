@@ -1,46 +1,11 @@
-import { COST_ACTION, COST_ACTION_AND_COMMAND, COST_ACTION_OR_COMMAND, COST_COMMAND } from './costs.js'
-
-export const emphasisKeywords = [
-    [
-        'TARG',
-        'DEF',
-        'SCAN',
-        'SPD',
-    ],
-    [
-        'KILL',
-        'STUN',
-    ],
-    [
-        'Activated Tokens',
-        'Activated Token',
-    ],
-    [
-        'Overwatch Tokens',
-        'Overwatch Token',
-    ],
-    [
-        'Target Tag Tokens',
-        'Target Tag Token',
-    ],
-    [
-        'Countermeasure Tokens',
-        'Countermeasure Token',
-    ],
-    [
-        'Shroud Templates',
-        'Shroud Template',
-    ],
-    [
-        'Refreshed',
-    ],
-    [
-        'All Terrain',
-    ],
-    [
-        'Fire Support',
-    ],
-]
+import {
+    COST_ACTION,
+    COST_ACTION_AND_COMMAND,
+    COST_ACTION_OR_COMMAND,
+    COST_COMMAND,
+    EMPHASIS_KEYWORD_GROUPS,
+    EMPHASIS_KEYWORDS,
+} from '../constants.js'
 
 export function keywordFormat(str) {
     str = emphasisKeywordFormat(str)
@@ -54,12 +19,28 @@ function emphasisKeywordFormat(str) {
         return
     }
 
-    emphasisKeywords.forEach((group) => {
+    str = formatEmphasisKeywords(str)
+    str = formatEmphasisKeywordGroups(str)
+
+    return str
+}
+
+function formatEmphasisKeywords(str) {
+    EMPHASIS_KEYWORDS.forEach((keyword) => {
+
+        str = wrapEmphasis(str, keyword)
+    })
+
+    return str
+}
+
+function formatEmphasisKeywordGroups(str) {
+    EMPHASIS_KEYWORD_GROUPS.forEach((group) => {
 
         for (let i = 0; i < group.length; i++) {
             let key = group[i]
 
-            const replaced = replace(str, key)
+            const replaced = wrapEmphasis(str, key)
             const matchFound = str !== replaced
             // if a keyword in the group was matched stop trying to match others in the group
             if (matchFound) {
@@ -71,16 +52,14 @@ function emphasisKeywordFormat(str) {
     })
 
     return str
-
-
-    function replace(str, keyword) {
-        let re = new RegExp(keyword, 'g')
-        let rep = `<em class="keyword">${keyword}</em>`
-
-        return str.replace(re, rep)
-    }
 }
 
+function wrapEmphasis(str, keyword) {
+    let re = new RegExp(keyword, 'g')
+    let rep = `<em class="keyword">${keyword}</em>`
+
+    return str.replace(re, rep)
+}
 
 const costKeywords = {
     [COST_ACTION_OR_COMMAND]: `<span class="cost-icon-action-or-command">A/C</span>`,

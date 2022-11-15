@@ -4,15 +4,35 @@ export function makeUnit(unit) {
         template: 'unit-card',
         actions: [],
         traits: [],
-        weapons: [],
     }
 
-    unit = Object.assign({}, defaults, unit)
+    unit = Object.assign(defaults, unit)
 
+    unit.actions = prepareActions(unit.actions)
+
+    return unit
+}
+
+export function makeAdvisor(advisor) {
+
+    const defaults = {
+        template: 'advisor-card',
+        actions: [],
+        traits: [],
+    }
+
+    advisor = Object.assign(defaults, advisor)
+
+    advisor.actions = prepareActions(advisor.actions)
+
+    return advisor
+}
+
+function prepareActions(actions) {
     let prevWeaponTraits = []
-    unit.actions = unit.actions.map((action) => {
-        action = Object.assign({}, action)
 
+    return actions.map((action) => {
+        action = Object.assign({}, action)
 
         if (!action.traits) {
             return action
@@ -33,6 +53,4 @@ export function makeUnit(unit) {
 
         return action
     })
-
-    return unit
 }

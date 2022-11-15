@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Bitter", serif;
-}
+  font-family: "Bitter", serif; }
 
 table {
   width: 100%;
@@ -10,50 +9,42 @@ table {
   border-spacing: 0;
   padding: 0;
   margin: 0;
-  border: 0;
-}
+  border: 0; }
 
 td,
 th {
   text-align: left;
   border: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 ul {
   margin: 0;
   padding: 0 0 0 0;
-  list-style: none;
-}
+  list-style: none; }
 
 /* DIFF STUFF */
 del {
   background: pink;
-  color: #690012;
-}
+  color: #690012; }
 
 ins {
   background: #cafdca;
   color: #004000;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .page-background {
-  background: #cccccc;
-}
+  background: #cccccc; }
 
 .page-preview {
   background: white;
   margin: 0 auto;
   margin-bottom: 16px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-}
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
 
 @page {
   margin: 0;
   size: letter portrait;
-  -webkit-print-color-adjust: exact;
-}
+  -webkit-print-color-adjust: exact; }
 
 @media print {
   .page-preview {
@@ -61,18 +52,14 @@ ins {
     padding: 0;
     border: 0;
     box-shadow: none;
-    background-color: white;
-  }
-
+    background-color: white; }
   .page-background {
     margin: 0;
     padding: 0;
     border: 0;
     box-shadow: none;
     /* Set the background to gray to visualize the page size in the print preview */
-    background-color: gray;
-  }
-}
+    background-color: gray; } }
 
 /* Center all content within a page */
 .page {
@@ -82,16 +69,13 @@ ins {
   flex-direction: row;
   flex-wrap: wrap;
   page-break-after: always;
-  padding: 0;
-}
+  padding: 0; }
 
 page[size="Letter"] {
   width: 612pt;
-  height: 792pt;
-}
+  height: 792pt; }
 
 .page-index {
-  margin: 30px;
-}
+  margin: 30px; }
 
 /*# sourceMappingURL=maps/page-index.css.map */

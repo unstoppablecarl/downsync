@@ -1,14 +1,9 @@
-import { keywordFormat } from './keywords.js'
-import { joinTypes } from '../src/util.js'
+import { keywordFormat } from '../support/text-formatters.js'
+import { joinTypes } from '../../src/util.js'
 
 export const TRAIT_FIRE_SUPPORT = make({
     name: 'Fire Support',
     desc: 'Eligible for the Forward Observe action.',
-})
-
-export const TRAIT_INDIRECT = make({
-    name: 'Indirect',
-    desc: 'Ignores LOS when used by Forward Observe.',
 })
 
 export const TRAIT_CLUSTERED = (radius) => {

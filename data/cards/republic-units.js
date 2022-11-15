@@ -13,7 +13,7 @@ import {
     SHOCK_RIFLE,
     SMALL_ARMS,
     SNAP_FIRE,
-} from '../weapons.js'
+} from '../cards-data/weapons.js'
 import {
     ACTIVE_CAMO,
     ALL_TERRAIN,
@@ -22,9 +22,9 @@ import {
     POOR_OPTICS,
     PREDATOR,
     REVEAL_AND_DEPLOY,
-} from '../traits.js'
-import { FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../actions.js'
-import { makeUnit } from '../units.js'
+} from '../cards-data/unit-traits.js'
+import { FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
+import { makeUnit } from '../support/factories.js'
 
 export const CLEANSER_TEAM = make({
     slug: 'cleanser_team',
@@ -97,7 +97,7 @@ export const COURIER_TRANSPORT = make({
     cm: 2,
     cm_regen: 2,
     actions: [
-        SCAN(2, 12),
+        SCAN(1, 12),
         CANNON,
         TRANSPORT_UNLOAD,
         TRANSPORT_LOAD,
@@ -117,7 +117,7 @@ export const HARBINGER_MEDIUM_RECON = make({
     speed: 7,
     targeting: 6,
     defense: 14,
-    scan: 6,
+    scan: 7,
     cm: 1,
     cm_regen: 1,
     actions: [
@@ -179,7 +179,7 @@ export const SAMSON_HEAVY_TANK = make({
     targeting: 6,
     defense: 12,
     scan: null,
-    cm: 4,
+    cm: 3,
     cm_regen: 2,
     actions: [
         HEAVY_AUTO_CANNON,
@@ -228,7 +228,7 @@ export const REPUBLIC_UNITS = [
     SAMSON_HEAVY_TANK,
 ]
 
-function make(unit) {
+export function make(unit) {
     const defaults = {
         faction: 'Republic of Man',
         icon: 'assets/icon-republic.svg',

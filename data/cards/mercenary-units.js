@@ -1,9 +1,10 @@
-import { INFANTRY_PARTICLE_RIFLE } from '../weapons.js'
+import { INFANTRY_PARTICLE_RIFLE } from '../cards-data/weapons.js'
 import { SIZE_SMALL } from '../constants.js'
 
-import { DEFENSE_NET, REVEAL_AND_DEPLOY } from '../traits.js'
-import { SCAN } from '../actions.js'
-import { makeUnit } from '../units.js'
+import { DEFENSE_NET, REVEAL_AND_DEPLOY } from '../cards-data/unit-traits.js'
+import { SCAN } from '../cards-data/actions.js'
+import { makeUnit } from '../support/factories.js'
+
 
 export const HEAVY_INFANTRY = make({
     slug: 'merc_heavy_infantry',

@@ -1,6 +1,5 @@
-import { keywordFormat } from './keywords.js'
-import { TYPE_INFANTRY } from './constants.js'
-import { COST_COMMAND } from './costs.js'
+import { keywordFormat } from '../support/text-formatters.js'
+import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 
 export const PATROL = make({
     name: 'Patrol',

@@ -11,7 +11,7 @@ import {
     SMART_SMALL_ARMS,
     TAGGING_AUTOCANNON,
     TANK_DESTROYER_CANNON,
-} from '../weapons.js'
+} from '../cards-data/weapons.js'
 import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL, TYPE_VEHICLE } from '../constants.js'
 
 import {
@@ -26,11 +26,16 @@ import {
     RUSH,
     SCATTER,
     SENTRY,
-} from '../traits.js'
+} from '../cards-data/unit-traits.js'
 
 import { SHROUD_TEMPLATE } from '../definitions.js'
-import { BASIC_SCAN, SCAN, SHROUD, SPOTTER } from '../actions.js'
-import { makeUnit } from '../units.js'
+import { BASIC_SCAN, SCAN, SHROUD, SPOTTER } from '../cards-data/actions.js'
+import { makeUnit } from '../support/factories.js'
+
+export const COALITION_CARD_DEFAULTS = {
+    faction: 'Coalition',
+    icon: 'assets/icon-coalition.svg',
+}
 
 export const RECON_SCOUT = make({
     slug: 'scout',
@@ -265,12 +270,7 @@ export const COALITION_UNITS = [
 ]
 
 function make(unit) {
-    const defaults = {
-        faction: 'Coalition',
-        icon: 'assets/icon-coalition.svg',
-    }
-
-    unit = Object.assign({}, defaults, unit)
+    unit = Object.assign({}, COALITION_CARD_DEFAULTS, unit)
 
     return makeUnit(unit)
 }

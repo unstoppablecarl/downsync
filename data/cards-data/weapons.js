@@ -10,9 +10,14 @@ import {
     TRAIT_SPECIALIZED_VS,
     TRAIT_TARGET_LOCK_EFFECT,
 } from './weapon-traits.js'
-import { TYPE_INFANTRY } from './constants.js'
-import { COST_ACTION, COST_ACTION_AND_COMMAND, COST_ACTION_OR_COMMAND, COST_COMMAND } from './costs.js'
-import { DEADLY_VS } from './traits.js'
+import {
+    COST_ACTION,
+    COST_ACTION_AND_COMMAND,
+    COST_ACTION_OR_COMMAND,
+    COST_COMMAND,
+    TYPE_INFANTRY,
+} from '../constants.js'
+import { DEADLY_VS } from './unit-traits.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -186,11 +191,11 @@ export const INFANTRY_PARTICLE_RIFLE = make({
 })
 
 export const HEAVY_AUTO_CANNON = make({
-    name: 'Heavy Auto Cannon',
+    name: 'Smart Heavy Cannon',
     range: 24,
     rof: 3,
     traits: [
-        TRAIT_ADVANCED,
+        TRAIT_SMART,
     ],
 })
 

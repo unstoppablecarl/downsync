@@ -1,7 +1,6 @@
-import { keywordFormat } from './keywords.js'
-import { COST_ACTION, COST_ACTION_OR_COMMAND, COST_COMMAND } from './costs.js'
+import { keywordFormat } from '../support/text-formatters.js'
 import { TRAIT_TARGET_LOCK_EFFECT } from './weapon-traits.js'
-
+import { COST_ACTION, COST_ACTION_OR_COMMAND, COST_COMMAND } from '../constants.js'
 
 export const FORWARD_OBSERVE = make({
     name: 'Forward Observe',

@@ -1,4 +1,4 @@
-import { keywordFormat } from './keywords.js'
+import { keywordFormat } from './support/text-formatters.js'
 
 export const SHROUD_TEMPLATE = make({
     name: 'Shroud Template',
