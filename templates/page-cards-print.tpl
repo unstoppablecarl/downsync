@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cards</title>
+    <title>{{pageTitle}}</title>
 
     <link rel="stylesheet" type="text/css" href="css/page-cards-print.css">
 

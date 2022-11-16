@@ -1,3 +1,6 @@
+import { keywordFormat } from './text-formatters.js'
+import { COST_COMMAND } from '../constants.js'
+
 export function makeUnit(unit) {
 
     const defaults = {
@@ -16,6 +19,7 @@ export function makeUnit(unit) {
 export function makeAdvisor(advisor) {
 
     const defaults = {
+        bg: 'advisor-placeholder.svg',
         template: 'advisor-card',
         actions: [],
         traits: [],
@@ -53,4 +57,29 @@ function prepareActions(actions) {
 
         return action
     })
+}
+
+
+export function makeCommandAbility(ability) {
+
+    let defaults = {
+        name: null,
+        cost: COST_COMMAND,
+        desc: null,
+        traits: [],
+    }
+
+    let result = Object.assign(defaults, ability)
+
+    result.desc = keywordFormat(result.desc)
+
+    result.traits = result.traits.map((trait) => {
+        trait = Object.assign({}, trait)
+        trait.desc = keywordFormat(trait.desc)
+        return trait
+    })
+
+    result.cost = keywordFormat(result.cost)
+
+    return result
 }

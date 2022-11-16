@@ -138,35 +138,17 @@
             Traits
         </h3>
         <div class="traits content-padding"{{{style_font_size body_font_size}}}>
-            {{#each traits as |trait|}}
-            {{> key-value trait}}
+            {{#each traits as |unit_trait|}}
+            {{> key-value unit_trait}}
 
-            {{#if trait.traits}}
+            {{#if unit_trait.traits}}
             <div class="features">
-                {{#each trait.traits as |trait2|}}
-                {{> key-value trait2 class='feature'}}
+                {{#each unit_trait.traits as |trait|}}
+                {{> key-value trait class='feature'}}
                 {{/each}}
             </div>
             {{/if}}
             {{/each}}
-        </div>
-        {{/if}}
-
-        {{#if taskforce_ability}}
-        <h3 class="section-heading">
-            Taskforce Ability
-        </h3>
-
-        <div class="content-padding"{{{style_font_size body_font_size}}}>
-            {{> key-value taskforce_ability}}
-
-            {{#if taskforce_ability.traits}}
-            <div class="features">
-                {{#each taskforce_ability.traits as |trait3|}}
-                {{> key-value trait3 class='feature'}}
-                {{/each}}
-            </div>
-            {{/if}}
         </div>
         {{/if}}
 

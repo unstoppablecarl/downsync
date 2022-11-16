@@ -184,6 +184,9 @@ page[size="Letter"] {
   margin: -1px 0 0 -1px;
   border: 1px solid #ccc; }
 
+.card-advisor .command-abilities .key {
+  font-size: 5.5pt; }
+
 .card-portrait {
   float: right;
   height: 0.375in;
@@ -255,7 +258,21 @@ page[size="Letter"] {
 .cost-icon-command,
 .cost-icon-command-x2 {
   border-radius: 50px;
-  padding-bottom: 1px; }
+  width: 11px;
+  height: 11px; }
+
+.command-points {
+  font-weight: normal;
+  font-size: 6.5pt;
+  background: #fff;
+  border-radius: 3pt;
+  border: 1px solid #b3b3b3;
+  padding: 1pt 3pt;
+  position: absolute;
+  top: -2pt;
+  right: -1pt; }
+  .command-points .command-points-value {
+    font-weight: 600; }
 
 .heading {
   padding: 4pt 4pt 2pt;
@@ -319,6 +336,7 @@ page[size="Letter"] {
       text-align: left; }
     .table-actions th:last-child {
       padding-right: 4pt; }
+  .table-actions .action-row .col-stat,
   .table-actions .action-row .col-target,
   .table-actions .action-row .col-rof,
   .table-actions .action-row .col-range,
@@ -332,7 +350,7 @@ page[size="Letter"] {
     padding: 0.4em 0; }
     .table-actions .action-row td:last-child {
       padding-right: 2pt; }
-    .table-actions .action-row td.col-name, .table-actions .action-row td.col-target, .table-actions .action-row td.col-rof, .table-actions .action-row td.col-range, .table-actions .action-row td.col-effect {
+    .table-actions .action-row td.col-name, .table-actions .action-row td.col-stat, .table-actions .action-row td.col-target, .table-actions .action-row td.col-rof, .table-actions .action-row td.col-range, .table-actions .action-row td.col-effect {
       font-weight: 500; }
     .table-actions .action-row td.col-cost {
       padding: 0;
@@ -341,7 +359,7 @@ page[size="Letter"] {
     .table-actions .action-row td.col-target {
       font-size: 90%;
       font-weight: bold; }
-    .table-actions .action-row td.col-effect {
+    .table-actions .action-row td.col-stat, .table-actions .action-row td.col-effect {
       text-transform: uppercase;
       font-size: 90%;
       font-weight: bold; }
@@ -377,7 +395,8 @@ page[size="Letter"] {
   padding: 1pt 4pt;
   vertical-align: middle;
   font-family: "Open Sans", sans-serif;
-  font-weight: bold; }
+  font-weight: bold;
+  position: relative; }
 
 .key-value {
   margin: 0.5em 0;
@@ -399,11 +418,12 @@ page[size="Letter"] {
   .key-value .cost-icon-action-or-command {
     font-family: "Open Sans", sans-serif;
     height: auto;
-    font-size: 4pt; }
+    font-size: 4pt;
+    position: relative;
+    top: -1px; }
   .key-value .cost-icon-command,
   .key-value .cost-icon-action {
     width: 8px;
-    padding-bottom: 0;
     text-align: center; }
 
 .version-footer {

@@ -278,3 +278,5 @@ function make(weapon) {
 
     return result
 }
+
+export const makeWeapon = make

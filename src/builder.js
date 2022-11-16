@@ -5,22 +5,32 @@ import { REPUBLIC_UNITS } from '../data/cards/republic-units.js'
 import { armyLists } from '../data/army-lists.js'
 import { CARDS_VERSION } from './versioning.js'
 import { MERCENARY_UNITS } from '../data/cards/mercenary-units.js'
+import { COALITION_ADVISORS } from '../data/cards/coalition-advisors.js'
+import { REPUBLIC_ADVISORS } from '../data/cards/republic-advisors.js'
 
-let coalitionUnits = prepareUnits(COALITION_UNITS)
-let republicUnits = prepareUnits(REPUBLIC_UNITS)
-let mercenaryUnits = prepareUnits(MERCENARY_UNITS)
+const TIMESTAMP = getTimestamp()
+
+let coalitionUnits = prepareCards(COALITION_UNITS)
+let republicUnits = prepareCards(REPUBLIC_UNITS)
+let mercenaryUnits = prepareCards(MERCENARY_UNITS)
 
 export default function () {
 
-    let cardData = [].concat(
+    let unitCardData = [].concat(
         coalitionUnits,
         republicUnits,
-        mercenaryUnits,
+        //mercenaryUnits,
     )
+
+    let advisorCardData = [].concat(
+        COALITION_ADVISORS,
+        REPUBLIC_ADVISORS,
+    ).map(prepareCard)
 
     generateCards({
         template: 'page-cards',
         dest: './public/cards.html',
+        pageTitle: 'Unit Cards',
         cardData: [
             {
                 faction: 'Coalition',
@@ -40,7 +50,14 @@ export default function () {
     generateCardPrintPages({
         template: 'page-cards-print',
         dest: './public/cards-print.html',
-        cardData,
+        cardData: unitCardData,
+    })
+
+    generateCardPrintPages({
+        template: 'page-cards-print',
+        dest: './public/advisor-cards-print.html',
+        pageTitle: 'Advisor Cards',
+        cardData: advisorCardData,
     })
 
     generateArmyListPages({
@@ -50,10 +67,13 @@ export default function () {
     })
 }
 
-function prepareUnits(units) {
-    return units.map((unit) => {
-        unit.timestamp = getTimestamp()
-        unit.cardsVersion = CARDS_VERSION
-        return unit
-    })
+
+function prepareCard(card) {
+    card.timestamp = TIMESTAMP
+    card.cardsVersion = CARDS_VERSION
+    return card
+}
+
+function prepareCards(cards) {
+    return cards.map(prepareCard)
 }

@@ -22,6 +22,13 @@ export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
     })
 }
 
+export const FINISHER = make({
+    name: 'Finisher',
+    note: `+1 TARG vs zero CM`,
+    desc: `This Unit gains +1 TARG against targets that currently have zero Countermeasures.`,
+})
+
+
 export const DEFENSE_NET = (type) => {
     return make({
         name: 'Defense Net',

@@ -3,6 +3,7 @@ import templates from './templates.js'
 import { chunk } from './util.js'
 
 export function generateCardPrintPages({
+                                           pageTitle,
                                            cardData,
                                            dest = './public/cards-print.html',
                                            cardsPerPage = 9,
@@ -11,6 +12,7 @@ export function generateCardPrintPages({
     let cardPages = chunk(cardData, cardsPerPage)
     let out = templates['page-cards-print']({
         cardPages,
+        pageTitle,
     })
 
     fs.writeFileSync(dest, out, 'utf8')
@@ -18,10 +20,12 @@ export function generateCardPrintPages({
 }
 
 export function generateCards({
+                                  pageTitle,
                                   cardData,
                                   dest = './public/cards.html',
                               }) {
     let out = templates['page-cards']({
+        pageTitle,
         cardData,
     })
 

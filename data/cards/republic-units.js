@@ -18,6 +18,7 @@ import {
     ACTIVE_CAMO,
     ALL_TERRAIN,
     COUNTERMEASURE_DEFEND,
+    FINISHER,
     INFANTRY_TRANSPORT,
     POOR_OPTICS,
     PREDATOR,
@@ -25,6 +26,11 @@ import {
 } from '../cards-data/unit-traits.js'
 import { FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
+
+export const REPUBLIC_CARD_DEFAULTS = {
+    faction: 'Republic of Man',
+    icon: 'assets/icon-republic.svg',
+}
 
 export const CLEANSER_TEAM = make({
     slug: 'cleanser_team',
@@ -145,6 +151,7 @@ export const CRUSADER_MEDIUM_TANK = make({
         MEDIUM_CANNON,
     ],
     traits: [
+        FINISHER,
         COUNTERMEASURE_DEFEND(TYPE_INFANTRY),
     ],
 })
@@ -180,7 +187,7 @@ export const SAMSON_HEAVY_TANK = make({
     defense: 12,
     scan: null,
     cm: 3,
-    cm_regen: 2,
+    cm_regen: 3,
     actions: [
         HEAVY_AUTO_CANNON,
         SNAP_FIRE(HEAVY_AUTO_CANNON),
@@ -229,12 +236,8 @@ export const REPUBLIC_UNITS = [
 ]
 
 export function make(unit) {
-    const defaults = {
-        faction: 'Republic of Man',
-        icon: 'assets/icon-republic.svg',
-    }
 
-    unit = Object.assign({}, defaults, unit)
+    unit = Object.assign({}, REPUBLIC_CARD_DEFAULTS, unit)
 
     return makeUnit(unit)
 }

@@ -14,6 +14,17 @@ export const TRAIT_CLUSTERED = (radius) => {
     })
 }
 
+export const TRAIT_GRANTED_SCAN_STAT = make({
+    name: 'Granted',
+    note: 'SCAN',
+    desc: `Units with a SCAN stat may use this action.`,
+})
+
+export const TRAIT_DISTRIBUTED = make({
+    name: 'Split',
+    desc: 'Each attack from this action must have a different target.',
+})
+
 export const TRAIT_TARGET_LOCK_EFFECT = make({
     name: 'Target Lock',
     desc: 'Units hit by this weapon suffer the LOCK effect (-2 DEF until the end of this Taskforce Activation or Reaction Engagement). A unit can only be target locked once.',
@@ -63,7 +74,18 @@ export const TRAIT_INFANTRY_NETWORK = make({
     desc: 'Attacks from this weapon can use the LOS of infantry units in the same Taskforce.',
 })
 
+
+export const PLACE_EFFECT = (distance) => {
+    return make({
+        name: 'Place Effect',
+        note: `Place ${distance}"`,
+        desc: `Target unit is placed by attacker completely within ${distance}" of its current location.`,
+    })
+}
+
+
 function make(trait) {
+    trait.note = keywordFormat(trait.note)
     trait.desc = keywordFormat(trait.desc)
     return trait
 }

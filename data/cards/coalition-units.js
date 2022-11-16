@@ -108,7 +108,7 @@ export const VIRAGO_TANK = make({
     defense: 13,
     scan: 6,
     cm: 2,
-    cm_regen: 2,
+    cm_regen: 1,
     actions: [
         BASIC_SCAN,
         MEDIUM_CANNON,
@@ -266,7 +266,7 @@ export const COALITION_UNITS = [
     GUARDIAN_DESTROYER,
     GUARDIAN_MARKSMAN,
     SPIDER_DRONE_INFANTRY,
-    RNR_INFANTRY,
+    //RNR_INFANTRY,
 ]
 
 function make(unit) {
