@@ -2,6 +2,6 @@
 
 generate documents for the game Downsync
 
-#### Notes
+[Index](public/index.html)
 
-`./public` is sym linked to `./docs` for github pages
+Intellectual property Copyright (c) 2022 Fallen Games LLC

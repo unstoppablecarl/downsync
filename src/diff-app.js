@@ -2,7 +2,8 @@ import axios from 'axios'
 import diff from 'node-htmldiff'
 
 //let url1 = 'https://raw.githubusercontent.com/unstoppablecarl/downsync/master/public/cards.html'
-let url1 = 'cards.html'
+
+let file = 'unit-cards.html'
 
 let branchInput = document.getElementById('branch')
 let form = document.getElementById('compare-form')
@@ -14,6 +15,10 @@ let queryParams = getQueryParams()
 
 if (queryParams.reverse) {
     reverseInput.checked = true
+}
+
+if (queryParams.file) {
+    file = queryParams.file + '.html'
 }
 
 if (queryParams.branch) {
@@ -32,7 +37,8 @@ function click(event) {
 }
 
 function loadDiff(branch, reverse) {
-    let url2 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/${branch}/public/cards.html`
+    let url1 = file
+    let url2 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/${branch}/public/${file}`
 
     Promise.all([
 

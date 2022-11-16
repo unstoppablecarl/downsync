@@ -1,4 +1,4 @@
-import { generateArmyListPages, generateCardPrintPages, generateCards } from './generate-pages.js'
+import { generateArmyListPages, generateCardPrintPages, generateCards, generateIndex } from './generate-pages.js'
 import { getTimestamp } from './util.js'
 import { COALITION_UNITS } from '../data/cards/coalition-units.js'
 import { REPUBLIC_UNITS } from '../data/cards/republic-units.js'
@@ -10,57 +10,74 @@ import { REPUBLIC_ADVISORS } from '../data/cards/republic-advisors.js'
 
 const TIMESTAMP = getTimestamp()
 
-let coalitionUnits = prepareCards(COALITION_UNITS)
-let republicUnits = prepareCards(REPUBLIC_UNITS)
-let mercenaryUnits = prepareCards(MERCENARY_UNITS)
+let factionUnits = [
+    {
+        faction: 'Coalition',
+        factionCards: prepareCards(COALITION_UNITS),
+    },
+    {
+        faction: 'Republic of Man',
+        factionCards: prepareCards(REPUBLIC_UNITS),
+    },
+    {
+        faction: 'Mercenaries',
+        factionCards: prepareCards(MERCENARY_UNITS),
+    },
+]
+
+let allUnits = factionUnits.flatMap((faction) => faction.factionCards)
+
+let factionAdvisors = [
+    {
+        faction: 'Coalition',
+        factionCards: prepareCards(COALITION_ADVISORS),
+    },
+    {
+        faction: 'Republic of Man',
+        factionCards: prepareCards(REPUBLIC_ADVISORS),
+    },
+]
+
+let allAdvisors = factionAdvisors.flatMap((faction) => faction.factionCards)
 
 export default function () {
 
-    let unitCardData = [].concat(
-        coalitionUnits,
-        republicUnits,
-        //mercenaryUnits,
-    )
-
-    let advisorCardData = [].concat(
-        COALITION_ADVISORS,
-        REPUBLIC_ADVISORS,
-    ).map(prepareCard)
+    generateIndex({
+        template: 'page-index',
+        dest: './public/index.html',
+        pageTitle: 'Downsync',
+    })
 
     generateCards({
         template: 'page-cards',
-        dest: './public/cards.html',
+        dest: './public/unit-cards.html',
         pageTitle: 'Unit Cards',
-        cardData: [
-            {
-                faction: 'Coalition',
-                factionCards: coalitionUnits,
-            },
-            {
-                faction: 'Republic of Man',
-                factionCards: republicUnits,
-            },
-            {
-                faction: 'Mercenaries',
-                factionCards: mercenaryUnits,
-            },
-        ],
+        cardData: factionUnits,
+    })
+
+    generateCards({
+        template: 'page-cards',
+        dest: './public/advisor-cards.html',
+        pageTitle: 'Advisor Cards',
+        cardData: factionAdvisors,
     })
 
     generateCardPrintPages({
         template: 'page-cards-print',
-        dest: './public/cards-print.html',
-        cardData: unitCardData,
+        dest: './public/unit-cards-print.html',
+        pageTitle: 'Unit Cards',
+        cardData: allUnits,
     })
 
     generateCardPrintPages({
         template: 'page-cards-print',
         dest: './public/advisor-cards-print.html',
         pageTitle: 'Advisor Cards',
-        cardData: advisorCardData,
+        cardData: allAdvisors,
     })
 
     generateArmyListPages({
+        dest: './public/army-lists.html',
         armyListData: {
             armyLists,
         },

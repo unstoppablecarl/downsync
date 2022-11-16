@@ -3,7 +3,7 @@
 <head>
     <title>{{pageTitle}}</title>
 
-    <link rel="stylesheet" type="text/css" href="css/page-cards-print.css">
+    <link rel="stylesheet" type="text/css" href="css/page-index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,20 +13,11 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap">
 </head>
-<body class="page-background">
-<div class="output-container" id="output-container">
+<body>
+<div class="web-cards">
 
-    {{#each cardPages as |cardPage|}}
+    {{> nav}}
 
-    <page class="page page-preview" size="Letter" style="background-color:white">
-        <div class="page-card-inner">
-            {{#each cardPage as |cardData|}}
-
-                {{> (lookup cardData 'template') cardData}}
-            {{/each}}
-        </div>
-    </page>
-    {{/each}}
 </div>
 </body>
 </html>

@@ -1,8 +1,8 @@
 $scale: 1.5;
 
-@import 'base.scss';
-@import 'page.scss';
+@import 'base';
 @import 'page-cards';
+@import 'nav.scss';
 
 .web-cards {
     h1 {

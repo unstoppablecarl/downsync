@@ -5,16 +5,16 @@ import { chunk } from './util.js'
 export function generateCardPrintPages({
                                            pageTitle,
                                            cardData,
-                                           dest = './public/cards-print.html',
+                                           dest,
                                            cardsPerPage = 9,
                                        }) {
 
     let cardPages = chunk(cardData, cardsPerPage)
+
     let out = templates['page-cards-print']({
         cardPages,
         pageTitle,
     })
-
     fs.writeFileSync(dest, out, 'utf8')
 
 }
@@ -22,7 +22,7 @@ export function generateCardPrintPages({
 export function generateCards({
                                   pageTitle,
                                   cardData,
-                                  dest = './public/cards.html',
+                                  dest,
                               }) {
     let out = templates['page-cards']({
         pageTitle,
@@ -33,9 +33,22 @@ export function generateCards({
 
 }
 
+
+export function generateIndex({
+                                  pageTitle,
+                                  dest,
+                              }) {
+    let out = templates['page-index']({
+        pageTitle,
+    })
+
+    fs.writeFileSync(dest, out, 'utf8')
+
+}
+
 export function generateArmyListPages({
                                           armyListData,
-                                          dest = './public/army-lists.html',
+                                          dest,
                                       }) {
 
     let out = templates['page-army-lists'](armyListData)
