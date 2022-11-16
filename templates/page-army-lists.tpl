@@ -16,7 +16,7 @@
 <body class="page-background">
 <div class="output-container" id="output-container">
 
-    <page class="page-army-lists">
+    <page class="page page-preview page-army-lists" size="Letter" style="background-color:white">
         <div class="page-army-lists-inner">
 
             <h1>Army Lists</h1>
