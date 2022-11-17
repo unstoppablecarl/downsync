@@ -1,9 +1,6 @@
 import axios from 'axios'
 import diff from 'node-htmldiff'
 
-//let url1 = 'https://raw.githubusercontent.com/unstoppablecarl/downsync/master/public/cards.html'
-
-
 let file = 'unit-cards.html'
 
 let branchInput = document.getElementById('branch')
@@ -37,7 +34,7 @@ function click(event) {
 }
 
 function loadDiff(branch, reverse) {
-    let url1 = file
+    let url1 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/main/public/${file}`
     let url2 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/${branch}/public/${file}`
 
     Promise.all([
