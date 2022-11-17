@@ -3,7 +3,7 @@ import diff from 'node-htmldiff'
 
 let file = 'unit-cards.html'
 
-let branchInput = document.getElementById('branch')
+let targetInput = document.getElementById('target')
 let form = document.getElementById('compare-form')
 let reverseInput = document.getElementById('reverse')
 
@@ -11,34 +11,30 @@ form.addEventListener('submit', click)
 
 let queryParams = getQueryParams()
 
-if (queryParams.reverse) {
-    reverseInput.checked = true
-}
+reverseInput.checked = queryParams.reverse == 1
 
 if (queryParams.file) {
     file = queryParams.file + '.html'
 }
 
-if (queryParams.branch) {
+if (queryParams.target) {
 
-    loadDiff(queryParams.branch, reverseInput.checked)
-    branchInput.value = queryParams.branch
+    loadDiff(queryParams.target, reverseInput.checked)
+    targetInput.value = queryParams.target
 }
 
 function click(event) {
 
     event.preventDefault()
 
-    loadDiff(branchInput.value, reverseInput.checked)
-
+    loadDiff(targetInput.value, reverseInput.checked)
 }
 
-function loadDiff(branch, reverse) {
+function loadDiff(target, reverse) {
     let url1 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/main/public/${file}`
-    let url2 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/${branch}/public/${file}`
+    let url2 = `https://raw.githubusercontent.com/unstoppablecarl/downsync/${target}/public/${file}`
 
     Promise.all([
-
             axios.get(url1),
             axios.get(url2),
         ])
@@ -57,15 +53,8 @@ function loadDiff(branch, reverse) {
         })
 }
 
-
 function getQueryParams() {
     return new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     })
 }
-
-
-function tagUrl(file) {
-    return `https://raw.githubusercontent.com/unstoppablecarl/downsync/v0/public/${file}.html`
-}
-
