@@ -29,7 +29,7 @@ function click(event) {
 
     event.preventDefault()
 
-    loadDiff(branchInput.value, reverseInput.value)
+    loadDiff(branchInput.value, reverseInput.checked)
 
 }
 
