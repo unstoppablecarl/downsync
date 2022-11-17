@@ -3,6 +3,7 @@ import diff from 'node-htmldiff'
 
 //let url1 = 'https://raw.githubusercontent.com/unstoppablecarl/downsync/master/public/cards.html'
 
+
 let file = 'unit-cards.html'
 
 let branchInput = document.getElementById('branch')
@@ -26,7 +27,6 @@ if (queryParams.branch) {
     loadDiff(queryParams.branch, reverseInput.checked)
     branchInput.value = queryParams.branch
 }
-
 
 function click(event) {
 
@@ -67,4 +67,8 @@ function getQueryParams() {
     })
 }
 
+
+function tagUrl(file) {
+    return `https://raw.githubusercontent.com/unstoppablecarl/downsync/v0/public/${file}.html`
+}
 

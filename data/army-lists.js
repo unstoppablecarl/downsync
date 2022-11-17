@@ -58,7 +58,7 @@ export const coalitionArmyList = make('Coalition', [
     },
 ])
 
-export const republicArmyList = make('Holy Republic of Man', [
+export const republicArmyList = make('Republic of Man', [
     {
         unit: CLEANSER_TEAM,
         count: 4,
@@ -89,7 +89,60 @@ export const republicArmyList = make('Holy Republic of Man', [
     },
 ])
 
+export const coalitionDemoList = make('Coalition Demo', [
+    {
+        unit: SENTINEL_TAGGER,
+        count: 1,
+    },
+    {
+        unit: SENTINEL_HUNTER,
+        count: 1,
+    },
+    {
+        unit: VIRAGO_TANK,
+        count: 2,
+    },
+    {
+        unit: PHANTOM,
+        count: 1,
+    },
+    {
+        unit: GUARDIAN_DESTROYER,
+        count: 1,
+    },
+])
+
+export const republicDemoList = make('Republic of Man Demo', [
+    {
+        unit: HARBINGER_MEDIUM_RECON,
+        count: 1,
+    },
+    {
+        unit: CLEANSER_TEAM,
+        count: 2,
+    },
+    {
+        unit: VECTOR_TEAM,
+        count: 1,
+    },
+    {
+        unit: COURIER_TRANSPORT,
+        count: 1,
+    },
+    {
+        unit: CRUSADER_MEDIUM_TANK,
+        count: 2,
+    },
+    {
+        unit: SAMSON_HEAVY_TANK,
+        count: 1,
+    },
+])
+
 export const armyLists = [
+    coalitionDemoList,
+    republicDemoList,
+
     coalitionArmyList,
     republicArmyList,
 ]

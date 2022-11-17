@@ -2,14 +2,14 @@ $scale: 1.5;
 
 @import 'base';
 @import 'page-cards';
-@import 'nav.scss';
+@import 'nav';
 
 .web-cards {
     h1 {
         padding-left: 20px;
     }
 
-    .web-faction-cards {
+    .faction-cards {
         display: flex;
         flex-flow: row wrap;
         padding: 0 10px;

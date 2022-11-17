@@ -35,11 +35,11 @@
                 <tbody>
 
                 {{#each list}}
-                <tr>
-                    <th>{{unit.name}}</th>
-                    <td>{{unit.signature}}</td>
-                    <td>{{count}}</td>
-                </tr>
+                    <tr>
+                        <th>{{unit.name}} {{#if unit.variant_name}}:{{/if}}{{unit.variant_name}}</th>
+                        <td>{{unit.signature}}</td>
+                        <td>{{count}}</td>
+                    </tr>
                 {{/each}}
                 <tr>
                     <th colspan="2">Total</th>

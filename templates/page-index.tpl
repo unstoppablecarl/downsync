@@ -14,9 +14,11 @@
           href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap">
 </head>
 <body>
+{{> nav}}
+
+
 <div class="web-cards">
 
-    {{> nav}}
 
 </div>
 </body>

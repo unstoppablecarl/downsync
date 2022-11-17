@@ -83,7 +83,7 @@ page[size="Letter"] {
   align-content: flex-start;
   padding: 32pt 48pt; }
 
-.web-cards .web-faction-cards {
+.web-cards .faction-cards {
   display: flex;
   flex-flow: row wrap; }
 

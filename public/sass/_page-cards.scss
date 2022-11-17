@@ -15,7 +15,7 @@ $margin: 4pt * $scale;
 }
 
 .web-cards {
-    .web-faction-cards {
+    .faction-cards {
         display: flex;
         flex-flow: row wrap;
     }
@@ -42,16 +42,12 @@ $margin: 4pt * $scale;
     font-family: $serif;
     margin: -1px 0 0 -1px;
     border: 1px solid $mid-grey;
-
-    //&.card-advisor {
-    //    height: auto;
-    //}
 }
 
 .card-advisor {
     .command-abilities {
         .key {
-            font-size: 5.5pt;
+            font-size: 5.5pt * $scale;
         }
     }
 }
