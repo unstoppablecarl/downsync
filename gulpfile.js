@@ -1,55 +1,83 @@
-import nodeSass from 'node-sass'
+'use strict'
+
 import gulp from 'gulp'
-import gulpSass from 'gulp-sass'
-import sourcemaps from 'gulp-sourcemaps'
-import { exec } from 'child_process'
-import util from 'util'
+import yargs from 'yargs'
+import c from 'ansi-colors'
+import './tasks/clean.js'
+import './tasks/notify.js'
+import './tasks/scripts.js'
+import './tasks/styles.js'
+import './tasks/views.js'
+import './tasks/images.js'
+import './tasks/webserver.js'
 
-const sass = gulpSass(nodeSass)
+const argv = yargs().argv
+const production = !!argv.production
 
-export const renderSass = function () {
-    return gulp.src([
-            './public/sass/page-index.scss',
-            './public/sass/page-cards-print.scss',
-            './public/sass/page-cards-web.scss',
-            './public/sass/page-army-lists.scss',
-        ])
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./public/css'))
+if (production) {
+  console.log(c.green.bold.underline('🚚 Production mode'))
+} else {
+  console.log(c.yellow.bold.underline('🔧 Development mode'))
 }
 
-export function buildCode() {
-
-    const execPromise = util.promisify(exec)
-
-    return execPromise('npm run build --color always')
+const paths = {
+  dist: './dist/',
+  views: {
+    src: './src/views/templates/**/*.hbs',
+    pages: './src/views/templates/',
+    partials: './src/views/partials/',
+    helpers: './src/views/helpers/',
+    data: './src/views/data',
+    dist: './dist/',
+    watch: './src/**/*.{hbs,js}',
+  },
+  styles: {
+    src: './src/sass/*.{scss,sass}',
+    dist: './dist/assets/css/',
+    watch: './src/sass/**/*.{scss,sass}',
+  },
+  scripts: {
+    src: './src/js/main.js',
+    dist: './dist/assets/js/',
+    watch: './src/js/**/*.js',
+  },
+  assets: {
+    dist: './dist/assets/',
+  },
+  images: {
+    src: './images/**/*',
+    dist: './dist/assets/img',
+  },
 }
 
-export const watchSass = function () {
-    return gulp.watch([
-        './public/sass/*.scss',
-        './public/sass/**/*.scss',
-    ], { events: 'all' }, renderSass)
+const config = {
+  production: production,
+  plumber: {
+    errorHandler: function (error) {
+      console.log(c.red(error.message))
+      this.emit('end')
+    },
+  },
 }
 
-export const watchCode = function () {
-    return gulp.watch([
-        './src/*.js',
-        './src/**/*.js',
-        './data/*.js',
-        './data/**/*.js',
-        './templates/*.tpl',
-        './templates/*',
-        './templates/**/*.tpl',
-    ], { events: 'all' }, buildCode)
-}
+// -------------------------------------
+//   All tasks
+// -------------------------------------
 
-export const watch = () => {
-    buildCode()
-    renderSass()
+// -------------------------------------
+//   Task: default
+// -------------------------------------
 
-    watchCode()
-    watchSass()
-}
+gulp.task('default',
+    gulp.series('clean', gulp.parallel('styles', 'scripts', 'views', 'images'), 'server'))
+
+
+// -------------------------------------
+//   Task: build
+// -------------------------------------
+
+gulp.task(
+    'build',
+    gulp.series('clean', gulp.parallel('styles', 'scripts', 'views', 'images'), 'say:build'))
+
+export { paths, config }

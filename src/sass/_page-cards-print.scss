@@ -1,0 +1,7 @@
+$scale: 1;
+
+@import 'page-cards';
+
+.print-cards {
+    @include pageCards($scale, $serif)
+}

@@ -1,0 +1,22 @@
+{{> header title="Page Cards"}}
+<body class="page-background">
+
+<div class="no-print">
+    {{> nav}}
+</div>
+
+<div class="output-container print-cards">
+    {{#each cardPages as |cardPage|}}
+
+        <div class="page page-preview page-letter" style="background-color:white">
+            <div class="page-card-inner">
+                {{#each cardPage as |cardData|}}
+
+                    {{> (lookup cardData 'template') cardData}}
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</div>
+</body>
+{{> footer }}

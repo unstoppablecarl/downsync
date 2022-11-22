@@ -1,0 +1,19 @@
+{{> header title="Page Cards"}}
+<body>
+
+{{> nav}}
+
+<div class="web-cards output-container">
+    {{#each cardData}}
+        <h1>{{faction}}</h1>
+
+        <div class="faction-cards">
+
+            {{#each factionCards as |singleCardData|}}
+                {{> (lookup singleCardData 'template') singleCardData}}
+            {{/each}}
+        </div>
+    {{/each}}
+</div>
+</body>
+{{> footer }}
