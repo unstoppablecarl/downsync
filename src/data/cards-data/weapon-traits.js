@@ -1,5 +1,5 @@
-import { keywordFormat } from '../support/text-formatters.js'
 import { joinTypes } from '../support/util.js'
+import { makeTrait } from '../support/factories.js'
 
 export const TRAIT_FIRE_SUPPORT = make({
     name: 'Fire Support',
@@ -25,9 +25,9 @@ export const TRAIT_DISTRIBUTED = make({
     desc: 'Each attack from this action must have a different target.',
 })
 
-export const TRAIT_TARGET_LOCK_EFFECT = make({
-    name: 'Target Lock',
-    desc: 'Units hit by this weapon suffer the LOCK effect (-2 DEF until the end of this Taskforce Activation or Reaction Engagement). A unit can only be target locked once.',
+export const TRAIT_TAGGED_EFFECT = make({
+    name: 'Tagged',
+    desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A unit can only be Tagged once.',
 })
 
 export const TRAIT_LIMITED_VS = (types) => {
@@ -50,6 +50,12 @@ export const TRAIT_ADVANCED = makeCMMod('Advanced', '4+')
 export const TRAIT_SMART = makeCMMod('Smart', '5+')
 export const TRAIT_OVERKILL = makeCMMod('Overkill', '6+')
 
+export const TRAIT_DEPLOY_SPIDER_DRONES = make({
+    name: 'Drone Carrier',
+    note: 'Spider Drone x 2',
+    desc: 'Place 2 Spider Drone Units within 3" of this Unit. The Spider Drones gain a Stealth Token and are not part of the current Taskforce. This action can only be used once per game.',
+})
+
 function makeCMMod(name, TN) {
     return make({
         name,
@@ -65,13 +71,13 @@ export const EXTREME_RANGE = make({
 
 export const CLOSE_COMBAT = make({
     name: 'Close Combat',
-    desc: 'Ignores short range modifiers.',
+    desc: 'Ignores short range modifiers and Concealment.',
 })
 
 
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',
-    desc: 'Attacks from this weapon can use the LOS of infantry units in the same Taskforce.',
+    desc: 'Attacks from this weapon can use the LOS of infantry bases in this unit.',
 })
 
 
@@ -85,7 +91,5 @@ export const PLACE_EFFECT = (distance) => {
 
 
 function make(trait) {
-    trait.note = keywordFormat(trait.note)
-    trait.desc = keywordFormat(trait.desc)
-    return trait
+    return makeTrait(trait)
 }

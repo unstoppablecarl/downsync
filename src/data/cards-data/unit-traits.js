@@ -1,15 +1,15 @@
-import { keywordFormat } from '../support/text-formatters.js'
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
+import { makeTrait } from '../support/factories.js'
 
-export const PATROL = make({
-    name: 'Patrol',
-    note: `COST: ${COST_COMMAND}, movement phase`,
-    desc: 'This unit immediately gains an Overwatch Token if it is performing a double move.',
+export const GO_DARK_ON_REFRESH = make({
+    name: 'Hide',
+    note: `COST: ${COST_COMMAND}, Refresh Phase`,
+    desc: 'When this Unit is Refreshed it gains a Stealth Token.  This Unit cannot Hide if it is within 3" of an enemy Unit.',
 })
 
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
-    note: `COST: ${COST_COMMAND}, movement phase`,
+    note: `COST: ${COST_COMMAND}, Movement phase`,
     desc: 'While within 8" units in the same Taskforce gain All Terrain.',
 })
 
@@ -28,7 +28,6 @@ export const FINISHER = make({
     desc: `This Unit gains +1 TARG against targets that currently have zero Countermeasures.`,
 })
 
-
 export const DEFENSE_NET = (type) => {
     return make({
         name: 'Defense Net',
@@ -43,8 +42,8 @@ export const DEFENSE_AURA = make({
     desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls.',
 })
 
-export const ACTIVE_CAMO = make({
-    name: 'Active Camo',
+export const ADAPTIVE_CAMO = make({
+    name: 'Adaptive Camo',
     note: '+1 DEF',
     desc: 'When concealed this unit gains an additional +1 DEF.',
 })
@@ -60,15 +59,9 @@ export const AMBUSH_COORDINATOR = make({
     desc: `When this unit uses Ambush, target friendly small or medium ping within 4" may also use the Ambush ability.`,
 })
 
-export const HIT_AND_RUN = make({
-    name: 'Hit & Run',
-    desc: 'After resolving an attack action, this unit may make a move up to its SPD.',
-})
-
-export const REVEAL_PLUS_2_TARG = make({
-    name: 'Reveal',
-    note: '+2 TARG',
-    desc: 'When revealed this Unit gains +2 TARG until the end of this Taskforce Activation or Reaction Engagement.',
+export const INFANTRY_SQUAD = make({
+    name: 'Infantry Squad',
+    desc: 'This Unit is composed of 3 Infantry teams on separate infantry bases that activate together. They are indicated as T1, T2, and T3 above.',
 })
 
 export const PREDATOR = make({
@@ -99,25 +92,12 @@ export const SCATTER = make({
 
 export const SENTRY = make({
     name: 'Sentry',
-    note: `COST: ${COST_COMMAND}, before reaction roll`,
-    desc: 'This unit gains +1 to reaction rolls and +1 ROF for its attacks until the end of this Reaction Engagement.',
+    desc: 'This unit gains +1 to reaction rolls.',
 })
 
 export const ALL_TERRAIN = make({
     name: 'All Terrain',
     desc: 'This unit ignores terrain movement penalties.',
-})
-
-export const POOR_OPTICS = make({
-    name: 'POOR OPTICS',
-    note: '-2 TARG without FO',
-    desc: 'This unit suffers -2 TARG when resolving attacks without a Forward Observer.',
-})
-
-export const SPEED_BOOST = make({
-    name: 'Speed Boost',
-    note: `COST: ${COST_COMMAND}, movement phase`,
-    desc: 'Taskforce units within 6" may add any number of +1 SPD modifiers, up to a total of 6 between all units. All modifiers are removed at the end of this taskforce activation.',
 })
 
 export const DEADLY_VS = (type) => {
@@ -128,16 +108,12 @@ export const DEADLY_VS = (type) => {
     })
 }
 
-export const INFANTRY_TRANSPORT = (count) => {
-    return make({
-        name: 'Transport',
-        note: `${TYPE_INFANTRY} x ${count}`,
-    })
-}
+export const INFANTRY_TRANSPORT = make({
+    name: 'Transport',
+    note: `Small SIG ${TYPE_INFANTRY}`,
+    desc: `This Unit may start the game transporting a small SIG Infantry Unit from your force. Do not deploy that unit's Ping Template at the beginning of the game.`,
+})
 
-function make(ability) {
-    ability.desc = keywordFormat(ability.desc)
-    ability.note = keywordFormat(ability.note)
-
-    return ability
+function make(trait) {
+    return makeTrait(trait)
 }

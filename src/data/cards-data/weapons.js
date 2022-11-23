@@ -8,7 +8,7 @@ import {
     TRAIT_OVERKILL,
     TRAIT_SMART,
     TRAIT_SPECIALIZED_VS,
-    TRAIT_TARGET_LOCK_EFFECT,
+    TRAIT_TAGGED_EFFECT,
 } from './weapon-traits.js'
 import {
     COST_ACTION,
@@ -18,6 +18,8 @@ import {
     TYPE_INFANTRY,
 } from '../constants.js'
 import { DEADLY_VS } from './unit-traits.js'
+import { keywordFormat } from '../support/text-formatters.js'
+import { makeTrait } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -38,15 +40,36 @@ export const MEDIUM_CANNON = make({
     traits: [],
 })
 
-export const TAGGING_AUTOCANNON = make({
-    name: 'Tagging Autocannon',
-    cost: COST_ACTION_OR_COMMAND,
-    range: 16,
-    rof: 3,
-    effect: 'lock',
+export const DEPLOY_DRONES = make({
+    name: 'Deploy Drones',
+    cost: COST_COMMAND,
+    range: 3,
+    effect: '&starf;',
     traits: [
-        TRAIT_TARGET_LOCK_EFFECT,
+        makeTrait({
+            name: 'Drone Carrier',
+            note: 'Spider Drone x 2',
+            desc: 'Place 2 Spider Drone Units within 3" of this Unit. The Spider Drones gain a Stealth Token and are not part of the current Taskforce. This action can be used once per game.',
+        }),
     ],
+})
+
+export const TAG_CANNON = make({
+    name: 'Tag Cannon',
+    range: 16,
+    rof: 2,
+    effect: 'STUN',
+    traits: [
+        TRAIT_TAGGED_EFFECT,
+    ],
+})
+
+export const TARGET_LOCK = make({
+    name: 'Target Lock',
+    cost: COST_COMMAND,
+    rof: 1,
+    effect: '&starf;',
+    desc: 'Select an enemy Unit in LOS. It suffers -2 DEF until the end of this Taskforce Activation. A unit may only be Target Locked once. This action can be used once per activation.',
 })
 
 export const LMG = make({
@@ -76,18 +99,14 @@ export const HMG = make({
     traits: [],
 })
 
-export const SMALL_ARMS = make({
-    name: 'Small Arms',
-    range: 6,
-    rof: 2,
-})
-
-export const ADVANCED_SMALL_ARMS = make({
-    name: 'Adv. Small Arms',
-    range: 6,
-    rof: 2,
+export const SHOCK_RIFLE = make({
+    name: 'Shock Rifle',
+    note: 'T1 and T2',
+    range: 10,
+    effect: 'STUN',
+    rof: 1,
     traits: [
-        TRAIT_ADVANCED,
+        DEADLY_VS(TYPE_INFANTRY),
     ],
 })
 
@@ -140,7 +159,6 @@ export const HEAVY_ARTILLERY = make({
     ],
 })
 
-
 export const CONCUSSION_ARTILLERY = make({
     name: 'Concussion Artillery',
     range: null,
@@ -171,7 +189,7 @@ export const RAILGUN = make({
     ],
 })
 
-export const TANK_DESTROYER_CANNON = make({
+export const SMART_MED_CANNON = make({
     name: 'Smart Med. Cannon',
     range: 24,
     rof: 2,
@@ -190,12 +208,13 @@ export const INFANTRY_PARTICLE_RIFLE = make({
     ],
 })
 
-export const HEAVY_AUTO_CANNON = make({
-    name: 'Smart Heavy Cannon',
-    range: 24,
-    rof: 3,
+export const CLAWS = make({
+    name: 'Claws',
+    range: 1,
+    rof: 1,
     traits: [
-        TRAIT_SMART,
+        TRAIT_SPECIALIZED_VS([TYPE_INFANTRY]),
+        CLOSE_COMBAT,
     ],
 })
 
@@ -204,9 +223,8 @@ export const POWER_TOOLS = make({
     range: 1,
     rof: 1,
     traits: [
-        TRAIT_SMART,
-        TRAIT_SPECIALIZED_VS([TYPE_INFANTRY]),
         CLOSE_COMBAT,
+        TRAIT_ADVANCED,
     ],
 })
 
@@ -220,7 +238,7 @@ export const INFANTRY_GUIDED_MISSILE = make({
     ],
 })
 
-export const MICRO_ARTILLERY = make({
+export const SHOCK_MICRO_ARTILLERY = make({
     name: 'Shock Micro Artillery',
     range: 16,
     rof: 2,
@@ -231,9 +249,19 @@ export const MICRO_ARTILLERY = make({
     ],
 })
 
+export const MICRO_ARTILLERY = make({
+    name: 'Micro Artillery',
+    note: 'T3',
+    range: 16,
+    rof: 1,
+    effect: 'KILL',
+    traits: [
+        TRAIT_INFANTRY_NETWORK,
+    ],
+})
 
-export const SHOCK_RIFLE = make({
-    name: 'Shock Rifle',
+export const SNIPER_RIFLE = make({
+    name: 'Sniper Rifle',
     range: 24,
     rof: 2,
     effect: 'STUN',
@@ -249,6 +277,7 @@ export function SNAP_FIRE(weapon) {
         name: 'Snap Fire',
         cost: COST_COMMAND,
         rof: 1,
+        desc: 'This attack can only target an Infantry unit within 3" of your last attack target.',
     })
 
     return make(newWeapon)
@@ -260,6 +289,7 @@ function make(weapon) {
         target: 'Unit',
         effect: 'kill',
         traits: [],
+        desc: '',
     }
 
     let result = Object.assign(defaults, weapon)
@@ -275,6 +305,8 @@ function make(weapon) {
     }
 
     result.traits.map((trait) => Object.assign({}, trait))
+
+    result.desc = keywordFormat(result.desc)
 
     return result
 }

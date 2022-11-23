@@ -83,3 +83,12 @@ export function makeCommandAbility(ability) {
 
     return result
 }
+
+export function makeTrait(trait) {
+
+    let descKeywords = trait.desc_keywords || [trait.name]
+
+    trait.note = keywordFormat(trait.note)
+    trait.desc = keywordFormat(trait.desc, descKeywords)
+    return trait
+}

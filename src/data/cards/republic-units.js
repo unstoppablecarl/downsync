@@ -1,26 +1,25 @@
-import { SIZE_LARGE, SIZE_MEDIUM, TYPE_INFANTRY } from '../constants.js'
+import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL, TYPE_INFANTRY } from '../constants.js'
 import {
     ADVANCED_CANNON,
     CANNON,
     CONCUSSION_ARTILLERY,
     HEAVY_ARTILLERY,
-    HEAVY_AUTO_CANNON,
-    INFANTRY_GUIDED_MISSILE,
     MEDIUM_CANNON,
     MG,
     MICRO_ARTILLERY,
     SHOCK_AUTOCANNON,
     SHOCK_RIFLE,
-    SMALL_ARMS,
+    SMART_MED_CANNON,
     SNAP_FIRE,
+    SNIPER_RIFLE,
 } from '../cards-data/weapons.js'
 import {
-    ACTIVE_CAMO,
+    ADAPTIVE_CAMO,
     ALL_TERRAIN,
     COUNTERMEASURE_DEFEND,
     FINISHER,
+    INFANTRY_SQUAD,
     INFANTRY_TRANSPORT,
-    POOR_OPTICS,
     PREDATOR,
     REVEAL_AND_DEPLOY,
 } from '../cards-data/unit-traits.js'
@@ -34,22 +33,42 @@ export const REPUBLIC_CARD_DEFAULTS = {
 
 export const CLEANSER_TEAM = make({
     slug: 'cleanser_team',
-    name: 'Cleanser Team',
+    name: 'Cleanser Squad',
     signature: null,
-    type: 'Infantry Fire Team',
+    type: 'Infantry Team x 3',
     speed: 4,
     targeting: 6,
     defense: 13,
     actions: [
-        SMALL_ARMS,
-        FORWARD_OBSERVE,
-        INFANTRY_GUIDED_MISSILE,
+        SHOCK_RIFLE,
+        MICRO_ARTILLERY,
     ],
     traits: [
-        ACTIVE_CAMO,
+        ADAPTIVE_CAMO,
         ALL_TERRAIN,
+        INFANTRY_SQUAD,
     ],
 })
+
+
+//export const CLEANSER_TEAM = make({
+//    slug: 'cleanser_team',
+//    name: 'Cleanser Team',
+//    signature: null,
+//    type: 'Infantry Fire Team',
+//    speed: 4,
+//    targeting: 6,
+//    defense: 13,
+//    actions: [
+//        SHOCK_RIFLE,
+//        //FORWARD_OBSERVE,
+//        //INFANTRY_GUIDED_MISSILE,
+//    ],
+//    traits: [
+//        ACTIVE_CAMO,
+//        ALL_TERRAIN,
+//    ],
+//})
 
 export const VECTOR_TEAM = make({
     slug: 'vector_team',
@@ -63,12 +82,11 @@ export const VECTOR_TEAM = make({
         MICRO_ARTILLERY,
     ],
     traits: [
-        ACTIVE_CAMO,
+        ADAPTIVE_CAMO,
         ALL_TERRAIN,
     ],
     definitions: [],
 })
-
 
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
@@ -80,10 +98,10 @@ export const SEEKER_TEAM = make({
     defense: 13,
     actions: [
         SCAN(2, 12),
-        SHOCK_RIFLE,
+        SNIPER_RIFLE,
     ],
     traits: [
-        ACTIVE_CAMO,
+        ADAPTIVE_CAMO,
         ALL_TERRAIN,
         PREDATOR,
     ],
@@ -96,20 +114,20 @@ export const COURIER_TRANSPORT = make({
     bg: 'courier.png',
     signature: SIZE_MEDIUM,
     type: 'Medium Infantry Transport',
-    speed: 7,
+    speed: 6,
     targeting: 6,
     defense: 13,
     scan: 6,
     cm: 2,
     cm_regen: 2,
     actions: [
-        SCAN(1, 12),
+        SCAN(1, 10),
         CANNON,
         TRANSPORT_UNLOAD,
         TRANSPORT_LOAD,
     ],
     traits: [
-        INFANTRY_TRANSPORT(3, TYPE_INFANTRY),
+        INFANTRY_TRANSPORT,
         COUNTERMEASURE_DEFEND(TYPE_INFANTRY),
     ],
 })
@@ -118,7 +136,7 @@ export const HARBINGER_MEDIUM_RECON = make({
     slug: 'harbinger',
     name: 'Harbinger',
     bg: 'scorpion.png',
-    signature: SIZE_MEDIUM,
+    signature: SIZE_SMALL,
     type: 'Medium Recon Vehicle',
     speed: 7,
     targeting: 6,
@@ -142,7 +160,7 @@ export const CRUSADER_MEDIUM_TANK = make({
     signature: SIZE_MEDIUM,
     type: 'Medium Tank',
     speed: 7,
-    targeting: 6,
+    targeting: 7,
     defense: 13,
     scan: null,
     cm: 2,
@@ -170,9 +188,7 @@ export const MANDIBLE = make({
         CONCUSSION_ARTILLERY,
         HEAVY_ARTILLERY,
     ],
-    traits: [
-        POOR_OPTICS,
-    ],
+    traits: [],
     definitions: [],
 })
 
@@ -183,14 +199,14 @@ export const SAMSON_HEAVY_TANK = make({
     signature: SIZE_LARGE,
     type: 'Heavy Tank',
     speed: 5,
-    targeting: 6,
+    targeting: 7,
     defense: 12,
     scan: null,
     cm: 3,
     cm_regen: 3,
     actions: [
-        HEAVY_AUTO_CANNON,
-        SNAP_FIRE(HEAVY_AUTO_CANNON),
+        SMART_MED_CANNON,
+        SNAP_FIRE(SMART_MED_CANNON),
     ],
     traits: [
         PREDATOR,
@@ -238,6 +254,7 @@ export const REPUBLIC_UNITS = [
 
 export const REPUBLIC_DEMO_UNITS = [
     CLEANSER_TEAM,
+    VECTOR_TEAM,
     COURIER_TRANSPORT,
     HARBINGER_MEDIUM_RECON,
     CRUSADER_MEDIUM_TANK,

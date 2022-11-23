@@ -1,35 +1,34 @@
 import {
     CANNON,
+    CLAWS,
+    DEPLOY_DRONES,
     DOUBLE_CANNON,
     FUSION_CANNON,
     HMG,
     MEDIUM_CANNON,
     MG,
-    POWER_TOOLS,
     RAILGUN,
     REPAIR_RENCH,
+    SMART_MED_CANNON,
     SMART_SMALL_ARMS,
-    TAGGING_AUTOCANNON,
-    TANK_DESTROYER_CANNON,
+    TAG_CANNON,
+    TARGET_LOCK,
 } from '../cards-data/weapons.js'
 import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL, TYPE_VEHICLE } from '../constants.js'
 
 import {
-    ACTIVE_CAMO,
+    ADAPTIVE_CAMO,
     ALL_TERRAIN,
     AMBUSH,
-    AMBUSH_COORDINATOR,
     CLEAR_THE_WAY,
     DEFENSE_AURA,
-    PATROL,
+    GO_DARK_ON_REFRESH,
     REVEAL_AND_DEPLOY,
-    RUSH,
-    SCATTER,
     SENTRY,
 } from '../cards-data/unit-traits.js'
 
-import { SHROUD_TEMPLATE } from '../definitions.js'
-import { BASIC_SCAN, SCAN, SHROUD, SPOTTER } from '../cards-data/actions.js'
+import { NOTE_STEALTH_TOKEN, SHROUD_TEMPLATE } from '../definitions.js'
+import { BASIC_SCAN, GO_DARK, PATROL, SCAN, SHROUD, SPOTTER } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 
 export const COALITION_CARD_DEFAULTS = {
@@ -39,19 +38,20 @@ export const COALITION_CARD_DEFAULTS = {
 
 export const RECON_SCOUT = make({
     slug: 'scout',
-    name: 'Scout',
+    name: 'Widow Scout',
     bg: 'scout.png',
     signature: SIZE_SMALL,
     type: 'Light Recon ' + TYPE_VEHICLE,
     speed: 8,
-    targeting: 7,
+    targeting: 5,
     defense: 14,
     scan: 7,
     cm: 1,
     cm_regen: 1,
     actions: [
-        SCAN(3, 12),
+        SCAN(3, 14),
         MG,
+        DEPLOY_DRONES,
     ],
     traits: [],
 })
@@ -64,15 +64,14 @@ export const SENTINEL_TAGGER = make({
     signature: SIZE_SMALL,
     type: 'Light ' + TYPE_VEHICLE,
     speed: 8,
-    targeting: 7,
+    targeting: 6,
     defense: 14,
-    scan: 7,
+    scan: null,
     cm: 1,
     cm_regen: 1,
     actions: [
         BASIC_SCAN,
-        CANNON,
-        TAGGING_AUTOCANNON,
+        TAG_CANNON,
     ],
     traits: [],
 })
@@ -104,18 +103,17 @@ export const VIRAGO_TANK = make({
     signature: SIZE_MEDIUM,
     type: 'Medium Tank',
     speed: 6,
-    targeting: 7,
+    targeting: 6,
     defense: 13,
     scan: 6,
     cm: 2,
-    cm_regen: 1,
+    cm_regen: 2,
     actions: [
         BASIC_SCAN,
         MEDIUM_CANNON,
-    ],
-    traits: [
         PATROL,
     ],
+    traits: [],
 })
 
 export const AURORA = make({
@@ -137,7 +135,7 @@ export const AURORA = make({
         SHROUD(12, 1),
     ],
     traits: [
-        ACTIVE_CAMO,
+        ADAPTIVE_CAMO,
         DEFENSE_AURA,
     ],
     definitions: [
@@ -153,7 +151,7 @@ export const PHANTOM = make({
     signature: SIZE_MEDIUM,
     type: 'Ground Support ' + TYPE_VEHICLE,
     speed: 6,
-    targeting: 7,
+    targeting: 5,
     defense: 13,
     scan: 6,
     cm: 1,
@@ -161,11 +159,12 @@ export const PHANTOM = make({
     actions: [
         BASIC_SCAN,
         DOUBLE_CANNON,
+        TARGET_LOCK,
     ],
     traits: [
-        ACTIVE_CAMO,
+        ADAPTIVE_CAMO,
         AMBUSH,
-        AMBUSH_COORDINATOR,
+        //AMBUSH_COORDINATOR,
     ],
 })
 
@@ -200,14 +199,14 @@ export const GUARDIAN_DESTROYER = make({
     signature: SIZE_LARGE,
     type: 'Heavy Tank',
     speed: 4,
-    targeting: 7,
-    defense: 12,
+    targeting: 6,
+    defense: 13,
     scan: null,
     cm: 3,
-    cm_regen: 2,
+    cm_regen: 3,
     actions: [
         HMG,
-        TANK_DESTROYER_CANNON,
+        SMART_MED_CANNON,
     ],
     traits: [
         SENTRY,
@@ -215,24 +214,26 @@ export const GUARDIAN_DESTROYER = make({
     ],
 })
 
-export const SPIDER_DRONE_INFANTRY = make({
+export const SPIDER_DRONE_ASSASSIN = make({
     slug: 'spider_drone_pack',
-    name: 'Spider Drone Pack',
+    name: 'Spider Drone',
     bg: 'spider-drone.png',
     signature: SIZE_SMALL,
-    type: 'Robotic Infantry x 4',
-    speed: 5,
-    targeting: 7,
+    type: 'Robotic Infantry',
+    speed: 6,
+    targeting: 6,
     defense: 14,
     scan: null,
     actions: [
-        POWER_TOOLS,
+        CLAWS,
+        GO_DARK,
     ],
     traits: [
-        SCATTER,
-        RUSH,
-        REVEAL_AND_DEPLOY(4, 'Spider Drone'),
+        GO_DARK_ON_REFRESH,
         ALL_TERRAIN,
+    ],
+    definitions: [
+        NOTE_STEALTH_TOKEN,
     ],
 })
 
@@ -265,7 +266,8 @@ export const COALITION_UNITS = [
     PHANTOM,
     GUARDIAN_DESTROYER,
     GUARDIAN_MARKSMAN,
-    SPIDER_DRONE_INFANTRY,
+    SPIDER_DRONE_ASSASSIN,
+    RNR_INFANTRY,
 ]
 
 export const COALITION_DEMO_UNITS = [
@@ -274,7 +276,7 @@ export const COALITION_DEMO_UNITS = [
     VIRAGO_TANK,
     PHANTOM,
     GUARDIAN_DESTROYER,
-    SPIDER_DRONE_INFANTRY,
+    SPIDER_DRONE_ASSASSIN,
 ]
 
 function make(unit) {
