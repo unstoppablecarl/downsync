@@ -6,7 +6,7 @@
     "main": "build.js",
     "scripts": {
         "dev": "gulp",
-        "build": "node ./bin/build",
+        "build": "gulp build",
         "webp-build": "webpack --config webpack.config.js",
         "webp-watch": "webpack --config webpack.config.js --watch"
     },
