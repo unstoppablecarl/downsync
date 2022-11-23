@@ -17,7 +17,11 @@ export default function () {
 
         let target = path.resolve(tplDataFile)
         if (!fs.existsSync(target)) {
-            return Promise.resolve()
+            let contents = template({})
+
+            fs.writeFileSync(dest, contents, 'utf8')
+
+            return
         }
         import(target).then((tplData) => {
 

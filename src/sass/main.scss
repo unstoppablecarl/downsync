@@ -5,7 +5,9 @@
 @import 'page-cards-print';
 
 .faction-heading {
-    text-align: center;
+    //text-align: center;
+    margin-top: 2em;
+    border-bottom: 1px solid #808080;
 }
 
 .navbar-primary {
