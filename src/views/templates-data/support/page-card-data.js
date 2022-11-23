@@ -1,6 +1,6 @@
 import { chunk, getTimestamp } from '../../../data/support/util.js'
-import { COALITION_UNITS } from '../../../data/cards/coalition-units.js'
-import { REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
+import { COALITION_DEMO_UNITS, COALITION_UNITS } from '../../../data/cards/coalition-units.js'
+import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
 import { MERCENARY_UNITS } from '../../../data/cards/mercenary-units.js'
 
@@ -21,6 +21,16 @@ export const FACTION_UNITS = [
     },
 ]
 
+export const FACTION_DEMO_UNITS = [
+    {
+        faction: 'Coalition',
+        factionCards: prepareCards(COALITION_DEMO_UNITS),
+    },
+    {
+        faction: 'Republic of Man',
+        factionCards: prepareCards(REPUBLIC_DEMO_UNITS),
+    },
+]
 
 export const ALL_UNITS = FACTION_UNITS.flatMap((faction) => faction.factionCards)
 

@@ -1,4 +1,6 @@
-import { FACTION_UNITS } from './support/page-card-data.js'
+import { FACTION_DEMO_UNITS } from './support/page-card-data.js'
 
-export const cardData = FACTION_UNITS
+export const cardData = FACTION_DEMO_UNITS
+
+
 

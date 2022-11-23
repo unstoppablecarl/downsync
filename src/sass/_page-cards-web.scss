@@ -4,12 +4,7 @@ $scale: 1.5;
 
 .web-cards {
 
-    padding: 20px;
     @include pageCards($scale);
-
-    h1 {
-        padding-left: 20px;
-    }
 
     .faction-cards {
         display: flex;
