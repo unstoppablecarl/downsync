@@ -1,5 +1,4 @@
 import gulp from 'gulp'
-import yargs from 'yargs'
 import c from 'ansi-colors'
 
 import './tasks/clean.js'
@@ -10,8 +9,7 @@ import './tasks/views.js'
 import './tasks/images.js'
 import './tasks/webserver.js'
 
-const argv = yargs().argv
-const production = !!argv.production
+const production = process.argv.indexOf('--production') !== -1
 
 if (production) {
     console.log(c.green.bold.underline('🚚 Production mode'))

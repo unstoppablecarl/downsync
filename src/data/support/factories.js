@@ -19,7 +19,7 @@ export function makeUnit(unit) {
 export function makeAdvisor(advisor) {
 
     const defaults = {
-        bg: 'advisor-placeholder.svg',
+        bg: 'placeholders/advisor-placeholder.svg',
         template: 'advisor-card',
         actions: [],
         traits: [],

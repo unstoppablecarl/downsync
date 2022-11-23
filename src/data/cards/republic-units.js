@@ -177,7 +177,7 @@ export const CRUSADER_MEDIUM_TANK = make({
 export const MANDIBLE = make({
     slug: 'mandible',
     name: 'Mandible',
-    bg: 'mule.png',
+    bg: 'mandible.png',
     signature: SIZE_LARGE,
     type: 'Heavy Artillery',
     speed: 5,

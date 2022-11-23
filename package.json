@@ -6,7 +6,8 @@
     "main": "build.js",
     "scripts": {
         "dev": "gulp",
-        "build": "gulp build",
+        "build": "gulp build --production",
+        "build-views": "node ./bin/build.js",
         "webp-build": "webpack --config webpack.config.js",
         "webp-watch": "webpack --config webpack.config.js --watch"
     },
@@ -49,8 +50,7 @@
         "sass-loader": "^13.2.0",
         "style-loader": "^3.3.1",
         "webpack": "^5.75.0",
-        "webpack-stream": "^7.0.0",
-        "yargs": "^17.6.2"
+        "webpack-stream": "^7.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.20.2",
