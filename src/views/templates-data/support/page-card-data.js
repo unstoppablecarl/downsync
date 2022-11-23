@@ -21,6 +21,7 @@ export const FACTION_UNITS = [
     },
 ]
 
+
 export const ALL_UNITS = FACTION_UNITS.flatMap((faction) => faction.factionCards)
 
 export function cardsToPages(cards, cardsPerPage) {

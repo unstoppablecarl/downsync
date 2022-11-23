@@ -6,11 +6,6 @@ import webpackConfig from '../webpack.config.js'
 import browsersync from 'browser-sync'
 import { config, paths } from '../gulpfile.js'
 
-
-// -------------------------------------
-//   Task: scripts
-// -------------------------------------
-
 gulp.task('scripts', function () {
   webpackConfig.mode = config.production ? 'production' : 'development'
   webpackConfig.devtool = config.production ? false : 'source-map'

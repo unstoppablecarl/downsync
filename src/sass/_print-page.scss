@@ -40,11 +40,11 @@
 
 /* Center all content within a page */
 .page {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    //display: flex;
+    //align-content: center;
+    //justify-content: center;
+    //flex-direction: row;
+    //flex-wrap: wrap;
     page-break-after: always;
     padding: 0;
     // align-content: flex-start
@@ -52,5 +52,10 @@
     &.page-letter {
         width: 8.5 * 72pt;
         height: 11 * 72pt;
+
+        &.page-landscape {
+            width: 11 * 72pt;
+            height: 8.5 * 72pt;
+        }
     }
 }

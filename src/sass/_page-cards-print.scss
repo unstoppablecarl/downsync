@@ -3,5 +3,23 @@ $scale: 1;
 @import 'page-cards';
 
 .print-cards {
-    @include pageCards($scale, $serif)
+    @include pageCards($scale, $serif);
+}
+
+.page-landscape {
+    @include pageCards(1.34, $serif);
+
+    .page-card-inner {
+        padding: 36pt;
+    }
+
+    .card {
+        height: auto;
+        width: auto;
+    }
+
+    .card-content-container {
+
+        padding-bottom: 6pt;
+    }
 }

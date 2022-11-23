@@ -8,26 +8,17 @@ $margin: 4pt * $scale;
 
 @mixin pageCards($scale: 1, $serif) {
     .page-card-inner {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        align-content: flex-start;
+        //display: flex;
+        //flex-flow: row wrap;
+        //justify-content: flex-start;
+        //align-content: flex-start;
         padding: 32pt 48pt;
-    }
-
-    .web-cards {
-        .faction-cards {
-            display: flex;
-            flex-flow: row wrap;
-        }
-
-        .sub-footer {
-            display: none;
-        }
-
-        .card {
-            height: auto;
-        }
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
+        align-content: space-between;
+        justify-content: space-around;
+        gap: 0;
     }
 
     .card {

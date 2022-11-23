@@ -34,7 +34,7 @@ export const MERCENARY_UNITS = [
 function make(unit) {
     const defaults = {
         faction: 'Mercenaries',
-        icon: 'assets/icon-merc.svg',
+        icon: 'factions/icon-merc.svg',
     }
 
     unit = Object.assign({}, defaults, unit)

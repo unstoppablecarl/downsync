@@ -2,11 +2,6 @@ import gulp from 'gulp'
 import browsersync from 'browser-sync'
 import { paths } from '../gulpfile.js'
 
-
-// -------------------------------------
-//   Tast: server
-// -------------------------------------
-
 gulp.task('server', function (done) {
   browsersync.init({
     server: './dist/',

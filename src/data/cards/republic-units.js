@@ -235,6 +235,15 @@ export const REPUBLIC_UNITS = [
     SAMSON_HEAVY_TANK,
 ]
 
+
+export const REPUBLIC_DEMO_UNITS = [
+    CLEANSER_TEAM,
+    COURIER_TRANSPORT,
+    HARBINGER_MEDIUM_RECON,
+    CRUSADER_MEDIUM_TANK,
+    SAMSON_HEAVY_TANK,
+]
+
 export function make(unit) {
 
     unit = Object.assign({}, REPUBLIC_CARD_DEFAULTS, unit)

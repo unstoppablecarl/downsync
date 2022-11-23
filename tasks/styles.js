@@ -11,10 +11,6 @@ import sassCompiler from 'sass'
 
 const sass = gulpSass(sassCompiler)
 
-// -------------------------------------
-//   Task: styles
-// -------------------------------------
-
 gulp.task('styles', function () {
     return gulp.src(paths.styles.src)
         .pipe(plumber(config.plumber))
