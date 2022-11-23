@@ -16,6 +16,9 @@ export default function () {
         let tplDataFile = `${tplDataPath}/${key}.js`
 
         let target = path.resolve(tplDataFile)
+        if (!fs.existsSync(target)) {
+            return Promise.resolve()
+        }
         import(target).then((tplData) => {
 
             let contents = template(tplData)

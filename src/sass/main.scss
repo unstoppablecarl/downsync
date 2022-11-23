@@ -1,10 +1,17 @@
-//@import 'variables';
-//@import 'bootstrap/scss/bootstrap';
-@import 'base';
+@import 'lib/bootstrap';
+
 @import 'print-page';
 @import 'page-cards-web';
 @import 'page-cards-print';
-@import 'nav';
+
+.faction-heading {
+    text-align: center;
+}
+
+.navbar-primary {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 /* DIFF STUFF */
 del {

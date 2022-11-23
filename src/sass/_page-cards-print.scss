@@ -8,8 +8,18 @@ $page-height: 11 * 72pt;
 
 @import 'page-cards';
 
+
+.page-card-grid {
+    box-sizing: content-box;
+    //
+    //&::before,
+    //&::after {
+    //    box-sizing: content-box;
+    //}
+}
+
 .card-grid-container-to-scale-print {
-    @include pageCards($scale, $serif);
+    @include pageCards($scale);
 
     .card {
         width: $card-width;
@@ -22,7 +32,7 @@ $page-height: 11 * 72pt;
     .page-card-grid {
         display: grid;
         grid-template-columns: repeat(3, 180pt);
-        grid-template-rows: repeat(3, auto);
+        grid-template-rows: repeat(3, 252pt);
         justify-content: center;
         align-content: normal;
         gap: 1px;
@@ -35,7 +45,7 @@ $page-height: 11 * 72pt;
 
 .card-grid-container-flex-landscape-print {
 
-    @include pageCards(1.34, $serif);
+    @include pageCards(1.34);
 
     .page-card-grid {
         padding: 32pt 48pt;

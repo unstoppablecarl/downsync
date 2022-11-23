@@ -1,16 +1,14 @@
-$scale: 1 !default;
-
 $light-grey: #ddd;
-
 $mid-grey: #ccc;
 $outline-grey: #b3b3b3;
-$margin: 4pt * $scale;
 
-@mixin pageCards($scale: 1, $serif) {
+@mixin pageCards($scale: 1) {
 
+    $margin: 4pt * $scale;
+    $serif: 'Bitter', serif;
+    $sansSerif: 'Open Sans', sans-serif;
 
     .card {
-        //width: 230px * $scale;
         width: 180pt * $scale;
         height: 252pt * $scale - ($margin * 2);
         padding: $margin;
@@ -97,6 +95,7 @@ $margin: 4pt * $scale;
         width: 10px * $scale;
         height: 10px * $scale;
         border: 1px solid $outline-grey;
+        box-sizing: content-box;
     }
 
     .cost-icon-command-x2 {

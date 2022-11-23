@@ -40,8 +40,11 @@ const paths = {
     },
     scripts: {
         src: './src/js/main.js',
-        dist: './dist/assets/js/',
-        watch: './src/js/**/*.js',
+        dist: './dist/assets/',
+        watch: [
+            './src/js/**/*.js',
+            './src/sass/**/*.{scss,sass}',
+        ],
     },
     images: {
         src: './images/**/*',
@@ -59,11 +62,15 @@ const config = {
     },
 }
 
+let parallel = gulp.parallel('scripts', 'views', 'images')
+
 gulp.task('default',
-    gulp.series('clean', gulp.parallel('styles', 'scripts', 'views', 'images'), 'server'))
+    gulp.series('clean', parallel, 'server'),
+)
 
 gulp.task(
     'build',
-    gulp.series('clean', gulp.parallel('styles', 'scripts', 'views', 'images'), 'say:build'))
+    gulp.series('clean', parallel, 'say:build'),
+)
 
 export { paths, config }
