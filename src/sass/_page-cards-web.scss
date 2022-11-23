@@ -4,6 +4,7 @@ $scale: 1.5;
 
 .web-cards {
 
+    padding: 20px;
     @include pageCards($scale, $serif);
 
     h1 {
@@ -14,6 +15,7 @@ $scale: 1.5;
         display: flex;
         flex-flow: row wrap;
         padding: 0 10px;
+        justify-content: center;
     }
 
     .sub-footer {
@@ -30,9 +32,9 @@ $scale: 1.5;
 
     .card {
         background: transparent;
-        border: 2px solid $mid-grey;
         margin: 10px;
-        border-radius: 10px;
+        border-radius: 3px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     }
 
     .page-inner {

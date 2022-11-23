@@ -7,22 +7,11 @@ $outline-grey: #b3b3b3;
 $margin: 4pt * $scale;
 
 @mixin pageCards($scale: 1, $serif) {
-    .page-card-inner {
-        //display: flex;
-        //flex-flow: row wrap;
-        //justify-content: flex-start;
-        //align-content: flex-start;
-        padding: 32pt 48pt;
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: repeat(2, auto);
-        align-content: space-between;
-        justify-content: space-around;
-        gap: 0;
-    }
+
 
     .card {
-        width: 230px * $scale;
+        //width: 230px * $scale;
+        width: 180pt * $scale;
         height: 252pt * $scale - ($margin * 2);
         padding: $margin;
         box-sizing: border-box;
@@ -32,8 +21,7 @@ $margin: 4pt * $scale;
         font-size: 5.5pt * $scale;
         line-height: 1.4;
         font-family: $serif;
-        margin: -1px 0 0 -1px;
-        border: 1px solid $mid-grey;
+        outline: 1px solid $mid-grey;
     }
 
     .card-advisor {

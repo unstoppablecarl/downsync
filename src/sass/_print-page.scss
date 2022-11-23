@@ -1,4 +1,4 @@
-.page-background {
+.page-preview-background {
     background: rgb(204, 204, 204);
 }
 
@@ -7,6 +7,18 @@
     margin: 0 auto;
     margin-bottom: 16px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    page-break-after: always;
+    padding: 0;
+
+    &.page-letter {
+        width: 8.5 * 72pt;
+        height: 11 * 72pt;
+    }
+
+    &.page-letter-landscape {
+        width: 11 * 72pt;
+        height: 8.5 * 72pt;
+    }
 }
 
 @page {
@@ -25,7 +37,7 @@
         background-color: white;
     }
 
-    .page-background {
+    .page-preview-background {
         margin: 0;
         padding: 0;
         border: 0;
@@ -35,27 +47,5 @@
 
     .no-print {
         display: none;
-    }
-}
-
-/* Center all content within a page */
-.page {
-    //display: flex;
-    //align-content: center;
-    //justify-content: center;
-    //flex-direction: row;
-    //flex-wrap: wrap;
-    page-break-after: always;
-    padding: 0;
-    // align-content: flex-start
-
-    &.page-letter {
-        width: 8.5 * 72pt;
-        height: 11 * 72pt;
-
-        &.page-landscape {
-            width: 11 * 72pt;
-            height: 8.5 * 72pt;
-        }
     }
 }

@@ -1,15 +1,15 @@
 {{> header title="Starter Unit Cards Print"}}
-<body class="page-background">
+<body class="page-preview-background">
 
 <div class="no-print">
     {{> nav}}
 </div>
 
-<div class="output-container print-cards">
+<div class="output-container card-grid-container-flex-landscape-print">
     {{#each cardPages as |cardPage|}}
 
-        <div class="page page-preview page-letter page-landscape" style="background-color:white">
-            <div class="page-card-inner">
+        <div class="page-preview page-letter-landscape" style="background-color:white">
+            <div class="page-card-grid">
                 {{#each cardPage as |cardData|}}
 
                     {{> (lookup cardData 'template') cardData}}
