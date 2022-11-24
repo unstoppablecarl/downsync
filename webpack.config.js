@@ -23,19 +23,19 @@ export default {
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
             },
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
-            },
+            //{
+            //    test: /\.s[ac]ss$/i,
+            //    use: [
+            //        MiniCssExtractPlugin.loader,
+            //        'css-loader',
+            //        {
+            //            loader: 'sass-loader',
+            //            options: {
+            //                sourceMap: true,
+            //            },
+            //        },
+            //    ],
+            //},
         ],
     },
 }

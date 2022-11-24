@@ -64,6 +64,11 @@ export const INFANTRY_SQUAD = make({
     desc: 'This Unit is composed of 3 Infantry teams on separate infantry bases that activate together. They are indicated as T1, T2, and T3 above.',
 })
 
+export const MECHANIZED_INFANTRY = make({
+    name: 'Mechanized',
+    desc: 'This Unit may begin the game mounted in a Courier transport. If this unit begins the game mounted its Ping is not used for the game.',
+})
+
 export const PREDATOR = make({
     name: 'Predator',
     note: '+2 TARG',

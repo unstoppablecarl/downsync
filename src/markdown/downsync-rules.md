@@ -1,4 +1,6 @@
-# DownSync Rules (beta)
+# Downsync Rules (beta)
+
+[[toc]]
 
 ## Intro
 
@@ -95,7 +97,7 @@ When all Units/Pings have been Activated the Round ends.
 
 The Active Player resolves a Taskforce Activation
 
-##### Taskforce Activation Phases
+#### Taskforce Activation Phases
 
 - **Designate**: Select Units/Pings to be included in the Taskforce
 - **Refresh**: Resolve abilities triggered in the Refresh Phase
@@ -116,7 +118,7 @@ trigger when a Taskforce Unit is refreshed.
 
 #### Reveal
 
-Any Pings in the Taskforce may be Revealed. See: **Revealing**
+Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
 
 #### Move
 

@@ -77,7 +77,7 @@ export const CLOSE_COMBAT = make({
 
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',
-    desc: 'Attacks from this weapon can use the LOS of infantry bases in this unit.',
+    desc: 'Attacks from this weapon can use the LOS of Infantry Teams in this unit.',
 })
 
 

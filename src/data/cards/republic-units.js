@@ -21,6 +21,7 @@ import {
     FINISHER,
     INFANTRY_SQUAD,
     INFANTRY_TRANSPORT,
+    MECHANIZED_INFANTRY,
     PREDATOR,
     REVEAL_AND_DEPLOY,
 } from '../cards-data/unit-traits.js'
@@ -48,6 +49,7 @@ export const CLEANSER_SQUAD = make({
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
         INFANTRY_SQUAD,
+        MECHANIZED_INFANTRY,
     ],
 })
 
@@ -67,6 +69,7 @@ export const VECTOR_SQUAD = make({
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
         INFANTRY_SQUAD,
+        MECHANIZED_INFANTRY,
     ],
     definitions: [],
 })

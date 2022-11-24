@@ -1,6 +1,23 @@
 {{> header title="Downsync Rules"}}
-
+<body class="page-rulebook">
 {{> nav}}
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-toc" aria-labelledby="offcanvasExampleLabel"
+     data-bs-scroll="true">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasExampleLabel">Table of Contents</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        {{{tocHtml}}}
+    </div>
+</div>
+
+<button class="btn btn-secondary btn-table-of-contents" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvas-toc"
+        aria-controls="offcanvasExample">
+    TOC
+</button>
 
 <div class="container rulebook">
 
@@ -8,3 +25,5 @@
 </div>
 
 {{> footer }}
+</body>
+{{> close}}

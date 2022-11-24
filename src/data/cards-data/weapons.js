@@ -101,7 +101,7 @@ export const HMG = make({
 
 export const SHOCK_RIFLE = make({
     name: 'Shock Rifle',
-    note: 'T1 and T2',
+    note: 'T1, T2',
     range: 10,
     effect: 'STUN',
     rof: 1,
