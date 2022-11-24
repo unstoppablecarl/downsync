@@ -7,6 +7,7 @@ import './tasks/scripts.js'
 import './tasks/styles.js'
 import './tasks/views.js'
 import './tasks/images.js'
+import './tasks/favicons.js'
 import './tasks/webserver.js'
 
 const production = process.argv.indexOf('--production') !== -1
@@ -49,8 +50,13 @@ const paths = {
         ],
     },
     images: {
-        src: './images/**/*',
+        src: './static-assets/images/**/*',
         dist: './dist/assets/img',
+    },
+    favicons: {
+        src: './static-assets/favicons/*',
+        dist: './dist',
+        watch: './static-assets/favicons/*',
     },
 }
 
@@ -64,7 +70,7 @@ const config = {
     },
 }
 
-let parallel = gulp.parallel('scripts', 'styles', 'views', 'images')
+let parallel = gulp.parallel('scripts', 'styles', 'views', 'images', 'favicons')
 
 gulp.task('default',
     gulp.series('clean', parallel, 'server'),

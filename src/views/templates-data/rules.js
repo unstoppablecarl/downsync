@@ -18,28 +18,37 @@ let md = new MarkdownIt()
     .use(markdown_it_github_headings, {
         linkIcon,
     })
-
 let html = md.render(markdown)
 
 html = html.replaceAll('<table>', '<table class="table table-striped">')
 
+let {
+    docHtml,
+    tableOfContentsHtml,
+} = extractTableOfContents(html)
 
-const regex = /<div class="table-of-contents">(.*?)<\/div>/m
+export const tocHtml = tableOfContentsHtml
+export const convertedMarkdown = docHtml
 
-let r = regex.exec(html)
-export const tocHtml = r[0]
+function extractTableOfContents(html) {
+    const regex = /<div class="table-of-contents">(.*?)<\/div>/m
 
-html = html.replace(tocHtml, '')
+    let r = regex.exec(html)
+    let tableOfContentsHtml = r[0]
 
+    let docHtml = html.replace(tableOfContentsHtml, '')
+    return {
+        docHtml,
+        tableOfContentsHtml,
+    }
+}
 
-//let result = toc(markdown)
+//let definitions = {
+//    Turn: 'In a Round, players alternate taking turns. Each turn the active player designates a Taskforce to act in that turn.',
+//}
 //
+//Object.keys(definitions).forEach((key) => {
+//    let definition = definitions[key]
 //
-//let table = result.json
-//    .map(function (heading) {
-//        return toc.linkify(heading.content)
-//    })
-//    .join('')
-//console.log(table)
-export const convertedMarkdown = html
-
+//    html = html.replaceAll(key, `<strong data-bs-toggle="tooltip" data-bs-title="${definition}">${key}</strong>`)
+//})

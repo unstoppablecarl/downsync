@@ -2,9 +2,9 @@
 
 [[toc]]
 
-## Intro
+## Introduction
 
-High level abstraction of far future combat with limited information.
+Downsync is a game with a high level abstraction of far future combat with limited information.
 
 High lethality and technology make conflict outcome less about weapons defeating armor and more about information,
 stealth, and deception.
@@ -51,7 +51,8 @@ measurements at any time.
   - **Force List**:         Detailed list of the type and quantity of Units/Pings in a Force.
   - **Reserve**:            A collection of a Force's Units/Pings not on the Battlefield.
   - **Controlling Player**: The Player controlling the Force and its Units/Pings.
-- **Unit**:                 A single detected unit represented by one or more models on a base of a given size.
+- **Unit**:                 A vehicle model on a base (small/medium/large) or multiple infantry bases (40mm) each with
+  one or more infantry models on it.
 - **Ping**:                 Marker/base representing a sensor Signature indicating a hidden Unit.
 - **Controlling Force**:    The Force a Unit/Ping belongs to.
 - **Taskforce**:            A collection of Units/Pings acting together.

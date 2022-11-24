@@ -12,6 +12,7 @@ gulp.task('server', function (done) {
   gulp.watch(paths.views.watch, { usePolling: true }, gulp.parallel('views'))
   gulp.watch(paths.styles.watch, { usePolling: true }, gulp.parallel('styles'))
   gulp.watch(paths.scripts.watch, { usePolling: true }, gulp.parallel('scripts'))
+  gulp.watch(paths.favicons.watch, { usePolling: true }, gulp.parallel('favicons'))
 
   return done()
 })
