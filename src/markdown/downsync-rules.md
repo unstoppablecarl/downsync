@@ -24,20 +24,21 @@ stealth, and deception.
 - miniature scale is 15mm. Scale is highly abstracted though
 - games should take 45-60 min
 
-### Components
+### Components and Conventions
 
 - Dice: d6
 - Measuring tape
 - Circular bases of size: 40mm, 70mm, 80mm, 90mm
 - Tokens
 - Models
+- 4x4 ft play area
 
-### Scale
+#### Scale
 
-The scale is highly abstracted. The scale of models is not important as the base they are placed on is what matters in
-the game. The table size is intended to be 4x4 ft.
+The scale of the game's models is 15mm (1/100 scale). The overall scale is highly abstracted as the battlefield is a
+representation of what holographic imaging would be available to you when commanding your forces.
 
-### Measuring
+#### Measuring
 
 When measuring distances to or from a Unit/Ping, any point on the edge of the base may be used. Players may make
 measurements at any time.
@@ -84,7 +85,7 @@ When all Units/Pings have been Activated the Round ends.
   - Both players roll 2d6, and the higher rolling player chooses which player will deploy first
   - The player that deploys first will have the first turn of the game
 - Deployment
-  - For each Unit in a Force List, deploy a Ping of matching Size within the scenarios deployment zone
+  - For each Unit in a Force List, deploy a Ping of matching Size within the mission deployment zone
 
 ### Round
 
@@ -100,8 +101,8 @@ The Active Player resolves a Taskforce Activation
 #### Taskforce Activation Phases
 
 - **Designate**: Select Units/Pings to be included in the Taskforce
-- **Refresh**: Resolve abilities triggered in the Refresh Phase
 - **Reveal**: Any Pings in the Taskforce may be Revealed
+- **Refresh**: Resolve abilities triggered in the Refresh Phase
 - **Move**: Move all Units/Pings in the Taskforce
   - **Reaction Engagement (optional)**: The non-active player may initiate a Reaction Engagement
 - **Unit Activation**: Activate each Unit in the Taskforce one at a time
@@ -122,34 +123,28 @@ Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
 
 #### Move
 
-Each Taskforce Unit/Ping may use a different type of movement and may move in any direction without restriction. The
-controlling player declares the movement path and destination of the activating Units/Pings. The opposing player may
-initiate a Reaction Engagement in response to the movement of the Taskforce. See: **Reactions**
+Each Taskforce Unit/Ping may move up to its SPD in inches in any direction without restriction. Pings have a move of 4".
 
-##### Movement Types
+##### Optionally Initiate a Reaction Engagement
 
-| Type   | Move Distance                                                         |
-|:-------|:----------------------------------------------------------------------|
-| Normal | Up to SPD stat in inches.                                             |                                           
-| Double | Up to double SPD stat in inches but does not receive an Action Point. |
+The opposing player may initiate a Reaction Engagement. See: [Reaction Engagement](#reaction-engagement).
 
 ### Unit Activation
 
-The Active Player declares a Taskforce Unit to be Activated and then completely resolves its activation then repeats
-this process. Each Taskforce Unit may only be activated once and each Unit's activation must be completed before
-activating the next unit.
+The Active Player activates their Taskforce Units one at a time until all Taskforce Units have activated.
+Each Taskforce Unit may only be activated once and each Unit's activation must be completed before activating the next
+unit.
 
-When a Unit is activated it gains 1 Action Point and may perform one or more actions. See: **Actions**.
+When a Unit is activated it gains 1 Action Point and may perform one or more actions. See: [Actions](#actions).
 
 After a Unit's Activation is resolved it gains an Activated Token.
-
-The opposing player may initiate a Reaction Engagement in response to a Unit action. See: **Reactions**.
 
 ## Visibility
 
 ### Line Of Sight (LOS)
 
-For determining LOS, Units/Pings have a volume matching the footprint of the base with 1" height. Units/Pings have Line
+For determining LOS, Units/Pings have a volume matching the footprint of their base with a 1" height. Units/Pings have
+Line
 of Sight to each other if a line can be drawn from any point on one Unit/Ping's volume to any point on the other
 Unit/Ping's volume. Friendly and enemy Units/Pings do not block LOS.
 
@@ -159,7 +154,8 @@ A Unit/Ping is concealed if any part of its base/volume overlaps with concealing
 by intervening concealing or LOS blocking terrain.
 
 To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
-the volume of the acting unit. The target is concealed if a line can be drawn from that point to any point on the volume
+the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
+that point to any point on the volume
 of the target that crosses intervening terrain.
 
 ### Terrain
@@ -168,9 +164,9 @@ of the target that crosses intervening terrain.
 
 | Type         | Movement | Concealment |
 |--------------|----------|-------------|
-| Forest       | 50%      | Yes         |
-| Urban        | -        | 50%         |
-| Rough Ground | 50%      | -           |
+| Forest       | -2"      | Yes         |
+| Urban        |          | Yes         |
+| Rough Ground | -2"      |             |
 
 #### Concealing Area Terrain
 
@@ -180,23 +176,19 @@ other without being in the area terrain.
 
 ## Units
 
-A Unit is represented by 1 or more models on a base.
+A Unit is represented by a vehicle model on a base (60mm/70mm/80mm) or multiple infantry bases (40mm) each with one or
+more infantry models on it.
 
 ### Stats
 
-| Stat                 | Description                                                                         | Typical Range |
-|----------------------|-------------------------------------------------------------------------------------|---------------|
-| SIG, Signature       | Small / Medium / Large                                                              |               |
-| SPD, Speed           | Movement distance in inches.                                                        | 6"            |
-| SCAN, Scan           | Stat added to 2d6 when rolling to scan                                              | 5-8           |
-| TARG, Targeting      | Stat added to 2d6 when rolling to hit                                               | 5-8           |
-| DEF, Defense         | Target Number to hit when rolling an attack                                         | 12-14         |
-| CM, Countermeasures* | Number of Countermeasure Tokens this unit starts with and the max the unit can have | 0-1           |
-
-*If a CM stat has 2 numbers (example: 2/1) the second number is the number of Countermeasure tokens the unit regenerates
-when it is **Refreshed**. Units are **Refreshed** in the Refresh phase and immediately before a reaction move/action.
-When a Unit regenerates it gains Countermeasure Tokens but cannot exceed its starting amount. There is no limit on the
-number of countermeasure tokens a unit may have from other sources.
+| Stat                | Description                                                                         | Typical Range |
+|---------------------|-------------------------------------------------------------------------------------|---------------|
+| SIG, Signature      | Small / Medium / Large                                                              |               |
+| SPD, Speed          | Movement distance in inches.                                                        | 6"            |
+| SCAN, Scan          | Stat added to 2d6 when rolling to scan                                              | 5-8           |
+| TARG, Targeting     | Stat added to 2d6 when rolling to hit                                               | 5-8           |
+| DEF, Defense        | Target Number to hit when rolling an attack                                         | 12-14         |
+| CM, Countermeasures | Number of Countermeasure Tokens this unit starts with and the max the unit can have | 0-1           |
 
 ## Pings
 
@@ -213,12 +205,11 @@ pings when revealed if desired.
 A Ping may never move within 3" and LOS of an enemy unit or Ping. Pings can never move through or end their movement in,
 a position that would cause them to be automatically revealed by an enemy.
 
-All Pings have a SPD stat of 8". Pings cannot double move. A Unit can have a minimum SPD stat of 4". So a Ping moving 8"
-per turn is equivalent to the slowest unit making a double move each turn.
+All Pings have a SPD stat of 4".
 
 ### Activating
 
-Pings do not activate or perform actions.
+Pings can only perform a move action to move an additional 4".
 
 ### Revealing
 
@@ -260,16 +251,22 @@ The actions a Unit can perform and their costs are indicated on the Unit's card.
 
 Some actions have no cost and are labeled as a "Free Action".
 
+### Move Action
+
+Although not included on the Unit cards, all units can perform the Move Action for the cost of 1 Action Point. When a
+Unit performs a Move Action it may move up to its SPD in inches following normal movement rules for terrain.
+
 ### Overwatch Action
 
 Although not included on the Unit cards, all units can perform the Overwatch Action for the cost of 1 Action Point. When
 the Overwatch action is performed the Unit gains 1 Overwatch Token. Overwatch Tokens allow Units to perform Reactions
-with a higher chance to act first. See: **Reactions**
+with a higher chance to act first. See: [Reaction Engagements](#reaction-engagements)
 
 ### Scan Action
 
 Any Action with a **SCAN** effect is a Scan Action. When performing a Scan Action, a Scan Check may be performed for
-each ROF of the Scan Action. Each Scan Check must be resolved before the next.
+each ROF of the Scan Action. Each Scan Check must be resolved before the next. Each ROF of a Scan Action may have the
+same or different targets.
 
 #### Scan Check
 
@@ -287,14 +284,14 @@ When a Unit performs a Scan Check, select an enemy Ping within the Scan Action R
 |------------------------------|-----|
 | Ping Concealed or out of LOS | -1  |
 
-| Outcome                   | Effect   |
+| Outcome                   | Result   |
 |---------------------------|----------|
 | Scan Roll >= Ping Defense | Revealed |
 | Scan Roll < Ping Defense  | Failure  |
 
 ### Combat Actions
 
-Any Action with a **KILL**, **STUN**, or **LOCK** effect is a combat action. Combat actions may only target enemy Units.
+Any Action with a **KILL** or **STUN** effect is a combat action. Combat actions may only target enemy Units.
 
 When a Unit performs a Combat Action it may perform an attack for each point of the Action's ROF.
 
@@ -305,7 +302,7 @@ Roll against it.
 
 **Attack Roll** = 2d6 + TARG stat + mods vs Unit Defense.
 
-| Outcome                                    | Effect |
+| Outcome                                    | Result |
 |--------------------------------------------|--------|
 | Attacker Targeting + 2d6 >= Target Defense | Hit    |
 | Attacker Targeting + 2d6 < Target Defense  | Miss   |
@@ -322,11 +319,10 @@ Roll against it.
 
 If an Attack results in a successful hit, resolve the Combat Action's Effect against the targeted Unit.
 
-| Effect   | Description                                                                                                                                                                                                                                         |
-|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **KILL** | The unit is destroyed and removed from the game.                                                                                                                                                                                                    |
-| **STUN** | The target of the attack gains a Stun Token. The STUN effect can not be negated with countermeasures. If the target already has a Stun Token, the effect becomes a **KILL** effect. This KILL effect may be negated with countermeasures as normal. |
-| **LOCK** | The target of the attack becomes Target Locked. Target Locked Units suffer -2 DEF until the end of the current Taskforce Activation or Reaction Engagement. A Unit may only be Target Locked once.                                                  |
+| Effect   | Description                                                                                                       |
+|----------|-------------------------------------------------------------------------------------------------------------------|
+| **KILL** | The unit is destroyed and removed from the game.                                                                  |
+| **STUN** | The target of the attack gains a Stun Token.  If the target already has a Stun Token, there is no further effect. |
 
 ### Countermeasures
 
@@ -339,6 +335,11 @@ Roll 3+ on 1d6 to negate one attack effect.
 When a Countermeasure Check fails, the unit may spend additional Countermeasure Tokens to attempt to negate the effect.
 Each check is resolved before deciding to spend additional Countermeasure Tokens.
 
+| Outcome  | Result  |
+|----------|---------|
+| 1d6 >= 3 | Success |
+| 1d6 < 3  | Failure |
+
 # Reaction Engagements
 
 Units controlled by a non-active player that have not activated this round (or have an Overwatch Token), have a chance
@@ -347,13 +348,11 @@ to react and possibly act before activating Units.
 ## Initiating a Reaction Engagement
 
 A non-active player may initiate a reaction engagement after the active player completes the movement of their
-Taskforce.
+Taskforce, but before the Unit Activation phase.
 
 #### Who Can Participate
 
 Units that have not activated this round or have an Overwatch Token are eligible to be selected as participating Units.
-Active player units that performed a double move cannot participate in a Reaction Engagement unless they have an
-Overwatch token.
 
 ## Resolving a Reaction Engagement
 
@@ -375,12 +374,12 @@ All reacting Units roll 1d6.
 - Units with a Stun token roll 2d6 and pick the lowest die
 - Units with both an Overwatch and Stun Token roll 1d6
 
-Units will react in order of reaction roll from highest to lowest. The activating Player wins ties between opposing
+Units will act in order of reaction roll from highest to lowest. The activating Player wins ties between opposing
 units. Ties between friendly units act in an order determined by the controlling player.
 
 #### Resolve Reactions
 
-In reaction roll order, each Unit may resolve a move or Unit Activation. Instead of performing a move or Unit
+In reaction roll order, each Unit may resolve a Unit Activation. Instead of performing a Unit
 Activation, a Unit may hold its reaction by reducing the value of its reaction die by 1. Units not in the activating
 Taskforce (that would have already been Refreshed) are Refreshed immediately before resolving their reaction movement or
 activation.
@@ -411,10 +410,10 @@ LOS of Units/Pings.
 
 The following tokens are attached to a Unit.
 
-| Token              | Description                                                                                                                                           | Can Have Multiple | Removed                                                                                                                            |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **Activated**      | Unit has activated this Round. Cannot activate or perform reactions until the next round.                                                             | No                | Round start                                                                                                                        |
-| **Overwatch**      | Unit uses the highest of 2d6 for reactions and can perform reactions even if it has an Activated Token.                                               | No                | Taskforce Designation                                                                                                              |
-| **Stunned**        | Unit may only perform a move or action when activating and use the lowest of 2d6 for reactions.                                                       | No                | After performing an activation or reaction                                                                                         |
-| **Stealth**        | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                                      | No                | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit ends its movement within 3". |                                      |
-| **Countermeasure** | Unit may spend this token to roll 1d6, on a 3+ it negates an attack result. Multiple may be spent against the same attack result if an attempt fails. | Yes               | Never                                                                                                                              |
+| Token              | Description                                                                                                                                           | Multiple | Removed                                                                                                                            |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------|
+| **Activated**      | Unit has activated this Round. Cannot activate or perform reactions until the next round.                                                             | No       | Round start                                                                                                                        |
+| **Overwatch**      | Unit uses the highest of 2d6 for reactions and can perform reactions even if it has an Activated Token.                                               | No       | Taskforce Designation                                                                                                              |
+| **Stun**           | Unit may only perform a move or action when activating and use the lowest of 2d6 for reactions.                                                       | No       | After performing an activation                                                                                                     |
+| **Stealth**        | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                                      | No       | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit ends its movement within 3". |                                      |
+| **Countermeasure** | Unit may spend this token to roll 1d6, on a 3+ it negates an attack result. Multiple may be spent against the same attack result if an attempt fails. | Yes      | Never                                                                                                                              |
