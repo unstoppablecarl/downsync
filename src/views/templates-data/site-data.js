@@ -1,3 +1,1 @@
-export default {
-    foo: 'bar3',
-}
+export default {}

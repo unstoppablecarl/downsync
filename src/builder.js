@@ -1,33 +1,46 @@
 import fs from 'fs'
 import path from 'path'
-import templates from './templates.js'
+import buildTemplates from './templates.js'
+import util from 'util'
 
 export default function () {
+
     let dist = './dist'
     let tplDataPath = './src/views/templates-data'
 
     if (!fs.existsSync(dist)) {
         fs.mkdirSync(dist)
     }
-    Object.keys(templates).forEach(function (key) {
-        let template = templates[key]
 
-        let dest = `${dist}/${key}.html`
-        let tplDataFile = `${tplDataPath}/${key}.js`
+    let fileExists = util.promisify(fs.exists)
+    buildTemplates()
+        .then((templates) => {
+            Object.keys(templates).forEach(function (key) {
+                let template = templates[key]
 
-        let target = path.resolve(tplDataFile)
-        if (!fs.existsSync(target)) {
-            let contents = template({})
+                let dest = `${dist}/${key}.html`
+                let tplDataFile = `${tplDataPath}/${key}.js`
 
-            fs.writeFileSync(dest, contents, 'utf8')
+                let target = path.resolve(tplDataFile)
 
-            return
-        }
-        import(target).then((tplData) => {
+                fileExists(target)
+                    .then((exists) => {
 
-            let contents = template(tplData)
+                        if (!exists) {
+                            let contents = template()
 
-            fs.writeFileSync(dest, contents, 'utf8')
+                            fs.promises.writeFile(dest, contents, 'utf8')
+
+                        } else {
+
+                            import(target).then((tplData) => {
+
+                                let contents = template(tplData)
+
+                                fs.promises.writeFile(dest, contents, 'utf8')
+                            })
+                        }
+                    })
+            })
         })
-    })
 }

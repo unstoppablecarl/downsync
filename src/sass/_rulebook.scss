@@ -1,0 +1,37 @@
+.rulebook {
+    h1 {
+        //font-size: 28px;
+        color: black;
+    }
+
+    h2 {
+        //font-size: 24px;
+        border-bottom: 1px solid #b1b1b1;
+        //padding-bottom: 5px;
+        //margin-bottom: 5px;
+        color: #000;
+    }
+
+    h3 {
+        font-size: 18px;
+        border-bottom: 1px solid #cccccc;
+        //padding-bottom: 5px;
+        //margin-bottom: 5px;
+    }
+
+    h4 {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    h5 {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+
+    h6 {
+        color: #777777;
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+}

@@ -218,34 +218,14 @@ export const CLAWS = make({
     ],
 })
 
-export const POWER_TOOLS = make({
-    name: 'Power Tools',
-    range: 1,
-    rof: 1,
-    traits: [
-        CLOSE_COMBAT,
-        TRAIT_ADVANCED,
-    ],
-})
-
-export const INFANTRY_GUIDED_MISSILE = make({
+export const GUIDED_MISSILE = make({
     name: 'Guided Missile',
+    note: 'T3',
     cost: COST_ACTION_AND_COMMAND,
     range: 16,
     rof: 1,
     traits: [
         TRAIT_SMART,
-    ],
-})
-
-export const SHOCK_MICRO_ARTILLERY = make({
-    name: 'Shock Micro Artillery',
-    range: 16,
-    rof: 2,
-    effect: 'STUN',
-    traits: [
-        DEADLY_VS('Infantry'),
-        TRAIT_INFANTRY_NETWORK,
     ],
 })
 

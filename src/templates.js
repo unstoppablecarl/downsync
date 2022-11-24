@@ -9,25 +9,44 @@ tplDir = path.resolve(tplDir)
 let partialsDir = './src/views/partials/'
 partialsDir = path.resolve(partialsDir)
 
-let partials = dirToTemplates(partialsDir)
-
-Handlebars.registerPartial(partials)
 Handlebars.registerHelper(helpers)
 
-export default dirToTemplates(tplDir)
+export default async function buildTemplates() {
+
+    return Promise.all([
+        dirToTemplates(partialsDir),
+        dirToTemplates(tplDir),
+    ]).then((results) => {
+
+        let partials = results[0]
+        let templates = results[1]
+
+        Handlebars.registerPartial(partials)
+
+        return templates
+    })
+}
 
 function dirToTemplates(tplDir) {
-    let files = fs.readdirSync(tplDir)
-    let templates = {}
 
-    files.forEach(function (file) {
-        let filePath = path.resolve(tplDir + '/' + file)
+    return fs.promises.readdir(tplDir)
+        .then((files) => {
+            let templates = {}
 
-        let key = path.basename(file, '.hbs')
-        let tpl = fs.readFileSync(filePath, 'utf-8')
+            let promises = files.map(function (file) {
+                let filePath = path.resolve(tplDir + '/' + file)
 
-        templates[key] = Handlebars.compile(tpl)
-    })
+                let key = path.basename(file, '.hbs')
 
-    return templates
+                return fs.promises.readFile(filePath, 'utf-8')
+                    .then((tpl) => {
+                        templates[key] = Handlebars.compile(tpl)
+                    })
+            })
+
+            return Promise.all(promises)
+                .then(() => {
+                    return templates
+                })
+        })
 }

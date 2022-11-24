@@ -3,6 +3,7 @@ import {
     ADVANCED_CANNON,
     CANNON,
     CONCUSSION_ARTILLERY,
+    GUIDED_MISSILE,
     HEAVY_ARTILLERY,
     MEDIUM_CANNON,
     MG,
@@ -31,14 +32,14 @@ export const REPUBLIC_CARD_DEFAULTS = {
     icon: 'factions/icon-republic.svg',
 }
 
-export const CLEANSER_TEAM = make({
+export const CLEANSER_SQUAD = make({
     slug: 'cleanser_team',
     name: 'Cleanser Squad',
-    signature: null,
+    signature: SIZE_SMALL,
     type: 'Infantry Team x 3',
     speed: 4,
     targeting: 6,
-    defense: 13,
+    defense: 12,
     actions: [
         SHOCK_RIFLE,
         MICRO_ARTILLERY,
@@ -50,40 +51,22 @@ export const CLEANSER_TEAM = make({
     ],
 })
 
-
-//export const CLEANSER_TEAM = make({
-//    slug: 'cleanser_team',
-//    name: 'Cleanser Team',
-//    signature: null,
-//    type: 'Infantry Fire Team',
-//    speed: 4,
-//    targeting: 6,
-//    defense: 13,
-//    actions: [
-//        SHOCK_RIFLE,
-//        //FORWARD_OBSERVE,
-//        //INFANTRY_GUIDED_MISSILE,
-//    ],
-//    traits: [
-//        ACTIVE_CAMO,
-//        ALL_TERRAIN,
-//    ],
-//})
-
-export const VECTOR_TEAM = make({
+export const VECTOR_SQUAD = make({
     slug: 'vector_team',
-    name: 'Vector Team',
-    signature: null,
-    type: 'Infantry Micro Artillery Team',
+    name: 'Vector Squad',
+    signature: SIZE_SMALL,
+    type: 'Infantry Team x 3',
     speed: 4,
     targeting: 6,
-    defense: 13,
+    defense: 12,
     actions: [
-        MICRO_ARTILLERY,
+        SHOCK_RIFLE,
+        GUIDED_MISSILE,
     ],
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
+        INFANTRY_SQUAD,
     ],
     definitions: [],
 })
@@ -240,8 +223,8 @@ export const GOLIATHS = make({
 })
 
 export const REPUBLIC_UNITS = [
-    CLEANSER_TEAM,
-    VECTOR_TEAM,
+    CLEANSER_SQUAD,
+    VECTOR_SQUAD,
     SEEKER_TEAM,
     GOLIATHS,
     COURIER_TRANSPORT,
@@ -251,10 +234,8 @@ export const REPUBLIC_UNITS = [
     SAMSON_HEAVY_TANK,
 ]
 
-
 export const REPUBLIC_DEMO_UNITS = [
-    CLEANSER_TEAM,
-    VECTOR_TEAM,
+    CLEANSER_SQUAD,
     COURIER_TRANSPORT,
     HARBINGER_MEDIUM_RECON,
     CRUSADER_MEDIUM_TANK,

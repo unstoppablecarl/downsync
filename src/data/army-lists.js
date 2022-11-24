@@ -6,23 +6,26 @@ import {
     RECON_SCOUT,
     SENTINEL_HUNTER,
     SENTINEL_TAGGER,
-    SPIDER_DRONE_INFANTRY,
+    SPIDER_DRONE_ASSASSIN,
     VIRAGO_TANK,
 } from './cards/coalition-units.js'
 import {
-    CLEANSER_TEAM,
+    CLEANSER_SQUAD,
     COURIER_TRANSPORT,
     CRUSADER_MEDIUM_TANK,
     HARBINGER_MEDIUM_RECON,
     MANDIBLE,
     SAMSON_HEAVY_TANK,
-    VECTOR_TEAM,
 } from './cards/republic-units.js'
 
 export const coalitionArmyList = make('Coalition', [
     {
         unit: RECON_SCOUT,
         count: 1,
+    },
+    {
+        unit: SPIDER_DRONE_ASSASSIN,
+        count: 2,
     },
     {
         unit: SENTINEL_TAGGER,
@@ -45,10 +48,6 @@ export const coalitionArmyList = make('Coalition', [
         count: 1,
     },
     {
-        unit: SPIDER_DRONE_INFANTRY,
-        count: 2,
-    },
-    {
         unit: GUARDIAN_DESTROYER,
         count: 1,
     },
@@ -60,11 +59,7 @@ export const coalitionArmyList = make('Coalition', [
 
 export const republicArmyList = make('Republic of Man', [
     {
-        unit: CLEANSER_TEAM,
-        count: 4,
-    },
-    {
-        unit: VECTOR_TEAM,
+        unit: CLEANSER_SQUAD,
         count: 2,
     },
     {
@@ -118,12 +113,8 @@ export const republicDemoList = make('Republic of Man Demo', [
         count: 1,
     },
     {
-        unit: CLEANSER_TEAM,
+        unit: CLEANSER_SQUAD,
         count: 2,
-    },
-    {
-        unit: VECTOR_TEAM,
-        count: 1,
     },
     {
         unit: COURIER_TRANSPORT,
