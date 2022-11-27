@@ -351,13 +351,13 @@ to react and possibly act before activating Units.
 A non-active player may initiate a reaction engagement after the active player completes the movement of their
 Taskforce, but before the Unit Activation phase.
 
-#### Who Can Participate
+### Who Can Participate
 
 Units that have not activated this round or have an Overwatch Token are eligible to be selected as participating Units.
 
 ## Resolving a Reaction Engagement
 
-#### Declare Participating Units
+### Declare Participating Units
 
 The non-active player declares any number of eligible units to participate in the Reaction Engagement.
 The active player's Taskforce Units are automatically participating. The active player may declare any number of their
@@ -367,7 +367,7 @@ this way until **BOTH** players pass without adding additional reacting units.
 The active player's participating units now become part of the active player's Taskforce. The non-active player's
 participating units are now considered to be in a Reaction Taskforce.
 
-#### Roll Reaction Order
+### Roll Reaction Order
 
 All reacting Units roll 1d6.
 
@@ -378,14 +378,14 @@ All reacting Units roll 1d6.
 Units will act in order of reaction roll from highest to lowest. The activating Player wins ties between opposing
 units. Ties between friendly units act in an order determined by the controlling player.
 
-#### Resolve Reactions
+### Resolve Reactions
 
 In reaction roll order, each Unit may resolve a Unit Activation. Instead of performing a Unit
 Activation, a Unit may hold its reaction by reducing the value of its reaction die by 1. Units not in the activating
 Taskforce (that would have already been Refreshed) are Refreshed immediately before resolving their reaction movement or
 activation.
 
-#### Cleanup
+### Cleanup
 
 - All Units involved remove Overwatch Tokens
 - All Units involved gain an Activated Token

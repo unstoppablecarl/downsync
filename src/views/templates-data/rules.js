@@ -18,9 +18,10 @@ let md = new MarkdownIt()
     .use(markdown_it_github_headings, {
         linkIcon,
     })
+
 let html = md.render(markdown)
 
-html = html.replaceAll('<table>', '<table class="table table-striped">')
+html = formatTables(html)
 
 let {
     docHtml,
@@ -41,6 +42,47 @@ function extractTableOfContents(html) {
         docHtml,
         tableOfContentsHtml,
     }
+}
+
+function formatTables(html) {
+
+    html = html.replaceAll('<table>', '<div class="table-responsive"><table class="table table-striped">')
+
+    html = html.replaceAll('</table>', '</table></div>')
+    return html
+
+}
+
+
+function getTagMatches(html, start, end) {
+    //let pattern = `${start}(.*?)${end}`
+    let regex = /<table>(.*?)<\/table>/gm
+
+    console.log(html)
+    //const regex = new RegExp(pattern, 'gm')
+
+    let m
+    let results = []
+    while ((m = regex.exec(html)) !== null) {
+        console.log('m', m)
+        // This is necessary to avoid infinite loops with zero-width matches
+        if (m.index === regex.lastIndex) {
+            regex.lastIndex++
+        }
+
+        let item = {}
+        m.forEach((match, groupIndex) => {
+            console.log(match)
+            if (groupIndex === 0) {
+                item.whole = match
+            } else {
+                item.contents = match
+            }
+        })
+
+        results.push(item)
+    }
+    return results
 }
 
 //let definitions = {

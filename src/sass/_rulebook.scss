@@ -97,11 +97,63 @@
 
 }
 
-.page-rulebook {
+$linkColor: darken($link-color, 20%);
+$linkColor2: darken($link-color, 10%);
 
+.page-rulebook {
     .table-of-contents {
+
+
         ul {
-            padding-left: 1rem;
+            padding-left: 0;
+            list-style: none;
+
+            li {
+                a {
+                    font-weight: bold;
+                    color: $linkColor;
+
+                    &:hover {
+                        color: shift-color($linkColor, 10%);
+                        text-decoration: underline;
+                    }
+                }
+
+                ul {
+                    padding-left: 1rem;
+                    margin-bottom: 1.5em;
+
+                    li {
+                        a {
+                            font-weight: 500;
+                            color: $linkColor2;
+                            //color: red;
+                            &:hover {
+                                color: shift-color($linkColor2, 10%);
+                            }
+                        }
+
+                        ul {
+                            margin-bottom: 0;
+
+                            li {
+                                a {
+                                    font-weight: normal;
+                                    color: #666;
+
+                                    &:hover {
+                                        color: #444;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
         }
     }
 
