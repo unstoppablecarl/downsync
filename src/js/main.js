@@ -1,4 +1,4 @@
-import '../sass/main.scss'
+//import '../sass/main.scss'
 
 import 'bootstrap/js/dist/dropdown.js'
 import 'bootstrap/js/dist/button.js'
