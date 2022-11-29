@@ -102,8 +102,6 @@ $linkColor2: darken($link-color, 10%);
 
 .page-rulebook {
     .table-of-contents {
-
-
         ul {
             padding-left: 0;
             list-style: none;
@@ -139,10 +137,10 @@ $linkColor2: darken($link-color, 10%);
                             li {
                                 a {
                                     font-weight: normal;
-                                    color: #666;
+                                    color: #444;
 
                                     &:hover {
-                                        color: #444;
+                                        color: #000;
                                     }
                                 }
                             }

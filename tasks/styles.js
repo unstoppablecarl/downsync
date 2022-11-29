@@ -15,7 +15,7 @@ gulp.task('styles', function () {
     return gulp.src(paths.styles.src)
         .pipe(plumber(config.plumber))
         .pipe(gulpIf(!config.production, sourcemaps.init()))
-        .pipe(sass({
+        .pipe(sass.sync({
             includePaths: ['node_modules'],
             precision: 7,
         }, false))

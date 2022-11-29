@@ -3,7 +3,7 @@ import c from 'ansi-colors'
 
 import './tasks/clean.js'
 import './tasks/notify.js'
-import './tasks/scripts.js'
+import './tasks/webpack.js'
 import './tasks/styles.js'
 import './tasks/views.js'
 import './tasks/images.js'
@@ -20,6 +20,11 @@ if (production) {
 
 const paths = {
     dist: './dist/',
+    clean: {
+        targets: [
+            './dist/',
+        ],
+    },
     views: {
         src: './src/views/templates/**/*.hbs',
         pages: './src/views/templates/',
@@ -41,12 +46,11 @@ const paths = {
         dist: './dist/assets/css/',
         watch: './src/sass/**/*.{scss,sass}',
     },
-    scripts: {
+    webpack: {
         src: './src/js/main.js',
         dist: './dist/assets/',
         watch: [
             './src/js/**/*.js',
-            './src/markdown/**/*.md',
         ],
     },
     images: {
@@ -70,7 +74,13 @@ const config = {
     },
 }
 
-let parallel = gulp.parallel('scripts', 'styles', 'views', 'images', 'favicons')
+let parallel = gulp.parallel(
+    'webpack',
+    'styles',
+    'views',
+    'images',
+    'favicons',
+)
 
 gulp.task('default',
     gulp.series('clean', parallel, 'server'),

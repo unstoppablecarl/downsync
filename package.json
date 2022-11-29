@@ -8,8 +8,8 @@
         "dev": "gulp",
         "build": "gulp build --production",
         "build-views": "node ./bin/build.js",
-        "webp-build": "webpack --config webpack.config.js",
-        "webp-watch": "webpack --config webpack.config.js --watch"
+        "webp-build": "webpack --config webpack.config.js --progress",
+        "webp-watch": "webpack --config webpack.config.js --progress --watch "
     },
     "babel": {
         "presets": [

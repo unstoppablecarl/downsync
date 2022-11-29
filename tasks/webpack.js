@@ -6,13 +6,13 @@ import webpackConfig from '../webpack.config.js'
 import browsersync from 'browser-sync'
 import { config, paths } from '../gulpfile.js'
 
-gulp.task('scripts', function () {
+gulp.task('webpack', function () {
   webpackConfig.mode = config.production ? 'production' : 'development'
   webpackConfig.devtool = config.production ? false : 'source-map'
 
-  return gulp.src(paths.scripts.src)
+  return gulp.src(paths.webpack.src)
       .pipe(plumber(config.plumber))
-      .pipe(webpackStream(webpackConfig), webpack)
-      .pipe(gulp.dest(paths.scripts.dist))
+      .pipe(webpackStream(webpackConfig, webpack))
+      .pipe(gulp.dest(paths.webpack.dist))
       .on('end', browsersync.reload)
 })

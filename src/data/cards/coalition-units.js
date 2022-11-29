@@ -70,7 +70,6 @@ export const SENTINEL_TAGGER = make({
     cm: 1,
     cm_regen: 1,
     actions: [
-        BASIC_SCAN,
         TAG_CANNON,
     ],
     traits: [],
