@@ -4,19 +4,22 @@
 {{> nav}}
 <div class="container">
 
-    <h1>Unit Cards</h1>
-    <div class="web-cards output-container">
-        {{#each cardData}}
-            <h2 class="faction-heading">{{faction}}</h2>
-            <div class="faction-cards">
-                {{#each factionCards as |singleCardData|}}
-                    {{> (lookup singleCardData 'template') singleCardData}}
-                {{/each}}
-            </div>
-        {{/each}}
-    </div>
-
+    <h1>Downsync Unit Cards</h1>
 </div>
+
+<div class="web-cards output-container">
+    {{#each cardData}}
+        <div class="container">
+            <h2 class="faction-heading">{{faction}}</h2>
+        </div>
+        <div class="faction-cards">
+            {{#each factionCards as |singleCardData|}}
+                {{> (lookup singleCardData 'template') singleCardData}}
+            {{/each}}
+        </div>
+    {{/each}}
+</div>
+
 
 {{> footer }}
 </body>

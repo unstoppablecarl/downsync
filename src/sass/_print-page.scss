@@ -1,5 +1,9 @@
 .page-preview-background {
-    background: rgb(204, 204, 204);
+    background: #d0d0d0;
+    padding: 20px 0;
+
+    border: 1px solid #444;
+    border-width: 1px 0;
 }
 
 .page-preview {
@@ -20,6 +24,23 @@
     }
 }
 
+
+.row-letter-width {
+    width: 8.5 * 72pt;
+}
+
+.non-print-content {
+    width: 8.5 * 72pt;
+    margin: 0 auto;
+}
+
+.non-print-card {
+    background: #fff;
+    border: 1px solid #8e8e8e;
+    padding-top: 8px;
+    margin-bottom: 1em;
+}
+
 @page {
     margin: 0;
     size: letter portrait;
@@ -28,6 +49,9 @@
 
 
 @media print {
+    .non-print-content {
+        display: none;
+    }
     .page-preview {
         margin: 0;
         padding: 0;

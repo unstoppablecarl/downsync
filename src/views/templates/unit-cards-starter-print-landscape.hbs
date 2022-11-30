@@ -1,5 +1,5 @@
 {{> header title="Starter Unit Cards Print Landscape"}}
-<body class="page-preview-background">
+<body>
 <style>
     @media print {
         @page {
@@ -11,20 +11,37 @@
     {{> nav}}
 </div>
 
-<div class="output-container card-grid-container-flex-landscape-print">
-    {{#each cardPages as |cardPage|}}
+<div class="container no-print">
+    <h1>Downsync Starter Sets</h1>
 
-        <div class="page-preview page-letter-landscape" style="background-color:white">
-            <div class="page-card-grid">
-                {{#each cardPage as |cardData|}}
+    {{> starter-set-top-content}}
 
-                    {{> (lookup cardData 'template') cardData}}
-                {{/each}}
-            </div>
+    <div class="row">
+        <div class="col">
+            <a href="unit-cards-starter-print.html" class="btn btn-secondary">Switch To Portrait</a>
         </div>
-    {{/each}}
+        <div class="col">
+            <p class="text-end">
+                {{> btn-print}}
+            </p>
+        </div>
+    </div>
 </div>
+<div class="page-preview-background">
+    <div class="output-container card-grid-container-flex-landscape-print">
+        {{#each cardPages as |cardPage|}}
 
+            <div class="page-preview page-letter-landscape" style="background-color:white">
+                <div class="page-card-grid">
+                    {{#each cardPage as |cardData|}}
+
+                        {{> (lookup cardData 'template') cardData}}
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
 {{> footer }}
 </body>
 {{> close}}

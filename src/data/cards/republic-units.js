@@ -117,7 +117,7 @@ export const COURIER_TRANSPORT = make({
     ],
 })
 
-export const HARBINGER_MEDIUM_RECON = make({
+export const HARBINGER_RECON = make({
     slug: 'harbinger',
     name: 'Harbinger',
     bg: 'scorpion.png',
@@ -231,14 +231,14 @@ export const REPUBLIC_UNITS = [
     SEEKER_TEAM,
     GOLIATHS,
     COURIER_TRANSPORT,
-    HARBINGER_MEDIUM_RECON,
+    HARBINGER_RECON,
     CRUSADER_MEDIUM_TANK,
     MANDIBLE,
     SAMSON_HEAVY_TANK,
 ]
 
 export const REPUBLIC_DEMO_UNITS = [
-    HARBINGER_MEDIUM_RECON,
+    HARBINGER_RECON,
     CLEANSER_SQUAD,
     COURIER_TRANSPORT,
     CRUSADER_MEDIUM_TANK,

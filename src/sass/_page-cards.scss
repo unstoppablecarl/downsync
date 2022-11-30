@@ -2,7 +2,7 @@ $light-grey: #ddd;
 $mid-grey: #ccc;
 $outline-grey: #b3b3b3;
 
-@mixin pageCards($scale: 1) {
+@mixin pageCards($scale: 1, $blockTextScale: 1) {
 
     $margin: 4pt * $scale;
     $serif: 'Bitter', serif;
@@ -79,7 +79,6 @@ $outline-grey: #b3b3b3;
 
     .keyword {
         font-style: normal;
-        //text-decoration: underline;
         font-weight: 500;
 
     }
@@ -307,7 +306,7 @@ $outline-grey: #b3b3b3;
         }
 
         .action-description-row td {
-            font-size: 5pt * $scale;
+            font-size: 5pt * $blockTextScale;
             padding-top: 0.5em;
             padding-bottom: 0.5em;
 
@@ -355,7 +354,7 @@ $outline-grey: #b3b3b3;
         margin: 0.5em 0;
         font-family: $serif;
         font-weight: normal;
-        font-size: 5pt * $scale;
+        font-size: 5pt * $blockTextScale;
 
         .key {
             font-weight: bold;

@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table table-sm table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Unit</th>
+            <th>SIG</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each units}}
+            <tr>
+                <td>{{unit.name}}</td>
+                <td>{{unit.signature}}</td>
+                <td>{{count}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -37,7 +37,7 @@ export const COALITION_CARD_DEFAULTS = {
     icon: 'factions/icon-coalition.svg',
 }
 
-export const RECON_SCOUT = make({
+export const WIDOW_SCOUT = make({
     slug: 'scout',
     name: 'Widow Scout',
     bg: 'scout.png',
@@ -261,7 +261,7 @@ export const RNR_INFANTRY = make({
 })
 
 export const COALITION_UNITS = [
-    RECON_SCOUT,
+    WIDOW_SCOUT,
     SENTINEL_TAGGER,
     SENTINEL_HUNTER,
     VIRAGO_TANK,
@@ -274,7 +274,7 @@ export const COALITION_UNITS = [
 ]
 
 export const COALITION_DEMO_UNITS = [
-    RECON_SCOUT,
+    WIDOW_SCOUT,
     SENTINEL_TAGGER,
     VIRAGO_TANK,
     PHANTOM,

@@ -3,24 +3,24 @@ import {
     GUARDIAN_DESTROYER,
     GUARDIAN_MARKSMAN,
     PHANTOM,
-    RECON_SCOUT,
     SENTINEL_HUNTER,
     SENTINEL_TAGGER,
     SPIDER_DRONE_INFILTRATOR,
     VIRAGO_TANK,
+    WIDOW_SCOUT,
 } from './cards/coalition-units.js'
 import {
     CLEANSER_SQUAD,
     COURIER_TRANSPORT,
     CRUSADER_MEDIUM_TANK,
-    HARBINGER_MEDIUM_RECON,
+    HARBINGER_RECON,
     MANDIBLE,
     SAMSON_HEAVY_TANK,
 } from './cards/republic-units.js'
 
 export const coalitionArmyList = make('Coalition', [
     {
-        unit: RECON_SCOUT,
+        unit: WIDOW_SCOUT,
         count: 1,
     },
     {
@@ -67,7 +67,7 @@ export const republicArmyList = make('Republic of Man', [
         count: 2,
     },
     {
-        unit: HARBINGER_MEDIUM_RECON,
+        unit: HARBINGER_RECON,
         count: 2,
     },
     {
@@ -84,13 +84,13 @@ export const republicArmyList = make('Republic of Man', [
     },
 ])
 
-export const coalitionDemoList = make('Coalition Demo', [
+export const COALITION_STARTER_LIST = make('Coalition', [
     {
-        unit: SENTINEL_TAGGER,
+        unit: WIDOW_SCOUT,
         count: 1,
     },
     {
-        unit: SENTINEL_HUNTER,
+        unit: SENTINEL_TAGGER,
         count: 1,
     },
     {
@@ -107,14 +107,14 @@ export const coalitionDemoList = make('Coalition Demo', [
     },
 ])
 
-export const republicDemoList = make('Republic of Man Demo', [
+export const REPUBLIC_STARTER_LIST = make('Republic of Man', [
     {
-        unit: HARBINGER_MEDIUM_RECON,
+        unit: HARBINGER_RECON,
         count: 1,
     },
     {
         unit: CLEANSER_SQUAD,
-        count: 2,
+        count: 1,
     },
     {
         unit: COURIER_TRANSPORT,
@@ -130,23 +130,15 @@ export const republicDemoList = make('Republic of Man Demo', [
     },
 ])
 
-export const armyLists = [
-    coalitionDemoList,
-    republicDemoList,
+function make(name, units) {
 
-    coalitionArmyList,
-    republicArmyList,
-]
-
-function make(name, list) {
-
-    const modelCount = list.reduce((total, item) => {
+    const modelCount = units.reduce((total, item) => {
         return total + item.count
     }, 0)
 
     return {
         name,
-        list,
+        units,
         modelCount,
     }
 }
