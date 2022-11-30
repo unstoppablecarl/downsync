@@ -10,16 +10,16 @@ import {
     MICRO_ARTILLERY,
     SHOCK_AUTOCANNON,
     SHOCK_RIFLE,
+    SHOCK_SNIPER_RIFLE,
     SMART_MED_CANNON,
     SNAP_FIRE,
-    SNIPER_RIFLE,
 } from '../cards-data/weapons.js'
 import {
     ADAPTIVE_CAMO,
     ALL_TERRAIN,
     COUNTERMEASURE_DEFEND,
     FINISHER,
-    INFANTRY_SQUAD,
+    HARDENED_CM,
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
@@ -48,7 +48,6 @@ export const CLEANSER_SQUAD = make({
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
-        INFANTRY_SQUAD,
         MECHANIZED_INFANTRY,
     ],
 })
@@ -68,7 +67,6 @@ export const VECTOR_SQUAD = make({
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
-        INFANTRY_SQUAD,
         MECHANIZED_INFANTRY,
     ],
     definitions: [],
@@ -76,15 +74,15 @@ export const VECTOR_SQUAD = make({
 
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
-    signature: SIZE_MEDIUM,
-    type: 'Infantry Sniper Team',
+    signature: SIZE_SMALL,
+    type: 'Infantry Sniper Team x 1',
     speed: 4,
     targeting: 7,
     scan: 7,
-    defense: 13,
+    defense: 12,
     actions: [
         SCAN(2, 12),
-        SNIPER_RIFLE,
+        SHOCK_SNIPER_RIFLE,
     ],
     traits: [
         ADAPTIVE_CAMO,
@@ -99,7 +97,7 @@ export const COURIER_TRANSPORT = make({
     name: 'Courier',
     bg: 'courier.png',
     signature: SIZE_MEDIUM,
-    type: 'Medium Infantry Transport',
+    type: 'Medium Transport',
     speed: 6,
     targeting: 6,
     defense: 13,
@@ -123,7 +121,7 @@ export const HARBINGER_MEDIUM_RECON = make({
     name: 'Harbinger',
     bg: 'scorpion.png',
     signature: SIZE_SMALL,
-    type: 'Medium Recon Vehicle',
+    type: 'Light Recon Vehicle',
     speed: 7,
     targeting: 6,
     defense: 14,
@@ -188,7 +186,7 @@ export const SAMSON_HEAVY_TANK = make({
     targeting: 7,
     defense: 12,
     scan: null,
-    cm: 3,
+    cm: '3+1',
     cm_regen: 3,
     actions: [
         SMART_MED_CANNON,
@@ -196,6 +194,7 @@ export const SAMSON_HEAVY_TANK = make({
     ],
     traits: [
         PREDATOR,
+        HARDENED_CM,
         ALL_TERRAIN,
     ],
     definitions: [],

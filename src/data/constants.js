@@ -12,10 +12,12 @@ export const COST_COMMAND = 'COST_COMMAND'
 export const COST_COMMAND_X2 = 'COST_COMMAND_X2'
 
 export const EMPHASIS_KEYWORDS = [
+    'SIG',
+    'SPD',
+    'SCAN',
     'TARG',
     'DEF',
-    'SCAN',
-    'SPD',
+    'CM',
 
     'KILL',
     'STUN',
@@ -23,27 +25,29 @@ export const EMPHASIS_KEYWORDS = [
     'Refreshed',
     'All Terrain',
     'Fire Support',
-]
 
-export const EMPHASIS_KEYWORD_GROUPS = [
-    [
-        'Activated Tokens',
-        'Activated Token',
-    ],
-    [
-        'Overwatch Tokens',
-        'Overwatch Token',
-    ],
-    [
-        'Target Tag Tokens',
-        'Target Tag Token',
-    ],
-    [
-        'Countermeasure Tokens',
-        'Countermeasure Token',
-    ],
-    [
-        'Shroud Templates',
-        'Shroud Template',
-    ],
+    'Stealth Token',
+
+    'Spider Drones',
+    'Spider Drone: Infiltrator',
+    'Spider Drone',
+
+    'Activated Tokens',
+    'Activated Token',
+
+    'Overwatch Tokens',
+    'Overwatch Token',
+
+    'Target Tag Tokens',
+    'Target Tag Token',
+
+    'Hardened Countermeasure Token',
+
+    'Countermeasure Tokens',
+    'Countermeasure Token',
+
+    'Shroud Templates',
+    'Shroud Template',
+
+    'Taskforce',
 ]

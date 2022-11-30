@@ -6,7 +6,7 @@ import {
     RECON_SCOUT,
     SENTINEL_HUNTER,
     SENTINEL_TAGGER,
-    SPIDER_DRONE_ASSASSIN,
+    SPIDER_DRONE_INFILTRATOR,
     VIRAGO_TANK,
 } from './cards/coalition-units.js'
 import {
@@ -24,7 +24,7 @@ export const coalitionArmyList = make('Coalition', [
         count: 1,
     },
     {
-        unit: SPIDER_DRONE_ASSASSIN,
+        unit: SPIDER_DRONE_INFILTRATOR,
         count: 2,
     },
     {

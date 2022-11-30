@@ -1,8 +1,10 @@
 import {
     CLOSE_COMBAT,
+    DEADLY_VS,
     EXTREME_RANGE,
     TRAIT_ADVANCED,
     TRAIT_CLUSTERED,
+    TRAIT_DOUBLE_TAP,
     TRAIT_FIRE_SUPPORT,
     TRAIT_INFANTRY_NETWORK,
     TRAIT_OVERKILL,
@@ -17,9 +19,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { DEADLY_VS } from './unit-traits.js'
 import { keywordFormat } from '../support/text-formatters.js'
-import { makeTrait } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -43,15 +43,9 @@ export const MEDIUM_CANNON = make({
 export const DEPLOY_DRONES = make({
     name: 'Deploy Drones',
     cost: COST_COMMAND,
-    range: 3,
     effect: '&starf;',
-    traits: [
-        makeTrait({
-            name: 'Drone Carrier',
-            note: 'Spider Drone x 2',
-            desc: 'Place 2 Spider Drone Units within 3" of this Unit. The Spider Drones gain a Stealth Token and are not part of the current Taskforce. This action can be used once per game.',
-        }),
-    ],
+    target: 'Self',
+    desc: 'Place a the Drones of a Spider Drone: Infiltrator Unit within 3" of this Unit. They are not part of the current Taskforce. This action can be used once per game.',
 })
 
 export const TAG_CANNON = make({
@@ -101,7 +95,7 @@ export const HMG = make({
 
 export const SHOCK_RIFLE = make({
     name: 'Shock Rifle',
-    note: 'T1, T2',
+    note: 'Team 1, 2',
     range: 10,
     effect: 'STUN',
     rof: 1,
@@ -220,18 +214,18 @@ export const CLAWS = make({
 
 export const GUIDED_MISSILE = make({
     name: 'Guided Missile',
-    note: 'T3',
+    note: 'Team 3',
     cost: COST_ACTION_AND_COMMAND,
     range: 16,
     rof: 1,
     traits: [
-        TRAIT_SMART,
+        TRAIT_ADVANCED,
     ],
 })
 
 export const MICRO_ARTILLERY = make({
     name: 'Micro Artillery',
-    note: 'T3',
+    note: 'Team 3',
     range: 16,
     rof: 1,
     effect: 'KILL',
@@ -240,16 +234,16 @@ export const MICRO_ARTILLERY = make({
     ],
 })
 
-export const SNIPER_RIFLE = make({
-    name: 'Sniper Rifle',
+export const SHOCK_SNIPER_RIFLE = make({
+    name: 'Shock Sniper Rifle',
     range: 24,
-    rof: 2,
+    rof: 1,
     effect: 'STUN',
     traits: [
         DEADLY_VS('Infantry'),
+        TRAIT_DOUBLE_TAP,
     ],
 })
-
 
 export function SNAP_FIRE(weapon) {
 
@@ -257,7 +251,7 @@ export function SNAP_FIRE(weapon) {
         name: 'Snap Fire',
         cost: COST_COMMAND,
         rof: 1,
-        desc: 'This attack can only target an Infantry unit within 3" of your last attack target.',
+        desc: 'This attack can only target an Infantry unit within 3" of your last attack target this activation.',
     })
 
     return make(newWeapon)

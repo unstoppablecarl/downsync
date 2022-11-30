@@ -3,62 +3,27 @@ import {
     COST_ACTION_AND_COMMAND,
     COST_ACTION_OR_COMMAND,
     COST_COMMAND,
-    EMPHASIS_KEYWORD_GROUPS,
     EMPHASIS_KEYWORDS,
 } from '../constants.js'
 
-export function keywordFormat(str) {
-    str = emphasisKeywordFormat(str)
+export function keywordFormat(str, extraKeywords = []) {
+    if (!str) {
+        return
+    }
+
+    let keywords = EMPHASIS_KEYWORDS.concat(extraKeywords)
+    str = emphasisKeywordFormat(str, keywords)
     str = costKeywordFormat(str)
 
     return str
 }
 
-function emphasisKeywordFormat(str) {
-    if (!str) {
-        return
-    }
+function emphasisKeywordFormat(str, keywords) {
 
-    str = formatEmphasisKeywords(str)
-    str = formatEmphasisKeywordGroups(str)
+    let regex = new RegExp(`(${keywords.join('|')})`, 'g')
+    const subst = `<em class="keyword">$&</em>`
 
-    return str
-}
-
-function formatEmphasisKeywords(str) {
-    EMPHASIS_KEYWORDS.forEach((keyword) => {
-
-        str = wrapEmphasis(str, keyword)
-    })
-
-    return str
-}
-
-function formatEmphasisKeywordGroups(str) {
-    EMPHASIS_KEYWORD_GROUPS.forEach((group) => {
-
-        for (let i = 0; i < group.length; i++) {
-            let key = group[i]
-
-            const replaced = wrapEmphasis(str, key)
-            const matchFound = str !== replaced
-            // if a keyword in the group was matched stop trying to match others in the group
-            if (matchFound) {
-                str = replaced
-
-                break
-            }
-        }
-    })
-
-    return str
-}
-
-function wrapEmphasis(str, keyword) {
-    let re = new RegExp(keyword, 'g')
-    let rep = `<em class="keyword">${keyword}</em>`
-
-    return str.replace(re, rep)
+    return str.replace(regex, subst)
 }
 
 const costKeywords = {

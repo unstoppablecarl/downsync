@@ -12,7 +12,7 @@ export const STUN = make({
 
 export const NOTE_STEALTH_TOKEN = make({
     name: 'Stealth Token',
-    desc: 'A Unit with a Stealth Token cannot be targeted by enemy attacks. A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit ends its movement within 3". A Unit cannot have more than 1 Stealth Token.',
+    desc: 'A Unit with a Stealth Token cannot be targeted by enemy actions. A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit is within 3" after any Unit ends a move. A Unit cannot gain a Stealth Token if an enemy Unit is within 3" and cannot have more than 1.',
 })
 
 //Stealth: This unit cannot be targeted by enemy attacks. This unit loses the Stealth token if it makes an attack or if an enemy model successful SCANS it.

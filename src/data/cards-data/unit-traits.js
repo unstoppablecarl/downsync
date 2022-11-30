@@ -1,11 +1,13 @@
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { makeTrait } from '../support/factories.js'
 
-export const GO_DARK_ON_REFRESH = make({
-    name: 'Hide',
-    note: `COST: ${COST_COMMAND}, Refresh Phase`,
-    desc: 'When this Unit is Refreshed it gains a Stealth Token.  This Unit cannot Hide if it is within 3" of an enemy Unit.',
-})
+export function STEALTHY_INFANTRY(subUnitName) {
+
+    return make({
+        name: 'Stealthy',
+        desc: `Each each ${subUnitName} in this Unit begins the game with a Stealth Token.`,
+    })
+}
 
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
@@ -61,12 +63,17 @@ export const AMBUSH_COORDINATOR = make({
 
 export const INFANTRY_SQUAD = make({
     name: 'Infantry Squad',
-    desc: 'This Unit is composed of 3 Infantry teams on separate infantry bases that activate together. They are indicated as T1, T2, and T3 above.',
+    desc: 'This Unit is composed of 3 Infantry teams on infantry bases that activate together.',
+})
+
+export const SPIDER_DRONE_SQUAD = make({
+    name: 'Infantry Squad',
+    desc: 'This Unit contains 2 Spider Drones on infantry bases that activate together.',
 })
 
 export const MECHANIZED_INFANTRY = make({
     name: 'Mechanized',
-    desc: 'This Unit may begin the game mounted in a Courier transport. If this unit begins the game mounted its Ping is not used for the game.',
+    desc: 'This Unit may begin the game mounted in a Courier transport. If it does its Ping is not used for the game.',
 })
 
 export const PREDATOR = make({
@@ -105,18 +112,17 @@ export const ALL_TERRAIN = make({
     desc: 'This unit ignores terrain movement penalties.',
 })
 
-export const DEADLY_VS = (type) => {
-    return make({
-        name: 'Deadly',
-        note: type,
-        desc: `This weapon's effect is KILL against ${type} targets.`,
-    })
-}
-
 export const INFANTRY_TRANSPORT = make({
     name: 'Transport',
     note: `Small SIG ${TYPE_INFANTRY}`,
-    desc: `This Unit may start the game transporting a small SIG Infantry Unit from your force. Do not deploy that unit's Ping Template at the beginning of the game.`,
+    desc: `This Unit may be designated the dedicated transport of a small SIG Infantry Unit from your force with the Mechanized trait.`,
+    desc_keywords: ['Mechanized'],
+})
+
+export const HARDENED_CM = make({
+    name: 'Hardened CM',
+    note: '+1',
+    desc: `This unit begins the game with 1 Hardened Countermeasure Token (indicated above as +1 under the CM stat). Hardened CMs automatically succeed and do not regenerate.`,
 })
 
 function make(trait) {

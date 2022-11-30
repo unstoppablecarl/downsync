@@ -1,1 +1,1 @@
-export const CARDS_VERSION = 'B1'
+export const CARDS_VERSION = 'B2'

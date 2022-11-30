@@ -25,7 +25,7 @@ export const PATROL = make({
     cost: COST_COMMAND,
     target: 'Self',
     effect: '&starf;',
-    desc: 'This Unit gains an Overwatch Token.',
+    desc: 'This Unit gains an Overwatch Token. This must be the last action this unit performs in an activation.',
 })
 
 export const SHROUD = (range, count) => {
@@ -57,7 +57,7 @@ export const TRANSPORT_UNLOAD = make({
 export const TRANSPORT_LOAD = make({
     name: 'Load',
     note: 'Free Action, 3"',
-    desc: keywordFormat(`Place any eligible units within 3" in this transport up to its max capacity. Only units that forfeit a move or action are eligible. After a Load action, this unit may immediately move up to its SPD if it has not moved this turn.`),
+    desc: keywordFormat(`Place any eligible units within 3" in this transport up to its max capacity. Units must forfeit a move or action are eligible.`),
     no_stats: true,
 })
 
@@ -66,7 +66,7 @@ export const GO_DARK = make({
     cost: COST_COMMAND,
     target: 'Self',
     effect: '&starf;',
-    desc: 'This Unit gains a Stealth Token. This Unit cannot Go Dark if it is within 3" of an enemy Unit.',
+    desc: 'Each Spider Drone in this Unit gains a Stealth Token.',
 })
 
 export const BASIC_SCAN = SCAN(1, 12)

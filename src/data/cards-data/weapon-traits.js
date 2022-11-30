@@ -41,8 +41,7 @@ export const TRAIT_LIMITED_VS = (types) => {
 export const TRAIT_SPECIALIZED_VS = (types) => {
     return make({
         name: 'Specialized',
-        note: '+2 TARG',
-        desc: `vs ${joinTypes(types)}.`,
+        desc: `+2 TARG vs ${joinTypes(types)} targets.`,
     })
 }
 
@@ -71,15 +70,18 @@ export const EXTREME_RANGE = make({
 
 export const CLOSE_COMBAT = make({
     name: 'Close Combat',
-    desc: 'Ignores short range modifiers and Concealment.',
+    desc: 'Ignores Concealment and short range modifiers.',
 })
-
 
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',
-    desc: 'Attacks from this weapon can use the LOS of Infantry Teams in this unit.',
+    desc: 'Attacks from this weapon can use the LOS of Infantry Teams in this Unit.',
 })
 
+export const TRAIT_DOUBLE_TAP = make({
+    name: 'Double Tap',
+    desc: `This weapon's effect is KILL for Stunned targets.`,
+})
 
 export const PLACE_EFFECT = (distance) => {
     return make({
@@ -89,6 +91,13 @@ export const PLACE_EFFECT = (distance) => {
     })
 }
 
+export const DEADLY_VS = (type) => {
+    return make({
+        name: 'Deadly',
+        note: type,
+        desc: `This weapon's effect is KILL for ${type} targets.`,
+    })
+}
 
 function make(trait) {
     return makeTrait(trait)

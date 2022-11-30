@@ -22,9 +22,10 @@ import {
     AMBUSH,
     CLEAR_THE_WAY,
     DEFENSE_AURA,
-    GO_DARK_ON_REFRESH,
+    HARDENED_CM,
     REVEAL_AND_DEPLOY,
     SENTRY,
+    STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 
 import { NOTE_STEALTH_TOKEN, SHROUD_TEMPLATE } from '../definitions.js'
@@ -201,7 +202,7 @@ export const GUARDIAN_DESTROYER = make({
     targeting: 6,
     defense: 13,
     scan: null,
-    cm: 3,
+    cm: '3+1',
     cm_regen: 3,
     actions: [
         HMG,
@@ -209,16 +210,19 @@ export const GUARDIAN_DESTROYER = make({
     ],
     traits: [
         SENTRY,
+        HARDENED_CM,
         ALL_TERRAIN,
     ],
 })
 
-export const SPIDER_DRONE_ASSASSIN = make({
+export const SPIDER_DRONE_INFILTRATOR = make({
     slug: 'spider_drone_pack',
     name: 'Spider Drone',
+    variant_name: 'Infiltrator',
+    name_font_size: '90%',
     bg: 'spider-drone.png',
     signature: SIZE_SMALL,
-    type: 'Robotic Infantry',
+    type: 'Robotic Infantry x 2',
     speed: 6,
     targeting: 6,
     defense: 14,
@@ -228,7 +232,7 @@ export const SPIDER_DRONE_ASSASSIN = make({
         GO_DARK,
     ],
     traits: [
-        GO_DARK_ON_REFRESH,
+        STEALTHY_INFANTRY('Spider Drone'),
         ALL_TERRAIN,
     ],
     definitions: [
@@ -265,7 +269,7 @@ export const COALITION_UNITS = [
     PHANTOM,
     GUARDIAN_DESTROYER,
     GUARDIAN_MARKSMAN,
-    SPIDER_DRONE_ASSASSIN,
+    SPIDER_DRONE_INFILTRATOR,
     RNR_INFANTRY,
 ]
 
@@ -275,7 +279,7 @@ export const COALITION_DEMO_UNITS = [
     VIRAGO_TANK,
     PHANTOM,
     GUARDIAN_DESTROYER,
-    SPIDER_DRONE_ASSASSIN,
+    SPIDER_DRONE_INFILTRATOR,
 ]
 
 function make(unit) {
