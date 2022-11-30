@@ -122,7 +122,7 @@ export const INFANTRY_TRANSPORT = make({
 export const HARDENED_CM = make({
     name: 'Hardened CM',
     note: '+1',
-    desc: `This unit begins the game with 1 Hardened Countermeasure Token (indicated above as +1 under the CM stat). Hardened CMs automatically succeed and do not regenerate.`,
+    desc: `This unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
 })
 
 function make(trait) {

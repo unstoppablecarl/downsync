@@ -35,6 +35,7 @@ export const REPUBLIC_CARD_DEFAULTS = {
 
 export const CLEANSER_SQUAD = make({
     slug: 'cleanser_team',
+    bg: 'cleanser-squad.png',
     name: 'Cleanser Squad',
     signature: SIZE_SMALL,
     type: 'Infantry Team x 3',
@@ -111,8 +112,8 @@ export const COURIER_TRANSPORT = make({
         TRANSPORT_LOAD,
     ],
     traits: [
-        INFANTRY_TRANSPORT,
         COUNTERMEASURE_DEFEND(TYPE_INFANTRY),
+        INFANTRY_TRANSPORT,
     ],
 })
 
@@ -237,9 +238,9 @@ export const REPUBLIC_UNITS = [
 ]
 
 export const REPUBLIC_DEMO_UNITS = [
+    HARBINGER_MEDIUM_RECON,
     CLEANSER_SQUAD,
     COURIER_TRANSPORT,
-    HARBINGER_MEDIUM_RECON,
     CRUSADER_MEDIUM_TANK,
     SAMSON_HEAVY_TANK,
 ]
