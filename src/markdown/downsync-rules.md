@@ -114,9 +114,11 @@ The Active Player declares which Units/Pings will be included in the Taskforce. 
 force may be included. Designated Units are now considered to be "Taskforce Units".
 
 #### Refresh
+All Taskforce Units:
 
-Remove all overwatch tokens from Taskforce units. Regenerate Countermeasure Tokens. Resolve special abilities that
-trigger when a Taskforce Unit is refreshed.
+- Remove overwatch tokens
+- Regenerate Countermeasure Tokens
+- Resolve special abilities that trigger when a Unit is refreshed
 
 #### Reveal
 
