@@ -104,7 +104,6 @@ export const COURIER_TRANSPORT = make({
     defense: 13,
     scan: 6,
     cm: 2,
-    cm_regen: 2,
     actions: [
         SCAN(1, 10),
         CANNON,
@@ -128,7 +127,6 @@ export const HARBINGER_RECON = make({
     defense: 14,
     scan: 7,
     cm: 1,
-    cm_regen: 1,
     actions: [
         SCAN(2, 12),
         SHOCK_AUTOCANNON,
@@ -149,7 +147,6 @@ export const CRUSADER_MEDIUM_TANK = make({
     defense: 13,
     scan: null,
     cm: 2,
-    cm_regen: 2,
     actions: [
         MEDIUM_CANNON,
     ],
@@ -188,7 +185,6 @@ export const SAMSON_HEAVY_TANK = make({
     defense: 12,
     scan: null,
     cm: '3+1',
-    cm_regen: 3,
     actions: [
         SMART_MED_CANNON,
         SNAP_FIRE(SMART_MED_CANNON),
@@ -212,7 +208,6 @@ export const GOLIATHS = make({
     defense: 13,
     scan: null,
     cm: 1,
-    cm_regen: 1,
     actions: [
         MG,
         ADVANCED_CANNON,

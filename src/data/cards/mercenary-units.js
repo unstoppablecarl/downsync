@@ -16,7 +16,6 @@ export const HEAVY_INFANTRY = make({
     defense: 13,
     scan: 6,
     cm: 1,
-    cm_regen: 1,
     actions: [
         SCAN(1, 12),
         INFANTRY_PARTICLE_RIFLE,

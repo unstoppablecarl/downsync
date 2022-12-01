@@ -48,7 +48,6 @@ export const WIDOW_SCOUT = make({
     defense: 14,
     scan: 7,
     cm: 1,
-    cm_regen: 1,
     actions: [
         SCAN(3, 14),
         MG,
@@ -69,7 +68,6 @@ export const SENTINEL_TAGGER = make({
     defense: 14,
     scan: null,
     cm: 1,
-    cm_regen: 1,
     actions: [
         TAG_CANNON,
     ],
@@ -88,7 +86,6 @@ export const SENTINEL_HUNTER = make({
     defense: 14,
     scan: 7,
     cm: 1,
-    cm_regen: 1,
     actions: [
         BASIC_SCAN,
         FUSION_CANNON,
@@ -107,7 +104,6 @@ export const VIRAGO_TANK = make({
     defense: 13,
     scan: 6,
     cm: 2,
-    cm_regen: 2,
     actions: [
         BASIC_SCAN,
         MEDIUM_CANNON,
@@ -128,7 +124,6 @@ export const AURORA = make({
     defense: 13,
     scan: 6,
     cm: 1,
-    cm_regen: 1,
     actions: [
         BASIC_SCAN,
         CANNON,
@@ -155,7 +150,6 @@ export const PHANTOM = make({
     defense: 13,
     scan: 6,
     cm: 1,
-    cm_regen: 1,
     actions: [
         BASIC_SCAN,
         DOUBLE_CANNON,
@@ -180,7 +174,6 @@ export const GUARDIAN_MARKSMAN = make({
     defense: 12,
     scan: null,
     cm: 3,
-    cm_regen: 2,
     actions: [
         HMG,
         RAILGUN,
@@ -203,7 +196,6 @@ export const GUARDIAN_DESTROYER = make({
     defense: 13,
     scan: null,
     cm: '3+1',
-    cm_regen: 3,
     actions: [
         HMG,
         SMART_MED_CANNON,
