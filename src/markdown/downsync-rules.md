@@ -111,7 +111,7 @@ The Active Player resolves a Taskforce Activation
 #### Designate
 
 The Active Player declares which Units/Pings will be included in the Taskforce. Any unactivated Units/Pings the player's
-force may be included. Designated Units are now considered to be "Taskforce Units".
+force may be included. Designated Units are now considered to be Taskforce Units.
 
 #### Refresh
 
