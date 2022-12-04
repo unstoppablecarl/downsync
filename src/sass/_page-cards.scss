@@ -30,11 +30,6 @@ $outline-grey: #b3b3b3;
         }
     }
 
-    .card-portrait {
-        float: right;
-        height: 0.375in * $scale;
-        margin-left: 4pt * $scale;
-    }
 
     .card-content-container {
         border-radius: 2pt;
@@ -89,37 +84,34 @@ $outline-grey: #b3b3b3;
     .cost-icon-action-or-command,
     .cost-icon-action-and-command {
         background: #ebebeb;
-        font-weight: bold;
-        display: inline-block;
-        width: 10px * $scale;
-        height: 10px * $scale;
         border: 1px solid $outline-grey;
-        box-sizing: content-box;
+        display: inline-block;
+        padding: 0.25em 0.45em;
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
     }
 
     .cost-icon-command-x2 {
-        width: 15px * $scale;
+
     }
 
     .cost-icon-action-or-command,
     .cost-icon-action-and-command {
-        border-radius: 2px 10px 10px 2px;
-        width: auto;
-        padding-left: 2px * $scale;
-        padding-right: 3px * $scale;
-
+        border-radius: (2px * $scale) 50px 50px (2px * $scale);
+        padding-left: 0.4em;
+        padding-right: 0.4em;
     }
 
     .cost-icon-action {
-        border-radius: 2px;
+        border-radius: 2px * $scale;
     }
 
     .cost-icon-command,
     .cost-icon-command-x2 {
         border-radius: 50px;
-
-        width: 11px * $scale;
-        height: 11px * $scale;
     }
 
     .command-points {
@@ -142,18 +134,14 @@ $outline-grey: #b3b3b3;
     }
 
     .heading {
-        padding: 4pt * $scale 4pt * $scale 2pt * $scale;
+        padding: 2pt * $scale 2pt * $scale 4pt * $scale;
         font-family: $sansSerif;
-
-        .icon-wrap {
-            width: 0.375in * $scale;
-            height: 0.375in * $scale;
-        }
+        display: flex;
 
         .icon {
             width: 0.375in * $scale;
             height: 0.375in * $scale;
-            float: left;
+            flex-shrink: 1;
             margin-right: 4pt * $scale;
         }
 
@@ -162,10 +150,12 @@ $outline-grey: #b3b3b3;
             min-height: auto;
             line-height: 1.3;
             font-size: 9pt * $scale;
+            flex: 2;
 
             .primary-title {
                 display: block;
                 font-weight: 600;
+                white-space: nowrap;
 
                 .variant-title {
                     font-weight: normal;
@@ -178,14 +168,35 @@ $outline-grey: #b3b3b3;
             }
 
             .sub-title {
+
+                $font-size: 6pt * $scale;
                 display: block;
-                font-size: 6pt * $scale;
+                font-size: $font-size;
+
+                .squad-size {
+                    display: inline-block;
+                    padding: .25em .55em;
+                    font-weight: bold;
+                    line-height: 1;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: 100px;
+                    background: #ebebeb;
+                    border: 1px solid #b3b3b3;
+                }
             }
 
             .faction {
                 font-size: 5pt * $scale;
                 margin-top: 2pt * $scale;
             }
+        }
+
+        .card-portrait {
+            height: 0.375in * $scale;
+            margin-left: 4pt * $scale;
+            flex-shrink: 1;
         }
     }
 
@@ -374,16 +385,17 @@ $outline-grey: #b3b3b3;
         .cost-icon-action-and-command,
         .cost-icon-action-or-command {
             font-family: "Open Sans", sans-serif;
-            height: auto;
-            font-size: 4pt * $scale;
-            position: relative;
-            top: -1px;
+            //height: auto;
+            //font-size: 4pt * $scale;
+            //position: relative;
+            //top: -1px;
+
         }
 
         .cost-icon-command,
         .cost-icon-action {
-            width: 8px * $scale;
-            text-align: center;
+            //width: 8px * $scale;
+            //text-align: center;
         }
     }
 

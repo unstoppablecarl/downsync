@@ -37,26 +37,8 @@ export const CLEANSER_SQUAD = make({
     bg: 'cleanser-squad.png',
     name: 'Cleanser Squad',
     signature: SIZE_SMALL,
-    type: 'Infantry Team x 3',
-    speed: 4,
-    targeting: 6,
-    defense: 12,
-    actions: [
-        SHOCK_RIFLE,
-        MICRO_ARTILLERY,
-    ],
-    traits: [
-        ADAPTIVE_CAMO,
-        ALL_TERRAIN,
-        MECHANIZED_INFANTRY,
-    ],
-})
-
-export const VECTOR_SQUAD = make({
-    slug: 'vector_team',
-    name: 'Vector Squad',
-    signature: SIZE_SMALL,
-    type: 'Infantry Team x 3',
+    type: 'Human Infantry Squad',
+    squad_size: 3,
     speed: 4,
     targeting: 6,
     defense: 12,
@@ -69,13 +51,34 @@ export const VECTOR_SQUAD = make({
         ALL_TERRAIN,
         MECHANIZED_INFANTRY,
     ],
+})
+
+export const VECTOR_SQUAD = make({
+    slug: 'vector_team',
+    name: 'Vector Squad',
+    signature: SIZE_SMALL,
+    type: 'Human Infantry Squad',
+    squad_size: 3,
+    speed: 4,
+    targeting: 6,
+    defense: 12,
+    actions: [
+        SHOCK_RIFLE,
+        MICRO_ARTILLERY,
+    ],
+    traits: [
+        ADAPTIVE_CAMO,
+        ALL_TERRAIN,
+        MECHANIZED_INFANTRY,
+    ],
     definitions: [],
 })
 
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
     signature: SIZE_SMALL,
-    type: 'Infantry Sniper Team x 1',
+    type: 'Human Infantry Squad',
+    squad_size: 1,
     speed: 4,
     targeting: 7,
     scan: 7,
@@ -201,7 +204,8 @@ export const GOLIATHS = make({
     name: 'Goliath Squad',
     bg: 'goliath-squad.png',
     signature: SIZE_MEDIUM,
-    type: 'Power Armored Infantry x 3',
+    type: 'Human Infantry Squad',
+    squad_size: 3,
     speed: 5,
     targeting: 6,
     defense: 13,
@@ -232,7 +236,7 @@ export const REPUBLIC_UNITS = [
 
 export const REPUBLIC_DEMO_UNITS = [
     HARBINGER_RECON,
-    CLEANSER_SQUAD,
+    VECTOR_SQUAD,
     COURIER_TRANSPORT,
     CRUSADER_MEDIUM_TANK,
     SAMSON_HEAVY_TANK,

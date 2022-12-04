@@ -1,10 +1,8 @@
 <div class="card card-unit" id="{{slug}}">
     <div class="card-content-container">
-        <div class="heading content-padding">
+        <div class="heading">
             <img src="assets/img/{{icon}}" class="icon">
-            {{#if bg}}
-                <img src="assets/img/units/{{bg}}" class="card-portrait"/>
-            {{/if}}
+
             <div class="title">
                 <div class="primary-title"{{{style_font_size name_font_size}}}>
                     {{name}}{{#if variant_name}}:
@@ -15,13 +13,19 @@
                 </div>
 
                 <div class="sub-title">
-                    {{{type}}}
+                    {{type}}
+                    {{#if squad_size}}
+                        <span class="squad-size">{{squad_size}}</span>
+                    {{/if}}
                 </div>
 
                 <div class="faction">
                     {{faction}}
                 </div>
             </div>
+            {{#if bg}}
+                <img src="assets/img/units/{{bg}}" class="card-portrait"/>
+            {{/if}}
         </div>
 
         <table class="table-stats">
