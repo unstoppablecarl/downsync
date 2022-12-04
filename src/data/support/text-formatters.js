@@ -6,12 +6,33 @@ import {
     EMPHASIS_KEYWORDS,
 } from '../constants.js'
 
-export function keywordFormat(str, extraKeywords = []) {
+
+export function keywordFormatDesc({
+                                      name,
+                                      desc,
+                                      desc_keywords_name = null,
+                                      desc_keywords_before = [],
+                                      desc_keywords_after = [],
+                                  }) {
+    let nameKeywords = [name]
+    if (Array.isArray(desc_keywords_name)) {
+        nameKeywords = desc_keywords_name
+    }
+
+    let before = desc_keywords_before || []
+    let after = desc_keywords_after || []
+
+    before = [].concat(before, nameKeywords)
+
+    return keywordFormat(desc, before, after)
+}
+
+export function keywordFormat(str, keywordsBefore = [], keywordsAfter = []) {
     if (!str) {
         return
     }
 
-    let keywords = EMPHASIS_KEYWORDS.concat(extraKeywords)
+    let keywords = [].concat(keywordsBefore, EMPHASIS_KEYWORDS, keywordsAfter)
     str = emphasisKeywordFormat(str, keywords)
     str = costKeywordFormat(str)
 

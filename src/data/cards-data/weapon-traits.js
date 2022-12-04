@@ -10,7 +10,7 @@ export const TRAIT_CLUSTERED = (radius) => {
     return make({
         name: 'Clustered',
         note: `${radius}"`,
-        desc: `Before resolving this action, select a point within range and LOS. Only units within ${radius}" of this point may be targeted. Declare all targets before resolving attacks.`,
+        desc: `Before resolving this action, select a point within range and LOS. Only Units within ${radius}" of this point may be targeted. Declare all targets before resolving attacks.`,
     })
 }
 
@@ -27,7 +27,7 @@ export const TRAIT_DISTRIBUTED = make({
 
 export const TRAIT_TAGGED_EFFECT = make({
     name: 'Tagged',
-    desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A unit can only be Tagged once.',
+    desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit can only be Tagged once.',
 })
 
 export const TRAIT_LIMITED_VS = (types) => {
@@ -87,7 +87,7 @@ export const PLACE_EFFECT = (distance) => {
     return make({
         name: 'Place Effect',
         note: `Place ${distance}"`,
-        desc: `Target unit is placed by attacker completely within ${distance}" of its current location.`,
+        desc: `Target Unit is placed by attacker completely within ${distance}" of its current location.`,
     })
 }
 

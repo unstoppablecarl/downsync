@@ -49,5 +49,6 @@ export const EMPHASIS_KEYWORDS = [
     'Shroud Templates',
     'Shroud Template',
 
+    'Taskforce Activation',
     'Taskforce',
 ]

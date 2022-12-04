@@ -2,7 +2,7 @@ import { keywordFormat } from './support/text-formatters.js'
 
 export const SHROUD_TEMPLATE = make({
     name: 'Shroud Template',
-    desc: `3" diameter, grants concealment to units within, does not block LOS.`,
+    desc: `3" diameter circle, grants concealment to Units within, does not block LOS.`,
 })
 
 export const STUN = make({
@@ -15,7 +15,6 @@ export const NOTE_STEALTH_TOKEN = make({
     desc: 'A Unit with a Stealth Token cannot be targeted by enemy actions. A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit is within 3" after any Unit ends a move. A Unit cannot gain a Stealth Token if an enemy Unit is within 3" and cannot have more than 1.',
 })
 
-//Stealth: This unit cannot be targeted by enemy attacks. This unit loses the Stealth token if it makes an attack or if an enemy model successful SCANS it.
 function make(ability) {
     ability.desc = keywordFormat(ability.desc)
 

@@ -12,7 +12,7 @@ export function STEALTHY_INFANTRY(subUnitName) {
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
     note: `COST: ${COST_COMMAND}, Movement phase`,
-    desc: 'While within 8" units in the same Taskforce gain All Terrain.',
+    desc: 'While within 8" Units in the same Taskforce gain All Terrain.',
 })
 
 export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
@@ -20,7 +20,7 @@ export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
     return make({
         name: 'Defend',
         note: `${type}, 4"`,
-        desc: `${typePlural} within 4" can spend this unit's Countermeasure Tokens.`,
+        desc: `${typePlural} within 4" can spend this Unit's Countermeasure Tokens.`,
     })
 }
 
@@ -34,7 +34,7 @@ export const DEFENSE_NET = (type) => {
     return make({
         name: 'Defense Net',
         note: `${type}, 4"`,
-        desc: `When resolving an attack against this unit, it may spent up to 1 Countermeasure token controlled by a friendly ${type} Unit within 4" in addition to its own Countermeasure tokens.`,
+        desc: `When resolving an attack against this Unit, it may spent up to 1 Countermeasure token controlled by a friendly ${type} Unit within 4" in addition to its own Countermeasure tokens.`,
     })
 }
 
@@ -47,18 +47,19 @@ export const DEFENSE_AURA = make({
 export const ADAPTIVE_CAMO = make({
     name: 'Adaptive Camo',
     note: '+1 DEF',
-    desc: 'When concealed this unit gains an additional +1 DEF.',
+    desc: 'When concealed this Unit gains an additional +1 DEF.',
+})
+
+export const CM_SHIELD = make({
+    name: 'CM Shield',
+    note: '&times;2, 4"',
+    desc: 'This Unit begins the game with 2 CM Shield Tokens. When this Unit is refreshed it replenishes CM Shield Tokens until it has 2. Friendly Units within 4" may spend CM Shield Tokens on this Unit as if they were Countermeasure Tokens.',
+    desc_keywords_before: ['CM Shield Tokens', 'CM Shield Token'],
 })
 
 export const AMBUSH = make({
     name: 'Ambush',
-    desc: `When declaring participating units of a Reaction Engagement, select a ping matching this unit's SIG. This unit is immediately revealed using the selected ping and becomes a participating unit in the Reaction Engagement. This includes pings that have an Activated Token.`,
-})
-
-export const AMBUSH_COORDINATOR = make({
-    name: 'Ambush Coordinator',
-    note: `COST: ${COST_COMMAND}, 4"`,
-    desc: `When this unit uses Ambush, target friendly small or medium ping within 4" may also use the Ambush ability.`,
+    desc: `When declaring participating Units of a Reaction Engagement, select a ping matching this Unit's SIG. This Unit is immediately revealed using the selected ping and becomes a participating Unit in the Reaction Engagement. This includes Pings that have an Activated Token.`,
 })
 
 export const INFANTRY_SQUAD = make({
@@ -86,30 +87,18 @@ export const REVEAL_AND_DEPLOY = (count, unitName) => {
     return make({
         name: 'Reveal',
         note: `deploy ${count}, within 3"`,
-        desc: `When revealed ${count} infantry based ${unitName} units are placed within 3" and the ping is removed.`,
+        desc: `When revealed ${count} infantry based ${unitName} Units are placed within 3" and the ping is removed.`,
     })
 }
 
-export const RUSH = make({
-    name: 'Rush',
-    note: `COST: ${COST_COMMAND}, movement phase`,
-    desc: 'Up to 4 Spider Drone units in the active Taskforce may perform a double move without forfeiting their action point. A Spider Drone cannot benefit from Rush if it was affected by Scatter this round.',
-})
-
-export const SCATTER = make({
-    name: 'Scatter',
-    note: `COST: ${COST_COMMAND}, reveal phase`,
-    desc: 'When revealed, all Spider Drone units in this pack may be placed within 8" (instead of 3").',
-})
-
 export const SENTRY = make({
     name: 'Sentry',
-    desc: 'This unit gains +1 to reaction rolls.',
+    desc: 'This Unit gains +1 to reaction rolls.',
 })
 
 export const ALL_TERRAIN = make({
     name: 'All Terrain',
-    desc: 'This unit ignores terrain movement penalties.',
+    desc: 'This Unit ignores terrain movement penalties.',
 })
 
 export const INFANTRY_TRANSPORT = make({
@@ -122,7 +111,7 @@ export const INFANTRY_TRANSPORT = make({
 export const HARDENED_CM = make({
     name: 'Hardened CM',
     note: '+1',
-    desc: `This unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
+    desc: `This Unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
 })
 
 function make(trait) {

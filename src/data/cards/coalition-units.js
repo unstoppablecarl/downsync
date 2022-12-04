@@ -9,12 +9,12 @@ import {
     MG,
     RAILGUN,
     REPAIR_RENCH,
+    SMALL_ARMS,
     SMART_MED_CANNON,
-    SMART_SMALL_ARMS,
     TAG_CANNON,
     TARGET_LOCK,
 } from '../cards-data/weapons.js'
-import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL, TYPE_VEHICLE } from '../constants.js'
+import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
 
 import {
     ADAPTIVE_CAMO,
@@ -23,13 +23,12 @@ import {
     CLEAR_THE_WAY,
     DEFENSE_AURA,
     HARDENED_CM,
-    REVEAL_AND_DEPLOY,
     SENTRY,
     STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 
-import { NOTE_STEALTH_TOKEN, SHROUD_TEMPLATE } from '../definitions.js'
-import { BASIC_SCAN, GO_DARK, PATROL, SCAN, SHROUD, SPOTTER } from '../cards-data/actions.js'
+import { NOTE_STEALTH_TOKEN } from '../definitions.js'
+import { BASIC_SCAN, GO_DARK, PATROL, SCAN, SHROUD } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 
 export const COALITION_CARD_DEFAULTS = {
@@ -42,7 +41,7 @@ export const WIDOW_SCOUT = make({
     name: 'Widow Scout',
     bg: 'scout.png',
     signature: SIZE_SMALL,
-    type: 'Light Recon ' + TYPE_VEHICLE,
+    type: 'Light Vehicle',
     speed: 8,
     targeting: 5,
     defense: 14,
@@ -62,7 +61,7 @@ export const SENTINEL_TAGGER = make({
     variant_name: 'Tagger',
     bg: 'sentinel-tagger.png',
     signature: SIZE_SMALL,
-    type: 'Light ' + TYPE_VEHICLE,
+    type: 'Light Vehicle',
     speed: 8,
     targeting: 6,
     defense: 14,
@@ -80,11 +79,11 @@ export const SENTINEL_HUNTER = make({
     variant_name: 'Hunter',
     bg: 'sentinel-hunter.png',
     signature: SIZE_SMALL,
-    type: 'Light ' + TYPE_VEHICLE,
+    type: 'Light Vehicle',
     speed: 8,
-    targeting: 7,
+    targeting: 6,
     defense: 14,
-    scan: 7,
+    scan: null,
     cm: 1,
     actions: [
         BASIC_SCAN,
@@ -98,7 +97,7 @@ export const VIRAGO_TANK = make({
     name: 'Virago',
     bg: 'virago.png',
     signature: SIZE_MEDIUM,
-    type: 'Medium Tank',
+    type: 'Medium Vehicle',
     speed: 6,
     targeting: 6,
     defense: 13,
@@ -118,9 +117,9 @@ export const AURORA = make({
     variant_name: 'Aurora',
     bg: 'aurora.png',
     signature: SIZE_MEDIUM,
-    type: 'Ground Support ' + TYPE_VEHICLE,
+    type: 'Ground Support Vehicle',
     speed: 6,
-    targeting: 7,
+    targeting: 5,
     defense: 13,
     scan: 6,
     cm: 1,
@@ -133,9 +132,6 @@ export const AURORA = make({
         ADAPTIVE_CAMO,
         DEFENSE_AURA,
     ],
-    definitions: [
-        SHROUD_TEMPLATE,
-    ],
 })
 
 export const PHANTOM = make({
@@ -144,7 +140,7 @@ export const PHANTOM = make({
     variant_name: 'Phantom',
     bg: 'phantom.png',
     signature: SIZE_MEDIUM,
-    type: 'Ground Support ' + TYPE_VEHICLE,
+    type: 'Ground Support Vehicle',
     speed: 6,
     targeting: 5,
     defense: 13,
@@ -158,7 +154,6 @@ export const PHANTOM = make({
     traits: [
         ADAPTIVE_CAMO,
         AMBUSH,
-        //AMBUSH_COORDINATOR,
     ],
 })
 
@@ -168,18 +163,18 @@ export const GUARDIAN_MARKSMAN = make({
     variant_name: 'Marksman',
     bg: 'guardian-marksman.png',
     signature: SIZE_LARGE,
-    type: 'Heavy Tank',
+    type: 'Heavy Vehicle',
     speed: 4,
-    targeting: 7,
-    defense: 12,
+    targeting: 6,
+    defense: 13,
     scan: null,
-    cm: 3,
+    cm: '3+1',
     actions: [
         HMG,
         RAILGUN,
-        SPOTTER,
     ],
     traits: [
+        HARDENED_CM,
         ALL_TERRAIN,
     ],
 })
@@ -190,7 +185,7 @@ export const GUARDIAN_DESTROYER = make({
     variant_name: 'Destroyer',
     bg: 'guardian-destroyer.png',
     signature: SIZE_LARGE,
-    type: 'Heavy Tank',
+    type: 'Heavy Vehicle',
     speed: 4,
     targeting: 6,
     defense: 13,
@@ -214,7 +209,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
     name_font_size: '90%',
     bg: 'spider-drone.png',
     signature: SIZE_SMALL,
-    type: 'Robotic Infantry x 2',
+    type: 'Robotic Infantry Squad <span class="badge bg-secondary">2</span>',
     speed: 6,
     targeting: 6,
     defense: 14,
@@ -236,18 +231,17 @@ export const RNR_INFANTRY = make({
     slug: 'rnr_team',
     name: 'R&R Team',
     signature: SIZE_SMALL,
-    type: 'Rench & Rifle Infantry x 3',
+    type: 'Infantry Squad (3)',
     speed: 4,
-    targeting: 7,
+    targeting: 6,
     defense: 14,
     scan: null,
     actions: [
-        SMART_SMALL_ARMS,
+        SMALL_ARMS,
         REPAIR_RENCH,
     ],
     traits: [
         CLEAR_THE_WAY,
-        REVEAL_AND_DEPLOY(3, 'R&R Infantry'),
         ALL_TERRAIN,
     ],
 })

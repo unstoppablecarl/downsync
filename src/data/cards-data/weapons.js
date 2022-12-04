@@ -19,7 +19,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { keywordFormat } from '../support/text-formatters.js'
+import { keywordFormatDesc } from '../support/text-formatters.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -63,7 +63,8 @@ export const TARGET_LOCK = make({
     cost: COST_COMMAND,
     rof: 1,
     effect: '&starf;',
-    desc: 'Select an enemy Unit in LOS. It suffers -2 DEF until the end of this Taskforce Activation. A unit may only be Target Locked once. This action can be used once per activation.',
+    desc: 'Select an enemy Unit in LOS. It suffers -2 DEF until the end of this Taskforce Activation. A Unit can only be Target Locked once. This action can be used once per activation.',
+    desc_keywords_before: ['Target Locked'],
 })
 
 export const LMG = make({
@@ -104,13 +105,11 @@ export const SHOCK_RIFLE = make({
     ],
 })
 
-export const SMART_SMALL_ARMS = make({
-    name: 'Smart Small Arms',
+export const SMALL_ARMS = make({
+    name: 'Small Arms',
     range: 6,
-    rof: 2,
-    traits: [
-        TRAIT_SMART,
-    ],
+    rof: 1,
+    traits: [],
 })
 
 export const ADVANCED_CANNON = make({
@@ -215,7 +214,6 @@ export const CLAWS = make({
 export const GUIDED_MISSILE = make({
     name: 'Guided Missile',
     note: 'Team 3',
-    cost: COST_ACTION_AND_COMMAND,
     range: 16,
     rof: 1,
     traits: [
@@ -251,7 +249,7 @@ export function SNAP_FIRE(weapon) {
         name: 'Snap Fire',
         cost: COST_COMMAND,
         rof: 1,
-        desc: 'This attack can only target an Infantry unit within 3" of your last attack target this activation.',
+        desc: 'This attack can only target an Infantry Unit within 3" of your last attack target this activation.',
     })
 
     return make(newWeapon)
@@ -280,7 +278,7 @@ function make(weapon) {
 
     result.traits.map((trait) => Object.assign({}, trait))
 
-    result.desc = keywordFormat(result.desc)
+    result.desc = keywordFormatDesc(result)
 
     return result
 }

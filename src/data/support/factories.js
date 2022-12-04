@@ -1,4 +1,4 @@
-import { keywordFormat } from './text-formatters.js'
+import { keywordFormat, keywordFormatDesc } from './text-formatters.js'
 import { COST_COMMAND } from '../constants.js'
 
 export function makeUnit(unit) {
@@ -86,9 +86,7 @@ export function makeCommandAbility(ability) {
 
 export function makeTrait(trait) {
 
-    let descKeywords = trait.desc_keywords || [trait.name]
-
     trait.note = keywordFormat(trait.note)
-    trait.desc = keywordFormat(trait.desc, descKeywords)
+    trait.desc = keywordFormatDesc(trait)
     return trait
 }

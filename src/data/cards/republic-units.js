@@ -23,7 +23,6 @@ import {
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
-    REVEAL_AND_DEPLOY,
 } from '../cards-data/unit-traits.js'
 import { FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
@@ -213,7 +212,6 @@ export const GOLIATHS = make({
         ADVANCED_CANNON,
     ],
     traits: [
-        REVEAL_AND_DEPLOY(3, 'Goliath'),
         ALL_TERRAIN,
         PREDATOR,
     ],
