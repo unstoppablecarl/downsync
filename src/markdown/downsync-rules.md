@@ -115,13 +115,14 @@ force may be included. Designated Units are now considered to be Taskforce Units
 
 #### Refresh
 
-All Taskforce Units:
+Each Taskforce Unit:
 
-- Remove Overwatch Tokens
-- [Regenerate Countermeasure Tokens](#regenerating-countermeasures)
-- Resolve special abilities that trigger when a Unit is Refreshed
+- Removes Overwatch Tokens
+- [Regenerates Countermeasure Tokens](#regenerating-countermeasures)
+- May spend 1 Command Point to remove a Stun Token
+- Resolves special abilities that trigger when a Unit is Refreshed
 
-Non-active Units are also refreshed when they [Resolve Reactions](#resolve-reactions).
+In a Reaction Engagement Non-active Units are refreshed when they [Resolve Reactions](#resolve-reactions).
 
 #### Reveal
 
@@ -451,7 +452,7 @@ The following tokens/templates are placed on the battlefield.
 
 | Token               | Description                                                                             | Removed                                                  |
 |---------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------|
-| **Shroud Template** | A 3" radius template that does not block LOS and grants concealment to units within it. | When the Controlling Unit is **Refreshed** or destroyed. |
+| **Shroud Template** | A 4" radius template that does not block LOS and grants concealment to units within it. | When the Controlling Unit is **Refreshed** or destroyed. |
 
 ### Unit Tokens
 
