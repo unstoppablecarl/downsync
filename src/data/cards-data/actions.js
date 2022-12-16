@@ -29,20 +29,19 @@ export const PATROL = make({
     desc: 'This Unit gains an Overwatch Token. This must be the last action this Unit performs in an activation.',
 })
 
-export const SHROUD = (range, count) => {
-    return make({
-        name: 'Shroud',
-        cost: COST_ACTION_OR_COMMAND,
-        range: range,
-        rof: count,
-        target: '-',
-        effect: '&starf;',
-        desc: `Place ${count} Shroud Template within ${range}" of this Unit. Shroud Templates are removed when this Unit is Refreshed or destroyed.`,
-        traits: [
-            SHROUD_TEMPLATE,
-        ],
-    })
-}
+export const SHROUD = make({
+    name: 'Shroud',
+    cost: COST_ACTION_OR_COMMAND,
+    range: 4,
+    rof: null,
+    target: '-',
+    effect: '&starf;',
+    desc: `Place the center of 1 Shroud Template within 4" of this Unit. Shroud Templates are removed when this Unit is Refreshed or destroyed. This action can be used once per activation.`,
+    traits: [
+        SHROUD_TEMPLATE,
+    ],
+})
+
 
 export const SPOTTER = make({
     name: 'Spotter',
@@ -71,7 +70,7 @@ export const GO_DARK = make({
     cost: COST_COMMAND,
     target: 'Self',
     effect: '&starf;',
-    desc: 'Each Spider Drone in this Unit gains a Stealth Token.',
+    desc: 'Each Infantry Base in this Unit gains a Stealth Token.',
 })
 
 export const BASIC_SCAN = SCAN(1, 12)

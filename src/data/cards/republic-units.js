@@ -34,7 +34,7 @@ export const REPUBLIC_CARD_DEFAULTS = {
 
 export const CLEANSER_SQUAD = make({
     slug: 'cleanser_team',
-    bg: 'cleanser-squad.png',
+    img: 'cleanser-squad.png',
     name: 'Cleanser Squad',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',
@@ -55,6 +55,7 @@ export const CLEANSER_SQUAD = make({
 
 export const VECTOR_SQUAD = make({
     slug: 'vector_team',
+    img: 'cleanser-squad.png',
     name: 'Vector Squad',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',
@@ -98,7 +99,7 @@ export const SEEKER_TEAM = make({
 export const COURIER_TRANSPORT = make({
     slug: 'courier',
     name: 'Courier',
-    bg: 'courier.png',
+    img: 'courier.png',
     signature: SIZE_MEDIUM,
     type: 'Medium Transport',
     speed: 6,
@@ -121,7 +122,7 @@ export const COURIER_TRANSPORT = make({
 export const HARBINGER_RECON = make({
     slug: 'harbinger',
     name: 'Harbinger',
-    bg: 'scorpion.png',
+    img: 'scorpion.png',
     signature: SIZE_SMALL,
     type: 'Light Recon Vehicle',
     speed: 7,
@@ -141,7 +142,7 @@ export const HARBINGER_RECON = make({
 export const CRUSADER_MEDIUM_TANK = make({
     slug: 'crusader',
     name: 'Crusader',
-    bg: 'crusader.png',
+    img: 'crusader.png',
     signature: SIZE_MEDIUM,
     type: 'Medium Tank',
     speed: 7,
@@ -161,7 +162,7 @@ export const CRUSADER_MEDIUM_TANK = make({
 export const MANDIBLE = make({
     slug: 'mandible',
     name: 'Mandible',
-    bg: 'mandible.png',
+    img: 'mandible.png',
     signature: SIZE_LARGE,
     type: 'Heavy Artillery',
     speed: 5,
@@ -179,7 +180,7 @@ export const MANDIBLE = make({
 export const SAMSON_HEAVY_TANK = make({
     slug: 'samson',
     name: 'Samson',
-    bg: 'samson.png',
+    img: 'samson.png',
     signature: SIZE_LARGE,
     type: 'Heavy Tank',
     speed: 5,
@@ -202,7 +203,7 @@ export const SAMSON_HEAVY_TANK = make({
 export const GOLIATHS = make({
     slug: 'goliath_squad',
     name: 'Goliath Squad',
-    bg: 'goliath-squad.png',
+    img: 'goliath-squad.png',
     signature: SIZE_MEDIUM,
     type: 'Human Infantry Squad',
     squad_size: 3,

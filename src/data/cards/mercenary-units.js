@@ -1,4 +1,4 @@
-import { INFANTRY_PARTICLE_RIFLE } from '../cards-data/weapons.js'
+import { INFANTRY_PARTICLE_RIFLE, INFANTRY_PARTICLE_RIFLE_OVERCHARGE } from '../cards-data/weapons.js'
 import { SIZE_MEDIUM } from '../constants.js'
 
 import { DEFENSE_NET } from '../cards-data/unit-traits.js'
@@ -19,6 +19,7 @@ export const HEAVY_INFANTRY = make({
     actions: [
         SCAN(1, 12),
         INFANTRY_PARTICLE_RIFLE,
+        INFANTRY_PARTICLE_RIFLE_OVERCHARGE,
     ],
     traits: [
         DEFENSE_NET('Ryoshi'),

@@ -105,6 +105,16 @@ export const SHOCK_RIFLE = make({
     ],
 })
 
+
+export const ADVANCED_CHARGES = make({
+    name: 'Adv. Charges',
+    range: 6,
+    rof: 1,
+    traits: [
+        TRAIT_ADVANCED,
+    ],
+})
+
 export const SMALL_ARMS = make({
     name: 'Small Arms',
     range: 6,
@@ -193,8 +203,19 @@ export const SMART_MED_CANNON = make({
 
 export const INFANTRY_PARTICLE_RIFLE = make({
     name: 'Particle Rifle',
-    range: 12,
+    note: 'VS Infantry only',
+    range: 10,
     rof: 2,
+    effect: 'Kill',
+    traits: [
+        TRAIT_SMART,
+    ],
+})
+
+export const INFANTRY_PARTICLE_RIFLE_OVERCHARGE = make({
+    name: 'Particle Rifle Overcharge',
+    range: 10,
+    rof: 1,
     effect: 'Kill',
     traits: [
         TRAIT_SMART,

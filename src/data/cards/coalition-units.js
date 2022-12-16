@@ -1,4 +1,5 @@
 import {
+    ADVANCED_CHARGES,
     CANNON,
     CLAWS,
     DEPLOY_DRONES,
@@ -9,7 +10,7 @@ import {
     MG,
     RAILGUN,
     REPAIR_RENCH,
-    SMALL_ARMS,
+    SHOCK_RIFLE,
     SMART_MED_CANNON,
     TAG_CANNON,
     TARGET_LOCK,
@@ -39,7 +40,7 @@ export const COALITION_CARD_DEFAULTS = {
 export const WIDOW_SCOUT = make({
     slug: 'scout',
     name: 'Widow Scout',
-    bg: 'scout.png',
+    img: 'scout.png',
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
@@ -59,7 +60,7 @@ export const SENTINEL_TAGGER = make({
     slug: 'sentinel_tagger',
     name: 'Sentinel',
     variant_name: 'Tagger',
-    bg: 'sentinel-tagger.png',
+    img: 'sentinel-tagger.png',
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
@@ -77,7 +78,7 @@ export const SENTINEL_HUNTER = make({
     slug: 'sentinel_hunter',
     name: 'Sentinel',
     variant_name: 'Hunter',
-    bg: 'sentinel-hunter.png',
+    img: 'sentinel-hunter.png',
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
@@ -95,7 +96,7 @@ export const SENTINEL_HUNTER = make({
 export const VIRAGO_TANK = make({
     slug: 'virago',
     name: 'Virago',
-    bg: 'virago.png',
+    img: 'virago.png',
     signature: SIZE_MEDIUM,
     type: 'Medium Vehicle',
     speed: 6,
@@ -115,7 +116,7 @@ export const AURORA = make({
     slug: 'gsv_aurora',
     name: 'GSV',
     variant_name: 'Aurora',
-    bg: 'aurora.png',
+    img: 'aurora.png',
     signature: SIZE_MEDIUM,
     type: 'Ground Support Vehicle',
     speed: 6,
@@ -126,7 +127,7 @@ export const AURORA = make({
     actions: [
         BASIC_SCAN,
         CANNON,
-        SHROUD(12, 1),
+        SHROUD,
     ],
     traits: [
         ADAPTIVE_CAMO,
@@ -138,7 +139,7 @@ export const PHANTOM = make({
     slug: 'gsv_phantom',
     name: 'GSV',
     variant_name: 'Phantom',
-    bg: 'phantom.png',
+    img: 'phantom.png',
     signature: SIZE_MEDIUM,
     type: 'Ground Support Vehicle',
     speed: 6,
@@ -161,7 +162,7 @@ export const GUARDIAN_MARKSMAN = make({
     slug: 'guardian_marksman',
     name: 'Guardian',
     variant_name: 'Marksman',
-    bg: 'guardian-marksman.png',
+    img: 'guardian-marksman.png',
     signature: SIZE_LARGE,
     type: 'Heavy Vehicle',
     speed: 4,
@@ -183,7 +184,7 @@ export const GUARDIAN_DESTROYER = make({
     slug: 'guardian_destroyer',
     name: 'Guardian',
     variant_name: 'Destroyer',
-    bg: 'guardian-destroyer.png',
+    img: 'guardian-destroyer.png',
     signature: SIZE_LARGE,
     type: 'Heavy Vehicle',
     speed: 4,
@@ -207,7 +208,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
     name: 'Spider Drone',
     variant_name: 'Infiltrator',
     squad_size: 2,
-    bg: 'spider-drone.png',
+    img: 'spider-drone.png',
     signature: null,
     type: 'Robotic Infantry Squad',
     speed: 6,
@@ -219,7 +220,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
         GO_DARK,
     ],
     traits: [
-        STEALTHY_INFANTRY('Spider Drone'),
+        STEALTHY_INFANTRY,
         ALL_TERRAIN,
     ],
     definitions: [
@@ -227,18 +228,42 @@ export const SPIDER_DRONE_INFILTRATOR = make({
     ],
 })
 
+
+export const SPIDER_DRONE_SOLDIER = make({
+    slug: 'spider_drone_soldier',
+    name: 'Spider Drone',
+    variant_name: 'Solder',
+    squad_size: 4,
+    img: 'spider-drone.png',
+    signature: SIZE_SMALL,
+    type: 'Robotic Infantry Squad',
+    speed: 6,
+    targeting: 6,
+    defense: 14,
+    scan: null,
+    actions: [
+        CLAWS,
+    ],
+    traits: [
+        ALL_TERRAIN,
+    ],
+    definitions: [],
+})
+
 export const RNR_INFANTRY = make({
     slug: 'rnr_team',
     name: 'R&R Team',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',
-    squad_size: 3,
+    squad_size: 2,
     speed: 4,
-    targeting: 6,
+    targeting: 7,
     defense: 14,
     scan: null,
     actions: [
-        SMALL_ARMS,
+
+        Object.assign({}, SHOCK_RIFLE, { note: null }),
+        ADVANCED_CHARGES,
         REPAIR_RENCH,
     ],
     traits: [
@@ -251,13 +276,14 @@ export const COALITION_UNITS = [
     WIDOW_SCOUT,
     SENTINEL_TAGGER,
     SENTINEL_HUNTER,
+    SPIDER_DRONE_INFILTRATOR,
+    SPIDER_DRONE_SOLDIER,
+    RNR_INFANTRY,
     VIRAGO_TANK,
     AURORA,
     PHANTOM,
     GUARDIAN_DESTROYER,
     GUARDIAN_MARKSMAN,
-    SPIDER_DRONE_INFILTRATOR,
-    RNR_INFANTRY,
 ]
 
 export const COALITION_DEMO_UNITS = [

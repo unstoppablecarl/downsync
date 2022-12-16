@@ -2,7 +2,7 @@ import { keywordFormat } from './support/text-formatters.js'
 
 export const SHROUD_TEMPLATE = make({
     name: 'Shroud Template',
-    desc: `3" diameter circle, grants concealment to Units within, does not block LOS.`,
+    desc: `4" diameter circle, grants concealment to Units within, does not block LOS.`,
 })
 
 export const STUN = make({

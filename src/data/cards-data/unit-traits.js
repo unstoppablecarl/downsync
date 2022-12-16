@@ -1,18 +1,16 @@
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { makeTrait } from '../support/factories.js'
 
-export function STEALTHY_INFANTRY(subUnitName) {
+export const STEALTHY_INFANTRY = make({
+    name: 'Stealthy',
+    desc: `Each each Infantry Base in this Unit begins the game with a Stealth Token.`,
+})
 
-    return make({
-        name: 'Stealthy',
-        desc: `Each each ${subUnitName} in this Unit begins the game with a Stealth Token.`,
-    })
-}
 
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
     note: `COST: ${COST_COMMAND}, Movement phase`,
-    desc: 'While within 8" Units in the same Taskforce gain All Terrain.',
+    desc: 'While within 8" of an Infantry Base in this Unit, other Units in the same Taskforce gain All Terrain.',
 })
 
 export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
@@ -34,7 +32,7 @@ export const DEFENSE_NET = (type) => {
     return make({
         name: 'Defense Net',
         note: `${type}, 4"`,
-        desc: `When resolving an attack against this Unit, it may spent up to 1 Countermeasure token controlled by a friendly ${type} Unit within 4" in addition to its own Countermeasure tokens.`,
+        desc: `When resolving an attack against an Infantry Base in this Unit, it may spent up to 1 Countermeasure token controlled by a friendly Infantry Base in this Unit within 4" in addition to its own Countermeasure tokens.`,
     })
 }
 

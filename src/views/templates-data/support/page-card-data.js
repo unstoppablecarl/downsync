@@ -2,7 +2,6 @@ import { chunk, getTimestamp } from '../../../data/support/util.js'
 import { COALITION_DEMO_UNITS, COALITION_UNITS } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
-import { MERCENARY_UNITS } from '../../../data/cards/mercenary-units.js'
 
 const TIMESTAMP = getTimestamp()
 
@@ -15,10 +14,10 @@ export const FACTION_UNITS = [
         faction: 'Republic of Man',
         factionCards: prepareCards(REPUBLIC_UNITS),
     },
-    {
-        faction: 'Mercenaries',
-        factionCards: prepareCards(MERCENARY_UNITS),
-    },
+    //{
+    //    faction: 'Mercenaries',
+    //    factionCards: prepareCards(MERCENARY_UNITS),
+    //},
 ]
 
 export const FACTION_DEMO_UNITS = [

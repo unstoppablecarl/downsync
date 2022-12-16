@@ -121,7 +121,7 @@ All Taskforce Units:
 - [Regenerate Countermeasure Tokens](#regenerating-countermeasures)
 - Resolve special abilities that trigger when a Unit is Refreshed
 
-Non-active Units are also refreshed when they (Resolve Reactions)[#resolve-reactions].
+Non-active Units are also refreshed when they [Resolve Reactions](#resolve-reactions).
 
 #### Reveal
 
