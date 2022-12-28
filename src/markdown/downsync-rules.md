@@ -71,6 +71,26 @@ measurements at any time.
 - **LOS**: Line of Sight
 - **ROF**: Rate of Fire
 
+## Game Sizes
+
+When constructing a force list you are limited by the signature and quantity limits of the game size.
+
+### Small Game
+
+| Unit Signature | Quantity |
+|----------------|----------|
+| Small          | 2        |
+| Medium         | 3        |
+| Large          | 1        |
+
+### Standard Game
+
+| Unit Signature | Quantity |
+|----------------|----------|
+| Small          | 4        |
+| Medium         | 5        |
+| Large          | 2        |
+
 ## Sequence of Play
 
 A game is made up of a number of Rounds.

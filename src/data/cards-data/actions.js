@@ -4,7 +4,7 @@ import { SHROUD_TEMPLATE } from '../definitions.js'
 
 export const FORWARD_OBSERVE = make({
     name: 'Forward Observe',
-    cost: COST_ACTION,
+    cost: COST_ACTION_OR_COMMAND,
     target: 'Unit',
     rof: 1,
     effect: '&starf;',

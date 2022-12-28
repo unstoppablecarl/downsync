@@ -2,6 +2,7 @@ export default {
     null_dash,
     style_font_size,
     json,
+    sum,
 }
 
 
@@ -16,6 +17,17 @@ function null_dash(value) {
     }
 
     return value
+}
+
+function sum(...values) {
+    let total = 0
+    // remove context object
+    values.pop()
+    values.forEach((val) => {
+        total += parseInt(val, 10)
+    })
+
+    return total
 }
 
 function style_font_size(value) {

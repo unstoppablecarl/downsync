@@ -20,6 +20,7 @@ import {
     COUNTERMEASURE_DEFEND,
     FINISHER,
     HARDENED_CM,
+    INFANTRY_ALT_WEAPONS,
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
@@ -31,27 +32,6 @@ export const REPUBLIC_CARD_DEFAULTS = {
     faction: 'Republic of Man',
     icon: 'factions/icon-republic.svg',
 }
-
-export const CLEANSER_SQUAD = make({
-    slug: 'cleanser_team',
-    img: 'cleanser-squad.png',
-    name: 'Cleanser Squad',
-    signature: SIZE_SMALL,
-    type: 'Human Infantry Squad',
-    squad_size: 3,
-    speed: 4,
-    targeting: 6,
-    defense: 12,
-    actions: [
-        SHOCK_RIFLE,
-        GUIDED_MISSILE,
-    ],
-    traits: [
-        ADAPTIVE_CAMO,
-        ALL_TERRAIN,
-        MECHANIZED_INFANTRY,
-    ],
-})
 
 export const VECTOR_SQUAD = make({
     slug: 'vector_team',
@@ -66,11 +46,13 @@ export const VECTOR_SQUAD = make({
     actions: [
         SHOCK_RIFLE,
         MICRO_ARTILLERY,
+        GUIDED_MISSILE,
     ],
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
         MECHANIZED_INFANTRY,
+        INFANTRY_ALT_WEAPONS,
     ],
     definitions: [],
 })
@@ -87,6 +69,7 @@ export const SEEKER_TEAM = make({
     actions: [
         SCAN(2, 12),
         SHOCK_SNIPER_RIFLE,
+        FORWARD_OBSERVE,
     ],
     traits: [
         ADAPTIVE_CAMO,
@@ -224,7 +207,6 @@ export const GOLIATHS = make({
 })
 
 export const REPUBLIC_UNITS = [
-    CLEANSER_SQUAD,
     VECTOR_SQUAD,
     SEEKER_TEAM,
     GOLIATHS,

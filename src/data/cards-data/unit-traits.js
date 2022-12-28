@@ -75,6 +75,11 @@ export const MECHANIZED_INFANTRY = make({
     desc: 'This Unit may begin the game mounted in a Courier transport. If it does its Ping is not used for the game.',
 })
 
+export const INFANTRY_ALT_WEAPONS = make({
+    name: 'Alternate Weapons',
+    desc: 'This Unit must select which ALT weapon it will use when creating your Force.',
+})
+
 export const PREDATOR = make({
     name: 'Predator',
     note: '+2 TARG',

@@ -234,7 +234,7 @@ export const CLAWS = make({
 
 export const GUIDED_MISSILE = make({
     name: 'Guided Missile',
-    note: 'Team 3',
+    note: 'Team 3, ALT',
     range: 16,
     rof: 1,
     traits: [
@@ -244,7 +244,7 @@ export const GUIDED_MISSILE = make({
 
 export const MICRO_ARTILLERY = make({
     name: 'Micro Artillery',
-    note: 'Team 3',
+    note: 'Team 3, ALT',
     range: 16,
     rof: 1,
     effect: 'KILL',

@@ -1,0 +1,36 @@
+{{> header title="Army Lists"}}
+<body>
+{{> nav}}
+<div class="container">
+    <h1>Army Lists</h1>
+    <h2>Small Game</h2>
+    {{> game-size-table small=2 medium=3 large=1}}
+
+    <h2>Small Game Example Lists</h2>
+    <div class="row">
+        {{#each smallArmyLists}}
+            <div class="col-md-6 col-sm-12">
+                {{> army-list-table}}
+            </div>
+        {{/each}}
+    </div>
+
+    <hr>
+    <h2>Standard Game</h2>
+    {{> game-size-table small=4 medium=5 large=2}}
+
+    <h2>Standard Game Example Lists</h2>
+    <div class="row">
+        {{#each standardArmyLists}}
+            <div class="col-md-6 col-sm-12">
+                {{> army-list-table}}
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+{{> footer }}
+</body>
+{{> close}}
+
+

@@ -49,6 +49,9 @@
 
 
 @media print {
+    grammarly-desktop-integration {
+        display: none;
+    }
     .non-print-content {
         display: none;
     }

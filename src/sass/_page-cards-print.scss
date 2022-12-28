@@ -26,6 +26,17 @@ $page-height: 11 * 72pt;
         height: $card-height;
     }
 
+
+    .split-card {
+        .card {
+            height: $card-height * 0.5;
+        }
+
+        .card:nth-child(2) {
+            outline: 0;
+        }
+    }
+
     $side-margin: ($page-width - $card-width * 3) * 0.5;
     $top-margin: ($page-height - $card-height* 3) * 0.5;
 
