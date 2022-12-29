@@ -87,7 +87,6 @@ export const SENTINEL_HUNTER = make({
     scan: null,
     cm: 1,
     actions: [
-        BASIC_SCAN,
         FUSION_CANNON,
     ],
     traits: [],

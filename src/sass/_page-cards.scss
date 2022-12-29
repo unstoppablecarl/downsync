@@ -1,3 +1,5 @@
+@use 'lib/mixins';
+
 $light-grey: #ddd;
 $mid-grey: #ccc;
 $outline-grey: #b3b3b3;
@@ -85,8 +87,9 @@ $outline-grey: #b3b3b3;
     .cost-icon-action-and-command {
         background: #ebebeb;
         border: 1px solid $outline-grey;
-        display: inline-block;
-        padding: 0.25em 0.45em;
+        //display: inline-block;
+        //padding: 0.25em 0.45em;
+        padding: 0 0.4em;
         font-weight: bold;
         line-height: 1;
         text-align: center;
@@ -174,8 +177,7 @@ $outline-grey: #b3b3b3;
                 font-size: $font-size;
 
                 .squad-size {
-                    display: inline-block;
-                    padding: .25em .55em;
+                    padding: 0 0.4em;
                     font-weight: bold;
                     line-height: 1;
                     text-align: center;
@@ -215,6 +217,14 @@ $outline-grey: #b3b3b3;
         th {
             padding: 0.25em 0;
             background: $light-grey;
+
+            &:first-child {
+                @include mixins.topCornerCut();
+            }
+
+            &:last-child {
+                @include mixins.bottomCornerCut();
+            }
         }
 
         td {
@@ -243,10 +253,13 @@ $outline-grey: #b3b3b3;
             &:first-child {
                 padding-left: 4pt * $scale;
                 text-align: left;
+
+                @include mixins.topCornerCut();
             }
 
             &:last-child {
                 padding-right: 4pt * $scale;
+                @include mixins.bottomCornerCut()
             }
         }
 
@@ -284,22 +297,21 @@ $outline-grey: #b3b3b3;
                 }
 
                 &.col-cost {
-                    padding: 0;
-                    white-space: nowrap;
-                    font-weight: bold;
                 }
 
                 &.col-target {
-                    font-size: 90%;
-                    font-weight: bold;
+                    //font-size: 90%;
+                    //font-weight: bold;
                 }
 
                 &.col-stat,
                 &.col-effect {
                     text-transform: uppercase;
-                    font-size: 90%;
+                    //font-size: 90%;
                     font-weight: bold;
                 }
+
+
             }
 
             &.action-row-no-stats {
@@ -358,7 +370,8 @@ $outline-grey: #b3b3b3;
         vertical-align: middle;
         font-family: $sansSerif;
         font-weight: bold;
-        position: relative;
+
+        @include mixins.topAndBottomCornerCut();
     }
 
     .key-value {
@@ -385,17 +398,11 @@ $outline-grey: #b3b3b3;
         .cost-icon-action-and-command,
         .cost-icon-action-or-command {
             font-family: "Open Sans", sans-serif;
-            //height: auto;
-            //font-size: 4pt * $scale;
-            //position: relative;
-            //top: -1px;
-
         }
 
         .cost-icon-command,
         .cost-icon-action {
-            //width: 8px * $scale;
-            //text-align: center;
+
         }
     }
 

@@ -1,0 +1,41 @@
+$corner-cut-size: 4pt;
+
+@mixin _bottomCorner() {
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom: $corner-cut-size solid #fff;
+        border-left: $corner-cut-size solid transparent;
+        width: 0;
+    }
+}
+
+@mixin _topCorner() {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: $corner-cut-size solid #fff;
+        border-right: $corner-cut-size solid transparent;
+        width: 0;
+    }
+}
+
+@mixin bottomCornerCut() {
+    position: relative;
+    //@include _bottomCorner();
+}
+
+@mixin topCornerCut() {
+    position: relative;
+    //@include _topCorner()
+}
+
+@mixin topAndBottomCornerCut() {
+    position: relative;
+    //@include _topCorner();
+    //@include _bottomCorner();
+}
