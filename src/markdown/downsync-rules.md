@@ -245,10 +245,12 @@ Ping.
 The Unit's model is placed on the Ping (circular base). The circular base and model are now considered a Revealed Unit
 instead of a Ping.
 
+A Ping cannot end its movement within 3" of an enemy Unit.
+
 A Ping is Revealed when:
 
 - The controlling player chooses to Reveal it in the Reveal phase of a Taskforce Activation
-- An enemy Unit ends its movement within 3"
+- If an enemy Unit is within 3" at the end of an opposing player's movement phase
 - It is Successfully Scanned by an enemy Unit
 
 ## Actions
