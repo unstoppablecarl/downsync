@@ -87,8 +87,6 @@ $outline-grey: #b3b3b3;
     .cost-icon-action-and-command {
         background: #ebebeb;
         border: 1px solid $outline-grey;
-        //display: inline-block;
-        //padding: 0.25em 0.45em;
         padding: 0 0.4em;
         font-weight: bold;
         line-height: 1;
@@ -296,22 +294,11 @@ $outline-grey: #b3b3b3;
                     font-weight: 500;
                 }
 
-                &.col-cost {
-                }
-
-                &.col-target {
-                    //font-size: 90%;
-                    //font-weight: bold;
-                }
-
                 &.col-stat,
                 &.col-effect {
                     text-transform: uppercase;
-                    //font-size: 90%;
                     font-weight: bold;
                 }
-
-
             }
 
             &.action-row-no-stats {
