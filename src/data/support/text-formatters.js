@@ -3,8 +3,11 @@ import {
     COST_ACTION_AND_COMMAND,
     COST_ACTION_OR_COMMAND,
     COST_COMMAND,
+    COST_FREE,
     EMPHASIS_KEYWORDS,
 } from '../constants.js'
+import fs from 'fs'
+import Handlebars from 'handlebars'
 
 
 export function keywordFormatDesc({
@@ -47,27 +50,39 @@ function emphasisKeywordFormat(str, keywords) {
     return str.replace(regex, subst)
 }
 
-const costKeywords = {
-    [COST_ACTION_OR_COMMAND]: `<span class="cost-icon-action-or-command">A/C</span>`,
-    [COST_ACTION_AND_COMMAND]: ` <span class="cost-icon-action-and-command">A+C</span>`,
-    [COST_ACTION]: `<span class="cost-icon-action">A</span>`,
-    [COST_COMMAND]: `<span class="cost-icon-command">C</span>`,
+let costTemplate
+
+function getCostTemplate() {
+    if (!costTemplate) {
+        let tpl = fs.readFileSync('./src/views/partials/cost-icon.hbs', 'utf-8')
+        costTemplate = Handlebars.compile(tpl)
+    }
+
+    return costTemplate
 }
 
 export function costKeywordFormat(str) {
+
     if (!str) {
         return
     }
 
-    Object.keys(costKeywords)
-        .forEach((costKeyword) => {
-            const value = costKeywords[costKeyword]
+    const costKeywords = [
+        COST_ACTION_OR_COMMAND,
+        COST_ACTION_AND_COMMAND,
+        COST_ACTION,
+        COST_COMMAND,
+        COST_FREE,
+    ]
 
-            str = replace(str, costKeyword, value)
-        })
+    costKeywords.forEach((costKeyword) => {
+        let template = getCostTemplate()
+        let value = template({ cost: costKeyword })
+
+        str = replace(str, costKeyword, value)
+    })
 
     return str
-
 
     function replace(str, keyword, value) {
         let re = new RegExp(keyword, 'g')

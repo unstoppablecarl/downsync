@@ -84,7 +84,8 @@ $outline-grey: #b3b3b3;
     .cost-icon-command,
     .cost-icon-command-x2,
     .cost-icon-action-or-command,
-    .cost-icon-action-and-command {
+    .cost-icon-action-and-command,
+    .cost-icon-free {
         background: #ebebeb;
         border: 1px solid $outline-grey;
         padding: 0 0.4em;
@@ -95,15 +96,16 @@ $outline-grey: #b3b3b3;
         vertical-align: baseline;
     }
 
-    .cost-icon-command-x2 {
-
-    }
-
     .cost-icon-action-or-command,
     .cost-icon-action-and-command {
         border-radius: (2px * $scale) 50px 50px (2px * $scale);
         padding-left: 0.4em;
         padding-right: 0.4em;
+    }
+
+    .cost-icon-free {
+        border: 0;
+        background: transparent;
     }
 
     .cost-icon-action {
@@ -383,13 +385,9 @@ $outline-grey: #b3b3b3;
         .cost-icon-command,
         .cost-icon-action,
         .cost-icon-action-and-command,
-        .cost-icon-action-or-command {
+        .cost-icon-action-or-command,
+        .cost-icon-free {
             font-family: "Open Sans", sans-serif;
-        }
-
-        .cost-icon-command,
-        .cost-icon-action {
-
         }
     }
 

@@ -59,6 +59,8 @@ export const VECTOR_SQUAD = make({
 
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
+    slug: 'seeker-team',
+    img: 'seeker-team.png',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',
     squad_size: 1,

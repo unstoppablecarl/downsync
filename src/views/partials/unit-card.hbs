@@ -84,24 +84,7 @@
                     </td>
                     <td class="col-cost">
 
-                        {{#if cost.COST_ACTION}}
-                        <span class="cost-icon-action">A</span>
-                        {{/if}}
-                        {{#if cost.COST_COMMAND}}
-                        <span class="cost-icon-command">C</span>
-                        {{/if}}
-
-                        {{#if cost.COST_COMMAND_X2}}
-                        <span class="cost-icon-command-x2">C2</span>
-                        {{/if}}
-
-                        {{#if cost.COST_ACTION_AND_COMMAND}}
-                        <span class="cost-icon-action-and-command">A+C</span>
-                        {{/if}}
-
-                        {{#if cost.COST_ACTION_OR_COMMAND}}
-                        <span class="cost-icon-action-or-command">A/C</span>
-                        {{/if}}
+                        {{> cost-icon cost=cost}}
 
                     </td>
                     <td class="col-target">{{target}}</td>

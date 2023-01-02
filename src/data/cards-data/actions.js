@@ -1,6 +1,7 @@
 import { keywordFormat } from '../support/text-formatters.js'
-import { COST_ACTION, COST_ACTION_OR_COMMAND, COST_COMMAND } from '../constants.js'
+import { COST_ACTION_OR_COMMAND, COST_COMMAND } from '../constants.js'
 import { SHROUD_TEMPLATE } from '../definitions.js'
+import { makeAction } from '../support/factories.js'
 
 export const FORWARD_OBSERVE = make({
     name: 'Forward Observe',
@@ -76,22 +77,5 @@ export const GO_DARK = make({
 export const BASIC_SCAN = SCAN(1, 12)
 
 function make(action) {
-
-    action.traits = action.traits || []
-
-    if (!action.cost) {
-        action.cost = {
-            [COST_ACTION]: true,
-        }
-    } else if (typeof action.cost === 'string') {
-        action.cost = {
-            [action.cost]: true,
-        }
-    }
-
-    let descKeywords = action.desc_keywords || [action.name]
-
-    action.desc = keywordFormat(action.desc, descKeywords)
-
-    return action
+    return makeAction(action)
 }

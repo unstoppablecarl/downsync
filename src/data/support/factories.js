@@ -1,5 +1,5 @@
 import { keywordFormat, keywordFormatDesc } from './text-formatters.js'
-import { COST_COMMAND } from '../constants.js'
+import { COST_ACTION, COST_COMMAND } from '../constants.js'
 
 export function makeUnit(unit) {
 
@@ -41,24 +41,27 @@ function prepareActions(actions) {
         if (!action.traits) {
             return action
         }
-        action.traits = action.traits.map((trait) => {
-
-            trait = Object.assign({}, trait)
-            let isPrevTrait = prevWeaponTraits.includes(trait.name)
-
-            if (!isPrevTrait) {
-                prevWeaponTraits.push(trait.name)
-            } else {
-                trait.desc = '*'
-            }
-
-            return trait
-        })
-
-        return action
+        return prepareDuplicateActionTraits(action, prevWeaponTraits)
     })
 }
 
+function prepareDuplicateActionTraits(action, prevWeaponTraits) {
+    action.traits = action.traits.map((trait) => {
+
+        trait = Object.assign({}, trait)
+        let isPrevTrait = prevWeaponTraits.includes(trait.name)
+
+        if (!isPrevTrait) {
+            prevWeaponTraits.push(trait.name)
+        } else {
+            trait.desc = '*'
+        }
+
+        return trait
+    })
+
+    return action
+}
 
 export function makeCommandAbility(ability) {
 
@@ -89,4 +92,37 @@ export function makeTrait(trait) {
     trait.note = keywordFormat(trait.note)
     trait.desc = keywordFormatDesc(trait)
     return trait
+}
+
+export function makeAction(action) {
+
+    let defaults = {
+        target: null,
+        cost: COST_ACTION,
+        effect: null,
+        traits: [],
+        desc: '',
+    }
+
+    let result = Object.assign(defaults, action)
+
+    result.traits.map((trait) => Object.assign({}, trait))
+
+    result.desc = keywordFormatDesc(result)
+
+    return result
+}
+
+
+export function makeWeapon(weapon) {
+
+    let defaults = {
+        target: 'Unit',
+        cost: COST_ACTION,
+        effect: 'kill',
+        traits: [],
+        desc: '',
+    }
+    let result = Object.assign(defaults, weapon)
+    return makeAction(result)
 }

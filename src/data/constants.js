@@ -9,6 +9,7 @@ export const COST_ACTION = 'COST_ACTION'
 export const COST_ACTION_OR_COMMAND = 'COST_ACTION_OR_COMMAND'
 export const COST_ACTION_AND_COMMAND = 'COST_ACTION_AND_COMMAND'
 export const COST_COMMAND = 'COST_COMMAND'
+export const COST_FREE = 'COST_FREE'
 export const COST_COMMAND_X2 = 'COST_COMMAND_X2'
 
 export const EMPHASIS_KEYWORDS = [
@@ -22,9 +23,13 @@ export const EMPHASIS_KEYWORDS = [
     'KILL',
     'STUN',
 
+    'LOS',
+
     'Refreshed',
     'All Terrain',
     'Fire Support',
+
+    'Forward Observe',
 
     'Stealth Token',
 

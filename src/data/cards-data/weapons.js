@@ -19,7 +19,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { keywordFormatDesc } from '../support/text-formatters.js'
+import { makeWeapon } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -278,30 +278,5 @@ export function SNAP_FIRE(weapon) {
 
 function make(weapon) {
 
-    let defaults = {
-        target: 'Unit',
-        effect: 'kill',
-        traits: [],
-        desc: '',
+    return makeWeapon(weapon)
     }
-
-    let result = Object.assign(defaults, weapon)
-
-    if (!result.cost) {
-        result.cost = {
-            [COST_ACTION]: true,
-        }
-    } else {
-        result.cost = {
-            [result.cost]: true,
-        }
-    }
-
-    result.traits.map((trait) => Object.assign({}, trait))
-
-    result.desc = keywordFormatDesc(result)
-
-    return result
-}
-
-export const makeWeapon = make

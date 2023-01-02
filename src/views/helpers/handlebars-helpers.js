@@ -3,13 +3,12 @@ export default {
     style_font_size,
     json,
     sum,
+    eq,
 }
-
 
 function json(context) {
     return JSON.stringify(context)
 }
-
 
 function null_dash(value) {
     if (value === null || value === undefined) {
@@ -38,3 +37,10 @@ function style_font_size(value) {
     return ` style="font-size: ${value}"`
 }
 
+function eq(a, b, options) {
+    if (a == b) {
+        return options.fn(this)
+    } else {
+        return options.inverse(this)
+    }
+}

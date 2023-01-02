@@ -1,6 +1,5 @@
-import { makeCommandAbility } from '../support/factories.js'
+import { makeCommandAbility, makeWeapon } from '../support/factories.js'
 import { COST_COMMAND } from '../constants.js'
-import { makeWeapon } from './weapons.js'
 import {
     EXTREME_RANGE,
     PLACE_EFFECT,
