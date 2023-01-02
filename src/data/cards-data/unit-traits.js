@@ -38,8 +38,14 @@ export const DEFENSE_NET = (type) => {
 
 export const DEFENSE_AURA = make({
     name: 'Defense Aura',
-    note: '4"',
-    desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls.',
+    note: `COST: ${COST_COMMAND}, Refresh phase`,
+    desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls. This unit gains the Command Point Token spent to indicate the Defense Aura. The Command Point is returned when this unit is Refreshed (if choosing to disable the ability) or Destroyed.',
+})
+
+export const SHROUD_AURA = make({
+    name: 'Shroud Aura',
+    note: '4" concealment',
+    desc: 'Friendly Units within 4" gain concealment.',
 })
 
 export const ADAPTIVE_CAMO = make({
@@ -57,17 +63,7 @@ export const CM_SHIELD = make({
 
 export const AMBUSH = make({
     name: 'Ambush',
-    desc: `When declaring participating Units of a Reaction Engagement, select a ping matching this Unit's SIG. This Unit is immediately revealed using the selected ping and becomes a participating Unit in the Reaction Engagement. This includes Pings that have an Activated Token.`,
-})
-
-export const INFANTRY_SQUAD = make({
-    name: 'Infantry Squad',
-    desc: 'This Unit is composed of 3 Infantry teams on infantry bases that activate together.',
-})
-
-export const SPIDER_DRONE_SQUAD = make({
-    name: 'Infantry Squad',
-    desc: 'This Unit contains 2 Spider Drones on infantry bases that activate together.',
+    desc: `When declaring participating Units of a Reaction Engagement, select a Ping matching this Unit's SIG. This Unit is immediately revealed using the selected Ping and becomes a participating Unit in the Reaction Engagement. If the selected Ping has an Activated Token it is immediately removed.`,
 })
 
 export const MECHANIZED_INFANTRY = make({
@@ -85,14 +81,6 @@ export const PREDATOR = make({
     note: '+2 TARG',
     desc: 'This Unit gains +2 TARG against Stunned Units.',
 })
-
-export const REVEAL_AND_DEPLOY = (count, unitName) => {
-    return make({
-        name: 'Reveal',
-        note: `deploy ${count}, within 3"`,
-        desc: `When revealed ${count} infantry based ${unitName} Units are placed within 3" and the ping is removed.`,
-    })
-}
 
 export const SENTRY = make({
     name: 'Sentry',
@@ -115,6 +103,23 @@ export const HARDENED_CM = make({
     name: 'Hardened CM',
     note: '+1',
     desc: `This Unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
+})
+
+export const PATROL = make({
+    name: 'Patrol',
+    desc: 'This Unit gains an Overwatch Token after resolving a second move as its action.',
+})
+
+export const CLOSE_AND_PERSONAL = make({
+    name: 'Close and Personal',
+    note: '+1 TARG',
+    desc: 'This Unit gains an additional +1 TARG against targets within short range.',
+})
+
+export const FIRE_SUPPORT_LINK = make({
+    name: 'Fire Support Link',
+    note: `+1 TARG`,
+    desc: `This Unit gains +1 TARG when resolving attacks that have a Forward Observer.`,
 })
 
 function make(trait) {

@@ -22,14 +22,17 @@ import {
     ALL_TERRAIN,
     AMBUSH,
     CLEAR_THE_WAY,
+    CLOSE_AND_PERSONAL,
     DEFENSE_AURA,
     HARDENED_CM,
+    PATROL,
     SENTRY,
+    SHROUD_AURA,
     STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 
 import { NOTE_STEALTH_TOKEN } from '../definitions.js'
-import { BASIC_SCAN, GO_DARK, PATROL, SCAN, SHROUD } from '../cards-data/actions.js'
+import { BASIC_SCAN, GO_DARK, SCAN } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 
 export const COALITION_CARD_DEFAULTS = {
@@ -101,14 +104,14 @@ export const VIRAGO_TANK = make({
     speed: 6,
     targeting: 6,
     defense: 13,
-    scan: 6,
     cm: 2,
     actions: [
-        BASIC_SCAN,
         MEDIUM_CANNON,
+    ],
+    traits: [
+        CLOSE_AND_PERSONAL,
         PATROL,
     ],
-    traits: [],
 })
 
 export const AURORA = make({
@@ -126,10 +129,11 @@ export const AURORA = make({
     actions: [
         BASIC_SCAN,
         CANNON,
-        SHROUD,
+        //CM_AURA,
     ],
     traits: [
         ADAPTIVE_CAMO,
+        SHROUD_AURA,
         DEFENSE_AURA,
     ],
 })
@@ -226,7 +230,6 @@ export const SPIDER_DRONE_INFILTRATOR = make({
         NOTE_STEALTH_TOKEN,
     ],
 })
-
 
 export const SPIDER_DRONE_SOLDIER = make({
     slug: 'spider_drone_soldier',

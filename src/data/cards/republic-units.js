@@ -12,7 +12,6 @@ import {
     SHOCK_RIFLE,
     SHOCK_SNIPER_RIFLE,
     SMART_MED_CANNON,
-    SNAP_FIRE,
 } from '../cards-data/weapons.js'
 import {
     ADAPTIVE_CAMO,
@@ -76,9 +75,7 @@ export const SEEKER_TEAM = make({
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
-        PREDATOR,
     ],
-    definitions: [],
 })
 
 export const COURIER_TRANSPORT = make({
@@ -135,9 +132,7 @@ export const CRUSADER_MEDIUM_TANK = make({
     defense: 13,
     scan: null,
     cm: 2,
-    actions: [
-        MEDIUM_CANNON,
-    ],
+    actions: [MEDIUM_CANNON],
     traits: [
         FINISHER,
         COUNTERMEASURE_DEFEND(TYPE_INFANTRY),
@@ -158,7 +153,9 @@ export const MANDIBLE = make({
         CONCUSSION_ARTILLERY,
         HEAVY_ARTILLERY,
     ],
-    traits: [],
+    traits: [
+        //FIRE_SUPPORT_LINK,
+    ],
     definitions: [],
 })
 
@@ -175,7 +172,6 @@ export const SAMSON_HEAVY_TANK = make({
     cm: '3+1',
     actions: [
         SMART_MED_CANNON,
-        SNAP_FIRE(SMART_MED_CANNON),
     ],
     traits: [
         PREDATOR,
@@ -205,7 +201,6 @@ export const GOLIATHS = make({
         ALL_TERRAIN,
         PREDATOR,
     ],
-    definitions: [],
 })
 
 export const REPUBLIC_UNITS = [

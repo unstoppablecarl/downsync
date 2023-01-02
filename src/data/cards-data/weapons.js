@@ -143,7 +143,7 @@ export const SHOCK_AUTOCANNON = make({
 
 export const FUSION_CANNON = make({
     name: 'Fusion Cannon',
-    range: 12,
+    range: 8,
     rof: 1,
     traits: [
         TRAIT_SMART,
@@ -154,7 +154,7 @@ export const HEAVY_ARTILLERY = make({
     name: 'Heavy Artillery',
     cost: COST_ACTION_AND_COMMAND,
     range: null,
-    rof: 3,
+    rof: 4,
     traits: [
         TRAIT_FIRE_SUPPORT,
         EXTREME_RANGE,
@@ -165,7 +165,7 @@ export const HEAVY_ARTILLERY = make({
 export const CONCUSSION_ARTILLERY = make({
     name: 'Concussion Artillery',
     range: null,
-    rof: 4,
+    rof: 5,
     effect: 'STUN',
     traits: [
         TRAIT_FIRE_SUPPORT,
@@ -256,7 +256,7 @@ export const MICRO_ARTILLERY = make({
 export const SHOCK_SNIPER_RIFLE = make({
     name: 'Shock Sniper Rifle',
     range: 24,
-    rof: 1,
+    rof: 2,
     effect: 'STUN',
     traits: [
         DEADLY_VS('Infantry'),
@@ -264,13 +264,13 @@ export const SHOCK_SNIPER_RIFLE = make({
     ],
 })
 
-export function SNAP_FIRE(weapon) {
+export function SNAP_FIRE(weapon, range) {
 
     let newWeapon = Object.assign({}, weapon, {
         name: 'Snap Fire',
         cost: COST_COMMAND,
         rof: 1,
-        desc: 'This attack can only target an Infantry Unit within 3" of your last attack target this activation.',
+        range,
     })
 
     return make(newWeapon)

@@ -1,6 +1,5 @@
 import { keywordFormat } from '../support/text-formatters.js'
 import { COST_ACTION_OR_COMMAND, COST_COMMAND } from '../constants.js'
-import { SHROUD_TEMPLATE } from '../definitions.js'
 import { makeAction } from '../support/factories.js'
 
 export const FORWARD_OBSERVE = make({
@@ -22,27 +21,16 @@ export const SCAN = (rof, range) => {
     })
 }
 
-export const PATROL = make({
-    name: 'Patrol',
-    cost: COST_COMMAND,
-    target: 'Self',
-    effect: '&starf;',
-    desc: 'This Unit gains an Overwatch Token. This must be the last action this Unit performs in an activation.',
-})
-
-export const SHROUD = make({
-    name: 'Shroud',
+export const CM_AURA = make({
+    name: 'CM Aura',
     cost: COST_ACTION_OR_COMMAND,
     range: 4,
     rof: null,
     target: '-',
     effect: '&starf;',
-    desc: `Place the center of 1 Shroud Template within 4" of this Unit. Shroud Templates are removed when this Unit is Refreshed or destroyed. This action can be used once per activation.`,
-    traits: [
-        SHROUD_TEMPLATE,
-    ],
+    desc: `Friendly Units within 4" gain +1 to Countermeasure rolls.`,
+    traits: [],
 })
-
 
 export const SPOTTER = make({
     name: 'Spotter',
