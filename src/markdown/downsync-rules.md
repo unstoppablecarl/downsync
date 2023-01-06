@@ -175,7 +175,7 @@ Each Taskforce Unit:
 
 - Removes Overwatch Tokens
 - [Regenerates Countermeasure Tokens](#regenerating-countermeasures)
-- May spend 1 Command Point to remove a Stun Token
+- May spend 1 Command Point to remove a [Stun Token](#stun-token)
 - Resolves special abilities that trigger when a Unit is Refreshed
 
 In a Reaction Engagement Non-active Units are refreshed when they [Resolve Reactions](#resolve-reactions).
@@ -244,14 +244,14 @@ more infantry models on it.
 
 ### Stats
 
-| Stat                | Description                                                                         | Typical Range |
-|---------------------|-------------------------------------------------------------------------------------|---------------|
-| SIG, Signature      | Small / Medium / Large                                                              |               |
-| SPD, Speed          | Movement distance in inches.                                                        | 6"            |
-| SCAN, Scan          | Stat added to 2d6 when rolling to scan                                              | 5-8           |
-| TARG, Targeting     | Stat added to 2d6 when rolling to hit                                               | 5-8           |
-| DEF, Defense        | Target Number to hit when rolling an attack                                         | 12-14         |
-| CM, Countermeasures | Number of Countermeasure Tokens this unit starts with and the max the unit can have | 0-3           |
+| Stat                | Description                                                                 | Typical Range |
+|---------------------|-----------------------------------------------------------------------------|---------------|
+| SIG, Signature      | Small / Medium / Large                                                      |               |
+| SPD, Speed          | Movement distance in inches.                                                | 6"            |
+| SCAN, Scan          | Stat added to 2d6 when rolling to scan                                      | 5-8           |
+| TARG, Targeting     | Stat added to 2d6 when rolling to hit                                       | 5-8           |
+| DEF, Defense        | Target Number to hit when rolling an attack                                 | 12-14         |
+| CM, Countermeasures | Number of [Countermeasure Tokens](#countermeasure-token) this Unit can have | 0-3           |
 
 ### Multi-base Units
 
@@ -321,7 +321,7 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 ### Command Point Abilities
 
 - **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
-- **Remove Stun Token**: Remove a stun token from a unit when it is [Refreshed](#refresh)
+- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit when it is [Refreshed](#refresh)
 - **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
 
 ## Actions
@@ -362,8 +362,11 @@ Unit performs a Move Action it may move up to its SPD in inches following normal
 ### Overwatch Action
 
 Although not included on the Unit cards, all units can perform the Overwatch Action for the cost of 1 Action Point. When
-a Unit performs an Overwatch action it gains 1 Overwatch Token. Overwatch Tokens allow Units to perform Reactions even
-after they have activated with a higher chance to act first. See: [Reaction Engagements](#reaction-engagements)
+a Unit performs an Overwatch Action it gains 1 [Overwatch Token](#overwatch-token). Overwatch Tokens allow Units to
+perform
+Reactions even after they have activated with a higher chance to act first.
+
+An Overwatch Action may be performed by a Unit participating in a [Reaction Engagement](#reaction-engagements).
 
 ### Scan Action
 
@@ -446,20 +449,18 @@ Each check is resolved before deciding to spend additional Countermeasure Tokens
 | 1d6 >= 3 | Success |
 | 1d6 < 3  | Failure |
 
-#### Hardened Countermeasures
-
-If a Unit has a Hardened Countermeasure Token it may be used instead of a regular Countermeasure Token. Hardened
-Countermeasure Tokens do not require a Countermeasure Check and automatically succeed, but do not Regenerate.
+[Hardened Countermeasures](#hardened-countermeasure-token) automatically succeed Countermeasure Checks.
 
 #### Regenerating Countermeasures
 
 When a Unit is [Refreshed](#refresh) it replenishes its Countermeasure Tokens so that it has a number equal to its CM
-stat.
+stat. [Hardened Countermeasures](#hardened-countermeasure-token) do not Regenerate.
 
 # Reaction Engagements
 
-Units controlled by a non-active player that have not activated this round (or have an Overwatch Token), have a chance
-to react and possibly act before activating Units.
+Units controlled by a non-active player that have not activated this round (or have
+an [Overwatch Token](#overwatch-token)),
+have a chance to react and possibly act before activating Units.
 
 ## Initiating a Reaction Engagement
 
@@ -468,7 +469,8 @@ Taskforce Activation, but before the Unit Activation phase.
 
 ### Who Can Participate
 
-Units that have not activated this round or have an Overwatch Token are eligible to be selected as participating Units.
+Units that have not activated this round or have an [Overwatch Token](#overwatch-token) are eligible to be selected as
+participating Units.
 
 ## Resolving a Reaction Engagement
 
