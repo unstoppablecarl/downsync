@@ -23,8 +23,9 @@ import {
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
+    STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
-import { FORWARD_OBSERVE, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
+import { FORWARD_OBSERVE, GO_DARK, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 
 export const REPUBLIC_CARD_DEFAULTS = {
@@ -71,10 +72,12 @@ export const SEEKER_TEAM = make({
         SCAN(2, 12),
         SHOCK_SNIPER_RIFLE,
         FORWARD_OBSERVE,
+        GO_DARK,
     ],
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
+        STEALTHY_INFANTRY,
     ],
 })
 

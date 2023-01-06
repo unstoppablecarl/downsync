@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import Handlebars from 'handlebars'
 import helpers from './views/helpers/handlebars-helpers.js'
+import globPromise from 'glob-promise'
 
 let tplDir = './src/views/templates/'
 tplDir = path.resolve(tplDir)
@@ -12,7 +13,6 @@ partialsDir = path.resolve(partialsDir)
 Handlebars.registerHelper(helpers)
 
 export default async function buildTemplates() {
-
     return Promise.all([
         dirToTemplates(partialsDir),
         dirToTemplates(tplDir),
@@ -29,14 +29,13 @@ export default async function buildTemplates() {
 
 function dirToTemplates(tplDir) {
 
-    return fs.promises.readdir(tplDir)
+    return globPromise(tplDir + '/**/*.hbs')
         .then((files) => {
             let templates = {}
 
             let promises = files.map(function (file) {
-                let filePath = path.resolve(tplDir + '/' + file)
-
-                let key = path.basename(file, '.hbs')
+                let filePath = path.resolve(file)
+                let key = getKey(tplDir, file)
 
                 return fs.promises.readFile(filePath, 'utf-8')
                     .then((tpl) => {
@@ -49,4 +48,10 @@ function dirToTemplates(tplDir) {
                     return templates
                 })
         })
+
+    function getKey(tplDir, file) {
+        let re = new RegExp(`${tplDir}/(.*?).hbs`)
+        let matches = file.match(re)
+        return matches[1]
+    }
 }

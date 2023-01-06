@@ -1,4 +1,4 @@
-{{> header title="Starter Unit Cards Print Landscape"}}
+{{> layout/html-head title="Starter Unit Cards Print Landscape"}}
 <body>
 <style>
     @media print {
@@ -8,7 +8,7 @@
     }
 </style>
 <div class="no-print">
-    {{> nav}}
+    {{> layout/nav}}
 </div>
 
 <div class="container no-print">
@@ -42,7 +42,7 @@
         {{/each}}
     </div>
 </div>
-{{> footer }}
+{{> layout/footer }}
 </body>
-{{> close}}
+{{> layout/html-close}}
 
