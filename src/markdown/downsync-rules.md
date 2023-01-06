@@ -1,5 +1,7 @@
 # Downsync Rules (beta)
 
+Last Updated: Jan 6, 2023
+
 [[toc]]
 
 ## Introduction
@@ -42,6 +44,30 @@ representation of what holographic imaging would be available to you when comman
 
 When measuring distances to or from a Unit/Ping, any point on the edge of the base may be used. Players may make
 measurements at any time.
+
+### Rolling Dice
+
+Downsync uses 1d6 and 2d6 rolls. When rolling 2d6 add the numbers together to determine the die roll result. Higher
+results are always better.
+
+#### Roll Modifiers
+
+Modifiers to die rolls are positive or negative numbers adjustments (example: +X/-X) and are added directly to the die
+roll result.
+
+#### Roll Advantage
+
+Each roll starts with an Advantage value of zero. Effects and abilities can add or subtract the Advantage value from a
+roll. Positive and Negative Advantage values negate each other. For example a roll with +2 Advantage and -1 Advantage =
+1 Advantage and a roll with +1 Advantage and -3 Advantage = -2 Advantage.
+
+*Complicated Advantage combinations are rare, but this should explain how to resolve them for all cases.*
+
+| Advantage Value | Effect where xd6 is the number of dice to be rolled (1d6 or 2d6)                      |
+|-----------------|---------------------------------------------------------------------------------------|
+| negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the lowest xd6  |
+| zero            | roll xd6                                                                              |
+| positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the highest xd6 |
 
 ### Terminology
 
@@ -294,9 +320,7 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 
 ### Command Point Abilities
 
-- **Boost a Roll**: Add 1d6 to any die roll and drop the lowest die rolled. Only once per roll. Declared before rolling.
-  If a roll has an effect that would add a die and drop the highest, the boost effect negates it and the default number
-  of dice are rolled.
+- **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
 - **Remove Stun Token**: Remove a stun token from a unit when it is [Refreshed](#refresh)
 - **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
 
@@ -475,27 +499,29 @@ next to each participating Unit.
 
 Each Unit participating in the Reaction Engagement performs a Reaction Priority Roll.
 
-#### Reaction Priority Roll
-
-| Case                                                | Roll                              | Boosted                            |
-|-----------------------------------------------------|-----------------------------------|------------------------------------|
-| Default                                             | roll 1d6                          | roll 2d6 and pick the highest die  |
-| Units with an **Overwatch Token**                   | roll 2d6 and pick the highest die | roll 3d6 and pick the highest die  |
-| Units with a **Stun Token**                         | roll 2d6 and pick the lowest die  | roll 1d6                           |
-| Units with both an **Overwatch** and **Stun Token** | roll 1d6                          | roll 2d6 and pick the highest die  |
-
 #### Boosting Reaction Priority
 
 Players may spend a Command Point to boost a single Unit's Reaction Priority roll. Starting with the active player, each
-player declares one or more participating units to boost and spends a Command Point for each one. Then both players
-perfrom a Reaction Priority Roll for each participating Unit.
+player declares one or more participating Units to boost and spends a Command Point for each one. Then both players
+perform a Reaction Priority Roll for each participating Unit.
+
+#### Reaction Priority Roll
+
+A participating Unit rolls 1d6 to determine its Reaction Priority. Keep the die with the result next to the Unit.
+
+| Case                            | Roll Advantage Adjustments |
+|---------------------------------|----------------------------|
+| Unit has an **Overwatch Token** | +1 Advantage               |
+| Unit has a **Stun Token**       | -1 Advantage               |
+| Roll Boosted                    | +1 Advantage               |
+
+See: [Roll Advantage](#roll-advantage)
 
 ### Resolve Reactions
 
 In reaction priority order, each Unit may resolve a Unit Activation. Instead of performing a Unit Activation, a Unit may
-hold its reaction by reducing the value of its Reaction Priority die by 1. Units not in the activating Taskforce (that
-would have already been Refreshed) are [Refreshed](#refresh) immediately before resolving their reaction Unit
-Activation.
+hold its reaction by reducing the value of its Reaction Priority die by 1. Units not in the activating Taskforce
+are [Refreshed](#refresh) immediately before resolving their reaction Unit Activation.
 
 A unit with an **Overwatch Token** removes that token immediately before resolving its Unit Activation. When activating,
 Units may perform an Overwatch Action and gain an Overwatch token to be used in a later Reaction Engagement.
@@ -540,11 +566,13 @@ sources.
 
 The following tokens are attached to a Unit.
 
-| Token                       | Color  | Description                                                                                                                                           | Multiple | Removed                                                                                                                                    |
-|-----------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Activated**               | Green  | Unit has activated this Round. Cannot activate or perform reactions until the next round.                                                             | No       | Round start                                                                                                                                |
-| **Overwatch**               | Purple | Unit uses the highest of 2d6 for reactions and can perform reactions even if it has an Activated Token.                                               | No       | Taskforce Designation                                                                                                                      |
-| **Stun**                    | Orange | Unit may only perform a move or action when activating and use the lowest of 2d6 for reaction priority rolls.                                         | No       | After performing an activation                                                                                                             |
-| **Stealth**                 | Black  | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                                      | No       | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |                                      |
-| **Countermeasure**          | White  | Unit may spend this token to roll 1d6, on a 3+ it negates an attack result. Multiple may be spent against the same attack result if an attempt fails. | Yes      | Never                                                                                                                                      |
-| **Hardened Countermeasure** | Yellow | A Countermeasure that automatically succeeds and does not regenerate                                                                                  | Yes      | Never                                                                                                                                      |
+| Token                                                    | Color  | Description                                                                                                                                    | Multiple | Removed                                                                                                                                    |
+|----------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Activated**                                            | Green  | Unit has activated this Round. Cannot activate or participate in Reaction Engagements until the next round.                                    | No       | Round start                                                                                                                                |
+| **Overwatch**                                            | Purple | Can participate in Reaction Engagements even if it has an Activated Token and gains +1 [Advantage](#roll-advantage) to Reaction Priority Rolls | No       | Taskforce Designation                                                                                                                      |
+| **Stun**                                                 | Orange | Unit may only perform a move or action when activating and suffers -1 See: [Advantage](#roll-advantage) for Reaction Priority Rolls.           | No       | After performing an activation                                                                                                             |
+| **Stealth**                                              | Black  | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                               | No       | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |                                      |
+| **[Countermeasure](#countermeasures)**                   | White  | Spent to roll 1d6, on a 3+ it negates an attack result.                                                                                        | Yes      | When spent                                                                                                                                 |
+| **[Hardened Countermeasure](#hardened-countermeasures)** | Yellow | A Countermeasure that automatically succeeds and does not regenerate                                                                           | Yes      | When spent                                                                                                                                 |
+
+
