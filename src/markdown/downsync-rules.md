@@ -45,37 +45,44 @@ measurements at any time.
 
 ### Terminology
 
-- **Active Player**:        The player who is currently taking their turn.
-- **Battlefield**:          The 4x4 ft. surface containing models and terrain where the game is taking place.
-- **Force**:                A collection of Units/Pings controlled by a single player.
+- **Activated Unit**:         Unit that has already completed its Activation this Round.
+- **Active Player**:          The player who is currently taking their turn.
+- **Battlefield**:            The 4x4 ft. surface containing models and terrain where the game is taking place.
+- **Controlling Force**:      The Force a Unit/Ping belongs to.
+  - **Command Point**:        A resource players have each turn to spend on Command Point Abilities and Unit Actions.
+- **Command Point Ability**:  An Ability that all players may spend Command Points to activate.
+- **Command Point Capacity**: The number of Command Points each player starts each Round with.
+- **Force**:                  A collection of Units/Pings controlled by a single player.
   - **Force List**:         Detailed list of the type and quantity of Units/Pings in a Force.
   - **Reserve**:            A collection of a Force's Units/Pings not on the Battlefield.
   - **Controlling Player**: The Player controlling the Force and its Units/Pings.
-- **Unit**:                 A vehicle model on a base (small/medium/large) or multiple infantry bases (40mm) each with
+- **Infantry Unit Base**:     40mm circle (does not have a ping equivalent).
+- **LOS**:                    Line of Sight
+- **Ping**:                   Marker/base representing a sensor Signature indicating a hidden Unit.
   one or more infantry models on it.
-- **Ping**:                 Marker/base representing a sensor Signature indicating a hidden Unit.
-- **Controlling Force**:    The Force a Unit/Ping belongs to.
-- **Taskforce**:            A collection of Units/Pings acting together.
-- **Signature**:            Units and Pings have a Size that determines the diameter of a Ping or Unit base.
+- **Refresh**:                Units are refreshed at specific times. Some events are triggered when a unit refreshes
+  such as
+  Countermeasure Token regeneration.
+- **ROF**:                    Rate of Fire
+- **Round**:                  Collection of Turns. A Round ends when all units have been Activated.
+- **Signature**:              Units and Pings have a Size that determines the diameter of a Ping or Unit base.
   - **Small**: 60mm
   - **Medium**: 70mm
   - **Large**: 80mm
-- **Infantry Unit Bases**: 40mm circle (does not have a ping equivalent).
-- **Round**:                Collection of Turns. A Round ends when all units have been Activated.
-- **Turn**:                 In a Round, players alternate taking turns. Each turn the active player designates a
+- **Taskforce**:              A collection of Units/Pings acting together.
+- **Turn**:                   In a Round, players alternate taking turns. Each turn the active player designates a
   Taskforce to act in that turn.
-- **Unit Activation**:      Resolving a single unit's actions after moving all units during a Taskforce Activation.
-- **Activated Unit**:       Unit that has already completed its Activation this Round.
-- **Refresh**: Units are refreshed at specific times. Some events are triggered when a unit refreshes such as
-  Countermeasure Token regeneration.
-- **LOS**: Line of Sight
-- **ROF**: Rate of Fire
+- **Unit Activation**:        Resolving a single unit's actions after moving all units during a Taskforce Activation.
+- **Unit**:                   A vehicle model on a base (small/medium/large) or multiple infantry bases (40mm) each with
 
 ## Game Sizes
 
-When constructing a force list you are limited by the signature and quantity limits of the game size.
+When constructing a force list you are limited by the signature and quantity limits of the game size. The current army
+list building rules are likely to be changed as the game grows and is further tested. This is a starting point.
 
 ### Small Game
+
+**Command Point Capacity**: 5
 
 | Unit Signature | Quantity |
 |----------------|----------|
@@ -84,6 +91,8 @@ When constructing a force list you are limited by the signature and quantity lim
 | Large          | 1        |
 
 ### Standard Game
+
+**Command Point Capacity**: 7
 
 | Unit Signature | Quantity |
 |----------------|----------|
@@ -111,6 +120,7 @@ When all Units/Pings have been Activated the Round ends.
 ### Round
 
 - Remove all Activated Tokens
+- Regenerate Command Points. See [Game Size](#game-sizes)
 - Each Player alternates resolving Taskforce Activations until all Units/Pings have been activated
   - When starting a new Round the player that did not perform the last Taskforce Activation of the previous Round goes
     first
@@ -217,6 +227,18 @@ more infantry models on it.
 | DEF, Defense        | Target Number to hit when rolling an attack                                         | 12-14         |
 | CM, Countermeasures | Number of Countermeasure Tokens this unit starts with and the max the unit can have | 0-3           |
 
+### Multi-base Units
+
+Some units have multiple infantry bases instead of a vehicle model. How many infantry bases a
+multi-base Unit has is indicated on its Unit Card by a number in a circle next to the Unit description.
+When a multi-base Unit activates each infantry base gains 1 Action Point and activates one at a time. Infantry base
+Activations of the same Unit can not be split up and must be completed before activating another Unit.
+
+Multi-base Units must end their movement such that all infantry bases in the Unit are within 12" of every other infantry
+base in the Unit. In other words all infantry bases in a Unit must fit within a 12" diameter circle.
+
+See: [Revealing Multi-Base Units](#revealing-multi-base-units)
+
 ## Pings
 
 Pings are an abstract representation of imperfect battlefield information. Each Ping represents a potential unit of
@@ -241,17 +263,42 @@ Pings can only perform a move action to move an additional 4".
 ### Revealing
 
 When a Ping is Revealed, the Controlling Player selects a Unit from their Reserve with the same SIG (Signature) as the
-Ping.
-The Unit's model is placed on the Ping (circular base). The circular base and model are now considered a Revealed Unit
-instead of a Ping.
-
-A Ping cannot end its movement within 3" of an enemy Unit.
+Ping. This unit will be Revealed at the Ping's current position.
 
 A Ping is Revealed when:
 
 - The controlling player chooses to Reveal it in the Reveal phase of a Taskforce Activation
-- If an enemy Unit is within 3" at the end of an opposing player's movement phase
+- If an enemy Unit is within 2" at the end of an opposing player's movement phase
 - It is Successfully Scanned by an enemy Unit
+
+**Note**: A Ping cannot end its movement within 2" of an enemy Unit and cannot cause itself to be auto revealed.
+
+#### Revealing Units
+
+When Revealed the Unit's model is placed on the Ping (circular base). The circular base and model are now considered a
+Revealed Unit
+instead of a Ping. What as the Ping becomes the Unit's base.
+
+#### Revealing Multi-Base Units
+
+When Revealed Multi-Base Units place each infantry base within 3" of the Ping and the Ping is removed.
+
+See: [Multi-Base Units](#multi-base-units)
+
+## Command Points
+
+The Command Point Capacity of a game is determined by the [Game Size](#game-sizes).
+
+Players begin each round with a number of Command Points equal to the game's Command Point Capacity. Players cannot
+exceed the Command Point Capacity or carry over Command Points from a previous Round.
+
+### Command Point Abilities
+
+- **Boost a Roll**: Add 1d6 to any die roll and drop the lowest die rolled. Only once per roll. Declared before rolling.
+  If a roll has an effect that would add a die and drop the highest, the boost effect negates it and the default number
+  of dice are rolled.
+- **Remove Stun Token**: Remove a stun token from a unit when it is [Refreshed](#refresh)
+- **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
 
 ## Actions
 
@@ -279,7 +326,9 @@ The actions a Unit can perform and their costs are indicated on the Unit's card.
 - **A/C**: 1 Action Point **OR** 1 Command Point
 - **A+C**: 1 Action Point **AND** 1 Command Point
 
-Some actions have no cost and are labeled as a "Free Action".
+See: [Command Points](#command-points)
+
+Some actions have no cost and are labeled as a "Free Action". They are resolved like any other action but have No cost.
 
 ### Move Action
 
@@ -373,6 +422,11 @@ Each check is resolved before deciding to spend additional Countermeasure Tokens
 | 1d6 >= 3 | Success |
 | 1d6 < 3  | Failure |
 
+#### Hardened Countermeasures
+
+If a Unit has a Hardened Countermeasure Token it may be used instead of a regular Countermeasure Token. Hardened
+Countermeasure Tokens do not require a Countermeasure Check and automatically succeed, but do not Regenerate.
+
 #### Regenerating Countermeasures
 
 When a Unit is [Refreshed](#refresh) it replenishes its Countermeasure Tokens so that it has a number equal to its CM
@@ -423,25 +477,22 @@ Each Unit participating in the Reaction Engagement performs a Reaction Priority 
 
 #### Reaction Priority Roll
 
-| Case                                                | Roll                              |
-|-----------------------------------------------------|-----------------------------------|
-| Default                                             | roll 1d6                          |
-| Units with an **Overwatch Token**                   | roll 2d6 and pick the highest die |
-| Units with a **Stun Token**                         | roll 2d6 and pick the lowest die  |
-| Units with both an **Overwatch** and **Stun Token** | roll 1d6                          |
+| Case                                                | Roll                              | Boosted                            |
+|-----------------------------------------------------|-----------------------------------|------------------------------------|
+| Default                                             | roll 1d6                          | roll 2d6 and pick the highest die  |
+| Units with an **Overwatch Token**                   | roll 2d6 and pick the highest die | roll 3d6 and pick the highest die  |
+| Units with a **Stun Token**                         | roll 2d6 and pick the lowest die  | roll 1d6                           |
+| Units with both an **Overwatch** and **Stun Token** | roll 1d6                          | roll 2d6 and pick the highest die  |
 
-#### Re-Rolling Reaction Priority
+#### Boosting Reaction Priority
 
-Players may spend a Command Point to re-roll a single Unit's Reaction Priority dice. If that unit rolled more than one
-die it must re-roll all dice and accept the new result.
-
-Starting with the active player, each player declares one or more participating units to re-roll, spends a Command Point
-for each, and re-rolls the result for each. Players alternate performing re-rolls until they both decide to pass. The
-same Unit may be re-rolled multiple times provided a Command Point is spent each time.
+Players may spend a Command Point to boost a single Unit's Reaction Priority roll. Starting with the active player, each
+player declares one or more participating units to boost and spends a Command Point for each one. Then both players
+perfrom a Reaction Priority Roll for each participating Unit.
 
 ### Resolve Reactions
 
-In reaction roll order, each Unit may resolve a Unit Activation. Instead of performing a Unit Activation, a Unit may
+In reaction priority order, each Unit may resolve a Unit Activation. Instead of performing a Unit Activation, a Unit may
 hold its reaction by reducing the value of its Reaction Priority die by 1. Units not in the activating Taskforce (that
 would have already been Refreshed) are [Refreshed](#refresh) immediately before resolving their reaction Unit
 Activation.
@@ -459,6 +510,25 @@ movement or Unit Activation.
 
 After all reactions are resolved each participating Unit gains an Activated Token.
 
+## Missions
+
+All missions are played on a 4x4 foot table and have players on opposite sides of the table.
+
+### Mission: VIP Capture
+
+**Deployment Zones**: Both players deploy Pings within 10" of their table edge
+
+**Setup**: Place a VIP token in the bottom right corner of each player's table side 12" from the right and the back
+edge. The token
+may be represented by a civilian vehicle model but does not block LOS and can be moved through.
+
+**Scoring**: Players score by capturing the VIP on their opponents side of the table. When a player ends a Taskforce
+Activation, each unit within 1" of the opposing VIP scores 1 Victory Point. Each opposing unit within 4" subtracts 1
+Victory Point from this amount. Units with multiple Infantry Bases must have more than half of their unit's bases within
+1".
+
+**Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
+
 ## Special Rules
 
 ### Ability Stacking
@@ -466,17 +536,7 @@ After all reactions are resolved each participating Unit gains an Activated Toke
 Multiple instances of the same ability do not stack. Including if an ability with the same name comes from multiple
 sources.
 
-## Tokens/Templates
-
-### Placed Tokens/Templates
-
-The following tokens/templates are placed on the battlefield.
-
-| Token               | Description                                                                                        | Removed                                                  |
-|---------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| **Shroud Template** | A 4" diameter circular template that does not block LOS and grants concealment to units within it. | When the Controlling Unit is **Refreshed** or destroyed. |
-
-### Unit Tokens
+## Unit Tokens
 
 The following tokens are attached to a Unit.
 
@@ -484,7 +544,7 @@ The following tokens are attached to a Unit.
 |-----------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | **Activated**               | Green  | Unit has activated this Round. Cannot activate or perform reactions until the next round.                                                             | No       | Round start                                                                                                                                |
 | **Overwatch**               | Purple | Unit uses the highest of 2d6 for reactions and can perform reactions even if it has an Activated Token.                                               | No       | Taskforce Designation                                                                                                                      |
-| **Stun**                    | Blue   | Unit may only perform a move or action when activating and use the lowest of 2d6 for reactions.                                                       | No       | After performing an activation                                                                                                             |
-| **Stealth**                 | Black  | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                                      | No       | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 3". |                                      |
+| **Stun**                    | Orange | Unit may only perform a move or action when activating and use the lowest of 2d6 for reaction priority rolls.                                         | No       | After performing an activation                                                                                                             |
+| **Stealth**                 | Black  | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                                      | No       | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |                                      |
 | **Countermeasure**          | White  | Unit may spend this token to roll 1d6, on a 3+ it negates an attack result. Multiple may be spent against the same attack result if an attempt fails. | Yes      | Never                                                                                                                                      |
 | **Hardened Countermeasure** | Yellow | A Countermeasure that automatically succeeds and does not regenerate                                                                                  | Yes      | Never                                                                                                                                      |
