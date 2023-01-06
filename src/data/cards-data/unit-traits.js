@@ -92,6 +92,18 @@ export const ALL_TERRAIN = make({
     desc: 'This Unit ignores terrain movement penalties.',
 })
 
+export const WIDOW_SCOUT_CARRIED = make({
+    name: 'Packaged',
+    note: 'Widow Scout',
+    desc: 'This Unit cannot be added directly to a Force. It is automatically included with a Widow Scout Unit.',
+})
+
+export const SPIDER_DRONE_INFILTRATOR_CARRIER = make({
+    name: 'Carrier',
+    note: 'Spider Drone: Infiltrator',
+    desc: 'When this Unit is added to a Force one Spider Drone: Infiltrator Unit is automatically included.',
+})
+
 export const INFANTRY_TRANSPORT = make({
     name: 'Transport',
     note: `Small SIG ${TYPE_INFANTRY}`,

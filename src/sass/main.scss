@@ -21,12 +21,17 @@ main {
     background: #fff;
 }
 
+.body-print {
+    main {
+        padding-bottom: 0;
+    }
+}
+
 .footer {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: $footer-bg;
     border-top: 1px solid #444;
-
 }
 
 .table-width-auto {

@@ -237,6 +237,10 @@ Units can see through all concealing area terrain within 6". Units can see throu
 from greater than 6" away. A Unit can never see completely through concealing area terrain from one side of it to the
 other without being in the area terrain.
 
+#### Buildings
+
+Only infantry Units may enter a building. For purposes of moving Units a building is
+
 ## Units
 
 A Unit is represented by a vehicle model on a base (60mm/70mm/80mm) or multiple infantry bases (40mm) each with one or
@@ -303,11 +307,12 @@ A Ping is Revealed when:
 
 When Revealed the Unit's model is placed on the Ping (circular base). The circular base and model are now considered a
 Revealed Unit
-instead of a Ping. What as the Ping becomes the Unit's base.
+instead of a Ping. What was the Ping becomes the Unit's base.
 
 #### Revealing Multi-Base Units
 
-When Revealed Multi-Base Units place each infantry base within 3" of the Ping and the Ping is removed.
+When Revealed, Multi-Base Units place each infantry base within 3" of the Ping (including the space occupied by the
+Ping) and the Ping is removed.
 
 See: [Multi-Base Units](#multi-base-units)
 
@@ -608,7 +613,8 @@ A Unit with a Stun Token is considered Stunned and may only perform a move or ac
 ### Stealth Token
 
 A Unit with a Stealth Token cannot be targeted by enemy attacks. A Unit looses its Stealth Token immediately after
-performing an attack Action and in all cases that would cause a Ping to be [Revealed](#revealing).
+performing an attack Action and in all cases that would cause a Ping to be [Revealed](#revealing). A Unit cannot gain a
+Stealth Token if an enemy Unit is within 2".
 
 |                       |                                                                                                                                            |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------|

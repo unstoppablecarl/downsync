@@ -28,7 +28,9 @@ import {
     PATROL,
     SENTRY,
     SHROUD_AURA,
+    SPIDER_DRONE_INFILTRATOR_CARRIER,
     STEALTHY_INFANTRY,
+    WIDOW_SCOUT_CARRIED,
 } from '../cards-data/unit-traits.js'
 
 import { NOTE_STEALTH_TOKEN } from '../definitions.js'
@@ -56,7 +58,9 @@ export const WIDOW_SCOUT = make({
         MG,
         DEPLOY_DRONES,
     ],
-    traits: [],
+    traits: [
+        SPIDER_DRONE_INFILTRATOR_CARRIER,
+    ],
 })
 
 export const SENTINEL_TAGGER = make({
@@ -225,6 +229,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
     traits: [
         STEALTHY_INFANTRY,
         ALL_TERRAIN,
+        WIDOW_SCOUT_CARRIED,
     ],
     definitions: [
         NOTE_STEALTH_TOKEN,
