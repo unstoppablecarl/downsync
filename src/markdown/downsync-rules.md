@@ -63,11 +63,11 @@ roll. Positive and Negative Advantage values negate each other. For example a ro
 
 *Complicated Advantage combinations are rare, but this should explain how to resolve them for all cases.*
 
-| Advantage Value | Effect where xd6 is the number of dice to be rolled (1d6 or 2d6)                      |
-|-----------------|---------------------------------------------------------------------------------------|
-| negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the lowest xd6  |
-| zero            | roll xd6                                                                              |
-| positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the highest xd6 |
+| Advantage Value | Effect where xd6 is the number of dice to be rolled (1d6 or 2d6)                          |
+|-----------------|-------------------------------------------------------------------------------------------|
+| negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the **lowest** xd6  |
+| zero            | roll xd6                                                                                  |
+| positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the **highest** xd6 |
 
 ### Terminology
 
@@ -423,10 +423,10 @@ Roll against it.
 
 If an Attack results in a successful hit, resolve the Combat Action's Effect against the targeted Unit.
 
-| Effect   | Description                                                                                                      |
-|----------|------------------------------------------------------------------------------------------------------------------|
-| **KILL** | The unit is destroyed and removed from the game.                                                                 |
-| **STUN** | The target of the attack gains a Stun Token. If the target already has a Stun Token, there is no further effect. |
+| Effect   | Description                                                                                                                     |
+|----------|---------------------------------------------------------------------------------------------------------------------------------|
+| **KILL** | The unit is destroyed and removed from the game.                                                                                |
+| **STUN** | The target of the attack gains a [Stun Token](#stun-token). If the target already has a Stun Token, there is no further effect. |
 
 ### Countermeasures
 
@@ -509,11 +509,11 @@ perform a Reaction Priority Roll for each participating Unit.
 
 A participating Unit rolls 1d6 to determine its Reaction Priority. Keep the die with the result next to the Unit.
 
-| Case                            | Roll Advantage Adjustments |
-|---------------------------------|----------------------------|
-| Unit has an **Overwatch Token** | +1 Advantage               |
-| Unit has a **Stun Token**       | -1 Advantage               |
-| Roll Boosted                    | +1 Advantage               |
+| Case                                                | Roll Advantage Adjustments |
+|-----------------------------------------------------|----------------------------|
+| Unit has an **[Overwatch Token](#overwatch-token)** | +1 Advantage               |
+| Unit has a **[Stun Token](#stun-token)**            | -1 Advantage               |
+| Roll Boosted                                        | +1 Advantage               |
 
 See: [Roll Advantage](#roll-advantage)
 
@@ -528,9 +528,9 @@ Units may perform an Overwatch Action and gain an Overwatch token to be used in 
 
 #### Reaction Engagement Stun Effects
 
-A unit that gains a Stun Token during a Reaction Engagement suffers no immediate effect. The Unit has already rolled
-for Reaction Priority and will not have to forfeit is Unit Activation. The Stun Token will affect the Unit's next
-movement or Unit Activation.
+A unit that gains a [Stun Token](#stun-token) during a Reaction Engagement suffers no immediate effect. The Unit has
+already rolled for Reaction Priority and will not have to forfeit is Unit Activation. The Stun Token will affect the
+Unit's next movement or Unit Activation.
 
 ### Cleanup
 
@@ -564,13 +564,88 @@ sources.
 
 ## Unit Tokens
 
-The following tokens are attached to a Unit.
+Each Unit has tokens represented by 8mm colored wooden cubes. The tokens are placed on the base of the Unit to clearly
+show what Unit the tokens belong to. When a Unit *spends* a token it is removed from the Unit's base and set aside.
 
-| Token                                                    | Color  | Description                                                                                                                                    | Multiple | Removed                                                                                                                                    |
-|----------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Activated**                                            | Green  | Unit has activated this Round. Cannot activate or participate in Reaction Engagements until the next round.                                    | No       | Round start                                                                                                                                |
-| **Overwatch**                                            | Purple | Can participate in Reaction Engagements even if it has an Activated Token and gains +1 [Advantage](#roll-advantage) to Reaction Priority Rolls | No       | Taskforce Designation                                                                                                                      |
-| **Stun**                                                 | Orange | Unit may only perform a move or action when activating and suffers -1 See: [Advantage](#roll-advantage) for Reaction Priority Rolls.           | No       | After performing an activation                                                                                                             |
-| **Stealth**                                              | Black  | A Unit with a Stealth Token cannot be targeted by enemy attacks.                                                                               | No       | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |                                      |
-| **[Countermeasure](#countermeasures)**                   | White  | Spent to roll 1d6, on a 3+ it negates an attack result.                                                                                        | Yes      | When spent                                                                                                                                 |
-| **[Hardened Countermeasure](#hardened-countermeasures)** | Yellow | A Countermeasure that automatically succeeds and does not regenerate                                                                           | Yes      | When spent                                                                                                                                 |
+### Activated Token
+
+A Unit with an Activated Token has activated this Round. The Unit cannot activate, be part of a Taskforce, or
+participate in Reaction Engagements until the next round.
+
+|                       |                      |
+|-----------------------|----------------------|
+| **Color**             | Green                |
+| **Gained**            | After Unit Activates |
+| **Can have multiple** | No                   |
+| **Removed**           | Round start          |
+
+### Overwatch Token
+
+A Unit with an Overwatch Token can participate in Reaction Engagements even if it has an Activated Token and gains
++1 [Advantage](#roll-advantage) to [Reaction Priority Rolls](#reaction-priority-roll).
+
+|                       |                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------|
+| **Color**             | Purple                                                                            |
+| **Gained**            | After performing an Overwatch Action                                              |
+| **Can have multiple** | No                                                                                |
+| **Removed**           | Taskforce Designation  or after performing an Activation in a Reaction Engagement |
+
+### Stun Token
+
+A Unit with a Stun Token is considered Stunned and may only perform a move or action when activating and suffers
+-1 [Advantage](#roll-advantage) for [Reaction Priority Rolls](#reaction-priority-roll).
+
+|                       |                                                                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **Color**             | Orange                                                                                                                            |
+| **Gained**            | After suffering the STUN effect                                                                                                   |
+| **Can have multiple** | No                                                                                                                                |
+| **Removed**           | After performing an activation that suffered its effect or spending a Command Point to remove it in the [Refresh](#refresh) phase |
+
+### Stealth Token
+
+A Unit with a Stealth Token cannot be targeted by enemy attacks. A Unit looses its Stealth Token immediately after
+performing an attack Action and in all cases that would cause a Ping to be [Revealed](#revealing).
+
+|                       |                                                                                                                                            |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Color**             | Black                                                                                                                                      |
+| **Gained**            | By unit special abilities                                                                                                                  |
+| **Can have multiple** | No                                                                                                                                         |
+| **Removed**           | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |
+
+### Countermeasure Token
+
+When a Unit is hit by an Attack it may spend a Countermeasure Token to perform
+a [Countermeasure Check](#countermeasure-check).
+
+|                       |                                    |
+|-----------------------|-----------------------------------:|
+| **Color**             |                              White |
+| **Gained**            | When Unit is [Refreshed](#refresh) |
+| **Can have multiple** |                                Yes |
+| **Removed**           |                         When spent |
+
+### Hardened Countermeasure Token
+
+When a Unit is hit by an Attack it may spend a Hardened Countermeasure Token to perform and automatically succeed
+a [Countermeasure Check](#countermeasure-check).
+
+|                       |                             |
+|-----------------------|----------------------------:|
+| **Color**             |                      Yellow |
+| **Gained**            | When unit is first revealed |
+| **Can have multiple** |                         Yes |
+| **Removed**           |                  When spent |
+
+### Unit Token Quick Reference
+
+| Token                                                    | Color  |
+|----------------------------------------------------------|--------|
+| **[Activated](#activated-token)**                        | Green  |
+| **[Overwatch](#overwatch-token)**                        | Purple |
+| **[Stun](#stun-token)**                                  | Orange |
+| **[Stealth](#stealth-token)**                            | Black  |
+| **[Countermeasure](#countermeasures)**                   | White  |
+| **[Hardened Countermeasure](#hardened-countermeasures)** | Yellow |
