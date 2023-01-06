@@ -1,36 +1,34 @@
-{{> layout/html-head title="Army Lists"}}
-<body>
-{{> layout/nav}}
-<div class="container">
-    <h1>Army Lists</h1>
-    <h2>Small Game</h2>
-    {{> game-size-table small=2 medium=3 large=1}}
+{{#extend 'layout/html' title='Army Lists'}}
 
-    <h2>Small Game Example Lists</h2>
-    <div class="row">
-        {{#each smallArmyLists}}
-            <div class="col-md-6 col-sm-12">
-                {{> army-list-table}}
+    {{#content 'page-content'}}
+
+        <div class="container">
+            <h1>Army Lists</h1>
+            <h2>Small Game</h2>
+            {{> game-size-table small=2 medium=3 large=1}}
+
+            <h2>Small Game Example Lists</h2>
+            <div class="row">
+                {{#each smallArmyLists}}
+                    <div class="col-md-6 col-sm-12">
+                        {{> army-list-table}}
+                    </div>
+                {{/each}}
             </div>
-        {{/each}}
-    </div>
 
-    <hr>
-    <h2>Standard Game</h2>
-    {{> game-size-table small=4 medium=5 large=2}}
+            <hr>
+            <h2>Standard Game</h2>
+            {{> game-size-table small=4 medium=5 large=2}}
 
-    <h2>Standard Game Example Lists</h2>
-    <div class="row">
-        {{#each standardArmyLists}}
-            <div class="col-md-6 col-sm-12">
-                {{> army-list-table}}
+            <h2>Standard Game Example Lists</h2>
+            <div class="row">
+                {{#each standardArmyLists}}
+                    <div class="col-md-6 col-sm-12">
+                        {{> army-list-table}}
+                    </div>
+                {{/each}}
             </div>
-        {{/each}}
-    </div>
-</div>
+        </div>
 
-{{> layout/footer }}
-</body>
-{{> layout/html-close}}
-
-
+    {{/content}}
+{{/extend}}

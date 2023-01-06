@@ -1,43 +1,38 @@
-{{> layout/html-head title="Starter Unit Cards Print"}}
-<body>
+{{#extend 'layout/html' title='Starter Unit Cards Print'}}
 
-<div class="no-print">
-    {{> layout/nav}}
-</div>
+    {{#content 'page-content'}}
+        <div class="container no-print">
+            <h1>Downsync Starter Sets</h1>
 
-<div class="container no-print">
-    <h1>Downsync Starter Sets</h1>
+            {{> starter-set-top-content}}
 
-    {{> starter-set-top-content}}
-
-    <div class="row">
-        <div class="col">
-            <a href="unit-cards-starter-print-landscape.html" class="btn btn-secondary">Switch To Landscape</a>
-        </div>
-        <div class="col">
-            <p class="text-end">
-                {{> btn-print}}
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="page-preview-background">
-    <div class="output-container card-grid-container-to-scale-print">
-        {{#each cardPages as |cardPage|}}
-
-            <div class="page page-preview page-letter" style="background-color:white">
-                <div class="page-card-grid">
-                    {{#each cardPage as |cardData|}}
-
-                        {{> (lookup cardData 'template') cardData}}
-                    {{/each}}
+            <div class="row">
+                <div class="col">
+                    <a href="unit-cards-starter-print-landscape.html" class="btn btn-secondary">Switch To Landscape</a>
+                </div>
+                <div class="col">
+                    <p class="text-end">
+                        {{> btn-print}}
+                    </p>
                 </div>
             </div>
-        {{/each}}
-    </div>
-</div>
-{{> layout/footer }}
-</body>
-{{> layout/html-close}}
+        </div>
 
+        <div class="page-preview-background">
+            <div class="output-container card-grid-container-to-scale-print">
+                {{#each cardPages as |cardPage|}}
+
+                    <div class="page page-preview page-letter" style="background-color:white">
+                        <div class="page-card-grid">
+                            {{#each cardPage as |cardData|}}
+
+                                {{> (lookup cardData 'template') cardData}}
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+    {{/content}}
+{{/extend}}

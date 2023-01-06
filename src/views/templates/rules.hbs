@@ -1,28 +1,32 @@
-{{> layout/html-head title="Downsync Rules"}}
-<body class="page-rulebook">
-{{> layout/nav}}
+{{#extend 'layout/html' title='Downsync Rules'}}
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-toc" aria-labelledby="offcanvasExampleLabel"
-     data-bs-scroll="true">
-    <div class="offcanvas-header">
-        <h3 class="offcanvas-title" id="offcanvasExampleLabel">Table of Contents</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        {{{tocHtml}}}
-    </div>
-</div>
+    {{#content 'body-open'}}
+        <body class="page-rulebook">
+    {{/content}}
 
-<button class="btn btn-secondary btn-table-of-contents" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvas-toc"
-        aria-controls="offcanvasExample">
-    TOC
-</button>
+    {{#content 'page-content'}}
 
-<div class="container rulebook">
-    {{{convertedMarkdown}}}
-</div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-toc" aria-labelledby="offcanvasExampleLabel"
+             data-bs-scroll="true">
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title" id="offcanvasExampleLabel">Table of Contents</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                {{{tocHtml}}}
+            </div>
+        </div>
 
-{{> layout/footer }}
-</body>
-{{> layout/html-close}}
+        <button class="btn btn-secondary btn-table-of-contents" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas-toc"
+                aria-controls="offcanvasExample">
+            TOC
+        </button>
+
+        <div class="container rulebook">
+            {{{convertedMarkdown}}}
+        </div>
+    {{/content}}
+{{/extend}}
+
+

@@ -3,14 +3,16 @@ import path from 'path'
 import Handlebars from 'handlebars'
 import helpers from './views/helpers/handlebars-helpers.js'
 import globPromise from 'glob-promise'
+import layouts from 'handlebars-layouts'
 
 let tplDir = './src/views/templates/'
-tplDir = path.resolve(tplDir)
-
 let partialsDir = './src/views/partials/'
+
+tplDir = path.resolve(tplDir)
 partialsDir = path.resolve(partialsDir)
 
 Handlebars.registerHelper(helpers)
+Handlebars.registerHelper(layouts(Handlebars))
 
 export default async function buildTemplates() {
     return Promise.all([

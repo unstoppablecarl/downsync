@@ -1,25 +1,22 @@
-{{> layout/html-head title="Unit Cards Starter Sets"}}
-<body>
+{{#extend 'layout/html' title='Unit Cards Starter Sets'}}
 
-{{> layout/nav}}
-<div class="container">
-    <h1>Downsync Starter Set Unit Cards</h1>
-</div>
-
-<div class="web-cards output-container">
-    {{#each cardData}}
+    {{#content 'page-content'}}
         <div class="container">
-            <h2 class="faction-heading">{{faction}}</h2>
+            <h1>Downsync Starter Set Unit Cards</h1>
         </div>
-        <div class="faction-cards">
-            {{#each factionCards as |singleCardData|}}
-                {{> (lookup singleCardData 'template') singleCardData}}
+
+        <div class="web-cards output-container">
+            {{#each cardData}}
+                <div class="container">
+                    <h2 class="faction-heading">{{faction}}</h2>
+                </div>
+                <div class="faction-cards">
+                    {{#each factionCards as |singleCardData|}}
+                        {{> (lookup singleCardData 'template') singleCardData}}
+                    {{/each}}
+                </div>
             {{/each}}
         </div>
-    {{/each}}
-</div>
 
-
-{{> layout/footer }}
-</body>
-{{> layout/html-close}}
+    {{/content}}
+{{/extend}}

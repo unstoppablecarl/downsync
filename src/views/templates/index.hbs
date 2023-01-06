@@ -1,18 +1,15 @@
-{{> layout/html-head title="Downsync"}}
-<body>
-{{> layout/nav}}
-<div class="container">
+{{#extend 'layout/html' title='Downsync'}}
 
-    <h1>Downsync</h1>
-    <h2 class="lead"> A fast paced 15mm scale sci-fi miniature wargame currently in development.</h2>
-    <p>More coming soon</p>
-    <p>
-        <img src="assets/img/cover.jpg" class="img-fluid" alt="A game of Downsync being played"/>
-    </p>
-</div>
+    {{#content 'page-content'}}
+        <div class="container">
 
+            <h1>Downsync</h1>
+            <h2 class="lead"> A fast paced 15mm scale sci-fi miniature wargame currently in development.</h2>
+            <p>More coming soon</p>
+            <p>
+                <img src="assets/img/cover.jpg" class="img-fluid" alt="A game of Downsync being played"/>
+            </p>
+        </div>
 
-{{> layout/footer }}
-</body>
-{{> layout/html-close}}
-
+    {{/content}}
+{{/extend}}
