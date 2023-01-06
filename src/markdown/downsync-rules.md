@@ -166,7 +166,8 @@ The Active Player resolves a Taskforce Activation
 
 #### Designate
 
-The Active Player declares which Units/Pings will be included in the Taskforce. Any unactivated Units/Pings the player's
+The Active Player declares which Units/Pings will be included in the Taskforce. Any un-activated Units/Pings the
+player's
 force may be included. Designated Units are now considered to be Taskforce Units.
 
 #### Refresh
@@ -213,7 +214,8 @@ Unit/Ping's volume. Friendly and enemy Units/Pings do not block LOS.
 
 ### Concealment
 
-A Unit/Ping is concealed if any part of its base/volume overlaps with concealing area terrain or it is partially blocked
+A Unit/Ping is concealed if any part of its base/volume overlaps with concealing area terrain, or it is partially
+blocked
 by intervening concealing or LOS blocking terrain.
 
 To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
@@ -284,7 +286,9 @@ pings when revealed if desired.
 A Ping may never move within 3" and LOS of an enemy unit or Ping. Pings can never move through or end their movement in,
 a position that would cause them to be automatically revealed by an enemy.
 
-All Pings have a SPD stat of 4". The minimum Unit SPD is 4 so a Unit is always the same speed or faster than a Ping.
+All Pings have a SPD stat of 4".
+
+*The minimum Unit SPD is 4, so a Unit is always the same speed or faster than a Ping.*
 
 ### Activating
 
@@ -334,7 +338,7 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 When a Unit Activates it gains 1 Action Point. A Unit may perform any number of actions provided the action cost is
 paid. Each action must be completely resolved before performing another action.
 
-The actions a Unit can perform and their costs are indicated on the Unit's card.
+The actions a Unit can perform, and their costs are indicated on the Unit's card.
 
 ### Action Stats
 
