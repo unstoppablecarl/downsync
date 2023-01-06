@@ -72,6 +72,10 @@
         }
     }
 
+    .table-responsive {
+        margin-bottom: 0.5rem;
+    }
+
 }
 
 $linkColor: darken($link-color, 20%);
