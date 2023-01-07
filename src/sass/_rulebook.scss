@@ -1,4 +1,9 @@
+
 .rulebook {
+
+    & > *:not(ul) {
+        padding-left: 0.3rem;
+    }
 
     a.anchor {
         display: block;
@@ -16,16 +21,20 @@
         visibility: hidden;
     }
 
+    h1 {
+        font-weight: bold;
+    }
+
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        font-weight: bold;
         -webkit-font-smoothing: antialiased;
         cursor: text;
         position: relative;
+        font-family: "Barlow Condensed", sans-serif;
 
         &:hover {
             .header-link {
@@ -47,15 +56,27 @@
         color: black;
     }
 
+    $heading-border-color: #7d8ba2;
+
     h2 {
-        border-bottom: 2px solid #b1b1b1;
+        border-bottom: 3px solid $heading-border-color;
         padding-bottom: 5px;
         color: #000;
     }
 
     h3 {
-        border-bottom: 1px solid #b1b1b1;
+        border-bottom: 2px solid $heading-border-color;
         padding-bottom: 5px;
+    }
+
+    h4 {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 1rem;
     }
 
     .table {

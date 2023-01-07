@@ -71,40 +71,41 @@ roll. Positive and Negative Advantage values negate each other. For example a ro
 
 ### Terminology
 
-- **Activated Unit**:         Unit that has already completed its Activation this Round.
 - **Active Player**:          The player who is currently taking their turn.
 - **Battlefield**:            The 4x4 ft. surface containing models and terrain where the game is taking place.
-- **Controlling Force**:      The Force a Unit/Ping belongs to.
-  - **Command Point**:        A resource players have each turn to spend on Command Point Abilities and Unit Actions.
-- **Command Point Ability**:  An Ability that all players may spend Command Points to activate.
-- **Command Point Capacity**: The number of Command Points each player starts each Round with.
+- **Command Point**:          A resource players have each turn to spend on Command Point Abilities and Unit Actions.
+    - **Command Point Ability**:  An Ability that all players may spend Command Points to activate.
+    - **Command Point Capacity**: The number of Command Points each player starts each Round with.
 - **Force**:                  A collection of Units/Pings controlled by a single player.
-  - **Force List**:         Detailed list of the type and quantity of Units/Pings in a Force.
-  - **Reserve**:            A collection of a Force's Units/Pings not on the Battlefield.
-  - **Controlling Player**: The Player controlling the Force and its Units/Pings.
-- **Infantry Unit Base**:     40mm circle (does not have a ping equivalent).
+    - **Controlling Player**: The Player controlling the Force and its Units/Pings.
+    - **Force List**:         Detailed list of the type and quantity of Units/Pings in a Force.
+    - **Reserve**:            A collection of a Force's Units to be revealed on the Battlefield.
 - **LOS**:                    Line of Sight
-- **Ping**:                   Marker/base representing a sensor Signature indicating a hidden Unit.
-  one or more infantry models on it.
-- **Refresh**:                Units are refreshed at specific times. Some events are triggered when a unit refreshes
-  such as
-  Countermeasure Token regeneration.
 - **ROF**:                    Rate of Fire
 - **Round**:                  Collection of Turns. A Round ends when all units have been Activated.
-- **Signature**:              Units and Pings have a Size that determines the diameter of a Ping or Unit base.
-  - **Small**: 60mm
-  - **Medium**: 70mm
-  - **Large**: 80mm
 - **Taskforce**:              A collection of Units/Pings acting together.
 - **Turn**:                   In a Round, players alternate taking turns. Each turn the active player designates a
   Taskforce to act in that turn.
-- **Unit Activation**:        Resolving a single unit's actions after moving all units during a Taskforce Activation.
-- **Unit**:                   A vehicle model on a base (small/medium/large) or multiple infantry bases (40mm) each with
+- **Units and Pings**:
+    - **Controlling Force/Player**:    The Force/Player a Unit/Ping belongs to.
+    - **Signature (SIG)**:      Units and Pings have a Signature that determines the diameter of a Ping or Unit base.
+        - **Small**: 60mm
+        - **Medium**: 70mm
+        - **Large**: 80mm
+    - **Unit**:               A vehicle model on a base (small/medium/large) or a group of multiple infantry bases (
+      40mm)
+        - **Multi-Base Unit**:  A Unit that has multiple Infantry Bases instead of one larger base.
+        - **Infantry Base**:  A 40mm circular base with infantry model(s) on it.
+        - **Unit Activation**:  Performing a single unit's action(s).
+        - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
+    - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
 
 ## Game Sizes
 
-When constructing a force list you are limited by the signature and quantity limits of the game size. The current army
-list building rules are likely to be changed as the game grows and is further tested. This is a starting point.
+When constructing a force list you are limited by the signature and quantity limits of the game size.
+
+*The current army list building rules are likely to be changed as the game grows and is further tested. This is a
+starting point.*
 
 ### Small Game
 
@@ -138,22 +139,22 @@ When all Units/Pings have been Activated the Round ends.
 - Decide Mission
 - Reveal Force Lists
 - Determine Starting Player
-  - Both players roll 2d6, and the higher rolling player chooses which player will deploy first
-  - The player that deploys first will have the first turn of the game
+    - Both players roll 2d6, and the higher rolling player chooses which player will deploy first
+    - The player that deploys first will have the first turn of the game
 - Deployment
-  - For each Unit in a Force List, deploy a Ping of matching Size within the mission deployment zone
+    - For each Unit in a Force List, deploy a Ping of matching Signature (size) within the mission deployment zone
 
 ### Round
 
-- Remove all Activated Tokens
+- Remove all [Activated Tokens](#activated-token)
 - Regenerate Command Points. See [Game Size](#game-sizes)
 - Each Player alternates resolving Taskforce Activations until all Units/Pings have been activated
-  - When starting a new Round the player that did not perform the last Taskforce Activation of the previous Round goes
-    first
+    - When starting a new Round the player that did not perform the last Taskforce Activation of the previous Round goes
+      first
 
 ### Turn Overview
 
-The Active Player resolves a Taskforce Activation
+The Active Player resolves a Taskforce Activation.
 
 #### Taskforce Activation Phases
 
@@ -161,20 +162,22 @@ The Active Player resolves a Taskforce Activation
 - **Reveal**: Any Pings in the Taskforce may be Revealed
 - **Refresh**: Resolve abilities triggered in the Refresh Phase
 - **Move**: Move all Units/Pings in the Taskforce
-  - **Reaction Engagement (optional)**: The non-active player may initiate a Reaction Engagement
+    - **Reaction Engagement (optional)**: The non-active player may initiate a Reaction Engagement
 - **Unit Activation**: Activate each Unit in the Taskforce one at a time
 
 #### Designate
 
-The Active Player declares which Units/Pings will be included in the Taskforce. Any un-activated Units/Pings the
-player's
-force may be included. Designated Units are now considered to be Taskforce Units.
+The Active Player declares which Units/Pings will be included in the Taskforce.
+Any un-activated Units/Pings in the player's force may be included.
+Designated Units are now considered to be in the Taskforce (aka Taskforce Units).
 
 #### Refresh
 
+Taskforce Units are Refreshed in an order determined by their controlling Player.
+
 Each Taskforce Unit:
 
-- Removes Overwatch Tokens
+- Removes [Overwatch Tokens](#overwatch-token)
 - [Regenerates Countermeasure Tokens](#regenerating-countermeasures)
 - May spend 1 Command Point to remove a [Stun Token](#stun-token)
 - Resolves special abilities that trigger when a Unit is Refreshed
@@ -187,7 +190,8 @@ Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
 
 #### Move
 
-Each Taskforce Unit/Ping may move up to its SPD in inches in any direction without restriction. Pings have a move of 4".
+Each Taskforce Unit/Ping may move up to its **SPD** in inches in any direction without restriction. Pings have a move of
+4".
 
 ##### Optionally Initiate a Reaction Engagement
 
@@ -241,7 +245,34 @@ other without being in the area terrain.
 
 #### Buildings
 
-Only infantry Units may enter a building. For purposes of moving Units a building is
+When measuring from or to a Unit in a building the
+height of the building is ignored
+
+Only infantry Units may enter a building and a building may only contain as many infantry units as can fit on its roof.
+Moving into or out of a building has no movement penalty.
+
+*Players should agree what terrain pieces are considered buildings and how many 40mm infantry bases can fit on each
+building before the game starts.*
+
+##### Building Abstraction
+
+For purposes of moving Units and measuring distances, a building is considered a flat 2d object with no height.
+When moving into or through a building the Unit is placed on the roof directly above where it would be on the ground.
+
+##### Building LOS
+
+When drawing LOS to and from a Unit in a building, the entire building is considered the volume of that Unit. Where the
+Unit is in the building does not matter for LOS, but the position of the Unit is still used for measuring movement.
+Building height only affects LOS.
+
+##### Building Size
+
+Buildings should have a footprint of around 3.5x5 inches at most with a height around 1-6 inches.
+A building this size would allow 6 infantry bases to fit on the roof comfortably.
+Buildings with a larger footprint should be handled in sections where each section is considered a different building.
+
+*Buildings can be any height, but Units in tall buildings will have a wide field of view but will also be visible from a
+wider range of positions.*
 
 ## Units
 
@@ -286,9 +317,9 @@ pings when revealed if desired.
 A Ping may never move within 3" and LOS of an enemy unit or Ping. Pings can never move through or end their movement in,
 a position that would cause them to be automatically revealed by an enemy.
 
-All Pings have a SPD stat of 4".
+All Pings have a **SPD** stat of 4".
 
-*The minimum Unit SPD is 4, so a Unit is always the same speed or faster than a Ping.*
+*The minimum Unit **SPD** is 4, so a Unit is always the same speed or faster than a Ping.*
 
 ### Activating
 
@@ -296,16 +327,17 @@ Pings can only perform a move action to move an additional 4".
 
 ### Revealing
 
-When a Ping is Revealed, the Controlling Player selects a Unit from their Reserve with the same SIG (Signature) as the
-Ping. This unit will be Revealed at the Ping's current position.
+When a Ping is Revealed, the Controlling Player selects a Unit from their Reserve with the same **SIG** (Signature) as
+the
+Ping. This Unit will be Revealed at the Ping's current position.
 
 A Ping is Revealed when:
 
 - The controlling player chooses to Reveal it in the Reveal phase of a Taskforce Activation
-- If an enemy Unit is within 2" at the end of an opposing player's movement phase
-- It is Successfully Scanned by an enemy Unit
+- If an enemy Unit ends a move within 2"
+- It is successfully [Scanned](#scan-action) by an enemy Unit
 
-**Note**: A Ping cannot end its movement within 2" of an enemy Unit and cannot cause itself to be auto revealed.
+**Note**: A Ping cannot end a move within 2" of an enemy Unit causing itself to be auto revealed.
 
 #### Revealing Units
 
@@ -366,7 +398,7 @@ Some actions have no cost and are labeled as a "Free Action". They are resolved 
 ### Move Action
 
 Although not included on the Unit cards, all units can perform the Move Action for the cost of 1 Action Point. When a
-Unit performs a Move Action it may move up to its SPD in inches following normal movement rules for terrain.
+Unit performs a Move Action it may move up to its **SPD** in inches following normal movement rules for terrain.
 
 ### Overwatch Action
 
@@ -379,31 +411,33 @@ An Overwatch Action may be performed by a Unit participating in a [Reaction Enga
 
 ### Scan Action
 
-Any Action with a **SCAN** effect is a Scan Action. When performing a Scan Action, a Scan Check may be performed for
-each ROF of the Scan Action. Each Scan Check must be resolved before the next. Each ROF of a Scan Action may have the
-same or different targets.
+Any Action with a **SCAN** effect is a Scan Action.
+When performing a Scan Action, a Scan Check may be performed for each ROF of the Scan Action.
+Before each Scan Check declare the target of the Scan Action.
+Each Scan Check must be resolved before the next.
+Each Scan Check of a Scan Action may have the same or different targets.
 
 #### Scan Check
 
 When a Unit performs a Scan Check, select an enemy Ping within the Scan Action Range and resolve a Scan Roll against it.
 Scan targets do not need to be in LOS but must be in range.
 
-**Scan Roll** = 2d6 + SCAN stat + mods vs Ping Defense.
+**Scan Roll** = 2d6 + SCAN stat + mods vs Ping **DEF**.
 
-| Ping Signature | Defense |
-|----------------|---------|
-| Small          | 14      |
-| Medium         | 13      |
-| Large          | 12      |
+| Ping Signature | DEF (Defense) |
+|----------------|---------------|
+| Small          | 14            |
+| Medium         | 13            |
+| Large          | 12            |
 
 | Modifiers                    |     |
 |------------------------------|-----|
 | Ping Concealed or out of LOS | -1  |
 
-| Outcome                   | Result   |
-|---------------------------|----------|
-| Scan Roll >= Ping Defense | Revealed |
-| Scan Roll < Ping Defense  | Failure  |
+| Outcome                   | Result                 |
+|---------------------------|------------------------|
+| Scan Roll >= Ping Defense | [Revealed](#revealing) |
+| Scan Roll < Ping Defense  | Failure                |
 
 ### Combat Actions
 
@@ -416,7 +450,7 @@ When a Unit performs a Combat Action it may perform an attack for each point of 
 When a Unit performs an Attack, select an enemy Unit within the Combat Action's Range and LOS, then resolve an Attack
 Roll against it.
 
-**Attack Roll** = 2d6 + TARG stat + mods vs Unit Defense.
+**Attack Roll** = 2d6 + **TARG** stat + mods vs Unit **DEF**.
 
 | Outcome                                    | Result |
 |--------------------------------------------|--------|
@@ -429,7 +463,7 @@ Roll against it.
 | Long Range ( > 16" )  | -1  |
 | Target Concealed      | -1  |
 
-*Attacks with a range of 6" or less do not gain the short-range bonus.
+*Combat Actions with a range of 6" or less do not gain the short-range bonus.
 
 ### Attack Effects
 
