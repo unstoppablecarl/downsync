@@ -1,0 +1,49 @@
+import fs from 'fs'
+import { markdownSectionToHtml, stripLinks } from '../../markdown/support/markdown-helpers.js'
+
+let path = 'src/markdown/downsync-rules.md'
+let markdown = await fs.promises.readFile(path, 'utf-8')
+
+markdown = stripLinks(markdown)
+
+export const taskforceActivationPhases = markdownSectionToHtml(markdown, 'Taskforce Activation Phases')
+export const attacks = markdownSectionToHtml(markdown, 'Attacks')
+export const scanCheck = markdownSectionToHtml(markdown, 'Scan Check')
+export const commandPoints = markdownSectionToHtml(markdown, 'Command Point Abilities')
+export const rollAdvantage = markdownSectionToHtml(markdown, 'Roll Advantage')
+export const cmCheck = markdownSectionToHtml(markdown, 'Countermeasure Check')
+
+export const TOKENS = [
+    {
+        name: 'Activated',
+        color_label: 'Green',
+        color: 'green',
+    },
+    {
+        name: 'Overwatch',
+        color_label: 'Purple',
+        color: 'purple',
+    },
+    {
+        name: 'Stun',
+        color_label: 'Orange',
+        color: 'orange',
+    },
+    {
+        name: 'Stealth',
+        color_label: 'Black',
+        color: 'black',
+    },
+    {
+        name: 'Countermeasure',
+        color_label: 'White',
+        color: 'white',
+        shadow: true,
+    },
+    {
+        name: 'Hardened Countermeasure',
+        color_label: 'Yellow',
+        color: 'yellow',
+        shadow: true,
+    },
+]

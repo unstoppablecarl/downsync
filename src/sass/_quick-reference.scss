@@ -1,0 +1,28 @@
+.quick-reference {
+
+    .flex-container,
+    .chunk {
+        border: 1px solid #808080;
+    }
+
+    .chunk {
+        padding: 10px;
+    }
+
+    table:not(.table) {
+        margin: 5px 0;
+        width: auto;
+
+        border: 1px solid #000;
+
+
+        th {
+            background: #eee;
+            padding: 5px;
+        }
+
+        td {
+            padding: 5px;
+        }
+    }
+}
