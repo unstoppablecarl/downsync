@@ -1,7 +1,8 @@
-.page-preview-background {
+@import 'app-variables';
+
+.page-previews-container {
     background: #d0d0d0;
     padding: 20px 0;
-
     border-top: 1px solid #444;
 }
 
@@ -13,35 +14,14 @@
     padding: 0;
 
     &.page-letter {
-        width: 8.5 * 72pt;
-        height: 11 * 72pt;
+        width: $page-letter-width;
+        height: $page-letter-height;
     }
 
     &.page-letter-landscape {
-        width: 11 * 72pt;
-        height: 8.5 * 72pt;
+        width: $page-letter-height;
+        height: $page-letter-width;
     }
-}
-
-.page-letter {
-    width: 8.5 * 72pt;
-    height: 11 * 72pt;
-}
-
-.row-letter-width {
-    width: 8.5 * 72pt;
-}
-
-.non-print-content {
-    width: 8.5 * 72pt;
-    margin: 0 auto;
-}
-
-.non-print-card {
-    background: #fff;
-    border: 1px solid #8e8e8e;
-    padding-top: 8px;
-    margin-bottom: 1em;
 }
 
 @page {
@@ -49,7 +29,6 @@
     size: letter portrait;
     -webkit-print-color-adjust: exact;
 }
-
 
 @media print {
     grammarly-desktop-integration {
@@ -66,7 +45,7 @@
         background-color: white;
     }
 
-    .page-preview-background {
+    .page-previews-container {
         margin: 0;
         padding: 0;
         border: 0;
