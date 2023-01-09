@@ -620,12 +620,12 @@ show what Unit the tokens belong to. When a Unit *spends* a token it is removed 
 A Unit with an Activated Token has activated this Round. The Unit cannot activate, be part of a Taskforce, or
 participate in Reaction Engagements until the next round.
 
-|                       |                                               |
-|-----------------------|:----------------------------------------------|
-| **Color**             | <span style="color:green">&#9632;</span>Green |
-| **Gained**            | After Unit Activates                          |
-| **Can have multiple** | No                                            |
-| **Removed**           | Round start                                   |
+|                       |                                                |
+|-----------------------|:-----------------------------------------------|
+| **Color**             | <span style="color:green">&#9632;</span> Green |
+| **Gained**            | After Unit Activates                           |
+| **Can have multiple** | No                                             |
+| **Removed**           | Round start                                    |
 
 ### Overwatch Token
 
@@ -659,7 +659,7 @@ Stealth Token if an enemy Unit is within 2".
 
 |                       |                                                                                                                                            |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span style="color:black">&#9632;</span> Black                                                                                              |
+| **Color**             | <span style="color:black">&#9632;</span> Black                                                                                             |
 | **Gained**            | By unit special abilities                                                                                                                  |
 | **Can have multiple** | No                                                                                                                                         |
 | **Removed**           | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |
