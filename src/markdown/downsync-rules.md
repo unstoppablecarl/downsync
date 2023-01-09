@@ -1,4 +1,4 @@
-# Downsync Rules (beta)
+# Downsync Rules (Beta)
 
 Last Updated: Jan 6, 2023
 

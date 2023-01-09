@@ -10,6 +10,8 @@ body {
     background: $footer-bg;
 }
 
+@import 'typography';
+@import 'tables';
 @import 'print-page';
 @import 'page-cards-web';
 @import 'page-cards-print';
@@ -20,15 +22,21 @@ body {
     text-shadow: 0 0 2px black;
 }
 
-main {
+.main-content {
     padding-top: 1rem;
     padding-bottom: 2rem;
     background: #fff;
 }
 
 .body-print {
-    main {
+    .main-content {
         padding-bottom: 0;
+    }
+}
+
+@media print {
+    .main-content {
+        padding: 0;
     }
 }
 
@@ -39,24 +47,10 @@ main {
     border-top: 1px solid #444;
 }
 
-.table-width-auto {
-    width: auto;
-}
-
-.text-weight-normal {
-    font-weight: normal;
-}
-
-.faction-heading {
-    margin-top: 2em;
-    border-bottom: 1px solid #808080;
-}
-
 .navbar-primary {
     padding-left: 20px;
     padding-right: 20px;
 }
-
 
 /* DIFF STUFF */
 del {

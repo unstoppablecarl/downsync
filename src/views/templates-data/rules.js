@@ -51,7 +51,7 @@ function extractTableOfContents(html) {
 }
 
 function formatTables(html) {
-    html = html.replaceAll('<table>', '<div class="table-responsive"><table class="table table-striped">')
+    html = html.replaceAll('<table>', '<div class="table-responsive"><table class="table table-striped table-outlined">')
     html = html.replaceAll('</table>', '</table></div>')
     return html
 }

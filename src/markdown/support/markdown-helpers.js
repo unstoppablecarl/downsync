@@ -34,3 +34,19 @@ export function stripLinks(markdown) {
     let regex = new RegExp(`\\[([^\\]]+)\\]\\(([^)]+)\\)`, 'gm')
     return markdown.replace(regex, '$1')
 }
+
+export function extractTagWithContents(html, tag) {
+    const regex = new RegExp(`(\\<${tag}\\>[\\s\\S]+?\\<\\/${tag}>)`, 'g')
+    let matches = regex.exec(html)
+
+    if (!matches || matches.length < 2) {
+        throw new Error('No match found for: ' + tag)
+    }
+    let result = matches[1]
+
+    if (!result) {
+        throw new Error('No match found for: ' + tag)
+    }
+
+    return result
+}

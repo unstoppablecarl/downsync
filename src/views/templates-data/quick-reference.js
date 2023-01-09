@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { markdownSectionToHtml, stripLinks } from '../../markdown/support/markdown-helpers.js'
+import { extractTagWithContents, markdownSectionToHtml, stripLinks } from '../../markdown/support/markdown-helpers.js'
 
 let path = 'src/markdown/downsync-rules.md'
 let markdown = await fs.promises.readFile(path, 'utf-8')
@@ -10,8 +10,11 @@ export const taskforceActivationPhases = markdownSectionToHtml(markdown, 'Taskfo
 export const attacks = markdownSectionToHtml(markdown, 'Attacks')
 export const scanCheck = markdownSectionToHtml(markdown, 'Scan Check')
 export const commandPoints = markdownSectionToHtml(markdown, 'Command Point Abilities')
-export const rollAdvantage = markdownSectionToHtml(markdown, 'Roll Advantage')
 export const cmCheck = markdownSectionToHtml(markdown, 'Countermeasure Check')
+
+let rollAdvantageChunk = markdownSectionToHtml(markdown, 'Roll Advantage')
+rollAdvantageChunk.content = extractTagWithContents(rollAdvantageChunk.content, 'table')
+export const rollAdvantage = rollAdvantageChunk
 
 export const TOKENS = [
     {

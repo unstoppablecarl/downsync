@@ -4,7 +4,7 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-
+$z: #7d8ba2;
 // scss-docs-start gray-color-variables
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -487,7 +487,7 @@ $border-widths: (
 ) !default;
 
 $border-style: solid !default;
-$border-color: $gray-300 !default;
+$border-color: #7d8ba2 !default;
 $border-color-translucent: rgba($black, .175) !default;
 // scss-docs-end border-variables
 
@@ -651,7 +651,6 @@ $mark-padding: .1875em !default;
 $mark-bg: $yellow-100 !default;
 // scss-docs-end type-variables
 
-
 // Tables
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
@@ -660,7 +659,7 @@ $mark-bg: $yellow-100 !default;
 $table-cell-padding-y: .5rem !default;
 $table-cell-padding-x: .5rem !default;
 $table-cell-padding-y-sm: .25rem !default;
-$table-cell-padding-x-sm: .25rem !default;
+$table-cell-padding-x-sm: .5rem !default;
 
 $table-cell-vertical-align: top !default;
 
@@ -668,7 +667,7 @@ $table-color: var(--#{$prefix}body-color) !default;
 $table-bg: transparent !default;
 $table-accent-bg: transparent !default;
 
-$table-th-font-weight: null !default;
+$table-th-font-weight: 500 !default;
 
 $table-striped-color: $table-color !default;
 $table-striped-bg-factor: .05 !default;

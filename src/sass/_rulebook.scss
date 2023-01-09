@@ -1,8 +1,11 @@
-
 .rulebook {
 
-    & > *:not(ul) {
+    & > *:not(ul, .table-responsive) {
         padding-left: 0.3rem;
+    }
+
+    .table-responsive {
+        margin-left: 0.3rem;
     }
 
     a.anchor {
@@ -21,10 +24,6 @@
         visibility: hidden;
     }
 
-    h1 {
-        font-weight: bold;
-    }
-
     h1,
     h2,
     h3,
@@ -34,7 +33,6 @@
         -webkit-font-smoothing: antialiased;
         cursor: text;
         position: relative;
-        font-family: "Barlow Condensed", sans-serif;
 
         &:hover {
             .header-link {
@@ -43,17 +41,12 @@
         }
     }
 
-    h1:hover a.anchor,
-    h2:hover a.anchor,
-    h3:hover a.anchor,
-    h4:hover a.anchor,
-    h5:hover a.anchor,
-    h6:hover a.anchor {
-        text-decoration: none;
-    }
-
-    h1 {
-        color: black;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Barlow Condensed", sans-serif;
     }
 
     $heading-border-color: #7d8ba2;
@@ -61,7 +54,6 @@
     h2 {
         border-bottom: 3px solid $heading-border-color;
         padding-bottom: 5px;
-        color: #000;
     }
 
     h3 {
@@ -80,21 +72,7 @@
     }
 
     .table {
-        $table-border-color: #9baec2;
-        margin: 5px 0;
         width: auto;
-
-        border: 1px solid $table-border-color;
-
-        thead {
-            th {
-                background: $border-color;
-            }
-        }
-    }
-
-    .table-responsive {
-        margin-bottom: 0.5rem;
     }
 
 }

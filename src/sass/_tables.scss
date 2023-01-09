@@ -1,0 +1,33 @@
+
+.table {
+
+    &.table-outlined {
+        border: 1px solid $table-border-color;
+    }
+
+    thead {
+        th {
+            background: $gray-300;
+            //font-weight: 500;
+        }
+    }
+
+    &.table-sm {
+        caption {
+            padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
+        }
+    }
+
+    caption {
+        border: 1px solid $table-border-color;
+        background: $gray-100;
+        border-bottom: 0;
+        padding: $table-cell-padding-y $table-cell-padding-x;
+        color: $body-color;
+        font-weight: bold;
+    }
+
+    &.table-width-auto {
+        width: auto;
+    }
+}
