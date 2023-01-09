@@ -4,7 +4,7 @@
         <style>
             @media print {
                 @page {
-                    size: landscape
+                    size: letter landscape
                 }
             }
         </style>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="page-preview-background">
+        <div class="page-previews-container">
             <div class="output-container card-grid-container-flex-landscape-print">
                 {{#each cardPages as |cardPage|}}
 
@@ -40,6 +40,5 @@
             </div>
         </div>
     {{/content}}
+
 {{/extend}}
-
-

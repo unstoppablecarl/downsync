@@ -17,15 +17,13 @@
                 </div>
             </div>
         </div>
-
-        <div class="page-preview-background">
+        <div class="page-previews-container">
             <div class="output-container card-grid-container-to-scale-print">
                 {{#each cardPages as |cardPage|}}
 
                     <div class="page page-preview page-letter" style="background-color:white">
                         <div class="page-card-grid">
                             {{#each cardPage as |cardData|}}
-
                                 {{> (lookup cardData 'template') cardData}}
                             {{/each}}
                         </div>
@@ -33,6 +31,6 @@
                 {{/each}}
             </div>
         </div>
-
     {{/content}}
+
 {{/extend}}
