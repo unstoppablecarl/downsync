@@ -32,7 +32,6 @@ $outline-grey: #b3b3b3;
         }
     }
 
-
     .card-content-container {
         border-radius: 2pt;
         padding: 1pt * $scale;
@@ -217,6 +216,7 @@ $outline-grey: #b3b3b3;
         th {
             padding: 0.25em 0;
             background: $light-grey;
+            font-weight: bold;
 
             &:first-child {
                 @include mixins.topCornerCut();
@@ -249,6 +249,7 @@ $outline-grey: #b3b3b3;
             background: $light-grey;
             font-size: 5pt * $scale;
             font-family: $sansSerif;
+            font-weight: bold;
 
             &:first-child {
                 padding-left: 4pt * $scale;
@@ -262,7 +263,6 @@ $outline-grey: #b3b3b3;
                 @include mixins.bottomCornerCut()
             }
         }
-
 
         .action-row {
             .col-stat,
@@ -281,7 +281,6 @@ $outline-grey: #b3b3b3;
                 border-top: 1px solid hsl(0, 0%, 60%);
                 font-family: $sansSerif;
                 padding: 0.4em 0;
-
 
                 &:last-child {
                     padding-right: 2pt * $scale;
@@ -309,7 +308,6 @@ $outline-grey: #b3b3b3;
                 }
             }
         }
-
 
         .action-description-row td,
         .action-features-row td {

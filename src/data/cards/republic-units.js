@@ -9,8 +9,8 @@ import {
     MG,
     MICRO_ARTILLERY,
     SHOCK_AUTOCANNON,
-    SHOCK_RIFLE,
     SHOCK_SNIPER_RIFLE,
+    SMALL_ARMS,
     SMART_MED_CANNON,
 } from '../cards-data/weapons.js'
 import {
@@ -19,7 +19,6 @@ import {
     COUNTERMEASURE_DEFEND,
     FINISHER,
     HARDENED_CM,
-    INFANTRY_ALT_WEAPONS,
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
@@ -44,15 +43,16 @@ export const VECTOR_SQUAD = make({
     targeting: 6,
     defense: 12,
     actions: [
-        SHOCK_RIFLE,
-        MICRO_ARTILLERY,
+        SMALL_ARMS,
         GUIDED_MISSILE,
+        MICRO_ARTILLERY,
+
     ],
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
         MECHANIZED_INFANTRY,
-        INFANTRY_ALT_WEAPONS,
+        //INFANTRY_ALT_WEAPONS,
     ],
     definitions: [],
 })
@@ -60,6 +60,30 @@ export const VECTOR_SQUAD = make({
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
     slug: 'seeker-team',
+    img: 'seeker-team.png',
+    signature: SIZE_SMALL,
+    type: 'Human Infantry Squad',
+    squad_size: 1,
+    speed: 4,
+    targeting: 7,
+    scan: 7,
+    defense: 12,
+    actions: [
+        SCAN(2, 12),
+        SHOCK_SNIPER_RIFLE,
+        FORWARD_OBSERVE,
+        GO_DARK,
+    ],
+    traits: [
+        ADAPTIVE_CAMO,
+        ALL_TERRAIN,
+        STEALTHY_INFANTRY,
+    ],
+})
+
+export const AT_TEAM = make({
+    name: 'AT Team',
+    slug: 'at-team',
     img: 'seeker-team.png',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',

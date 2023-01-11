@@ -116,8 +116,9 @@ export const ADVANCED_CHARGES = make({
 })
 
 export const SMALL_ARMS = make({
-    name: 'Small Arms',
-    range: 6,
+    name: 'Rifle',
+    range: 12,
+    note: 'teams 1-2, vs inf. only',
     rof: 1,
     traits: [],
 })
@@ -233,9 +234,9 @@ export const CLAWS = make({
 })
 
 export const GUIDED_MISSILE = make({
-    name: 'Guided Missile',
-    note: 'Team 3, ALT',
-    range: 16,
+    name: 'AT Charges',
+    note: 'Teams 1-2',
+    range: 6,
     rof: 1,
     traits: [
         TRAIT_ADVANCED,
@@ -244,12 +245,13 @@ export const GUIDED_MISSILE = make({
 
 export const MICRO_ARTILLERY = make({
     name: 'Micro Artillery',
-    note: 'Team 3, ALT',
+    note: 'Team 3',
     range: 16,
     rof: 1,
     effect: 'KILL',
     traits: [
         TRAIT_INFANTRY_NETWORK,
+        TRAIT_ADVANCED,
     ],
 })
 
