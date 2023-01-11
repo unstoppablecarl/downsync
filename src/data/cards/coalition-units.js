@@ -25,7 +25,6 @@ import {
     CLOSE_AND_PERSONAL,
     DEFENSE_AURA,
     HARDENED_CM,
-    PATROL,
     SENTRY,
     SHROUD_AURA,
     SPIDER_DRONE_INFILTRATOR_CARRIER,
@@ -114,7 +113,6 @@ export const VIRAGO_TANK = make({
     ],
     traits: [
         CLOSE_AND_PERSONAL,
-        PATROL,
     ],
 })
 
