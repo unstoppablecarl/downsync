@@ -632,6 +632,31 @@ participate in Reaction Engagements until the next round.
 | **Can have multiple** | No                                             |
 | **Removed**           | Round start                                    |
 
+### Countermeasure Token
+
+When a Unit is hit by an Attack it may spend a Countermeasure Token to perform
+a [Countermeasure Check](#countermeasure-check).
+
+|                       |                                                                                |
+|-----------------------|--------------------------------------------------------------------------------|
+| **Color**             | <span class="token-shadow" style="color:white">&#9632;</span> White            |
+| **Gained**            | When Unit is first [Revealed](#revealing) and when it is [Refreshed](#refresh) |
+| **Can have multiple** | Yes                                                                            |
+| **Removed**           | When spent                                                                     |
+
+### Hardened Countermeasure Token
+
+When a Unit is hit by an Attack it may spend a Hardened Countermeasure Token to perform and automatically succeed
+a [Countermeasure Check](#countermeasure-check).
+Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
+
+|                       |                                                                       |
+|-----------------------|-----------------------------------------------------------------------|
+| **Color**             | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow |
+| **Gained**            | When unit is first Revealed                                           |
+| **Can have multiple** | Yes                                                                   |
+| **Removed**           | When spent                                                            |
+
 ### Overwatch Token
 
 A Unit with an Overwatch Token can participate in Reaction Engagements even if it has an Activated Token and gains
@@ -669,40 +694,15 @@ Stealth Token if an enemy Unit is within 2".
 | **Can have multiple** | No                                                                                                                                         |
 | **Removed**           | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |
 
-### Countermeasure Token
-
-When a Unit is hit by an Attack it may spend a Countermeasure Token to perform
-a [Countermeasure Check](#countermeasure-check).
-
-|                       |                                                                                |
-|-----------------------|--------------------------------------------------------------------------------|
-| **Color**             | <span class="token-shadow" style="color:white">&#9632;</span> White            |
-| **Gained**            | When Unit is first [Revealed](#revealing) and when it is [Refreshed](#refresh) |
-| **Can have multiple** | Yes                                                                            |
-| **Removed**           | When spent                                                                     |
-
-### Hardened Countermeasure Token
-
-When a Unit is hit by an Attack it may spend a Hardened Countermeasure Token to perform and automatically succeed
-a [Countermeasure Check](#countermeasure-check).
-Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
-
-|                       |                                                                       |
-|-----------------------|-----------------------------------------------------------------------|
-| **Color**             | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow |
-| **Gained**            | When unit is first Revealed                                           |
-| **Can have multiple** | Yes                                                                   |
-| **Removed**           | When spent                                                            |
-
 ### Unit Token Quick Reference
 
 | Token                                                    | Color                                                                 |
 |----------------------------------------------------------|-----------------------------------------------------------------------|
 | **[Activated](#activated-token)**                        | <span style="color:green">&#9632;</span> Green                        |
+| **[Countermeasure](#countermeasures)**                   | <span class="token-shadow" style="color:white">&#9632;</span> White   |
+| **[Hardened Countermeasure](#hardened-countermeasures)** | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow |
 | **[Overwatch](#overwatch-token)**                        | <span style="color:purple">&#9632;</span> Purple                      |
 | **[Stun](#stun-token)**                                  | <span style="color:orange">&#9632;</span> Orange                      |
 | **[Stealth](#stealth-token)**                            | <span style="color:black">&#9632;</span> Black                        |
-| **[Countermeasure](#countermeasures)**                   | <span class="token-shadow" style="color:white">&#9632;</span> White   |
-| **[Hardened Countermeasure](#hardened-countermeasures)** | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow |
 
 
