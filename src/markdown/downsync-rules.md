@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: Jan 6, 2023
+Last Updated: Jan 30, 2023
 
 [[toc]]
 
@@ -160,7 +160,7 @@ The Active Player resolves a Taskforce Activation.
 
 - **Designate**: Select Units/Pings to be included in the Taskforce
 - **Reveal**: Any Pings in the Taskforce may be Revealed
-- **Refresh**: Resolve abilities triggered in the Refresh Phase
+- **Refresh**: Regenerate Countermeasures and resolve special abilities
 - **Move**: Move all Units/Pings in the Taskforce
     - **Reaction Engagement (optional)**: The non-active player may initiate a Reaction Engagement
 - **Unit Activation**: Activate each Unit in the Taskforce one at a time
@@ -364,6 +364,7 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 - **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
 - **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit when it is [Refreshed](#refresh)
 - **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
+- **Add 1 additional Unit to a Reaction Engagement**: [Reaction ]
 
 ## Actions
 
@@ -405,10 +406,9 @@ time.*
 
 ### Overwatch Action
 
-Although not included on the Unit cards, all units can perform the Overwatch Action for the cost of 1 Action Point. When
-a Unit performs an Overwatch Action it gains 1 [Overwatch Token](#overwatch-token). Overwatch Tokens allow Units to
-perform
-Reactions even after they have activated with a higher chance to act first.
+Although not included on the Unit cards, all units can perform the Overwatch Action for the cost of 1 Action Point.
+When a Unit performs an Overwatch Action it gains 1 [Overwatch Token](#overwatch-token).
+Overwatch Tokens allow Units to perform Reactions even after they have activated with a higher chance to act first.
 
 An Overwatch Action may be performed by a Unit participating in a [Reaction Engagement](#reaction-engagements).
 
@@ -466,7 +466,7 @@ Roll against it.
 | Long Range ( > 16" )  | -1  |
 | Target Concealed      | -1  |
 
-*Combat Actions with a range of 6" or less do not gain the short-range bonus.
+*Combat Actions with a range stat of 6" or less do not gain the short range bonus.
 
 ### Attack Effects
 
@@ -522,19 +522,23 @@ participating Units.
 
 ### Declare Participating Units
 
-The active player's Taskforce Units are automatically participating in the Reaction Engagement. The non-active player
-declares which eligible units will participate in the Reaction Engagement. The active player may declare any number of
-their eligible non-taskforce units to also be participating. Each Player alternates declaring additional participating
-Units this way until **BOTH** players pass without adding additional reacting units.
+The active player's Taskforce Units are automatically participating in the Reaction Engagement.
+The active player may declare any number of their non-taskforce units with an Overwatch Token to join the Taskforce and
+participate.
+Then the non-active player declares which eligible units will participate in the Reaction Engagement.
 
-When the non-active player declares additional participating Units, the total participating non-active
-unit count must be less than or equal to the active player's current participating units count. As the active player
-declares more participating Units, the non-active player may declare more as well but never exceed the number of
-active player units participating.
+The number of non-active player Units participating may not exceed the active player's participating unit count without
+spending Command Points.
+See: [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
 
 The active player's participating units now become part of the active player's Taskforce. The non-active player's
 participating units are now considered to be in a Reaction Taskforce. A Reaction Taskforce is identical to a Taskforce
 in the case of rules that refer to Units in the same Taskforce.
+
+#### Adding Additional Non-Active Player Units
+
+The non-active player may spend Command Point(s) to include additional unit(s) exceeding the number of active player
+units participating at a cost of 1 Command Point per Unit.
 
 ### Reaction Priority Order
 
@@ -550,7 +554,7 @@ Each Unit participating in the Reaction Engagement performs a Reaction Priority 
 #### Boosting Reaction Priority
 
 Players may spend a Command Point to boost a single Unit's Reaction Priority roll. Starting with the active player, each
-player declares one or more participating Units to boost and spends a Command Point for each one. Then both players
+player declares zero or more participating Units to boost and spends a Command Point for each one. Then both players
 perform a Reaction Priority Roll for each participating Unit.
 
 #### Reaction Priority Roll
@@ -598,7 +602,8 @@ may be represented by a civilian vehicle model but does not block LOS and can be
 
 **Scoring**: Players score by capturing the VIP on their opponents side of the table. When a player ends a Taskforce
 Activation, each unit within 1" of the opposing VIP scores 1 Victory Point. Each opposing unit within 4" subtracts 1
-Victory Point from this amount. Units with multiple Infantry Bases must have more than half of their unit's bases within
+Victory Point from this amount. Units with multiple Infantry Bases must have more than half of their non-destroyed
+unit's bases within
 1".
 
 **Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.

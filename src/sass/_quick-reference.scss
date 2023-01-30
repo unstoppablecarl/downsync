@@ -7,6 +7,10 @@
 
     .section {
         padding: 10px;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 
     ul {
@@ -40,7 +44,7 @@
 
 @media print {
     :root {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .page-quick-reference {

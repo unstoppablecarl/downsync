@@ -16,11 +16,25 @@ let rollAdvantageChunk = markdownSectionToHtml(markdown, 'Roll Advantage')
 rollAdvantageChunk.content = extractTagWithContents(rollAdvantageChunk.content, 'table')
 export const rollAdvantage = rollAdvantageChunk
 
+export const reactionPriorityRoll = markdownSectionToHtml(markdown, 'Reaction Priority Roll')
+
 export const TOKENS = [
     {
         name: 'Activated',
         color_label: 'Green',
         color: 'green',
+    },
+    {
+        name: 'Countermeasure (CM)',
+        color_label: 'White',
+        color: 'white',
+        shadow: true,
+    },
+    {
+        name: 'Hardened CM',
+        color_label: 'Yellow',
+        color: 'yellow',
+        shadow: true,
     },
     {
         name: 'Overwatch',
@@ -36,17 +50,5 @@ export const TOKENS = [
         name: 'Stealth',
         color_label: 'Black',
         color: 'black',
-    },
-    {
-        name: 'Countermeasure',
-        color_label: 'White',
-        color: 'white',
-        shadow: true,
-    },
-    {
-        name: 'Hardened Countermeasure',
-        color_label: 'Yellow',
-        color: 'yellow',
-        shadow: true,
     },
 ]
