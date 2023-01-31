@@ -1,0 +1,53 @@
+{{#extend 'layout/html' title='Order Form'}}
+
+    {{#content 'meta'}}
+        <META NAME="robots" CONTENT="noindex">
+    {{/content}}
+
+    {{#content 'page-content'}}
+
+        <div class="container">
+            <h1>Downsync Order Form</h1>
+            <form
+                name="order-v1"
+                method="POST"
+                data-netlify-recaptcha="true"
+                data-netlify="true"
+            >
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone">
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="coalition-count" class="form-label">Number of Coalition Starter Sets ($80 each)</label>
+                    <input type="number" class="form-control" id="coalition-count">
+                </div>
+
+                <div class="mb-3">
+                    <label for="republic-count" class="form-label">Number of Republic Starter Sets ($80 each)</label>
+                    <input type="number" class="form-control" id="republic-count">
+                </div>
+
+                <div data-netlify-recaptcha="true"></div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    {{/content}}
+{{/extend}}
+
