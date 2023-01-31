@@ -13,6 +13,7 @@
                 method="POST"
                 data-netlify-recaptcha="true"
                 data-netlify="true"
+                enctype="multipart/form-data"
             >
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -42,6 +43,11 @@
                 <div class="mb-3">
                     <label for="republic-count" class="form-label">Number of Republic Starter Sets ($80 each)</label>
                     <input type="number" class="form-control" id="republic-count" name="republic_starter_count">
+                </div>
+
+                <div class="mb-3">
+                    <label for="receipt-image" class="form-label">Receipt Image</label>
+                    <input type="file" class="form-control" id="receipt-image" name="receipt_image">
                 </div>
 
                 <div data-netlify-recaptcha="true"></div>
