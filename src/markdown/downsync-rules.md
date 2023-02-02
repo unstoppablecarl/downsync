@@ -361,10 +361,12 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 
 ### Command Point Abilities
 
-- **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
-- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit when it is [Refreshed](#refresh)
+- **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling. A roll
+  may only be boosted once.
+- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit when it is [Refreshed](#refresh).
+- **Add a Unit to a Reaction Engagement**
+  see:  [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
 - **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
-- **Add 1 additional Unit to a Reaction Engagement**: [Reaction ]
 
 ## Actions
 
