@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: Jan 30, 2023
+Last Updated: Feb 4, 2023
 
 [[toc]]
 
@@ -237,11 +237,11 @@ of the target that crosses intervening terrain.
 | Urban        |          | Yes         |
 | Rough Ground | -2"      |             |
 
-#### Concealing Area Terrain
+#### Concealing Area Terrain And LOS
 
-Units can see through all concealing area terrain within 6". Units can see through up to 2" of concealing area terrain
-from greater than 6" away. A Unit can never see completely through concealing area terrain from one side of it to the
-other without being in the area terrain.
+For LOS purposes, Units can see through all concealing area terrain within 6" and can see through up to 2" of concealing
+area terrain
+from greater than 6" away.
 
 #### Buildings
 
