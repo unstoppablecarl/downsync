@@ -77,6 +77,7 @@
 
 }
 
+
 $linkColor: darken($link-color, 20%);
 $linkColor2: darken($link-color, 10%);
 
@@ -146,5 +147,36 @@ $linkColor2: darken($link-color, 10%);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         z-index: 1000;
+    }
+
+    .offcanvas-header {
+
+        .btn-lock-toggle {
+            border-radius: 0.375rem;
+
+            padding: calc(var(--bs-offcanvas-padding-y) * 0.5) calc(var(--bs-offcanvas-padding-x) * 0.5);
+            margin-top: calc(-0.5 * var(--bs-offcanvas-padding-y));
+            margin-right: calc(-0.5 * var(--bs-offcanvas-padding-x));
+            margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
+
+            width: 1em;
+            height: 1em;
+            border: 0;
+            box-sizing: content-box;
+
+            background: transparent;
+
+            &.locked {
+                .icon-unlocked {
+                    display: none;
+                }
+            }
+
+            &.unlocked {
+                .icon-locked {
+                    display: none;
+                }
+            }
+        }
     }
 }

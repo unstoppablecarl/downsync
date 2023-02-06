@@ -18,15 +18,19 @@
              data-bs-scroll="true">
             <div class="offcanvas-header">
                 <h3 class="offcanvas-title" id="offcanvasExampleLabel">Table of Contents</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div>
+
+                    {{> 'btn-lock-toggle'}}
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
             </div>
             <div class="offcanvas-body">
                 {{{tocHtml}}}
             </div>
         </div>
 
-        <button class="btn btn-secondary btn-table-of-contents" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvas-toc"
+        <button class="btn btn-secondary btn-table-of-contents" id="btn-table-of-contents" type="button"
+
                 aria-controls="offcanvasExample">
             TOC
         </button>
