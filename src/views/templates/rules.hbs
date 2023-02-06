@@ -6,6 +6,14 @@
 
     {{#content 'page-content'}}
 
+
+        <div class="container rulebook">
+            {{{convertedMarkdown}}}
+        </div>
+    {{/content}}
+
+    {{#content 'page-content-after'}}
+
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-toc" aria-labelledby="offcanvasExampleLabel"
              data-bs-scroll="true">
             <div class="offcanvas-header">
@@ -22,10 +30,6 @@
                 aria-controls="offcanvasExample">
             TOC
         </button>
-
-        <div class="container rulebook">
-            {{{convertedMarkdown}}}
-        </div>
     {{/content}}
 {{/extend}}
 
