@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: Feb 4, 2023
+Last Updated: Feb 6, 2023
 
 [[toc]]
 
@@ -190,22 +190,22 @@ Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
 
 #### Move
 
-Each Taskforce Unit/Ping may move up to its **SPD** in inches in any direction without restriction. Pings have a move of
-4".
+Each Taskforce Unit/Ping may move up to its **SPD** in inches in any direction without restriction.
+Pings have a **SPD** of 4.
 
-##### Optionally Initiate a Reaction Engagement
+#### Optionally Initiate a Reaction Engagement
 
 The opposing player may initiate a Reaction Engagement. See: [Reaction Engagement](#reaction-engagements).
 
-### Unit Activation
+#### Unit Activation
 
 The Active Player activates their Taskforce Units one at a time until all Taskforce Units have activated.
 Each Taskforce Unit may only be activated once and each Unit's activation must be completed before activating the next
 unit.
 
-When a Unit is activated it gains 1 Action Point and may perform one or more actions. See: [Actions](#actions).
+When a Unit is activated it gains 1 Action Point and may perform one or more [Actions](#actions).
 
-After a Unit's Activation is resolved it gains an Activated Token.
+After a Unit's Activation is resolved it gains an [Activated Token](#activated-token).
 
 ## Visibility
 
@@ -218,14 +218,12 @@ Unit/Ping's volume. Friendly and enemy Units/Pings do not block LOS.
 
 ### Concealment
 
-A Unit/Ping is concealed if any part of its base/volume overlaps with concealing area terrain, or it is partially
-blocked
-by intervening concealing or LOS blocking terrain.
+A Unit/Ping is concealed if any part of its base overlaps with concealing area terrain, or it is partially
+blocked by intervening concealing or LOS blocking terrain.
 
 To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
 the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
-that point to any point on the volume
-of the target that crosses intervening terrain.
+that point to any point on the volume of the target that crosses intervening terrain.
 
 ### Terrain
 
@@ -240,13 +238,11 @@ of the target that crosses intervening terrain.
 #### Concealing Area Terrain And LOS
 
 For LOS purposes, Units can see through all concealing area terrain within 6" and can see through up to 2" of concealing
-area terrain
-from greater than 6" away.
+area terrain to targets greater than 6" away.
 
 #### Buildings
 
-When measuring from or to a Unit in a building the
-height of the building is ignored
+When measuring the distance from or to a Unit in a building the height of the building is ignored
 
 Only infantry Units may enter a building and a building may only contain as many infantry units as can fit on its roof.
 Moving into or out of a building has no movement penalty.
