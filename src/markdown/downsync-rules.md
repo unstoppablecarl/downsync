@@ -37,8 +37,10 @@ stealth, and deception.
 
 #### Scale
 
-The scale of the game's models are 15mm (1/100 scale). The overall scale is highly abstracted as the battlefield is a
-representation of what holographic imaging would be available to you when commanding your forces.
+The scale of the game's models are 15mm (1/100 scale).
+The overall scale is highly abstracted as the battlefield is a representation of what holographic imaging would be
+available to you when commanding your forces.
+Terrain scaled for 6mm-15mm works fine but looks best if it is all roughly the same scale.
 
 #### Measuring
 
