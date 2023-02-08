@@ -68,7 +68,7 @@ async function getSvgSpriteFile() {
         .then((files) => {
 
             if (files.length !== 1) {
-                throw new Error('expected exactly 1 svg icon file but found: ' + files.join(', '))
+                throw new Error(`expected exactly 1 svg icon file but found: ${files.length} ${files.join(', ')}`)
             }
             return '/assets/icons/symbol/svg/' + files[0]
         })
