@@ -29,7 +29,10 @@ server.listen(8080, async () => {
         domain + '/quick-reference.html',
     ]
 
-    const browser = await puppeteer.launch({ headless: true })
+    const browser = await puppeteer.launch({
+        executablePath: process.env.CHROME_PATH,
+        headless: true,
+    })
 
     let pdfPromises = urls.map((url) => {
         return async () => {

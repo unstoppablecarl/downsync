@@ -95,7 +95,7 @@ gulp.task('default',
 
 gulp.task(
     'build',
-    gulp.series('clean', parallel, 'say:build'),
+    gulp.series('clean', parallel, 'pdfs', 'say:build'),
 )
 
 export { paths, config }
