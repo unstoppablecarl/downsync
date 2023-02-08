@@ -7,6 +7,7 @@ import './tasks/webpack.js'
 import './tasks/svg.js'
 import './tasks/styles.js'
 import './tasks/views.js'
+import './tasks/pdfs.js'
 import './tasks/images.js'
 import './tasks/favicons.js'
 import './tasks/webserver.js'
@@ -94,7 +95,7 @@ gulp.task('default',
 
 gulp.task(
     'build',
-    gulp.series('clean', parallel, 'say:build'),
+    gulp.series('clean', parallel, 'pdfs', 'say:build'),
 )
 
 export { paths, config }

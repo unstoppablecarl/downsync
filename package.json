@@ -7,7 +7,8 @@
     "scripts": {
         "dev": "gulp",
         "build": "gulp build --production",
-        "build-views": "node ./bin/build.js",
+        "build-views": "node bin/build-views.js",
+        "build-pdfs": "node bin/build-pdfs.js",
         "webp-build": "webpack --config webpack.config.js --progress",
         "webp-watch": "webpack --config webpack.config.js --progress --watch "
     },
@@ -47,6 +48,7 @@
         "gulp-util": "^3.0.8",
         "handlebars": "^4.7.7",
         "handlebars-layouts": "^3.1.4",
+        "http-server": "^14.1.1",
         "markdown-it": "^13.0.1",
         "markdown-it-anchor": "^8.6.5",
         "markdown-it-github-headings": "^2.0.1",
@@ -56,6 +58,7 @@
         "node-htmldiff": "^0.9.4",
         "node-notifier": "^10.0.1",
         "node-sass": "^8.0.0",
+        "puppeteer": "^19.6.3",
         "remarkable": "^2.0.1",
         "sass": "^1.56.1",
         "sass-loader": "^13.2.0",
