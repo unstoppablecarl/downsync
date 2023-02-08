@@ -12,6 +12,10 @@ if (!fs.existsSync(pdfGeneratedDir)) {
 const root = path.resolve('./dist')
 let server = createServer({
     root,
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+    },
+    cors: true,
 })
 
 server.listen(8080, async () => {
