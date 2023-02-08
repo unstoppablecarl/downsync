@@ -32,6 +32,10 @@ server.listen(8080, async () => {
     const browser = await puppeteer.launch({
         executablePath: process.env.CHROME_PATH,
         headless: true,
+        args: [
+            '--font-render-hinting=none',
+            '--force-color-profile=srgb',
+        ],
     })
 
     let pdfPromises = urls.map((url) => {
@@ -67,6 +71,8 @@ async function getPdf({
                           url,
                       }) {
     await page.goto(url, { waitUntil: 'networkidle0' })
+    await page.screenshot()
+
     return page.pdf({
         format: 'letter',
         printBackground: true,
