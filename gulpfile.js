@@ -4,6 +4,7 @@ import c from 'ansi-colors'
 import './tasks/clean.js'
 import './tasks/notify.js'
 import './tasks/webpack.js'
+import './tasks/svg.js'
 import './tasks/styles.js'
 import './tasks/views.js'
 import './tasks/images.js'
@@ -56,6 +57,11 @@ const paths = {
     images: {
         src: './static-assets/images/**/*',
         dist: './dist/assets/img',
+    },
+    svg: {
+        src: './static-assets/images/svg-icons/*',
+        dist: './dist/assets/icons',
+        watch: './src/views/svg-icons.js',
     },
     favicons: {
         src: './static-assets/favicons/*',

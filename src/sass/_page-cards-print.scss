@@ -6,8 +6,7 @@ $card-height: 252pt;
 $page-width: 8.5 * 72pt;
 $page-height: 11 * 72pt;
 
-@import 'page-cards';
-
+@import 'mixins/page-cards';
 
 .page-card-grid {
     box-sizing: content-box;

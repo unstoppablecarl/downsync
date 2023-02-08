@@ -1,20 +1,20 @@
-{{#extend 'layout/html' title='Unit Cards Print' body_class="body-print"}}
+{{#extend 'layout/html' title='Unit Cards Print' body_class='body-print'}}
 
     {{#content 'page-content'}}
-
-        <div class="container no-print">
-            <div class="row">
-                <div class="col-md">
-                    <h1>Downsync Unit Cards</h1>
-                </div>
-                <div class="col-md text-md-end">
-                    <div class="my-1">
-                        {{> btn-print}}
+        <div class="page-previews-top-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <h1 class="page-preview-heading">Downsync Unit Cards</h1>
+                    </div>
+                    <div class="col-md text-md-end">
+                        <div class="my-1">
+                            {{> btn-print}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="page-previews-container">
             <div class="output-container card-grid-container-to-scale-print">
                 {{#each cardPages as |cardPage|}}

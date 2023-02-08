@@ -4,6 +4,7 @@ export default {
     json,
     sum,
     eq,
+    svg_icon_path,
 }
 
 function json(context) {
@@ -43,4 +44,9 @@ function eq(a, b, options) {
     } else {
         return options.inverse(this)
     }
+}
+
+function svg_icon_path(svgId, context) {
+
+    return context.data.root.svgIconsPath + '#' + svgId
 }

@@ -1,19 +1,22 @@
 {{#extend 'layout/html' title='Starter Unit Cards Print' body_class="body-print"}}
 
     {{#content 'page-content'}}
-        <div class="container no-print">
-            <h1>Downsync Starter Sets</h1>
+        <div class="page-previews-top-container">
+            <div class="container">
+                <h1>Downsync Starter Sets</h1>
 
-            {{> starter-set-top-content}}
+                {{> starter-set-top-content}}
 
-            <div class="row">
-                <div class="col">
-                    <a href="unit-cards-starter-print-landscape.html" class="btn btn-secondary">Switch To Landscape</a>
-                </div>
-                <div class="col">
-                    <p class="text-end">
-                        {{> btn-print}}
-                    </p>
+                <div class="row">
+                    <div class="col">
+                        <a href="/unit-cards-starter-print-landscape.html"
+                           class="btn btn-secondary">Switch To Landscape</a>
+                    </div>
+                    <div class="col">
+                        <p class="text-end">
+                            {{> btn-print}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

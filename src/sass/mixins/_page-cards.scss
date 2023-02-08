@@ -1,4 +1,4 @@
-@use 'lib/mixins';
+@use 'cut-corners';
 
 $light-grey: #ddd;
 $mid-grey: #ccc;
@@ -219,11 +219,11 @@ $outline-grey: #b3b3b3;
             font-weight: bold;
 
             &:first-child {
-                @include mixins.topCornerCut();
+                @include cut-corners.topCornerCut();
             }
 
             &:last-child {
-                @include mixins.bottomCornerCut();
+                @include cut-corners.bottomCornerCut();
             }
         }
 
@@ -255,12 +255,12 @@ $outline-grey: #b3b3b3;
                 padding-left: 4pt * $scale;
                 text-align: left;
 
-                @include mixins.topCornerCut();
+                @include cut-corners.topCornerCut();
             }
 
             &:last-child {
                 padding-right: 4pt * $scale;
-                @include mixins.bottomCornerCut()
+                @include cut-corners.bottomCornerCut()
             }
         }
 
@@ -358,7 +358,7 @@ $outline-grey: #b3b3b3;
         font-family: $sansSerif;
         font-weight: bold;
 
-        @include mixins.topAndBottomCornerCut();
+        @include cut-corners.topAndBottomCornerCut();
     }
 
     .key-value {

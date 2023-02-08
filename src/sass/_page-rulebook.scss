@@ -1,3 +1,19 @@
+.offcanvas-toc {
+    box-shadow: -3px 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.offcanvas-backdrop.show {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(9, 38, 121, 0.1) 33%, rgba(9, 38, 121, 0.6461178221288515) 66%);
+}
+
+@include media-breakpoint-only(xs) {
+    .offcanvas-toc {
+        box-shadow: none;
+        width: 100%;
+    }
+}
+
 .rulebook {
 
     & > *:not(ul, .table-responsive) {

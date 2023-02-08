@@ -1,3 +1,5 @@
+@import 'app-variables';
+
 h2,
 h3,
 h4,
@@ -10,9 +12,24 @@ h6 {
     font-weight: normal;
 }
 
-.faction-heading {
-    margin-top: 2em;
-    border-bottom: 1px solid #808080;
+ul.no-bullets {
+    list-style: none;
+    padding-left: 0;
 }
 
+ul .list-divider {
+    margin: 0.5rem 0;
+    color: $dividing-line-color;
+    opacity: 1;
+}
+
+// svg icons
+svg.bi {
+    display: inline-block;
+    vertical-align: -0.125em;
+    fill: currentcolor;
+
+    width: 1em;
+    height: 1em;
+}
 

@@ -1,26 +1,23 @@
-{{#extend 'layout/html' title='Downsync Rules'}}
-
-    {{#content 'body-open'}}
-        <body class="page-rulebook">
-    {{/content}}
+{{#extend 'layout/html' title='Downsync Rules'  body_class='page-rulebook'}}
 
     {{#content 'page-content'}}
-
-
         <div class="container rulebook">
             {{{convertedMarkdown}}}
         </div>
     {{/content}}
 
     {{#content 'page-content-after'}}
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-toc" aria-labelledby="offcanvasExampleLabel"
+        <div class="offcanvas offcanvas-end offcanvas-toc" tabindex="-1" id="offcanvas-toc"
+             aria-labelledby="offcanvasExampleLabel"
              data-bs-scroll="true">
             <div class="offcanvas-header">
                 <h3 class="offcanvas-title" id="offcanvasExampleLabel">Table of Contents</h3>
                 <div>
+                    <button type="button" class="btn-lock-toggle unlocked" id="toc-lock-toggle">
+                        {{> svg-icon icon='locked' class='icon-locked'}}
+                        {{> svg-icon icon='unlocked' class='icon-unlocked'}}
+                    </button>
 
-                    {{> 'btn-lock-toggle'}}
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
             </div>
@@ -29,8 +26,7 @@
             </div>
         </div>
 
-        <button class="btn btn-secondary btn-table-of-contents" id="btn-table-of-contents" type="button"
-
+        <button type="button" id="btn-table-of-contents" class="btn btn-secondary btn-table-of-contents"
                 aria-controls="offcanvasExample">
             TOC
         </button>
