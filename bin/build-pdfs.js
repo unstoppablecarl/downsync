@@ -3,7 +3,7 @@ import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
 
-const pdfGeneratedDir = './dist/assets/pdfs'
+const pdfGeneratedDir = './static-assets/pdfs'
 
 if (!fs.existsSync(pdfGeneratedDir)) {
     fs.mkdirSync(pdfGeneratedDir)
@@ -71,7 +71,6 @@ async function getPdf({
                           url,
                       }) {
     await page.goto(url, { waitUntil: 'networkidle0' })
-    await page.screenshot()
 
     return page.pdf({
         format: 'letter',
