@@ -1,84 +1,116 @@
 {{#extend 'layout/html' title='Downsync' body_class='page-quick-reference'}}
 
     {{#content 'page-content'}}
-        <div class="container">
-            <h1>Downsync Quick Reference</h1>
-        </div>
-        <div class="container container-quick-reference">
-            <div class="row">
-                <div class="section col">
-                    <h3>{{taskforceActivationPhases.heading}}</h3>
-                    {{{taskforceActivationPhases.content}}}
-                </div>
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <h1 class="primary-heading">Downsync Quick Reference</h1>
+                    </div>
+                    <div class="col-md text-md-end">
+                        <div class="my-1">
+                            <button class="btn btn-primary" onclick="window.print()">Print Quick Reference
+                                {{> svg-icon icon='printer'}}
+                            </button>
+                            {{!--
 
-                <div class="section col-md-4">
-                    <h3>Unit Tokens</h3>
-                    <div class="table-responsive">
-                        <table class="table table-borderless table-width-auto table-sm">
-                            <tbody>
-                            {{#each TOKENS}}
-                                <tr>
-                                    <th>{{name}}</th>
-                                    <td>
-                                        <span class="{{#if shadow}}token-shadow{{/if}}"
-                                              style="color:{{color}}">&#9632;</span>
-                                        {{color_label}}
-                                    </td>
-                                </tr>
-                            {{/each}}
-                            </tbody>
-                        </table>
+                                                                                    <a class="btn btn-primary" href="/assets/pdfs/quick-reference.pdf">Download Quick Reference
+                                                            {{> svg-icon icon='pdf'}}
+                                                        </a>
+                                                        --}}
+                        </div>
                     </div>
                 </div>
-                <div class="section col">
-                    <h3>{{commandPoints.heading}}</h3>
-                    {{{commandPoints.content}}}
+            </div>
+        </div>
+
+        <div class="primary-content">
+            <div class="container">
+                <h1 class="quick-reference-heading print-only">Downsync Quick Reference
+                    <span class="float-end">
+                            Downsync.net
+                        </span>
+                </h1>
+            </div>
+            <div class="container container-quick-reference">
+                <div class="row">
+                    <div class="section col">
+                        <h3>{{taskforceActivationPhases.heading}}</h3>
+                        {{{taskforceActivationPhases.content}}}
+                    </div>
+
+                    <div class="section col-md-4">
+                        <h3>Unit Tokens</h3>
+                        <div class="table-responsive">
+                            <table class="table table-borderless table-width-auto table-sm">
+                                <tbody>
+                                {{#each TOKENS}}
+                                    <tr>
+                                        <th>{{name}}</th>
+                                        <td>
+                                        <span class="token {{#if shadow}}token-shadow{{/if}}"
+                                              style="color:{{color}}; background: {{color}}">
+<!--                                            &#9632;-->
+                                        </span>
+                                            {{color_label}}
+                                        </td>
+                                    </tr>
+                                {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="section col">
+                        <h3>{{commandPoints.heading}}</h3>
+                        {{{commandPoints.content}}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section col-md-6">
+                        <h3>{{attacks.heading}}</h3>
+                        {{{attacks.content}}}
+                    </div>
+                    <div class="section col-md-6">
+                        <h3>{{scanCheck.heading}}</h3>
+                        {{{scanCheck.content}}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section col-md-6">
+                        <h3>{{reactionPriorityRoll.heading}}</h3>
+                        {{{reactionPriorityRoll.content}}}
+                    </div>
+                    <div class="section col-md-6">
+                        <h3>{{cmCheck.heading}}</h3>
+                        {{{cmCheck.content}}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="section col-md-6">
+                        <h3>Universal Actions</h3>
+                        <p>All Units can perform the following actions:</p>
+
+                        <h5>Move Action</h5>
+                        <p>Unit may move up to its
+                            <strong>SPD</strong> in inches. A unit that suffered a terrain movement penalty in its movement phase does not suffer further penalties.
+                        </p>
+                        <p><em>This means that Units can move up to double their
+                            <strong>SPD</strong> in one turn if they use their Action Point to move a second
+                            time.</em></p>
+                        <h5>Overwatch Action</h5>
+                        <p>Unit gains an Overwatch Token.</p>
+
+
+                    </div>
+                    <div class="section col-md-6">
+
+                        <h3>{{rollAdvantage.heading}}</h3>
+                        {{{rollAdvantage.content}}}
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="section col-md-6">
-                    <h3>{{attacks.heading}}</h3>
-                    {{{attacks.content}}}
-                </div>
-                <div class="section col-md-6">
-                    <h3>{{scanCheck.heading}}</h3>
-                    {{{scanCheck.content}}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="section col-md-6">
-                    <h3>{{reactionPriorityRoll.heading}}</h3>
-                    {{{reactionPriorityRoll.content}}}
-                </div>
-                <div class="section col-md-6">
-                    <h3>{{cmCheck.heading}}</h3>
-                    {{{cmCheck.content}}}
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="section col-md-6">
-                    <h3>Universal Actions</h3>
-                    <p>All Units can perform the following actions:</p>
-
-                    <h5>Move Action</h5>
-                    <p>Unit may move up to its
-                        <strong>SPD</strong> in inches. A unit that suffered a terrain movement penalty in its movement phase does not suffer further penalties.
-                    </p>
-                    <p><em>This means that Units can move up to double their
-                        <strong>SPD</strong> in one turn if they use their Action Point to move a second
-                        time.</em></p>
-                    <h5>Overwatch Action</h5>
-                    <p>Unit gains an Overwatch Token.</p>
-
-
-                </div>
-                <div class="section col-md-6">
-
-                    <h3>{{rollAdvantage.heading}}</h3>
-                    {{{rollAdvantage.content}}}
-                </div>
-            </div>
         </div>
     {{/content}}
 {{/extend}}

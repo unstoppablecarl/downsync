@@ -1,11 +1,13 @@
 {{#extend 'layout/html' title='Unit Cards Starter Sets'}}
 
     {{#content 'page-content'}}
-        <div class="container">
-            <h1>Downsync Starter Set Unit Cards</h1>
+        <div class="header">
+            <div class="container">
+                <h1 class="primary-heading">Downsync Starter Set Unit Cards</h1>
+            </div>
         </div>
 
-        <div class="web-cards output-container">
+        <div class="web-cards primary-content">
             {{#each cardData}}
                 <div class="container">
                     <h2 class="faction-heading">{{faction}}</h2>

@@ -16,6 +16,8 @@
 
 .rulebook {
 
+    padding-top: 1rem;
+
     & > *:not(ul, .table-responsive) {
         padding-left: 0.3rem;
     }

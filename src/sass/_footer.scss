@@ -1,0 +1,30 @@
+.footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #444;
+
+    background: linear-gradient(
+                    180deg,
+                    mix($primary, $footer-bg, 50%) 0px,
+                    mix($primary, $footer-bg, 10%) 4px,
+                    $footer-bg 20px,
+    );
+
+    .footer-nav {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-nav-link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .sub-footer {
+        border-top: 1px solid $dividing-line-color;
+        padding: 1rem 0 0;
+    }
+}

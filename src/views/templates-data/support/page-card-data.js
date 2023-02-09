@@ -11,7 +11,7 @@ export const FACTION_UNITS = [
         factionCards: prepareCards(COALITION_UNITS),
     },
     {
-        faction: 'Republic of Man',
+        faction: 'Republic of Terra',
         factionCards: prepareCards(REPUBLIC_UNITS),
     },
     //{
@@ -26,7 +26,7 @@ export const FACTION_DEMO_UNITS = [
         factionCards: prepareCards(COALITION_DEMO_UNITS),
     },
     {
-        faction: 'Republic of Man',
+        faction: 'Republic of Terra',
         factionCards: prepareCards(REPUBLIC_DEMO_UNITS),
     },
 ]

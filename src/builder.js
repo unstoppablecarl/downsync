@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import buildTemplates from './templates.js'
 import util from 'util'
+import { buildRootData } from './views/root-template-data.js'
 
 const dist = './dist'
 const tplDataPath = './src/views/templates-data'
@@ -50,26 +51,5 @@ export default function () {
                         }
                     })
             })
-        })
-}
-
-async function buildRootData() {
-
-    let svgIconsPath = await getSvgSpriteFile()
-    return {
-        svgIconsPath,
-    }
-}
-
-const svgIconSpriteFileDir = './dist/assets/icons/symbol/svg'
-
-async function getSvgSpriteFile() {
-    return fs.promises.readdir(svgIconSpriteFileDir)
-        .then((files) => {
-
-            if (files.length !== 1) {
-                throw new Error(`expected exactly 1 svg icon file but found: ${files.length} ${files.join(', ')}`)
-            }
-            return '/assets/icons/symbol/svg/' + files[0]
         })
 }

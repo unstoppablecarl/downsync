@@ -60,15 +60,17 @@
             }
         }
     }
-    .container-quick-reference {
 
-        h1 {
-            font-size: 1.2rem;
-        }
+    .quick-reference-heading {
+        font-size: 1.2rem;
+        font-family: 'Barlow Condensed', sans-serif;
+
+    }
+
+    .container-quick-reference {
 
         h3 {
             font-size: 1.25rem;
-            font-weight: bold;
         }
 
         .col-md-6 {

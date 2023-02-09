@@ -36,7 +36,7 @@ $outline-grey: #b3b3b3;
         border-radius: 2pt;
         padding: 1pt * $scale;
         border-color: inherit;
-        display: flex;
+        //display: flex;
         flex-direction: column;
         flex: 1;
         position: relative;
@@ -204,7 +204,7 @@ $outline-grey: #b3b3b3;
     .table-stats {
         font-size: 6pt * $scale;
         margin-bottom: 1pt * $scale;
-
+        width: 100%;
         font-family: $sansSerif;
 
         th,
@@ -357,6 +357,7 @@ $outline-grey: #b3b3b3;
         vertical-align: middle;
         font-family: $sansSerif;
         font-weight: bold;
+        height: 8pt;
 
         @include cut-corners.topAndBottomCornerCut();
     }

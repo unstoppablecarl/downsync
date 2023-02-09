@@ -8,6 +8,7 @@ export const svgIcons = {
     //external_link: bootstrapDir + '/box-arrow-up-right.svg',
     locked: fontAwesomeDir + '/solid/lock.svg',
     unlocked: fontAwesomeDir + '/solid/lock-open.svg',
+    pdf: bootstrapDir + '/file-earmark-pdf.svg',
 }
 
 export const svgIconsReversed = {}

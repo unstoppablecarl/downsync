@@ -41,17 +41,21 @@ server.listen(8080, async () => {
     let pdfPromises = urls.map((url) => {
         return async () => {
 
-            const page = await browser.newPage()
-            await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36')
-
-            const content = await getPdf({
-                page,
-                url,
-            })
-
             const baseName = path.basename(url).replace('.html', '')
             const file = baseName + '.pdf'
             const dest = pdfGeneratedDir + '/' + file
+
+            const page = await browser.newPage()
+            await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36')
+            await page.goto(url, { waitUntil: 'networkidle0' })
+
+            let screenshot = await page.screenshot()
+            //await fs.promises.writeFile('./screenshots/' + baseName + '.png', screenshot)
+
+            const content = await page.pdf({
+                format: 'letter',
+                printBackground: true,
+            })
 
             return fs.promises.writeFile(dest, content)
         }
@@ -65,15 +69,3 @@ server.listen(8080, async () => {
     server.close()
 
 })
-
-async function getPdf({
-                          page,
-                          url,
-                      }) {
-    await page.goto(url, { waitUntil: 'networkidle0' })
-
-    return page.pdf({
-        format: 'letter',
-        printBackground: true,
-    })
-}
