@@ -59,7 +59,7 @@ export const COALITION_FULL_ARMY_LIST = make('Coalition', 'EX1', [
     },
 ])
 
-export const REPUBLIC_FULL_ARMY_LIST = make('Republic of Man', 'EX1', [
+export const REPUBLIC_FULL_ARMY_LIST = make('Republic of Terra', 'EX1', [
     {
         unit: VECTOR_SQUAD,
         count: 2,
@@ -113,7 +113,7 @@ export const COALITION_STARTER_LIST = make('Coalition', 'Starter Set', [
     },
 ])
 
-export const REPUBLIC_STARTER_LIST = make('Republic of Man', 'Starter Set', [
+export const REPUBLIC_STARTER_LIST = make('Republic of Terra', 'Starter Set', [
     {
         unit: HARBINGER_RECON,
         count: 1,

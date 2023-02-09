@@ -28,7 +28,7 @@ import { FORWARD_OBSERVE, GO_DARK, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from
 import { makeUnit } from '../support/factories.js'
 
 export const REPUBLIC_CARD_DEFAULTS = {
-    faction: 'Republic of Man',
+    faction: 'Republic of Terra',
     icon: 'factions/icon-republic.svg',
 }
 
