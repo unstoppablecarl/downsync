@@ -357,7 +357,6 @@ $outline-grey: #b3b3b3;
         vertical-align: middle;
         font-family: $sansSerif;
         font-weight: bold;
-        height: 8pt;
 
         @include cut-corners.topAndBottomCornerCut();
     }
