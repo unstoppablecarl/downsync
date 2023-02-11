@@ -1,3 +1,4 @@
+
 # Downsync Rules (Beta)
 
 Last Updated: Feb 6, 2023
@@ -269,8 +270,7 @@ Buildings should have a footprint of around 3.5x5 inches at most with a height a
 A building this size would allow 6 infantry bases to fit on the roof comfortably.
 Buildings with a larger footprint should be handled in sections where each section is considered a different building.
 
-*Buildings can be any height, but Units in tall buildings will have a wide field of view but will also be visible from a
-wider range of positions.*
+*Units in tall buildings will have a wide field of view, but will also be visible from a wider range of positions.*
 
 ## Units
 
