@@ -180,6 +180,7 @@ export const GUARDIAN_MARKSMAN = make({
         RAILGUN,
     ],
     traits: [
+        SENTRY,
         HARDENED_CM,
         ALL_TERRAIN,
     ],
