@@ -15,7 +15,7 @@ import {
     TAG_CANNON,
     TARGET_LOCK,
 } from '../cards-data/weapons.js'
-import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
+import { COALITION_FACTION_NAME, COALITION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
 
 import {
     ADAPTIVE_CAMO,
@@ -37,7 +37,8 @@ import { BASIC_SCAN, GO_DARK, SCAN } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 
 export const COALITION_CARD_DEFAULTS = {
-    faction: 'Coalition',
+    faction: COALITION_FACTION_NAME,
+    faction_slug: COALITION_FACTION_SLUG,
     icon: 'factions/icon-coalition.svg',
 }
 

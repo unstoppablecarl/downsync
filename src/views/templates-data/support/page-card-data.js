@@ -2,16 +2,17 @@ import { chunk, getTimestamp } from '../../../data/support/util.js'
 import { COALITION_DEMO_UNITS, COALITION_UNITS } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
+import { COALITION_FACTION_NAME, REPUBLIC_FACTION_NAME } from '../../../data/constants.js'
 
 const TIMESTAMP = getTimestamp()
 
 export const FACTION_UNITS = [
     {
-        faction: 'Coalition',
+        faction: COALITION_FACTION_NAME,
         factionCards: prepareCards(COALITION_UNITS),
     },
     {
-        faction: 'Republic of Terra',
+        faction: REPUBLIC_FACTION_NAME,
         factionCards: prepareCards(REPUBLIC_UNITS),
     },
     //{
@@ -22,11 +23,11 @@ export const FACTION_UNITS = [
 
 export const FACTION_DEMO_UNITS = [
     {
-        faction: 'Coalition',
+        faction: COALITION_FACTION_NAME,
         factionCards: prepareCards(COALITION_DEMO_UNITS),
     },
     {
-        faction: 'Republic of Terra',
+        faction: REPUBLIC_FACTION_NAME,
         factionCards: prepareCards(REPUBLIC_DEMO_UNITS),
     },
 ]

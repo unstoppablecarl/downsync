@@ -1,4 +1,11 @@
-import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL, TYPE_INFANTRY } from '../constants.js'
+import {
+    REPUBLIC_FACTION_NAME,
+    REPUBLIC_FACTION_SLUG,
+    SIZE_LARGE,
+    SIZE_MEDIUM,
+    SIZE_SMALL,
+    TYPE_INFANTRY,
+} from '../constants.js'
 import {
     ADVANCED_CANNON,
     CANNON,
@@ -28,7 +35,8 @@ import { FORWARD_OBSERVE, GO_DARK, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from
 import { makeUnit } from '../support/factories.js'
 
 export const REPUBLIC_CARD_DEFAULTS = {
-    faction: 'Republic of Terra',
+    faction: REPUBLIC_FACTION_NAME,
+    faction_slug: REPUBLIC_FACTION_SLUG,
     icon: 'factions/icon-republic.svg',
 }
 

@@ -16,8 +16,8 @@ Handlebars.registerHelper(layouts(Handlebars))
 
 export default async function buildTemplates() {
     return Promise.all([
-        dirToTemplates(partialsDir),
-        dirToTemplates(tplDir),
+        dirToTemplates(partialsDir, '/**/*.hbs'),
+        dirToTemplates(tplDir, '/*.hbs'),
     ]).then((results) => {
 
         let partials = results[0]
@@ -29,9 +29,9 @@ export default async function buildTemplates() {
     })
 }
 
-function dirToTemplates(tplDir) {
+function dirToTemplates(tplDir, glob) {
 
-    return globPromise(tplDir + '/**/*.hbs')
+    return globPromise(tplDir + glob)
         .then((files) => {
             let templates = {}
 

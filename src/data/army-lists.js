@@ -18,9 +18,9 @@ import {
     SEEKER_TEAM,
     VECTOR_SQUAD,
 } from './cards/republic-units.js'
-import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from './constants.js'
+import { COALITION_FACTION_NAME, REPUBLIC_FACTION_NAME, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from './constants.js'
 
-export const COALITION_FULL_ARMY_LIST = make('Coalition', 'EX1', [
+export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'EX1', [
     {
         unit: WIDOW_SCOUT,
         count: 1,
@@ -59,7 +59,7 @@ export const COALITION_FULL_ARMY_LIST = make('Coalition', 'EX1', [
     },
 ])
 
-export const REPUBLIC_FULL_ARMY_LIST = make('Republic of Terra', 'EX1', [
+export const REPUBLIC_FULL_ARMY_LIST = make(REPUBLIC_FACTION_NAME, 'EX1', [
     {
         unit: VECTOR_SQUAD,
         count: 2,
@@ -90,7 +90,7 @@ export const REPUBLIC_FULL_ARMY_LIST = make('Republic of Terra', 'EX1', [
     },
 ])
 
-export const COALITION_STARTER_LIST = make('Coalition', 'Starter Set', [
+export const COALITION_STARTER_LIST = make(COALITION_FACTION_NAME, 'Starter Set', [
     {
         unit: WIDOW_SCOUT,
         count: 1,
@@ -113,7 +113,7 @@ export const COALITION_STARTER_LIST = make('Coalition', 'Starter Set', [
     },
 ])
 
-export const REPUBLIC_STARTER_LIST = make('Republic of Terra', 'Starter Set', [
+export const REPUBLIC_STARTER_LIST = make(REPUBLIC_FACTION_NAME, 'Starter Set', [
     {
         unit: HARBINGER_RECON,
         count: 1,
