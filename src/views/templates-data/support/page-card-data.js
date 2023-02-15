@@ -45,5 +45,12 @@ function prepareCards(cards) {
 function prepareCard(card) {
     card.timestamp = TIMESTAMP
     card.cardsVersion = CARDS_VERSION
+
+    let nameWithVariant = card.name
+
+    if (card.variant_name) {
+        nameWithVariant += ': ' + card.variant_name
+    }
+    card.name_with_variant = nameWithVariant
     return card
 }

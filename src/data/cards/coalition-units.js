@@ -43,7 +43,7 @@ export const COALITION_CARD_DEFAULTS = {
 }
 
 export const WIDOW_SCOUT = make({
-    slug: 'scout',
+    slug: 'widow-scout',
     name: 'Widow Scout',
     img: 'scout.png',
     signature: SIZE_SMALL,
@@ -64,7 +64,7 @@ export const WIDOW_SCOUT = make({
 })
 
 export const SENTINEL_TAGGER = make({
-    slug: 'sentinel_tagger',
+    slug: 'sentinel-tagger',
     name: 'Sentinel',
     variant_name: 'Tagger',
     img: 'sentinel-tagger.png',
@@ -82,7 +82,7 @@ export const SENTINEL_TAGGER = make({
 })
 
 export const SENTINEL_HUNTER = make({
-    slug: 'sentinel_hunter',
+    slug: 'sentinel-hunter',
     name: 'Sentinel',
     variant_name: 'Hunter',
     img: 'sentinel-hunter.png',
@@ -118,7 +118,7 @@ export const VIRAGO_TANK = make({
 })
 
 export const AURORA = make({
-    slug: 'gsv_aurora',
+    slug: 'gsv-aurora',
     name: 'GSV',
     variant_name: 'Aurora',
     img: 'aurora.png',
@@ -142,7 +142,7 @@ export const AURORA = make({
 })
 
 export const PHANTOM = make({
-    slug: 'gsv_phantom',
+    slug: 'gsv-phantom',
     name: 'GSV',
     variant_name: 'Phantom',
     img: 'phantom.png',
@@ -165,7 +165,7 @@ export const PHANTOM = make({
 })
 
 export const GUARDIAN_MARKSMAN = make({
-    slug: 'guardian_marksman',
+    slug: 'guardian-marksman',
     name: 'Guardian',
     variant_name: 'Marksman',
     img: 'guardian-marksman.png',
@@ -188,7 +188,7 @@ export const GUARDIAN_MARKSMAN = make({
 })
 
 export const GUARDIAN_DESTROYER = make({
-    slug: 'guardian_destroyer',
+    slug: 'guardian-destroyer',
     name: 'Guardian',
     variant_name: 'Destroyer',
     img: 'guardian-destroyer.png',
@@ -211,7 +211,7 @@ export const GUARDIAN_DESTROYER = make({
 })
 
 export const SPIDER_DRONE_INFILTRATOR = make({
-    slug: 'spider_drone_pack',
+    slug: 'spider-drone-infiltrator',
     name: 'Spider Drone',
     variant_name: 'Infiltrator',
     squad_size: 2,
@@ -237,7 +237,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
 })
 
 export const SPIDER_DRONE_SOLDIER = make({
-    slug: 'spider_drone_soldier',
+    slug: 'spider-drone-soldier',
     name: 'Spider Drone',
     variant_name: 'Solder',
     squad_size: 4,
@@ -258,7 +258,7 @@ export const SPIDER_DRONE_SOLDIER = make({
 })
 
 export const RNR_INFANTRY = make({
-    slug: 'rnr_team',
+    slug: 'rnr-team',
     name: 'R&R Team',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',

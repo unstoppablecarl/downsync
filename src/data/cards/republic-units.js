@@ -41,7 +41,7 @@ export const REPUBLIC_CARD_DEFAULTS = {
 }
 
 export const VECTOR_SQUAD = make({
-    slug: 'vector_team',
+    slug: 'vector-squad',
     img: 'cleanser-squad.png',
     name: 'Vector Squad',
     signature: SIZE_SMALL,
@@ -68,30 +68,6 @@ export const VECTOR_SQUAD = make({
 export const SEEKER_TEAM = make({
     name: 'Seeker Team',
     slug: 'seeker-team',
-    img: 'seeker-team.png',
-    signature: SIZE_SMALL,
-    type: 'Human Infantry Squad',
-    squad_size: 1,
-    speed: 4,
-    targeting: 7,
-    scan: 7,
-    defense: 12,
-    actions: [
-        SCAN(2, 12),
-        SHOCK_SNIPER_RIFLE,
-        FORWARD_OBSERVE,
-        GO_DARK,
-    ],
-    traits: [
-        ADAPTIVE_CAMO,
-        ALL_TERRAIN,
-        STEALTHY_INFANTRY,
-    ],
-})
-
-export const AT_TEAM = make({
-    name: 'AT Team',
-    slug: 'at-team',
     img: 'seeker-team.png',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',
@@ -217,7 +193,7 @@ export const SAMSON_HEAVY_TANK = make({
 })
 
 export const GOLIATHS = make({
-    slug: 'goliath_squad',
+    slug: 'goliath-squad',
     name: 'Goliath Squad',
     img: 'goliath-squad.png',
     signature: SIZE_MEDIUM,

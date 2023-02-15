@@ -1,0 +1,23 @@
+{{#extend 'layout/html' title=singleCardData.name_with_variant}}
+
+    {{#content 'page-content'}}
+
+        <div class="header">
+            <div class="container">
+                <h1 class="primary-heading">{{singleCardData.name}}{{#if
+                    singleCardData.variant_name}}: {{singleCardData.variant_name}}{{/if}}</h1>
+                <h4 class="m-0">{{singleCardData.faction}}</h4>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="web-cards primary-content">
+                <div class="faction-cards">
+                    {{> (lookup singleCardData 'template') singleCardData}}
+                </div>
+            </div>
+        </div>
+
+    {{/content}}
+{{/extend}}
+
