@@ -14,6 +14,7 @@ html {
 @import 'tables';
 @import 'print-page';
 @import 'footer';
+@import 'container-ex';
 
 @import 'page-cards-web';
 @import 'page-cards-print';
@@ -70,23 +71,34 @@ html {
 }
 
 .header {
-    background: linear-gradient(
-                    0,
-                    rgba(#000, 0.9) 0px,
-                    rgba($primary, 0.5) 1px,
-                    rgba($primary, 0.1) 4px,
-                    rgba($primary, 0) 20px
-    ),
-    //linear-gradient(
-    //                180deg,
-    //                rgba(#fff, 1) 0px,
-    //                rgba($primary, 0.5) 1px,
-    //                rgba($primary, 0.1) 4px,
-    //                rgba($primary, 0) 20px
-    //)
-;
 
-    padding: 1rem 0;
+    background: #fff;
+
+    > .container-ex {
+
+        $stop1: 5%;
+        $stop2: 20%;
+
+        $g: 3rem;
+        $white: #fff;
+        background: linear-gradient(
+                        90deg,
+                        rgba($white, 1) 0%,
+                        rgba($white, 0.2) $g,
+                        rgba($white, 0) 40%,
+                        rgba($white, 0) 60%,
+                        rgba($white, 0.2) calc(100% - $g),
+                        rgba($white, 1) 100%,
+        ),
+        linear-gradient(
+                        0,
+                        rgba($primary, 0.5) 1px,
+                        rgba($primary, 0.1) 4px,
+                        rgba($primary, 0) 20px
+        );
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 
     .primary-heading {
         margin: 0;
