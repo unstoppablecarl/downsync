@@ -21,6 +21,16 @@ export const SCAN = (rof, range) => {
     })
 }
 
+export const SCRAMBLE = make({
+    name: 'Scramble',
+    target: 'Unit/Ping',
+    cost: COST_COMMAND,
+    range: 6,
+    effect: '&starf;',
+    desc: 'Select another friendly Unit within 6", that Unit gains a Stealth Token',
+    or_desc: 'Select an enemy Ping within 6" and LOS, That Ping may not be Revealed while within 6" of this Unit until the end of this Round.',
+})
+
 export const CM_AURA = make({
     name: 'CM Aura',
     cost: COST_ACTION_OR_COMMAND,

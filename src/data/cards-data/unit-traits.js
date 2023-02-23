@@ -1,16 +1,23 @@
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { makeTrait } from '../support/factories.js'
 
+const UPKEEP_COMMAND_POINT_TEXT = 'This Unit gains the Command Point Token spent to indicate this ability is active. It is returned immediately before this Unit is Refreshed or Destroyed.'
+
 export const STEALTHY_INFANTRY = make({
     name: 'Stealthy',
     desc: `Each each Infantry Base in this Unit begins the game with a Stealth Token.`,
 })
 
-
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
     note: `COST: ${COST_COMMAND}, Movement phase`,
     desc: 'While within 8" of an Infantry Base in this Unit, other Units in the same Taskforce gain All Terrain.',
+})
+
+export const SMALL_DECOY_PING = make({
+    name: 'Decoy',
+    note: 'Small',
+    desc: 'When this unit is added to your Force, the force gains one Small Decoy Ping.',
 })
 
 export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
@@ -21,6 +28,12 @@ export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
         desc: `${typePlural} within 4" can spend this Unit's Countermeasure Tokens.`,
     })
 }
+
+export const BULLET_SPONGE_AURA = make({
+    name: 'Interference Field',
+    note: `2", COST: ${COST_COMMAND}, Refresh phase`,
+    desc: `Friendly Units within 2" can spend this Unit's Countermeasure Tokens. ${UPKEEP_COMMAND_POINT_TEXT}`,
+})
 
 export const FINISHER = make({
     name: 'Finisher',
@@ -39,7 +52,7 @@ export const DEFENSE_NET = (type) => {
 export const DEFENSE_AURA = make({
     name: 'Defense Aura',
     note: `COST: ${COST_COMMAND}, Refresh phase`,
-    desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls. This unit gains the Command Point Token spent to indicate the Defense Aura. The Command Point is returned when this unit is Refreshed (if choosing to disable the ability) or Destroyed.',
+    desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls. ' + UPKEEP_COMMAND_POINT_TEXT,
 })
 
 export const SHROUD_AURA = make({
@@ -58,7 +71,10 @@ export const CM_SHIELD = make({
     name: 'CM Shield',
     note: '&times;2, 4"',
     desc: 'This Unit begins the game with 2 CM Shield Tokens. When this Unit is refreshed it replenishes CM Shield Tokens until it has 2. Friendly Units within 4" may spend CM Shield Tokens on this Unit as if they were Countermeasure Tokens.',
-    desc_keywords_before: ['CM Shield Tokens', 'CM Shield Token'],
+    desc_keywords_before: [
+        'CM Shield Tokens',
+        'CM Shield Token',
+    ],
 })
 
 export const AMBUSH = make({
@@ -69,11 +85,6 @@ export const AMBUSH = make({
 export const MECHANIZED_INFANTRY = make({
     name: 'Mechanized',
     desc: 'This Unit may begin the game mounted in a Courier transport. If it does its Ping is not used for the game.',
-})
-
-export const INFANTRY_ALT_WEAPONS = make({
-    name: 'Alternate Weapons',
-    desc: 'This Unit must select which ALT weapon it will use when creating your Force.',
 })
 
 export const PREDATOR = make({
@@ -90,6 +101,16 @@ export const SENTRY = make({
 export const ALL_TERRAIN = make({
     name: 'All Terrain',
     desc: 'This Unit ignores terrain movement penalties.',
+})
+
+export const DRONE_CONTROLLER = make({
+    name: 'Drone Controller',
+    desc: 'If Team 1 is destroyed remove this Unit from the game.',
+})
+
+export const PERSONAL_CM = make({
+    name: 'Personal CM',
+    desc: 'Team 1 has and regenerates 1 CM.',
 })
 
 export const WIDOW_SCOUT_CARRIED = make({
@@ -128,10 +149,10 @@ export const CLOSE_AND_PERSONAL = make({
     desc: 'This Unit gains an additional +1 TARG against targets within short range.',
 })
 
-export const FIRE_SUPPORT_LINK = make({
-    name: 'Fire Support Link',
-    note: `+1 TARG`,
-    desc: `This Unit gains +1 TARG when resolving attacks that have a Forward Observer.`,
+export const HIT_AND_RUN = make({
+    name: 'Hit and Run',
+    note: `2" place`,
+    desc: `After this Unit resolves a combat action is may be placed within 2".`,
 })
 
 function make(trait) {

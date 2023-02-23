@@ -15,9 +15,11 @@ export const COST_COMMAND_X2 = 'COST_COMMAND_X2'
 export const COALITION_FACTION_NAME = 'Coalition'
 
 export const REPUBLIC_FACTION_NAME = 'Republic of Terra'
+export const NOMAD_FACTION_NAME = 'Nomad'
 
 export const COALITION_FACTION_SLUG = 'coalition'
 export const REPUBLIC_FACTION_SLUG = 'republic-of-terra'
+export const NOMAD_FACTION_SLUG = 'nomad'
 
 export const EMPHASIS_KEYWORDS = [
     'SIG',
@@ -29,6 +31,7 @@ export const EMPHASIS_KEYWORDS = [
 
     'KILL',
     'STUN',
+    'COMP',
 
     'LOS',
 
@@ -58,9 +61,9 @@ export const EMPHASIS_KEYWORDS = [
     'Countermeasure Tokens',
     'Countermeasure Token',
 
-    'Shroud Templates',
-    'Shroud Template',
-
     'Taskforce Activation',
     'Taskforce',
+
+    'Compromise Counters',
+    'Compromise Counter',
 ]

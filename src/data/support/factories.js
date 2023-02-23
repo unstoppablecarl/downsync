@@ -1,4 +1,4 @@
-import { keywordFormat, keywordFormatDesc } from './text-formatters.js'
+import { keywordFormat, keywordFormatDesc, keywordFormatOrDesc } from './text-formatters.js'
 import { COST_ACTION, COST_COMMAND } from '../constants.js'
 
 export function makeUnit(unit) {
@@ -7,6 +7,7 @@ export function makeUnit(unit) {
         template: 'unit-card',
         actions: [],
         traits: [],
+        notes: [],
     }
 
     unit = Object.assign(defaults, unit)
@@ -110,6 +111,9 @@ export function makeAction(action) {
 
     result.desc = keywordFormatDesc(result)
 
+    if (result.or_desc) {
+        result.or_desc = keywordFormatOrDesc(result)
+    }
     return result
 }
 

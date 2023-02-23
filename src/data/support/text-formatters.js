@@ -9,7 +9,6 @@ import {
 import fs from 'fs'
 import Handlebars from 'handlebars'
 
-
 export function keywordFormatDesc({
                                       name,
                                       desc,
@@ -28,6 +27,22 @@ export function keywordFormatDesc({
     before = [].concat(before, nameKeywords)
 
     return keywordFormat(desc, before, after)
+}
+
+export function keywordFormatOrDesc({
+                                        name,
+                                        or_desc,
+                                        desc_keywords_name = null,
+                                        desc_keywords_before = [],
+                                        desc_keywords_after = [],
+                                    }) {
+    return keywordFormatDesc({
+        name,
+        desc: or_desc,
+        desc_keywords_name,
+        desc_keywords_before,
+        desc_keywords_after,
+    })
 }
 
 export function keywordFormat(str, keywordsBefore = [], keywordsAfter = []) {

@@ -19,7 +19,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { makeWeapon } from '../support/factories.js'
+import { makeTrait, makeWeapon } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -76,7 +76,6 @@ export const LMG = make({
     traits: [],
 })
 
-
 export const MG = make({
     name: 'MG',
     note: 'VS Infantry only',
@@ -105,7 +104,6 @@ export const SHOCK_RIFLE = make({
     ],
 })
 
-
 export const ADVANCED_CHARGES = make({
     name: 'Adv. Charges',
     range: 6,
@@ -118,7 +116,7 @@ export const ADVANCED_CHARGES = make({
 export const SMALL_ARMS = make({
     name: 'Rifle',
     range: 12,
-    note: 'teams 1-2, vs inf. only',
+    note: 'vs inf. only',
     rof: 1,
     traits: [],
 })
@@ -233,7 +231,7 @@ export const CLAWS = make({
     ],
 })
 
-export const GUIDED_MISSILE = make({
+export const AT_CHARGES = make({
     name: 'AT Charges',
     note: 'Teams 1-2',
     range: 6,
@@ -255,6 +253,16 @@ export const MICRO_ARTILLERY = make({
     ],
 })
 
+export const RPG = make({
+    name: 'RPG',
+    range: 10,
+    rof: 1,
+    effect: 'KILL',
+    traits: [
+        TRAIT_ADVANCED,
+    ],
+})
+
 export const SHOCK_SNIPER_RIFLE = make({
     name: 'Shock Sniper Rifle',
     range: 24,
@@ -263,6 +271,31 @@ export const SHOCK_SNIPER_RIFLE = make({
     traits: [
         DEADLY_VS('Infantry'),
         TRAIT_DOUBLE_TAP,
+    ],
+})
+
+export const GUIDED_MISSILE = make({
+    name: 'Guided Missile',
+    range: 16,
+    rof: 1,
+    effect: 'KILL',
+    traits: [
+        TRAIT_SMART,
+    ],
+})
+
+export const CYBER_ATTACK = make({
+    name: 'Cyber Attack',
+    range: 16,
+    rof: 1,
+    effect: 'STUN',
+    traits: [
+        makeTrait({
+            name: 'Compromising',
+            note: 'roll + comp >= 10 = KILL',
+            desc: 'If this action\'s attack hits and its roll + the number of Compromise Counters on the target are >= 10, this action gains the KILL effect.' +
+                ' Units surviving a hit by this weapon gain a Compromise Counter.',
+        }),
     ],
 })
 
@@ -281,4 +314,4 @@ export function SNAP_FIRE(weapon, range) {
 function make(weapon) {
 
     return makeWeapon(weapon)
-    }
+}

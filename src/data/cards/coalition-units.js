@@ -231,7 +231,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
         ALL_TERRAIN,
         WIDOW_SCOUT_CARRIED,
     ],
-    definitions: [
+    notes: [
         NOTE_STEALTH_TOKEN,
     ],
 })
@@ -254,7 +254,6 @@ export const SPIDER_DRONE_SOLDIER = make({
     traits: [
         ALL_TERRAIN,
     ],
-    definitions: [],
 })
 
 export const RNR_INFANTRY = make({

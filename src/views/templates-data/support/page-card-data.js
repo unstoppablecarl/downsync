@@ -2,19 +2,35 @@ import { chunk, getTimestamp } from '../../../data/support/util.js'
 import { COALITION_DEMO_UNITS, COALITION_UNITS } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
-import { COALITION_FACTION_NAME, REPUBLIC_FACTION_NAME } from '../../../data/constants.js'
+import {
+    COALITION_FACTION_NAME,
+    COALITION_FACTION_SLUG,
+    NOMAD_FACTION_NAME,
+    NOMAD_FACTION_SLUG,
+    REPUBLIC_FACTION_NAME,
+    REPUBLIC_FACTION_SLUG,
+} from '../../../data/constants.js'
+import { NOMAD_UNITS } from '../../../data/cards/nomad-units.js'
 
 const TIMESTAMP = getTimestamp()
 
 export const FACTION_UNITS = [
     {
         faction: COALITION_FACTION_NAME,
+        slug: COALITION_FACTION_SLUG,
         factionCards: prepareCards(COALITION_UNITS),
     },
     {
         faction: REPUBLIC_FACTION_NAME,
+        slug: REPUBLIC_FACTION_SLUG,
         factionCards: prepareCards(REPUBLIC_UNITS),
     },
+    {
+        faction: NOMAD_FACTION_NAME,
+        slug: NOMAD_FACTION_SLUG,
+        factionCards: prepareCards(NOMAD_UNITS),
+    },
+
     //{
     //    faction: 'Mercenaries',
     //    factionCards: prepareCards(MERCENARY_UNITS),
