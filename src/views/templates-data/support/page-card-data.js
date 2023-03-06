@@ -27,11 +27,11 @@ export const FACTION_UNITS = [
         faction_slug: REPUBLIC_FACTION_SLUG,
         factionCards: prepareCards(REPUBLIC_UNITS),
     },
-    {
-        faction: 'Nomad',
-        faction_slug: 'nomad',
-        factionCards: [],
-    },
+    //{
+    //    faction: 'Nomad',
+    //    faction_slug: 'nomad',
+    //    factionCards: [],
+    //},
     //{
     //    faction: 'Mercenaries',
     //    factionCards: prepareCards(MERCENARY_UNITS),
