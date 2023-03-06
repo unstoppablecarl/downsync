@@ -4,7 +4,9 @@ import svgSprite from 'gulp-svg-sprite'
 import { config, paths } from '../gulpfile.js'
 import path from 'path'
 import importFresh from '@small-tech/import-fresh'
+import gulpIntercept from 'gulp-intercept'
 import del from 'del'
+import { TASK_DATA } from './task-data.js'
 
 const svgIconsPath = path.resolve('./src/views/svg-icons.js')
 
@@ -41,6 +43,10 @@ export async function generateSvgSprites() {
                             },
                         },
                     },
+                }))
+                .pipe(gulpIntercept(function (file) {
+                    TASK_DATA.svg_file = path.basename(file.path)
+                    return file
                 }))
                 .pipe(gulp.dest(paths.svg.dist))
 

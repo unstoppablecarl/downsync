@@ -4,7 +4,13 @@ import buildTemplates from './templates.js'
 import util from 'util'
 import { buildRootData } from './views/root-template-data.js'
 import Handlebars from 'handlebars'
-import { ALL_UNITS } from './views/templates-data/support/page-card-data.js'
+import {
+    ALL_UNITS,
+    cardsToPages,
+    FACTION_UNITS,
+    prepareSplitCards,
+} from './views/templates-data/support/page-card-data.js'
+import { COALITION_FACTION_SLUG } from './data/constants.js'
 
 const dist = './dist'
 const tplDataPath = './src/views/templates-data'
@@ -18,11 +24,13 @@ export default async function () {
         makeDir(dist),
     ])
 
+    await prepareDirs()
+
     return Promise.all([
         buildPages(templates, rootData),
         buildSingleCardPages(rootData),
+        buildFactionCardPages(rootData),
     ])
-
 }
 
 function buildPages(templates, rootData) {
@@ -59,20 +67,38 @@ function buildPages(templates, rootData) {
     )
 }
 
+async function buildFactionCardPages(rootData) {
+
+    let contents = await fs.promises.readFile('./src/views/templates-dynamic/faction-unit-cards-print.hbs', 'utf-8')
+    let template = Handlebars.compile(contents)
+
+    return Promise.all(
+        FACTION_UNITS.map(({
+                               faction,
+                               faction_slug,
+                               factionCards,
+                           }) => {
+
+            if (faction_slug === COALITION_FACTION_SLUG) {
+                factionCards = prepareSplitCards(factionCards)
+            }
+
+            let dest = `${dist}/cards-print/${faction_slug}.html`
+            let data = Object.assign({}, rootData, {
+                faction,
+                cardPages: cardsToPages(factionCards, 9),
+                pageTitle: `${faction} Unit Cards`,
+            })
+            let contents = template(data)
+            return fs.promises.writeFile(dest, contents, 'utf8')
+        }),
+    )
+}
+
 async function buildSingleCardPages(rootData) {
 
     let contents = await fs.promises.readFile('./src/views/templates-dynamic/unit-card-single.hbs', 'utf-8')
     let template = Handlebars.compile(contents)
-
-    let factionSlugs = getFactionSlugs()
-
-    await makeDir(dist + '/cards')
-
-    await Promise.all(
-        factionSlugs.map((slug) => {
-            return makeDir(dist + '/cards/' + slug)
-        }),
-    )
 
     return Promise.all(
         ALL_UNITS.map((unit) => {
@@ -83,6 +109,19 @@ async function buildSingleCardPages(rootData) {
             })
             let contents = template(data)
             return fs.promises.writeFile(dest, contents, 'utf8')
+        }),
+    )
+}
+
+async function prepareDirs() {
+    let factionSlugs = getFactionSlugs()
+    await makeDir(dist + '/cards-print')
+
+    await makeDir(dist + '/cards')
+
+    await Promise.all(
+        factionSlugs.map((slug) => {
+            return makeDir(dist + '/cards/' + slug)
         }),
     )
 }
@@ -106,3 +145,11 @@ function getFactionSlugs() {
 
     return Object.keys(factionSlugs)
 }
+
+//
+//function writeRootDataJsonFile(rootData) {
+//    return makeDir('artifacts')
+//        .then(() => {
+//            fs.promises.writeFile()
+//        })
+//}

@@ -10,6 +10,11 @@ gulp.task('webpack', function () {
   webpackConfig.mode = config.production ? 'production' : 'development'
   webpackConfig.devtool = config.production ? false : 'source-map'
 
+  webpackConfig.plugins.push(new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: 'true',
+    __VUE_PROD_DEVTOOLS__: config.production ? 'false' : 'true',
+  }))
+
   return gulp.src(paths.webpack.src)
       .pipe(plumber(config.plumber))
       .pipe(webpackStream(webpackConfig, webpack))

@@ -58,9 +58,6 @@ export const EMPHASIS_KEYWORDS = [
     'Countermeasure Tokens',
     'Countermeasure Token',
 
-    'Shroud Templates',
-    'Shroud Template',
-
     'Taskforce Activation',
     'Taskforce',
 ]

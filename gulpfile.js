@@ -53,6 +53,7 @@ const paths = {
         dist: './dist/assets/',
         watch: [
             './src/js/**/*.js',
+            './src/js/components/**/*.vue',
         ],
     },
     images: {

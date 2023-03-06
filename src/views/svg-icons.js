@@ -9,6 +9,7 @@ export const svgIcons = {
     locked: fontAwesomeDir + '/solid/lock.svg',
     unlocked: fontAwesomeDir + '/solid/lock-open.svg',
     pdf: bootstrapDir + '/file-earmark-pdf.svg',
+    filter: fontAwesomeDir + '/solid/filter.svg',
 }
 
 export const svgIconsReversed = {}
