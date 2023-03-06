@@ -16,13 +16,15 @@ const dist = './dist'
 const tplDataPath = './src/views/templates-data'
 const fileExists = util.promisify(fs.exists)
 
-export default async function () {
+export default async function (baseRootData = {}) {
 
     let [templates, rootData] = await Promise.all([
         buildTemplates(),
         buildRootData(),
         makeDir(dist),
     ])
+
+    rootData = Object.assign({}, baseRootData, rootData)
 
     await prepareDirs()
 

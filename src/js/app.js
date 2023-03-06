@@ -3,17 +3,17 @@ import { createApp } from 'vue'
 import './app/table-of-contents.js'
 
 import CardFilter from './components/card-filter.vue'
+import { FACTIONS } from '../data/constants.js'
+
+const SVG_SPRITE_PATH = __SVG_SPRITE_PATH__
 
 elementExists('vue-card-filter', (el) => {
 
-    let factionsContent = el.dataset.factions
-    let factions = JSON.parse(factionsContent)
-
     let props = {
-        factions,
+        factions: FACTIONS,
     }
 
-    const app = createApp(CardFilter, props)
+    const app = createApp(CardFilter, props).provide('SVG_SPRITE_PATH', SVG_SPRITE_PATH)
     app.mount(el)
 })
 

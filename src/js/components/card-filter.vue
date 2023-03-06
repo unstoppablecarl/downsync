@@ -1,14 +1,15 @@
 <template>
     <div class="app-card-filter">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown"
                     data-bs-auto-close="outside"
                     aria-expanded="false">
-                Filter Factions
 
+                Filter Factions
                 <svg class="bi" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false">
-                    <use href="{{svg_icon_path}}"></use>
+                    <use :href="SVG_SPRITE_PATH + '#filter'"></use>
                 </svg>
+
             </button>
             <form class="dropdown-menu p-4">
                 <div class="mb-3">
@@ -45,6 +46,7 @@ export default {
     props: [
         'factions',
     ],
+    inject: ['SVG_SPRITE_PATH'],
     data() {
         return {
             checkedFactions: [],

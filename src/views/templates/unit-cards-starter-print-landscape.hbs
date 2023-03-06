@@ -16,25 +16,28 @@
 
                 <div class="row">
                     <div class="col">
-                        <a href="/unit-cards-starter-print.html" class="btn btn-secondary">Switch To Portrait</a>
+                        <div id="vue-card-filter" class="m-1 d-inline-block"></div>
+                        {{> btn-starter-view view='Print Landscape'}}
                     </div>
                     <div class="col">
-                        <p class="text-end">
+                        <div class="float-md-end text-end m-1">
                             {{> btn-print}}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="page-previews-container">
             <div class="output-container card-grid-container-flex-landscape-print">
                 {{#each cardPages as |cardPage|}}
-
-                    <div class="page-preview page-letter-landscape" style="background-color:white">
-                        <div class="page-card-grid">
-                            {{#each cardPage as |cardData|}}
-                                {{> (lookup cardData 'template') cardData}}
-                            {{/each}}
+                    <div class="faction-{{faction_slug}}">
+                        <div class="page-preview page-letter-landscape" style="background-color:white">
+                            <div class="page-card-grid">
+                                {{#each cardPage.factionCards as |cardData|}}
+                                    {{> (lookup cardData 'template') cardData}}
+                                {{/each}}
+                            </div>
                         </div>
                     </div>
                 {{/each}}

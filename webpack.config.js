@@ -1,5 +1,6 @@
 import path from 'path'
 import { VueLoaderPlugin } from 'vue-loader'
+import webpack from 'webpack'
 
 export default {
     mode: 'development',
@@ -34,5 +35,7 @@ export default {
     plugins: [
         // make sure to include the plugin!
         new VueLoaderPlugin(),
+        // placeholder to be swapped
+        new webpack.DefinePlugin({}),
     ],
 }

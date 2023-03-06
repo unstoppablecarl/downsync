@@ -6,49 +6,56 @@ import path from 'path'
 import importFresh from '@small-tech/import-fresh'
 import gulpIntercept from 'gulp-intercept'
 import del from 'del'
-import { TASK_DATA } from './task-data.js'
 
 const svgIconsPath = path.resolve('./src/views/svg-icons.js')
 
-// this task is only used when run directly
-gulp.task('svg', async function () {
-    return generateSvgSprites()
-})
+export const SVG_SPRITE = {
+    PATH: null,
+}
 
-export async function generateSvgSprites() {
+let SVG_ICONS = {}
 
+gulp.task('svg-data', async function () {
     await del('./dist/assets/icons')
 
-    return importFresh(svgIconsPath)
-        .then(({
-                   svgIcons,
-                   svgIconsReversed,
-               }) => {
+    SVG_ICONS = await importFresh(svgIconsPath)
+})
 
-            let src = Object.values(svgIcons)
+gulp.task('svg-build', () => {
 
-            return gulp.src(src)
-                .pipe(plumber(config.plumber))
-                .pipe(svgSprite({
-                    mode: {
-                        symbol: {
-                            bust: true,
-                        },
+    const {
+        svgIcons,
+        svgIconsReversed,
+    } = SVG_ICONS
+
+    let src = Object.values(svgIcons)
+
+    return gulp.src(src)
+        .pipe(plumber(config.plumber))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    bust: true,
+                },
+            },
+            shape: {
+                id: {
+                    generator: function (f, a) {
+                        let relative = './' + path.relative(process.cwd(), a.path)
+                        return svgIconsReversed[relative]
                     },
-                    shape: {
-                        id: {
-                            generator: function (f, a) {
-                                let relative = './' + path.relative(process.cwd(), a.path)
-                                return svgIconsReversed[relative]
-                            },
-                        },
-                    },
-                }))
-                .pipe(gulpIntercept(function (file) {
-                    TASK_DATA.svg_file = path.basename(file.path)
-                    return file
-                }))
-                .pipe(gulp.dest(paths.svg.dist))
+                },
+            },
+        }))
+        .pipe(gulpIntercept(function (file) {
+            SVG_SPRITE.PATH = '/assets/icons/symbol/svg/' + path.basename(file.path)
+            return file
+        }))
+        .pipe(gulp.dest(paths.svg.dist))
+})
 
-        })
-}
+// this task is only used when run directly
+gulp.task('svg', gulp.series([
+    'svg-data',
+    'svg-build',
+]))

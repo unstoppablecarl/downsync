@@ -87,8 +87,12 @@ const config = {
     },
 }
 
-let parallel = gulp.parallel(
+gulp.task('views', gulp.series('svg', gulp.parallel([
+    'view-templates',
     'webpack',
+])))
+
+let parallel = gulp.parallel(
     'styles',
     'views',
     'images',
@@ -96,12 +100,21 @@ let parallel = gulp.parallel(
 )
 
 gulp.task('default',
-    gulp.series('clean', parallel, 'server'),
+    gulp.series(
+        'clean',
+        parallel,
+        'server',
+    ),
 )
 
 gulp.task(
     'build',
-    gulp.series('clean', parallel, 'copy-pdfs', 'say:build'),
+    gulp.series(
+        'clean',
+        parallel,
+        //'copy-pdfs',
+        'say:build',
+    ),
 )
 
 export { paths, config }

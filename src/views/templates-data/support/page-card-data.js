@@ -38,24 +38,15 @@ export const FACTION_UNITS = [
     //},
 ]
 
-export const FACTIONS = FACTION_UNITS.map(({
-                                               faction,
-                                               faction_slug,
-                                           }) => {
-        return {
-            faction,
-            faction_slug,
-        }
-    },
-)
-
 export const FACTION_DEMO_UNITS = [
     {
         faction: COALITION_FACTION_NAME,
+        faction_slug: COALITION_FACTION_SLUG,
         factionCards: prepareCards(COALITION_DEMO_UNITS),
     },
     {
         faction: REPUBLIC_FACTION_NAME,
+        faction_slug: REPUBLIC_FACTION_SLUG,
         factionCards: prepareCards(REPUBLIC_DEMO_UNITS),
     },
 ]
