@@ -10,7 +10,7 @@ export const TRAIT_CLUSTERED = (radius) => {
     return make({
         name: 'Clustered',
         note: `${radius}"`,
-        desc: `Before resolving this action, select a point within range and LOS. Only Units within ${radius}" of this point may be targeted. Declare all targets before resolving attacks.`,
+        desc: `Before resolving this action, select a point within range and LOS. Only Units within ${radius}" of this point may be targeted. Use the selected point as the attacks origin for determining concealment. Declare all targets before resolving attacks.`,
     })
 }
 
@@ -59,7 +59,7 @@ function makeCMMod(name, TN) {
 
 export const EXTREME_RANGE = make({
     name: 'Extreme Range',
-    desc: 'Ignores short and long range modifiers.',
+    desc: 'Ignores short/long range modifiers. Min range 6". Max range unlimited.',
 })
 
 export const CLOSE_COMBAT = make({
