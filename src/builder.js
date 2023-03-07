@@ -71,7 +71,7 @@ function buildPages(templates, rootData) {
 
 async function buildFactionCardPages(rootData) {
 
-    let contents = await fs.promises.readFile('./src/views/unit-cards-print.hbs', 'utf-8')
+    let contents = await fs.promises.readFile('./src/views/templates/unit-cards-print.hbs', 'utf-8')
     let template = Handlebars.compile(contents)
 
     return Promise.all(
