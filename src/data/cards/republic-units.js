@@ -11,10 +11,12 @@ import {
     AT_CHARGES,
     CANNON,
     CONCUSSION_ARTILLERY,
+    GUIDED_MISSILE,
     HEAVY_ARTILLERY,
     MEDIUM_CANNON,
     MG,
     MICRO_ARTILLERY,
+    SHOCK_ARTILLERY,
     SHOCK_AUTOCANNON,
     SHOCK_SNIPER_RIFLE,
     SMALL_ARMS,
@@ -161,8 +163,8 @@ export const MANDIBLE = make({
     defense: 11,
     scan: null,
     actions: [
-        CONCUSSION_ARTILLERY,
         HEAVY_ARTILLERY,
+        SHOCK_ARTILLERY,
     ],
     traits: [
         //FIRE_SUPPORT_LINK,

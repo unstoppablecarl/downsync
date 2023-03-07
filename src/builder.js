@@ -71,7 +71,7 @@ function buildPages(templates, rootData) {
 
 async function buildFactionCardPages(rootData) {
 
-    let contents = await fs.promises.readFile('./src/views/templates-dynamic/faction-unit-cards-print.hbs', 'utf-8')
+    let contents = await fs.promises.readFile('./src/views/templates/unit-cards-print.hbs', 'utf-8')
     let template = Handlebars.compile(contents)
 
     return Promise.all(
@@ -89,7 +89,7 @@ async function buildFactionCardPages(rootData) {
             let data = Object.assign({}, rootData, {
                 faction,
                 cardPages: cardsToPages(factionCards, 9),
-                pageTitle: `${faction} Unit Cards`,
+                pageTitle: `${faction} Unit Cards Print`,
             })
             let contents = template(data)
             return fs.promises.writeFile(dest, contents, 'utf8')

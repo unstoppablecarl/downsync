@@ -9,7 +9,7 @@ gulp.task('server', function (done) {
         notify: true,
     })
 
-    gulp.watch(paths.copy_pdfs.watch, { usePolling: true }, gulp.parallel('copy-pdfs'))
+    //gulp.watch(paths.copy_pdfs.watch, { usePolling: true }, gulp.parallel('copy-pdfs'))
     gulp.watch(paths.views.watch, { usePolling: true }, gulp.parallel('views'))
     gulp.watch(paths.styles.watch, { usePolling: true }, gulp.parallel('styles'))
     gulp.watch(paths.webpack.watch, { usePolling: true }, gulp.parallel('webpack'))

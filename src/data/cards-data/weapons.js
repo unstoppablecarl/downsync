@@ -61,7 +61,6 @@ export const TAG_CANNON = make({
 export const TARGET_LOCK = make({
     name: 'Target Lock',
     cost: COST_COMMAND,
-    rof: 1,
     effect: '&starf;',
     desc: 'Select an enemy Unit in LOS. It suffers -2 DEF until the end of this Taskforce Activation. A Unit can only be Target Locked once. This action can be used once per activation.',
     desc_keywords_before: ['Target Locked'],
@@ -161,15 +160,16 @@ export const HEAVY_ARTILLERY = make({
     ],
 })
 
-export const CONCUSSION_ARTILLERY = make({
-    name: 'Concussion Artillery',
+export const SHOCK_ARTILLERY = make({
+    name: 'Shock Artillery',
     range: null,
-    rof: 5,
+    rof: 4,
     effect: 'STUN',
     traits: [
         TRAIT_FIRE_SUPPORT,
         EXTREME_RANGE,
         TRAIT_CLUSTERED(6),
+        DEADLY_VS(TYPE_INFANTRY),
     ],
 })
 

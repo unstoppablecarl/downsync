@@ -6,9 +6,8 @@ export const FORWARD_OBSERVE = make({
     name: 'Forward Observe',
     cost: COST_ACTION_OR_COMMAND,
     target: 'Unit',
-    rof: 1,
     effect: '&starf;',
-    desc: 'A Unit in the same Taskforce immediately resolves its activation with an action that has the Fire Support trait using this Unit\'s LOS.',
+    desc: 'A Unit in the same Taskforce immediately resolves its activation with an action that has the Fire Support trait using this Unit\'s LOS. This action can be used once per activation.',
 })
 
 export const SCAN = (rof, range) => {

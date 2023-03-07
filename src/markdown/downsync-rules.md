@@ -1,13 +1,12 @@
-
 # Downsync Rules (Beta)
 
-Last Updated: Feb 6, 2023
+Last Updated: Mar 7, 2023
 
 [[toc]]
 
 ## Introduction
 
-Downsync is a game with a high level abstraction of far future combat with limited information.
+Downsync is a game with a high level abstraction of future combat in the collapsing world of 2150.
 
 High lethality and technology make conflict outcome less about weapons defeating armor and more about information,
 stealth, and deception.
@@ -135,7 +134,7 @@ starting point.*
 A game is made up of a number of Rounds.
 In each Round Forces alternate resolving Taskforce Activations.
 In each Taskforce Activation, a Force Activates a selection of Units/Pings called a Taskforce.
-When all Units/Pings have been Activated the Round ends.
+When all Units/Pings of both Forces have been Activated the Round ends.
 
 ### Setup
 
@@ -143,7 +142,7 @@ When all Units/Pings have been Activated the Round ends.
 - Reveal Force Lists
 - Determine Starting Player
     - Both players roll 2d6, and the higher rolling player chooses which player will deploy first
-    - The player that deploys first will have the first turn of the game
+    - The player that deploys first will take the first turn of the game as the Active Player
 - Deployment
     - For each Unit in a Force List, deploy a Ping of matching Signature (size) within the mission deployment zone
 
@@ -152,8 +151,12 @@ When all Units/Pings have been Activated the Round ends.
 - Remove all [Activated Tokens](#activated-token)
 - Regenerate Command Points. See [Game Size](#game-sizes)
 - Each Player alternates resolving Taskforce Activations until all Units/Pings have been activated
-    - When starting a new Round the player that did not perform the last Taskforce Activation of the previous Round goes
-      first
+    - The player currently resolving a Taskforce Activation is the Active Player and the opposing Player is the
+      Non-Active
+      Player
+    - The Non-Active Player at the end of a Round becomes the first Active Player in the next Round
+
+*A Player is still considered the Non-Active Player if they initiate a [Reaction Engagement](#reaction-engagements).*
 
 ### Turn Overview
 
@@ -193,7 +196,10 @@ Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
 
 #### Move
 
-Each Taskforce Unit/Ping may move up to its **SPD** in inches in any direction without restriction.
+Each Taskforce Unit/Ping may move up to its **SPD** in inches in any direction without restriction. Units/Pings may move
+through friendly Units/Pings but may not end their movement overlapping. Units/Pings may not move through enemy
+Units/Pings.
+
 Pings have a **SPD** of 4.
 
 #### Optionally Initiate a Reaction Engagement
@@ -290,15 +296,25 @@ more infantry models on it.
 
 ### Multi-base Units
 
-Some units have multiple infantry bases instead of a vehicle model. How many infantry bases a
-multi-base Unit has is indicated on its Unit Card by a number in a circle next to the Unit description.
-When a multi-base Unit activates each infantry base gains 1 Action Point and activates one at a time. Infantry base
-Activations of the same Unit can not be split up and must be completed before activating another Unit.
+Some units have multiple Infantry Bases instead of a vehicle model. How many infantry bases a
+multi-base Unit has is indicated on its Unit Card by a number in a circle at the top of the card next to the Unit
+description.
+
+When a multi-base Unit activates each infantry base gains 1 Action Point and activates one at a time in an order
+determined by its Controlling Player. Infantry base Activations of the same Unit can not be split up and must be
+completed before activating another Unit.
 
 Multi-base Units must end their movement such that all infantry bases in the Unit are within 12" of every other infantry
 base in the Unit. In other words all infantry bases in a Unit must fit within a 12" diameter circle.
 
 See: [Revealing Multi-Base Units](#revealing-multi-base-units)
+
+#### Multi-Base Unit Tokens
+
+Single [Activated Tokens](#activated-token) and [Overwatch Tokens](#overwatch-token) apply to the whole Unit. Each
+Infantry Base in a Unit tracks all other Tokens separately the same way a Non-Multi-Base Unit does.
+
+See: [Unit Tokens](#unit-tokens)
 
 ## Pings
 
@@ -312,7 +328,7 @@ pings when revealed if desired.
 
 ### Movement
 
-A Ping may never move within 3" and LOS of an enemy unit or Ping. Pings can never move through or end their movement in,
+A Ping may never move within 2" and LOS of an enemy Unit or Ping. Pings can never move through or end their movement in,
 a position that would cause them to be automatically revealed by an enemy.
 
 All Pings have a **SPD** stat of 4".
@@ -321,7 +337,7 @@ All Pings have a **SPD** stat of 4".
 
 ### Activating
 
-Pings can only perform a move action to move an additional 4".
+Pings can only spend their Action Point to perform a Move Action to move an additional 4".
 
 ### Revealing
 
@@ -408,6 +424,8 @@ time.*
 Although not included on the Unit cards, all units can perform the Overwatch Action for the cost of 1 Action Point.
 When a Unit performs an Overwatch Action it gains 1 [Overwatch Token](#overwatch-token).
 Overwatch Tokens allow Units to perform Reactions even after they have activated with a higher chance to act first.
+
+A Multi-Base Unit can only have 1 Overwatch Token as the whole unit must activate together.
 
 An Overwatch Action may be performed by a Unit participating in a [Reaction Engagement](#reaction-engagements).
 
@@ -575,7 +593,7 @@ hold its reaction by reducing the value of its Reaction Priority die by 1. Units
 are [Refreshed](#refresh) immediately before resolving their reaction Unit Activation.
 
 A unit with an **Overwatch Token** removes that token immediately before resolving its Unit Activation. When activating,
-Units may perform an Overwatch Action and gain an Overwatch token to be used in a later Reaction Engagement.
+Units may perform an Overwatch Action as normal and gain an Overwatch token to be used in a later Reaction Engagement.
 
 #### Reaction Engagement Stun Effects
 
@@ -624,12 +642,14 @@ show what Unit the tokens belong to. When a Unit *spends* a token it is removed 
 A Unit with an Activated Token has activated this Round. The Unit cannot activate, be part of a Taskforce, or
 participate in Reaction Engagements until the next round.
 
-|                       |                                                |
-|-----------------------|:-----------------------------------------------|
-| **Color**             | <span style="color:green">&#9632;</span> Green |
-| **Gained**            | After Unit Activates                           |
-| **Can have multiple** | No                                             |
-| **Removed**           | Round start                                    |
+|                       |                                                                           |
+|-----------------------|:--------------------------------------------------------------------------|
+| **Color**             | <span style="color:green">&#9632;</span> Green                            |
+| **Gained**            | After Unit Activates                                                      |
+| **Can have multiple** | No                                                                        |
+| **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together |
+| **Removed**           | Round start                                                               |
+|
 
 ### Countermeasure Token
 
@@ -641,6 +661,7 @@ a [Countermeasure Check](#countermeasure-check).
 | **Color**             | <span class="token-shadow" style="color:white">&#9632;</span> White            |
 | **Gained**            | When Unit is first [Revealed](#revealing) and when it is [Refreshed](#refresh) |
 | **Can have multiple** | Yes                                                                            |
+| **Multi-Base Units**  | Each Infantry Base gains Countermeasure Tokens equal to the Unit's CM stat     |
 | **Removed**           | When spent                                                                     |
 
 ### Hardened Countermeasure Token
@@ -649,12 +670,13 @@ When a Unit is hit by an Attack it may spend a Hardened Countermeasure Token to 
 a [Countermeasure Check](#countermeasure-check).
 Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
 
-|                       |                                                                       |
-|-----------------------|-----------------------------------------------------------------------|
-| **Color**             | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow |
-| **Gained**            | When unit is first Revealed                                           |
-| **Can have multiple** | Yes                                                                   |
-| **Removed**           | When spent                                                            |
+|                       |                                                                                      |
+|-----------------------|--------------------------------------------------------------------------------------|
+| **Color**             | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow                |
+| **Gained**            | When unit is first Revealed                                                          |
+| **Can have multiple** | Yes                                                                                  |
+| **Multi-Base Units**  | Each Infantry Base gains Hardened Countermeasure Tokens equal to the Unit's CM+ stat |
+| **Removed**           | When spent                                                                           |
 
 ### Overwatch Token
 
@@ -666,6 +688,7 @@ A Unit with an Overwatch Token can participate in Reaction Engagements even if i
 | **Color**             | <span style="color:purple">&#9632;</span> Purple                                  |
 | **Gained**            | After performing an [Overwatch Action](#overwatch-action)                         |
 | **Can have multiple** | No                                                                                |
+| **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together         |
 | **Removed**           | Taskforce Designation  or after performing an Activation in a Reaction Engagement |
 
 ### Stun Token
@@ -678,6 +701,7 @@ A Unit with a Stun Token is considered Stunned and may only perform a move or ac
 | **Color**             | <span style="color:orange">&#9632;</span> Orange                                                                                  |
 | **Gained**            | After suffering the STUN effect                                                                                                   |
 | **Can have multiple** | No                                                                                                                                |
+| **Multi-Base Units**  | Each Infantry Base in a Unit is targeted and suffers the STUN effect separately not as a Unit                                     |
 | **Removed**           | After performing an activation that suffered its effect or spending a Command Point to remove it in the [Refresh](#refresh) phase |
 
 ### Stealth Token
@@ -691,6 +715,7 @@ Stealth Token if an enemy Unit is within 2".
 | **Color**             | <span style="color:black">&#9632;</span> Black                                                                                             |
 | **Gained**            | By unit special abilities                                                                                                                  |
 | **Can have multiple** | No                                                                                                                                         |
+| **Multi-Base Units**  | Each Infantry Base in a Unit has its own Stealth Token                                                                                     |
 | **Removed**           | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |
 
 ### Unit Token Quick Reference
@@ -703,5 +728,3 @@ Stealth Token if an enemy Unit is within 2".
 | **[Overwatch](#overwatch-token)**                             | <span style="color:purple">&#9632;</span> Purple                      |
 | **[Stun](#stun-token)**                                       | <span style="color:orange">&#9632;</span> Orange                      |
 | **[Stealth](#stealth-token)**                                 | <span style="color:black">&#9632;</span> Black                        |
-
-
