@@ -649,7 +649,6 @@ participate in Reaction Engagements until the next round.
 | **Can have multiple** | No                                                                        |
 | **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together |
 | **Removed**           | Round start                                                               |
-|
 
 ### Countermeasure Token
 
