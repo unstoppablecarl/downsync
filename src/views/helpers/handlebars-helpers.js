@@ -48,5 +48,5 @@ function eq(a, b, options) {
 
 function svg_icon_path(svgId, context) {
 
-    return context.data.root.svgIconsPath + '#' + svgId
+    return context.data.root.SVG_SPRITE_PATH + '#' + svgId
 }

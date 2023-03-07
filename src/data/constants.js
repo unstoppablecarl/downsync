@@ -1,3 +1,4 @@
+
 export const SIZE_SMALL = 'Small'
 export const SIZE_MEDIUM = 'Medium'
 export const SIZE_LARGE = 'Large'
@@ -20,6 +21,21 @@ export const NOMAD_FACTION_NAME = 'Nomad'
 export const COALITION_FACTION_SLUG = 'coalition'
 export const REPUBLIC_FACTION_SLUG = 'republic-of-terra'
 export const NOMAD_FACTION_SLUG = 'nomad'
+
+export const FACTIONS = [
+    {
+        faction: COALITION_FACTION_NAME,
+        faction_slug: COALITION_FACTION_SLUG,
+    },
+    {
+        faction: REPUBLIC_FACTION_NAME,
+        faction_slug: REPUBLIC_FACTION_SLUG,
+    },
+    //{
+    //    faction: 'Nomad',
+    //    faction_slug: 'nomad',
+    //},
+]
 
 export const EMPHASIS_KEYWORDS = [
     'SIG',

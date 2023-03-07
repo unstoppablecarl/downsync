@@ -4,19 +4,29 @@
 
         <div class="header">
             <div class="container-ex">
-                <h1 class="primary-heading">Downsync Unit Cards</h1>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="primary-heading">Downsync Unit Cards</h1>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="vue-card-filter" class="float-md-end my-2"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="web-cards primary-content">
             {{#each cardData}}
-                <div class="container">
-                    <h2 class="faction-heading">{{faction}}</h2>
-                </div>
-                <div class="faction-cards">
-                    {{#each factionCards as |singleCardData|}}
-                        {{> (lookup singleCardData 'template') singleCardData}}
-                    {{/each}}
+                <div class="faction-{{faction_slug}}">
+
+                    <div class="container">
+                        <h2 class="faction-heading">{{faction}}</h2>
+                    </div>
+                    <div class="faction-cards">
+                        {{#each factionCards as |singleCardData|}}
+                            {{> (lookup singleCardData 'template') singleCardData}}
+                        {{/each}}
+                    </div>
                 </div>
             {{/each}}
         </div>

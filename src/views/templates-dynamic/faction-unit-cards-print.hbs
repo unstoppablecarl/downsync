@@ -1,4 +1,5 @@
-{{#extend 'layout/html' title='Unit Cards Print' body_class='body-print'}}
+{{#extend 'layout/html' title=pageTitle}}
+
     {{#content 'page-content'}}
 
         {{> unit-cards-print-header}}
@@ -17,6 +18,7 @@
                 {{/each}}
             </div>
         </div>
+
     {{/content}}
 {{/extend}}
 

@@ -1,0 +1,35 @@
+<div class="header">
+    <div class="container-ex">
+        <div class="row">
+            <div class="col-md-9">
+                <h1 class="primary-heading">
+                    Downsync Unit Cards
+                    {{#if faction}}
+                        <h3>{{faction}}</h3>
+                    {{/if}}
+                </h1>
+            </div>
+            <div class="col-md-3">
+                <div class="float-md-end">
+                    <div class="my-1">
+                        {{> btn-print}}
+                    </div>
+
+                    <div class="dropdown my-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Filter by Faction
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/unit-cards-print.html">All</a></li>
+                            {{#each factions}}
+                                <li><a class="dropdown-item" href="/cards-print/{{faction_slug}}.html">{{faction}}</a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,13 +10,15 @@ const dist = './dist'
 const tplDataPath = './src/views/templates-data'
 const fileExists = util.promisify(fs.exists)
 
-export default async function () {
+export default async function (baseRootData = {}) {
 
     let [templates, rootData] = await Promise.all([
         buildTemplates(),
         buildRootData(),
         makeDir(dist),
     ])
+
+    rootData = Object.assign({}, baseRootData, rootData)
 
     await prepareDirs()
 
@@ -57,6 +59,34 @@ function buildPages(templates, rootData) {
                             })
                     }
                 })
+        }),
+    )
+}
+
+async function buildFactionCardPages(rootData) {
+
+    let contents = await fs.promises.readFile('./src/views/templates-dynamic/faction-unit-cards-print.hbs', 'utf-8')
+    let template = Handlebars.compile(contents)
+
+    return Promise.all(
+        FACTION_UNITS.map(({
+                               faction,
+                               faction_slug,
+                               factionCards,
+                           }) => {
+
+            if (faction_slug === COALITION_FACTION_SLUG) {
+                factionCards = prepareSplitCards(factionCards)
+            }
+
+            let dest = `${dist}/cards-print/${faction_slug}.html`
+            let data = Object.assign({}, rootData, {
+                faction,
+                cardPages: cardsToPages(factionCards, 9),
+                pageTitle: `${faction} Unit Cards`,
+            })
+            let contents = template(data)
+            return fs.promises.writeFile(dest, contents, 'utf8')
         }),
     )
 }
@@ -107,6 +137,7 @@ async function buildSingleCardPages(rootData) {
 
 async function prepareDirs() {
     let factionSlugs = getFactionSlugs()
+    await makeDir(dist + '/cards-print')
 
     await makeDir(dist + '/cards')
 
