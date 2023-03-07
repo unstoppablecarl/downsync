@@ -4,7 +4,13 @@ import buildTemplates from './templates.js'
 import util from 'util'
 import { buildRootData } from './views/root-template-data.js'
 import Handlebars from 'handlebars'
-import { ALL_UNITS, FACTION_UNITS } from './views/templates-data/support/page-card-data.js'
+import {
+    ALL_UNITS,
+    cardsToPages,
+    FACTION_UNITS,
+    prepareSplitCards,
+} from './views/templates-data/support/page-card-data.js'
+import { COALITION_FACTION_SLUG } from './data/constants.js'
 
 const dist = './dist'
 const tplDataPath = './src/views/templates-data'
@@ -91,36 +97,10 @@ async function buildFactionCardPages(rootData) {
     )
 }
 
-async function buildFactionCardPages(rootData) {
-
-    let contents = await fs.promises.readFile('./src/views/templates-dynamic/faction-unit-cards.hbs', 'utf-8')
-    let template = Handlebars.compile(contents)
-
-    return Promise.all(
-        FACTION_UNITS.map(({
-                               faction,
-                               slug,
-                               factionCards,
-                           }) => {
-
-            let dest = `${dist}/cards/${slug}.html`
-            let data = Object.assign({}, rootData, {
-                faction,
-                factionCards,
-                pageTitle: `${faction} Unit Cards`,
-            })
-            let contents = template(data)
-            return fs.promises.writeFile(dest, contents, 'utf8')
-        }),
-    )
-}
-
 async function buildSingleCardPages(rootData) {
 
     let contents = await fs.promises.readFile('./src/views/templates-dynamic/unit-card-single.hbs', 'utf-8')
     let template = Handlebars.compile(contents)
-
-    let factionSlugs = getFactionSlugs()
 
     return Promise.all(
         ALL_UNITS.map((unit) => {
