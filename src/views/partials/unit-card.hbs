@@ -60,7 +60,6 @@
                 <tr class="heading-row">
                     <th>Actions</th>
                     <th class="col-cost">Cost</th>
-                    <th class="col-type">Target</th>
                     <th class="col-range">Range</th>
                     <th class="col-rof">ROF</th>
                     <th class="col-effect">Effect</th>
@@ -69,11 +68,11 @@
                 <tbody>
                 {{#each actions}}
                 {{#if no_stats}}
-                <tr class="action-row action-row-no-stats">
-                    <td colspan="6"{{{style_font_size ../body_font_size}}}>
-                        {{> key-value .}}
-                    </td>
-                </tr>
+                    <tr class="action-row action-row-no-stats">
+                        <td colspan="5"{{{style_font_size ../body_font_size}}}>
+                            {{> key-value .}}
+                        </td>
+                    </tr>
                 {{else}}
                 <tr class="action-row"{{{style_font_size ../body_font_size}}}>
                     <td class="col-name"><strong>{{name}}</strong> {{#if note}}
@@ -85,14 +84,13 @@
                     <td class="col-cost">
                         {{> cost-icon cost=cost}}
                     </td>
-                    <td class="col-target">{{target}}</td>
                     <td class="col-range">{{#if range}}{{range}}"{{else}}-{{/if}}</td>
                     <td class="col-rof">{{null_dash rof}}</td>
                     <td class="col-effect">{{{effect}}}</td>
                 </tr>
                 {{#if desc}}
                     <tr class="action-description-row">
-                        <td colspan="6"{{{style_font_size ../body_font_size}}}>
+                        <td colspan="5"{{{style_font_size ../body_font_size}}}>
                             {{{desc}}}
 
                             {{#if or_desc}}
@@ -105,15 +103,15 @@
                     </tr>
                 {{/if}}
                 {{#if traits}}
-                <tr class="action-features-row">
-                    <td colspan="6"{{{style_font_size ../body_font_size}}}>
-                        <div class="features">
-                            {{#each traits as |trait|}}
-                            {{> key-value trait class='feature'}}
-                            {{/each}}
-                        </div>
-                    </td>
-                </tr>
+                    <tr class="action-features-row">
+                        <td colspan="5"{{{style_font_size ../body_font_size}}}>
+                            <div class="features">
+                                {{#each traits as |trait|}}
+                                    {{> key-value trait class='feature'}}
+                                {{/each}}
+                            </div>
+                        </td>
+                    </tr>
                 {{/if}}
                 {{/if}}
                 {{/each}}
