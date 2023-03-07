@@ -131,11 +131,11 @@
             {{> key-value unit_trait}}
 
             {{#if unit_trait.traits}}
-            <div class="features">
-                {{#each unit_trait.traits as |trait|}}
-                {{> key-value trait class='feature'}}
-                {{/each}}
-            </div>
+                <div class="features">
+                    {{#each unit_trait.traits as |trait|}}
+                        {{> key-value trait class='feature'}}
+                    {{/each}}
+                </div>
             {{/if}}
             {{/each}}
         </div>

@@ -142,7 +142,7 @@ export const CLOSE_AND_PERSONAL = make({
 export const HIT_AND_RUN = make({
     name: 'Hit and Run',
     note: `2" place`,
-    desc: `After this Unit resolves a combat action is may be placed within 2".`,
+    desc: `After this Unit resolves a combat action it may be placed within 2".`,
 })
 
 function make(trait) {

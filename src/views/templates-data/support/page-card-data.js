@@ -6,6 +6,7 @@ import {
     SENTINEL_TAGGER,
 } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
+import { NOMAD_UNITS } from '../../../data/cards/nomad-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
 import {
     COALITION_FACTION_NAME,
@@ -15,7 +16,6 @@ import {
     REPUBLIC_FACTION_NAME,
     REPUBLIC_FACTION_SLUG,
 } from '../../../data/constants.js'
-import { NOMAD_UNITS } from '../../../data/cards/nomad-units.js'
 
 const TIMESTAMP = getTimestamp()
 

@@ -31,10 +31,10 @@ export const FACTIONS = [
         faction: REPUBLIC_FACTION_NAME,
         faction_slug: REPUBLIC_FACTION_SLUG,
     },
-    //{
-    //    faction: 'Nomad',
-    //    faction_slug: 'nomad',
-    //},
+    {
+        faction: NOMAD_FACTION_NAME,
+        faction_slug: NOMAD_FACTION_SLUG,
+    },
 ]
 
 export const EMPHASIS_KEYWORDS = [
