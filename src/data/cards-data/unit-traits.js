@@ -1,11 +1,12 @@
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { makeTrait } from '../support/factories.js'
 
+const UPKEEP_COMMAND_POINT_TEXT = 'This Unit gains the Command Point Token spent to indicate this ability is active. It is returned immediately before this Unit is Refreshed or Destroyed.'
+
 export const STEALTHY_INFANTRY = make({
     name: 'Stealthy',
     desc: `Each each Infantry Base in this Unit begins the game with a Stealth Token.`,
 })
-
 
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
@@ -39,7 +40,7 @@ export const DEFENSE_NET = (type) => {
 export const DEFENSE_AURA = make({
     name: 'Defense Aura',
     note: `COST: ${COST_COMMAND}, Refresh phase`,
-    desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls. This unit gains the Command Point Token spent to indicate the Defense Aura. The Command Point is returned when this unit is Refreshed (if choosing to disable the ability) or Destroyed.',
+    desc: 'Friendly Units within 4" gain +1 to Countermeasure rolls. ' + UPKEEP_COMMAND_POINT_TEXT,
 })
 
 export const SHROUD_AURA = make({
@@ -54,13 +55,6 @@ export const ADAPTIVE_CAMO = make({
     desc: 'When concealed this Unit gains an additional +1 DEF.',
 })
 
-export const CM_SHIELD = make({
-    name: 'CM Shield',
-    note: '&times;2, 4"',
-    desc: 'This Unit begins the game with 2 CM Shield Tokens. When this Unit is refreshed it replenishes CM Shield Tokens until it has 2. Friendly Units within 4" may spend CM Shield Tokens on this Unit as if they were Countermeasure Tokens.',
-    desc_keywords_before: ['CM Shield Tokens', 'CM Shield Token'],
-})
-
 export const AMBUSH = make({
     name: 'Ambush',
     desc: `When declaring participating Units of a Reaction Engagement, select a Ping matching this Unit's SIG. This Unit is immediately revealed using the selected Ping and becomes a participating Unit in the Reaction Engagement. If the selected Ping has an Activated Token it is immediately removed.`,
@@ -69,11 +63,6 @@ export const AMBUSH = make({
 export const MECHANIZED_INFANTRY = make({
     name: 'Mechanized',
     desc: 'This Unit may begin the game mounted in a Courier transport. If it does its Ping is not used for the game.',
-})
-
-export const INFANTRY_ALT_WEAPONS = make({
-    name: 'Alternate Weapons',
-    desc: 'This Unit must select which ALT weapon it will use when creating your Force.',
 })
 
 export const PREDATOR = make({
@@ -126,12 +115,6 @@ export const CLOSE_AND_PERSONAL = make({
     name: 'Close and Personal',
     note: '+1 TARG',
     desc: 'This Unit gains an additional +1 TARG against targets within short range.',
-})
-
-export const FIRE_SUPPORT_LINK = make({
-    name: 'Fire Support Link',
-    note: `+1 TARG`,
-    desc: `This Unit gains +1 TARG when resolving attacks that have a Forward Observer.`,
 })
 
 function make(trait) {

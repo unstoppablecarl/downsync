@@ -160,7 +160,7 @@ function make(faction, name, units) {
 function countBySignature(units, signature) {
     return units.reduce((total, item) => {
         let count = 0
-        if (item.unit.signature == signature) {
+        if (item.unit.signature === signature) {
             count = item.count
         }
         return total + count

@@ -1,4 +1,4 @@
-import { keywordFormat, keywordFormatDesc } from './text-formatters.js'
+import { keywordFormat, keywordFormatDesc, keywordFormatOrDesc } from './text-formatters.js'
 import { COST_ACTION, COST_COMMAND } from '../constants.js'
 
 export function makeUnit(unit) {

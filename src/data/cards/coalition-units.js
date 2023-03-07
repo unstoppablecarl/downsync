@@ -231,7 +231,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
         ALL_TERRAIN,
         WIDOW_SCOUT_CARRIED,
     ],
-    definitions: [
+    notes: [
         NOTE_STEALTH_TOKEN,
     ],
 })

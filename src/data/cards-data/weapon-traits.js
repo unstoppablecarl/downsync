@@ -49,12 +49,6 @@ export const TRAIT_ADVANCED = makeCMMod('Advanced', '4+')
 export const TRAIT_SMART = makeCMMod('Smart', '5+')
 export const TRAIT_OVERKILL = makeCMMod('Overkill', '6+')
 
-export const TRAIT_DEPLOY_SPIDER_DRONES = make({
-    name: 'Drone Carrier',
-    note: 'Spider Drone x 2',
-    desc: 'Place 2 Spider Drone Units within 3" of this Unit. The Spider Drones gain a Stealth Token and are not part of the current Taskforce. This action can only be used once per game.',
-})
-
 function makeCMMod(name, TN) {
     return make({
         name,

@@ -76,7 +76,6 @@ export const LMG = make({
     traits: [],
 })
 
-
 export const MG = make({
     name: 'MG',
     note: 'VS Infantry only',
@@ -105,7 +104,6 @@ export const SHOCK_RIFLE = make({
     ],
 })
 
-
 export const ADVANCED_CHARGES = make({
     name: 'Adv. Charges',
     range: 6,
@@ -118,7 +116,7 @@ export const ADVANCED_CHARGES = make({
 export const SMALL_ARMS = make({
     name: 'Rifle',
     range: 12,
-    note: 'teams 1-2, vs inf. only',
+    note: 'vs inf. only',
     rof: 1,
     traits: [],
 })
@@ -233,7 +231,7 @@ export const CLAWS = make({
     ],
 })
 
-export const GUIDED_MISSILE = make({
+export const AT_CHARGES = make({
     name: 'AT Charges',
     note: 'Teams 1-2',
     range: 6,
@@ -281,4 +279,4 @@ export function SNAP_FIRE(weapon, range) {
 function make(weapon) {
 
     return makeWeapon(weapon)
-    }
+}

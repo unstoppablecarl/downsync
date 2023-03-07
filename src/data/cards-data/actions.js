@@ -21,25 +21,6 @@ export const SCAN = (rof, range) => {
     })
 }
 
-export const CM_AURA = make({
-    name: 'CM Aura',
-    cost: COST_ACTION_OR_COMMAND,
-    range: 4,
-    rof: null,
-    target: '-',
-    effect: '&starf;',
-    desc: `Friendly Units within 4" gain +1 to Countermeasure rolls.`,
-    traits: [],
-})
-
-export const SPOTTER = make({
-    name: 'Spotter',
-    cost: COST_COMMAND,
-    target: 'TF Unit',
-    rof: 1,
-    desc: 'Target other Unit in the same Taskforce gains +2 TARG against targets in this Unit\'s LOS.',
-})
-
 export const TRANSPORT_UNLOAD = make({
     name: 'Unload',
     note: 'Free Action, 3"',

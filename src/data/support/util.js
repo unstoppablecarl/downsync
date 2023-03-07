@@ -1,7 +1,9 @@
 export function chunk(array, chunkSize) {
-    var out = []
-    for (var i = 0, j = array.length; i < j; i += chunkSize) {
-        var chunk = array.slice(i, i + chunkSize)
+    const out = []
+    let i = 0
+    const j = array.length
+    for (; i < j; i += chunkSize) {
+        const chunk = array.slice(i, i + chunkSize)
         out.push(chunk)
     }
     return out

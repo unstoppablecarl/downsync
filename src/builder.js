@@ -147,11 +147,3 @@ function getFactionSlugs() {
 
     return Object.keys(factionSlugs)
 }
-
-//
-//function writeRootDataJsonFile(rootData) {
-//    return makeDir('artifacts')
-//        .then(() => {
-//            fs.promises.writeFile()
-//        })
-//}

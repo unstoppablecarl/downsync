@@ -8,9 +8,9 @@ import {
 } from '../constants.js'
 import {
     ADVANCED_CANNON,
+    AT_CHARGES,
     CANNON,
     CONCUSSION_ARTILLERY,
-    GUIDED_MISSILE,
     HEAVY_ARTILLERY,
     MEDIUM_CANNON,
     MG,
@@ -51,8 +51,8 @@ export const VECTOR_SQUAD = make({
     targeting: 6,
     defense: 12,
     actions: [
-        SMALL_ARMS,
-        GUIDED_MISSILE,
+        Object.assign({}, SMALL_ARMS, { note: 'Teams 1-2, vs inf. only' }),
+        AT_CHARGES,
         MICRO_ARTILLERY,
 
     ],
@@ -62,7 +62,7 @@ export const VECTOR_SQUAD = make({
         MECHANIZED_INFANTRY,
         //INFANTRY_ALT_WEAPONS,
     ],
-    definitions: [],
+    notes: [],
 })
 
 export const SEEKER_TEAM = make({
@@ -129,7 +129,7 @@ export const HARBINGER_RECON = make({
         FORWARD_OBSERVE,
     ],
     traits: [],
-    definitions: [],
+    notes: [],
 })
 
 export const CRUSADER_MEDIUM_TANK = make({
@@ -167,7 +167,7 @@ export const MANDIBLE = make({
     traits: [
         //FIRE_SUPPORT_LINK,
     ],
-    definitions: [],
+    notes: [],
 })
 
 export const SAMSON_HEAVY_TANK = make({
@@ -189,7 +189,7 @@ export const SAMSON_HEAVY_TANK = make({
         HARDENED_CM,
         ALL_TERRAIN,
     ],
-    definitions: [],
+    notes: [],
 })
 
 export const GOLIATHS = make({
