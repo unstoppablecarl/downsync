@@ -254,7 +254,6 @@ export const SPIDER_DRONE_SOLDIER = make({
     traits: [
         ALL_TERRAIN,
     ],
-    definitions: [],
 })
 
 export const RNR_INFANTRY = make({
