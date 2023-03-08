@@ -1,11 +1,16 @@
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { makeTrait } from '../support/factories.js'
 
-const UPKEEP_COMMAND_POINT_TEXT = 'This Unit gains the Command Point Token spent to indicate this ability is active. It is returned immediately before this Unit is Refreshed or Destroyed.'
+const UPKEEP_COMMAND_POINT_TEXT = 'This Unit gains the Command Point Token spent to indicate this ability is active. It is returned to its controlling player immediately before this Unit is Refreshed or Destroyed.'
 
 export const STEALTHY_INFANTRY = make({
     name: 'Stealthy',
     desc: `Each each Infantry Base in this Unit begins the game with a Stealth Token.`,
+})
+
+export const MOUNTED_INFANTRY = make({
+    name: 'Mounted Infantry',
+    desc: `Infantry Bases in this Unit may not enter buildings.`,
 })
 
 export const CLEAR_THE_WAY = make({

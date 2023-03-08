@@ -18,7 +18,23 @@ import {
     SEEKER_TEAM,
     VECTOR_SQUAD,
 } from './cards/republic-units.js'
-import { COALITION_FACTION_NAME, REPUBLIC_FACTION_NAME, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from './constants.js'
+import {
+    COALITION_FACTION_NAME,
+    NOMAD_FACTION_NAME,
+    REPUBLIC_FACTION_NAME,
+    SIZE_LARGE,
+    SIZE_MEDIUM,
+    SIZE_SMALL,
+} from './constants.js'
+import {
+    BULLET_SPONGE,
+    INFANTRY_SQUAD,
+    MED_TANK,
+    SCRAMBLER,
+    SPIDER_DRONE_WRANGLER,
+    TANK_HUNTER,
+    TECHNICAL,
+} from './cards/nomad-units.js'
 
 export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'EX1', [
     {
@@ -86,6 +102,37 @@ export const REPUBLIC_FULL_ARMY_LIST = make(REPUBLIC_FACTION_NAME, 'EX1', [
     },
     {
         unit: SAMSON_HEAVY_TANK,
+        count: 1,
+    },
+])
+
+export const NOMAD_FULL_ARMY_LIST = make(NOMAD_FACTION_NAME, 'EX1', [
+    {
+        unit: INFANTRY_SQUAD,
+        count: 2,
+    },
+    {
+        unit: SPIDER_DRONE_WRANGLER,
+        count: 1,
+    },
+    {
+        unit: TECHNICAL,
+        count: 1,
+    },
+    {
+        unit: SCRAMBLER,
+        count: 1,
+    },
+    {
+        unit: MED_TANK,
+        count: 2,
+    },
+    {
+        unit: TANK_HUNTER,
+        count: 1,
+    },
+    {
+        unit: BULLET_SPONGE,
         count: 1,
     },
 ])

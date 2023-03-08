@@ -2,25 +2,23 @@ import {
     CLAWS,
     CYBER_ATTACK,
     DOUBLE_CANNON,
-    GUIDED_MISSILE,
     MEDIUM_CANNON,
     MG,
     RPG,
     SMALL_ARMS,
+    SMART_RPG,
 } from '../cards-data/weapons.js'
 import { NOMAD_FACTION_NAME, NOMAD_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
 
 import {
     ALL_TERRAIN,
     BULLET_SPONGE_AURA,
-    DRONE_CONTROLLER,
     HIT_AND_RUN,
-    PERSONAL_CM,
+    MOUNTED_INFANTRY,
     SMALL_DECOY_PING,
-    STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 
-import { BASIC_SCAN, GO_DARK, SCRAMBLE } from '../cards-data/actions.js'
+import { BASIC_SCAN, SCRAMBLE } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 import { NOTE_COMPROMISE_COUNTERS } from '../definitions.js'
 
@@ -41,8 +39,8 @@ export const INFANTRY_SQUAD = make({
     targeting: 5,
     defense: 13,
     actions: [
-        Object.assign({}, SMALL_ARMS, { note: 'Teams 1-2, vs inf. only' }),
-        Object.assign({}, RPG, { note: 'Team 3, vs veh. only' }),
+        SMALL_ARMS,
+        RPG,
     ],
     traits: [
         ALL_TERRAIN,
@@ -51,23 +49,22 @@ export const INFANTRY_SQUAD = make({
 })
 
 export const SPIDER_DRONE_WRANGLER = make({
-    slug: 'spider-drone-wrangler',
+    slug: 'drone-wrangler',
     img: null,
-    name: 'Spider Drone Wrangler',
-    signature: SIZE_SMALL,
+    name: 'Drone Wrangler',
+    signature: SIZE_MEDIUM,
     type: 'Human & Robotic Infantry Squad',
     squad_size: 3,
     speed: 5,
     targeting: 6,
     defense: 13,
+    cm: 1,
     actions: [
         Object.assign({}, CLAWS, { note: 'Teams 2-3' }),
-        Object.assign({}, RPG, { note: 'Teams 2-3, vs veh. only' }),
+        Object.assign({}, RPG, { note: 'Teams 2-3' }),
     ],
     traits: [
         ALL_TERRAIN,
-        DRONE_CONTROLLER,
-        PERSONAL_CM,
     ],
     notes: [],
 })
@@ -102,7 +99,7 @@ export const SCRAMBLER = make({
     img: null,
     signature: SIZE_SMALL,
     type: 'Light Support Vehicle',
-    speed: 7,
+    speed: 8,
     targeting: 6,
     defense: 14,
     scan: null,
@@ -124,7 +121,7 @@ export const MED_TANK = make({
     img: null,
     signature: SIZE_MEDIUM,
     type: 'Medium Vehicle',
-    speed: 4,
+    speed: 7,
     targeting: 6,
     defense: 13,
     cm: 2,
@@ -133,6 +130,7 @@ export const MED_TANK = make({
     ],
     traits: [
         HIT_AND_RUN,
+        ALL_TERRAIN,
     ],
 })
 
@@ -140,20 +138,20 @@ export const TANK_HUNTERS = make({
     slug: 'tank-hunters',
     name: 'Tank Hunters',
     img: null,
-    signature: SIZE_MEDIUM,
-    type: 'Human Infantry Squad',
-    squad_size: 2,
-    speed: 4,
+    signature: SIZE_LARGE,
+    type: 'Mounted Infantry Squad',
+    squad_size: 3,
+    speed: 8,
     targeting: 6,
     defense: 13,
-    cm: null,
+    cm: 2,
     actions: [
-        GUIDED_MISSILE,
-        GO_DARK,
+        SMART_RPG,
     ],
     traits: [
         ALL_TERRAIN,
-        STEALTHY_INFANTRY,
+        //STEALTHY_INFANTRY,
+        MOUNTED_INFANTRY,
     ],
 })
 
@@ -177,9 +175,9 @@ export const BULLET_SPONGE = make({
 
 export const NOMAD_UNITS = [
     INFANTRY_SQUAD,
-    SPIDER_DRONE_WRANGLER,
     TECHNICAL,
     SCRAMBLER,
+    SPIDER_DRONE_WRANGLER,
     MED_TANK,
     TANK_HUNTERS,
     BULLET_SPONGE,

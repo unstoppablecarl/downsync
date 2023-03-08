@@ -273,9 +273,9 @@ export const SHOCK_SNIPER_RIFLE = make({
     ],
 })
 
-export const GUIDED_MISSILE = make({
-    name: 'Guided Missile',
-    range: 16,
+export const SMART_RPG = make({
+    name: 'Smart RPG',
+    range: 10,
     rof: 1,
     effect: 'KILL',
     traits: [
