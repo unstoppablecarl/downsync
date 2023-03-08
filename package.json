@@ -54,6 +54,8 @@
         "handlebars": "^4.7.7",
         "handlebars-layouts": "^3.1.4",
         "http-server": "^14.1.1",
+        "lodash.countby": "^4.6.0",
+        "lodash.sortby": "^4.7.0",
         "markdown-it": "^13.0.1",
         "markdown-it-anchor": "^8.6.5",
         "markdown-it-github-headings": "^2.0.1",
