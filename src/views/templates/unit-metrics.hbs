@@ -10,51 +10,52 @@
 
         <div class="primary-content">
 
-        {{#each cardListData}}
-            <div class="container">
-                <h2>{{faction}}</h2>
+            {{#each cardListData}}
+                <div class="container">
+                    <h2>{{faction}}</h2>
 
-                <div class="clearfix">
-                    <table class="table table-bordered table-width-auto float-start me-2">
-                        <thead>
-                        <tr>
-                            <th colspan="2">Unit List</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{#each factionCards}}
+                    <div class="clearfix">
+                        <table class="table table-bordered table-width-auto float-start me-2">
+                            <thead>
                             <tr>
-                                <th>{{name}}{{#if variant_name}}:{{/if}} {{variant_name}}</th>
-                                <td>{{signature}}</td>
+                                <th colspan="2">Unit List</th>
                             </tr>
-                        {{/each}}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {{#each factionCards}}
+                                <tr>
+                                    <th>{{name}}{{#if variant_name}}:{{/if}} {{variant_name}}</th>
+                                    <td>{{signature}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
 
-                    <table class="table table-bordered table-width-auto float-start">
-                        <thead>
-                        <tr>
-                            <th colspan="2">Size Counts</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th>Small</th>
-                            <td>{{counts.Small}}</td>
-                        </tr>
-                        <tr>
-                            <th>Medium</th>
-                            <td>{{counts.Medium}}</td>
-                        </tr>
-                        <tr>
-                            <th>Large</th>
-                            <td>{{counts.Large}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        <table class="table table-bordered table-width-auto float-start">
+                            <thead>
+                            <tr>
+                                <th colspan="2">Size Counts</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>Small</th>
+                                <td>{{counts.Small}}</td>
+                            </tr>
+                            <tr>
+                                <th>Medium</th>
+                                <td>{{counts.Medium}}</td>
+                            </tr>
+                            <tr>
+                                <th>Large</th>
+                                <td>{{counts.Large}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-        {{/each}}
+            {{/each}}
 
         </div>
     {{/content}}
