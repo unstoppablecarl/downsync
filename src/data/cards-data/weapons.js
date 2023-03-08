@@ -44,7 +44,6 @@ export const DEPLOY_DRONES = make({
     name: 'Deploy Drones',
     cost: COST_COMMAND,
     effect: '&starf;',
-    target: 'Self',
     desc: 'Place the Infantry Bases of a Spider Drone: Infiltrator Unit within 3" of this Unit. They are not part of the current Taskforce. This Unit may use this Action once per game.',
 })
 

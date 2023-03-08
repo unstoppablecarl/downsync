@@ -52,7 +52,6 @@ export const ADVISOR_ARTILLERY_STRIKE = makeWeapon({
     name: 'Artillery Strike',
     cost: COST_COMMAND,
     stat: 'SCAN',
-    target: 'Unit',
     rof: 2,
     effect: 'STUN',
     traits: [
@@ -67,7 +66,6 @@ export const ADVISOR_NAV_HACK = makeWeapon({
     name: 'Nav Hack',
     cost: COST_COMMAND,
     stat: 'SCAN',
-    target: 'Unit',
     range: 16,
     rof: 1,
     effect: '&starf;',

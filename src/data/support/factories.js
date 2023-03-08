@@ -98,7 +98,6 @@ export function makeTrait(trait) {
 export function makeAction(action) {
 
     let defaults = {
-        target: null,
         cost: COST_ACTION,
         effect: null,
         traits: [],
@@ -121,7 +120,6 @@ export function makeAction(action) {
 export function makeWeapon(weapon) {
 
     let defaults = {
-        target: 'Unit',
         cost: COST_ACTION,
         effect: 'kill',
         traits: [],

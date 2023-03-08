@@ -719,11 +719,11 @@ Stealth Token if an enemy Unit is within 2".
 
 ### Unit Token Quick Reference
 
-| Token                                                         | Color                                                                 |
-|---------------------------------------------------------------|-----------------------------------------------------------------------|
-| **[Activated](#activated-token)**                             | <span style="color:green">&#9632;</span> Green                        |
-| **[Countermeasure](#countermeasure-token)**                   | <span class="token-shadow" style="color:white">&#9632;</span> White   |
-| **[Hardened Countermeasure](#hardened-countermeasure-token)** | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow |
-| **[Overwatch](#overwatch-token)**                             | <span style="color:purple">&#9632;</span> Purple                      |
-| **[Stun](#stun-token)**                                       | <span style="color:orange">&#9632;</span> Orange                      |
-| **[Stealth](#stealth-token)**                                 | <span style="color:black">&#9632;</span> Black                        |
+| Token                                                         | Color                                                                     |
+|---------------------------------------------------------------|---------------------------------------------------------------------------|
+| **[Activated](#activated-token)**                             | <span class="token" style="background:green"></span> Green                |
+| **[Countermeasure](#countermeasure-token)**                   | <span class="token token-shadow" style="background:white"></span> White   |
+| **[Hardened Countermeasure](#hardened-countermeasure-token)** | <span class="token token-shadow" style="background:yellow"></span> Yellow |
+| **[Overwatch](#overwatch-token)**                             | <span class="token" style="background:purple"></span> Purple              |
+| **[Stun](#stun-token)**                                       | <span class="token" style="background:orange"></span> Orange              |
+| **[Stealth](#stealth-token)**                                 | <span class="token" style="background:black"></span> Black                |

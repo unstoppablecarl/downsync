@@ -85,7 +85,7 @@ export const PREDATOR = make({
 
 export const SENTRY = make({
     name: 'Sentry',
-    desc: 'This Unit gains +1 to reaction rolls.',
+    desc: 'This Unit gains +1 to reaction priority rolls.',
 })
 
 export const ALL_TERRAIN = make({

@@ -5,7 +5,6 @@ import { makeAction } from '../support/factories.js'
 export const FORWARD_OBSERVE = make({
     name: 'Forward Observe',
     cost: COST_ACTION_OR_COMMAND,
-    target: 'Unit',
     effect: '&starf;',
     desc: 'A Unit in the same Taskforce immediately resolves its activation with an action that has the Fire Support trait using this Unit\'s LOS. This action can be used once per activation.',
 })
@@ -13,7 +12,6 @@ export const FORWARD_OBSERVE = make({
 export const SCAN = (rof, range) => {
     return make({
         name: 'Scan',
-        target: 'Ping',
         range: range,
         rof: rof,
         effect: 'scan',
@@ -47,7 +45,6 @@ export const TRANSPORT_LOAD = make({
 export const GO_DARK = make({
     name: 'Go Dark',
     cost: COST_COMMAND,
-    target: 'Self',
     effect: '&starf;',
     desc: 'Each Infantry Base in this Unit gains a Stealth Token.',
 })
