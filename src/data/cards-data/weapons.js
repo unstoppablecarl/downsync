@@ -114,7 +114,7 @@ export const ADVANCED_CHARGES = make({
 export const SMALL_ARMS = make({
     name: 'Rifle',
     range: 12,
-    note: 'vs inf. only',
+    note: 'VS Infantry only',
     rof: 1,
     traits: [],
 })

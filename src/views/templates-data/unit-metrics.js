@@ -1,7 +1,7 @@
 import { FACTION_UNITS } from './support/page-card-data.js'
 import { SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../../data/constants.js'
-import sortBy from 'lodash.sortBy'
-import countBy from 'lodash.countBy'
+import sortBy from 'lodash.sortby'
+import countBy from 'lodash.countby'
 
 const sizeOrder = [
     SIZE_SMALL,

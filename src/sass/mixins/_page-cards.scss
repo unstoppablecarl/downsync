@@ -164,11 +164,6 @@ $outline-grey: #b3b3b3;
                 }
             }
 
-            .title-note {
-                font-size: 11pt * $scale;
-                font-weight: normal;
-            }
-
             .sub-title {
 
                 $font-size: 6pt * $scale;
@@ -266,7 +261,6 @@ $outline-grey: #b3b3b3;
 
         .action-row {
             .col-stat,
-            .col-target,
             .col-rof,
             .col-range,
             .col-effect {
@@ -288,7 +282,6 @@ $outline-grey: #b3b3b3;
 
                 &.col-name,
                 &.col-stat,
-                &.col-target,
                 &.col-rof,
                 &.col-range,
                 &.col-effect {

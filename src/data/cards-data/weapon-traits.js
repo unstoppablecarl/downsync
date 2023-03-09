@@ -30,14 +30,6 @@ export const TRAIT_TAGGED_EFFECT = make({
     desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit can only be Tagged once.',
 })
 
-export const TRAIT_LIMITED_VS = (types) => {
-    return make({
-        name: 'Limited',
-        note: '-2 TARG',
-        desc: `vs ${joinTypes(types)}.`,
-    })
-}
-
 export const TRAIT_SPECIALIZED_VS = (types) => {
     return make({
         name: 'Specialized',
