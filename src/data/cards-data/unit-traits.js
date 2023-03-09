@@ -106,11 +106,6 @@ export const HARDENED_CM = make({
     desc: `This Unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
 })
 
-export const PATROL = make({
-    name: 'Patrol',
-    desc: 'This Unit gains an Overwatch Token after resolving a second move as its action.',
-})
-
 export const CLOSE_AND_PERSONAL = make({
     name: 'Close and Personal',
     note: '+1 TARG',

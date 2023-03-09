@@ -14,17 +14,6 @@ export const TRAIT_CLUSTERED = (radius) => {
     })
 }
 
-export const TRAIT_GRANTED_SCAN_STAT = make({
-    name: 'Granted',
-    note: 'SCAN',
-    desc: `Units with a SCAN stat may use this action.`,
-})
-
-export const TRAIT_DISTRIBUTED = make({
-    name: 'Split',
-    desc: 'Each attack from this action must have a different target.',
-})
-
 export const TRAIT_TAGGED_EFFECT = make({
     name: 'Tagged',
     desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit can only be Tagged once.',
@@ -68,14 +57,6 @@ export const TRAIT_DOUBLE_TAP = make({
     name: 'Double Tap',
     desc: `This weapon's effect is KILL for Stunned targets.`,
 })
-
-export const PLACE_EFFECT = (distance) => {
-    return make({
-        name: 'Place Effect',
-        note: `Place ${distance}"`,
-        desc: `Target Unit is placed by attacker completely within ${distance}" of its current location.`,
-    })
-}
 
 export const DEADLY_VS = (type) => {
     return make({

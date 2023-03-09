@@ -1,12 +1,17 @@
-import { makeCommandAbility, makeWeapon } from '../support/factories.js'
+import { makeCommandAbility, makeTrait, makeWeapon } from '../support/factories.js'
 import { COST_COMMAND } from '../constants.js'
-import {
-    EXTREME_RANGE,
-    PLACE_EFFECT,
-    TRAIT_CLUSTERED,
-    TRAIT_DISTRIBUTED,
-    TRAIT_GRANTED_SCAN_STAT,
-} from './weapon-traits.js'
+import { EXTREME_RANGE, TRAIT_CLUSTERED } from './weapon-traits.js'
+
+export const TRAIT_DISTRIBUTED = makeTrait({
+    name: 'Split',
+    desc: 'Each attack from this action must have a different target.',
+})
+
+export const TRAIT_GRANTED_SCAN_STAT = makeTrait({
+    name: 'Granted',
+    note: 'SCAN',
+    desc: `Units with a SCAN stat may use this action.`,
+})
 
 export const REPOSITION_INFANTRY = makeCommandAbility({
     name: 'Reposition Infantry',
@@ -74,3 +79,12 @@ export const ADVISOR_NAV_HACK = makeWeapon({
         PLACE_EFFECT(3),
     ],
 })
+
+function PLACE_EFFECT(distance) {
+    return makeTrait({
+        name: 'Place Effect',
+        note: `Place ${distance}"`,
+        desc: `Target Unit is placed by attacker completely within ${distance}" of its current location.`,
+    })
+}
+
