@@ -98,16 +98,6 @@ export const ALL_TERRAIN = make({
     desc: 'This Unit ignores terrain movement penalties.',
 })
 
-export const DRONE_CONTROLLER = make({
-    name: 'Drone Controller',
-    desc: 'If Team 1 is destroyed remove this Unit from the game.',
-})
-
-export const PERSONAL_CM = make({
-    name: 'Personal CM',
-    desc: 'Team 1 has and regenerates 1 CM.',
-})
-
 export const WIDOW_SCOUT_CARRIED = make({
     name: 'Packaged',
     note: 'Widow Scout',
@@ -131,11 +121,6 @@ export const HARDENED_CM = make({
     name: 'Hardened CM',
     note: '+1',
     desc: `This Unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
-})
-
-export const PATROL = make({
-    name: 'Patrol',
-    desc: 'This Unit gains an Overwatch Token after resolving a second move as its action.',
 })
 
 export const CLOSE_AND_PERSONAL = make({
