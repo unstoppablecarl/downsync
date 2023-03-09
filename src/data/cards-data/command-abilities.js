@@ -1,6 +1,11 @@
 import { makeCommandAbility, makeTrait, makeWeapon } from '../support/factories.js'
 import { COST_COMMAND } from '../constants.js'
-import { EXTREME_RANGE, TRAIT_CLUSTERED } from './weapon-traits.js'
+import { TRAIT_CLUSTERED } from './weapon-traits.js'
+
+export const OFF_BOARD_ASSET = makeTrait({
+    name: 'Off Board Asset',
+    desc: 'Ignores short/long range modifiers.',
+})
 
 export const TRAIT_DISTRIBUTED = makeTrait({
     name: 'Split',
@@ -15,11 +20,11 @@ export const TRAIT_GRANTED_SCAN_STAT = makeTrait({
 
 export const REPOSITION_INFANTRY = makeCommandAbility({
     name: 'Reposition Infantry',
-    desc: 'Place up to 4 infantry Taskforce units within 3" of their current position (Placements cannot be reacted to).',
+    desc: 'Select a friendly Infantry Unit. Place its Infantry Bases within 3" of their current position.',
     traits: [
         {
             name: 'Phase',
-            desc: 'Before movement phase or immediately after a disembark action.',
+            desc: 'Before movement phase or immediately after a Disembark action.',
         },
     ],
 })
@@ -63,7 +68,7 @@ export const ADVISOR_ARTILLERY_STRIKE = makeWeapon({
         TRAIT_GRANTED_SCAN_STAT,
         TRAIT_CLUSTERED(3),
         TRAIT_DISTRIBUTED,
-        EXTREME_RANGE,
+        OFF_BOARD_ASSET,
     ],
 })
 

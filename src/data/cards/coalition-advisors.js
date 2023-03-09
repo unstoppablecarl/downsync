@@ -6,7 +6,7 @@ export const WOLF_AI_ADVISOR = make({
     name: 'Wolf AI',
     slug: 'wolf_ai',
     type: 'Machine Intelligence Advisor',
-    command_points: 8,
+    command_points: 7,
     command_abilities: [
         ENHANCED_SCAN,
     ],

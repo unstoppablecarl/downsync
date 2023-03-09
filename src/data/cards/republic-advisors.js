@@ -6,7 +6,7 @@ export const SOFIA_AVERY = make({
     name: 'Sofia Avery',
     slug: 'sofia_avery',
     type: 'Human Military Advisor',
-    command_points: 8,
+    command_points: 7,
 
     command_abilities: [
         REPOSITION_INFANTRY,
