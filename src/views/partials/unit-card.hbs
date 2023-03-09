@@ -1,7 +1,7 @@
 <div class="card card-unit" id="{{slug}}">
     <div class="card-content-container">
         <div class="heading">
-            <img src="/assets/img/{{icon}}" class="icon">
+            <img src="/assets/img/{{icon}}" class="icon" alt="{{faction}} icon"/>
 
             <div class="title">
                 <div class="primary-title"{{{style_font_size name_font_size}}}>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             {{#if img}}
-                <img src="/assets/img/units/{{img}}" class="card-portrait"/>
+                <img src="/assets/img/units/{{img}}" class="card-portrait" alt="{{name}} {{variant_name}} portrait"/>
             {{/if}}
         </div>
 

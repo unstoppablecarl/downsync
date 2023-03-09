@@ -114,7 +114,7 @@ export const ADVANCED_CHARGES = make({
 export const SMALL_ARMS = make({
     name: 'Rifle',
     range: 12,
-    note: 'vs inf. only',
+    note: 'VS Infantry only',
     rof: 1,
     traits: [],
 })
@@ -262,18 +262,6 @@ export const SHOCK_SNIPER_RIFLE = make({
         TRAIT_DOUBLE_TAP,
     ],
 })
-
-export function SNAP_FIRE(weapon, range) {
-
-    let newWeapon = Object.assign({}, weapon, {
-        name: 'Snap Fire',
-        cost: COST_COMMAND,
-        rof: 1,
-        range,
-    })
-
-    return make(newWeapon)
-}
 
 function make(weapon) {
 
