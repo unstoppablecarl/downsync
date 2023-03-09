@@ -1,12 +1,10 @@
 <div class="card card-advisor" id="{{slug}}">
     <div class="card-content-container">
-        <div class="heading content-padding">
-            <img src="{{icon}}" class="icon" alt="{{faction}} icon">
-            {{#if img}}
-                <img src="assets/bgs/{{img}}" class="card-portrait" alt="{{name}} {{variant_name}} icon"/>
-            {{/if}}
+        <div class="heading">
+            <img src="/assets/img/{{icon}}" class="icon" alt="{{faction}} icon"/>
+
             <div class="title">
-                <div class="primary-title">
+                <div class="primary-title"{{{style_font_size name_font_size}}}>
                     {{name}}{{#if variant_name}}:
                     <span class="variant-title">
                         {{variant_name}}
@@ -22,16 +20,19 @@
                     {{faction}}
                 </div>
             </div>
+            {{#if img}}
+                <img src="/assets/img/advisors/{{img}}" class="card-portrait" alt="{{name}} {{variant_name}} icon"/>
+            {{/if}}
         </div>
 
         {{#if command_abilities.length}}
-        <h3 class="section-heading">
-            Command Abilities
-            <span class="command-points">
+            <h3 class="section-heading">
+                Command Abilities
+                <span class="command-points">
                 Command: <span class="command-points-value">{{command_points}}</span>
             </span>
-        </h3>
-        <div class="command-abilities content-padding"{{{style_font_size body_font_size}}}>
+            </h3>
+            <div class="command-abilities content-padding"{{{style_font_size body_font_size}}}>
             {{#each command_abilities as |command_ability|}}
 
             <div class="key-value"{{{style_font_size font_size}}}>
@@ -149,7 +150,7 @@
 
 
         <div class="version-footer">
-            V{{cardsVersion}}
+            {{cardsVersion}}
         </div>
         <div class="sub-footer">
             GENERATED: {{timestamp}}
