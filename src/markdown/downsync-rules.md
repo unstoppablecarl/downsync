@@ -202,6 +202,9 @@ Units/Pings.
 
 Pings have a **SPD** of 4.
 
+*In the **Unit Activation** phase Units/Pings may perform a [Move Action](#move-action) to move up to their **SPD** a
+second time. This means that it is possible for Units/Pings to move up to 2 x their **SPD** per Round.*
+
 #### Optionally Initiate a Reaction Engagement
 
 The opposing player may initiate a Reaction Engagement. See: [Reaction Engagement](#reaction-engagements).
@@ -234,9 +237,9 @@ To determine if a target is concealed by intervening terrain, the acting unit's 
 the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
 that point to any point on the volume of the target that crosses intervening terrain.
 
-### Terrain
+## Terrain
 
-#### Area Terrain
+### Area Terrain
 
 | Type         | Movement | Concealment |
 |--------------|----------|-------------|
@@ -244,12 +247,12 @@ that point to any point on the volume of the target that crosses intervening ter
 | Urban        |          | Yes         |
 | Rough Ground | -2"      |             |
 
-#### Concealing Area Terrain And LOS
+### Concealing Area Terrain And LOS
 
 For LOS purposes, Units can see through all concealing area terrain within 6" and can see through up to 2" of concealing
 area terrain to targets greater than 6" away.
 
-#### Buildings
+### Buildings
 
 When measuring the distance from or to a Unit in a building the height of the building is ignored
 
@@ -259,18 +262,18 @@ Moving into or out of a building has no movement penalty.
 *Players should agree what terrain pieces are considered buildings and how many 40mm infantry bases can fit on each
 building before the game starts.*
 
-##### Building Abstraction
+#### Building Abstraction
 
 For purposes of moving Units and measuring distances, a building is considered a flat 2d object with no height.
 When moving into or through a building the Unit is placed on the roof directly above where it would be on the ground.
 
-##### Building LOS
+#### Building LOS
 
 When drawing LOS to and from a Unit in a building, the entire building is considered the volume of that Unit. Where the
 Unit is in the building does not matter for LOS, but the position of the Unit is still used for measuring movement.
 Building height only affects LOS.
 
-##### Building Size
+#### Building Size
 
 Buildings should have a footprint of around 3.5x5 inches at most with a height around 1-6 inches.
 A building this size would allow 6 infantry bases to fit on the roof comfortably.
@@ -294,20 +297,35 @@ more infantry models on it.
 | DEF, Defense        | Target Number to hit when rolling an attack                                 | 12-14         |
 | CM, Countermeasures | Number of [Countermeasure Tokens](#countermeasure-token) this Unit can have | 0-3           |
 
-### Multi-base Units
+### Multi-Base Units
 
-Some units have multiple Infantry Bases instead of a vehicle model. How many infantry bases a
-multi-base Unit has is indicated on its Unit Card by a number in a circle at the top of the card next to the Unit
-description.
+Some units have multiple Infantry Bases instead of a vehicle model. How many Infantry Bases a multi-base Unit has is
+indicated on its Unit Card by a number in a circle at the top of the card next to the Unit description. Multi-Base Units
+have 2-4 Infantry Bases.
 
-When a multi-base Unit activates each infantry base gains 1 Action Point and activates one at a time in an order
-determined by its Controlling Player. Infantry base Activations of the same Unit can not be split up and must be
+See: [Revealing Infantry Units](#revealing-infantry-units)
+
+#### Multi-Base Unit Countermeasures
+
+Each Infantry Base in a Multi-Base Unit begins the game with a number of Countermeasure Tokens equal to the Unit's
+**CM** stat and regenerate Countermeasures the same as other Units.
+
+#### Multi-Base Unit Coherency
+
+Multi-Base Units must end their movement such that all Infantry Bases in the Unit are within 12" of every other Infantry
+Base in the Unit. In other words all infantry bases in a Unit must fit within a 12" diameter circle.
+
+#### Multi-Base Unit Activation
+
+When a Multi-Base Unit activates each Infantry Base gains 1 Action Point and activates one at a time in an order
+determined by its Controlling Player. Infantry Base Activations of the same Unit can not be split up and must be
 completed before activating another Unit.
 
-Multi-base Units must end their movement such that all infantry bases in the Unit are within 12" of every other infantry
-base in the Unit. In other words all infantry bases in a Unit must fit within a 12" diameter circle.
+#### Multi-Base Unit Actions
 
-See: [Revealing Multi-Base Units](#revealing-multi-base-units)
+Some Multi-Base Units have actions that only specific Teams (single Infantry Base in the Unit) can perform. For example
+a unit may have an action with a description that says "(Team 1)". Only that team may perform this action. Actions that
+do not specify a team can be performed by all Infantry Bases in a unit.
 
 #### Multi-Base Unit Tokens
 
@@ -359,9 +377,9 @@ When Revealed the Unit's model is placed on the Ping (circular base). The circul
 Revealed Unit
 instead of a Ping. What was the Ping becomes the Unit's base.
 
-#### Revealing Multi-Base Units
+#### Revealing Infantry Units
 
-When Revealed, Multi-Base Units place each infantry base within 3" of the Ping (including the space occupied by the
+When Revealed, Infantry Units place each Infantry Base within 3" of the Ping (including the space occupied by the
 Ping) and the Ping is removed.
 
 See: [Multi-Base Units](#multi-base-units)
