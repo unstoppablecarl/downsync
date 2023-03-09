@@ -32,7 +32,7 @@ import {
     MED_TANK,
     SCRAMBLER,
     SPIDER_DRONE_WRANGLER,
-    TANK_HUNTER,
+    TANK_HUNTERS,
     TECHNICAL,
 } from './cards/nomad-units.js'
 
@@ -128,7 +128,7 @@ export const NOMAD_FULL_ARMY_LIST = make(NOMAD_FACTION_NAME, 'EX1', [
         count: 2,
     },
     {
-        unit: TANK_HUNTER,
+        unit: TANK_HUNTERS,
         count: 1,
     },
     {

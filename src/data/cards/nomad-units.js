@@ -56,10 +56,11 @@ export const SPIDER_DRONE_WRANGLER = make({
     type: 'Human & Robotic Infantry Squad',
     squad_size: 3,
     speed: 5,
-    targeting: 6,
+    targeting: 7,
     defense: 13,
     cm: 1,
     actions: [
+        Object.assign({}, SMALL_ARMS, { note: 'Team 1, ' + SMALL_ARMS.note }),
         Object.assign({}, CLAWS, { note: 'Teams 2-3' }),
         Object.assign({}, RPG, { note: 'Teams 2-3' }),
     ],
