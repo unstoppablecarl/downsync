@@ -93,8 +93,10 @@
         width: auto;
     }
 
+    .img-bordered {
+        border: 1px solid #7d8ba2;
+    }
 }
-
 
 $linkColor: darken($link-color, 20%);
 $linkColor2: darken($link-color, 10%);
