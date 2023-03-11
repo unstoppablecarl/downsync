@@ -230,12 +230,20 @@ Unit/Ping's volume. Friendly and enemy Units/Pings do not block LOS.
 
 ### Concealment
 
+<div class="row">
+<div class="col-md-6">
+
 A Unit/Ping is concealed if any part of its base overlaps with concealing area terrain, or it is partially
 blocked by intervening concealing or LOS blocking terrain.
 
 To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
 the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
 that point to any point on the volume of the target that crosses intervening terrain.
+</div>
+<div class="col-md-6">
+<img src="/assets/img/rules-diagrams/LOS-diagram.svg" class="img-fluid img-bordered" alt="LOS Diagram">
+</div>
+</div>
 
 ## Terrain
 
@@ -249,8 +257,16 @@ that point to any point on the volume of the target that crosses intervening ter
 
 ### Concealing Area Terrain And LOS
 
+<div class="row">
+<div class="col-md-6">
 For LOS purposes, Units can see through all concealing area terrain within 6" and can see through up to 2" of concealing
 area terrain to targets greater than 6" away.
+
+</div>
+<div class="col-md-6">
+<img src="/assets/img/rules-diagrams/LOS-diagram-area-terrain.svg" class="img-fluid img-bordered" alt="Area Terrain LOS Diagram">
+</div>
+</div>
 
 ### Buildings
 
