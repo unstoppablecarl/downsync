@@ -86,6 +86,7 @@ async function buildFactionCardHtmlAndPdfPages(rootData) {
             let dest = `${dist}/cards-print/${faction_slug}.html`
             let data = Object.assign({}, rootData, {
                 faction,
+                faction_slug,
                 cardPages,
                 pageTitle,
             })
