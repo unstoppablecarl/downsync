@@ -94,23 +94,22 @@ let parallel = gulp.parallel(
     'favicons',
 )
 
-let parallelDefault = gulp.parallel([].concat(parallel, ['copy-pdf-local-fonts']))
-
 gulp.task('default',
     gulp.series(
         'clean',
-        parallelDefault,
+        parallel,
         'pdfs',
         'server',
     ),
 )
 
+let parallelBuild = gulp.parallel([].concat(parallel, ['copy-pdfs']))
+
 gulp.task(
     'build',
     gulp.series(
         'clean',
-        parallel,
-        'copy-pdfs',
+        parallelBuild,
         'say:build',
     ),
 )

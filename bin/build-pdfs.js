@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer'
 import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
+import { FACTIONS } from '../src/data/constants.js'
 
 const htmlToPdfDir = './dist/html-to-pdf'
 const pdfGeneratedDir = './static-assets/pdfs'
@@ -23,10 +24,15 @@ server.listen(8080, async () => {
 
     const domain = 'http://localhost:8080'
 
-    const files = await fs.promises.readdir(htmlToPdfDir)
+    const urls = [
+        domain + '/unit-cards-print.html',
+        domain + '/unit-cards-starter-print.html',
+        domain + '/unit-cards-starter-print-landscape.html',
+        domain + '/quick-reference.html',
+    ]
 
-    const urls = files.map((file) => {
-        return domain + '/html-to-pdf/' + file
+    FACTIONS.forEach(({ faction_slug }) => {
+        urls.push(domain + '/cards-print/' + faction_slug + '.html')
     })
 
     const browser = await puppeteer.launch({

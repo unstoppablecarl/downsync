@@ -30,9 +30,8 @@ export default async function (baseRootData = {}) {
 
     return Promise.all([
         buildPages(templates, rootData),
-        buildPdfPages(templates, rootData),
         buildSingleCardPages(rootData),
-        buildFactionCardHtmlAndPdfPages(rootData),
+        buildFactionCardPages(rootData),
     ])
 }
 
@@ -44,27 +43,7 @@ function buildPages(templates, rootData) {
     )
 }
 
-function buildPdfPages(templates, rootData) {
-
-    let keys = [
-        'unit-cards-print',
-        'unit-cards-starter-print',
-        'unit-cards-starter-print-landscape',
-        'quick-reference',
-    ]
-
-    rootData = Object.assign({}, rootData, {
-        pdf_local_fonts: true,
-    })
-
-    return Promise.all(
-        keys.map((key) => {
-            return renderTemplate(templates, key, rootData, 'html-to-pdf/' + key)
-        }),
-    )
-}
-
-async function buildFactionCardHtmlAndPdfPages(rootData) {
+async function buildFactionCardPages(rootData) {
 
     let contents = await fs.promises.readFile('./src/views/templates/unit-cards-print.hbs', 'utf-8')
     let template = Handlebars.compile(contents)
@@ -92,17 +71,7 @@ async function buildFactionCardHtmlAndPdfPages(rootData) {
             })
             let contents = template(data)
 
-            let pdfDest = `${dist}/html-to-pdf/${faction_slug}-cards-print.html`
-            let pdfData = Object.assign({}, data, {
-                pdf_local_fonts: true,
-            })
-            let pdfContents = template(pdfData)
-
-            return Promise.all([
-                fs.promises.writeFile(dest, contents, 'utf8'),
-                fs.promises.writeFile(pdfDest, pdfContents, 'utf8'),
-
-            ])
+            return fs.promises.writeFile(dest, contents, 'utf8')
         }),
     )
 }
