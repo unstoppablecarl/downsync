@@ -104,6 +104,7 @@ gulp.task('default',
     gulp.series(
         'clean',
         parallel,
+        'pdfs',
         'server',
     ),
 )
@@ -113,7 +114,7 @@ gulp.task(
     gulp.series(
         'clean',
         parallel,
-        'generate-pdfs',
+        'copy-pdfs',
         'say:build',
     ),
 )
