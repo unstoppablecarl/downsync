@@ -53,6 +53,8 @@ server.listen(8080, async () => {
             let screenshot = await page.screenshot()
             //await fs.promises.writeFile('./screenshots/' + baseName + '.png', screenshot)
 
+            await new Promise(resolve => setTimeout(resolve, 500))
+
             const content = await page.pdf({
                 format: 'letter',
                 printBackground: true,
