@@ -1,19 +1,30 @@
 import gulp from 'gulp'
 import { exec } from 'child_process'
 import util from 'util'
-import { config, paths } from '../gulpfile.js'
+import { config } from '../gulpfile.js'
 import plumber from 'gulp-plumber'
 import browsersync from 'browser-sync'
+import del from 'del'
 
 const execPromise = util.promisify(exec)
 
-gulp.task('pdfs', function () {
+gulp.task('generate-pdfs', function () {
     return execPromise('npm run build-pdfs --color always')
 })
 
-gulp.task('copy-pdfs', function () {
-    return gulp.src(paths.copy_pdfs.src)
+gulp.task('copy-pdf-local-fonts', function () {
+    return gulp.src('./static-assets/local-fonts/*')
         .pipe(plumber(config.plumber))
-        .pipe(gulp.dest(paths.copy_pdfs.dist))
+        .pipe(gulp.dest('./dist/assets/pdf-local-fonts'))
         .pipe(browsersync.stream())
 })
+
+gulp.task('remove-pdf-local-fonts', function () {
+    return del('./dist/assets/pdf-local-fonts')
+})
+
+gulp.task('pdfs', gulp.series([
+    'copy-pdf-local-fonts',
+    'generate-pdfs',
+    'remove-pdf-local-fonts',
+]))

@@ -60,11 +60,6 @@ const paths = {
         src: './static-assets/images/**/*',
         dist: './dist/assets/img',
     },
-    copy_pdfs: {
-        src: './static-assets/pdfs/**/*',
-        dist: './dist/assets/pdfs',
-        watch: './static-assets/pdfs/**/*',
-    },
     svg: {
         src: './static-assets/images/svg-icons/*',
         dist: './dist/assets/icons',
@@ -92,11 +87,17 @@ gulp.task('views', gulp.series('svg', gulp.parallel([
     'webpack',
 ])))
 
+gulp.task('views-local-fonts', gulp.series('svg', gulp.parallel([
+    'view-templates-local-fonts',
+    'webpack',
+])))
+
 let parallel = gulp.parallel(
     'styles',
     'views',
     'images',
     'favicons',
+    'copy-pdf-local-fonts',
 )
 
 gulp.task('default',
@@ -112,7 +113,7 @@ gulp.task(
     gulp.series(
         'clean',
         parallel,
-        //'copy-pdfs',
+        'generate-pdfs',
         'say:build',
     ),
 )

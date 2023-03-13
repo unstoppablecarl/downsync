@@ -2,8 +2,10 @@ import puppeteer from 'puppeteer'
 import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
+import del from 'del'
 
-const pdfGeneratedDir = './static-assets/pdfs'
+const htmlToPdfDir = './dist/html-to-pdf'
+const pdfGeneratedDir = './dist/assets/pdfs'
 
 if (!fs.existsSync(pdfGeneratedDir)) {
     fs.mkdirSync(pdfGeneratedDir)
@@ -22,12 +24,11 @@ server.listen(8080, async () => {
 
     const domain = 'http://localhost:8080'
 
-    const urls = [
-        domain + '/unit-cards-print.html',
-        domain + '/unit-cards-starter-print.html',
-        domain + '/unit-cards-starter-print-landscape.html',
-        domain + '/quick-reference.html',
-    ]
+    const files = await fs.promises.readdir(htmlToPdfDir)
+
+    const urls = files.map((file) => {
+        return domain + '/html-to-pdf/' + file
+    })
 
     const browser = await puppeteer.launch({
         executablePath: process.env.CHROME_PATH,
@@ -68,4 +69,5 @@ server.listen(8080, async () => {
     await browser.close()
     server.close()
 
+    await del(htmlToPdfDir)
 })
