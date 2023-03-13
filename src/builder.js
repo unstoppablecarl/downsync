@@ -38,33 +38,7 @@ export default async function (baseRootData = {}) {
 function buildPages(templates, rootData) {
     return Promise.all(
         Object.keys(templates).map((key) => {
-            let template = templates[key]
-
-            let dest = `${dist}/${key}.html`
-            let tplDataFile = `${tplDataPath}/${key}.js`
-
-            let target = path.resolve(tplDataFile)
-
-            return fileExists(target)
-                .then((exists) => {
-
-                    if (!exists) {
-                        let contents = template(rootData)
-
-                        return fs.promises.writeFile(dest, contents, 'utf8')
-
-                    } else {
-
-                        return import(target)
-                            .then((tplData) => {
-
-                                let mergedData = Object.assign({}, rootData, tplData)
-                                let contents = template(mergedData)
-
-                                return fs.promises.writeFile(dest, contents, 'utf8')
-                            })
-                    }
-                })
+            return renderTemplate(templates, key, rootData)
         }),
     )
 }
@@ -85,13 +59,18 @@ async function buildFactionCardPages(rootData) {
                 factionCards = prepareSplitCards(factionCards)
             }
 
+            const cardPages = cardsToPages(factionCards, 9)
+            const pageTitle = `${faction} Unit Cards Print`
+
             let dest = `${dist}/cards-print/${faction_slug}.html`
             let data = Object.assign({}, rootData, {
                 faction,
-                cardPages: cardsToPages(factionCards, 9),
-                pageTitle: `${faction} Unit Cards Print`,
+                faction_slug,
+                cardPages,
+                pageTitle,
             })
             let contents = template(data)
+
             return fs.promises.writeFile(dest, contents, 'utf8')
         }),
     )
@@ -115,11 +94,44 @@ async function buildSingleCardPages(rootData) {
     )
 }
 
+function renderTemplate(templates, key, rootData, outputFileName = null) {
+
+    let template = templates[key]
+    outputFileName = outputFileName || key
+    let dest = `${dist}/${outputFileName}.html`
+    let tplDataFile = `${tplDataPath}/${key}.js`
+
+    let target = path.resolve(tplDataFile)
+
+    return fileExists(target)
+        .then((exists) => {
+
+            if (!exists) {
+                let contents = template(rootData)
+
+                return fs.promises.writeFile(dest, contents, 'utf8')
+
+            } else {
+
+                return import(target)
+                    .then((tplData) => {
+
+                        let mergedData = Object.assign({}, rootData, tplData)
+                        let contents = template(mergedData)
+
+                        return fs.promises.writeFile(dest, contents, 'utf8')
+                    })
+            }
+        })
+
+}
+
 async function prepareDirs() {
     let factionSlugs = getFactionSlugs()
     await makeDir(dist + '/cards-print')
 
     await makeDir(dist + '/cards')
+    await makeDir(dist + '/html-to-pdf')
 
     await Promise.all(
         factionSlugs.map((slug) => {

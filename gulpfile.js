@@ -24,7 +24,7 @@ const paths = {
     dist: './dist/',
     clean: {
         targets: [
-            './dist/',
+            './dist/**/*',
         ],
     },
     views: {
@@ -59,11 +59,6 @@ const paths = {
     images: {
         src: './static-assets/images/**/*',
         dist: './dist/assets/img',
-    },
-    copy_pdfs: {
-        src: './static-assets/pdfs/**/*',
-        dist: './dist/assets/pdfs',
-        watch: './static-assets/pdfs/**/*',
     },
     svg: {
         src: './static-assets/images/svg-icons/*',
@@ -103,16 +98,18 @@ gulp.task('default',
     gulp.series(
         'clean',
         parallel,
+        'pdfs',
         'server',
     ),
 )
+
+let parallelBuild = gulp.parallel([].concat(parallel, ['copy-pdfs']))
 
 gulp.task(
     'build',
     gulp.series(
         'clean',
-        parallel,
-        //'copy-pdfs',
+        parallelBuild,
         'say:build',
     ),
 )

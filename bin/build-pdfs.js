@@ -2,7 +2,9 @@ import puppeteer from 'puppeteer'
 import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
+import { FACTIONS } from '../src/data/constants.js'
 
+const htmlToPdfDir = './dist/html-to-pdf'
 const pdfGeneratedDir = './static-assets/pdfs'
 
 if (!fs.existsSync(pdfGeneratedDir)) {
@@ -29,9 +31,14 @@ server.listen(8080, async () => {
         domain + '/quick-reference.html',
     ]
 
+    FACTIONS.forEach(({ faction_slug }) => {
+        urls.push(domain + '/cards-print/' + faction_slug + '.html')
+    })
+
     const browser = await puppeteer.launch({
         executablePath: process.env.CHROME_PATH,
         headless: true,
+        //slowMo: 250,
         args: [
             '--font-render-hinting=none',
             '--force-color-profile=srgb',
@@ -52,6 +59,8 @@ server.listen(8080, async () => {
             let screenshot = await page.screenshot()
             //await fs.promises.writeFile('./screenshots/' + baseName + '.png', screenshot)
 
+            await page.evaluateHandle('document.fonts.ready')
+
             const content = await page.pdf({
                 format: 'letter',
                 printBackground: true,
@@ -68,4 +77,5 @@ server.listen(8080, async () => {
     await browser.close()
     server.close()
 
+    //await del(htmlToPdfDir)
 })

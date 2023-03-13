@@ -16,4 +16,3 @@ gulp.task('view-templates', function () {
     return execPromise(`npm run build-views --color always payload='${json}'`)
         .then(browsersync.reload)
 })
-

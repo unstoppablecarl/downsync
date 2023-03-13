@@ -27,10 +27,21 @@
                     </ul>
                 </div>
                 {{> btn-cards-view view='Print'}}
+
             </div>
             <div class="col">
                 <div class="float-md-end text-end m-1">
-                    {{> btn-print}}
+                    {{#if faction}}
+                        <a class="btn btn-primary"
+                           href="/assets/pdfs/{{faction_slug}}-cards-print.pdf">Download {{faction}} Unit Cards
+                            {{> svg-icon icon='pdf'}}
+                        </a>
+                    {{else}}
+                        <a class="btn btn-primary" href="/assets/pdfs/unit-cards-print.pdf">Download Unit Cards
+                            {{> svg-icon icon='pdf'}}
+                        </a>
+                    {{/if}}
+
                 </div>
             </div>
         </div>
