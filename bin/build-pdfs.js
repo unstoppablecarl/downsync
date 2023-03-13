@@ -27,7 +27,7 @@ server.listen(8080, async () => {
     const files = await fs.promises.readdir(htmlToPdfDir)
 
     const urls = files.map((file) => {
-        return domain + '/html-to-pdf/' + file
+        return './dist/html-to-pdf/' + file
     })
 
     const browser = await puppeteer.launch({
@@ -47,8 +47,12 @@ server.listen(8080, async () => {
             const dest = pdfGeneratedDir + '/' + file
 
             const page = await browser.newPage()
-            await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36')
-            await page.goto(url, { waitUntil: 'networkidle0' })
+
+            const document = await fs.promises.readFile(url, 'utf8')
+
+            //await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36')
+            //await page.goto(url, { waitUntil: 'networkidle0' })
+            await page.setContent(document, { waitUntil: 'networkidle0' })
 
             let screenshot = await page.screenshot()
             //await fs.promises.writeFile('./screenshots/' + baseName + '.png', screenshot)
