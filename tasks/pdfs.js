@@ -13,7 +13,7 @@ gulp.task('generate-pdfs', function () {
 })
 
 gulp.task('copy-pdf-local-fonts', function () {
-    return gulp.src('./static-assets/local-fonts/*')
+    return gulp.src('./static-assets/pdf-local-fonts/*')
         .pipe(plumber(config.plumber))
         .pipe(gulp.dest('./dist/assets/pdf-local-fonts'))
         .pipe(browsersync.stream())
@@ -33,6 +33,6 @@ gulp.task('copy-pdfs', function () {
 gulp.task('pdfs', gulp.series([
     'copy-pdf-local-fonts',
     'generate-pdfs',
-    'remove-pdf-local-fonts',
+    //'remove-pdf-local-fonts',
     'copy-pdfs',
 ]))

@@ -24,7 +24,7 @@ const paths = {
     dist: './dist/',
     clean: {
         targets: [
-            './dist/',
+            './dist/**/*',
         ],
     },
     views: {
@@ -87,23 +87,19 @@ gulp.task('views', gulp.series('svg', gulp.parallel([
     'webpack',
 ])))
 
-gulp.task('views-local-fonts', gulp.series('svg', gulp.parallel([
-    'view-templates-local-fonts',
-    'webpack',
-])))
-
 let parallel = gulp.parallel(
     'styles',
     'views',
     'images',
     'favicons',
-    'copy-pdf-local-fonts',
 )
+
+let parallelDefault = gulp.parallel([].concat(parallel, ['copy-pdf-local-fonts']))
 
 gulp.task('default',
     gulp.series(
         'clean',
-        parallel,
+        parallelDefault,
         'pdfs',
         'server',
     ),

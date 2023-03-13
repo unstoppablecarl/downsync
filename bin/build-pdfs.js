@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer'
 import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
-import del from 'del'
 
 const htmlToPdfDir = './dist/html-to-pdf'
 const pdfGeneratedDir = './static-assets/pdfs'
@@ -33,6 +32,7 @@ server.listen(8080, async () => {
     const browser = await puppeteer.launch({
         executablePath: process.env.CHROME_PATH,
         headless: true,
+        //slowMo: 250,
         args: [
             '--font-render-hinting=none',
             '--force-color-profile=srgb',
@@ -71,5 +71,5 @@ server.listen(8080, async () => {
     await browser.close()
     server.close()
 
-    await del(htmlToPdfDir)
+    //await del(htmlToPdfDir)
 })
