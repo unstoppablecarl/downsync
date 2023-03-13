@@ -4,7 +4,6 @@ import path from 'path'
 import fs from 'fs'
 import { FACTIONS } from '../src/data/constants.js'
 
-const htmlToPdfDir = './dist/html-to-pdf'
 const pdfGeneratedDir = './static-assets/pdfs'
 
 if (!fs.existsSync(pdfGeneratedDir)) {
@@ -24,15 +23,26 @@ server.listen(8080, async () => {
 
     const domain = 'http://localhost:8080'
 
-    const urls = [
-        domain + '/unit-cards-print.html',
-        domain + '/unit-cards-starter-print.html',
-        domain + '/unit-cards-starter-print-landscape.html',
-        domain + '/quick-reference.html',
+    const pages = [
+        {
+            url: domain + '/unit-cards-print.html',
+        },
+        {
+            url: domain + '/unit-cards-starter-print.html',
+        },
+        {
+            url: domain + '/unit-cards-starter-print-landscape.html',
+        },
+        {
+            url: domain + '/quick-reference.html',
+        },
     ]
 
     FACTIONS.forEach(({ faction_slug }) => {
-        urls.push(domain + '/cards-print/' + faction_slug + '.html')
+        pages.push({
+            url: domain + '/cards-print/' + faction_slug + '.html',
+            output: faction_slug + '-cards-print',
+        })
     })
 
     const browser = await puppeteer.launch({
@@ -45,14 +55,23 @@ server.listen(8080, async () => {
         ],
     })
 
-    let pdfPromises = urls.map((url) => {
+    let pdfPromises = pages.map(({
+                                     url,
+                                     output,
+                                 }) => {
         return async () => {
 
-            const baseName = path.basename(url).replace('.html', '')
+            const baseName = output || path.basename(url).replace('.html', '')
             const file = baseName + '.pdf'
             const dest = pdfGeneratedDir + '/' + file
 
             const page = await browser.newPage()
+            page.on('console', msg => {
+                console.log('LOG ' + msg.type() + ': ', msg.location())
+                console.log(' - text: ' + msg.text())
+
+            })
+
             await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36')
             await page.goto(url, { waitUntil: 'networkidle0' })
 
@@ -77,5 +96,4 @@ server.listen(8080, async () => {
     await browser.close()
     server.close()
 
-    //await del(htmlToPdfDir)
 })
