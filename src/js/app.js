@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 
 import './app/table-of-contents.js'
 
-import CardFilter from './components/card-filter.vue'
+import CardFactionFilter from './components/card-faction-filter.vue'
 import { FACTIONS } from '../data/constants.js'
 
 const SVG_SPRITE_PATH = __SVG_SPRITE_PATH__
@@ -13,7 +13,7 @@ elementExists('vue-card-filter', (el) => {
         factions: FACTIONS,
     }
 
-    const app = createApp(CardFilter, props).provide('SVG_SPRITE_PATH', SVG_SPRITE_PATH)
+    const app = createApp(CardFactionFilter, props).provide('SVG_SPRITE_PATH', SVG_SPRITE_PATH)
     app.mount(el)
 })
 
