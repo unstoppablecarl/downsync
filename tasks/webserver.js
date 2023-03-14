@@ -13,6 +13,8 @@ gulp.task('server', function (done) {
         'views',
         'pdfs',
     ]))
+
+    gulp.watch(paths.images.src, { usePolling: true }, gulp.parallel('images'))
     gulp.watch(paths.styles.watch, { usePolling: true }, gulp.parallel('styles'))
     gulp.watch(paths.webpack.watch, { usePolling: true }, gulp.parallel('webpack'))
     gulp.watch(paths.favicons.watch, { usePolling: true }, gulp.parallel('favicons'))
