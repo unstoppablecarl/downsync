@@ -36,6 +36,9 @@ server.listen(8080, async () => {
         {
             url: domain + '/quick-reference.html',
         },
+        {
+            url: domain + '/rules-print.html',
+        },
     ]
 
     FACTIONS.forEach(({ faction_slug }) => {

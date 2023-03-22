@@ -1,0 +1,28 @@
+@media print {
+    :root {
+        font-size: 10pt;
+    }
+
+    @page {
+        size: letter;
+        margin: 0.5in;
+
+        @bottom-right {
+            vertical-align: top;
+            padding: 0 .25in .25in 0;
+            content: "page " counter(page);
+        }
+    }
+
+    @page :left {
+        margin: 0.5in;
+    }
+
+    @page :right {
+        margin: 0.5in;
+    }
+
+    html {
+        background: #fff;
+    }
+}

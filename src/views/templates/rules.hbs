@@ -1,13 +1,27 @@
 {{#extend 'layout/html' title='Downsync Rules'  body_class='page-rulebook'}}
 
     {{#content 'page-content'}}
+        <div class="container pt-2">
+
+            <a class="btn btn-primary" href="/rules-print.html">
+                Printer Friendly Html
+                {{> svg-icon icon='html'}}
+            </a>
+
+            <a class="btn btn-primary"
+               href="/assets/pdfs/rules-print.pdf">
+                Download Rulebook
+                {{> svg-icon icon='pdf'}}
+            </a>
+
+        </div>
         <div class="container rulebook">
             {{{convertedMarkdown}}}
         </div>
     {{/content}}
 
     {{#content 'page-content-after'}}
-        <div class="offcanvas offcanvas-end offcanvas-toc" tabindex="-1" id="offcanvas-toc"
+        <div class="offcanvas offcanvas-end offcanvas-toc no-print" tabindex="-1" id="offcanvas-toc"
              aria-labelledby="offcanvasExampleLabel"
              data-bs-scroll="true">
             <div class="offcanvas-header">
@@ -26,7 +40,7 @@
             </div>
         </div>
 
-        <button type="button" id="btn-table-of-contents" class="btn btn-secondary btn-table-of-contents"
+        <button type="button" id="btn-table-of-contents" class="btn btn-secondary btn-table-of-contents no-print"
                 aria-controls="offcanvasExample">
             TOC
         </button>

@@ -65,6 +65,7 @@
         "node-htmldiff": "^0.9.4",
         "node-notifier": "^10.0.1",
         "node-sass": "^8.0.0",
+        "pagedjs": "^0.4.1",
         "puppeteer": "^19.6.3",
         "remarkable": "^2.0.1",
         "sass": "^1.56.1",
