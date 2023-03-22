@@ -6,7 +6,15 @@ let markdown = await fs.promises.readFile(path, 'utf-8')
 
 markdown = stripLinks(markdown)
 
-export const taskforceActivationPhases = markdownSectionToHtml(markdown, 'Taskforce Activation Phases')
+export const taskforceActivationPhases = markdownSectionToHtml(
+    markdown,
+    'Taskforce Activation Phases',
+    `gaining 1 Action Point to spend on the following:
+    - **Unit Card Action(s):** Pay the cost of each action performed
+    - **Move Action:** Move up to SPD in inches
+    - **Overwatch Action:** Unit gains an Overwatch Token`,
+)
+
 export const attacks = markdownSectionToHtml(markdown, 'Attacks')
 export const scanCheck = markdownSectionToHtml(markdown, 'Scan Check')
 export const commandPoints = markdownSectionToHtml(markdown, 'Command Point Abilities')
