@@ -1,0 +1,26 @@
+{{#extend 'layout/html' title='Downsync Rules'  body_class='page-rulebook'}}
+
+    {{#content 'main-style-before'}}
+        <link rel="stylesheet" href="/assets/css/prepend-rulebook.css">
+    {{/content}}
+
+    {{#content 'nav'}}{{/content}}
+
+    {{#content 'page-content'}}
+        <div class="container btn-print-container">
+            {{> btn-print text="Print"}}
+        </div>
+        <div class="container rulebook">
+            {{{convertedMarkdown}}}
+        </div>
+    {{/content}}
+
+    {{#content 'footer'}}{{/content}}
+
+    {{#content 'body-close-before'}}
+        <script src="/assets/js/rulebook-print.js"></script>
+    {{/content}}
+
+{{/extend}}
+
+

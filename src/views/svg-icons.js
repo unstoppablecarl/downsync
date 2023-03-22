@@ -9,6 +9,7 @@ export const svgIcons = {
     locked: fontAwesomeDir + '/solid/lock.svg',
     unlocked: fontAwesomeDir + '/solid/lock-open.svg',
     pdf: bootstrapDir + '/file-earmark-pdf.svg',
+    html: bootstrapDir + '/code-slash.svg',
     //filter: fontAwesomeDir + '/solid/filter.svg',
     filter: bootstrapDir + '/funnel.svg',
 }

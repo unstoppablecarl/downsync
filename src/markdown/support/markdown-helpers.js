@@ -18,9 +18,10 @@ export function captureMarkdownSection(markdown, heading) {
     }
 }
 
-export function markdownSectionToHtml(markdown, heading) {
+export function markdownSectionToHtml(markdown, heading, append = '') {
     let { content } = captureMarkdownSection(markdown, heading)
 
+    content = content + append
     let md = new MarkdownIt()
 
     return {

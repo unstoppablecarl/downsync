@@ -67,9 +67,9 @@ roll. Positive and Negative Advantage values negate each other. For example a ro
 
 | Advantage Value | Effect where xd6 is the number of dice to be rolled (1d6 or 2d6)                          |
 |-----------------|-------------------------------------------------------------------------------------------|
-| negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the **lowest** xd6  |
-| zero            | roll xd6                                                                                  |
-| positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the **highest** xd6 |
+| Negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the **lowest** xd6  |
+| Zero            | roll xd6                                                                                  |
+| Positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the **highest** xd6 |
 
 ### Terminology
 
@@ -239,9 +239,12 @@ blocked by intervening concealing or LOS blocking terrain.
 To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
 the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
 that point to any point on the volume of the target that crosses intervening terrain.
+
 </div>
 <div class="col-md-6">
+<p>
 <img src="/assets/img/rules-diagrams/LOS-diagram.svg" class="img-fluid img-bordered" alt="LOS Diagram">
+</p>
 </div>
 </div>
 
@@ -259,12 +262,15 @@ that point to any point on the volume of the target that crosses intervening ter
 
 <div class="row">
 <div class="col-md-6">
+
 For LOS purposes, Units can see through all concealing area terrain within 6" and can see through up to 2" of concealing
 area terrain to targets greater than 6" away.
 
 </div>
 <div class="col-md-6">
+<p>
 <img src="/assets/img/rules-diagrams/LOS-diagram-area-terrain.svg" class="img-fluid img-bordered" alt="Area Terrain LOS Diagram">
+</p>
 </div>
 </div>
 
@@ -678,7 +684,7 @@ participate in Reaction Engagements until the next round.
 
 |                       |                                                                           |
 |-----------------------|:--------------------------------------------------------------------------|
-| **Color**             | <span style="color:green">&#9632;</span> Green                            |
+| **Color**             | <span class="token token-shadow" style="background:green"></span> Green   |
 | **Gained**            | After Unit Activates                                                      |
 | **Can have multiple** | No                                                                        |
 | **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together |
@@ -691,7 +697,7 @@ a [Countermeasure Check](#countermeasure-check).
 
 |                       |                                                                                |
 |-----------------------|--------------------------------------------------------------------------------|
-| **Color**             | <span class="token-shadow" style="color:white">&#9632;</span> White            |
+| **Color**             | <span class="token token-shadow" style="background:white"></span> White        |
 | **Gained**            | When Unit is first [Revealed](#revealing) and when it is [Refreshed](#refresh) |
 | **Can have multiple** | Yes                                                                            |
 | **Multi-Base Units**  | Each Infantry Base gains Countermeasure Tokens equal to the Unit's CM stat     |
@@ -705,7 +711,7 @@ Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
 
 |                       |                                                                                      |
 |-----------------------|--------------------------------------------------------------------------------------|
-| **Color**             | <span class="token-shadow" style="color:yellow">&#9632;</span> Yellow                |
+| **Color**             | <span class="token token-shadow" style="background:yellow"></span> Yellow            |
 | **Gained**            | When unit is first Revealed                                                          |
 | **Can have multiple** | Yes                                                                                  |
 | **Multi-Base Units**  | Each Infantry Base gains Hardened Countermeasure Tokens equal to the Unit's CM+ stat |
@@ -718,7 +724,7 @@ A Unit with an Overwatch Token can participate in Reaction Engagements even if i
 
 |                       |                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------|
-| **Color**             | <span style="color:purple">&#9632;</span> Purple                                  |
+| **Color**             | <span class="token" style="background:purple"></span> Purple                      |
 | **Gained**            | After performing an [Overwatch Action](#overwatch-action)                         |
 | **Can have multiple** | No                                                                                |
 | **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together         |
@@ -731,7 +737,7 @@ A Unit with a Stun Token is considered Stunned and may only perform a move or ac
 
 |                       |                                                                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span style="color:orange">&#9632;</span> Orange                                                                                  |
+| **Color**             | <span class="token" style="background:orange"></span> Orange                                                                      |
 | **Gained**            | After suffering the STUN effect                                                                                                   |
 | **Can have multiple** | No                                                                                                                                |
 | **Multi-Base Units**  | Each Infantry Base in a Unit is targeted and suffers the STUN effect separately not as a Unit                                     |
@@ -745,7 +751,7 @@ Stealth Token if an enemy Unit is within 2".
 
 |                       |                                                                                                                                            |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span style="color:black">&#9632;</span> Black                                                                                             |
+| **Color**             | <span class="token" style="background:black"></span> Black                                                                                 |
 | **Gained**            | By unit special abilities                                                                                                                  |
 | **Can have multiple** | No                                                                                                                                         |
 | **Multi-Base Units**  | Each Infantry Base in a Unit has its own Stealth Token                                                                                     |

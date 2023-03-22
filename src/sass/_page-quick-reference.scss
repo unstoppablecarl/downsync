@@ -16,6 +16,14 @@
     ul {
         padding-left: 1rem;
 
+        ul {
+            margin: 0.5rem 0;
+        }
+
+        li {
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+        }
     }
 
     table:not(.table) {

@@ -6,6 +6,7 @@ export default {
     mode: 'development',
     entry: {
         main: './src/js/main.js',
+        'rulebook-print': './src/js/rulebook-print.js',
     },
     output: {
         path: path.resolve(process.cwd(), 'dist/assets/'),

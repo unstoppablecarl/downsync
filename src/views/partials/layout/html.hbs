@@ -20,25 +20,18 @@
     {{#block 'meta'}}
     {{/block}}
 
+    {{#block 'main-style-before'}}
+    {{/block}}
+
     <title>{{title}}</title>
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bitter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
 
-    {{#if pdf_local_fonts}}
-        <link rel="stylesheet" href="/assets/pdf-local-fonts/barlow-condensed.css">
-        <link rel="stylesheet" href="/assets/pdf-local-fonts/open-sans.css">
-        <link rel="stylesheet" href="/assets/pdf-local-fonts/bitter.css">
-    {{else}}
-        <link
-            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bitter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-            rel="stylesheet">
-    {{/if}}
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 {{#block 'body-open'}}
     <body class="d-flex flex-column page-body {{body_class}}">
@@ -63,6 +56,9 @@
 
 {{#block 'body-end-script'}}
     <script src="/assets/js/main.js"></script>
+{{/block}}
+
+{{#block 'body-close-before'}}
 {{/block}}
 
 {{#block 'body-close'}}

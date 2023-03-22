@@ -32,7 +32,7 @@ import {
     STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 import { FORWARD_OBSERVE, GO_DARK, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
-import { makeUnit } from '../support/factories.js'
+import { makeUnit, modifyAction } from '../support/factories.js'
 
 export const REPUBLIC_CARD_DEFAULTS = {
     faction: REPUBLIC_FACTION_NAME,
@@ -51,10 +51,9 @@ export const VECTOR_SQUAD = make({
     targeting: 6,
     defense: 12,
     actions: [
-        Object.assign({}, SMALL_ARMS, { note: 'Teams 1-2, vs inf. only' }),
-        AT_CHARGES,
-        MICRO_ARTILLERY,
-
+        modifyAction(SMALL_ARMS, { team: '1-2' }),
+        modifyAction(AT_CHARGES, { team: '1-2' }),
+        modifyAction(MICRO_ARTILLERY, { team: '3' }),
     ],
     traits: [
         ADAPTIVE_CAMO,
