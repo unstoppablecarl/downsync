@@ -14,6 +14,10 @@ export function makeUnit(unit) {
 
     unit.actions = prepareActions(unit.actions)
 
+    unit.has_teams = !!unit.actions.find((action) => {
+        return !!action.team
+    })
+
     return unit
 }
 
@@ -116,6 +120,10 @@ export function makeAction(action) {
     return result
 }
 
+export function modifyAction(action, mods) {
+
+    return Object.assign({}, action, mods)
+}
 
 export function makeWeapon(weapon) {
 

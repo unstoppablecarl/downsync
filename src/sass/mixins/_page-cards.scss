@@ -263,6 +263,7 @@ $outline-grey: #b3b3b3;
             .col-stat,
             .col-rof,
             .col-range,
+            .col-team,
             .col-effect {
                 white-space: nowrap
             }
@@ -281,6 +282,7 @@ $outline-grey: #b3b3b3;
                 }
 
                 &.col-name,
+                &.col-team,
                 &.col-stat,
                 &.col-rof,
                 &.col-range,
