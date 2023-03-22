@@ -20,7 +20,7 @@ import {
 } from './cards/republic-units.js'
 import {
     COALITION_FACTION_NAME,
-    NOMAD_FACTION_NAME,
+    FREE_UNION_FACTION_NAME,
     REPUBLIC_FACTION_NAME,
     SIZE_LARGE,
     SIZE_MEDIUM,
@@ -34,7 +34,7 @@ import {
     SPIDER_DRONE_WRANGLER,
     TANK_HUNTERS,
     TECHNICAL,
-} from './cards/nomad-units.js'
+} from './cards/free-union-units.js'
 
 export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'EX1', [
     {
@@ -106,7 +106,7 @@ export const REPUBLIC_FULL_ARMY_LIST = make(REPUBLIC_FACTION_NAME, 'EX1', [
     },
 ])
 
-export const NOMAD_FULL_ARMY_LIST = make(NOMAD_FACTION_NAME, 'EX1', [
+export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
     {
         unit: INFANTRY_SQUAD,
         count: 2,

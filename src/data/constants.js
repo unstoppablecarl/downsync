@@ -16,11 +16,11 @@ export const COST_COMMAND_X2 = 'COST_COMMAND_X2'
 export const COALITION_FACTION_NAME = 'Coalition'
 
 export const REPUBLIC_FACTION_NAME = 'Republic of Terra'
-export const NOMAD_FACTION_NAME = 'Nomad'
+export const FREE_UNION_FACTION_NAME = 'Free Union'
 
 export const COALITION_FACTION_SLUG = 'coalition'
 export const REPUBLIC_FACTION_SLUG = 'republic-of-terra'
-export const NOMAD_FACTION_SLUG = 'nomad'
+export const FREE_UNION_FACTION_SLUG = 'free-union'
 
 export const FACTIONS = [
     {
@@ -32,8 +32,8 @@ export const FACTIONS = [
         faction_slug: REPUBLIC_FACTION_SLUG,
     },
     {
-        faction: NOMAD_FACTION_NAME,
-        faction_slug: NOMAD_FACTION_SLUG,
+        faction: FREE_UNION_FACTION_NAME,
+        faction_slug: FREE_UNION_FACTION_SLUG,
     },
 ]
 

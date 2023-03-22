@@ -6,13 +6,13 @@ import {
     SENTINEL_TAGGER,
 } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
-import { NOMAD_UNITS } from '../../../data/cards/nomad-units.js'
+import { FREE_UNION_UNITS } from '../../../data/cards/free-union-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
 import {
     COALITION_FACTION_NAME,
     COALITION_FACTION_SLUG,
-    NOMAD_FACTION_NAME,
-    NOMAD_FACTION_SLUG,
+    FREE_UNION_FACTION_NAME,
+    FREE_UNION_FACTION_SLUG,
     REPUBLIC_FACTION_NAME,
     REPUBLIC_FACTION_SLUG,
 } from '../../../data/constants.js'
@@ -31,9 +31,9 @@ export const FACTION_UNITS = [
         factionCards: prepareCards(REPUBLIC_UNITS),
     },
     {
-        faction: NOMAD_FACTION_NAME,
-        faction_slug: NOMAD_FACTION_SLUG,
-        factionCards: prepareCards(NOMAD_UNITS),
+        faction: FREE_UNION_FACTION_NAME,
+        faction_slug: FREE_UNION_FACTION_SLUG,
+        factionCards: prepareCards(FREE_UNION_UNITS),
     },
 
     //{

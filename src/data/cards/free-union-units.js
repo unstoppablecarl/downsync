@@ -8,7 +8,7 @@ import {
     SMALL_ARMS,
     SMART_RPG,
 } from '../cards-data/weapons.js'
-import { NOMAD_FACTION_NAME, NOMAD_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
+import { FREE_UNION_FACTION_NAME, FREE_UNION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
 
 import {
     ALL_TERRAIN,
@@ -22,10 +22,10 @@ import { BASIC_SCAN, SCRAMBLE } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 import { NOTE_COMPROMISE_COUNTERS } from '../definitions.js'
 
-export const NOMAD_CARD_DEFAULTS = {
-    faction: NOMAD_FACTION_NAME,
-    faction_slug: NOMAD_FACTION_SLUG,
-    icon: null,
+export const FREE_UNION_DEFAULTS = {
+    faction: FREE_UNION_FACTION_NAME,
+    faction_slug: FREE_UNION_FACTION_SLUG,
+    icon: 'factions/icon-free-union.svg',
 }
 
 export const INFANTRY_SQUAD = make({
@@ -174,7 +174,7 @@ export const BULLET_SPONGE = make({
     ],
 })
 
-export const NOMAD_UNITS = [
+export const FREE_UNION_UNITS = [
     INFANTRY_SQUAD,
     TECHNICAL,
     SCRAMBLER,
@@ -185,7 +185,7 @@ export const NOMAD_UNITS = [
 ]
 
 function make(unit) {
-    unit = Object.assign({}, NOMAD_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, FREE_UNION_DEFAULTS, unit)
 
     return makeUnit(unit)
 }
