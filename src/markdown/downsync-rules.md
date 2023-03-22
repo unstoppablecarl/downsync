@@ -67,9 +67,9 @@ roll. Positive and Negative Advantage values negate each other. For example a ro
 
 | Advantage Value | Effect where xd6 is the number of dice to be rolled (1d6 or 2d6)                          |
 |-----------------|-------------------------------------------------------------------------------------------|
-| negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the **lowest** xd6  |
-| zero            | roll xd6                                                                                  |
-| positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the **highest** xd6 |
+| Negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the **lowest** xd6  |
+| Zero            | roll xd6                                                                                  |
+| Positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the **highest** xd6 |
 
 ### Terminology
 
@@ -239,9 +239,12 @@ blocked by intervening concealing or LOS blocking terrain.
 To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
 the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
 that point to any point on the volume of the target that crosses intervening terrain.
+
 </div>
 <div class="col-md-6">
+<p>
 <img src="/assets/img/rules-diagrams/LOS-diagram.svg" class="img-fluid img-bordered" alt="LOS Diagram">
+</p>
 </div>
 </div>
 
@@ -259,12 +262,15 @@ that point to any point on the volume of the target that crosses intervening ter
 
 <div class="row">
 <div class="col-md-6">
+
 For LOS purposes, Units can see through all concealing area terrain within 6" and can see through up to 2" of concealing
 area terrain to targets greater than 6" away.
 
 </div>
 <div class="col-md-6">
+<p>
 <img src="/assets/img/rules-diagrams/LOS-diagram-area-terrain.svg" class="img-fluid img-bordered" alt="Area Terrain LOS Diagram">
+</p>
 </div>
 </div>
 
