@@ -25,6 +25,9 @@ let flow = paged.preview(content, stylesheets, renderTo)
     left: 20px;
   }
  
+ html {
+    background: #fff !important;
+ }
 `)
         document.body.prepend(btnPrint)
 
