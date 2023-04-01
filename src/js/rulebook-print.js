@@ -36,7 +36,7 @@ let flow = paged.preview(content, stylesheets, renderTo)
 
 function addStyle(styleString) {
     const style = document.createElement('style')
-    style.setAttribute('foo', 'bar')
+    //style.setAttribute('foo', 'zxc')
     style.textContent = styleString
     document.head.append(style)
 }
