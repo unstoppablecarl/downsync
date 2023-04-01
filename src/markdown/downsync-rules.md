@@ -559,25 +559,25 @@ Each check is resolved before deciding to spend additional Countermeasure Tokens
 When a Unit is [Refreshed](#refresh) it replenishes its Countermeasure Tokens so that it has a number equal to its CM
 stat. [Hardened Countermeasures](#hardened-countermeasure-token) do not Regenerate.
 
-# Reaction Engagements
+## Reaction Engagements
 
 Units controlled by a non-active player that have not activated this round (or have
 an [Overwatch Token](#overwatch-token)),
 have a chance to react and possibly act before activating Units.
 
-## Initiating a Reaction Engagement
+### Initiating a Reaction Engagement
 
 A non-active player may initiate a reaction engagement after the active player completes the movement phase of their
 Taskforce Activation, but before the Unit Activation phase.
 
-### Who Can Participate
+#### Who Can Participate
 
 Units that have not activated this round or have an [Overwatch Token](#overwatch-token) are eligible to be selected as
 participating Units.
 
-## Resolving a Reaction Engagement
+### Resolving a Reaction Engagement
 
-### Declare Participating Units
+#### Declare Participating Units
 
 The active player's Taskforce Units are automatically participating in the Reaction Engagement.
 The active player may declare any number of their non-taskforce units with an Overwatch Token to join the Taskforce and
@@ -592,29 +592,29 @@ The active player's participating units now become part of the active player's T
 participating units are now considered to be in a Reaction Taskforce. A Reaction Taskforce is identical to a Taskforce
 in the case of rules that refer to Units in the same Taskforce.
 
-#### Adding Additional Non-Active Player Units
+##### Adding Additional Non-Active Player Units
 
 The non-active player may spend Command Point(s) to include additional unit(s) exceeding the number of active player
 units participating at a cost of 1 Command Point per Unit.
 
-### Reaction Priority Order
+#### Reaction Priority Order
 
 Each participating Unit will have a Reaction Priority number and will act in order from highest to lowest. The active
 Player wins ties between opposing Units. Ties between friendly Units act in an order determined by their controlling
 player. After the Reaction Priority of each participating unit is determined place a d6 indicating the Reaction Priority
 next to each participating Unit.
 
-### Determine Reaction Priority
+#### Determine Reaction Priority
 
 Each Unit participating in the Reaction Engagement performs a Reaction Priority Roll.
 
-#### Boosting Reaction Priority
+##### Boosting Reaction Priority
 
 Players may spend a Command Point to boost a single Unit's Reaction Priority roll. Starting with the active player, each
 player declares zero or more participating Units to boost and spends a Command Point for each one. Then both players
 perform a Reaction Priority Roll for each participating Unit.
 
-#### Reaction Priority Roll
+##### Reaction Priority Roll
 
 A participating Unit rolls 1d6 to determine its Reaction Priority. Keep the die with the result next to the Unit.
 
@@ -626,7 +626,7 @@ A participating Unit rolls 1d6 to determine its Reaction Priority. Keep the die 
 
 See: [Roll Advantage](#roll-advantage)
 
-### Resolve Reactions
+#### Resolve Reactions
 
 In reaction priority order, each Unit may resolve a Unit Activation. Instead of performing a Unit Activation, a Unit may
 hold its reaction by reducing the value of its Reaction Priority die by 1. Units not in the activating Taskforce
@@ -635,13 +635,13 @@ are [Refreshed](#refresh) immediately before resolving their reaction Unit Activ
 A unit with an **Overwatch Token** removes that token immediately before resolving its Unit Activation. When activating,
 Units may perform an Overwatch Action as normal and gain an Overwatch token to be used in a later Reaction Engagement.
 
-#### Reaction Engagement Stun Effects
+##### Reaction Engagement Stun Effects
 
 A unit that gains a [Stun Token](#stun-token) during a Reaction Engagement suffers no immediate effect. The Unit has
 already rolled for Reaction Priority and will not have to forfeit is Unit Activation. The Stun Token will affect the
 Unit's next movement or Unit Activation.
 
-### Cleanup
+#### Cleanup
 
 After all reactions are resolved each participating Unit gains an Activated Token.
 
