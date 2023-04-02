@@ -1,7 +1,5 @@
 import { createApp } from 'vue'
 
-import './app/table-of-contents.js'
-
 import CardFactionFilter from './components/card-faction-filter.vue'
 import { FACTIONS } from '../data/constants.js'
 

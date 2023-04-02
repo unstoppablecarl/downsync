@@ -1,0 +1,37 @@
+@media print {
+    :root {
+        font-size: 10pt;
+    }
+
+    @page {
+        size: letter;
+
+        @bottom-right {
+            vertical-align: top;
+            padding-top: 1rem;
+            padding-right: 1rem;
+            content: "page " counter(page);
+        }
+
+        @bottom-left {
+            vertical-align: top;
+            padding-top: 1rem;
+            padding-left: 1rem;
+            content: "https://downsync.net"
+        }
+    }
+
+    $margin: 0.5in 0.5in 0.75in;
+    @page :left {
+        margin: $margin;
+    }
+
+    @page :right {
+        margin: $margin;
+    }
+
+    html {
+        background: #fff !important;
+    }
+}
+

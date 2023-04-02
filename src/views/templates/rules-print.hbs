@@ -1,17 +1,28 @@
 {{#extend 'layout/html' title='Downsync Rules'  body_class='page-rulebook'}}
 
     {{#content 'main-style-before'}}
-        <link rel="stylesheet" href="/assets/css/prepend-rulebook.css">
+        <link rel="stylesheet" href="/assets/css/rulebook-prepend.css">
     {{/content}}
 
     {{#content 'nav'}}{{/content}}
 
     {{#content 'page-content'}}
-        <div class="container btn-print-container">
+        <div class="btn-print-container">
             {{> btn-print text="Print"}}
         </div>
-        <div id="my-toc-content">
+        <div id="title-container"></div>
 
+        <div id="print-toc-content">
+            <ul class="print-rules-toc">
+                {{#each tocData}}
+                    <li class="toc-element toc-element-level-{{level}}">
+                        <span class="toc-item">{{title}}</span>
+                        <span
+                            class="spacer">..............................................................................................................</span>
+                        <a href="#{{slug}}" class="toc-link"></a>
+                    </li>
+                {{/each}}
+            </ul>
         </div>
         <div class="container rulebook">
             {{{convertedMarkdown}}}
