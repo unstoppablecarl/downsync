@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: Mar 7, 2023
+Last Updated: Apr 2, 2023
 
 [[toc]]
 
@@ -14,13 +14,11 @@ stealth, and deception.
 ### Design Goals
 
 - create opportunities for players to do surprising things without it being a "gotcha, you forgot X" moment
-- hidden units with minimal bookkeeping
-- units cannot be engaged until detected
+- hidden units without bookkeeping
 - avoid IGOUGO via alternate activation of unit groups called Taskforces
 - activated unit groupings are flexible and dynamic not strict like platoons or companies and can change from turn to
   turn
 - having more/better information than your opponent gives an advantage
-- encourage players to have possible operational taskforce groupings in mind when designating army lists
 - keep the game dynamic by not rewarding staying still
 - avoid mechanics that force players to carefully spread out every single unit (area of effect weapons)
 - miniature scale is 15mm. Scale is highly abstracted though
@@ -102,14 +100,18 @@ roll. Positive and Negative Advantage values negate each other. For example a ro
         - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
     - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
 
-## Game Sizes
+## Force Lists
 
-When constructing a force list you are limited by the signature and quantity limits of the game size.
+When creating a Force List all units must be from the same Faction. The Game Size determines the number of
+small/medium/large Unit slots your force list will contain. For each Unit size slot select a unit of matching size from
+your Faction.
 
-*The current army list building rules are likely to be changed as the game grows and is further tested. This is a
-starting point.*
+*For example: a Small Game Coalition Force List contains any 2 small Units, any 3 medium Units, and any 1 large Unit.
+The same Unit may be included multiple times.*
 
-### Small Game
+### Game Sizes
+
+#### Small Game
 
 **Command Point Capacity**: 5
 
@@ -119,7 +121,7 @@ starting point.*
 | Medium         | 3        |
 | Large          | 1        |
 
-### Standard Game
+#### Standard Game
 
 **Command Point Capacity**: 7
 
