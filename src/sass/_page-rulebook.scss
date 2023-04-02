@@ -54,11 +54,11 @@
     }
 
     & section > *:not(section, ul, .table-responsive) {
-        padding-left: 0.3rem;
+        //padding-left: 0.3rem;
     }
 
     .table-responsive {
-        margin-left: 0.3rem;
+        //margin-left: 0.3rem;
     }
 
     a.anchor {
@@ -88,6 +88,14 @@
         cursor: text;
         position: relative;
 
+        $heading-margin: 0.3rem;
+
+        margin-left: -$heading-margin;
+        margin-right: -$heading-margin;
+
+        padding-left: $heading-margin;
+        padding-right: $heading-margin;
+
         &:hover {
             .header-link {
                 visibility: visible;
@@ -114,7 +122,6 @@
     h5 {
         font-weight: 500;
         font-size: calc(1.2rem + 0.3vw);
-        //font-size: 1.25rem;
     }
 
     .table {

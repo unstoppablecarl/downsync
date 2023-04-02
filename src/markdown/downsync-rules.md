@@ -111,9 +111,10 @@ The same Unit may be included multiple times.*
 
 ### Game Sizes
 
-#### Small Game
+<div class="row">
+<div class="col-6">
 
-**Command Point Capacity**: 5
+<h4>Small Game</h4>
 
 | Unit Signature | Quantity |
 |----------------|----------|
@@ -121,15 +122,22 @@ The same Unit may be included multiple times.*
 | Medium         | 3        |
 | Large          | 1        |
 
-#### Standard Game
+**Command Point Capacity**: 5
 
-**Command Point Capacity**: 7
+</div>
+<div class="col-6">
+
+<h4>Standard Game</h4>
 
 | Unit Signature | Quantity |
 |----------------|----------|
 | Small          | 4        |
 | Medium         | 5        |
 | Large          | 2        |
+
+**Command Point Capacity**: 7
+</div>
+</div>
 
 ## Sequence of Play
 
