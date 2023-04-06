@@ -2,38 +2,44 @@ import { Previewer } from 'pagedjs'
 
 let paged = new Previewer()
 
+const btnPrintContainer = document.querySelector('.btn-print-container')
+btnPrintContainer.remove()
+
+const title = document.querySelector('h1')
+const generated = document.querySelector('h1 + p')
+const titleContainer = document.querySelector('#title-container')
+
+titleContainer.prepend(generated)
+titleContainer.prepend(title)
+
 let content = undefined
 let stylesheets = undefined
 let renderTo = undefined
 
-let btnPrint = document.querySelectorAll('.btn-print-container')[0]
-btnPrint.remove()
-
-let flow = paged.preview(content, stylesheets, renderTo)
+paged.preview(content, stylesheets, renderTo)
     .then((flow) => {
 
+        /*
+        pagedjs will remove any print hidden elements from the view.
+        This allows the print btn to be displayed but not printed after pagedjs is run.
+         */
         addStyle(`
-  @media print {
-      .btn-print-container {
-            display: none;
-      }
-  }
-
-  .btn-print-container {
-    position: absolute:
-    top: 20px;
-    left: 20px;
-  }
- 
+@media print {
+    .btn-print-container {
+        display: none !important;
+    }
+}
 `)
-        document.body.prepend(btnPrint)
 
-        console.log('Rendered', flow.total, 'pages.')
+        document.body.prepend(btnPrintContainer)
+
+        console.log('Rendered', flow.total, 'pages')
     })
 
 function addStyle(styleString) {
     const style = document.createElement('style')
-    style.setAttribute('foo', 'bar')
     style.textContent = styleString
     document.head.append(style)
 }
+
+

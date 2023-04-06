@@ -6,7 +6,12 @@ export default {
     mode: 'development',
     entry: {
         main: './src/js/main.js',
-        'rulebook-print': './src/js/rulebook-print.js',
+        rulebookPrint: {
+            import: './src/js/rulebook-print.js',
+            filename: 'js/rulebook-print.js',
+            dependOn: 'pagedJS',
+        },
+        pagedJS: ['pagedjs'],
     },
     output: {
         path: path.resolve(process.cwd(), 'dist/assets/'),

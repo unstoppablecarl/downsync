@@ -20,10 +20,9 @@
     {{#block 'meta'}}
     {{/block}}
 
-    {{#block 'main-style-before'}}
-    {{/block}}
-
     <title>{{title}}</title>
+
+    {{#block 'main-style-before'}}{{/block}}
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,13 +41,10 @@
 {{/block}}
 
 <main class="main-content flex-shrink-0">
-    {{#block 'page-content'}}
-
-    {{/block}}
+    {{#block 'page-content'}}{{/block}}
 </main>
-{{#block 'page-content-after'}}
 
-{{/block}}
+{{#block 'page-content-after'}}{{/block}}
 
 {{#block 'footer'}}
     {{> layout/footer}}
@@ -58,8 +54,7 @@
     <script src="/assets/js/main.js"></script>
 {{/block}}
 
-{{#block 'body-close-before'}}
-{{/block}}
+{{#block 'body-close-before'}}{{/block}}
 
 {{#block 'body-close'}}
     </body>

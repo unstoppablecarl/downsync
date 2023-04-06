@@ -14,12 +14,18 @@
     }
 }
 
+.btn-print-container {
+    background: #dedede;
+    padding: 0 48px;
+
+    .btn-print {
+        font-size: 16pt;
+        margin: 1em 0;
+    }
+}
+
 @media print {
     .page-rulebook {
-        .btn-print {
-            font-size: 16pt;
-            margin: 1em;
-        }
 
         a.anchor {
             display: none;
@@ -43,12 +49,16 @@
     padding-top: 1rem;
     font-family: 'Bitter', serif;
 
-    & > *:not(ul, .table-responsive) {
-        padding-left: 0.3rem;
+    ul {
+        padding-left: 1.75rem;
+    }
+
+    & section > *:not(section, ul, .table-responsive) {
+        //padding-left: 0.3rem;
     }
 
     .table-responsive {
-        margin-left: 0.3rem;
+        //margin-left: 0.3rem;
     }
 
     a.anchor {
@@ -73,24 +83,24 @@
     h4,
     h5,
     h6 {
+        font-family: "Barlow Condensed", sans-serif;
         -webkit-font-smoothing: antialiased;
         cursor: text;
         position: relative;
+
+        $heading-margin: 0.3rem;
+
+        margin-left: -$heading-margin;
+        margin-right: -$heading-margin;
+
+        padding-left: $heading-margin;
+        padding-right: $heading-margin;
 
         &:hover {
             .header-link {
                 visibility: visible;
             }
         }
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Barlow Condensed", sans-serif;
     }
 
     $heading-border-color: #7d8ba2;
@@ -105,19 +115,22 @@
         padding-bottom: 5px;
     }
 
-    h4 {
+    h4, h5 {
         font-weight: 600;
-        font-size: 1.25rem;
     }
 
     h5 {
-        font-weight: 600;
-        font-size: 1rem;
+        font-weight: 500;
+        font-size: calc(1.2rem + 0.3vw);
     }
 
     .table {
         width: auto;
-        font-family: "Open Sans";
+        font-family: "Open Sans", sans-serif;
+
+        thead tr th:empty {
+            padding: 0;
+        }
     }
 
     .img-bordered {
@@ -135,6 +148,77 @@
         column-fill: auto;
         column-count: 2;
 
+        h2 {
+            font-size: 16pt;
+        }
+
+        h3 {
+            font-size: 14pt;
+        }
+
+        h4 {
+            font-size: 12pt;
+        }
+        h5 {
+            font-size: 10pt;
+        }
+
+        h2, h3, h4 {
+            page-break-after: avoid;
+        }
+    }
+}
+
+.print-rules-toc {
+    list-style: none;
+    padding-left: 0;
+    page-break-after: always;
+    columns: 2;
+    column-fill: auto;
+
+    $margin: 0.5em;
+
+    .toc-element-level-1 {
+        font-weight: bold;
+    }
+
+    .toc-element-level-2 {
+        font-weight: 500;
+    }
+
+    .toc-element-level-3 {
+        margin-left: $margin;
+    }
+
+    .toc-element-level-4 {
+        margin-left: $margin * 2;
+    }
+
+    .toc-element-level-5 {
+        margin-left: $margin * 3;
+    }
+
+    .toc-element {
+        display: flex;
+        break-inside: avoid;
+
+        .toc-item {
+            white-space: nowrap;
+        }
+
+        .spacer {
+            margin: 0 0.5em;
+            overflow: hidden;
+            flex-grow: 1;
+            font-weight: normal;
+        }
+
+        a::after {
+            flex-shrink: 0;
+            content: " p. " target-counter(attr(href), page);
+            white-space: nowrap;
+            font-weight: normal;
+        }
     }
 }
 
