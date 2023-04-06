@@ -65,18 +65,9 @@ export const TARGET_LOCK = make({
     desc_keywords_before: ['Target Locked'],
 })
 
-export const LMG = make({
-    name: 'LMG',
-    note: 'VS Infantry only',
-    cost: COST_ACTION,
-    range: 12,
-    rof: 1,
-    traits: [],
-})
-
 export const MG = make({
     name: 'MG',
-    note: 'VS Infantry only',
+    limitation: 'VS Infantry only',
     cost: COST_ACTION,
     range: 12,
     rof: 2,
@@ -85,7 +76,7 @@ export const MG = make({
 
 export const HMG = make({
     name: 'HMG',
-    note: 'VS Infantry only',
+    limitation: 'VS Infantry only',
     range: 12,
     rof: 3,
     traits: [],
@@ -114,7 +105,7 @@ export const ADVANCED_CHARGES = make({
 export const SMALL_ARMS = make({
     name: 'Rifle',
     range: 12,
-    note: 'VS Infantry only',
+    limitation: 'VS Infantry only',
     rof: 1,
     traits: [],
 })
@@ -201,7 +192,7 @@ export const SMART_MED_CANNON = make({
 
 export const INFANTRY_PARTICLE_RIFLE = make({
     name: 'Particle Rifle',
-    note: 'VS Infantry only',
+    limitation: 'VS Infantry only',
     range: 10,
     rof: 2,
     effect: 'Kill',
@@ -232,7 +223,6 @@ export const CLAWS = make({
 
 export const AT_CHARGES = make({
     name: 'AT Charges',
-    note: 'Teams 1-2',
     range: 6,
     rof: 1,
     traits: [
@@ -242,7 +232,6 @@ export const AT_CHARGES = make({
 
 export const MICRO_ARTILLERY = make({
     name: 'Micro Artillery',
-    note: 'Team 3',
     range: 16,
     rof: 1,
     effect: 'KILL',

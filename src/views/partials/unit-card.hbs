@@ -79,11 +79,9 @@
                             </tr>
                         {{else}}
                             <tr class="action-row"{{{style_font_size ../body_font_size}}}>
-                                <td class="col-name"><strong>{{name}}</strong> {{#if note}}
-                                    {{#if line_break_note}}<br>{{/if}}
-                                    <small{{{style_font_size note_font_size}}}>({{note}})</small>{{/if}}
-                                    {{#if type}}
-                                        [{{type}}]{{/if}}
+                                <td class="col-name"><strong>{{name}}</strong>
+                                    {{#if limitation}}<small>({{limitation}})</small>{{/if}}
+                                    {{#if stat}}[<small>{{stat}}</small>]{{/if}}
                                 </td>
                                 {{#if ../has_teams}}
                                     <td class="col-team">

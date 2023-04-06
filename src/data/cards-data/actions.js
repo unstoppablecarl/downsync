@@ -11,10 +11,11 @@ export const FORWARD_OBSERVE = make({
 
 export const SCAN = (rof, range) => {
     return make({
-        name: 'Scan',
+        name: 'Scanner',
+        stat: 'SCAN',
         range: range,
         rof: rof,
-        effect: 'scan',
+        effect: 'reveal',
     })
 }
 
@@ -36,7 +37,7 @@ export const GO_DARK = make({
     name: 'Go Dark',
     cost: COST_COMMAND,
     effect: '&starf;',
-    desc: 'Each Infantry Base in this Unit gains a Stealth Token.',
+    desc: 'This Unit gains a Stealth Token.',
 })
 
 export const BASIC_SCAN = SCAN(1, 12)

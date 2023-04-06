@@ -170,7 +170,7 @@ When all Units/Pings of both Forces have been Activated the Round ends.
 
 ### Turn Overview
 
-The Active Player resolves a Taskforce Activation.
+The Active Player performs a Taskforce Activation.
 
 #### Taskforce Activation Phases
 
@@ -324,7 +324,7 @@ more infantry models on it.
 |---------------------|-----------------------------------------------------------------------------|---------------|
 | SIG, Signature      | Small / Medium / Large                                                      |               |
 | SPD, Speed          | Movement distance in inches.                                                | 6"            |
-| SCAN, Scan          | Stat added to 2d6 when rolling to scan                                      | 5-8           |
+| SCAN, Scan          | Stat added to 2d6 when rolling to REVEAL                                    | 5-8           |
 | TARG, Targeting     | Stat added to 2d6 when rolling to hit                                       | 5-8           |
 | DEF, Defense        | Target Number to hit when rolling an attack                                 | 12-14         |
 | CM, Countermeasures | Number of [Countermeasure Tokens](#countermeasure-token) this Unit can have | 0-3           |
@@ -333,38 +333,48 @@ more infantry models on it.
 
 Some units have multiple Infantry Bases instead of a vehicle model. How many Infantry Bases a multi-base Unit has is
 indicated on its Unit Card by a number in a circle at the top of the card next to the Unit description. Multi-Base Units
-have 2-4 Infantry Bases.
+have 1-4 Infantry Bases.
 
 See: [Revealing Infantry Units](#revealing-infantry-units)
+
+### Targeting Multi-Base Units
+
+When performing a Combat Action against a Multi-Base Unit select a single Infantry base to be the target.
+Only that Infantry Base is used for determining LOS and Concealment for the Combat Action.
+If the Combat Action's effect is KILL, it is applied only to the targeted Infantry Base.
+
+If targeting a building containing Infantry Bases, the Attacker may choose any Infantry Base in the building to be the
+target.
 
 #### Multi-Base Unit Countermeasures
 
 Each Infantry Base in a Multi-Base Unit begins the game with a number of Countermeasure Tokens equal to the Unit's
-**CM** stat and regenerate Countermeasures the same as other Units.
+**CM** stat and regenerate Countermeasures the same as Single-Base Units.
+When an Infantry Base is hit by a Combat Action it may only use its own Countermeasure Tokens to negate the effect.
 
 #### Multi-Base Unit Coherency
 
-Multi-Base Units must end their movement such that all Infantry Bases in the Unit are within 12" of every other Infantry
-Base in the Unit. In other words all infantry bases in a Unit must fit within a 12" diameter circle.
+Multi-Base Units must end their movement such that all Infantry Bases in the Unit are within 6" of every other Infantry
+Base in the Unit. In other words all infantry bases in a Unit must fit within a 6" diameter circle.
 
 #### Multi-Base Unit Activation
 
 When a Multi-Base Unit activates each Infantry Base gains 1 Action Point and activates one at a time in an order
-determined by its Controlling Player. Infantry Base Activations of the same Unit can not be split up and must be
-completed before activating another Unit.
+determined by its Controlling Player.
+Infantry Base Activations of the same Unit can not be split up and must be completed before activating another Unit.
 
 #### Multi-Base Unit Actions
 
-Some Multi-Base Units have actions that only specific Teams (single Infantry Base in the Unit) can perform. For example
-a unit may have an action with a description that says "(Team 1)". Only that team may perform this action. Actions that
-do not specify a team can be performed by all Infantry Bases in a unit.
+Some Multi-Base Units have actions that only specific Teams (single Infantry Base in the Unit) can perform.
+For example a unit may have an action with a team value of "1" or "1-3".
+Only the team(s) indicated may perform this action.
+Actions that do not specify a team can be performed by all Infantry Bases in a unit.
 
 #### Multi-Base Unit Tokens
 
-Single [Activated Tokens](#activated-token) and [Overwatch Tokens](#overwatch-token) apply to the whole Unit. Each
-Infantry Base in a Unit tracks all other Tokens separately the same way a Non-Multi-Base Unit does.
-
-See: [Unit Tokens](#unit-tokens)
+In Multi-Base Units all non-Countermeasure Tokens belong to the Unit as a whole.
+They must be on an Infantry Base to indicate that the Unit is the owner of the Token, but it does not matter which
+infantry base(s) they are on. See: [Unit Tokens](#unit-tokens)
 
 ## Pings
 
@@ -375,6 +385,8 @@ controlling force, they are potential locations of deployment for their Units.
 In practice, a Ping is a Unit base without a model on it. When a Ping is Revealed, the Unit model is placed on the
 Ping (circular base) and it is now considered a Unit instead of a Ping. Fully based minis may be used and swapped with
 pings when revealed if desired.
+
+Pings may only be targeted by actions that have the REVEAL effect.
 
 ### Movement
 
@@ -392,14 +404,13 @@ Pings can only spend their Action Point to perform a Move Action to move an addi
 ### Revealing
 
 When a Ping is Revealed, the Controlling Player selects a Unit from their Reserve with the same **SIG** (Signature) as
-the
-Ping. This Unit will be Revealed at the Ping's current position.
+the Ping. This Unit will be Revealed at the Ping's current position.
 
 A Ping is Revealed when:
 
 - The controlling player chooses to Reveal it in the Reveal phase of a Taskforce Activation
 - If an enemy Unit ends a move within 2"
-- It is successfully [Scanned](#scan-action) by an enemy Unit
+- It is hit by an Action with the REVEAL effect
 
 **Note**: A Ping cannot end a move within 2" of an enemy Unit causing itself to be auto revealed.
 
@@ -440,15 +451,20 @@ The actions a Unit can perform, and their costs are indicated on the Unit's card
 
 ### Action Stats
 
-| Stat   | Description                                        |
-|--------|----------------------------------------------------|
-| Cost   | Cost to perform this action                        |
-| Target | Valid targets for this action                      |
-| Range  | Max range in inches*                               |
-| ROF    | Number of times this action repeats when performed |
-| Effect | The effect of a successful hit by this weapon      |
+| Stat   | Description                                                           |
+|--------|-----------------------------------------------------------------------|
+| Team   | Which team(s) in a Multi-Base Unit can perform this Action            |
+| Cost   | Cost to perform this action                                           |
+| Target | Valid targets for this action                                         |
+| Range  | Max range in inches, dash (-) indicates unlimited range               |
+| ROF    | (Rate of Fire) The number of times this Action repeats when performed |
+| Effect | The effect of a successful hit by this weapon                         |
 
-*Weapons with range dash (-) have an unlimited range
+#### Action Labels
+
+Actions labeled "(VS Infantry only)" may only target Infantry Units.
+
+Actions labeled "\[SCAN\]" are [Scan Actions](#scan-action).
 
 #### Action Cost Icons
 
@@ -481,18 +497,23 @@ An Overwatch Action may be performed by a Unit participating in a [Reaction Enga
 
 ### Scan Action
 
-Any Action with a **SCAN** effect is a Scan Action.
-When performing a Scan Action, a Scan Check may be performed for each ROF of the Scan Action.
-Before each Scan Check declare the target of the Scan Action.
+Any Action labeled "\[SCAN\]" is a Scan Action.
+When performing a Scan Action, a Scan Check may be performed for each point of the Scan Action's ROF.
+Before each Scan Check declare the target of the Scan Check.
 Each Scan Check must be resolved before the next.
-Each Scan Check of a Scan Action may have the same or different targets.
+Each Scan Check may have the same or different targets.
 
 #### Scan Check
 
-When a Unit performs a Scan Check, select an enemy Ping within the Scan Action Range and resolve a Scan Roll against it.
+When a Unit performs a Scan Check, select an enemy target within the Scan Action's Range and perform a Scan Roll against
+it.
 Scan targets do not need to be in LOS but must be in range.
 
-**Scan Roll** = 2d6 + SCAN stat + mods vs Ping **DEF**.
+**Scan Roll** = 2d6 + SCAN stat + mods vs **Target Defense**.
+
+If the target is a Unit the **Target Defense** is equal to its DEF stat.
+
+If the target is a Ping the **Target Defense** depends on its Signature.
 
 | Ping Signature | DEF (Defense) |
 |----------------|---------------|
@@ -504,20 +525,42 @@ Scan targets do not need to be in LOS but must be in range.
 |------------------------------|-----|
 | Ping Concealed or out of LOS | -1  |
 
-| Outcome                   | Result                 |
-|---------------------------|------------------------|
-| Scan Roll >= Ping Defense | [Revealed](#revealing) |
-| Scan Roll < Ping Defense  | Failure                |
+| Outcome                     | Result  |
+|-----------------------------|---------|
+| Scan Roll >= Target Defense | Success |
+| Scan Roll < Target Defense  | Failure |
+
+If the Scan Roll is successful apply the effect of the Action to the target.
+If the target is a Unit, it may attempt to negate the effects of the Scan Action
+with [Countermeasures](#countermeasures).
+
+*The typical Scan Action has a [REVEAL](#revealing) effect and is performed against an enemy Ping or a Unit with
+a [Stealth Token](#stealth-token).
+Some Scan Actions with other effects represent electronic warfare or cyber weapons.*
+
+### Scan Action Effects
+
+If a Scan Check results in a successful hit, resolve the Scan Action's effect against the targeted Unit.
+
+| Effect     | Description                                                                                                                            |
+|------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **REVEAL** | Pings hit by this effect are [Revealed](#revealing). Units hit by this effect lose a [Stealth Token](#stealth-token) if they have one. |
+
+Actions with a **&starf;** effect cannot be negated by any type of Countermeasures.
+The effect of the Action is described on the Unit Card.
 
 ### Combat Actions
 
-Any Action with a **KILL** or **STUN** effect is a combat action. Combat actions may only target enemy Units.
+Any action with a **KILL** or **STUN** effect is a combat action. Combat actions may only target enemy Units.
 
-When a Unit performs a Combat Action it may perform an attack for each point of the Action's ROF.
+When performing a Combat Action, an Attack may be performed for each point of the Combat Action's ROF.
+Before each Attack declare the target of the Attack.
+Each Attack must be resolved before the next.
+Each Attack may have the same or different targets.
 
 ### Attacks
 
-When a Unit performs an Attack, select an enemy Unit within the Combat Action's Range and LOS, then resolve an Attack
+When a Unit performs an Attack, select an enemy Unit within the Combat Action's Range and LOS, then perform an Attack
 Roll against it.
 
 **Attack Roll** = 2d6 + **TARG** stat + mods vs Unit **DEF**.
@@ -535,32 +578,61 @@ Roll against it.
 
 *Combat Actions with a range stat of 6" or less do not gain the short range bonus.
 
-### Attack Effects
+If the Attack Roll is successful apply the effect of the Action to the target.
+If the target is a Unit, it may attempt to negate the effects of the Combat Action
+with [Countermeasures](#countermeasures).
 
-If an Attack results in a successful hit, resolve the Combat Action's Effect against the targeted Unit.
+### Combat Action Effects
 
-| Effect   | Description                                                                                                                     |
-|----------|---------------------------------------------------------------------------------------------------------------------------------|
-| **KILL** | The unit is destroyed and removed from the game.                                                                                |
-| **STUN** | The target of the attack gains a [Stun Token](#stun-token). If the target already has a Stun Token, there is no further effect. |
+If an Attack results in a successful hit, resolve the Combat Action's effect against the targeted Unit.
 
-### Countermeasures
+| Effect     | Description                                                                                                            |
+|------------|------------------------------------------------------------------------------------------------------------------------|
+| **KILL**   | The targeted Unit or Infantry Base of a Multi-Base Unit is destroyed and removed from the game.                        |
+| **STUN**   | The targeted Unit gains a [Stun Token](#stun-token). If the Unit already has a Stun Token, there is no further effect. |
+| **REVEAL** | Pings hit by this effect are [Revealed](#revealing). Units hit by this effect lose a Stealth Token if they have one.   |
 
-A unit may spend a Countermeasure Token to perform a Countermeasure Check in an attempt to negate the effect of an
-attack. Only **KILL** and **STUN** Effects can be negated. Effects from combat action special rules cannot be prevented
-by Countermeasures.
+## Special Actions
+
+Actions with a **&starf;** effect are Special Actions and cannot be negated by any type of Countermeasures.
+The Action's described effect is resolved immediately.
+
+## Countermeasures
+
+*Countermeasures represent a Unit's ability to avoid attacks and damage.
+In Downsync, weapon and Countermeasure details are purposely abstracted to avoid the tedium of tracking what
+Countermeasures would be effective against what weapons under what conditions.*
+
+### Spending Countermeasures
+
+When hit by an Attack, a Unit may spend a Countermeasure Token to perform a Countermeasure Check.
+If the Countermeasure Check is successful the Combat Action's effect is negated.
+The Countermeasure Token is spent regardless of the Countermeasure Check outcome.
+
+When a Countermeasure Check fails, the Unit may spend additional Countermeasure Tokens to attempt to negate the effect.
+Each check is resolved before deciding to spend an additional Countermeasure Token.
+The unit may continue to spend Countermeasure Tokens until all of them have been spent.
+
+When first hit by an Attack or after failing a Countermeasure Check, a Unit is not required to spend a Countermeasure
+Token.
+Instead, the Unit may allow the Attack's effect to be applied.
+
+Special Actions (**&starf;** effect) cannot be negated by any type of Countermeasures.
+
+### Spending Hardened Countermeasures
+
+Any time a Unit could spend a Countermeasure Token it may spend a Hardened Countermeasure Token instead.
+If it does the Countermeasure Check is automatically successful without a die roll.
+The Controlling Player must decide which to use before performing a Countermeasure Check.
 
 #### Countermeasure Check
 
 Roll 3+ on 1d6 to negate the effect of one attack.
 
-When a Countermeasure Check fails, the unit may spend additional Countermeasure Tokens to attempt to negate the effect.
-Each check is resolved before deciding to spend additional Countermeasure Tokens.
-
-| Outcome  | Result  |
-|----------|---------|
-| 1d6 >= 3 | Success |
-| 1d6 < 3  | Failure |
+| Outcome       | Result  |
+|---------------|---------|
+| 1d6 roll >= 3 | Success |
+| 1d6 roll < 3  | Failure |
 
 [Hardened Countermeasures](#hardened-countermeasure-token) automatically succeed Countermeasure Checks.
 
@@ -572,8 +644,7 @@ stat. [Hardened Countermeasures](#hardened-countermeasure-token) do not Regenera
 ## Reaction Engagements
 
 Units controlled by a non-active player that have not activated this round (or have
-an [Overwatch Token](#overwatch-token)),
-have a chance to react and possibly act before activating Units.
+an [Overwatch Token](#overwatch-token)), have a chance to react and possibly act before activating Units.
 
 ### Initiating a Reaction Engagement
 
@@ -638,7 +709,7 @@ See: [Roll Advantage](#roll-advantage)
 
 #### Resolve Reactions
 
-In reaction priority order, each Unit may resolve a Unit Activation. Instead of performing a Unit Activation, a Unit may
+In reaction priority order, each Unit may perform a Unit Activation. Instead of performing a Unit Activation, a Unit may
 hold its reaction by reducing the value of its Reaction Priority die by 1. Units not in the activating Taskforce
 are [Refreshed](#refresh) immediately before resolving their reaction Unit Activation.
 
@@ -684,8 +755,8 @@ sources.
 
 ## Unit Tokens
 
-Each Unit has tokens represented by 8mm colored wooden cubes. The tokens are placed on the base of the Unit to clearly
-show what Unit the tokens belong to. When a Unit *spends* a token it is removed from the Unit's base and set aside.
+Each Unit has tokens represented by 8mm colored cubes. The tokens are placed on the base of the Unit to clearly
+show what Unit they belong to. When a Unit *spends* a token it is removed from the Unit's base and set aside.
 
 ### Activated Token
 
@@ -732,45 +803,47 @@ Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
 A Unit with an Overwatch Token can participate in Reaction Engagements even if it has an Activated Token and gains
 +1 [Advantage](#roll-advantage) to [Reaction Priority Rolls](#reaction-priority-roll).
 
-|                       |                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------|
-| **Color**             | <span class="token" style="background:purple"></span> Purple                      |
-| **Gained**            | After performing an [Overwatch Action](#overwatch-action)                         |
-| **Can have multiple** | No                                                                                |
-| **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together         |
-| **Removed**           | Taskforce Designation  or after performing an Activation in a Reaction Engagement |
+|                       |                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| **Color**             | <span class="token" style="background:purple"></span> Purple                    |
+| **Gained**            | After performing an [Overwatch Action](#overwatch-action)                       |
+| **Can have multiple** | No                                                                              |
+| **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together       |
+| **Removed**           | Taskforce Designation or after resolving an Activation in a Reaction Engagement |
 
 ### Stun Token
 
 A Unit with a Stun Token is considered Stunned and may only perform a move or action when activating and suffers
 -1 [Advantage](#roll-advantage) for [Reaction Priority Rolls](#reaction-priority-roll).
 
-|                       |                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span class="token" style="background:orange"></span> Orange                                                                      |
-| **Gained**            | After suffering the STUN effect                                                                                                   |
-| **Can have multiple** | No                                                                                                                                |
-| **Multi-Base Units**  | Each Infantry Base in a Unit is targeted and suffers the STUN effect separately not as a Unit                                     |
-| **Removed**           | After performing an activation that suffered its effect or spending a Command Point to remove it in the [Refresh](#refresh) phase |
+|                       |                                                                                                                                  |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Color**             | <span class="token" style="background:orange"></span> Orange                                                                     |
+| **Gained**            | After suffering the STUN effect                                                                                                  |
+| **Can have multiple** | No                                                                                                                               |
+| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases suffer the effects of STUN                                                              |
+| **Removed**           | After resolving an activation that suffered its effect or spending a Command Point to remove it in the [Refresh](#refresh) phase |
 
 ### Stealth Token
 
-A Unit with a Stealth Token cannot be targeted by enemy attacks. A Unit looses its Stealth Token immediately after
-performing an attack Action and in all cases that would cause a Ping to be [Revealed](#revealing). A Unit cannot gain a
-Stealth Token if an enemy Unit is within 2".
+A Unit with a Stealth Token cannot be targeted by enemy attacks.
+A Unit looses its Stealth Token immediately after resolving an Combat Action and in all cases that would cause a Ping to
+be [Revealed](#revealing).
+A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 
-|                       |                                                                                                                                            |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span class="token" style="background:black"></span> Black                                                                                 |
-| **Gained**            | By unit special abilities                                                                                                                  |
-| **Can have multiple** | No                                                                                                                                         |
-| **Multi-Base Units**  | Each Infantry Base in a Unit has its own Stealth Token                                                                                     |
-| **Removed**           | A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit (or it) ends its movement within 2". |
+|                       |                                                                                                                                                                  |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Color**             | <span class="token" style="background:black"></span> Black                                                                                                       |
+| **Gained**            | By unit special abilities                                                                                                                                        |
+| **Can have multiple** | No                                                                                                                                                               |
+| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                             |
+| **Removed**           | A Unit looses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or placement within 2". |
 
 ### Unit Token Quick Reference
 
 | Token                                                         | Color                                                                     |
 |---------------------------------------------------------------|---------------------------------------------------------------------------|
+| **[Command Point](#command-points)**                          | <span class="token" style="background:blue"></span> Blue                  |
 | **[Activated](#activated-token)**                             | <span class="token" style="background:green"></span> Green                |
 | **[Countermeasure](#countermeasure-token)**                   | <span class="token token-shadow" style="background:white"></span> White   |
 | **[Hardened Countermeasure](#hardened-countermeasure-token)** | <span class="token token-shadow" style="background:yellow"></span> Yellow |
