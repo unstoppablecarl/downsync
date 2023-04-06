@@ -545,6 +545,7 @@ If a Scan Check results in a successful hit, resolve the Scan Action's effect ag
 | Effect     | Description                                                                                                                            |
 |------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | **REVEAL** | Pings hit by this effect are [Revealed](#revealing). Units hit by this effect lose a [Stealth Token](#stealth-token) if they have one. |
+| **BREACH** | Units hit by this effect gain 1 [Breach Counter](#breach-counter)                                                                      |
 
 Actions with a **&starf;** effect cannot be negated by any type of Countermeasures.
 The effect of the Action is described on the Unit Card.
@@ -750,8 +751,35 @@ unit's bases within
 
 ### Ability Stacking
 
-Multiple instances of the same ability do not stack. Including if an ability with the same name comes from multiple
-sources.
+Multiple instances of the same ability do not stack unless specified as such.
+Including if an ability with the same name comes from multiple sources.
+
+### Rule Specificity
+
+Rules text on Unit Cards take precedence over rulebook text.
+Unit Cards are intended to modify the core rules of the game.
+
+## Unit Counters
+
+Unit Counters represent temporary game state typically lasting until the end of a Taskforce Activation.
+They do not have included physical components to represent them as they rarely needed.
+Unit Cards will describe when a Unit gains an X Counter and what that Counter does.
+
+*A Unit may gain a Tag Counter that is removed at the end of this Taskforce Activation.
+So you easily remember which unit is tagged as you complete the Turn.*
+
+*In an atypical Turn where 3 Units have a Tag Counter it becomes more difficult to remember.
+In such cases you should to mark Unit Counters with a die, generic token, or creative improvisation.
+Then discard them when the Unit Counters are removed.*
+
+### Breach Counter
+
+|                       |                                                                                                                                       |
+|-----------------------|:--------------------------------------------------------------------------------------------------------------------------------------|
+| **Gained**            | When a Unit suffers the BREACH effect                                                                                                 |
+| **Can have multiple** | Yes                                                                                                                                   |
+| **Multi-Base Units**  | Gained by the Unit as a whole. If the Unit has X Breach Counters, any targeted Infantry Base is considered to have X Breach Counters. |
+| **Removed**           | End of Taskforce Activation                                                                                                           |
 
 ## Unit Tokens
 
