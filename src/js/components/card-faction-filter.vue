@@ -29,7 +29,10 @@
                         />
                         <label class="form-check-label" :for="'filter-' + faction.faction_slug">
                             {{ faction.faction }}
+                            <a class="btn btn-light btn-only" @click="selectOnly(faction.faction_slug)"
+                               href="#">only</a>
                         </label>
+
                     </div>
                 </div>
             </form>
@@ -106,6 +109,9 @@ export default {
                 this.selectNone()
             }
         },
+        selectOnly(factionSlug) {
+            this.checkedFactions = [factionSlug]
+        },
         selectAll() {
             let checkedFactions = []
             this.factions.forEach(({ faction_slug }) => {
@@ -166,8 +172,23 @@ export default {
 }
 
 </script>
-<style scoped>
+<style scoped lang="scss">
 .form-check-label {
     white-space: nowrap;
+
+    .btn-only {
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 0.25rem;
+        --bs-btn-font-size: 0.75rem;
+    }
+
+    .badge {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+
+        }
+    }
 }
 </style>
