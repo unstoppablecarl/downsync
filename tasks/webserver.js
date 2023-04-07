@@ -7,6 +7,11 @@ gulp.task('server', function (done) {
         server: './dist/',
         port: 4000,
         notify: true,
+        ghostMode: {
+            clicks: false,
+            forms: false,
+            scroll: false,
+        },
     })
 
     gulp.watch(paths.views.watch, { usePolling: true }, gulp.series([
