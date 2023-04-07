@@ -267,8 +267,7 @@ export const RNR_INFANTRY = make({
     defense: 14,
     scan: null,
     actions: [
-
-        Object.assign({}, SHOCK_RIFLE, { note: null }),
+        SHOCK_RIFLE,
         ADVANCED_CHARGES,
         REPAIR_RENCH,
     ],
