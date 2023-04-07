@@ -120,9 +120,12 @@ export function makeAction(action) {
     return result
 }
 
-export function modifyAction(action, mods) {
+export function modifyAction(action, mods, appendTraits = []) {
 
-    return Object.assign({}, action, mods)
+    action = Object.assign({}, action, mods)
+    action.traits = action.traits.concat(appendTraits)
+
+    return action
 }
 
 export function makeWeapon(weapon) {
