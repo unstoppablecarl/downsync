@@ -38,12 +38,12 @@ function makeCMMod(name, TN) {
     })
 }
 
-export const EXTREME_RANGE = make({
+export const TRAIT_EXTREME_RANGE = make({
     name: 'Extreme Range',
     desc: 'Ignores short/long range modifiers. Min range 6". Max range unlimited.',
 })
 
-export const CLOSE_COMBAT = make({
+export const TRAIT_CLOSE_COMBAT = make({
     name: 'Close Combat',
     desc: 'Ignores Concealment and short range modifiers.',
 })

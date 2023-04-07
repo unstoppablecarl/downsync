@@ -15,7 +15,7 @@ stealth, and deception.
 
 - create opportunities for players to do surprising things without it being a "gotcha, you forgot X" moment
 - hidden units without bookkeeping
-- avoid IGOUGO via alternate activation of unit groups called Taskforces
+- avoid IGOUGO via alternate activation of Taskforce unit groups
 - activated unit groupings are flexible and dynamic not strict like platoons or companies and can change from turn to
   turn
 - having more/better information than your opponent gives an advantage
@@ -565,10 +565,10 @@ Roll against it.
 
 **Attack Roll** = 2d6 + **TARG** stat + mods vs Unit **DEF**.
 
-| Outcome                                    | Result |
-|--------------------------------------------|--------|
-| Attacker Targeting + 2d6 >= Target Defense | Hit    |
-| Attacker Targeting + 2d6 < Target Defense  | Miss   |
+| Outcome                     | Result |
+|-----------------------------|--------|
+| Attack Roll >= Unit Defense | Hit    |
+| Attack Roll < Unit Defense  | Miss   |
 
 | Modifiers             | Mod |
 |-----------------------|-----|
@@ -827,7 +827,7 @@ A Unit with a Stun Token is considered Stunned and may only perform a move or ac
 ### Stealth Token
 
 A Unit with a Stealth Token cannot be targeted by enemy attacks.
-A Unit looses its Stealth Token immediately after resolving an Combat Action and in all cases that would cause a Ping to
+A Unit loses its Stealth Token immediately after resolving a Combat Action and in all cases that would cause a Ping to
 be [Revealed](#revealing).
 A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 
