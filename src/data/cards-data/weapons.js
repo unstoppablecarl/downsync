@@ -1,10 +1,10 @@
 import {
-    CLOSE_COMBAT,
     DEADLY_VS,
-    EXTREME_RANGE,
     TRAIT_ADVANCED,
+    TRAIT_CLOSE_COMBAT,
     TRAIT_CLUSTERED,
     TRAIT_DOUBLE_TAP,
+    TRAIT_EXTREME_RANGE,
     TRAIT_FIRE_SUPPORT,
     TRAIT_INFANTRY_NETWORK,
     TRAIT_OVERKILL,
@@ -145,7 +145,7 @@ export const HEAVY_ARTILLERY = make({
     rof: 4,
     traits: [
         TRAIT_FIRE_SUPPORT,
-        EXTREME_RANGE,
+        TRAIT_EXTREME_RANGE,
         TRAIT_CLUSTERED(3),
     ],
 })
@@ -157,7 +157,7 @@ export const SHOCK_ARTILLERY = make({
     effect: 'STUN',
     traits: [
         TRAIT_FIRE_SUPPORT,
-        EXTREME_RANGE,
+        TRAIT_EXTREME_RANGE,
         TRAIT_CLUSTERED(6),
         DEADLY_VS(TYPE_INFANTRY),
     ],
@@ -177,7 +177,7 @@ export const RAILGUN = make({
     rof: 1,
     traits: [
         TRAIT_OVERKILL,
-        EXTREME_RANGE,
+        TRAIT_EXTREME_RANGE,
     ],
 })
 
@@ -217,16 +217,18 @@ export const CLAWS = make({
     rof: 1,
     traits: [
         TRAIT_SPECIALIZED_VS([TYPE_INFANTRY]),
-        CLOSE_COMBAT,
+        TRAIT_CLOSE_COMBAT,
     ],
 })
 
 export const AT_CHARGES = make({
     name: 'AT Charges',
+    limitation: 'VS Vehicles only',
     range: 6,
     rof: 1,
     traits: [
         TRAIT_ADVANCED,
+        TRAIT_CLOSE_COMBAT,
     ],
 })
 
