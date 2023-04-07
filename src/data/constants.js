@@ -1,4 +1,3 @@
-
 export const SIZE_SMALL = 'Small'
 export const SIZE_MEDIUM = 'Medium'
 export const SIZE_LARGE = 'Large'
@@ -48,6 +47,7 @@ export const EMPHASIS_KEYWORDS = [
     'KILL',
     'STUN',
     'COMP',
+    'BREACH',
 
     'LOS',
 
@@ -82,4 +82,7 @@ export const EMPHASIS_KEYWORDS = [
 
     'Compromise Counters',
     'Compromise Counter',
+
+    'Breach Counters',
+    'Breach Counter',
 ]

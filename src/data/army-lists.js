@@ -28,10 +28,10 @@ import {
 } from './constants.js'
 import {
     BULLET_SPONGE,
+    DRONE_WRANGLER_TEAM,
     INFANTRY_SQUAD,
     MED_TANK,
     SCRAMBLER,
-    SPIDER_DRONE_WRANGLER,
     TANK_HUNTERS,
     TECHNICAL,
 } from './cards/free-union-units.js'
@@ -112,7 +112,7 @@ export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
         count: 2,
     },
     {
-        unit: SPIDER_DRONE_WRANGLER,
+        unit: DRONE_WRANGLER_TEAM,
         count: 1,
     },
     {

@@ -22,7 +22,7 @@ export const CLEAR_THE_WAY = make({
 export const SMALL_DECOY_PING = make({
     name: 'Decoy',
     note: 'Small',
-    desc: 'When this unit is added to your Force, the force gains one Small Decoy Ping.',
+    desc: 'When this Unit is added to your Force, the Force gains one Small Decoy Ping.',
 })
 
 export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
@@ -35,9 +35,9 @@ export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
 }
 
 export const BULLET_SPONGE_AURA = make({
-    name: 'Interference Field',
-    note: `2", COST: ${COST_COMMAND}, Refresh phase`,
-    desc: `Friendly Units within 2" can spend this Unit's Countermeasure Tokens. ${UPKEEP_COMMAND_POINT_TEXT}`,
+    name: 'Defender Aura',
+    note: `4", COST: ${COST_COMMAND}, Refresh phase`,
+    desc: `Friendly Units within 4" and LOS can spend this Unit's Countermeasure Tokens. ${UPKEEP_COMMAND_POINT_TEXT}`,
 })
 
 export const FINISHER = make({
@@ -98,6 +98,12 @@ export const ALL_TERRAIN = make({
     desc: 'This Unit ignores terrain movement penalties.',
 })
 
+export const BREACH_LINK = make({
+    name: 'Breach Link',
+    note: '+1 TARG &times; Breach',
+    desc: 'This Unit gains +1 TARG for each Breach Counter its Target has.',
+})
+
 export const WIDOW_SCOUT_CARRIED = make({
     name: 'Packaged',
     note: 'Widow Scout',
@@ -133,6 +139,17 @@ export const HIT_AND_RUN = make({
     name: 'Hit and Run',
     note: `2" place`,
     desc: `After this Unit resolves a combat action it may be placed within 2".`,
+})
+
+export const HITCH_HIKER = make({
+    name: 'Hitch Hiker',
+    desc: `Immediately after this Unit is Revealed it may be placed within 3" of a friendly Unit in this Taskforce with the Transport trait.`,
+})
+
+export const FREE_UNION_TRANSPORT = make({
+    name: 'Transport',
+    desc: `This Unit may be targeted by the Hitch Hiker trait once per Taskforce Activation.`,
+    desc_keywords_name: ['Hitch Hiker'],
 })
 
 function make(trait) {

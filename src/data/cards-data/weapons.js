@@ -1,6 +1,7 @@
 import {
     DEADLY_VS,
     TRAIT_ADVANCED,
+    TRAIT_BREACHER,
     TRAIT_CLOSE_COMBAT,
     TRAIT_CLUSTERED,
     TRAIT_DOUBLE_TAP,
@@ -19,7 +20,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { makeTrait, makeWeapon } from '../support/factories.js'
+import { makeWeapon, modifyAction } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -74,6 +75,8 @@ export const MG = make({
     traits: [],
 })
 
+export const ADVANCED_MG = modifyAction(MG, { name: 'Adv. MG' }, [TRAIT_ADVANCED])
+
 export const HMG = make({
     name: 'HMG',
     limitation: 'VS Infantry only',
@@ -82,9 +85,49 @@ export const HMG = make({
     traits: [],
 })
 
+export const CYBER_KILL = make({
+    name: 'Cyber Kill',
+    cost: COST_ACTION_OR_COMMAND,
+    stat: 'SCAN',
+    range: 16,
+    rof: 2,
+    effect: 'KILL',
+    traits: [
+        TRAIT_BREACHER,
+    ],
+})
+
+export const CM_HACK = make({
+    name: 'CM Hack',
+    stat: 'SCAN',
+    cost: COST_ACTION_OR_COMMAND,
+    range: 16,
+    rof: 2,
+    effect: '&starf;',
+    desc: 'Units hit by this weapon resolve a CM check for each CM (non-hardened) it has and removes a CM for each failed check.',
+    traits: [
+        TRAIT_BREACHER,
+    ],
+})
+
+const HACK_BASE = {
+    name: 'Hack',
+    stat: 'SCAN',
+    cost: COST_ACTION_OR_COMMAND,
+    range: 16,
+    rof: 1,
+    effect: 'BREACH',
+}
+
+export const HACK = make(HACK_BASE)
+
+export const AI_HACK = make(Object.assign({}, HACK_BASE, {
+    name: 'AI Hack',
+    rof: 2,
+}))
+
 export const SHOCK_RIFLE = make({
     name: 'Shock Rifle',
-    note: 'Team 1, 2',
     range: 10,
     effect: 'STUN',
     rof: 1,
@@ -246,12 +289,16 @@ export const MICRO_ARTILLERY = make({
 export const RPG = make({
     name: 'RPG',
     range: 10,
-    rof: 1,
+    rof: 2,
     effect: 'KILL',
+})
+
+export const ADVANCED_RPG = make(Object.assign({}, RPG, {
+    name: 'Adv. RPG',
     traits: [
         TRAIT_ADVANCED,
     ],
-})
+}))
 
 export const SHOCK_SNIPER_RIFLE = make({
     name: 'Shock Sniper Rifle',
@@ -273,33 +320,6 @@ export const SMART_RPG = make({
         TRAIT_SMART,
     ],
 })
-
-export const CYBER_ATTACK = make({
-    name: 'Cyber Attack',
-    range: 16,
-    rof: 1,
-    effect: 'STUN',
-    traits: [
-        makeTrait({
-            name: 'Compromising',
-            note: 'roll + comp >= 10 = KILL',
-            desc: 'If this action\'s attack hits and its roll + the number of Compromise Counters on the target are >= 10, this action gains the KILL effect.' +
-                ' Units surviving a hit by this weapon gain a Compromise Counter.',
-        }),
-    ],
-})
-
-export function SNAP_FIRE(weapon, range) {
-
-    let newWeapon = Object.assign({}, weapon, {
-        name: 'Snap Fire',
-        cost: COST_COMMAND,
-        rof: 1,
-        range,
-    })
-
-    return make(newWeapon)
-}
 
 function make(weapon) {
 

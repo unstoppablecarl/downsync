@@ -29,16 +29,13 @@
                         />
                         <label class="form-check-label" :for="'filter-' + faction.faction_slug">
                             {{ faction.faction }}
-                            <a class="btn btn-light btn-only" @click="selectOnly(faction.faction_slug)"
-                               href="#">only</a>
                         </label>
-
+                        <span class="btn btn-light btn-only"
+                              @click="(event) => selectOnly(event, faction.faction_slug)">only</span>
                     </div>
                 </div>
             </form>
         </div>
-
-
     </div>
 </template>
 
@@ -109,7 +106,9 @@ export default {
                 this.selectNone()
             }
         },
-        selectOnly(factionSlug) {
+        selectOnly(event, factionSlug) {
+            event.stopPropagation()
+            console.log('zxc', event)
             this.checkedFactions = [factionSlug]
         },
         selectAll() {
@@ -173,22 +172,14 @@ export default {
 
 </script>
 <style scoped lang="scss">
-.form-check-label {
+.form-check {
     white-space: nowrap;
 
     .btn-only {
         --bs-btn-padding-y: 0;
         --bs-btn-padding-x: 0.25rem;
         --bs-btn-font-size: 0.75rem;
-    }
-
-    .badge {
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: none;
-
-        }
+        margin-left: 0.5em;
     }
 }
 </style>

@@ -66,6 +66,16 @@ export const DEADLY_VS = (type) => {
     })
 }
 
+export const TRAIT_BREACHER = makeTrait({
+    name: 'Breacher',
+    desc: 'This attack may only target a Unit with a Breach Counter. Units hit by this weapon lose 1 Breach Counter.',
+})
+
+export const TAKE_UP = makeTrait({
+    name: 'Take Up',
+    desc: 'When an Infantry Base with this weapon is killed, it may replace an Infantry Base in this Unit within 3".',
+})
+
 function make(trait) {
     return makeTrait(trait)
 }

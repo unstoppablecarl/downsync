@@ -427,6 +427,26 @@ Ping) and the Ping is removed.
 
 See: [Multi-Base Units](#multi-base-units)
 
+### Decoy Pings
+
+Decoy Pings are normal Pings added to a Force in excess of the number of Units with a matching Signature.
+Decoy Pings are included in a Force when the Force includes Units with a **Decoy\[*\<SIG\>*\]** trait, or are granted by
+a scenario.
+
+*For example, a Small Game Force has 3 medium Units and therefore 3 medium Pings.*
+*If the Force included 1 medium Decoy Ping, it would begin the game with 3 medium Units and 4 medium Pings.*
+
+When a Ping is revealed, if its Force has more Pings of matching SIG on the Battlefield than Units of matching
+SIG in Reserve, the Ping may be Revealed to be a Decoy instead of a Unit and is removed from the game.
+
+After Revealing a Ping as a Unit, if there are no remaining Units of matching SIG in Reserve, any Pings of
+matching SIG on the Battlefield are immediately removed from the game.
+
+*For example: Joe's Small Game Force has 3 medium Units and 4 medium Pings.*
+*On the Battlefield Joe has 2 medium Units and 2 medium Pings.*
+*If Joe reveals a medium Ping to be a Unit, he will now have all of 3 of his medium Units and
+1 medium Ping on the Battlefield. The medium Ping must be a Decoy, so it is immediately removed from the game.*
+
 ## Command Points
 
 The Command Point Capacity of a game is determined by the [Game Size](#game-sizes).
