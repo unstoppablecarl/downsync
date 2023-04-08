@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: Apr 2, 2023
+Last Updated: Apr 8, 2023
 
 [[toc]]
 
@@ -21,7 +21,8 @@ stealth, and deception.
 - having more/better information than your opponent gives an advantage
 - keep the game dynamic by not rewarding staying still
 - avoid mechanics that force players to carefully spread out every single unit (area of effect weapons)
-- miniature scale is 15mm. Scale is highly abstracted though
+- miniature scale is 15mm (1:100). Scale is highly abstracted though
+- resources reset each round but not the start of each round to prevent jamming at the end of a round
 - games should take 45-60 min
 
 ### Components and Conventions
@@ -32,6 +33,7 @@ stealth, and deception.
 - Tokens
 - Models
 - 4x4 ft play area
+- Terrain
 
 #### Scale
 
@@ -57,17 +59,13 @@ roll result.
 
 #### Roll Advantage
 
-Each roll starts with an Advantage value of zero. Effects and abilities can add or subtract the Advantage value from a
-roll. Positive and Negative Advantage values negate each other. For example a roll with +2 Advantage and -1 Advantage =
-1 Advantage and a roll with +1 Advantage and -3 Advantage = -2 Advantage.
+Each roll starts with an Advantage value of zero. Effects and abilities can add to the Advantage value of a
+roll.
 
-*Complicated Advantage combinations are rare, but this should explain how to resolve them for all cases.*
-
-| Advantage Value | Effect where xd6 is the number of dice to be rolled (1d6 or 2d6)                          |
-|-----------------|-------------------------------------------------------------------------------------------|
-| Negative        | roll an additional 1d6 for each **negative** Advantage Value and keep the **lowest** xd6  |
-| Zero            | roll xd6                                                                                  |
-| Positive        | roll an additional 1d6 for each **positive** Advantage Value and keep the **highest** xd6 |
+| Roll | Procedure                                                                    |
+|------|------------------------------------------------------------------------------|
+| 1d6  | Roll an additional 1d6 for each Advantage Value and keep the **highest** 1d6 |
+| 2d6  | Roll an additional 1d6 for each Advantage Value and keep the **highest** 2d6 |
 
 ### Terminology
 
@@ -268,6 +266,22 @@ that point to any point on the volume of the target that crosses intervening ter
 | Urban        |          | Yes         |
 | Rough Ground | -2"      |             |
 
+A Unit/Ping is considered in Area Terrain if any part of its base overlaps or touches the edge of the Area Terrain.
+
+### Area Terrain Movement Penalties
+
+If any part of a Unit/Ping's movement crosses slowing Area Terrain it suffers -2" of movement.
+A movement crossing multiple pieces of Area Terrain does not increase this penalty.
+
+If the -2" movement penalty would prevent a Unit from reaching the edge of Area Terrain, it may move close enough to
+touch the edge of the area terrain without a -2" penalty.
+
+*For example: If a Unit with SPD 6 is 5" away from the edge of Terrain template it may move 5" and end its movement
+touching the edge of the Area Terrain and is considered in that Area Terrain.*
+
+A Unit/Ping beginning its movement touching the edge of Area Terrain is considered to have crossed the Area Terrain and
+will suffer its movement effects even if moving away from the Area Terrain.
+
 ### Concealing Area Terrain And LOS
 
 <div class="row">
@@ -437,7 +451,7 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 ### Command Point Abilities
 
 - **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
-- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit when it is [Refreshed](#refresh).
+- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit before its [Unit Activation](#unit-activation).
 - **Add a Unit to a Reaction Engagement**
   see:  [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
 - **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
@@ -685,6 +699,9 @@ Player wins ties between opposing Units. Ties between friendly Units act in an o
 player. After the Reaction Priority of each participating unit is determined place a d6 indicating the Reaction Priority
 next to each participating Unit.
 
+*When a participating Unit completes its activation remove its Reaction Priority die to indicate it has completed its
+Unit Activation.*
+
 #### Determine Reaction Priority
 
 Each Unit participating in the Reaction Engagement performs a Reaction Priority Roll.
@@ -702,7 +719,6 @@ A participating Unit rolls 1d6 to determine its Reaction Priority. Keep the die 
 | Case                                                | Roll Advantage Adjustments |
 |-----------------------------------------------------|----------------------------|
 | Unit has an **[Overwatch Token](#overwatch-token)** | +1 Advantage               |
-| Unit has a **[Stun Token](#stun-token)**            | -1 Advantage               |
 | Roll Boosted                                        | +1 Advantage               |
 
 See: [Roll Advantage](#roll-advantage)
@@ -813,8 +829,8 @@ A Unit with an Overwatch Token can participate in Reaction Engagements even if i
 
 ### Stun Token
 
-A Unit with a Stun Token is considered Stunned and may only perform a move or action when activating and suffers
--1 [Advantage](#roll-advantage) for [Reaction Priority Rolls](#reaction-priority-roll).
+Before performing its Unit Activation, a Unit with a Stun Token must spend 1 of the following then remove the Stun
+Token: Command Point, Action Point, Countermeasure Token, Hardened Countermeasure Token.
 
 |                       |                                                                                                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -850,3 +866,23 @@ A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 | **[Overwatch](#overwatch-token)**                             | <span class="token" style="background:purple"></span> Purple              |
 | **[Stun](#stun-token)**                                       | <span class="token" style="background:orange"></span> Orange              |
 | **[Stealth](#stealth-token)**                                 | <span class="token" style="background:black"></span> Black                |
+
+## Areas That Could Be Improved
+
+There are still areas of the rules that could use improvement. Please share any suggestions you may have.
+
+### Naming
+
+The following names are ok but could be better:
+
+- "Hardened" Countermeasure
+- Multi-Based Unit
+- Infantry Base
+- Reaction Engagement
+- Reaction Priority
+
+### Command Points
+
+Command Points generation is the only part of the game that resets at the start of a round.
+It would be better if there was a way to get them throughout the round to prevent jamming at the end of a round.
+
