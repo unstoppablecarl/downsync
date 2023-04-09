@@ -5,7 +5,7 @@ const UPKEEP_COMMAND_POINT_TEXT = 'This Unit gains the Command Point Token spent
 
 export const STEALTHY_INFANTRY = make({
     name: 'Stealthy',
-    desc: `Each Infantry Base in this Unit begins the game with a Stealth Token.`,
+    desc: `This Unit begins the game with a Stealth Token.`,
 })
 
 export const CLEAR_THE_WAY = make({
