@@ -107,9 +107,16 @@
                                             <br>
                                             {{{or_desc}}}
                                         {{/if}}
+
+                                        {{#if desc2}}
+                                            <br>
+                                            <strong>----</strong>
+                                            <br>
+                                            {{{desc2}}}
+                                        {{/if}}
                                     </td>
                                 </tr>
-                {{/if}}
+                            {{/if}}
                 {{#if traits}}
                     <tr class="action-features-row">
                         <td colspan="{{#if ../has_teams}}6{{else}}5{{/if}}"{{{style_font_size ../body_font_size}}}>

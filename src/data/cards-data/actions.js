@@ -26,8 +26,9 @@ export const SCRAMBLE = make({
     cost: COST_COMMAND,
     range: 6,
     effect: '&starf;',
-    desc: 'Select another friendly Single-Base Unit or Infantry Base within 6", it gains a Stealth Token',
+    desc: 'Select another friendly Unit within 6", it gains a Stealth Token',
     or_desc: 'Select an enemy Ping within 6" and LOS, That Ping may not be Revealed while within 6" of this Unit until the end of this Round.',
+    desc2: 'Scramble may be used once per Unit Activation.',
     traits: [],
 })
 

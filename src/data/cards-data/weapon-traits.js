@@ -70,7 +70,12 @@ export const TRAIT_BREACHER = makeTrait({
     desc: 'This attack may only target a Unit with a Breach Counter. Units hit by this weapon lose 1 Breach Counter.',
 })
 
-export const TAKE_UP = makeTrait({
+export const TRAIT_BREACH_EXPLOIT = makeTrait({
+    name: 'Breach Exploit',
+    desc: 'To perform this action, spend a Breach Counter on an enemy Unit within 16"',
+})
+
+export const TRAIT_TAKE_UP = makeTrait({
     name: 'Take Up',
     desc: 'When an Infantry Base with this weapon is killed, it may replace an Infantry Base in this Unit within 3".',
 })

@@ -112,7 +112,20 @@ export const CM_HACK = make({
     range: 16,
     rof: 2,
     effect: '&starf;',
-    desc: 'Units hit by this weapon resolve a CM check for each CM (non-hardened) it has and removes a CM for each failed check.',
+    desc: 'Units hit by this weapon resolve a CM check for each CM (non-hardened) it has and removes a CM for each failed check. This action may only be performed once per Unit Activation.',
+    traits: [
+        TRAIT_BREACHER,
+    ],
+})
+
+export const POSITION_HACK = make({
+    name: 'Position Hack',
+    stat: 'SCAN',
+    cost: COST_ACTION_OR_COMMAND,
+    range: 16,
+    rof: 1,
+    effect: '&starf;',
+    desc: 'Units hit by this attack are placed within 3" of their current position by the attacker. This Action may only be performed once per Unit Activation.',
     traits: [
         TRAIT_BREACHER,
     ],
@@ -131,7 +144,7 @@ export const HACK = make(HACK_BASE)
 
 export const AI_HACK = make(Object.assign({}, HACK_BASE, {
     name: 'AI Hack',
-    rof: 2,
+    rof: 3,
 }))
 
 export const SHOCK_RIFLE = make({
@@ -294,19 +307,16 @@ export const MICRO_ARTILLERY = make({
     ],
 })
 
-export const RPG = make({
-    name: 'RPG',
+export const ADVANCED_RPG = make({
+    name: 'Adv. RPG',
     range: 10,
     rof: 2,
     effect: 'KILL',
-})
-
-export const ADVANCED_RPG = make(Object.assign({}, RPG, {
-    name: 'Adv. RPG',
     traits: [
         TRAIT_ADVANCED,
+        TRAIT_CLOSE_AND_PERSONAL,
     ],
-}))
+})
 
 export const SHOCK_SNIPER_RIFLE = make({
     name: 'Shock Sniper Rifle',
@@ -319,8 +329,8 @@ export const SHOCK_SNIPER_RIFLE = make({
     ],
 })
 
-export const SMART_RPG = make({
-    name: 'Smart RPG',
+export const SMART_BOMBS = make({
+    name: 'Smart Bombs',
     range: 10,
     rof: 1,
     effect: 'KILL',

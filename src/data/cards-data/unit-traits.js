@@ -129,11 +129,6 @@ export const HARDENED_CM = make({
     desc: `This Unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
 })
 
-export const CLOSE_AND_PERSONAL = make({
-    name: 'Close and Personal',
-    note: '+1 TARG',
-    desc: 'This Unit gains an additional +1 TARG against targets within short range.',
-})
 
 export const HIT_AND_RUN = make({
     name: 'Hit and Run',
@@ -143,13 +138,19 @@ export const HIT_AND_RUN = make({
 
 export const HITCH_HIKER = make({
     name: 'Hitch Hiker',
-    desc: `Immediately after this Unit is Revealed it may be placed within 3" of a friendly Unit in this Taskforce with the Transport trait.`,
+    desc: `Immediately after this Unit is Revealed it may be placed within 3" of a friendly Unit in this Taskforce with the Transport trait that was Revealed in a previous Turn.`,
+    desc_keywords_before: ['Transport'],
 })
 
 export const FREE_UNION_TRANSPORT = make({
     name: 'Transport',
     desc: `This Unit may be targeted by the Hitch Hiker trait once per Taskforce Activation.`,
     desc_keywords_name: ['Hitch Hiker'],
+})
+
+export const QUICK = make({
+    name: 'Quick',
+    desc: 'After all Priority Rolls are resolved in a Reaction Engagement, This Unit may swap the results of its Priority Roll with any other Unit participating in the Reaction Engagement.',
 })
 
 function make(trait) {

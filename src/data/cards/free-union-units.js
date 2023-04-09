@@ -7,9 +7,10 @@ import {
     DOUBLE_CANNON,
     HACK,
     MEDIUM_CANNON,
+    POSITION_HACK,
     SHOCK_AUTOCANNON,
     SMALL_ARMS,
-    SMART_RPG,
+    SMART_BOMBS,
 } from '../cards-data/weapons.js'
 import { FREE_UNION_FACTION_NAME, FREE_UNION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
 
@@ -21,14 +22,15 @@ import {
     HIT_AND_RUN,
     HITCH_HIKER,
     MOUNTED_INFANTRY,
+    QUICK,
     SMALL_DECOY_PING,
     STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 
 import { SCAN, SCRAMBLE } from '../cards-data/actions.js'
-import { makeUnit, modifyAction } from '../support/factories.js'
+import { makeAction, makeUnit, modifyAction } from '../support/factories.js'
 import { NOTE_BREACH_COUNTER } from '../definitions.js'
-import { TAKE_UP } from '../cards-data/weapon-traits.js'
+import { TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits.js'
 
 export const FREE_UNION_DEFAULTS = {
     faction: FREE_UNION_FACTION_NAME,
@@ -50,7 +52,7 @@ export const INFANTRY_SQUAD = make({
     actions: [
         modifyAction(SMALL_ARMS, { team: '1-3' }),
         modifyAction(HACK, { team: '1-3' }),
-        modifyAction(ADVANCED_RPG, { team: '4' }, [TAKE_UP]),
+        modifyAction(ADVANCED_RPG, { team: '4' }, [TRAIT_TAKE_UP]),
     ],
     traits: [
         STEALTHY_INFANTRY,
@@ -63,8 +65,8 @@ export const INFANTRY_SQUAD = make({
 })
 
 export const TECHNICAL = make({
-    slug: 'technical',
-    name: 'Technical',
+    slug: 'technical-a',
+    name: 'Technical A',
     img: null,
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
@@ -79,7 +81,28 @@ export const TECHNICAL = make({
         CM_HACK,
     ],
     traits: [
-        SMALL_DECOY_PING,
+        FREE_UNION_TRANSPORT,
+    ],
+    notes: [],
+})
+
+export const TECHNICAL_B = make({
+    slug: 'technical-b',
+    name: 'Technical B',
+    img: null,
+    signature: SIZE_SMALL,
+    type: 'Light Vehicle',
+    speed: 8,
+    targeting: 5,
+    defense: 14,
+    scan: 7,
+    cm: 1,
+    actions: [
+        SCAN(2, 12),
+        SHOCK_AUTOCANNON,
+        POSITION_HACK,
+    ],
+    traits: [
         FREE_UNION_TRANSPORT,
     ],
     notes: [],
@@ -92,15 +115,16 @@ export const SCRAMBLER = make({
     signature: SIZE_SMALL,
     type: 'Light Support Vehicle',
     speed: 8,
-    targeting: 6,
+    targeting: 5,
     defense: 14,
     scan: null,
     cm: 1,
     actions: [
-        DOUBLE_CANNON,
+        SHOCK_AUTOCANNON,
         SCRAMBLE,
     ],
     traits: [
+        SMALL_DECOY_PING,
         FREE_UNION_TRANSPORT,
     ],
     notes: [],
@@ -144,7 +168,6 @@ export const MED_TANK = make({
     ],
     traits: [
         HIT_AND_RUN,
-        BREACH_LINK,
         ALL_TERRAIN,
     ],
 })
@@ -182,10 +205,10 @@ export const TANK_HUNTERS = make({
     squad_size: 3,
     speed: 8,
     targeting: 6,
-    defense: 13,
+    defense: 14,
     cm: 2,
     actions: [
-        SMART_RPG,
+        SMART_BOMBS,
     ],
     traits: [
         BREACH_LINK,
@@ -194,8 +217,8 @@ export const TANK_HUNTERS = make({
     ],
 })
 
-export const BULLET_SPONGE = make({
-    slug: 'bullet-sponge',
+export const TORTOISE = make({
+    slug: 'tortoise',
     name: 'Tortoise',
     img: null,
     signature: SIZE_LARGE,
@@ -213,15 +236,42 @@ export const BULLET_SPONGE = make({
     ],
 })
 
+export const ABILITY_IDEAS = make({
+    slug: 'ability-ideas',
+    name: 'Ability Ideas',
+    img: null,
+    //signature: SIZE_SMALL,
+    type: 'Idea',
+    //speed: 8,
+    //targeting: 5,
+    //defense: 14,
+    //scan: 7,
+    //cm: 1,
+    actions: [
+        makeAction({
+            name: 'something',
+            traits: [
+                TRAIT_BREACH_EXPLOIT,
+            ],
+        }),
+    ],
+    traits: [
+        QUICK,
+    ],
+    notes: [],
+})
+
 export const FREE_UNION_UNITS = [
     INFANTRY_SQUAD,
     TECHNICAL,
+    TECHNICAL_B,
     SCRAMBLER,
     DRONE_WRANGLER_TEAM,
     MED_TANK,
     WARDRIVER,
     TANK_HUNTERS,
-    BULLET_SPONGE,
+    TORTOISE,
+    ABILITY_IDEAS,
 ]
 
 function make(unit) {
