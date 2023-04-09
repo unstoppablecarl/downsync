@@ -66,6 +66,12 @@ export const DEADLY_VS = (type) => {
     })
 }
 
+export const TRAIT_CLOSE_AND_PERSONAL = makeTrait({
+    name: 'Close and Personal',
+    note: '+1 TARG',
+    desc: 'This Action gains an additional +1 TARG against targets within short range.',
+})
+
 function make(trait) {
     return makeTrait(trait)
 }

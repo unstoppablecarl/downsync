@@ -1,6 +1,7 @@
 import {
     DEADLY_VS,
     TRAIT_ADVANCED,
+    TRAIT_CLOSE_AND_PERSONAL,
     TRAIT_CLOSE_COMBAT,
     TRAIT_CLUSTERED,
     TRAIT_DOUBLE_TAP,
@@ -19,7 +20,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { makeWeapon } from '../support/factories.js'
+import { makeWeapon, modifyAction } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -38,6 +39,13 @@ export const MEDIUM_CANNON = make({
     range: 24,
     rof: 2,
     traits: [],
+})
+
+export const CLOSE_MEDIUM_CANNON = modifyAction(MEDIUM_CANNON, {
+    name: 'Close Medium Cannon',
+    traits: [
+        TRAIT_CLOSE_AND_PERSONAL,
+    ],
 })
 
 export const DEPLOY_DRONES = make({
@@ -84,7 +92,6 @@ export const HMG = make({
 
 export const SHOCK_RIFLE = make({
     name: 'Shock Rifle',
-    note: 'Team 1, 2',
     range: 10,
     effect: 'STUN',
     rof: 1,
@@ -182,7 +189,7 @@ export const RAILGUN = make({
 })
 
 export const SMART_MED_CANNON = make({
-    name: 'Smart Med. Cannon',
+    name: 'Smart Medium Cannon',
     range: 24,
     rof: 2,
     traits: [
