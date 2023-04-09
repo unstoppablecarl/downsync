@@ -30,8 +30,7 @@
                         <label class="form-check-label" :for="'filter-' + faction.faction_slug">
                             {{ faction.faction }}
                         </label>
-                        <span class="btn btn-light btn-only"
-                              @click="(event) => selectOnly(event, faction.faction_slug)">only</span>
+                        <span class="btn btn-light btn-only" @click="selectOnly(faction.faction_slug)">only</span>
                     </div>
                 </div>
             </form>
@@ -106,9 +105,7 @@ export default {
                 this.selectNone()
             }
         },
-        selectOnly(event, factionSlug) {
-            event.stopPropagation()
-            console.log('zxc', event)
+        selectOnly(factionSlug) {
             this.checkedFactions = [factionSlug]
         },
         selectAll() {
