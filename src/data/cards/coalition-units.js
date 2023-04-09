@@ -2,11 +2,11 @@ import {
     ADVANCED_CHARGES,
     CANNON,
     CLAWS,
+    CLOSE_MEDIUM_CANNON,
     DEPLOY_DRONES,
     DOUBLE_CANNON,
     FUSION_CANNON,
     HMG,
-    MEDIUM_CANNON,
     MG,
     RAILGUN,
     REPAIR_RENCH,
@@ -22,7 +22,6 @@ import {
     ALL_TERRAIN,
     AMBUSH,
     CLEAR_THE_WAY,
-    CLOSE_AND_PERSONAL,
     DEFENSE_AURA,
     HARDENED_CM,
     SENTRY,
@@ -110,11 +109,9 @@ export const VIRAGO_TANK = make({
     defense: 13,
     cm: 2,
     actions: [
-        MEDIUM_CANNON,
+        CLOSE_MEDIUM_CANNON,
     ],
-    traits: [
-        CLOSE_AND_PERSONAL,
-    ],
+    traits: [],
 })
 
 export const AURORA = make({

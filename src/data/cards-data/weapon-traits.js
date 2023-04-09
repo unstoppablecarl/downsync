@@ -65,7 +65,6 @@ export const DEADLY_VS = (type) => {
         desc: `This weapon's effect is KILL for ${type} targets.`,
     })
 }
-
 export const TRAIT_BREACHER = makeTrait({
     name: 'Breacher',
     desc: 'This attack may only target a Unit with a Breach Counter. Units hit by this weapon lose 1 Breach Counter.',
@@ -74,6 +73,12 @@ export const TRAIT_BREACHER = makeTrait({
 export const TAKE_UP = makeTrait({
     name: 'Take Up',
     desc: 'When an Infantry Base with this weapon is killed, it may replace an Infantry Base in this Unit within 3".',
+})
+
+export const TRAIT_CLOSE_AND_PERSONAL = makeTrait({
+    name: 'Close and Personal',
+    note: '+1 TARG',
+    desc: 'This Action gains an additional +1 TARG against targets within short range.',
 })
 
 function make(trait) {
