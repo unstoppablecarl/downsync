@@ -14,13 +14,13 @@ stealth, and deception.
 ### Design Goals
 
 - create opportunities for players to do surprising things without it being a "gotcha, you forgot X" moment
-- hidden units without bookkeeping
-- avoid IGOUGO via alternate activation of Taskforce unit groups
-- activated unit groupings are flexible and dynamic not strict like platoons or companies and can change from turn to
+- hidden Units without bookkeeping
+- avoid IGOUGO via alternate activation of Taskforce Unit groups
+- activated Unit groupings are flexible and dynamic not strict like platoons or companies and can change from turn to
   turn
 - having more/better information than your opponent gives an advantage
 - keep the game dynamic by not rewarding staying still
-- avoid mechanics that force players to carefully spread out every single unit (area of effect weapons)
+- avoid mechanics that force players to carefully spread out every single Unit (area of effect weapons)
 - miniature scale is 15mm (1:100). Scale is highly abstracted though
 - resources reset each round but not the start of each round to prevent jamming at the end of a round
 - games should take 45-60 min
@@ -80,7 +80,7 @@ roll.
     - **Reserve**:            A collection of a Force's Units to be revealed on the Battlefield.
 - **LOS**:                    Line of Sight
 - **ROF**:                    Rate of Fire
-- **Round**:                  Collection of Turns. A Round ends when all units have been Activated.
+- **Round**:                  Collection of Turns. A Round ends when all Units have been Activated.
 - **Taskforce**:              A collection of Units/Pings acting together.
 - **Turn**:                   In a Round, players alternate taking turns. Each turn the active player designates a
   Taskforce to act in that turn.
@@ -94,14 +94,14 @@ roll.
       40mm)
         - **Multi-Base Unit**:  A Unit that has multiple Infantry Bases instead of one larger base.
         - **Infantry Base**:  A 40mm circular base with infantry model(s) on it.
-        - **Unit Activation**:  Performing a single unit's action(s).
+        - **Unit Activation**:  Performing a single Unit's action(s).
         - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
     - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
 
 ## Force Lists
 
-When creating a Force List all units must be from the same Faction. The Game Size determines the number of
-small/medium/large Unit slots your force list will contain. For each Unit size slot select a unit of matching size from
+When creating a Force List all Units must be from the same Faction. The Game Size determines the number of
+small/medium/large Unit slots your force list will contain. For each Unit size slot select a Unit of matching size from
 your Faction.
 
 *For example: a Small Game Coalition Force List contains any 2 small Units, any 3 medium Units, and any 1 large Unit.
@@ -185,6 +185,10 @@ The Active Player declares which Units/Pings will be included in the Taskforce.
 Any un-activated Units/Pings in the player's force may be included.
 Designated Units are now considered to be in the Taskforce (aka Taskforce Units).
 
+#### Reveal
+
+Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
+
 #### Refresh
 
 Taskforce Units are Refreshed in an order determined by their controlling Player.
@@ -197,10 +201,6 @@ Each Taskforce Unit:
 - Resolves special abilities that trigger when a Unit is Refreshed
 
 In a Reaction Engagement Non-active Units are refreshed when they [Resolve Reactions](#resolve-reactions).
-
-#### Reveal
-
-Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
 
 #### Move
 
@@ -221,7 +221,7 @@ The opposing player may initiate a Reaction Engagement. See: [Reaction Engagemen
 
 The Active Player activates their Taskforce Units one at a time until all Taskforce Units have activated.
 Each Taskforce Unit may only be activated once and each Unit's activation must be completed before activating the next
-unit.
+Unit.
 
 When a Unit is activated it gains 1 Action Point and may perform one or more [Actions](#actions).
 
@@ -244,8 +244,8 @@ Unit/Ping's volume. Friendly and enemy Units/Pings do not block LOS.
 A Unit/Ping is concealed if any part of its base overlaps with concealing area terrain, or it is partially
 blocked by intervening concealing or LOS blocking terrain.
 
-To determine if a target is concealed by intervening terrain, the acting unit's controlling player selects a point on
-the volume of the acting unit that can draw a line to the target. The target is concealed if a line can be drawn from
+To determine if a target is concealed by intervening terrain, the acting Unit's controlling player selects a point on
+the volume of the acting Unit that can draw a line to the target. The target is concealed if a line can be drawn from
 that point to any point on the volume of the target that crosses intervening terrain.
 
 </div>
@@ -302,7 +302,7 @@ area terrain to targets greater than 6" away.
 
 When measuring the distance from or to a Unit in a building the height of the building is ignored
 
-Only infantry Units may enter a building and a building may only contain as many infantry units as can fit on its roof.
+Only infantry Units may enter a building and a building may only contain as many infantry Units as can fit on its roof.
 Moving into or out of a building has no movement penalty.
 
 *Players should agree what terrain pieces are considered buildings and how many 40mm infantry bases can fit on each
@@ -345,7 +345,7 @@ more infantry models on it.
 
 ### Multi-Base Units
 
-Some units have multiple Infantry Bases instead of a vehicle model. How many Infantry Bases a multi-base Unit has is
+Some Units have multiple Infantry Bases instead of a vehicle model. How many Infantry Bases a multi-base Unit has is
 indicated on its Unit Card by a number in a circle at the top of the card next to the Unit description. Multi-Base Units
 have 1-4 Infantry Bases.
 
@@ -380,9 +380,9 @@ Infantry Base Activations of the same Unit can not be split up and must be compl
 #### Multi-Base Unit Actions
 
 Some Multi-Base Units have actions that only specific Teams (single Infantry Base in the Unit) can perform.
-For example a unit may have an action with a team value of "1" or "1-3".
+For example a Unit may have an action with a team value of "1" or "1-3".
 Only the team(s) indicated may perform this action.
-Actions that do not specify a team can be performed by all Infantry Bases in a unit.
+Actions that do not specify a team can be performed by all Infantry Bases in a Unit.
 
 #### Multi-Base Unit Tokens
 
@@ -392,8 +392,8 @@ infantry base(s) they are on. See: [Unit Tokens](#unit-tokens)
 
 ## Pings
 
-Pings are an abstract representation of imperfect battlefield information. Each Ping represents a potential unit of
-matching Signature. To the enemy, they represent sensor hits indicating a small, medium, or large signature unit. To the
+Pings are an abstract representation of imperfect battlefield information. Each Ping represents a potential Unit of
+matching Signature. To the enemy, they represent sensor hits indicating a small, medium, or large signature Unit. To the
 controlling force, they are potential locations of deployment for their Units.
 
 In practice, a Ping is a Unit base without a model on it. When a Ping is Revealed, the Unit model is placed on the
@@ -451,7 +451,7 @@ exceed the Command Point Capacity or carry over Command Points from a previous R
 ### Command Point Abilities
 
 - **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
-- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a unit before its [Unit Activation](#unit-activation).
+- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a Unit before its [Unit Activation](#unit-activation).
 - **Add a Unit to a Reaction Engagement**
   see:  [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
 - **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
@@ -493,7 +493,7 @@ Some actions have no cost and are labeled as a "Free Action". They are resolved 
 
 ### Move Action
 
-Although not included on the Unit cards, all units can perform the Move Action for the cost of 1 Action Point. When a
+Although not included on the Unit cards, all Units can perform the Move Action for the cost of 1 Action Point. When a
 Unit performs a Move Action it may move up to its **SPD** in inches following normal movement rules for terrain.
 
 *This means that Units can move up to double their **SPD** in one turn if they use their Action Point to move a second
@@ -501,11 +501,11 @@ time.*
 
 ### Overwatch Action
 
-Although not included on the Unit cards, all units can perform the Overwatch Action for the cost of 1 Action Point.
+Although not included on the Unit cards, all Units can perform the Overwatch Action for the cost of 1 Action Point.
 When a Unit performs an Overwatch Action it gains 1 [Overwatch Token](#overwatch-token).
 Overwatch Tokens allow Units to perform Reactions even after they have activated with a higher chance to act first.
 
-A Multi-Base Unit can only have 1 Overwatch Token as the whole unit must activate together.
+A Multi-Base Unit can only have 1 Overwatch Token as the whole Unit must activate together.
 
 An Overwatch Action may be performed by a Unit participating in a [Reaction Engagement](#reaction-engagements).
 
@@ -625,7 +625,7 @@ The Countermeasure Token is spent regardless of the Countermeasure Check outcome
 
 When a Countermeasure Check fails, the Unit may spend additional Countermeasure Tokens to attempt to negate the effect.
 Each check is resolved before deciding to spend an additional Countermeasure Token.
-The unit may continue to spend Countermeasure Tokens until all of them have been spent.
+The Unit may continue to spend Countermeasure Tokens until all of them have been spent.
 
 When first hit by an Attack or after failing a Countermeasure Check, a Unit is not required to spend a Countermeasure
 Token.
@@ -657,7 +657,7 @@ stat. [Hardened Countermeasures](#hardened-countermeasure-token) do not Regenera
 
 ## Reaction Engagements
 
-Units controlled by a non-active player that have not activated this round (or have
+Units controlled by a non-active Player that have not activated this round (or have
 an [Overwatch Token](#overwatch-token)), have a chance to react and possibly act before activating Units.
 
 ### Initiating a Reaction Engagement
@@ -665,38 +665,36 @@ an [Overwatch Token](#overwatch-token)), have a chance to react and possibly act
 A non-active player may initiate a reaction engagement after the active player completes the movement phase of their
 Taskforce Activation, but before the Unit Activation phase.
 
-#### Who Can Participate
-
-Units that have not activated this round or have an [Overwatch Token](#overwatch-token) are eligible to be selected as
-participating Units.
-
 ### Resolving a Reaction Engagement
 
 #### Declare Participating Units
 
-The active player's Taskforce Units are automatically participating in the Reaction Engagement.
-The active player may declare any number of their non-taskforce units with an Overwatch Token to join the Taskforce and
-participate.
-Then the non-active player declares which eligible units will participate in the Reaction Engagement.
+The Active Player's Taskforce Units must participate in the Reaction Engagement.
+The Active Player may declare any number of their non-Taskforce Units with an Overwatch Token to join the Taskforce and
+participate in the Reaction Engagement.
 
-The number of non-active player Units participating may not exceed the active player's participating unit count without
+Then the non-Active Player declares which eligible Units will participate in the Reaction Engagement.
+The Non-Active Player's Units that have not Activated this Round or have an [Overwatch Token](#overwatch-token) are
+eligible.
+The number of non-Active Player Units participating may not exceed the Active Player's participating Unit count without
 spending Command Points.
-See: [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
-
-The active player's participating units now become part of the active player's Taskforce. The non-active player's
-participating units are now considered to be in a Reaction Taskforce. A Reaction Taskforce is identical to a Taskforce
-in the case of rules that refer to Units in the same Taskforce.
 
 ##### Adding Additional Non-Active Player Units
 
-The non-active player may spend Command Point(s) to include additional unit(s) exceeding the number of active player
-units participating at a cost of 1 Command Point per Unit.
+The non-Active Player may spend Command Point(s) to include additional Unit(s) exceeding the number of Active Player
+Units participating at a cost of 1 Command Point per Unit.
+
+#### Reaction Engagement Taskforces
+
+The Active Player's participating Units now become part of the Active Player's Taskforce. The non-Active Player's
+participating Units are now considered to be in a Reaction Taskforce. A Reaction Taskforce is identical to a Taskforce
+in the case of rules that refer to Units in the same Taskforce.
 
 #### Reaction Priority Order
 
 Each participating Unit will have a Reaction Priority number and will act in order from highest to lowest. The active
 Player wins ties between opposing Units. Ties between friendly Units act in an order determined by their controlling
-player. After the Reaction Priority of each participating unit is determined place a d6 indicating the Reaction Priority
+player. After the Reaction Priority of each participating Unit is determined place a d6 indicating the Reaction Priority
 next to each participating Unit.
 
 *When a participating Unit completes its activation remove its Reaction Priority die to indicate it has completed its
@@ -725,18 +723,15 @@ See: [Roll Advantage](#roll-advantage)
 
 #### Resolve Reactions
 
-In reaction priority order, each Unit may perform a Unit Activation. Instead of performing a Unit Activation, a Unit may
-hold its reaction by reducing the value of its Reaction Priority die by 1. Units not in the activating Taskforce
-are [Refreshed](#refresh) immediately before resolving their reaction Unit Activation.
+In reaction priority order, each Unit may perform a Unit Activation.
+Instead of performing a Unit Activation, a Unit may hold its reaction by reducing the value of its Reaction Priority die
+by 1.
 
-A unit with an **Overwatch Token** removes that token immediately before resolving its Unit Activation. When activating,
-Units may perform an Overwatch Action as normal and gain an Overwatch token to be used in a later Reaction Engagement.
+Units controlled by the non-active Player are [Refreshed](#refresh) immediately before resolving their Unit Activation.
 
-##### Reaction Engagement Stun Effects
-
-A unit that gains a [Stun Token](#stun-token) during a Reaction Engagement suffers no immediate effect. The Unit has
-already rolled for Reaction Priority and will not have to forfeit is Unit Activation. The Stun Token will affect the
-Unit's next movement or Unit Activation.
+A Unit with an **Overwatch Token** removes that token immediately before resolving its Unit Activation.
+When activating, Units may perform an Overwatch Action as normal and gain an Overwatch token to be used in a later
+Reaction Engagement.
 
 #### Cleanup
 
@@ -755,9 +750,9 @@ edge. The token
 may be represented by a civilian vehicle model but does not block LOS and can be moved through.
 
 **Scoring**: Players score by capturing the VIP on their opponents side of the table. When a player ends a Taskforce
-Activation, each unit within 1" of the opposing VIP scores 1 Victory Point. Each opposing unit within 4" subtracts 1
+Activation, each Unit within 1" of the opposing VIP scores 1 Victory Point. Each opposing Unit within 4" subtracts 1
 Victory Point from this amount. Units with multiple Infantry Bases must have more than half of their non-destroyed
-unit's bases within
+Unit's bases within
 1".
 
 **Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
@@ -809,7 +804,7 @@ Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
 |                       |                                                                                      |
 |-----------------------|--------------------------------------------------------------------------------------|
 | **Color**             | <span class="token token-shadow" style="background:yellow"></span> Yellow            |
-| **Gained**            | When unit is first Revealed                                                          |
+| **Gained**            | When Unit is first Revealed                                                          |
 | **Can have multiple** | Yes                                                                                  |
 | **Multi-Base Units**  | Each Infantry Base gains Hardened Countermeasure Tokens equal to the Unit's CM+ stat |
 | **Removed**           | When spent                                                                           |
@@ -850,7 +845,7 @@ A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 |                       |                                                                                                                                                                  |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Color**             | <span class="token" style="background:black"></span> Black                                                                                                       |
-| **Gained**            | By unit special abilities                                                                                                                                        |
+| **Gained**            | By Unit special abilities                                                                                                                                        |
 | **Can have multiple** | No                                                                                                                                                               |
 | **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                             |
 | **Removed**           | A Unit looses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or placement within 2". |
