@@ -63,15 +63,15 @@ html {
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 1px solid #000;
-    //background: linear-gradient(
-    //                0,
-    //                rgba($primary, 1) 0px,
-    //                rgba($primary, 0.5) 1px,
-    //                rgba($primary, 0.1) 4px,
-    //                rgba($primary, 0) 5px
-    //);
+
+    background: rgb(var(--bs-dark-rgb));
 }
 
+@include color-mode(dark) {
+    .navbar-primary {
+        background: #000;
+    }
+}
 
 @media print {
     .main-content {
