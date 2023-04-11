@@ -4,24 +4,37 @@ $dividing-line-color: rgba(126, 126, 126, 0.25);
 $footer-bg: #f7f9fc;
 $page-preview-bg: #d0d0d0;
 
-$primary-transition-gradient-top: linear-gradient(
-                180deg,
-                rgba($primary, 0.5) 0px,
-                rgba($primary, 0.1) 4px,
-                rgba($primary, 0) 20px
-);
+$table-th-color: $table-color;
+$table-th-bg: $gray-300;
+$table-caption-color: $table-color;
+$table-caption-bg: $gray-100;
 
-$primary-transition-gradient-bottom: linear-gradient(
-                0,
-                rgba(#000, 0.9) 0px,
-                rgba($primary, 0.5) 1px,
-                rgba($primary, 0.1) 4px,
-                rgba($primary, 0) 20px
-);
+$table-th-color-dark: lighten($body-color-dark, 20%);
+$table-th-bg-dark: lighten($body-bg-dark, 8%);
+$table-caption-color-dark: lighten($body-color-dark, 10%);
+$table-caption-bg-dark: lighten($body-bg-dark, 5%);
 
-$primary-transition-gradient-footer-top: linear-gradient(
-                180deg,
-                mix($primary, $footer-bg, 50%) 0px,
-                mix($primary, $footer-bg, 10%) 4px,
-                $footer-bg 20px
-);
+$table-th-color-var: var(--table-th-color);
+$table-th-bg-var: var(--table-th-bg);
+$table-caption-color-var: var(--table-caption-color);
+$table-caption-bg-var: var(--table-caption-bg);
+
+[data-bs-theme="light"], :root {
+    --table-th-color: #{$table-th-color};
+    --table-th-bg: #{$table-th-bg};
+    --table-caption-color: #{$table-caption-color};
+    --table-caption-bg: #{$table-caption-bg};
+}
+
+@include color-mode(dark) {
+    --table-th-color: #{$table-th-color-dark};
+    --table-th-bg: #{$table-th-bg-dark};
+    --table-caption-color: #{$table-caption-color-dark};
+    --table-caption-bg: #{$table-caption-bg-dark};
+    --bs-heading-color: #{lighten($body-color-dark, 15%)};
+
+    .btn-secondary {
+        $color: #516376;
+        @include button-variant($color, $color);
+    }
+}

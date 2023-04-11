@@ -1,7 +1,4 @@
-.footer {
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
-    border-top: 1px solid #858585;
+@mixin footerBackground($primary, $footer-bg) {
 
     background: linear-gradient(
                     180deg,
@@ -9,8 +6,14 @@
                     mix($primary, $footer-bg, 10%) 4px,
                     $footer-bg 20px,
     );
+}
 
-    //background: #f7f9fc;
+.footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #858585;
+
+    @include footerBackground($primary, $footer-bg);
 
     .footer-nav {
         list-style: none;
@@ -28,5 +31,14 @@
     .sub-footer {
         border-top: 1px solid $dividing-line-color;
         padding: 1rem 0 0;
+    }
+}
+
+@include color-mode(dark) {
+    .footer {
+        @include footerBackground(
+                        $link-color-dark,
+                        darken($light-bg-subtle-dark, 3%)
+        );
     }
 }

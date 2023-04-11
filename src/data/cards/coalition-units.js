@@ -38,7 +38,7 @@ import { makeUnit } from '../support/factories.js'
 export const COALITION_CARD_DEFAULTS = {
     faction: COALITION_FACTION_NAME,
     faction_slug: COALITION_FACTION_SLUG,
-    icon: 'factions/icon-coalition.svg',
+    faction_svg_sprite: 'faction_coalition',
 }
 
 export const WIDOW_SCOUT = make({

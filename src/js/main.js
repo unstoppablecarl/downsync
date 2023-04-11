@@ -4,6 +4,7 @@ import 'bootstrap/js/dist/collapse.js'
 import 'bootstrap/js/dist/tab.js'
 
 import './app/table-of-contents.js'
+import './app/color-mode.js'
 
 import './app.js'
 

@@ -12,6 +12,14 @@ export const svgIcons = {
     html: bootstrapDir + '/code-slash.svg',
     //filter: fontAwesomeDir + '/solid/filter.svg',
     filter: bootstrapDir + '/funnel.svg',
+
+    sun_fill: bootstrapDir + '/sun-fill.svg',
+    check2: bootstrapDir + '/check2.svg',
+    moon_stars_fill: bootstrapDir + '/moon-stars-fill.svg',
+    circle_half: bootstrapDir + '/circle-half.svg',
+
+    faction_coalition: './static-assets/images/factions/icon-coalition.svg',
+    faction_republic: './static-assets/images/factions/icon-republic.svg',
 }
 
 export const svgIconsReversed = {}

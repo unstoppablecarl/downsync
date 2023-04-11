@@ -3,35 +3,13 @@ $blockTextScale: 2;
 
 @import 'mixins/page-cards';
 
-.web-cards {
+.web-cards,
+.web-cards[data-bs-theme="light"] {
     padding-top: 1px;
 
-    @include pageCards($scale, $blockTextScale);
+    --card-shadow-color: rgba(0, 0, 0, 0.25);
 
-    //background: linear-gradient(
-    //                180deg,
-    //                rgba(#fff, 1) 0px,
-    //                rgba($page-preview-bg, 1) 1px,
-    //                rgba($page-preview-bg, 0.5) 4px,
-    //                rgba($page-preview-bg, 0) 50px
-    //);
-    //
-    //background: linear-gradient(
-    //                180deg,
-    //                rgba($page-preview-bg, 1) 0px,
-    //                rgba($page-preview-bg, 1) 1px,
-    //                rgba($page-preview-bg, 0.5) 4px,
-    //                rgba($page-preview-bg, 0) 10px
-    //),
-    //url('/assets/img/ui/hexgrid.png'),
-    //linear-gradient(
-    //                180deg,
-    //
-    //                rgba($primary, 1) 1px,
-    //                rgba($primary, 0.5) 10px,
-    //                rgba($primary, 0.25) 20px,
-    //                rgba($primary, 0) 100px
-    //);
+    @include pageCards($scale, $blockTextScale);
 
     .faction-cards {
         display: flex;
@@ -53,20 +31,18 @@ $blockTextScale: 2;
     }
 
     .card {
-        background: #fff;
         margin: 10px;
         border-radius: 3px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 8px var(--card-shadow-color);
     }
 
     @include media-breakpoint-down(sm) {
         .card {
             width: 100%;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0;
             border-radius: 0;
             outline: none;
-            border: 1px solid #ccc;
+            border: 1px solid var(--action-divider-color);
             border-width: 0 0 1px 0;
             box-shadow: none;
         }
@@ -76,6 +52,19 @@ $blockTextScale: 2;
         }
     }
 }
+
+@include color-mode(dark) {
+    .web-cards {
+        --section-heading-bg: #000;
+        --card-outline-color: #{invert(#ccc, 100%)};
+        --icon-outline-color: #{invert(#b3b3b3, 100%)};
+        --card-icon-bg: #242424;
+        --action-divider-color: #{invert(hsl(0, 0%, 60%), 100%)};
+        --card-bg: #{darken($body-bg-dark,5%)};
+        --faction-icon-color: #{$body-color-dark};
+    }
+}
+
 
 
 
