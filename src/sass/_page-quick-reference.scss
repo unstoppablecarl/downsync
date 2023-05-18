@@ -90,3 +90,13 @@
         }
     }
 }
+
+@include color-mode(dark) {
+    .container-quick-reference {
+        table:not(.table) {
+            th {
+                background: lighten($body-bg-dark, 8%);
+            }
+        }
+    }
+}

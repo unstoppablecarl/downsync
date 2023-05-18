@@ -5,7 +5,7 @@ import { config, paths } from '../gulpfile.js'
 import path from 'path'
 import importFresh from '@small-tech/import-fresh'
 import gulpIntercept from 'gulp-intercept'
-import del from 'del'
+import { deleteAsync } from 'del'
 
 const svgIconsPath = path.resolve('./src/views/svg-icons.js')
 
@@ -16,7 +16,7 @@ export const SVG_SPRITE = {
 let SVG_ICONS = {}
 
 gulp.task('svg-data', async function () {
-    await del('./dist/assets/icons')
+    await deleteAsync('./dist/assets/icons')
 
     SVG_ICONS = await importFresh(svgIconsPath)
 })

@@ -1,14 +1,20 @@
 @use 'cut-corners';
 
-$light-grey: #ddd;
-$mid-grey: #ccc;
-$outline-grey: #b3b3b3;
-
 @mixin pageCards($scale: 1, $blockTextScale: 1) {
 
     $margin: 4pt * $scale;
     $serif: 'Bitter', serif;
     $sansSerif: 'Open Sans', sans-serif;
+
+    --section-heading-bg: #ddd;
+    --card-outline-color: #ccc;
+    --icon-outline-color: #b3b3b3;
+    --card-icon-bg: #ebebeb;
+    --action-divider-color: hsl(0, 0%, 60%);
+    --card-bg: #fff;
+    --faction-icon-color: #2d2d33;
+
+    color: var(--bs-body-color);
 
     .card {
         width: 180pt * $scale;
@@ -21,7 +27,8 @@ $outline-grey: #b3b3b3;
         font-size: 5.5pt * $scale;
         line-height: 1.4;
         font-family: $serif;
-        outline: 1px solid $mid-grey;
+        outline: 1px solid var(--card-outline-color);
+        background: var(--card-bg);
     }
 
     .card-advisor {
@@ -41,7 +48,7 @@ $outline-grey: #b3b3b3;
         flex: 1;
         position: relative;
         z-index: 1;
-        background: #fff;
+        background: var(--card-bg);
     }
 
     .card .card-content-container .content-padding {
@@ -85,8 +92,8 @@ $outline-grey: #b3b3b3;
     .cost-icon-action-or-command,
     .cost-icon-action-and-command,
     .cost-icon-free {
-        background: #ebebeb;
-        border: 1px solid $outline-grey;
+        background: var(--card-icon-bg);
+        border: 1px solid var(--icon-outline-color);
         padding: 0 0.4em;
         font-weight: bold;
         line-height: 1;
@@ -122,7 +129,7 @@ $outline-grey: #b3b3b3;
         font-size: 8pt;
         background: #fff;
         border-radius: 3pt;
-        border: 1px solid $outline-grey;
+        border: 1px solid var(--icon-outline-color);
         padding: 1pt 3pt;
 
         position: absolute;
@@ -145,6 +152,8 @@ $outline-grey: #b3b3b3;
             height: 0.375in * $scale;
             flex-shrink: 1;
             margin-right: 4pt * $scale;
+
+            color: var(--faction-icon-color);
         }
 
         .title {
@@ -178,8 +187,8 @@ $outline-grey: #b3b3b3;
                     white-space: nowrap;
                     vertical-align: baseline;
                     border-radius: 100px;
-                    background: #ebebeb;
-                    border: 1px solid #b3b3b3;
+                    background: var(--card-icon-bg);
+                    border: 1px solid var(--icon-outline-color);
                 }
             }
 
@@ -210,7 +219,7 @@ $outline-grey: #b3b3b3;
 
         th {
             padding: 0.25em 0;
-            background: $light-grey;
+            background: var(--section-heading-bg);
             font-weight: bold;
 
             &:first-child {
@@ -241,7 +250,7 @@ $outline-grey: #b3b3b3;
 
         th {
             padding: 0.3em 0.5em;
-            background: $light-grey;
+            background: var(--section-heading-bg);
             font-size: 5pt * $scale;
             font-family: $sansSerif;
             font-weight: bold;
@@ -273,7 +282,7 @@ $outline-grey: #b3b3b3;
             }
 
             td {
-                border-top: 1px solid hsl(0, 0%, 60%);
+                border-top: 1px solid var(--action-divider-color);
                 font-family: $sansSerif;
                 padding: 0.4em 0;
 
@@ -347,12 +356,11 @@ $outline-grey: #b3b3b3;
     .section-heading {
         font-size: 5pt * $scale;
         margin: 0;
-        background: $light-grey;
+        background: var(--section-heading-bg);
         padding: 1pt * $scale 4pt * $scale;
         vertical-align: middle;
         font-family: $sansSerif;
         font-weight: bold;
-
         @include cut-corners.topAndBottomCornerCut();
     }
 

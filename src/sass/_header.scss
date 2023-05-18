@@ -1,0 +1,53 @@
+
+.header {
+
+    > .container-ex {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .primary-heading {
+        margin: 0;
+    }
+}
+
+@mixin headerGradient($bg-color, $shadow-color) {
+
+    .header {
+        background: $bg-color;
+
+        > .container-ex {
+
+            $stop1: 5%;
+            $stop2: 20%;
+
+            $g: 3rem;
+
+            background: linear-gradient(
+                            90deg,
+                            rgba($bg-color, 1) 0%,
+                            rgba($bg-color, 0.2) $g,
+                            rgba($bg-color, 0) 40%,
+                            rgba($bg-color, 0) 60%,
+                            rgba($bg-color, 0.2) calc(100% - $g),
+                            rgba($bg-color, 1) 100%,
+            ),
+            linear-gradient(
+                            0,
+                            rgba($shadow-color, 0.5) 1px,
+                            rgba($shadow-color, 0.1) 4px,
+                            rgba($shadow-color, 0) 20px
+            );
+
+        }
+    }
+}
+
+@include headerGradient(#fff, $primary);
+
+@include color-mode(dark) {
+    @include headerGradient(
+                    $body-bg-dark,
+                    $link-color-dark
+    )
+}

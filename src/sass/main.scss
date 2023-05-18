@@ -1,6 +1,7 @@
 @import 'lib/bootstrap';
 @import 'app-variables';
 
+
 html {
     height: 100%;
     background: $footer-bg;
@@ -21,6 +22,7 @@ html {
 @import 'page-army-list';
 @import 'page-rulebook';
 @import 'page-quick-reference';
+@import 'header';
 
 .token {
     display: inline-block;
@@ -61,47 +63,13 @@ html {
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 1px solid #000;
-    //background: linear-gradient(
-    //                0,
-    //                rgba($primary, 1) 0px,
-    //                rgba($primary, 0.5) 1px,
-    //                rgba($primary, 0.1) 4px,
-    //                rgba($primary, 0) 5px
-    //);
+
+    background: rgb(var(--bs-dark-rgb));
 }
 
-.header {
-
-    background: #fff;
-
-    > .container-ex {
-
-        $stop1: 5%;
-        $stop2: 20%;
-
-        $g: 3rem;
-        $white: #fff;
-        background: linear-gradient(
-                        90deg,
-                        rgba($white, 1) 0%,
-                        rgba($white, 0.2) $g,
-                        rgba($white, 0) 40%,
-                        rgba($white, 0) 60%,
-                        rgba($white, 0.2) calc(100% - $g),
-                        rgba($white, 1) 100%,
-        ),
-        linear-gradient(
-                        0,
-                        rgba($primary, 0.5) 1px,
-                        rgba($primary, 0.1) 4px,
-                        rgba($primary, 0) 20px
-        );
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .primary-heading {
-        margin: 0;
+@include color-mode(dark) {
+    .navbar-primary {
+        background: #000;
     }
 }
 
