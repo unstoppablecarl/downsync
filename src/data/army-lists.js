@@ -32,7 +32,7 @@ import {
     MED_TANK,
     SCRAMBLER,
     TANK_HUNTERS,
-    TECHNICAL,
+    TECHNICAL_A,
     TORTOISE,
 } from './cards/free-union-units.js'
 
@@ -116,7 +116,7 @@ export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
         count: 1,
     },
     {
-        unit: TECHNICAL,
+        unit: TECHNICAL_A,
         count: 1,
     },
     {
