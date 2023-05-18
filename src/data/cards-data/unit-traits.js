@@ -132,13 +132,13 @@ export const HARDENED_CM = make({
 
 export const HIT_AND_RUN = make({
     name: 'Hit and Run',
-    note: `2" place`,
-    desc: `After this Unit resolves a combat action it may be placed within 2".`,
+    note: `2" Place`,
+    desc: `After this Unit resolves a combat action it may be Placed within 2".`,
 })
 
 export const HITCH_HIKER = make({
     name: 'Hitch Hiker',
-    desc: `Immediately after this Unit is Revealed it may be placed within 3" of a friendly Unit in this Taskforce with the Transport trait that was Revealed in a previous Turn.`,
+    desc: `When this Unit is Revealed in the Reveal Phase it may be Placed within 3" of a friendly Unit in this Taskforce with the Transport trait that was Revealed in a previous Turn.`,
     desc_keywords_before: ['Transport'],
 })
 

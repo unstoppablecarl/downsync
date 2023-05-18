@@ -13,6 +13,7 @@ import {
     TRAIT_SMART,
     TRAIT_SPECIALIZED_VS,
     TRAIT_TAGGED_EFFECT,
+    TRAIT_TAKE_UP,
 } from './weapon-traits.js'
 import {
     COST_ACTION,
@@ -125,7 +126,7 @@ export const POSITION_HACK = make({
     range: 16,
     rof: 1,
     effect: '&starf;',
-    desc: 'Units hit by this attack are placed within 3" of their current position by the attacker. This Action may only be performed once per Unit Activation.',
+    desc: `Units hit by this attack are Placed within 3" of their current position by the attacker's Controlling Player. This Action may only be performed once per Unit Activation.`,
     traits: [
         TRAIT_BREACHER,
     ],
@@ -304,6 +305,7 @@ export const MICRO_ARTILLERY = make({
     traits: [
         TRAIT_INFANTRY_NETWORK,
         TRAIT_ADVANCED,
+        TRAIT_TAKE_UP,
     ],
 })
 

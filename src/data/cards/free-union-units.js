@@ -2,6 +2,7 @@ import {
     ADVANCED_MG,
     ADVANCED_RPG,
     AI_HACK,
+    CANNON,
     CM_HACK,
     CYBER_KILL,
     DOUBLE_CANNON,
@@ -16,7 +17,6 @@ import { FREE_UNION_FACTION_NAME, FREE_UNION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDI
 
 import {
     ALL_TERRAIN,
-    BREACH_LINK,
     BULLET_SPONGE_AURA,
     FREE_UNION_TRANSPORT,
     HIT_AND_RUN,
@@ -35,7 +35,8 @@ import { TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits
 export const FREE_UNION_DEFAULTS = {
     faction: FREE_UNION_FACTION_NAME,
     faction_slug: FREE_UNION_FACTION_SLUG,
-    icon: 'factions/icon-free-union.svg',
+    faction_svg_sprite: 'faction_free_union',
+
 }
 
 export const INFANTRY_SQUAD = make({
@@ -59,12 +60,10 @@ export const INFANTRY_SQUAD = make({
         HITCH_HIKER,
         ALL_TERRAIN,
     ],
-    notes: [
-        NOTE_BREACH_COUNTER,
-    ],
+    notes: [],
 })
 
-export const TECHNICAL = make({
+export const TECHNICAL_A = make({
     slug: 'technical-a',
     name: 'Technical A',
     img: null,
@@ -77,7 +76,7 @@ export const TECHNICAL = make({
     cm: 1,
     actions: [
         SCAN(2, 12),
-        SHOCK_AUTOCANNON,
+        CANNON,
         CM_HACK,
     ],
     traits: [
@@ -99,7 +98,7 @@ export const TECHNICAL_B = make({
     cm: 1,
     actions: [
         SCAN(2, 12),
-        SHOCK_AUTOCANNON,
+        CANNON,
         POSITION_HACK,
     ],
     traits: [
@@ -138,7 +137,7 @@ export const DRONE_WRANGLER_TEAM = make({
     type: 'Human & Robotic Infantry Squad',
     squad_size: 3,
     speed: 5,
-    targeting: 5,
+    targeting: 6,
     defense: 13,
     cm: 1,
     actions: [
@@ -146,7 +145,7 @@ export const DRONE_WRANGLER_TEAM = make({
         modifyAction(ADVANCED_RPG, { team: '2-3' }),
     ],
     traits: [
-        BREACH_LINK,
+        //BREACH_LINK,
         HITCH_HIKER,
         ALL_TERRAIN,
     ],
@@ -211,7 +210,7 @@ export const TANK_HUNTERS = make({
         SMART_BOMBS,
     ],
     traits: [
-        BREACH_LINK,
+        //BREACH_LINK,
         ALL_TERRAIN,
         MOUNTED_INFANTRY,
     ],
@@ -223,7 +222,7 @@ export const TORTOISE = make({
     img: null,
     signature: SIZE_LARGE,
     type: 'Heavy Vehicle',
-    speed: 6,
+    speed: 7,
     targeting: 6,
     defense: 13,
     cm: 4,
@@ -231,7 +230,7 @@ export const TORTOISE = make({
         DOUBLE_CANNON,
     ],
     traits: [
-        BREACH_LINK,
+        //BREACH_LINK,
         BULLET_SPONGE_AURA,
     ],
 })
@@ -263,7 +262,7 @@ export const ABILITY_IDEAS = make({
 
 export const FREE_UNION_UNITS = [
     INFANTRY_SQUAD,
-    TECHNICAL,
+    TECHNICAL_A,
     TECHNICAL_B,
     SCRAMBLER,
     DRONE_WRANGLER_TEAM,

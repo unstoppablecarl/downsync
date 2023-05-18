@@ -77,7 +77,7 @@ export const TRAIT_BREACH_EXPLOIT = makeTrait({
 
 export const TRAIT_TAKE_UP = makeTrait({
     name: 'Take Up',
-    desc: 'When an Infantry Base with this weapon is killed, it may replace an Infantry Base in this Unit within 3".',
+    desc: 'When an Infantry Base with this weapon is killed, an Infantry Base in this Unit within 3" may be killed instead.',
 })
 
 export const TRAIT_CLOSE_AND_PERSONAL = makeTrait({

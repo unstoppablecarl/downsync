@@ -20,6 +20,8 @@ export const svgIcons = {
 
     faction_coalition: './static-assets/images/factions/icon-coalition.svg',
     faction_republic: './static-assets/images/factions/icon-republic.svg',
+    faction_free_union: './static-assets/images/factions/icon-free-union.svg',
+
 }
 
 export const svgIconsReversed = {}

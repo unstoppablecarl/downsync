@@ -12,7 +12,7 @@ export const NOTE_STEALTH_TOKEN = make({
 
 export const NOTE_BREACH_COUNTER = make({
     name: 'BREACH',
-    desc: 'A Unit suffering the BREACH effect gains 1 Breach Counter (A Unit may have multiple). All Counters are removed at the end of each Taskforce Activation.',
+    desc: 'A Unit suffering the BREACH effect gains 1 Breach Counter (A Unit may have multiple). Attacks against a Unit with Breach Counter(s) gains +1 TARG per Counter. All Counters are removed at the end of each Taskforce Activation.',
 })
 
 function make(ability) {
