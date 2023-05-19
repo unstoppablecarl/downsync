@@ -1,15 +1,14 @@
 import {
     ADVANCED_MG,
     ADVANCED_RPG,
-    AI_HACK,
-    CANNON,
     CM_HACK,
-    CYBER_KILL,
+    CYBER_ATTACK,
     DOUBLE_CANNON,
-    HACK,
+    HMG,
+    HUNTER_KILLER,
     MEDIUM_CANNON,
+    MG,
     POSITION_HACK,
-    SHOCK_AUTOCANNON,
     SMALL_ARMS,
     SMART_BOMBS,
 } from '../cards-data/weapons.js'
@@ -23,20 +22,19 @@ import {
     HITCH_HIKER,
     MOUNTED_INFANTRY,
     QUICK,
+    SCRAMBLE_AURA,
     SMALL_DECOY_PING,
     STEALTHY_INFANTRY,
 } from '../cards-data/unit-traits.js'
 
-import { SCAN, SCRAMBLE } from '../cards-data/actions.js'
+import { SCAN } from '../cards-data/actions.js'
 import { makeAction, makeUnit, modifyAction } from '../support/factories.js'
-import { NOTE_BREACH_COUNTER } from '../definitions.js'
 import { TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits.js'
 
 export const FREE_UNION_DEFAULTS = {
     faction: FREE_UNION_FACTION_NAME,
     faction_slug: FREE_UNION_FACTION_SLUG,
     faction_svg_sprite: 'faction_free_union',
-
 }
 
 export const INFANTRY_SQUAD = make({
@@ -52,7 +50,6 @@ export const INFANTRY_SQUAD = make({
     defense: 13,
     actions: [
         modifyAction(SMALL_ARMS, { team: '1-3' }),
-        modifyAction(HACK, { team: '1-3' }),
         modifyAction(ADVANCED_RPG, { team: '4' }, [TRAIT_TAKE_UP]),
     ],
     traits: [
@@ -63,42 +60,43 @@ export const INFANTRY_SQUAD = make({
     notes: [],
 })
 
-export const TECHNICAL_A = make({
-    slug: 'technical-a',
-    name: 'Technical A',
+export const SCRAMBLER = make({
+    slug: 'scrambler',
+    name: 'Scrambler',
     img: null,
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
-    targeting: 5,
+    targeting: null,
     defense: 14,
     scan: 7,
     cm: 1,
     actions: [
         SCAN(2, 12),
-        CANNON,
-        CM_HACK,
+        MG,
     ],
     traits: [
+        SCRAMBLE_AURA,
         FREE_UNION_TRANSPORT,
+        SMALL_DECOY_PING,
     ],
     notes: [],
 })
 
-export const TECHNICAL_B = make({
-    slug: 'technical-b',
-    name: 'Technical B',
+export const TECHNICAL = make({
+    slug: 'technical',
+    name: 'Technical',
     img: null,
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
-    targeting: 5,
+    targeting: null,
     defense: 14,
     scan: 7,
     cm: 1,
     actions: [
         SCAN(2, 12),
-        CANNON,
+        CYBER_ATTACK,
         POSITION_HACK,
     ],
     traits: [
@@ -107,23 +105,23 @@ export const TECHNICAL_B = make({
     notes: [],
 })
 
-export const SCRAMBLER = make({
-    slug: 'scrambler',
-    name: 'Scrambler',
+export const BUGGY = make({
+    slug: 'buggy',
+    name: 'Buggy',
     img: null,
     signature: SIZE_SMALL,
-    type: 'Light Support Vehicle',
+    type: 'Light Vehicle',
     speed: 8,
-    targeting: 5,
+    targeting: 6,
     defense: 14,
-    scan: null,
+    scan: 7,
     cm: 1,
     actions: [
-        SHOCK_AUTOCANNON,
-        SCRAMBLE,
+        SCAN(2, 12),
+        CM_HACK,
+        ADVANCED_MG,
     ],
     traits: [
-        SMALL_DECOY_PING,
         FREE_UNION_TRANSPORT,
     ],
     notes: [],
@@ -171,28 +169,24 @@ export const MED_TANK = make({
     ],
 })
 
-export const WARDRIVER = make({
-    slug: 'wardriver',
-    name: 'Wardriver',
+export const SUPPORT_TANK = make({
+    slug: 'support-tank',
+    name: 'Support Tank',
     img: null,
     signature: SIZE_MEDIUM,
     type: 'Medium Vehicle',
     speed: 7,
-    scan: 8,
-    targeting: null,
+    scan: null,
+    targeting: 5,
     defense: 13,
     cm: 2,
     actions: [
-        SCAN(1, 12),
-        AI_HACK,
-        CYBER_KILL,
+        HUNTER_KILLER,
     ],
     traits: [
         ALL_TERRAIN,
     ],
-    notes: [
-        NOTE_BREACH_COUNTER,
-    ],
+    notes: [],
 })
 
 export const TANK_HUNTERS = make({
@@ -228,6 +222,7 @@ export const TORTOISE = make({
     cm: 4,
     actions: [
         DOUBLE_CANNON,
+        HMG,
     ],
     traits: [
         //BREACH_LINK,
@@ -262,15 +257,15 @@ export const ABILITY_IDEAS = make({
 
 export const FREE_UNION_UNITS = [
     INFANTRY_SQUAD,
-    TECHNICAL_A,
-    TECHNICAL_B,
     SCRAMBLER,
+    TECHNICAL,
+    BUGGY,
     DRONE_WRANGLER_TEAM,
     MED_TANK,
-    WARDRIVER,
+    SUPPORT_TANK,
     TANK_HUNTERS,
     TORTOISE,
-    ABILITY_IDEAS,
+    //ABILITY_IDEAS,
 ]
 
 function make(unit) {

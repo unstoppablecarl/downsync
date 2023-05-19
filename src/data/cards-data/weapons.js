@@ -11,6 +11,7 @@ import {
     TRAIT_INFANTRY_NETWORK,
     TRAIT_OVERKILL,
     TRAIT_SMART,
+    TRAIT_SMART_SHRAPNEL,
     TRAIT_SPECIALIZED_VS,
     TRAIT_TAGGED_EFFECT,
     TRAIT_TAKE_UP,
@@ -22,7 +23,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { makeWeapon, modifyAction } from '../support/factories.js'
+import { makeTrait, makeWeapon, modifyAction } from '../support/factories.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -106,30 +107,36 @@ export const CYBER_KILL = make({
     ],
 })
 
+export const CYBER_ATTACK = make({
+    name: 'Cyber Attack',
+    cost: COST_ACTION,
+    stat: 'SCAN',
+    range: 16,
+    rof: 2,
+    effect: 'STUN',
+    traits: [],
+})
+
 export const CM_HACK = make({
     name: 'CM Hack',
     stat: 'SCAN',
-    cost: COST_ACTION_OR_COMMAND,
+    cost: COST_COMMAND,
     range: 16,
     rof: 2,
     effect: '&starf;',
-    desc: 'Units hit by this weapon resolve a CM check for each CM (non-hardened) it has and removes a CM for each failed check. This action may only be performed once per Unit Activation.',
-    traits: [
-        TRAIT_BREACHER,
-    ],
+    desc: 'Units hit by this weapon resolve a CM check for each CM (non-hardened) it has and removes a CM for each failed check.  This Action may only be performed once per Unit Activation.',
 })
 
 export const POSITION_HACK = make({
     name: 'Position Hack',
+    limitation: 'VS Veh. Only',
     stat: 'SCAN',
-    cost: COST_ACTION_OR_COMMAND,
+    cost: COST_COMMAND,
     range: 16,
     rof: 1,
     effect: '&starf;',
     desc: `Units hit by this attack are Placed within 3" of their current position by the attacker's Controlling Player. This Action may only be performed once per Unit Activation.`,
-    traits: [
-        TRAIT_BREACHER,
-    ],
+    traits: [],
 })
 
 const HACK_BASE = {
@@ -338,6 +345,30 @@ export const SMART_BOMBS = make({
     effect: 'KILL',
     traits: [
         TRAIT_SMART,
+    ],
+})
+
+export const ARTILLERY_DRONE = make({
+    name: 'Artillery Drone',
+    range: 16,
+    rof: 3,
+    effect: 'KILL',
+    traits: [
+        TRAIT_CLUSTERED(3),
+        TRAIT_SMART_SHRAPNEL,
+    ],
+})
+
+export const HUNTER_KILLER = make({
+    name: 'Hunter Killer Drone',
+    range: 16,
+    rof: 3,
+    effect: 'KILL',
+    traits: [
+        makeTrait({
+            name: 'Target Analysis',
+            desc: 'This Action gains +3 TARG against Units hit by a REVEAL effect while already Revealed during this Taskforce Activation.',
+        }),
     ],
 })
 

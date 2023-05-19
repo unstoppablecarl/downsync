@@ -148,6 +148,20 @@ export const FREE_UNION_TRANSPORT = make({
     desc_keywords_name: ['Hitch Hiker'],
 })
 
+export const TARG_JAM = make({
+    name: 'Targeting Jam',
+    note: '-2 TARG within 6"',
+    desc: `Enemy Units suffer -2 TARG while within 6" and LOS of this Unit.`,
+    desc_keywords_name: ['Hitch Hiker'],
+})
+
+export const SCRAMBLE_AURA = make({
+    name: 'Scramble Aura',
+    note: `6", COST: ${COST_COMMAND}, Refresh phase`,
+    desc: `While within 6" and LOS of this Unit, enemy Units suffer -2 TARG and enemy Pings may not be Revealed. ${UPKEEP_COMMAND_POINT_TEXT}`,
+    desc_keywords_name: ['Hitch Hiker'],
+})
+
 export const QUICK = make({
     name: 'Quick',
     desc: 'After all Priority Rolls are resolved in a Reaction Engagement, This Unit may swap the results of its Priority Roll with any other Unit participating in the Reaction Engagement.',

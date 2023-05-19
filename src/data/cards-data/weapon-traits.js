@@ -48,6 +48,11 @@ export const TRAIT_CLOSE_COMBAT = make({
     desc: 'Ignores Concealment and short range modifiers.',
 })
 
+export const TRAIT_SMART_SHRAPNEL = make({
+    name: 'Smart Shrapnel',
+    desc: 'Ignores Concealment modifiers.',
+})
+
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',
     desc: 'Attacks from this weapon can use the LOS of Infantry Teams in this Unit.',
