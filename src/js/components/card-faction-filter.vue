@@ -1,6 +1,6 @@
 <template>
     <div class="app-card-filter">
-        <div class="dropdown">
+        <div class="dropdown my-1 me-1 d-inline-block">
             <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown"
                     data-bs-auto-close="outside"
                     aria-expanded="false">
@@ -34,6 +34,17 @@
                     </div>
                 </div>
             </form>
+        </div>
+
+        <div class="dropdown my-1 me-1 d-inline-block">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                View: Web
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" :href="`/unit-cards.html#${currentHash}`">Web</a></li>
+                <li><a class="dropdown-item" :href="printUrl">Print</a></li>
+            </ul>
         </div>
     </div>
 </template>
@@ -94,6 +105,20 @@ export default {
         allSelected() {
             return this.checkedFactions.length === this.factions.length
         },
+        currentHash() {
+            if (this.allSelected) {
+                return 'all'
+            }
+
+            return this.checkedFactions.join(',')
+        },
+        printUrl() {
+            if (this.checkedFactions.length === 1) {
+                return `/cards-print/${this.checkedFactions}.html`
+            }
+
+            return '/unit-cards-print.html'
+        },
     },
     methods: {
         onCheckAll(event) {
@@ -119,13 +144,6 @@ export default {
         selectNone() {
             this.checkedFactions = []
         },
-        currentHash() {
-            if (this.allSelected) {
-                return 'all'
-            }
-
-            return this.checkedFactions.join(',')
-        },
     },
     watch: {
         checkedFactions() {
@@ -137,7 +155,7 @@ export default {
                 }
                 console.log('push with state:', state)
 
-                const hash = this.currentHash()
+                const hash = this.currentHash
                 let newUrl = location.pathname + '#' + hash
 
                 window.history.pushState(state, '', newUrl)

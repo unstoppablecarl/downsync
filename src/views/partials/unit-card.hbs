@@ -83,8 +83,8 @@
                         {{else}}
                             <tr class="action-row"{{{style_font_size ../body_font_size}}}>
                                 <td class="col-name"><strong>{{name}}</strong>
-                                    {{#if limitation}}<small>({{limitation}})</small>{{/if}}
                                     {{#if stat}}[<small>{{stat}}</small>]{{/if}}
+                                    {{#if limitation}}<small>({{limitation}})</small>{{/if}}
                                 </td>
                                 {{#if ../has_teams}}
                                     <td class="col-team">
@@ -110,9 +110,16 @@
                                             <br>
                                             {{{or_desc}}}
                                         {{/if}}
+
+                                        {{#if desc2}}
+                                            <br>
+                                            <strong>----</strong>
+                                            <br>
+                                            {{{desc2}}}
+                                        {{/if}}
                                     </td>
                                 </tr>
-                {{/if}}
+                            {{/if}}
                 {{#if traits}}
                     <tr class="action-features-row">
                         <td colspan="{{#if ../has_teams}}6{{else}}5{{/if}}"{{{style_font_size ../body_font_size}}}>

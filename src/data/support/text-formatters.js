@@ -45,6 +45,22 @@ export function keywordFormatOrDesc({
     })
 }
 
+export function keywordFormatDesc2({
+                                       name,
+                                       desc2,
+                                       desc_keywords_name = null,
+                                       desc_keywords_before = [],
+                                       desc_keywords_after = [],
+                                   }) {
+    return keywordFormatDesc({
+        name,
+        desc: desc2,
+        desc_keywords_name,
+        desc_keywords_before,
+        desc_keywords_after,
+    })
+}
+
 export function keywordFormat(str, keywordsBefore = [], keywordsAfter = []) {
     if (!str) {
         return

@@ -1,4 +1,4 @@
-import { keywordFormat, keywordFormatDesc, keywordFormatOrDesc } from './text-formatters.js'
+import { keywordFormat, keywordFormatDesc, keywordFormatDesc2, keywordFormatOrDesc } from './text-formatters.js'
 import { COST_ACTION, COST_COMMAND } from '../constants.js'
 
 export function makeUnit(unit) {
@@ -116,6 +116,10 @@ export function makeAction(action) {
 
     if (result.or_desc) {
         result.or_desc = keywordFormatOrDesc(result)
+    }
+
+    if (result.desc2) {
+        result.desc2 = keywordFormatDesc2(result)
     }
     return result
 }
