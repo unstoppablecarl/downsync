@@ -713,7 +713,7 @@ Each Unit participating in the Reaction Engagement performs a Reaction Priority 
 ##### Boosting Reaction Priority
 
 Players may spend a Command Point to boost a single Unit's Reaction Priority roll.
-Starting with the active player, each player declares zero or more participating Units to boost and spends a Command
+Starting with the non-active player, each player declares zero or more participating Units to boost and spends a Command
 Point for each one.
 Then both players perform a Reaction Priority Roll for each participating Unit.
 
