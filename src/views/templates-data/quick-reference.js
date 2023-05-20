@@ -39,7 +39,7 @@ export const TOKENS = [
         shadow: true,
     },
     {
-        name: 'Hardened CM',
+        name: 'Emergency CM',
         color_label: 'Yellow',
         color: 'yellow',
         shadow: true,

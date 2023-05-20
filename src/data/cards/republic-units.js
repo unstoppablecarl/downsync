@@ -24,8 +24,8 @@ import {
     ADAPTIVE_CAMO,
     ALL_TERRAIN,
     COUNTERMEASURE_DEFEND,
+    EMERGENCY_CM,
     FINISHER,
-    HARDENED_CM,
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
@@ -185,7 +185,7 @@ export const SAMSON_HEAVY_TANK = make({
     ],
     traits: [
         PREDATOR,
-        HARDENED_CM,
+        EMERGENCY_CM,
         ALL_TERRAIN,
     ],
     notes: [],
