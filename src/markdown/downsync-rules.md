@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: Apr 8, 2023
+Last Updated: May 20, 2023
 
 [[toc]]
 
@@ -96,7 +96,8 @@ roll.
         - **Infantry Base**:  A 40mm circular base with infantry model(s) on it.
         - **Unit Activation**:  Performing a single Unit's action(s).
         - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
-    - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
+  - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
+  - **Place**:              A special type of movement that does not suffer terrain penalties.
 
 ## Force Lists
 
@@ -208,7 +209,7 @@ Each Taskforce Unit/Ping may move up to its **SPD** in inches in any direction w
 through friendly Units/Pings but may not end their movement overlapping. Units/Pings may not move through enemy
 Units/Pings.
 
-Pings have a **SPD** of 4.
+Pings have a **SPD** of 4".
 
 *In the **Unit Activation** phase Units/Pings may perform a [Move Action](#move-action) to move up to their **SPD** a
 second time. This means that it is possible for Units/Pings to move up to 2 x their **SPD** per Round.*
@@ -264,6 +265,7 @@ that point to any point on the volume of the target that crosses intervening ter
 |--------------|----------|-------------|
 | Forest       | -2"      | Yes         |
 | Urban        |          | Yes         |
+| High Grass   |          | Yes         | 
 | Rough Ground | -2"      |             |
 
 A Unit/Ping is considered in Area Terrain if any part of its base overlaps or touches the edge of the Area Terrain.
@@ -311,7 +313,8 @@ building before the game starts.*
 #### Building Abstraction
 
 For purposes of moving Units and measuring distances, a building is considered a flat 2d object with no height.
-When moving into or through a building the Unit is placed on the roof directly above where it would be on the ground.
+When moving into or through a building the Unit is positioned on the roof directly above where it would be on the
+ground.
 
 #### Building LOS
 
@@ -431,12 +434,12 @@ A Ping is Revealed when:
 #### Revealing Units
 
 When Revealed the Unit's model is placed on the Ping (circular base). The circular base and model are now considered a
-Revealed Unit
-instead of a Ping. What was the Ping becomes the Unit's base.
+Revealed Unit instead of a Ping.
+What was the Ping becomes the Unit's base.
 
 #### Revealing Infantry Units
 
-When Revealed, Infantry Units place each Infantry Base within 3" of the Ping (including the space occupied by the
+When Revealed, Infantry Units **Place** each Infantry Base within 3" of the Ping (including the space occupied by the
 Ping) and the Ping is removed.
 
 See: [Multi-Base Units](#multi-base-units)
@@ -535,9 +538,9 @@ If the target is a Ping the **Target Defense** depends on its Signature.
 | Medium         | 13            |
 | Large          | 12            |
 
-| Modifiers                    |     |
-|------------------------------|-----|
-| Ping Concealed or out of LOS | -1  |
+| Modifiers                    |    |
+|------------------------------|----|
+| Ping Concealed or out of LOS | -1 |
 
 | Outcome                     | Result  |
 |-----------------------------|---------|
@@ -600,11 +603,10 @@ with [Countermeasures](#countermeasures).
 
 If an Attack results in a successful hit, resolve the Combat Action's effect against the targeted Unit.
 
-| Effect     | Description                                                                                                            |
-|------------|------------------------------------------------------------------------------------------------------------------------|
-| **KILL**   | The targeted Unit or Infantry Base of a Multi-Base Unit is destroyed and removed from the game.                        |
-| **STUN**   | The targeted Unit gains a [Stun Token](#stun-token). If the Unit already has a Stun Token, there is no further effect. |
-| **REVEAL** | Pings hit by this effect are [Revealed](#revealing). Units hit by this effect lose a Stealth Token if they have one.   |
+| Effect   | Description                                                                                                            |
+|----------|------------------------------------------------------------------------------------------------------------------------|
+| **KILL** | The targeted Unit or Infantry Base of a Multi-Base Unit is destroyed and removed from the game.                        |
+| **STUN** | The targeted Unit gains a [Stun Token](#stun-token). If the Unit already has a Stun Token, there is no further effect. |
 
 ## Special Actions
 
@@ -616,6 +618,9 @@ The Action's described effect is resolved immediately.
 *Countermeasures represent a Unit's ability to avoid attacks and damage.
 In Downsync, weapon and Countermeasure details are purposely abstracted to avoid the tedium of tracking what
 Countermeasures would be effective against what weapons under what conditions.*
+
+Countermeasures may be spent to negate a **KILL** or **STUN** effect. Other effects may not be negated by
+Countermeasures.
 
 ### Spending Countermeasures
 
@@ -686,16 +691,17 @@ Units participating at a cost of 1 Command Point per Unit.
 
 #### Reaction Engagement Taskforces
 
-The Active Player's participating Units now become part of the Active Player's Taskforce. The non-Active Player's
-participating Units are now considered to be in a Reaction Taskforce. A Reaction Taskforce is identical to a Taskforce
-in the case of rules that refer to Units in the same Taskforce.
+The Active Player's participating Units now become part of the Active Player's Taskforce.
+The non-Active Player's participating Units are now considered to be in a Reaction Taskforce.
+A Reaction Taskforce is identical to a Taskforce in the case of rules that refer to Units in the same Taskforce.
 
 #### Reaction Priority Order
 
-Each participating Unit will have a Reaction Priority number and will act in order from highest to lowest. The active
-Player wins ties between opposing Units. Ties between friendly Units act in an order determined by their controlling
-player. After the Reaction Priority of each participating Unit is determined place a d6 indicating the Reaction Priority
-next to each participating Unit.
+Each participating Unit will have a Reaction Priority number and will act in order from highest to lowest.
+The active Player wins ties between opposing Units.
+Ties between friendly Units act in an order determined by their controlling player.
+After the Reaction Priority of each participating Unit is determined place a d6 indicating the Reaction Priority next to
+each participating Unit.
 
 *When a participating Unit completes its activation remove its Reaction Priority die to indicate it has completed its
 Unit Activation.*
@@ -706,9 +712,10 @@ Each Unit participating in the Reaction Engagement performs a Reaction Priority 
 
 ##### Boosting Reaction Priority
 
-Players may spend a Command Point to boost a single Unit's Reaction Priority roll. Starting with the active player, each
-player declares zero or more participating Units to boost and spends a Command Point for each one. Then both players
-perform a Reaction Priority Roll for each participating Unit.
+Players may spend a Command Point to boost a single Unit's Reaction Priority roll.
+Starting with the active player, each player declares zero or more participating Units to boost and spends a Command
+Point for each one.
+Then both players perform a Reaction Priority Roll for each participating Unit.
 
 ##### Reaction Priority Roll
 
@@ -746,14 +753,14 @@ All missions are played on a 4x4 foot table and have players on opposite sides o
 **Deployment Zones**: Both players deploy Pings within 10" of their table edge
 
 **Setup**: Place a VIP token in the bottom right corner of each player's table side 12" from the right and the back
-edge. The token
-may be represented by a civilian vehicle model but does not block LOS and can be moved through.
+edge.
+The token may be represented by a civilian vehicle or other model but is not terrain and does not block LOS and can be
+moved through.
 
-**Scoring**: Players score by capturing the VIP on their opponents side of the table. When a player ends a Taskforce
-Activation, each Unit within 1" of the opposing VIP scores 1 Victory Point. Each opposing Unit within 4" subtracts 1
-Victory Point from this amount. Units with multiple Infantry Bases must have more than half of their non-destroyed
-Unit's bases within
-1".
+**Scoring**: Players score by capturing the VIP on their opponents side of the table.
+When a player ends a Taskforce Activation, each Unit within 1" of the opposing VIP scores 1 Victory Point.
+Each opposing Unit within 4" subtracts 1 Victory Point from this amount.
+Multi-Base Units must have more than half of their starting Infantry Bases within 1".
 
 **Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
 
@@ -761,18 +768,27 @@ Unit's bases within
 
 ### Ability Stacking
 
-Multiple instances of the same ability do not stack. Including if an ability with the same name comes from multiple
-sources.
+Multiple instances of the same ability do not stack.
+Including if an ability with the same name comes from multiple sources.
+
+### Place Abilities
+
+Some abilities describe **Placing** a Unit or Ping within X".
+**Placing** is different from moving it does not suffer an terrain movement penalties and does not require a clear path.
+When **Placing** a Multi-Base Unit, Place each Infantry Base anywhere within X" and within 6" of every other Infantry
+Base in the Unit.
+After **Placing** a Unit/Ping it must not overlap any other Units/Pings or impassible terrain.
 
 ## Unit Tokens
 
-Each Unit has tokens represented by 8mm colored cubes. The tokens are placed on the base of the Unit to clearly
-show what Unit they belong to. When a Unit *spends* a token it is removed from the Unit's base and set aside.
+Each Unit has tokens represented by 8mm colored cubes.
+The tokens are placed on the base of the Unit to clearly show what Unit they belong to.
+When a Unit *spends* a token it is removed from the Unit's base and set aside.
 
 ### Activated Token
 
-A Unit with an Activated Token has activated this Round. The Unit cannot activate, be part of a Taskforce, or
-participate in Reaction Engagements until the next round.
+A Unit with an Activated Token has activated this Round.
+The Unit cannot activate, be part of a Taskforce, or participate in Reaction Engagements until the next round.
 
 |                       |                                                                           |
 |-----------------------|:--------------------------------------------------------------------------|
@@ -842,13 +858,13 @@ A Unit loses its Stealth Token immediately after resolving a Combat Action and i
 be [Revealed](#revealing).
 A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 
-|                       |                                                                                                                                                                  |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span class="token" style="background:black"></span> Black                                                                                                       |
-| **Gained**            | By Unit special abilities                                                                                                                                        |
-| **Can have multiple** | No                                                                                                                                                               |
-| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                             |
-| **Removed**           | A Unit looses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or placement within 2". |
+|                       |                                                                                                                                                                      |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Color**             | <span class="token" style="background:black"></span> Black                                                                                                           |
+| **Gained**            | By Unit special abilities                                                                                                                                            |
+| **Can have multiple** | No                                                                                                                                                                   |
+| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                                 |
+| **Removed**           | A Unit looses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or **Placement** within 2". |
 
 ### Unit Token Quick Reference
 
@@ -870,14 +886,7 @@ There are still areas of the rules that could use improvement. Please share any 
 
 The following names are ok but could be better:
 
-- "Emergency" Countermeasure
 - Multi-Based Unit
 - Infantry Base
 - Reaction Engagement
 - Reaction Priority
-
-### Command Points
-
-Command Points generation is the only part of the game that resets at the start of a round.
-It would be better if there was a way to get them throughout the round to prevent jamming at the end of a round.
-

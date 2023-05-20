@@ -53,7 +53,7 @@ export const EMPHASIS_KEYWORDS = [
     'Fire Support',
 
     'Forward Observe',
-
+    'Revealed',
     'Stealth Token',
 
     'Spider Drones',

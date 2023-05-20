@@ -52,7 +52,7 @@ export const SHROUD_AURA = make({
 export const ADAPTIVE_CAMO = make({
     name: 'Adaptive Camo',
     note: '+1 DEF',
-    desc: 'When concealed this Unit gains an additional +1 DEF.',
+    desc: 'When this Unit benefits from Concealment it gains an additional +1 DEF.',
 })
 
 export const AMBUSH = make({
