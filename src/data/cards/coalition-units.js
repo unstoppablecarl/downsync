@@ -23,7 +23,7 @@ import {
     AMBUSH,
     CLEAR_THE_WAY,
     DEFENSE_AURA,
-    HARDENED_CM,
+    EMERGENCY_CM,
     SENTRY,
     SHROUD_AURA,
     SPIDER_DRONE_INFILTRATOR_CARRIER,
@@ -179,7 +179,7 @@ export const GUARDIAN_MARKSMAN = make({
     ],
     traits: [
         SENTRY,
-        HARDENED_CM,
+        EMERGENCY_CM,
         ALL_TERRAIN,
     ],
 })
@@ -202,7 +202,7 @@ export const GUARDIAN_DESTROYER = make({
     ],
     traits: [
         SENTRY,
-        HARDENED_CM,
+        EMERGENCY_CM,
         ALL_TERRAIN,
     ],
 })

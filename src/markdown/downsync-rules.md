@@ -654,9 +654,9 @@ Instead, the Unit may allow the Attack's effect to be applied.
 
 Special Actions (**&starf;** effect) cannot be negated by any type of Countermeasures.
 
-### Spending Hardened Countermeasures
+### Spending Emergency Countermeasures
 
-Any time a Unit could spend a Countermeasure Token it may spend a Hardened Countermeasure Token instead.
+Any time a Unit could spend a Countermeasure Token it may spend a Emergency Countermeasure Token instead.
 If it does the Countermeasure Check is automatically successful without a die roll.
 The Controlling Player must decide which to use before performing a Countermeasure Check.
 
@@ -669,12 +669,12 @@ Roll 3+ on 1d6 to negate the effect of one attack.
 | 1d6 roll >= 3 | Success |
 | 1d6 roll < 3  | Failure |
 
-[Hardened Countermeasures](#hardened-countermeasure-token) automatically succeed Countermeasure Checks.
+[Emergency Countermeasures](#emergency-countermeasure-token) automatically succeed Countermeasure Checks.
 
 #### Regenerating Countermeasures
 
 When a Unit is [Refreshed](#refresh) it replenishes its Countermeasure Tokens so that it has a number equal to its CM
-stat. [Hardened Countermeasures](#hardened-countermeasure-token) do not Regenerate.
+stat. [Emergency Countermeasures](#emergency-countermeasure-token) do not Regenerate.
 
 ## Reaction Engagements
 
@@ -843,19 +843,19 @@ a [Countermeasure Check](#countermeasure-check).
 | **Multi-Base Units**  | Each Infantry Base gains Countermeasure Tokens equal to the Unit's CM stat     |
 | **Removed**           | When spent                                                                     |
 
-### Hardened Countermeasure Token
+### Emergency Countermeasure Token
 
-When a Unit is hit by an Attack it may spend a Hardened Countermeasure Token to perform and automatically succeed
+When a Unit is hit by an Attack it may spend a Emergency Countermeasure Token to perform and automatically succeed
 a [Countermeasure Check](#countermeasure-check).
-Hardened Countermeasures do not [Regenerate](#regenerating-countermeasures).
+Emergency Countermeasures do not [Regenerate](#regenerating-countermeasures).
 
-|                       |                                                                                      |
-|-----------------------|--------------------------------------------------------------------------------------|
-| **Color**             | <span class="token token-shadow" style="background:yellow"></span> Yellow            |
-| **Gained**            | When Unit is first Revealed                                                          |
-| **Can have multiple** | Yes                                                                                  |
-| **Multi-Base Units**  | Each Infantry Base gains Hardened Countermeasure Tokens equal to the Unit's CM+ stat |
-| **Removed**           | When spent                                                                           |
+|                       |                                                                                       |
+|-----------------------|---------------------------------------------------------------------------------------|
+| **Color**             | <span class="token token-shadow" style="background:yellow"></span> Yellow             |
+| **Gained**            | When Unit is first Revealed                                                           |
+| **Can have multiple** | Yes                                                                                   |
+| **Multi-Base Units**  | Each Infantry Base gains Emergency Countermeasure Tokens equal to the Unit's CM+ stat |
+| **Removed**           | When spent                                                                            |
 
 ### Overwatch Token
 
@@ -873,7 +873,7 @@ A Unit with an Overwatch Token can participate in Reaction Engagements even if i
 ### Stun Token
 
 Before performing its Unit Activation, a Unit with a Stun Token must spend 1 of the following then remove the Stun
-Token: Command Point, Action Point, Countermeasure Token, Hardened Countermeasure Token.
+Token: Command Point, Action Point, Countermeasure Token, Emergency Countermeasure Token.
 
 |                       |                                                                                                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -900,15 +900,15 @@ A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 
 ### Unit Token Quick Reference
 
-| Token                                                         | Color                                                                     |
-|---------------------------------------------------------------|---------------------------------------------------------------------------|
-| **[Command Point](#command-points)**                          | <span class="token" style="background:blue"></span> Blue                  |
-| **[Activated](#activated-token)**                             | <span class="token" style="background:green"></span> Green                |
-| **[Countermeasure](#countermeasure-token)**                   | <span class="token token-shadow" style="background:white"></span> White   |
-| **[Hardened Countermeasure](#hardened-countermeasure-token)** | <span class="token token-shadow" style="background:yellow"></span> Yellow |
-| **[Overwatch](#overwatch-token)**                             | <span class="token" style="background:purple"></span> Purple              |
-| **[Stun](#stun-token)**                                       | <span class="token" style="background:orange"></span> Orange              |
-| **[Stealth](#stealth-token)**                                 | <span class="token" style="background:black"></span> Black                |
+| Token                                                           | Color                                                                     |
+|-----------------------------------------------------------------|---------------------------------------------------------------------------|
+| **[Command Point](#command-points)**                            | <span class="token" style="background:blue"></span> Blue                  |
+| **[Activated](#activated-token)**                               | <span class="token" style="background:green"></span> Green                |
+| **[Countermeasure](#countermeasure-token)**                     | <span class="token token-shadow" style="background:white"></span> White   |
+| **[Emergency Countermeasure](#emergency-countermeasure-token)** | <span class="token token-shadow" style="background:yellow"></span> Yellow |
+| **[Overwatch](#overwatch-token)**                               | <span class="token" style="background:purple"></span> Purple              |
+| **[Stun](#stun-token)**                                         | <span class="token" style="background:orange"></span> Orange              |
+| **[Stealth](#stealth-token)**                                   | <span class="token" style="background:black"></span> Black                |
 
 ## Areas That Could Be Improved
 
@@ -918,7 +918,7 @@ There are still areas of the rules that could use improvement. Please share any 
 
 The following names are ok but could be better:
 
-- "Hardened" Countermeasure
+- "Emergency" Countermeasure
 - Multi-Based Unit
 - Infantry Base
 - Reaction Engagement

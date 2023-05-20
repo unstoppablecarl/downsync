@@ -72,7 +72,7 @@ export const EMPHASIS_KEYWORDS = [
     'Target Tag Tokens',
     'Target Tag Token',
 
-    'Hardened Countermeasure Token',
+    'Emergency Countermeasure Token',
 
     'Countermeasure Tokens',
     'Countermeasure Token',

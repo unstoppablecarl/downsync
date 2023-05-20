@@ -123,10 +123,10 @@ export const INFANTRY_TRANSPORT = make({
     desc_keywords: ['Mechanized'],
 })
 
-export const HARDENED_CM = make({
-    name: 'Hardened CM',
+export const EMERGENCY_CM = make({
+    name: 'Emergency CM',
     note: '+1',
-    desc: `This Unit begins the game with 1 Hardened Countermeasure Token (indicated as +1 under CM). Hardened CMs automatically succeed and do not regenerate.`,
+    desc: `This Unit begins the game with 1 Emergency Countermeasure Token (indicated as +1 under CM). Emergency CMs automatically succeed and do not regenerate.`,
 })
 
 
