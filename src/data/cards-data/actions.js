@@ -22,7 +22,7 @@ export const SCAN = (rof, range) => {
 export const TRANSPORT_UNLOAD = make({
     name: 'Unload',
     note: 'Free Action, 3"',
-    desc: keywordFormat(`Place any carried Units within 3". They may immediately perform a move or action.`),
+    desc: keywordFormat(`Place any carried Units within 3". They may immediately perform a move or action. This Unit cannot perform a Load and an Unload action in the same activation.`),
     no_stats: true,
 })
 
