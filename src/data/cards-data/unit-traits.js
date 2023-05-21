@@ -30,7 +30,7 @@ export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
     return make({
         name: 'Defend',
         note: `${type}, 4"`,
-        desc: `${typePlural} within 4" can spend this Unit's Countermeasure Tokens.`,
+        desc: `${typePlural} within 4" can spend this Unit's Countermeasure Tokens. This may only be used by Units with a CM stat of "-".`,
     })
 }
 
@@ -69,12 +69,12 @@ export const SHROUD_AURA = make({
 export const ADAPTIVE_CAMO = make({
     name: 'Adaptive Camo',
     note: '+1 DEF',
-    desc: 'When concealed this Unit gains an additional +1 DEF.',
+    desc: 'When this Unit benefits from Concealment it gains an additional +1 DEF.',
 })
 
 export const AMBUSH = make({
     name: 'Ambush',
-    desc: `When declaring participating Units of a Reaction Engagement, select a Ping matching this Unit's SIG. This Unit is immediately revealed using the selected Ping and becomes a participating Unit in the Reaction Engagement. If the selected Ping has an Activated Token it is immediately removed.`,
+    desc: `When declaring participating Units of a Reaction Engagement, select a Ping matching this Unit's SIG. This Unit is immediately Revealed using the selected Ping and becomes a participating Unit in the Reaction Engagement. If the selected Ping has an Activated Token it is immediately removed. Ambush may only be used if this Unit has not been Revealed yet.`,
 })
 
 export const MECHANIZED_INFANTRY = make({

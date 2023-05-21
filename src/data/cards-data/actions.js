@@ -35,14 +35,14 @@ export const SCRAMBLE = make({
 export const TRANSPORT_UNLOAD = make({
     name: 'Unload',
     note: 'Free Action, 3"',
-    desc: keywordFormat(`Place any carried Units within 3". They may immediately perform a move or action.`),
+    desc: keywordFormat(`Place any carried Units within 3". They become part of the current Taskforce and may immediately perform an action then gain an Activated Token.`),
     no_stats: true,
 })
 
 export const TRANSPORT_LOAD = make({
     name: 'Load',
     note: 'Free Action, 3"',
-    desc: keywordFormat(`Place any eligible Units within 3" in this transport up to its max capacity. Units must forfeit a move or action are eligible.`),
+    desc: keywordFormat(`Place any eligible Units within 3" in this transport up to its max capacity. Units must forfeit a move or action are eligible. This Unit cannot perform a Load and an Unload action in the same activation.`),
     no_stats: true,
 })
 
