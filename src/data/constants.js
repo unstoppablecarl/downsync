@@ -55,6 +55,8 @@ export const EMPHASIS_KEYWORDS = [
     'All Terrain',
     'Fire Support',
 
+    'Placed',
+
     'Forward Observe',
     'Revealed',
     'Stealth Token',
