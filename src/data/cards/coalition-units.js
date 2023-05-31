@@ -27,7 +27,7 @@ import {
     SENTRY,
     SHROUD_AURA,
     SPIDER_DRONE_INFILTRATOR_CARRIER,
-    STEALTHY_INFANTRY,
+    STEALTHY,
     WIDOW_SCOUT_CARRIED,
 } from '../cards-data/unit-traits.js'
 
@@ -224,7 +224,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
         GO_DARK,
     ],
     traits: [
-        STEALTHY_INFANTRY,
+        STEALTHY,
         ALL_TERRAIN,
         WIDOW_SCOUT_CARRIED,
     ],

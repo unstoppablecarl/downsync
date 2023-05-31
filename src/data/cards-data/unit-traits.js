@@ -3,7 +3,7 @@ import { makeTrait } from '../support/factories.js'
 
 const UPKEEP_COMMAND_POINT_TEXT = 'This Unit gains the Command Point Token spent to indicate this ability is active. It is returned immediately before this Unit is Refreshed or Destroyed.'
 
-export const STEALTHY_INFANTRY = make({
+export const STEALTHY = make({
     name: 'Stealthy',
     desc: `This Unit begins the game with a Stealth Token.`,
 })
