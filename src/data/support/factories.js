@@ -140,7 +140,6 @@ export function makeWeapon(weapon) {
         desc: '',
     }
     let result = Object.assign(defaults, weapon)
-    result.cost = keywordFormat(result.cost)
 
     return makeAction(result)
 }
