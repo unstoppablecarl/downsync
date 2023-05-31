@@ -1,14 +1,16 @@
 import {
     ADVANCED_MG,
     ADVANCED_RPG,
+    ARTILLERY_DRONE,
     CM_HACK,
     CYBER_ATTACK,
     DOUBLE_CANNON,
     HMG,
-    HUNTER_KILLER,
+    JAM_DRONE,
     MEDIUM_CANNON,
     MG,
     POSITION_HACK,
+    RPG,
     SMALL_ARMS,
     SMART_BOMBS,
 } from '../cards-data/weapons.js'
@@ -17,21 +19,23 @@ import { FREE_UNION_FACTION_NAME, FREE_UNION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDI
 import {
     ALL_TERRAIN,
     BULLET_SPONGE_AURA,
-    FREE_UNION_TRANSPORT,
+    FREE_UNION_TAXI,
     HIT_AND_RUN,
     HITCH_HIKER,
     MOUNTED_INFANTRY,
     QUICK,
+    RESILIENT,
     SCRAMBLE_AURA,
     SMALL_DECOY_PING,
-    STEALTHY_INFANTRY,
+    STEALTHY,
 } from '../cards-data/unit-traits.js'
 
 import { SCAN } from '../cards-data/actions.js'
 import { makeAction, makeUnit, modifyAction } from '../support/factories.js'
 import { TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits.js'
+import { NOTE_JAMMED } from '../definitions.js'
 
-export const FREE_UNION_DEFAULTS = {
+export const FREE_UNION_CARD_DEFAULTS = {
     faction: FREE_UNION_FACTION_NAME,
     faction_slug: FREE_UNION_FACTION_SLUG,
     faction_svg_sprite: 'faction_free_union',
@@ -43,21 +47,45 @@ export const INFANTRY_SQUAD = make({
     name: 'Infantry Squad',
     signature: SIZE_SMALL,
     type: 'Human Infantry Squad',
-    squad_size: 4,
+    squad_size: 3,
     speed: 4,
-    scan: 7,
+    scan: null,
     targeting: 5,
     defense: 13,
     actions: [
-        modifyAction(SMALL_ARMS, { team: '1-3' }),
-        modifyAction(ADVANCED_RPG, { team: '4' }, [TRAIT_TAKE_UP]),
+        modifyAction(SMALL_ARMS, { team: '1-2' }),
+        modifyAction(RPG, { team: '3' }, [TRAIT_TAKE_UP]),
     ],
     traits: [
-        STEALTHY_INFANTRY,
+        STEALTHY,
         HITCH_HIKER,
         ALL_TERRAIN,
     ],
     notes: [],
+})
+
+export const DRONE_LAUNCHERS = make({
+    slug: 'drone-launcher-squad',
+    img: null,
+    name: 'Jam Drone Team',
+    signature: SIZE_SMALL,
+    type: 'Human Infantry Team',
+    squad_size: 1,
+    speed: 4,
+    scan: null,
+    targeting: 5,
+    defense: 13,
+    actions: [
+        JAM_DRONE,
+    ],
+    traits: [
+        STEALTHY,
+        HITCH_HIKER,
+        ALL_TERRAIN,
+    ],
+    notes: [
+        NOTE_JAMMED,
+    ],
 })
 
 export const SCRAMBLER = make({
@@ -67,7 +95,7 @@ export const SCRAMBLER = make({
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
-    targeting: null,
+    targeting: 6,
     defense: 14,
     scan: 7,
     cm: 1,
@@ -77,7 +105,7 @@ export const SCRAMBLER = make({
     ],
     traits: [
         SCRAMBLE_AURA,
-        FREE_UNION_TRANSPORT,
+        FREE_UNION_TAXI,
         SMALL_DECOY_PING,
     ],
     notes: [],
@@ -100,7 +128,7 @@ export const TECHNICAL = make({
         POSITION_HACK,
     ],
     traits: [
-        FREE_UNION_TRANSPORT,
+        FREE_UNION_TAXI,
     ],
     notes: [],
 })
@@ -122,7 +150,7 @@ export const BUGGY = make({
         ADVANCED_MG,
     ],
     traits: [
-        FREE_UNION_TRANSPORT,
+        FREE_UNION_TAXI,
     ],
     notes: [],
 })
@@ -143,7 +171,6 @@ export const DRONE_WRANGLER_TEAM = make({
         modifyAction(ADVANCED_RPG, { team: '2-3' }),
     ],
     traits: [
-        //BREACH_LINK,
         HITCH_HIKER,
         ALL_TERRAIN,
     ],
@@ -176,12 +203,14 @@ export const SUPPORT_TANK = make({
     signature: SIZE_MEDIUM,
     type: 'Medium Vehicle',
     speed: 7,
-    scan: null,
-    targeting: 5,
+    scan: 6,
+    targeting: 6,
     defense: 13,
     cm: 2,
     actions: [
-        HUNTER_KILLER,
+        DOUBLE_CANNON,
+        CM_HACK,
+        //HUNTER_KILLER,
     ],
     traits: [
         ALL_TERRAIN,
@@ -204,7 +233,6 @@ export const TANK_HUNTERS = make({
         SMART_BOMBS,
     ],
     traits: [
-        //BREACH_LINK,
         ALL_TERRAIN,
         MOUNTED_INFANTRY,
     ],
@@ -225,8 +253,26 @@ export const TORTOISE = make({
         HMG,
     ],
     traits: [
-        //BREACH_LINK,
         BULLET_SPONGE_AURA,
+    ],
+})
+
+export const HEAVY_TANK = make({
+    slug: 'heavy-tank',
+    name: 'Heavy Tank',
+    img: null,
+    signature: SIZE_LARGE,
+    type: 'Heavy Vehicle',
+    speed: 7,
+    targeting: 6,
+    defense: 13,
+    cm: 3,
+    actions: [
+        ARTILLERY_DRONE,
+    ],
+    traits: [
+        RESILIENT,
+        ALL_TERRAIN,
     ],
 })
 
@@ -257,19 +303,21 @@ export const ABILITY_IDEAS = make({
 
 export const FREE_UNION_UNITS = [
     INFANTRY_SQUAD,
+    DRONE_LAUNCHERS,
     SCRAMBLER,
     TECHNICAL,
-    BUGGY,
+    //BUGGY,
     DRONE_WRANGLER_TEAM,
     MED_TANK,
     SUPPORT_TANK,
     TANK_HUNTERS,
+    HEAVY_TANK,
     TORTOISE,
     //ABILITY_IDEAS,
 ]
 
 function make(unit) {
-    unit = Object.assign({}, FREE_UNION_DEFAULTS, unit)
+    unit = Object.assign({}, FREE_UNION_CARD_DEFAULTS, unit)
 
     return makeUnit(unit)
 }

@@ -50,12 +50,17 @@ export const TRAIT_CLOSE_COMBAT = make({
 
 export const TRAIT_SMART_SHRAPNEL = make({
     name: 'Smart Shrapnel',
-    desc: 'Ignores Concealment modifiers.',
+    desc: 'Units targeted by this weapon do not benefit from Concealment.',
 })
 
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',
     desc: 'Attacks from this weapon can use the LOS of Infantry Teams in this Unit.',
+})
+
+export const TRAIT_JAMMING = make({
+    name: 'Jamming',
+    desc: 'Units hit by this weapon suffer the JAM effect. Jammed Units cannot spend Command Points.',
 })
 
 export const TRAIT_DOUBLE_TAP = make({
@@ -82,7 +87,7 @@ export const TRAIT_BREACH_EXPLOIT = makeTrait({
 
 export const TRAIT_TAKE_UP = makeTrait({
     name: 'Take Up',
-    desc: 'When an Infantry Base with this weapon is killed, an Infantry Base in this Unit within 3" may be killed instead.',
+    desc: 'When an Infantry Base with this weapon is killed, an Infantry Base in this Unit within 1" may be killed instead.',
 })
 
 export const TRAIT_CLOSE_AND_PERSONAL = makeTrait({

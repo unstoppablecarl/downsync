@@ -316,10 +316,29 @@ export const MICRO_ARTILLERY = make({
     ],
 })
 
+export const JAM_DRONE = make({
+    name: 'Launch Jam Drone',
+    //stat: 'SCAN',
+    range: 16,
+    rof: 2,
+    effect: 'JAM',
+    traits: [],
+})
+
+export const RPG = make({
+    name: 'RPG',
+    range: 10,
+    rof: 2,
+    effect: 'KILL',
+    traits: [
+        TRAIT_CLOSE_AND_PERSONAL,
+    ],
+})
+
 export const ADVANCED_RPG = make({
     name: 'Adv. RPG',
     range: 10,
-    rof: 2,
+    rof: 1,
     effect: 'KILL',
     traits: [
         TRAIT_ADVANCED,
@@ -349,13 +368,14 @@ export const SMART_BOMBS = make({
 })
 
 export const ARTILLERY_DRONE = make({
-    name: 'Artillery Drone',
+    name: 'Close Support Cannon',
     range: 16,
     rof: 3,
     effect: 'KILL',
     traits: [
         TRAIT_CLUSTERED(3),
         TRAIT_SMART_SHRAPNEL,
+        TRAIT_ADVANCED,
     ],
 })
 

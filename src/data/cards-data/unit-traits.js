@@ -138,21 +138,19 @@ export const HIT_AND_RUN = make({
 
 export const HITCH_HIKER = make({
     name: 'Hitch Hiker',
-    desc: `When this Unit is Revealed in the Reveal Phase it may be Placed within 3" of a friendly Unit in this Taskforce with the Transport trait that was Revealed in a previous Turn.`,
-    desc_keywords_before: ['Transport'],
+    desc: `When this Unit is Revealed in the Reveal Phase it may be Placed within 3" of a friendly Unit in this Taskforce with the Taxi trait that was Revealed in a previous Turn.`,
+    desc_keywords_before: ['Taxi'],
 })
 
-export const FREE_UNION_TRANSPORT = make({
-    name: 'Transport',
+export const FREE_UNION_TAXI = make({
+    name: 'Taxi',
     desc: `This Unit may be targeted by the Hitch Hiker trait once per Taskforce Activation.`,
     desc_keywords_name: ['Hitch Hiker'],
 })
 
-export const TARG_JAM = make({
-    name: 'Targeting Jam',
-    note: '-2 TARG within 6"',
-    desc: `Enemy Units suffer -2 TARG while within 6" and LOS of this Unit.`,
-    desc_keywords_name: ['Hitch Hiker'],
+export const RESILIENT = make({
+    name: 'Resilient',
+    desc: `When this Unit suffers a KILL effect, when not already Stunned, it suffers a STUN effect instead.`,
 })
 
 export const SCRAMBLE_AURA = make({
