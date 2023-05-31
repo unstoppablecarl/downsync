@@ -32,10 +32,16 @@
     }
 
     .card-advisor {
-        .command-abilities {
+        .command-abilities,
+        .traits {
             .key {
                 font-size: 5.5pt * $scale;
+                text-transform: inherit;
             }
+        }
+
+        .heading {
+            position: relative;
         }
     }
 
@@ -134,8 +140,9 @@
 
         position: absolute;
 
-        top: -14pt;
+        bottom: 2pt;
         right: -1pt;
+        z-index: 10;
 
         .command-points-value {
             font-weight: 600;
@@ -309,6 +316,7 @@
             &.action-row-no-stats {
                 .key {
                     font-size: inherit;
+                    text-transform: inherit;
                 }
             }
         }
@@ -388,7 +396,7 @@
         .cost-icon-action-and-command,
         .cost-icon-action-or-command,
         .cost-icon-free {
-            font-family: "Open Sans", sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
     }
 

@@ -1,18 +1,19 @@
 import { makeAdvisor } from '../support/factories.js'
 import { REPUBLIC_CARD_DEFAULTS } from './republic-units.js'
-import { BRACE, ENHANCED_STUN, FOCUS_FIRE, REPOSITION_INFANTRY } from '../cards-data/command-abilities.js'
+import { BRACE_INFANTRY, REPOSITION, STEALTH_UPGRADE } from '../cards-data/command-abilities.js'
+import { TYPE_INFANTRY } from '../constants.js'
 
 export const SOFIA_AVERY = make({
     name: 'Sofia Avery',
     slug: 'sofia_avery',
-    type: 'Human Military Advisor',
+    type: 'Infantry Specialist',
     command_points: 7,
-
     command_abilities: [
-        REPOSITION_INFANTRY,
-        ENHANCED_STUN,
-        FOCUS_FIRE,
-        BRACE,
+        REPOSITION(TYPE_INFANTRY, 2),
+        BRACE_INFANTRY,
+    ],
+    command_passive_abilities: [
+        STEALTH_UPGRADE('Courier'),
     ],
 })
 
