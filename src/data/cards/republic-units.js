@@ -29,7 +29,7 @@ import {
     INFANTRY_TRANSPORT,
     MECHANIZED_INFANTRY,
     PREDATOR,
-    STEALTHY_INFANTRY,
+    STEALTHY,
 } from '../cards-data/unit-traits.js'
 import { FORWARD_OBSERVE, GO_DARK, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
 import { makeUnit, modifyAction } from '../support/factories.js'
@@ -84,7 +84,7 @@ export const SEEKER_TEAM = make({
     traits: [
         ADAPTIVE_CAMO,
         ALL_TERRAIN,
-        STEALTHY_INFANTRY,
+        STEALTHY,
     ],
 })
 
