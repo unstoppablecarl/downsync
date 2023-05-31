@@ -78,16 +78,15 @@ export function makeCommandAbility(ability) {
     }
 
     let result = Object.assign(defaults, ability)
+    result.traits.map((trait) => Object.assign({}, trait))
 
-    result.desc = keywordFormat(result.desc)
-
-    result.traits = result.traits.map((trait) => {
-        trait = Object.assign({}, trait)
-        trait.desc = keywordFormat(trait.desc)
-        return trait
-    })
+    result.desc = keywordFormatDesc(result)
 
     result.cost = keywordFormat(result.cost)
+
+    if (result.cost) {
+        result.desc = `${result.cost} ${result.desc}`
+    }
 
     return result
 }
@@ -141,5 +140,7 @@ export function makeWeapon(weapon) {
         desc: '',
     }
     let result = Object.assign(defaults, weapon)
+    result.cost = keywordFormat(result.cost)
+
     return makeAction(result)
 }

@@ -1,7 +1,9 @@
 <div class="card card-advisor" id="{{slug}}">
     <div class="card-content-container">
         <div class="heading">
-            <img src="/assets/img/{{icon}}" class="icon" alt="{{faction}} icon"/>
+            <svg class="icon" fill="currentColor" aria-hidden="true" focusable="false">
+                <use href="{{svg_icon_path faction_svg_sprite}}"></use>
+            </svg>
 
             <div class="title">
                 <div class="primary-title"{{{style_font_size name_font_size}}}>
@@ -23,131 +25,126 @@
             {{#if img}}
                 <img src="/assets/img/advisors/{{img}}" class="card-portrait" alt="{{name}} {{variant_name}} icon"/>
             {{/if}}
+            <span class="command-points">
+                Command: <span class="command-points-value">{{command_points}}</span>
+            </span>
         </div>
 
         {{#if command_abilities.length}}
+
             <h3 class="section-heading">
                 Command Abilities
-                <span class="command-points">
-                Command: <span class="command-points-value">{{command_points}}</span>
-            </span>
             </h3>
             <div class="command-abilities content-padding"{{{style_font_size body_font_size}}}>
-            {{#each command_abilities as |command_ability|}}
+                {{#each command_abilities as |command_ability|}}
 
-            <div class="key-value"{{{style_font_size font_size}}}>
+                    {{> key-value .}}
 
-                <span class="key">{{{name}}}</span>
-                <span class="note">{{{cost}}}:</span>
-
-                {{{desc}}}
-            </div>
-
-            {{#if command_ability.traits}}
-            <div class="features">
-                {{#each command_ability.traits as |trait|}}
-                {{> key-value trait class='feature'}}
+                    {{#if command_ability.traits}}
+                        <div class="features">
+                            {{#each command_ability.traits as |trait|}}
+                                {{> key-value trait class='feature'}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
                 {{/each}}
             </div>
-            {{/if}}
-            {{/each}}
-        </div>
-        {{/if}}
-
-        {{#if definitions.length}}
-        <h3 class="section-heading">
-            Notes
-        </h3>
-        <div class="actions content-padding"{{{style_font_size body_font_size}}}>
-            {{#each definitions as |definition|}}
-            {{> key-value definition}}
-            {{/each}}
-        </div>
         {{/if}}
 
         {{#if actions}}
-        <div class="actions">
-            <table class="table-actions">
-                <thead>
-                <tr class="heading-row">
-                    <th>Actions</th>
-                    <th class="col-stat">Stat</th>
-                    <th class="col-cost">Cost</th>
-                    <th class="col-range">Range</th>
-                    <th class="col-rof">ROF</th>
-                    <th class="col-effect">Effect</th>
-                </tr>
-                </thead>
-                <tbody>
-                {{#each actions}}
-                {{#if no_stats}}
-                    <tr class="action-row action-row-no-stats">
-                        <td colspan="6"{{{style_font_size ../body_font_size}}}>
-                            {{> key-value .}}
-                        </td>
+            <div class="actions">
+                <table class="table-actions">
+                    <thead>
+                    <tr class="heading-row">
+                        <th>Actions</th>
+                        <th class="col-stat">Stat</th>
+                        <th class="col-cost">Cost</th>
+                        <th class="col-range">Range</th>
+                        <th class="col-rof">ROF</th>
+                        <th class="col-effect">Effect</th>
                     </tr>
-                {{else}}
-                <tr class="action-row"{{{style_font_size ../body_font_size}}}>
-                    <td class="col-name"><strong>{{name}}</strong> {{#if note}}
-                        {{#if line_break_note}}<br>{{/if}}
-                        <small{{{style_font_size note_font_size}}}>({{note}})</small>{{/if}}
-                        {{#if type}}
-                        [{{type}}]{{/if}}
-                    </td>
-                    <td class="col-stat">
-                        {{stat}}
-                    </td>
-                    <td class="col-cost">
-
-                        {{#if cost.COST_ACTION}}
-                        <span class="cost-icon-action">A</span>
+                    </thead>
+                    <tbody>
+                    {{#each actions}}
+                        {{#if no_stats}}
+                            <tr class="action-row action-row-no-stats">
+                                <td colspan="6"{{{style_font_size ../body_font_size}}}>
+                                    {{> key-value .}}
+                                </td>
+                            </tr>
+                        {{else}}
+                            <tr class="action-row"{{{style_font_size ../body_font_size}}}>
+                                <td class="col-name"><strong>{{name}}</strong> {{#if note}}
+                                    {{#if line_break_note}}<br>{{/if}}
+                                    <small{{{style_font_size note_font_size}}}>({{note}})</small>{{/if}}
+                                    {{#if type}}
+                                        [{{type}}]{{/if}}
+                                </td>
+                                <td class="col-stat">
+                                    {{stat}}
+                                </td>
+                                <td class="col-cost">
+                                    {{{cost}}}
+                                </td>
+                                <td class="col-range">{{#if range}}{{range}}"{{else}}-{{/if}}</td>
+                                <td class="col-rof">{{null_dash rof}}</td>
+                                <td class="col-effect">{{{effect}}}</td>
+                            </tr>
+                            {{#if desc}}
+                                <tr class="action-description-row">
+                                    <td colspan="6"{{{style_font_size ../body_font_size}}}>
+                                        {{{desc}}}
+                                    </td>
+                                </tr>
+                            {{/if}}
+                            {{#if traits}}
+                                <tr class="action-features-row">
+                                    <td colspan="6"{{{style_font_size ../body_font_size}}}>
+                                        <div class="features">
+                                            {{#each traits as |trait|}}
+                                                {{> key-value trait class='feature'}}
+                                            {{/each}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {{/if}}
                         {{/if}}
-                        {{#if cost.COST_COMMAND}}
-                        <span class="cost-icon-command">C</span>
-                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        {{/if}}
+        {{#if command_passive_abilities.length}}
 
-                        {{#if cost.COST_COMMAND_X2}}
-                        <span class="cost-icon-command-x2">C2</span>
-                        {{/if}}
+            <h3 class="section-heading">
+                Passive Abilities
+            </h3>
+            <div class="command-abilities content-padding"{{{style_font_size body_font_size}}}>
+                {{#each command_passive_abilities as |command_ability|}}
 
-                        {{#if cost.COST_ACTION_AND_COMMAND}}
-                        <span class="cost-icon-action-and-command">A+C</span>
-                        {{/if}}
+                    {{> key-value .}}
 
-                        {{#if cost.COST_ACTION_OR_COMMAND}}
-                        <span class="cost-icon-action-or-command">A/C</span>
-                        {{/if}}
-
-                    </td>
-                    <td class="col-range">{{#if range}}{{range}}"{{else}}-{{/if}}</td>
-                    <td class="col-rof">{{null_dash rof}}</td>
-                    <td class="col-effect">{{{effect}}}</td>
-                </tr>
-                {{#if desc}}
-                    <tr class="action-description-row">
-                        <td colspan="6"{{{style_font_size ../body_font_size}}}>
-                            {{{desc}}}
-                        </td>
-                    </tr>
-                {{/if}}
-                {{#if traits}}
-                    <tr class="action-features-row">
-                        <td colspan="6"{{{style_font_size ../body_font_size}}}>
-                            <div class="features">
-                                {{#each traits as |trait|}}
-                                    {{> key-value trait class='feature'}}
-                                {{/each}}
-                            </div>
-                        </td>
-                    </tr>
-                {{/if}}
-                {{/if}}
+                    {{#if command_ability.traits}}
+                        <div class="features">
+                            {{#each command_ability.traits as |trait|}}
+                                {{> key-value trait class='feature'}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
                 {{/each}}
-                </tbody>
-            </table>
-        </div>
+            </div>
         {{/if}}
 
+        {{#if notes.length}}
+            <h3 class="section-heading">
+                Notes
+            </h3>
+            <div class="actions content-padding"{{{style_font_size body_font_size}}}>
+                {{#each notes as |note|}}
+                    {{> key-value note}}
+                {{/each}}
+            </div>
+        {{/if}}
 
         <div class="version-footer">
             {{cardsVersion}}

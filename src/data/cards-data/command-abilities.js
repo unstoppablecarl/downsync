@@ -1,11 +1,6 @@
 import { makeCommandAbility, makeTrait, makeWeapon } from '../support/factories.js'
-import { COST_COMMAND } from '../constants.js'
-import { TRAIT_CLUSTERED } from './weapon-traits.js'
-
-export const OFF_BOARD_ASSET = makeTrait({
-    name: 'Off Board Asset',
-    desc: 'Ignores short/long range modifiers.',
-})
+import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
+import { TRAIT_CLUSTERED, TRAIT_EXTREME_RANGE } from './weapon-traits.js'
 
 export const TRAIT_DISTRIBUTED = makeTrait({
     name: 'Split',
@@ -18,16 +13,34 @@ export const TRAIT_GRANTED_SCAN_STAT = makeTrait({
     desc: `Units with a SCAN stat may use this action.`,
 })
 
-export const REPOSITION_INFANTRY = makeCommandAbility({
-    name: 'Reposition Infantry',
-    desc: 'Select a friendly Infantry Unit. Place its Infantry Bases within 3" of their current position.',
-    traits: [
-        {
-            name: 'Phase',
-            desc: 'Before movement phase or immediately after a Disembark action.',
-        },
-    ],
+export const STEALTH_UPGRADE = (type) => makeTrait({
+    name: 'Stealth Upgrade',
+    note: type,
+    desc: `When a ${type} Unit is Revealed in your Reveal Phase, you may pay ${COST_COMMAND}, if you do it gains a Stealth Token.`,
 })
+
+export const REPOSITION = (type, count) => {
+    let descPrefix = ''
+    let unit = 'Unit'
+    let noteCount = ''
+
+    if (count > 1) {
+        descPrefix = 'Up to '
+        unit = 'Units'
+        noteCount = count + ' '
+    } else {
+        count = 'A'
+        if (type === TYPE_INFANTRY) {
+            count = 'An'
+        }
+    }
+
+    return makeCommandAbility({
+        name: `Reposition`,
+        note: `${noteCount}${type}, 3"`,
+        desc: `${descPrefix} ${count} ${type} ${unit} in the current Taskforce may be Placed within 3" of their current position immediately after Taskforce Designation (including in Reaction Engagements).`,
+    })
+}
 
 export const ENHANCED_STUN = makeCommandAbility({
     name: 'Enhanced Stun',
@@ -46,29 +59,25 @@ export const ENHANCED_SCAN = makeCommandAbility({
     traits: [],
 })
 
-export const BRACE = makeCommandAbility({
+export const BRACE_INFANTRY = makeCommandAbility({
     name: 'Brace',
     cost: COST_COMMAND,
-    desc: 'Allocate 2 Countermeasure tokens to one or more Units in the Taskforce (can exceed max CM). They are removed at the end of the Taskforce Activation.',
-    traits: [
-        {
-            name: 'Phase',
-            desc: 'Taskforce designation or before rolling reaction dice in a Reaction Engagement.',
-        },
-    ],
+    note: `Infantry, 3 CM`,
+    desc: 'Immediately after a Reaction Engagement is declared and before resolving Priority Rolls, up to 3 Infantry Bases belonging to friendly Taskforce Units gain 1 Countermeasure Token. They are removed at the end of the Taskforce Activation.',
+    traits: [],
 })
 
 export const ADVISOR_ARTILLERY_STRIKE = makeWeapon({
     name: 'Artillery Strike',
     cost: COST_COMMAND,
-    stat: 'SCAN',
+    stat: 'TARG',
     rof: 2,
-    effect: 'STUN',
+    effect: 'KILL',
+    desc: 'This action may be used once per Unit Activation.',
     traits: [
         TRAIT_GRANTED_SCAN_STAT,
         TRAIT_CLUSTERED(3),
-        TRAIT_DISTRIBUTED,
-        OFF_BOARD_ASSET,
+        TRAIT_EXTREME_RANGE,
     ],
 })
 
@@ -83,6 +92,12 @@ export const ADVISOR_NAV_HACK = makeWeapon({
         TRAIT_GRANTED_SCAN_STAT,
         PLACE_EFFECT(3),
     ],
+})
+
+export const PRIORITIZE = makeCommandAbility({
+    name: 'Prioritize',
+    cost: COST_COMMAND,
+    desc: 'You may swap the Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved.',
 })
 
 function PLACE_EFFECT(distance) {

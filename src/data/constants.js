@@ -54,8 +54,12 @@ export const EMPHASIS_KEYWORDS = [
 
     'Placed',
 
+    'Command Points',
+    'Command Point',
+
     'Forward Observe',
     'Revealed',
+    'Reveal Phase',
     'Stealth Token',
 
     'Spider Drones',
@@ -71,11 +75,24 @@ export const EMPHASIS_KEYWORDS = [
     'Target Tag Tokens',
     'Target Tag Token',
 
+    'Emergency Countermeasure Tokens',
     'Emergency Countermeasure Token',
+
+    'Concealment',
 
     'Countermeasure Tokens',
     'Countermeasure Token',
 
     'Taskforce Activation',
+    'Taskforce Designation',
     'Taskforce',
+
+    'Reaction Priority',
+    'Reaction Engagements',
+    'Reaction Engagement',
+
+    'Priority Rolls',
+    'Priority Roll',
+
+    'Unit Activation',
 ]
