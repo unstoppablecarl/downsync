@@ -1,5 +1,5 @@
 import { COST_COMMAND } from '../../constants.js'
-import { makeWeapon } from '../../support/factories.js'
+import { makeTrait, makeWeapon } from '../../support/factories.js'
 
 export function SNAP_FIRE(weapon, range) {
 
@@ -13,3 +13,15 @@ export function SNAP_FIRE(weapon, range) {
     return makeWeapon(newWeapon)
 }
 
+export const HUNTER_KILLER = makeWeapon({
+    name: 'Hunter Killer Drone',
+    range: 16,
+    rof: 3,
+    effect: 'KILL',
+    traits: [
+        makeTrait({
+            name: 'Target Analysis',
+            desc: 'This Action gains +3 TARG against Units hit by a REVEAL effect while already Revealed during this Taskforce Activation.',
+        }),
+    ],
+})

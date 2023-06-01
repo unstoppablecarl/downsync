@@ -10,7 +10,8 @@
         "build-views": "node bin/build-views.js",
         "build-pdfs": "node bin/build-pdfs.js",
         "webp-build": "webpack --config webpack.config.js --progress",
-        "webp-watch": "webpack --config webpack.config.js --progress --watch "
+        "webp-watch": "webpack --config webpack.config.js --progress --watch ",
+        "diff-units": "node bin/diff-gen.js"
     },
     "babel": {
         "presets": [

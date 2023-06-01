@@ -14,8 +14,11 @@ export const WOLF_AI_ADVISOR = make({
     command_passive_abilities: [
         makeAction({
             name: 'Unit Upgrades',
-            desc: 'Spider Drone Solider Units in this Force gain Regroup.',
-            desc_keywords_after: ['Regroup'],
+            desc: 'Spider Drone: Solider Units in this Force gain Regroup.',
+            desc_keywords_after: [
+                'Regroup',
+                'Spider Drone: Solider',
+            ],
             traits: [
                 makeTrait({
                     name: 'Regroup',

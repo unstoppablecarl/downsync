@@ -76,14 +76,15 @@ function prepareCard(card) {
 
 export function prepareSplitCards(targetUnits) {
 
+    let sentinelSlugs = [
+        SENTINEL_HUNTER.slug,
+        SENTINEL_TAGGER.slug,
+    ]
+
     const units = targetUnits.filter((item) => {
-        if (item.name === SENTINEL_HUNTER.name) {
-            return false
-        }
-        if (item.name === SENTINEL_TAGGER.name) {
-            return false
-        }
-        return true
+
+        return !sentinelSlugs.includes(item.slug)
+
     })
 
     units.splice(1, 0, {

@@ -1,16 +1,12 @@
 import { makeCommandAbility, makeTrait, makeWeapon } from '../support/factories.js'
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { TRAIT_CLUSTERED, TRAIT_EXTREME_RANGE } from './weapon-traits.js'
-
-export const TRAIT_DISTRIBUTED = makeTrait({
-    name: 'Split',
-    desc: 'Each attack from this action must have a different target.',
-})
+import { oncePerActivation } from './actions.js'
 
 export const TRAIT_GRANTED_SCAN_STAT = makeTrait({
     name: 'Granted',
     note: 'SCAN',
-    desc: `Units with a SCAN stat may use this action.`,
+    desc: `Units with a SCAN stat may use this Action.`,
 })
 
 export const STEALTH_UPGRADE = (type) => makeTrait({
@@ -42,14 +38,9 @@ export const REPOSITION = (type, count) => {
     })
 }
 
-export const ENHANCED_STUN = makeCommandAbility({
-    name: 'Enhanced Stun',
-    desc: 'Target Unit gains +2 TARG for a single attack roll with the STUN effect.',
-})
-
 export const FOCUS_FIRE = makeCommandAbility({
     name: 'Focus Fire',
-    desc: 'This combat action gains +1 ROF but all attacks must target the same unit.',
+    desc: 'This Combat Action gains +1 ROF but all attacks must target the same Unit.',
 })
 
 export const ENHANCED_SCAN = makeCommandAbility({
@@ -63,7 +54,7 @@ export const BRACE_INFANTRY = makeCommandAbility({
     name: 'Brace',
     cost: COST_COMMAND,
     note: `Infantry, 3 CM`,
-    desc: 'Immediately after a Reaction Engagement is declared and before resolving Priority Rolls, up to 3 Infantry Bases belonging to friendly Taskforce Units gain 1 Countermeasure Token. They are removed at the end of the Taskforce Activation.',
+    desc: 'Immediately after a Reaction Engagement is declared and before resolving Reaction Priority Rolls, up to 3 Infantry Bases belonging to friendly Taskforce Units gain 1 Countermeasure Token. They are removed at the end of the Taskforce Activation.',
     traits: [],
 })
 
@@ -73,7 +64,7 @@ export const ADVISOR_ARTILLERY_STRIKE = makeWeapon({
     stat: 'TARG',
     rof: 2,
     effect: 'KILL',
-    desc: 'This action may be used once per Unit Activation.',
+    desc: oncePerActivation,
     traits: [
         TRAIT_GRANTED_SCAN_STAT,
         TRAIT_CLUSTERED(3),
@@ -97,7 +88,7 @@ export const ADVISOR_NAV_HACK = makeWeapon({
 export const PRIORITIZE = makeCommandAbility({
     name: 'Prioritize',
     cost: COST_COMMAND,
-    desc: 'You may swap the Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved.',
+    desc: 'You may swap the Reaction Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved.',
 })
 
 function PLACE_EFFECT(distance) {

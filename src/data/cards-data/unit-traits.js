@@ -12,6 +12,7 @@ export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
     note: `COST: ${COST_COMMAND}, Movement phase`,
     desc: 'While within 8" of an Infantry Base in this Unit, other Units in the same Taskforce gain All Terrain.',
+    desc_keywords_after: ['All Terrain'],
 })
 
 export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
@@ -73,7 +74,7 @@ export const PREDATOR = make({
 
 export const SENTRY = make({
     name: 'Sentry',
-    desc: 'This Unit gains +1 to reaction priority rolls.',
+    desc: 'This Unit gains +1 to Reaction Priority Rolls.',
 })
 
 export const ALL_TERRAIN = make({
@@ -90,7 +91,8 @@ export const WIDOW_SCOUT_CARRIED = make({
 export const SPIDER_DRONE_INFILTRATOR_CARRIER = make({
     name: 'Carrier',
     note: 'Spider Drone: Infiltrator',
-    desc: 'When this Unit is added to a Force one Spider Drone: Infiltrator Unit is automatically included.',
+    desc: 'When this Unit is added to a Force one Spider Drone: Infiltrator Unit is also included.',
+    desc_keywords_after: ['Spider Drone: Infiltrator'],
 })
 
 export const INFANTRY_TRANSPORT = make({
