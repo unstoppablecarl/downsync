@@ -24,6 +24,7 @@ import {
     TYPE_INFANTRY,
 } from '../constants.js'
 import { makeTrait, makeWeapon, modifyAction } from '../support/factories.js'
+import { oncePerActivation } from './actions.js'
 
 export const CANNON = make({
     name: 'Cannon',
@@ -56,6 +57,7 @@ export const DEPLOY_DRONES = make({
     cost: COST_COMMAND,
     effect: '&starf;',
     desc: 'Place the Infantry Bases of a Spider Drone: Infiltrator Unit within 3" of this Unit. They are not part of the current Taskforce. This Unit may use this Action once per game.',
+    desc_keywords_after: ['Spider Drone: Infiltrator'],
 })
 
 export const TAG_CANNON = make({
@@ -72,7 +74,7 @@ export const TARGET_LOCK = make({
     name: 'Target Lock',
     cost: COST_COMMAND,
     effect: '&starf;',
-    desc: 'Select an enemy Unit in LOS. It suffers -2 DEF until the end of this Taskforce Activation. A Unit can only be Target Locked once. This action can be used once per activation.',
+    desc: `Select an enemy Unit in LOS. It suffers -2 DEF until the end of this Taskforce Activation. A Unit can only be Target Locked once. ${oncePerActivation}`,
     desc_keywords_before: ['Target Locked'],
 })
 

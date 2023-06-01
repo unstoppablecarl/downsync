@@ -2,11 +2,14 @@ import { keywordFormat } from '../support/text-formatters.js'
 import { COST_ACTION_OR_COMMAND, COST_COMMAND } from '../constants.js'
 import { makeAction } from '../support/factories.js'
 
+export const oncePerActivation = 'This Action can be used once per activation.'
+
 export const FORWARD_OBSERVE = make({
     name: 'Forward Observe',
     cost: COST_ACTION_OR_COMMAND,
     effect: '&starf;',
-    desc: 'A Unit in the same Taskforce immediately resolves its activation with an action that has the Fire Support trait using this Unit\'s LOS. This action can be used once per activation.',
+    desc: `A Unit in the same Taskforce immediately resolves its Unit Activation with an Action that has the Fire Support trait using this Unit's LOS. ${oncePerActivation}`,
+    desc_keywords_after: ['Fire Support'],
 })
 
 export const SCAN = (rof, range) => {
@@ -35,14 +38,14 @@ export const SCRAMBLE = make({
 export const TRANSPORT_UNLOAD = make({
     name: 'Unload',
     note: 'Free Action, 3"',
-    desc: keywordFormat(`The carried Unit is Placed within 3". They become part of the current Taskforce and may immediately perform an action then gain an Activated Token. If the Unloading Unit performs a Move Action it may not move within 2" of an enemy Ping.`),
+    desc: keywordFormat(`The carried Unit is Placed within 3". They become part of the current Taskforce and may immediately perform an Action then gain an Activated Token. If the Unloading Unit performs a Move Action it may not move within 2" of an enemy Ping.`),
     no_stats: true,
 })
 
 export const TRANSPORT_LOAD = make({
     name: 'Load',
     note: 'Free Action, 3"',
-    desc: keywordFormat(`Place an eligible Unit within 3" in this transport up to its max capacity. Units must forfeit a move or action are eligible. This Unit cannot perform a Load and an Unload action in the same activation.`),
+    desc: keywordFormat(`Place an eligible Unit within 3" in this transport. Units that forfeited their movement in the movement phase or their Action Point are eligible. This Unit cannot perform a Load and an Unload Action in the same Activation.`),
     no_stats: true,
 })
 

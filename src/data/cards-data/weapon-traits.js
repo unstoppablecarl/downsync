@@ -3,14 +3,16 @@ import { makeTrait } from '../support/factories.js'
 
 export const TRAIT_FIRE_SUPPORT = make({
     name: 'Fire Support',
-    desc: 'Eligible for the Forward Observe action.',
+    desc: 'Eligible for the Forward Observe Action.',
+    desc_keywords_after: ['Forward Observe'],
+
 })
 
 export const TRAIT_CLUSTERED = (radius) => {
     return make({
         name: 'Clustered',
         note: `${radius}"`,
-        desc: `Before resolving this action, select a point within range and LOS. Only Units within ${radius}" of this point may be targeted. Use the selected point as the attacks origin for determining concealment. Declare all targets before resolving attacks.`,
+        desc: `Before resolving this Action, select a point within range and LOS. Only targets within ${radius}" of this point may be targeted. Use the selected point as the attack's origin for determining Concealment. Declare all targets before resolving attacks.`,
     })
 }
 

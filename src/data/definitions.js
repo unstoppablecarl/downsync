@@ -2,7 +2,7 @@ import { keywordFormat } from './support/text-formatters.js'
 
 export const NOTE_STEALTH_TOKEN = make({
     name: 'Stealth Token',
-    desc: 'A Unit with a Stealth Token cannot be targeted by enemy actions. A Unit looses the token when it makes an attack or an enemy Unit successful scans it or an enemy Unit is within 2" after any Unit ends a move. A Unit cannot gain a Stealth Token if an enemy Unit is within 2" and cannot have more than 1.',
+    desc: 'A Unit with a Stealth Token can only be targeted by enemy Actions with a REVEAL effect. A Unit looses the token when it performs a Combat Action or it suffers a REVEAL effect or an enemy Unit is within 2" after any Unit ends a move. A Unit cannot gain a Stealth Token if an enemy Unit is within 2" and cannot have more than 1.',
 })
 
 export const NOTE_JAMMED = make({

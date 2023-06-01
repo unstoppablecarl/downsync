@@ -2,10 +2,10 @@ import axios from 'axios'
 import diff from 'node-htmldiff'
 import fs from 'fs'
 
-function loadDiff(branch) {
-    let url2 = 'https://downsync.net/unit-cards.html'
+function loadDiff() {
+    let url = 'https://downsync.net/unit-cards.html'
 
-    axios.get(url2)
+    axios.get(url)
         .then((results) => {
             //
             let oldHtml = results.data
@@ -17,4 +17,4 @@ function loadDiff(branch) {
         })
 }
 
-loadDiff('master')
+loadDiff()

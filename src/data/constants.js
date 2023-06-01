@@ -37,6 +37,8 @@ export const FACTIONS = [
 ]
 
 export const EMPHASIS_KEYWORDS = [
+
+    // unit stats
     'SIG',
     'SPD',
     'SCAN',
@@ -44,28 +46,32 @@ export const EMPHASIS_KEYWORDS = [
     'DEF',
     'CM',
 
+    // action effects
     'KILL',
     'STUN',
+    'REVEAL',
 
+    // abbreviations
     'LOS',
 
-    'Refreshed',
-    'All Terrain',
-    'Fire Support',
+    // phases
+    'Taskforce Activation',
+    'Taskforce Designation',
+    'Reveal Phase',
+    'Refresh Phase',
+    'Movement Phase',
+    'Unit Activation',
 
-    'Placed',
+    'Refreshed',
+    'Revealed',
+
+    // tokens
+    'Stealth Token',
+    'Command Point Tokens',
+    'Command Point Token',
 
     'Command Points',
     'Command Point',
-
-    'Forward Observe',
-    'Revealed',
-    'Reveal Phase',
-    'Stealth Token',
-
-    'Spider Drones',
-    'Spider Drone: Infiltrator',
-    'Spider Drone',
 
     'Activated Tokens',
     'Activated Token',
@@ -73,27 +79,24 @@ export const EMPHASIS_KEYWORDS = [
     'Overwatch Tokens',
     'Overwatch Token',
 
-    'Target Tag Tokens',
-    'Target Tag Token',
-
     'Emergency Countermeasure Tokens',
     'Emergency Countermeasure Token',
-
-    'Concealment',
 
     'Countermeasure Tokens',
     'Countermeasure Token',
 
-    'Taskforce Activation',
-    'Taskforce Designation',
+    // keywords
+
+    'Placed',
+
+    'Concealment',
+    'Concealed',
+
     'Taskforce',
 
-    'Reaction Priority',
+    'Reaction Priority Rolls',
+    'Reaction Priority Roll',
+
     'Reaction Engagements',
     'Reaction Engagement',
-
-    'Priority Rolls',
-    'Priority Roll',
-
-    'Unit Activation',
 ]

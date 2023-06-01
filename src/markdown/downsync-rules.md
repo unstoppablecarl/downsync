@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: May 20, 2023
+Last Updated: June 1, 2023
 
 [[toc]]
 
@@ -96,8 +96,8 @@ roll.
         - **Infantry Base**:  A 40mm circular base with infantry model(s) on it.
         - **Unit Activation**:  Performing a single Unit's action(s).
         - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
-  - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
-  - **Place**:              A special type of movement that does not suffer terrain penalties.
+    - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
+    - **Place**:              A special type of movement that does not suffer terrain penalties.
 
 ## Force Lists
 
@@ -589,7 +589,8 @@ The effect of the Action is described on the Unit Card.
 
 ### Combat Actions
 
-Any action with a **KILL** or **STUN** effect is a combat action. Combat actions may only target enemy Units.
+Any action with a **KILL** or **STUN** effect (and does not have a \[SCAN\] label) is a Combat Action. Combat Actions
+may only target enemy Units.
 
 When performing a Combat Action, an Attack may be performed for each point of the Combat Action's ROF.
 Before each Attack declare the target of the Attack.
@@ -661,7 +662,7 @@ Special Actions (**&starf;** effect) cannot be negated by any type of Countermea
 
 ### Spending Emergency Countermeasures
 
-Any time a Unit could spend a Countermeasure Token it may spend a Emergency Countermeasure Token instead.
+Any time a Unit could spend a Countermeasure Token it may spend an Emergency Countermeasure Token instead.
 If it does the Countermeasure Check is automatically successful without a die roll.
 The Controlling Player must decide which to use before performing a Countermeasure Check.
 
@@ -795,7 +796,7 @@ Including if an ability with the same name comes from multiple sources.
 ### Place Abilities
 
 Some abilities describe **Placing** a Unit or Ping within X".
-**Placing** is different from moving it does not suffer an terrain movement penalties and does not require a clear path.
+**Placing** is different from moving it does not suffer a terrain movement penalties and does not require a clear path.
 When **Placing** a Multi-Base Unit, Place each Infantry Base anywhere within X" and within 6" of every other Infantry
 Base in the Unit.
 After **Placing** a Unit/Ping it must not overlap any other Units/Pings or impassible terrain.
@@ -861,7 +862,7 @@ a [Countermeasure Check](#countermeasure-check).
 
 ### Emergency Countermeasure Token
 
-When a Unit is hit by an Attack it may spend a Emergency Countermeasure Token to perform and automatically succeed
+When a Unit is hit by an Attack it may spend an Emergency Countermeasure Token to perform and automatically succeed
 a [Countermeasure Check](#countermeasure-check).
 Emergency Countermeasures do not [Regenerate](#regenerating-countermeasures).
 
@@ -901,9 +902,9 @@ Token: Command Point, Action Point, Countermeasure Token, Emergency Countermeasu
 
 ### Stealth Token
 
-A Unit with a Stealth Token cannot be targeted by enemy attacks.
+A Unit with a Stealth Token can only be targeted by enemy Actions with a REVEAL effect.
 A Unit loses its Stealth Token immediately after resolving a Combat Action and in all cases that would cause a Ping to
-be [Revealed](#revealing).
+be [Revealed](#revealing) or if it ends a move or Placement within 2" of an enemy Unit.
 A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 
 |                       |                                                                                                                                                                      |
