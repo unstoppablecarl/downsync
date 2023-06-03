@@ -50,19 +50,14 @@ export const TRAIT_CLOSE_COMBAT = make({
     desc: 'Ignores Concealment and short range modifiers.',
 })
 
-export const TRAIT_SMART_SHRAPNEL = make({
-    name: 'Smart Shrapnel',
-    desc: 'Units targeted by this weapon do not benefit from Concealment.',
+export const TRAIT_SEEKER_ROUNDS = make({
+    name: 'Seeker Rounds',
+    desc: 'This weapon ignores Concealment.',
 })
 
 export const TRAIT_INFANTRY_NETWORK = make({
     name: 'Infantry Network',
     desc: 'Attacks from this weapon can use the LOS of Infantry Teams in this Unit.',
-})
-
-export const TRAIT_JAMMING = make({
-    name: 'Jamming',
-    desc: 'Units hit by this weapon suffer the JAM effect. Jammed Units cannot spend Command Points.',
 })
 
 export const TRAIT_DOUBLE_TAP = make({
@@ -77,10 +72,6 @@ export const DEADLY_VS = (type) => {
         desc: `This weapon's effect is KILL for ${type} targets.`,
     })
 }
-export const TRAIT_BREACHER = makeTrait({
-    name: 'Breacher',
-    desc: 'This attack may only target a Unit with a Breach Counter. Units hit by this weapon lose 1 Breach Counter.',
-})
 
 export const TRAIT_BREACH_EXPLOIT = makeTrait({
     name: 'Breach Exploit',
@@ -96,6 +87,11 @@ export const TRAIT_CLOSE_AND_PERSONAL = makeTrait({
     name: 'Close and Personal',
     note: '+1 TARG',
     desc: 'This Action gains an additional +1 TARG against targets within short range.',
+})
+
+export const TRAIT_EXPOSED = makeTrait({
+    name: 'Exposed',
+    desc: 'Units hit by this weapon do not benefit from Concealment until the end of this Taskforce Activation.',
 })
 
 function make(trait) {

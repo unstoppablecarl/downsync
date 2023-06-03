@@ -1,7 +1,7 @@
 import {
     ADVANCED_MG,
     ADVANCED_RPG,
-    ARTILLERY_DRONE,
+    CLOSE_SUPPORT_CANNON,
     CM_HACK,
     CYBER_ATTACK,
     DOUBLE_CANNON,
@@ -67,13 +67,13 @@ export const INFANTRY_SQUAD = make({
 export const DRONE_LAUNCHERS = make({
     slug: 'drone-launcher-squad',
     img: null,
-    name: 'Jam Drone Team',
+    name: 'Drone Operator Team',
     signature: SIZE_SMALL,
     type: 'Human Infantry Team',
     squad_size: 1,
     speed: 4,
     scan: null,
-    targeting: 5,
+    targeting: 6,
     defense: 13,
     actions: [
         JAM_DRONE,
@@ -106,7 +106,6 @@ export const SCRAMBLER = make({
     traits: [
         SCRAMBLE_AURA,
         FREE_UNION_TAXI,
-        SMALL_DECOY_PING,
     ],
     notes: [],
 })
@@ -129,6 +128,7 @@ export const TECHNICAL = make({
     ],
     traits: [
         FREE_UNION_TAXI,
+        SMALL_DECOY_PING,
     ],
     notes: [],
 })
@@ -224,7 +224,7 @@ export const TANK_HUNTERS = make({
     img: null,
     signature: SIZE_LARGE,
     type: 'Mounted Infantry Squad',
-    squad_size: 3,
+    squad_size: 2,
     speed: 8,
     targeting: 6,
     defense: 14,
@@ -268,7 +268,7 @@ export const HEAVY_TANK = make({
     defense: 13,
     cm: 3,
     actions: [
-        ARTILLERY_DRONE,
+        CLOSE_SUPPORT_CANNON,
     ],
     traits: [
         RESILIENT,
@@ -312,7 +312,7 @@ export const FREE_UNION_UNITS = [
     SUPPORT_TANK,
     TANK_HUNTERS,
     HEAVY_TANK,
-    TORTOISE,
+    //TORTOISE,
     //ABILITY_IDEAS,
 ]
 

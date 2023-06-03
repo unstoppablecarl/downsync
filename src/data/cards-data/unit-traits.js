@@ -99,12 +99,6 @@ export const ALL_TERRAIN = make({
     desc: 'This Unit ignores terrain movement penalties.',
 })
 
-export const BREACH_LINK = make({
-    name: 'Breach Link',
-    note: '+1 TARG &times; Breach',
-    desc: 'This Unit gains +1 TARG for each Breach Counter its Target has.',
-})
-
 export const WIDOW_SCOUT_CARRIED = make({
     name: 'Packaged',
     note: 'Widow Scout',
@@ -158,7 +152,7 @@ export const RESILIENT = make({
 export const SCRAMBLE_AURA = make({
     name: 'Scramble Aura',
     note: `6", COST: ${COST_COMMAND}, Refresh phase`,
-    desc: `While within 6" and LOS of this Unit, enemy Units suffer -2 TARG and enemy Pings may not be Revealed. ${UPKEEP_COMMAND_POINT_TEXT}`,
+    desc: `While within 6" and LOS of this Unit, enemy Units suffer -2 TARG and enemy Pings may not be Revealed in the Reveal Phase. ${UPKEEP_COMMAND_POINT_TEXT}`,
     desc_keywords_name: ['Hitch Hiker'],
 })
 

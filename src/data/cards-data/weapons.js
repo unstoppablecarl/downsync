@@ -1,17 +1,17 @@
 import {
     DEADLY_VS,
     TRAIT_ADVANCED,
-    TRAIT_BREACHER,
     TRAIT_CLOSE_AND_PERSONAL,
     TRAIT_CLOSE_COMBAT,
     TRAIT_CLUSTERED,
     TRAIT_DOUBLE_TAP,
+    TRAIT_EXPOSED,
     TRAIT_EXTREME_RANGE,
     TRAIT_FIRE_SUPPORT,
     TRAIT_INFANTRY_NETWORK,
     TRAIT_OVERKILL,
+    TRAIT_SEEKER_ROUNDS,
     TRAIT_SMART,
-    TRAIT_SMART_SHRAPNEL,
     TRAIT_SPECIALIZED_VS,
     TRAIT_TAGGED_EFFECT,
     TRAIT_TAKE_UP,
@@ -23,7 +23,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { makeTrait, makeWeapon, modifyAction } from '../support/factories.js'
+import { makeWeapon, modifyAction } from '../support/factories.js'
 import { oncePerActivation } from './actions.js'
 
 export const CANNON = make({
@@ -97,18 +97,6 @@ export const HMG = make({
     traits: [],
 })
 
-export const CYBER_KILL = make({
-    name: 'Cyber Kill',
-    cost: COST_ACTION_OR_COMMAND,
-    stat: 'SCAN',
-    range: 16,
-    rof: 2,
-    effect: 'KILL',
-    traits: [
-        TRAIT_BREACHER,
-    ],
-})
-
 export const CYBER_ATTACK = make({
     name: 'Cyber Attack',
     cost: COST_ACTION,
@@ -122,11 +110,11 @@ export const CYBER_ATTACK = make({
 export const CM_HACK = make({
     name: 'CM Hack',
     stat: 'SCAN',
-    cost: COST_COMMAND,
+    cost: COST_ACTION_OR_COMMAND,
     range: 16,
     rof: 2,
     effect: '&starf;',
-    desc: 'Units hit by this weapon resolve a CM check for each CM (non-hardened) it has and removes a CM for each failed check.  This Action may only be performed once per Unit Activation.',
+    desc: `Units hit by this weapon resolve a CM check for each CM (not Emergency CM) it has and removes a CM for each failed check. Multi-Base Units must resolve checks for each Infantry Base separately. ${oncePerActivation}`,
 })
 
 export const POSITION_HACK = make({
@@ -137,25 +125,9 @@ export const POSITION_HACK = make({
     range: 16,
     rof: 1,
     effect: '&starf;',
-    desc: `Units hit by this attack are Placed within 3" of their current position by the attacker's Controlling Player. This Action may only be performed once per Unit Activation.`,
+    desc: `Units hit by this attack are Placed within 3" of their current position by the attacker's Controlling Player. ${oncePerActivation}`,
     traits: [],
 })
-
-const HACK_BASE = {
-    name: 'Hack',
-    stat: 'SCAN',
-    cost: COST_ACTION_OR_COMMAND,
-    range: 16,
-    rof: 1,
-    effect: 'BREACH',
-}
-
-export const HACK = make(HACK_BASE)
-
-export const AI_HACK = make(Object.assign({}, HACK_BASE, {
-    name: 'AI Hack',
-    rof: 3,
-}))
 
 export const SHOCK_RIFLE = make({
     name: 'Shock Rifle',
@@ -324,7 +296,9 @@ export const JAM_DRONE = make({
     range: 16,
     rof: 2,
     effect: 'JAM',
-    traits: [],
+    traits: [
+        TRAIT_EXPOSED,
+    ],
 })
 
 export const RPG = make({
@@ -369,30 +343,18 @@ export const SMART_BOMBS = make({
     ],
 })
 
-export const ARTILLERY_DRONE = make({
+export const CLOSE_SUPPORT_CANNON = make({
     name: 'Close Support Cannon',
     range: 16,
     rof: 3,
     effect: 'KILL',
     traits: [
         TRAIT_CLUSTERED(3),
-        TRAIT_SMART_SHRAPNEL,
+        TRAIT_SEEKER_ROUNDS,
         TRAIT_ADVANCED,
     ],
 })
 
-export const HUNTER_KILLER = make({
-    name: 'Hunter Killer Drone',
-    range: 16,
-    rof: 3,
-    effect: 'KILL',
-    traits: [
-        makeTrait({
-            name: 'Target Analysis',
-            desc: 'This Action gains +3 TARG against Units hit by a REVEAL effect while already Revealed during this Taskforce Activation.',
-        }),
-    ],
-})
 
 function make(weapon) {
 

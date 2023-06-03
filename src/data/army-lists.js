@@ -28,12 +28,12 @@ import {
 } from './constants.js'
 import {
     DRONE_WRANGLER_TEAM,
+    HEAVY_TANK,
     INFANTRY_SQUAD,
     MED_TANK,
     SCRAMBLER,
     TANK_HUNTERS,
     TECHNICAL,
-    TORTOISE,
 } from './cards/free-union-units.js'
 
 export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'EX1', [
@@ -132,7 +132,7 @@ export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
         count: 1,
     },
     {
-        unit: TORTOISE,
+        unit: HEAVY_TANK,
         count: 1,
     },
 ])
