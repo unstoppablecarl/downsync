@@ -12,6 +12,13 @@ export function makeUnit(unit) {
 
     unit = Object.assign(defaults, unit)
 
+    let fullName = unit.name
+    if (unit.variant_name) {
+        fullName += `: ${unit.variant_name}`
+    }
+
+    unit.full_name = fullName
+
     unit.actions = prepareActions(unit.actions)
 
     unit.has_teams = !!unit.actions.find((action) => {

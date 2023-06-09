@@ -113,6 +113,14 @@ export const CLOSE_AND_PERSONAL = make({
     note: '+1 TARG',
     desc: 'This Unit gains an additional +1 TARG against targets within short range.',
 })
+export const COVERT = makeTrait({
+    name: 'Covert',
+    desc: `When a this Unit is Revealed in your Reveal Phase, you may pay ${COST_COMMAND}, if you do it gains a Stealth Token.`,
+})
+export const REGROUP = makeTrait({
+    name: 'Regroup',
+    desc: 'When this Unit has an Overwatch Token, it may be Placed within 3" of their current position immediately after Taskforce Designation (including in Reaction Engagements).',
+})
 
 function make(trait) {
     return makeTrait(trait)

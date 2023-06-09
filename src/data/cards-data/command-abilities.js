@@ -1,4 +1,4 @@
-import { makeCommandAbility, makeTrait, makeWeapon } from '../support/factories.js'
+import { makeAction, makeCommandAbility, makeTrait, makeWeapon } from '../support/factories.js'
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { TRAIT_CLUSTERED, TRAIT_EXTREME_RANGE } from './weapon-traits.js'
 import { oncePerActivation } from './actions.js'
@@ -7,12 +7,6 @@ export const TRAIT_GRANTED_SCAN_STAT = makeTrait({
     name: 'Granted',
     note: 'SCAN',
     desc: `Units with a SCAN stat may use this Action.`,
-})
-
-export const STEALTH_UPGRADE = (type) => makeTrait({
-    name: 'Stealth Upgrade',
-    note: type,
-    desc: `When a ${type} Unit is Revealed in your Reveal Phase, you may pay ${COST_COMMAND}, if you do it gains a Stealth Token.`,
 })
 
 export const REPOSITION = (type, count) => {
@@ -72,30 +66,10 @@ export const ADVISOR_ARTILLERY_STRIKE = makeWeapon({
     ],
 })
 
-export const ADVISOR_NAV_HACK = makeWeapon({
-    name: 'Nav Hack',
-    cost: COST_COMMAND,
-    stat: 'SCAN',
-    range: 16,
-    rof: 1,
-    effect: '&starf;',
-    traits: [
-        TRAIT_GRANTED_SCAN_STAT,
-        PLACE_EFFECT(3),
-    ],
-})
-
-export const PRIORITIZE = makeCommandAbility({
-    name: 'Prioritize',
-    cost: COST_COMMAND,
-    desc: 'You may swap the Reaction Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved.',
-})
-
-function PLACE_EFFECT(distance) {
-    return makeTrait({
-        name: 'Place Effect',
-        note: `Place ${distance}"`,
-        desc: `Target Unit is placed by attacker completely within ${distance}" of its current location.`,
+export const UNIT_RESTRICTIONS = (units) => {
+    return makeAction({
+        name: 'Unit Restrictions',
+        desc: `This Force cannot include the following Units: ${units.join(', ')}.`,
+        desc_keywords_after: units,
     })
 }
-
