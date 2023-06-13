@@ -431,7 +431,6 @@ A Ping is Revealed when:
 - If an enemy Unit ends a move within 2"
 - It is hit by an Action with the REVEAL effect
 
-
 **Note**: A Ping cannot end a move within 2" of an enemy Unit causing itself to be auto revealed.
 
 #### Revealing Units
@@ -524,6 +523,7 @@ Each Scan Check must be resolved before the next.
 Each Scan Check may have the same or different targets.
 
 #### Scan Check
+
 %%%--- scan_check_content_quick_reference_start ---%%%
 
 When a Unit performs a Scan Check, select an enemy target within the Scan Action's Range and perform a Scan Roll against
@@ -779,11 +779,23 @@ Including if an ability with the same name comes from multiple sources.
 
 ### Place Abilities
 
+<div class="row">
+<div class="col-md-6">
+
 Some abilities describe **Placing** a Unit or Ping within X".
-**Placing** is different from moving it does not suffer a terrain movement penalties and does not require a clear path.
-When **Placing** a Multi-Base Unit, Place each Infantry Base anywhere within X" and within 6" of every other Infantry
-Base in the Unit.
+**Placing** is different from moving it does not suffer terrain movement penalties and does not require a clear path.
+When **Placing** a Multi-Base Unit, Place each Infantry Base anywhere within X" of its current position and within 6" of
+every other Infantry Base in the Unit.
 After **Placing** a Unit/Ping it must not overlap any other Units/Pings or impassible terrain.
+Only infantry Units may be **Placed** within buildings.
+
+</div>
+<div class="col-md-6">
+<p>
+<img src="/assets/img/rules-diagrams/place-ability-diagram.svg" class="img-fluid img-bordered" alt="Place Ability Diagram">
+</p>
+</div>
+</div>
 
 ## Unit Tokens
 
