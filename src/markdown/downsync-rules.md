@@ -1,6 +1,6 @@
 # Downsync Rules (Beta)
 
-Last Updated: June 1, 2023
+Last Updated: June 13, 2023
 
 [[toc]]
 
