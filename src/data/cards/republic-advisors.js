@@ -1,7 +1,8 @@
-import { makeAdvisor } from '../support/factories.js'
-import { REPUBLIC_CARD_DEFAULTS } from './republic-units.js'
-import { BRACE_INFANTRY, REPOSITION, STEALTH_UPGRADE } from '../cards-data/command-abilities.js'
+import { makeAction, makeAdvisor } from '../support/factories.js'
+import { HARBINGER_RECON, REPUBLIC_CARD_DEFAULTS } from './republic-units.js'
+import { BRACE_INFANTRY, REPOSITION, UNIT_RESTRICTIONS } from '../cards-data/command-abilities.js'
 import { TYPE_INFANTRY } from '../constants.js'
+import { COVERT } from '../cards-data/unit-traits.js'
 
 export const SOFIA_AVERY = make({
     name: 'Sofia Avery',
@@ -13,7 +14,18 @@ export const SOFIA_AVERY = make({
         BRACE_INFANTRY,
     ],
     command_passive_abilities: [
-        STEALTH_UPGRADE('Courier'),
+        makeAction({
+            name: 'Unit Upgrades',
+            desc: 'Courier Units in this Force gain Covert.',
+            desc_keywords_after: [
+                'Covert',
+                'Courier',
+            ],
+            traits: [
+                COVERT,
+            ],
+        }),
+        UNIT_RESTRICTIONS([HARBINGER_RECON.full_name]),
     ],
 })
 

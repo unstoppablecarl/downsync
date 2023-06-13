@@ -1,0 +1,78 @@
+<h1 class="quick-reference-heading print-only">Downsync Quick Reference
+    <span class="float-end">Downsync.net</span>
+</h1>
+
+<section>
+    <h3>{{taskforceActivationPhases.heading}}</h3>
+    {{{taskforceActivationPhases.content}}}
+</section>
+
+<section>
+    <h3>Unit Tokens</h3>
+
+    <table class="table table-borderless table-width-auto table-sm">
+        <tbody>
+        {{#each TOKENS}}
+            <tr style="white-space: nowrap">
+                <th>{{name}}</th>
+                <td>
+                                        <span class="token {{#if shadow}}token-shadow{{/if}}"
+                                              style="background: {{color}}">
+                                        </span>
+                    {{color_label}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <h4>Stun Token Effect</h4>
+    <p>When a Unit with a Stun Token activates it must spend an Action Point, Countermeasure Token, or Command Point then the Stun Token is removed.</p>
+
+</section>
+
+<section>
+
+    <h3>{{commandPoints.heading}}</h3>
+    {{{commandPoints.content}}}
+</section>
+
+<section>
+    <h3>{{attacks.heading}}</h3>
+    {{{attacks.content}}}
+</section>
+
+<section>
+    <h3>{{scanCheck.heading}}</h3>
+    {{{scanCheck.content}}}
+</section>
+
+<section>
+    <h3>{{cmCheck.heading}}</h3>
+    {{{cmCheck.content}}}
+</section>
+
+<section>
+    <h3>{{reactionPriorityRoll.heading}}</h3>
+    {{{reactionPriorityRoll.content}}}
+</section>
+
+<section>
+    <h3>Universal Actions</h3>
+    <p>All Units can perform the following actions for 1 Action Point each:</p>
+
+    <h5>Move Action</h5>
+    <p>Unit may move up to its
+        <strong>SPD</strong> in inches. A unit that suffered a terrain movement penalty in its movement phase does not suffer further penalties.
+    </p>
+    <p><em>This means that Units can move up to double their
+        <strong>SPD</strong> in one turn if they use their Action Point to move a second
+        time.</em></p>
+    <h5>Overwatch Action</h5>
+    <p>Unit gains an Overwatch Token.</p>
+</section>
+
+<section>
+    <h3>{{rollAdvantage.heading}}</h3>
+    {{{rollAdvantage.content}}}
+</section>

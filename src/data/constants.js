@@ -92,6 +92,8 @@ export const EMPHASIS_KEYWORDS = [
     'Concealment',
     'Concealed',
 
+    'Force',
+
     'Taskforce',
 
     'Reaction Priority Rolls',

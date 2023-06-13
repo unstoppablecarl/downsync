@@ -83,7 +83,7 @@
     h4,
     h5,
     h6 {
-        font-family: "Barlow Condensed", sans-serif;
+        font-family: 'Barlow Condensed', sans-serif;
         -webkit-font-smoothing: antialiased;
         cursor: text;
         position: relative;
@@ -102,8 +102,6 @@
             }
         }
     }
-
-    $heading-border-color: #7d8ba2;
 
     h2 {
         border-bottom: 3px solid $heading-border-color;
@@ -126,7 +124,7 @@
 
     .table {
         width: auto;
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
 
         thead tr th:empty {
             padding: 0;
@@ -215,18 +213,29 @@
 
         a::after {
             flex-shrink: 0;
-            content: " p. " target-counter(attr(href), page);
+            content: ' p. ' target-counter(attr(href), page);
             white-space: nowrap;
             font-weight: normal;
         }
     }
 }
 
-$linkColor: darken($link-color, 20%);
+$linkColor1: darken($link-color, 20%);
+$linkColor1Hover: shift-color($linkColor1, 10%);
+
 $linkColor2: darken($link-color, 10%);
+$linkColor2Hover: shift-color($linkColor2, 10%);
 
 .page-rulebook {
+
     .table-of-contents {
+
+        --toc-link-color-1: #{$linkColor1};
+        --toc-link-color-1-hover: #{$linkColor1Hover};
+
+        --toc-link-color-2: #{$linkColor2};
+        --toc-link-color-2-hover: #{$linkColor2Hover};
+
         ul {
             padding-left: 0;
             list-style: none;
@@ -234,10 +243,10 @@ $linkColor2: darken($link-color, 10%);
             li {
                 a {
                     font-weight: bold;
-                    color: $linkColor;
+                    color: var(--toc-link-color-1);
 
                     &:hover {
-                        color: shift-color($linkColor, 10%);
+                        color: var(--toc-link-color-1-hover);
                         text-decoration: underline;
                     }
                 }
@@ -249,10 +258,10 @@ $linkColor2: darken($link-color, 10%);
                     li {
                         a {
                             font-weight: 500;
-                            color: $linkColor2;
-                            //color: red;
+                            color: var(--toc-link-color-2);
+
                             &:hover {
-                                color: shift-color($linkColor2, 10%);
+                                color: var(--toc-link-color-2-hover);
                             }
                         }
 
@@ -321,6 +330,21 @@ $linkColor2: darken($link-color, 10%);
                     display: none;
                 }
             }
+        }
+    }
+}
+
+@include color-mode(dark) {
+
+    .page-rulebook {
+
+        .table-of-contents {
+
+            --toc-link-color-1: red;
+            --toc-link-color-1-hover: yellow;
+
+            --toc-link-color-2: #{$linkColor2};
+            --toc-link-color-2-hover: #{$linkColor2Hover};
         }
     }
 }

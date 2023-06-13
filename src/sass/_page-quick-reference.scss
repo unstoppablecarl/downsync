@@ -1,20 +1,17 @@
 .container-quick-reference {
-    border: 1px solid #808080;
 
-    .section {
-        border: 1px solid #808080;
+    h3 {
+        border-bottom: 3px solid $heading-border-color;
+        padding-bottom: 5px;
     }
 
-    .section {
-        padding: 10px;
-
-        p:last-child {
-            margin-bottom: 0;
-        }
+    h4 {
+        border-bottom: 2px solid $heading-border-color;
+        padding-bottom: 5px;
     }
 
     ul {
-        padding-left: 1rem;
+        padding-left: 1.25rem;
 
         ul {
             margin: 0.5rem 0;
@@ -55,38 +52,51 @@
         font-size: 10px;
     }
 
-    .page-quick-reference {
-        .main-content {
-            padding: 18pt 36pt;
-
-            width: $page-letter-width;
-            height: $page-letter-height;
-
-            .container {
-                width: auto;
-                max-width: 100%;
-            }
-        }
-    }
-
     .quick-reference-heading {
         font-size: 1.2rem;
         font-family: 'Barlow Condensed', sans-serif;
-
+        column-span: all;
     }
 
     .container-quick-reference {
+        column-fill: auto;
+        column-count: 3;
+        column-gap: 0;
+
+        $border-color: #ababab;
 
         h3 {
+            font-size: 1.5rem;
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h4 {
             font-size: 1.25rem;
+            border-bottom: 0;
+            padding-bottom: 0;
         }
 
-        .col-md-6 {
-            width: 50%;
+        h2, h3, h4, table {
+            page-break-inside: avoid;
+            page-break-after: avoid;
         }
 
-        .col-md-4 {
-            width: 33.3333%
+        section {
+            $border-color: #b7b7b7;
+            padding: 10px;
+            outline: 1px solid $border-color;
+            border: 1px solid $border-color;
+            page-break-inside: avoid;
+
+            &:not(:first-of-type) {
+                //margin-top: 0.5rem;
+            }
+
+            ul:last-child,
+            p:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
