@@ -788,6 +788,7 @@ When **Placing** a Multi-Base Unit, Place each Infantry Base anywhere within X" 
 every other Infantry Base in the Unit.
 After **Placing** a Unit/Ping it must not overlap any other Units/Pings or impassible terrain.
 Only infantry Units may be **Placed** within buildings.
+When a Unit or Ping is **Placed** it may not be placed within 2" of an enemy Ping.
 
 </div>
 <div class="col-md-6">
