@@ -421,13 +421,16 @@ Pings can only spend their Action Point to perform a Move Action to move an addi
 ### Revealing
 
 When a Ping is Revealed, the Controlling Player selects a Unit from their Reserve with the same **SIG** (Signature) as
-the Ping. This Unit will be Revealed at the Ping's current position.
+the Ping.
+This Unit will be Revealed at the Ping's current position.
+After revealing, the Unit immediately gains any tokens it starts the game with such as Countermeasure or Stealth tokens.
 
 A Ping is Revealed when:
 
 - The controlling player chooses to Reveal it in the Reveal phase of a Taskforce Activation
 - If an enemy Unit ends a move within 2"
 - It is hit by an Action with the REVEAL effect
+
 
 **Note**: A Ping cannot end a move within 2" of an enemy Unit causing itself to be auto revealed.
 
@@ -515,7 +518,7 @@ An Overwatch Action may be performed by a Unit participating in a [Reaction Enga
 ### Scan Action
 
 Any Action labeled "\[SCAN\]" is a Scan Action.
-When performing a Scan Action, a Scan Check may be performed for each point of the Scan Action's ROF.
+When performing a Scan Action, a Scan Check may be performed for each point of the Scan Action's ROF (Rate of Fire).
 Before each Scan Check declare the target of the Scan Check.
 Each Scan Check must be resolved before the next.
 Each Scan Check may have the same or different targets.
@@ -574,7 +577,7 @@ The effect of the Action is described on the Unit Card.
 Any action with a **KILL** or **STUN** effect (and does not have a \[SCAN\] label) is a Combat Action. Combat Actions
 may only target enemy Units.
 
-When performing a Combat Action, an Attack may be performed for each point of the Combat Action's ROF.
+When performing a Combat Action, an Attack may be performed for each point of the Combat Action's ROF (Rate of Fire).
 Before each Attack declare the target of the Attack.
 Each Attack must be resolved before the next.
 Each Attack may have the same or different targets.
@@ -600,8 +603,7 @@ Roll against it.
 *Combat Actions with a range stat of 6" or less do not gain the short range bonus.
 
 If the Attack Roll is successful apply the effect of the Action to the target.
-If the target is a Unit, it may attempt to negate the effects of the Combat Action
-with [Countermeasures](#countermeasures).
+The target may attempt to negate the effects of the Combat Action with [Countermeasures](#countermeasures).
 
 ### Combat Action Effects
 

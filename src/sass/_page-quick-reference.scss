@@ -11,7 +11,7 @@
     }
 
     ul {
-        padding-left: 1rem;
+        padding-left: 1.25rem;
 
         ul {
             margin: 0.5rem 0;
@@ -61,19 +61,20 @@
     .container-quick-reference {
         column-fill: auto;
         column-count: 3;
+        column-gap: 0;
 
         $border-color: #ababab;
 
         h3 {
-            font-size: 1.25rem;
-            border-bottom: 1.5pt solid $border-color;
-            padding-bottom: 1pt;
+            font-size: 1.5rem;
+            border-bottom: 0;
+            padding-bottom: 0;
         }
 
         h4 {
             font-size: 1.25rem;
-            border-bottom: .5pt solid $border-color;
-            padding-bottom: 1pt;
+            border-bottom: 0;
+            padding-bottom: 0;
         }
 
         h2, h3, h4, table {
@@ -82,10 +83,19 @@
         }
 
         section {
+            $border-color: #b7b7b7;
+            padding: 10px;
+            outline: 1px solid $border-color;
+            border: 1px solid $border-color;
             page-break-inside: avoid;
 
             &:not(:first-of-type) {
-                margin-top: 0.5rem;
+                //margin-top: 0.5rem;
+            }
+
+            ul:last-child,
+            p:last-child {
+                margin-bottom: 0;
             }
         }
     }
