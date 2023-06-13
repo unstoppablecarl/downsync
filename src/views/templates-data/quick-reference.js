@@ -1,5 +1,10 @@
 import fs from 'fs'
-import { extractTagWithContents, markdownSectionToHtml, stripLinks } from '../../markdown/support/markdown-helpers.js'
+import {
+    captureQuickReferenceContentToHtml,
+    extractTagWithContents,
+    markdownSectionToHtml,
+    stripLinks,
+} from '../../markdown/support/markdown-helpers.js'
 
 let path = 'src/markdown/downsync-rules.md'
 let markdown = await fs.promises.readFile(path, 'utf-8')
@@ -17,6 +22,7 @@ export const taskforceActivationPhases = markdownSectionToHtml(
 
 export const attacks = markdownSectionToHtml(markdown, 'Attacks')
 export const scanCheck = markdownSectionToHtml(markdown, 'Scan Check')
+scanCheck.content = captureQuickReferenceContentToHtml(markdown, 'scan_check_content_quick_reference')
 export const commandPoints = markdownSectionToHtml(markdown, 'Command Point Abilities')
 export const cmCheck = markdownSectionToHtml(markdown, 'Countermeasure Check')
 

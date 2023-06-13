@@ -1,0 +1,27 @@
+{{#extend 'layout/html' title='Downsync Rules'  body_class='page-quick-reference'}}
+
+    {{#content 'main-style-before'}}
+        <link rel="stylesheet" href="/assets/css/quick-reference-prepend.css">
+    {{/content}}
+
+    {{#content 'nav'}}{{/content}}
+
+    {{#content 'page-content'}}
+        <div class="btn-print-container">
+            {{> btn-print text="Print"}}
+        </div>
+        <div class="container container-quick-reference">
+            {{> quick-reference-content}}
+        </div>
+    {{/content}}
+
+    {{#content 'footer'}}{{/content}}
+
+    {{#content 'body-close-before'}}
+        <script src="/assets/js/pagedJS.js"></script>
+        <script src="/assets/js/quick-reference-print.js"></script>
+    {{/content}}
+
+{{/extend}}
+
+

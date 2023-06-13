@@ -18,6 +18,34 @@ export function captureMarkdownSection(markdown, heading) {
     }
 }
 
+export function stripQuickReferenceContentTags(markdown) {
+    let regex = new RegExp(`\%\%\%\-\-\- (.*?) \-\-\-\%\%\%`, 'gi')
+
+    return markdown.replaceAll(regex, '')
+}
+
+export function captureQuickReferenceContent(markdown, quickReferenceSection) {
+    let regex = new RegExp(`\%\%\%\-\-\- ${quickReferenceSection}_start \-\-\-\%\%\%([\\s\\S]*?)(?:\\n\%\%\%\-\-\- ${quickReferenceSection}_end \-\-\-\%\%\%|$)`, 'gi')
+
+    let matches = regex.exec(markdown)
+    if (!matches || matches.length < 2) {
+        throw new Error('No match found for: ' + quickReferenceSection)
+    }
+    let result = matches[1]
+
+    if (!result) {
+        throw new Error('No match found for: ' + quickReferenceSection)
+    }
+    return result
+}
+
+export function captureQuickReferenceContentToHtml(markdown, quickReferenceSection) {
+    let result = captureQuickReferenceContent(markdown, quickReferenceSection)
+    let md = new MarkdownIt()
+
+    return md.render(result)
+}
+
 export function markdownSectionToHtml(markdown, heading, append = '') {
     let { content } = captureMarkdownSection(markdown, heading)
 

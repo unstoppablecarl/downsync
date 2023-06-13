@@ -19,7 +19,9 @@ $table-th-bg-var: var(--table-th-bg);
 $table-caption-color-var: var(--table-caption-color);
 $table-caption-bg-var: var(--table-caption-bg);
 
-[data-bs-theme="light"], :root {
+$heading-border-color: #7d8ba2;
+
+[data-bs-theme='light'], :root {
     --table-th-color: #{$table-th-color};
     --table-th-bg: #{$table-th-bg};
     --table-caption-color: #{$table-caption-color};

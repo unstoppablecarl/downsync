@@ -1,16 +1,13 @@
 .container-quick-reference {
-    border: 1px solid #808080;
 
-    .section {
-        border: 1px solid #808080;
+    h3 {
+        border-bottom: 3px solid $heading-border-color;
+        padding-bottom: 5px;
     }
 
-    .section {
-        padding: 10px;
-
-        p:last-child {
-            margin-bottom: 0;
-        }
+    h4 {
+        border-bottom: 2px solid $heading-border-color;
+        padding-bottom: 5px;
     }
 
     ul {
@@ -55,38 +52,41 @@
         font-size: 10px;
     }
 
-    .page-quick-reference {
-        .main-content {
-            padding: 18pt 36pt;
-
-            width: $page-letter-width;
-            height: $page-letter-height;
-
-            .container {
-                width: auto;
-                max-width: 100%;
-            }
-        }
-    }
-
     .quick-reference-heading {
         font-size: 1.2rem;
         font-family: 'Barlow Condensed', sans-serif;
-
+        column-span: all;
     }
 
     .container-quick-reference {
+        column-fill: auto;
+        column-count: 3;
+
+        $border-color: #ababab;
 
         h3 {
             font-size: 1.25rem;
+            border-bottom: 1.5pt solid $border-color;
+            padding-bottom: 1pt;
         }
 
-        .col-md-6 {
-            width: 50%;
+        h4 {
+            font-size: 1.25rem;
+            border-bottom: .5pt solid $border-color;
+            padding-bottom: 1pt;
         }
 
-        .col-md-4 {
-            width: 33.3333%
+        h2, h3, h4, table {
+            page-break-inside: avoid;
+            page-break-after: avoid;
+        }
+
+        section {
+            page-break-inside: avoid;
+
+            &:not(:first-of-type) {
+                margin-top: 0.5rem;
+            }
         }
     }
 }

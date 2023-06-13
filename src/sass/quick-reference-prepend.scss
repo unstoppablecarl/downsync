@@ -1,0 +1,24 @@
+@media print {
+    :root {
+        font-size: 10pt;
+    }
+
+    @page {
+        size: letter;
+    }
+
+    $margin: 0.5in 0.5in 0.5in;
+
+    @page :left {
+        margin: $margin;
+    }
+
+    @page :right {
+        margin: $margin;
+    }
+
+    html {
+        background: #fff !important;
+    }
+}
+

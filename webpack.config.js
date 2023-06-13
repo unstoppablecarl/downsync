@@ -11,6 +11,11 @@ export default {
             filename: 'js/rulebook-print.js',
             dependOn: 'pagedJS',
         },
+        quickReferencePrint: {
+            import: './src/js/quick-reference-print.js',
+            filename: 'js/quick-reference-print.js',
+            dependOn: 'pagedJS',
+        },
         pagedJS: ['pagedjs'],
     },
     output: {

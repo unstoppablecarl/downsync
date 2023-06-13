@@ -521,6 +521,7 @@ Each Scan Check must be resolved before the next.
 Each Scan Check may have the same or different targets.
 
 #### Scan Check
+%%%--- scan_check_content_quick_reference_start ---%%%
 
 When a Unit performs a Scan Check, select an enemy target within the Scan Action's Range and perform a Scan Roll against
 it.
@@ -546,6 +547,8 @@ If the target is a Ping the **Target Defense** depends on its Signature.
 |-----------------------------|---------|
 | Scan Roll >= Target Defense | Success |
 | Scan Roll < Target Defense  | Failure |
+
+%%%--- scan_check_content_quick_reference_end ---%%%
 
 If the Scan Roll is successful apply the effect of the Action to the target.
 If the target is a Unit, it may attempt to negate the effects of the Scan Action
@@ -583,16 +586,16 @@ Roll against it.
 
 **Attack Roll** = 2d6 + **TARG** stat + mods vs Unit **DEF**.
 
-| Outcome                     | Result |
-|-----------------------------|--------|
-| Attack Roll >= Unit Defense | Hit    |
-| Attack Roll < Unit Defense  | Miss   |
-
 | Modifiers             | Mod |
 |-----------------------|-----|
 | Short Range ( < 6" )* | +1  |
 | Long Range ( > 16" )  | -1  |
 | Target Concealed      | -1  |
+
+| Outcome                     | Result |
+|-----------------------------|--------|
+| Attack Roll >= Unit Defense | Hit    |
+| Attack Roll < Unit Defense  | Miss   |
 
 *Combat Actions with a range stat of 6" or less do not gain the short range bonus.
 
