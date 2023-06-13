@@ -18,7 +18,6 @@ export function pagedPreview(prependContent, content = undefined, stylesheets = 
 }
 `)
 
-            console.log(prependContent)
             document.body.prepend(prependContent)
 
             console.log('Rendered', flow.total, 'pages')
