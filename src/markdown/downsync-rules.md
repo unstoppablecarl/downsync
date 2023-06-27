@@ -1,14 +1,14 @@
 # Downsync Rules (Beta)
 
-Last Updated: June 13, 2023
+Last Updated: June 27, 2023
 
 [[toc]]
 
 ## Introduction
 
-Downsync is a game with a high level abstraction of future combat in the collapsing world of 2150.
+Downsync is a game with a high-level abstraction of future combat in the collapsing world of 2150.
 
-High lethality and technology make conflict outcome less about weapons defeating armor and more about information,
+High lethality and technology make conflict outcomes less about weapons defeating armor and more about information,
 stealth, and deception.
 
 ### Design Goals
@@ -21,8 +21,8 @@ stealth, and deception.
 - having more/better information than your opponent gives an advantage
 - keep the game dynamic by not rewarding staying still
 - avoid mechanics that force players to carefully spread out every single Unit (area of effect weapons)
-- miniature scale is 15mm (1:100). Scale is highly abstracted though
-- resources reset each round but not the start of each round to prevent jamming at the end of a round
+- miniature scale is 15mm (1:100). Scale is highly abstracted though and terrain scale is flexible
+- resources reset each round but not at the start of each round to prevent jamming at the end of a round
 - games should take 45-60 min
 
 ### Components and Conventions
@@ -30,21 +30,21 @@ stealth, and deception.
 - Dice: d6
 - Measuring tape
 - Circular bases of size: 40mm, 70mm, 80mm, 90mm
-- Tokens
+- Tokens (8mm colored wooden cubes)
 - Models
 - 4x4 ft play area
 - Terrain
 
-#### Scale
+#### Scale and Abstraction
 
-The scale of the game's models are 15mm (1/100 scale).
-The overall scale is highly abstracted as the battlefield is a representation of what holographic imaging would be
-available to you when commanding your forces.
-Terrain scaled for 6mm-15mm works fine but looks best if it is all roughly the same scale.
+Downsync miniatures are 15mm (1/100 scale).
+The tabletop represents a holographic interface for commanding your forces with a scale abstracted to improve usability.
+Each Unit's actual scale would be a 0.1mm dot occupying the general area within its base.
+Terrain scaled for 6mm-15mm can be used but works best if it is all roughly the same scale.
 
 #### Measuring
 
-When measuring distances to or from a Unit/Ping, any point on the edge of the base may be used. Players may make
+When measuring distances to or from a Unit/Ping, any point on the edge of the base may be used. Players may take
 measurements at any time.
 
 ### Rolling Dice
@@ -54,18 +54,15 @@ results are always better.
 
 #### Roll Modifiers
 
-Modifiers to die rolls are positive or negative numbers adjustments (example: +X/-X) and are added directly to the die
+Modifiers to die rolls are positive or negative number adjustments (example: +X/-X) and are added directly to the die
 roll result.
 
-#### Roll Advantage
+#### Boosting Rolls
 
-Each roll starts with an Advantage value of zero. Effects and abilities can add to the Advantage value of a
-roll.
-
-| Roll | Procedure                                                                    |
-|------|------------------------------------------------------------------------------|
-| 1d6  | Roll an additional 1d6 for each Advantage Value and keep the **highest** 1d6 |
-| 2d6  | Roll an additional 1d6 for each Advantage Value and keep the **highest** 2d6 |
+When a die roll is **Boosted** an additional 1d6 is rolled, and the lowest die is discarded.
+Abilities and effects such as spending a Command Point can Boost die rolls.
+A roll can only be Boosted once.
+If multiple effects cause a roll to be Boosted more than once, it has no additional effect.
 
 ### Terminology
 
@@ -99,14 +96,16 @@ roll.
     - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
     - **Place**:              A special type of movement that does not suffer terrain penalties.
 
-## Force Lists
+## Game Setup
 
-When creating a Force List all Units must be from the same Faction. The Game Size determines the number of
-small/medium/large Unit slots your force list will contain. For each Unit size slot select a Unit of matching size from
-your Faction.
-
-*For example: a Small Game Coalition Force List contains any 2 small Units, any 3 medium Units, and any 1 large Unit.
-The same Unit may be included multiple times.*
+- Choose Game Size
+- Choose Mission
+- Reveal Force Lists
+- Determine Starting Player
+    - Both players roll 2d6, and the higher rolling player chooses which player will deploy first
+    - The player that deploys first will take the first turn of the game as the Active Player
+- Deployment
+    - For each Unit in a Force List, deploy a Ping of matching Signature (size) within the mission deployment zone
 
 ### Game Sizes
 
@@ -138,34 +137,59 @@ The same Unit may be included multiple times.*
 </div>
 </div>
 
+### Force Lists
+
+When creating a Force List, all Units must be from the same Faction.
+The Game Size determines the number of small/medium/large Unit slots your force list will contain.
+For each Unit size slot, select a Unit of matching size from your Faction.
+
+*For example, a Small Game Coalition Force List contains any 2 small Units, any 3 medium Units, and any 1 large Unit.
+The same Unit may be included multiple times.*
+
+## Command Points
+
+The Command Point Capacity of a game is determined by the [Game Size](#game-sizes).
+
+Players begin each Round with a number of Command Points equal to the game's Command Point Capacity. Players cannot
+exceed the Command Point Capacity or carry over Command Points from a previous Round.
+
+### Command Point Abilities
+
+A Command Point may be spent to do one of the following:
+
+- **Boost a Roll**: [Boost](#boosting-rolls) any roll. Only once per roll. Declared before rolling.
+- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a Unit before its [Unit Activation](#unit-activation).
+- **Add a Unit to a Reaction Engagement**
+  see:  [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
+- **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
+
 ## Sequence of Play
 
 A game is made up of a number of Rounds.
-In each Round Forces alternate resolving Taskforce Activations.
+In each Round, Forces alternate resolving Taskforce Activations.
 In each Taskforce Activation, a Force Activates a selection of Units/Pings called a Taskforce.
-When all Units/Pings of both Forces have been Activated the Round ends.
+When all Units/Pings of both Forces have been Activated, the Round ends.
 
-### Setup
+### Round Overview
 
-- Decide Mission
-- Reveal Force Lists
-- Determine Starting Player
-    - Both players roll 2d6, and the higher rolling player chooses which player will deploy first
-    - The player that deploys first will take the first turn of the game as the Active Player
-- Deployment
-    - For each Unit in a Force List, deploy a Ping of matching Signature (size) within the mission deployment zone
-
-### Round
+#### Start of Round Cleanup
 
 - Remove all [Activated Tokens](#activated-token)
 - Regenerate Command Points. See [Game Size](#game-sizes)
-- Each Player alternates resolving Taskforce Activations until all Units/Pings have been activated
-    - The player currently resolving a Taskforce Activation is the Active Player and the opposing Player is the
-      Non-Active
-      Player
-    - The Non-Active Player at the end of a Round becomes the first Active Player in the next Round
 
-*A Player is still considered the Non-Active Player if they initiate a [Reaction Engagement](#reaction-engagements).*
+#### Player Turns
+
+Each Player alternates resolving Taskforce Activations until all Units/Pings have been Activated.
+The Player currently resolving a Taskforce Activation is the Active Player, and the opposing Player is the Non-Active
+Player.
+
+#### End of Round
+
+The Non-Active Player of the last Turn in a Round becomes the Active Player in the first Turn of the next Round.
+This means a Player will never have two Turns in a row.
+
+A Player is still considered the Non-Active Player if they initiate a [Reaction Engagement](#reaction-engagements) in
+the last Turn of a Round.
 
 ### Turn Overview
 
@@ -177,7 +201,7 @@ The Active Player performs a Taskforce Activation.
 - **Reveal**: Any Pings in the Taskforce may be Revealed
 - **Refresh**: Regenerate Countermeasures and resolve special abilities
 - **Move**: Move all Units/Pings in the Taskforce
-    - **Reaction Engagement (optional)**: The non-active player may initiate a Reaction Engagement
+- **Reaction Engagement (optional)**: The non-active player may initiate a [Reaction Engagement](#reaction-engagements)
 - **Unit Activation**: Activate each Unit in the Taskforce one at a time
 
 #### Designate
@@ -198,10 +222,10 @@ Each Taskforce Unit:
 
 - Removes [Overwatch Tokens](#overwatch-token)
 - [Regenerates Countermeasure Tokens](#regenerating-countermeasures)
-- May spend 1 Command Point to remove a [Stun Token](#stun-token)
 - Resolves special abilities that trigger when a Unit is Refreshed
 
-In a Reaction Engagement Non-active Units are refreshed when they [Resolve Reactions](#resolve-reactions).
+In a Reaction Engagement, Units that have not Refreshed this Round are Refreshed when
+they [Resolve Reactions](#resolve-reactions).
 
 #### Move
 
@@ -212,7 +236,7 @@ Units/Pings.
 Pings have a **SPD** of 4".
 
 *In the **Unit Activation** phase Units/Pings may perform a [Move Action](#move-action) to move up to their **SPD** a
-second time. This means that it is possible for Units/Pings to move up to 2 x their **SPD** per Round.*
+second time. This means that Units/Pings can move up to 2 x their **SPD** per Round.*
 
 #### Optionally Initiate a Reaction Engagement
 
@@ -220,7 +244,7 @@ The opposing player may initiate a Reaction Engagement. See: [Reaction Engagemen
 
 #### Unit Activation
 
-The Active Player activates their Taskforce Units one at a time until all Taskforce Units have activated.
+The Active Player activates their Taskforce Units one at a time until all Taskforce Units have been activated.
 Each Taskforce Unit may only be activated once and each Unit's activation must be completed before activating the next
 Unit.
 
@@ -307,7 +331,7 @@ When measuring the distance from or to a Unit in a building the height of the bu
 Only infantry Units may enter a building and a building may only contain as many infantry Units as can fit on its roof.
 Moving into or out of a building has no movement penalty.
 
-*Players should agree what terrain pieces are considered buildings and how many 40mm infantry bases can fit on each
+*Players should agree on what terrain pieces are considered buildings and how many 40mm infantry bases can fit on each
 building before the game starts.*
 
 #### Building Abstraction
@@ -431,7 +455,7 @@ A Ping is Revealed when:
 - If an enemy Unit ends a move within 2"
 - It is hit by an Action with the REVEAL effect
 
-**Note**: A Ping cannot end a move within 2" of an enemy Unit causing itself to be auto revealed.
+**Note**: A Ping cannot end a move within 2" of an enemy Unit causing itself to be auto-revealed.
 
 #### Revealing Units
 
@@ -442,31 +466,16 @@ What was the Ping becomes the Unit's base.
 #### Revealing Infantry Units
 
 When Revealed, Infantry Units **Place** each Infantry Base within 3" of the Ping (including the space occupied by the
-Ping) and the Ping is removed.
+Ping), and the Ping is removed.
 
 See: [Multi-Base Units](#multi-base-units)
-
-## Command Points
-
-The Command Point Capacity of a game is determined by the [Game Size](#game-sizes).
-
-Players begin each round with a number of Command Points equal to the game's Command Point Capacity. Players cannot
-exceed the Command Point Capacity or carry over Command Points from a previous Round.
-
-### Command Point Abilities
-
-- **Boost a Roll**: Add +1 [Advantage](#roll-advantage) to any roll. Only once per roll. Declared before rolling.
-- **Remove Stun Token**: Remove a [Stun Token](#stun-token) from a Unit before its [Unit Activation](#unit-activation).
-- **Add a Unit to a Reaction Engagement**
-  see:  [Adding Additional Non-Active Player Units](#adding-additional-non-active-player-units).
-- **Unit Ability**: Some Units have Actions or Traits that cost Command Points on their Unit Card.
 
 ## Actions
 
 When a Unit Activates it gains 1 Action Point. A Unit may perform any number of actions provided the action cost is
 paid. Each action must be completely resolved before performing another action.
 
-The actions a Unit can perform, and their costs are indicated on the Unit's card.
+The actions a Unit can perform and their costs are indicated on the Unit's card.
 
 ### Action Stats
 
@@ -725,14 +734,13 @@ Then both players perform a Reaction Priority Roll for each participating Unit.
 
 ##### Reaction Priority Roll
 
-A participating Unit rolls 1d6 to determine its Reaction Priority. Keep the die with the result next to the Unit.
+All participating Units roll 1d6 to determine its Reaction Priority.
+Keep the die with the result next to the Unit and remove the die after it has completed its Unit Activation.
 
-| Case                                                | Roll Advantage Adjustments |
-|-----------------------------------------------------|----------------------------|
-| Unit has an **[Overwatch Token](#overwatch-token)** | +1 Advantage               |
-| Roll Boosted                                        | +1 Advantage               |
-
-See: [Roll Advantage](#roll-advantage)
+Reaction Priority Rolls may be [Boosted](#boosting-rolls) like all other rolls.
+If a Unit has an [Overwatch Token](#overwatch-token) its Priority Roll is automatically Boosted without spending a
+Command
+Point.
 
 #### Resolve Reactions
 
@@ -740,10 +748,11 @@ In reaction priority order, each Unit may perform a Unit Activation.
 Instead of performing a Unit Activation, a Unit may hold its reaction by reducing the value of its Reaction Priority die
 by 1.
 
-Units controlled by the non-active Player are [Refreshed](#refresh) immediately before resolving their Unit Activation.
+Units that have not Refreshed this Round are [Refreshed](#refresh) immediately before resolving their Unit Activation.
+A Unit has already been Refreshed this Round when it is in the Active Player's Taskforce or has an Activated Token.
 
-A Unit with an **Overwatch Token** removes that token immediately before resolving its Unit Activation.
-When activating, Units may perform an Overwatch Action as normal and gain an Overwatch token to be used in a later
+When a Unit is [Refreshed](#refresh) it removes its **Overwatch Token** if it has one.
+When activating, Units may perform an Overwatch Action as normal and gain an Overwatch Token to be used in a later
 Reaction Engagement.
 
 #### Cleanup
@@ -806,7 +815,7 @@ When a Unit *spends* a token it is removed from the Unit's base and set aside.
 
 ### Activated Token
 
-A Unit with an Activated Token has activated this Round.
+A Unit with an Activated Token has been activated this Round.
 The Unit cannot activate, be part of a Taskforce, or participate in Reaction Engagements until the next round.
 
 |                       |                                                                           |
@@ -846,8 +855,8 @@ Emergency Countermeasures do not [Regenerate](#regenerating-countermeasures).
 
 ### Overwatch Token
 
-A Unit with an Overwatch Token can participate in Reaction Engagements even if it has an Activated Token and gains
-+1 [Advantage](#roll-advantage) to [Reaction Priority Rolls](#reaction-priority-roll).
+A Unit with an Overwatch Token can participate in Reaction Engagements even if it has an Activated Token and its
+[Reaction Priority Rolls](#reaction-priority-roll) is [Boosted](#boosting-rolls).
 
 |                       |                                                                                 |
 |-----------------------|---------------------------------------------------------------------------------|
@@ -877,13 +886,13 @@ A Unit loses its Stealth Token immediately after resolving a Combat Action and i
 be [Revealed](#revealing) or if it ends a move or Placement within 2" of an enemy Unit.
 A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 
-|                       |                                                                                                                                                                      |
-|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Color**             | <span class="token" style="background:black"></span> Black                                                                                                           |
-| **Gained**            | By Unit special abilities                                                                                                                                            |
-| **Can have multiple** | No                                                                                                                                                                   |
-| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                                 |
-| **Removed**           | A Unit looses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or **Placement** within 2". |
+|                       |                                                                                                                                                                     |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Color**             | <span class="token" style="background:black"></span> Black                                                                                                          |
+| **Gained**            | By Unit special abilities                                                                                                                                           |
+| **Can have multiple** | No                                                                                                                                                                  |
+| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                                |
+| **Removed**           | A Unit loses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or **Placement** within 2". |
 
 ### Unit Token Quick Reference
 

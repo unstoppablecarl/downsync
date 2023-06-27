@@ -1,7 +1,6 @@
 import fs from 'fs'
 import {
     captureQuickReferenceContentToHtml,
-    extractTagWithContents,
     markdownSectionToHtml,
     stripLinks,
 } from '../../markdown/support/markdown-helpers.js'
@@ -26,8 +25,7 @@ scanCheck.content = captureQuickReferenceContentToHtml(markdown, 'scan_check_con
 export const commandPoints = markdownSectionToHtml(markdown, 'Command Point Abilities')
 export const cmCheck = markdownSectionToHtml(markdown, 'Countermeasure Check')
 
-let rollAdvantageChunk = markdownSectionToHtml(markdown, 'Roll Advantage')
-rollAdvantageChunk.content = extractTagWithContents(rollAdvantageChunk.content, 'table')
+let rollAdvantageChunk = markdownSectionToHtml(markdown, 'Boosting Rolls')
 export const rollAdvantage = rollAdvantageChunk
 
 export const reactionPriorityRoll = markdownSectionToHtml(markdown, 'Reaction Priority Roll')
