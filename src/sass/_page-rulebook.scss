@@ -236,6 +236,9 @@ $linkColor2Hover: shift-color($linkColor2, 10%);
         --toc-link-color-2: #{$linkColor2};
         --toc-link-color-2-hover: #{$linkColor2Hover};
 
+        --toc-link-color-3: #444;
+        --toc-link-color-3-hover: #000;
+
         ul {
             padding-left: 0;
             list-style: none;
@@ -271,10 +274,10 @@ $linkColor2Hover: shift-color($linkColor2, 10%);
                             li {
                                 a {
                                     font-weight: normal;
-                                    color: #444;
+                                    color: var(--toc-link-color-3);
 
                                     &:hover {
-                                        color: #000;
+                                        color: var(--toc-link-color-3-hover);
                                     }
                                 }
                             }
@@ -340,11 +343,23 @@ $linkColor2Hover: shift-color($linkColor2, 10%);
 
         .table-of-contents {
 
-            --toc-link-color-1: red;
-            --toc-link-color-1-hover: yellow;
+            $linkColor1: lighten($link-color, 40%);
+            $linkColor1Hover: lighten($linkColor1, 20%);
+
+            $linkColor2: lighten($link-color, 25%);
+            $linkColor2Hover: lighten($linkColor2, 20%);
+
+            $linkColor3: #afaeae;
+            $linkColor3Hover: lighten($linkColor3, 20%);
+
+            --toc-link-color-1: #{$linkColor1};
+            --toc-link-color-1-hover: #{$linkColor1Hover};
 
             --toc-link-color-2: #{$linkColor2};
             --toc-link-color-2-hover: #{$linkColor2Hover};
+
+            --toc-link-color-3: #afaeae;
+            --toc-link-color-3-hover: #fff;
         }
     }
 }
