@@ -73,3 +73,9 @@ export const UNIT_RESTRICTIONS = (units) => {
         desc_keywords_after: units,
     })
 }
+
+export const PRIORITIZE = makeCommandAbility({
+    name: 'Prioritize',
+    cost: COST_COMMAND,
+    desc: 'You may swap the Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved.',
+})
