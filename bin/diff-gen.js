@@ -4,6 +4,7 @@ import fs from 'fs'
 
 function loadDiff() {
 
+    //let file = 'unit-cards.html'
     let file = 'rules.html'
     let url = `https://downsync.net/${file}`
 
