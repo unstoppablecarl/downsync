@@ -1,18 +1,13 @@
 import fs from 'fs'
 import path from 'path'
-import Handlebars from 'handlebars'
-import helpers from './views/helpers/handlebars-helpers.js'
+import Handlebars from './handlebars.js'
 import globPromise from 'glob-promise'
-import layouts from 'handlebars-layouts'
 
 let tplDir = './src/views/templates/'
 let partialsDir = './src/views/partials/'
 
 tplDir = path.resolve(tplDir)
 partialsDir = path.resolve(partialsDir)
-
-Handlebars.registerHelper(helpers)
-Handlebars.registerHelper(layouts(Handlebars))
 
 export default async function buildTemplates() {
     return Promise.all([
@@ -29,16 +24,33 @@ export default async function buildTemplates() {
     })
 }
 
-function dirToTemplates(tplDir, glob) {
+export function getTemplateFilePathsWithKeys() {
+    return getFilePathsWithKeys(tplDir, '/**/*.hbs')
+}
 
+function getFilePathsWithKeys(tplDir, glob) {
     return globPromise(tplDir + glob)
         .then((files) => {
+            return files.map((file) => {
+                return {
+                    filePath: path.resolve(file),
+                    key: getKey(tplDir, file),
+                }
+            })
+        })
+}
+
+function dirToTemplates(tplDir, glob) {
+
+    return getFilePathsWithKeys(tplDir, glob)
+        .then((files) => {
+
             let templates = {}
 
-            let promises = files.map(function (file) {
-                let filePath = path.resolve(file)
-                let key = getKey(tplDir, file)
-
+            let promises = files.map(({
+                                          filePath,
+                                          key,
+                                      }) => {
                 return fs.promises.readFile(filePath, 'utf-8')
                     .then((tpl) => {
                         templates[key] = Handlebars.compile(tpl)
@@ -50,10 +62,10 @@ function dirToTemplates(tplDir, glob) {
                     return templates
                 })
         })
+}
 
-    function getKey(tplDir, file) {
-        let re = new RegExp(`${tplDir}/(.*?).hbs`)
-        let matches = file.match(re)
-        return matches[1]
-    }
+function getKey(tplDir, file) {
+    let re = new RegExp(`${tplDir}/(.*?).hbs`)
+    let matches = file.match(re)
+    return matches[1]
 }
