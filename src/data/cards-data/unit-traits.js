@@ -134,7 +134,7 @@ export const HIT_AND_RUN = make({
 
 export const HITCH_HIKER = make({
     name: 'Hitch Hiker',
-    desc: `When this Unit is Revealed in the Reveal Phase it may be Placed within 3" of a friendly Unit in this Taskforce with the Taxi trait that was Revealed in a previous Turn.`,
+    desc: `When this Unit is Revealed in the Reveal Phase it may be Placed within 3" of a friendly Unit with the Taxi trait that is not in this Taskforce.`,
     desc_keywords_before: ['Taxi'],
 })
 
@@ -153,7 +153,6 @@ export const SCRAMBLE_AURA = make({
     name: 'Scramble Aura',
     note: `6", COST: ${COST_COMMAND}, Refresh phase`,
     desc: `While within 6" and LOS of this Unit, enemy Units suffer -2 TARG and enemy Pings may not be Revealed in the Reveal Phase. ${UPKEEP_COMMAND_POINT_TEXT}`,
-    desc_keywords_name: ['Hitch Hiker'],
 })
 
 export const QUICK = make({

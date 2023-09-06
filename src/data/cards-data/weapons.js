@@ -87,7 +87,10 @@ export const MG = make({
     traits: [],
 })
 
-export const ADVANCED_MG = modifyAction(MG, { name: 'Adv. MG' }, [TRAIT_ADVANCED])
+export const ADVANCED_MG = modifyAction(MG, {
+    name: 'Adv. MG',
+    traits: [TRAIT_ADVANCED],
+})
 
 export const HMG = make({
     name: 'HMG',
@@ -304,23 +307,18 @@ export const JAM_DRONE = make({
 export const RPG = make({
     name: 'RPG',
     range: 10,
-    rof: 2,
+    rof: 1,
     effect: 'KILL',
     traits: [
         TRAIT_CLOSE_AND_PERSONAL,
     ],
 })
 
-export const ADVANCED_RPG = make({
+export const ADVANCED_RPG = modifyAction(RPG, {
     name: 'Adv. RPG',
-    range: 10,
-    rof: 1,
-    effect: 'KILL',
-    traits: [
-        TRAIT_ADVANCED,
-        TRAIT_CLOSE_AND_PERSONAL,
-    ],
-})
+}, [
+    TRAIT_ADVANCED,
+])
 
 export const SHOCK_SNIPER_RIFLE = make({
     name: 'Shock Sniper Rifle',
@@ -354,7 +352,6 @@ export const CLOSE_SUPPORT_CANNON = make({
         TRAIT_ADVANCED,
     ],
 })
-
 
 function make(weapon) {
 
