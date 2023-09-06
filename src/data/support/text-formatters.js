@@ -7,7 +7,7 @@ import {
     EMPHASIS_KEYWORDS,
 } from '../constants.js'
 import fs from 'fs'
-import Handlebars from 'handlebars'
+import Handlebars from '../../handlebars.js'
 
 export function keywordFormatDesc({
                                       name,

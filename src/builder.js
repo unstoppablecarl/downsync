@@ -94,19 +94,29 @@ async function buildSingleCardPages(rootData) {
     )
 }
 
-function renderTemplate(templates, key, rootData, outputFileName = null) {
-
-    let template = templates[key]
-    outputFileName = outputFileName || key
-    let dest = `${dist}/${outputFileName}.html`
+export function getDataFilePathFromKey(key) {
     let tplDataFile = `${tplDataPath}/${key}.js`
 
     let target = path.resolve(tplDataFile)
 
     return fileExists(target)
-        .then((exists) => {
+        .then(exists => {
+            if (exists) {
+                return target
+            }
+        })
+}
 
-            if (!exists) {
+function renderTemplate(templates, key, rootData, outputFileName = null) {
+
+    let template = templates[key]
+    outputFileName = outputFileName || key
+    let dest = `${dist}/${outputFileName}.html`
+
+    getDataFilePathFromKey(key)
+        .then((target) => {
+
+            if (!target) {
                 let contents = template(rootData)
 
                 return fs.promises.writeFile(dest, contents, 'utf8')
@@ -123,7 +133,6 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
                     })
             }
         })
-
 }
 
 async function prepareDirs() {
