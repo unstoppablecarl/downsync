@@ -64,7 +64,7 @@ export const DEFENSE_AURA = make({
 export const SHROUD_AURA = make({
     name: 'Shroud Aura',
     note: '4" concealment',
-    desc: 'Friendly Units within 4" gain concealment.',
+    desc: 'Friendly Units within 4" gain Concealment.',
 })
 
 export const ADAPTIVE_CAMO = make({
@@ -151,8 +151,8 @@ export const RESILIENT = make({
 
 export const SCRAMBLE_AURA = make({
     name: 'Scramble Aura',
-    note: `6", COST: ${COST_COMMAND}, Refresh phase`,
-    desc: `While within 6" and LOS of this Unit, enemy Units suffer -2 TARG and enemy Pings may not be Revealed in the Reveal Phase. ${UPKEEP_COMMAND_POINT_TEXT}`,
+    note: `16", COST: ${COST_COMMAND}, Refresh phase`,
+    desc: `While within 12" and LOS of this Unit, enemy Units suffer -2 TARG. ${UPKEEP_COMMAND_POINT_TEXT}`,
 })
 
 export const QUICK = make({

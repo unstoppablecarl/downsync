@@ -26,13 +26,14 @@ import {
     QUICK,
     RESILIENT,
     SCRAMBLE_AURA,
+    SHROUD_AURA,
     SMALL_DECOY_PING,
     STEALTHY,
 } from '../cards-data/unit-traits.js'
 
 import { SCAN } from '../cards-data/actions.js'
 import { makeAction, makeUnit, modifyAction } from '../support/factories.js'
-import { TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits.js'
+import { STABILIZER, TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits.js'
 import { NOTE_JAMMED } from '../definitions.js'
 
 export const FREE_UNION_CARD_DEFAULTS = {
@@ -54,7 +55,10 @@ export const INFANTRY_SQUAD = make({
     defense: 13,
     actions: [
         modifyAction(SMALL_ARMS, { team: '1-2' }),
-        modifyAction(RPG, { team: '3' }, [TRAIT_TAKE_UP]),
+        modifyAction(RPG, {
+            team: '3',
+            rof: 2,
+        }, [TRAIT_TAKE_UP]),
     ],
     traits: [
         STEALTHY,
@@ -188,7 +192,9 @@ export const MED_TANK = make({
     defense: 13,
     cm: 2,
     actions: [
-        MEDIUM_CANNON,
+        modifyAction(MEDIUM_CANNON, {
+            traits: [STABILIZER],
+        }),
     ],
     traits: [
         HIT_AND_RUN,
@@ -203,17 +209,19 @@ export const SUPPORT_TANK = make({
     signature: SIZE_MEDIUM,
     type: 'Medium Vehicle',
     speed: 7,
-    scan: 6,
+    scan: null,
     targeting: 6,
     defense: 13,
     cm: 2,
     actions: [
         DOUBLE_CANNON,
-        CM_HACK,
+        HMG,
+        //CM_HACK,
         //HUNTER_KILLER,
     ],
     traits: [
         ALL_TERRAIN,
+        SHROUD_AURA,
     ],
     notes: [],
 })

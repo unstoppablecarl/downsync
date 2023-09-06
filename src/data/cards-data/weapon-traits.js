@@ -65,6 +65,11 @@ export const TRAIT_DOUBLE_TAP = make({
     desc: `This weapon's effect is KILL for Stunned targets.`,
 })
 
+export const STABILIZER = make({
+    name: 'Stabilizer',
+    desc: `This weapon does not suffer Long Range penalties.`,
+})
+
 export const DEADLY_VS = (type) => {
     return make({
         name: 'Deadly',
