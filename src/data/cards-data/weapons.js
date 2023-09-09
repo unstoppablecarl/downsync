@@ -23,7 +23,7 @@ import {
     COST_COMMAND,
     TYPE_INFANTRY,
 } from '../constants.js'
-import { makeWeapon, modifyAction } from '../support/factories.js'
+import { makeTrait, makeWeapon, modifyAction } from '../support/factories.js'
 import { oncePerActivation } from './actions.js'
 
 export const CANNON = make({
@@ -130,6 +130,19 @@ export const POSITION_HACK = make({
     effect: '&starf;',
     desc: `Units hit by this attack are Placed within 3" of their current position by the attacker's Controlling Player. ${oncePerActivation}`,
     traits: [],
+})
+
+export const DECOY_LAUNCHER = make({
+    name: 'Decoy Launcher',
+    range: 12,
+    rof: 2,
+    effect: 'STUN',
+    traits: [
+        makeTrait({
+            name: 'CM Magnet',
+            desc: 'Units hit by this weapon must attempt to negate the effect if possible with CM until it has no CM left or it has negated the effect. Excluding Emergency CM.',
+        }),
+    ],
 })
 
 export const SHOCK_RIFLE = make({

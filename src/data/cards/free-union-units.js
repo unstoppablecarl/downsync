@@ -4,6 +4,7 @@ import {
     CLOSE_SUPPORT_CANNON,
     CM_HACK,
     CYBER_ATTACK,
+    DECOY_LAUNCHER,
     DOUBLE_CANNON,
     HMG,
     JAM_DRONE,
@@ -23,9 +24,9 @@ import {
     HIT_AND_RUN,
     HITCH_HIKER,
     MOUNTED_INFANTRY,
+    OBSCURED,
     QUICK,
     RESILIENT,
-    SCRAMBLE_AURA,
     SHROUD_AURA,
     SMALL_DECOY_PING,
     STEALTHY,
@@ -92,23 +93,25 @@ export const DRONE_LAUNCHERS = make({
     ],
 })
 
-export const SCRAMBLER = make({
-    slug: 'scrambler',
-    name: 'Scrambler',
+export const BANDIT = make({
+    slug: 'bandit',
+    name: 'Bandit',
     img: null,
     signature: SIZE_SMALL,
     type: 'Light Vehicle',
     speed: 8,
-    targeting: 6,
+    targeting: 5,
     defense: 14,
     scan: 7,
     cm: 1,
     actions: [
         SCAN(2, 12),
         MG,
+        DECOY_LAUNCHER,
     ],
     traits: [
-        SCRAMBLE_AURA,
+        //SCRAMBLE_AURA,
+        OBSCURED,
         FREE_UNION_TAXI,
     ],
     notes: [],
@@ -312,7 +315,7 @@ export const ABILITY_IDEAS = make({
 export const FREE_UNION_UNITS = [
     INFANTRY_SQUAD,
     DRONE_LAUNCHERS,
-    SCRAMBLER,
+    BANDIT,
     TECHNICAL,
     //BUGGY,
     DRONE_WRANGLER_TEAM,

@@ -27,11 +27,11 @@ import {
     SIZE_SMALL,
 } from './constants.js'
 import {
+    BANDIT,
     DRONE_WRANGLER_TEAM,
     HEAVY_TANK,
     INFANTRY_SQUAD,
     MED_TANK,
-    SCRAMBLER,
     TANK_HUNTERS,
     TECHNICAL,
 } from './cards/free-union-units.js'
@@ -120,7 +120,7 @@ export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
         count: 1,
     },
     {
-        unit: SCRAMBLER,
+        unit: BANDIT,
         count: 1,
     },
     {

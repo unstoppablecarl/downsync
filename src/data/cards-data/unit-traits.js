@@ -23,7 +23,7 @@ export const CLEAR_THE_WAY = make({
 export const SMALL_DECOY_PING = make({
     name: 'Decoy',
     note: 'Small',
-    desc: 'When this Unit is added to your Force, the Force gains one Small Decoy Ping.',
+    desc: 'For each copy of this Unit in your Force, the Force gains one Small Decoy Ping.',
 })
 
 export const COUNTERMEASURE_DEFEND = (type, typePlural) => {
@@ -166,6 +166,11 @@ export const COVERT = makeTrait({
 export const REGROUP = makeTrait({
     name: 'Regroup',
     desc: 'When this Unit has an Overwatch Token, it may be Placed within 3" of their current position immediately after Taskforce Designation (including in Reaction Engagements).',
+})
+
+export const OBSCURED = makeTrait({
+    name: 'Obscured',
+    desc: 'When this Unit is the target of an Action outside of short range (6") it gains +1 DEF.',
 })
 
 function make(trait) {
