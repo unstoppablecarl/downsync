@@ -53,5 +53,6 @@ function svg_icon_path(svgId, context) {
 }
 
 function concat(...args) {
+    args.pop()
     return args.join('')
 }
