@@ -5,7 +5,6 @@
         {{#> cards-print-header
             title='Advisor Cards'
             print_all_url='/advisor-cards-print.html'
-            pdf_all_url='/assets/pdfs/advisor-cards-print.pdf'
         }}
             {{#*inline 'view_url'}}
                 {{~#if faction~}}
@@ -23,8 +22,15 @@
                 {{~/if~}}
             {{/inline}}
 
+            {{#*inline 'pdf_url'}}
+                {{~#if faction~}}
+                    /assets/pdfs/{{faction_slug}}-advisor-cards-print.pdf
+                    {{~else~}}
+                    /assets/pdfs/advisor-cards-print.pdf
+                {{~/if~}}
+            {{/inline}}
+
             {{#*inline 'other_faction_print_url'}}/advisor-cards-print/{{slug}}.html{{/inline}}
-            {{#*inline 'pdf_faction_url'}}/assets/pdfs/{{slug}}-advisor-cards-print.pdf{{/inline}}
 
         {{/cards-print-header}}
         <div class="page-previews-container" data-bs-theme="light">

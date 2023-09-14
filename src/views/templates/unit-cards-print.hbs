@@ -5,7 +5,6 @@
         {{#> cards-print-header
             title='Unit Cards'
             print_all_url='/unit-cards-print.html'
-            pdf_all_url='/assets/pdfs/unit-cards-print.pdf'
         }}
 
             {{#*inline 'view_url'}}
@@ -24,8 +23,15 @@
                 {{~/if~}}
             {{/inline}}
 
+            {{#*inline 'pdf_url'}}
+                {{~#if faction~}}
+                    /assets/pdfs/{{faction_slug}}-cards-print.pdf
+                    {{~else~}}
+                    /assets/pdfs/unit-cards-print.pdf
+                {{~/if~}}
+            {{/inline}}
+
             {{#*inline 'other_faction_print_url'}}/cards-print/{{slug}}.html{{/inline}}
-            {{#*inline 'pdf_faction_url'}}/assets/pdfs/{{slug}}-cards-print.pdf{{/inline}}
 
         {{/cards-print-header}}
 

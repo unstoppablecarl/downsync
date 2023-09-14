@@ -44,18 +44,10 @@
             </div>
             <div class="col">
                 <div class="float-md-end text-end m-1">
-                    {{#if faction}}
-                        <a class="btn btn-primary"
-                           href="{{#> pdf_faction_url
-                               slug=faction_slug}}{{/pdf_faction_url}}">Download {{faction}} {{title}}
-                            {{> svg-icon icon='pdf'}}
-                        </a>
-                    {{else}}
-                        <a class="btn btn-primary" href="{{pdf_all_url}}">Download {{title}}
-                            {{> svg-icon icon='pdf'}}
-                        </a>
-                    {{/if}}
-
+                    <a class="btn btn-primary"
+                       href="{{#> pdf_url}}{{/pdf_url}}">Download {{faction}} {{title}}
+                        {{> svg-icon icon='pdf'}}
+                    </a>
                 </div>
             </div>
         </div>
