@@ -149,12 +149,6 @@ export const RESILIENT = make({
     desc: `When this Unit suffers a KILL effect, when not already Stunned, it suffers a STUN effect instead.`,
 })
 
-export const SCRAMBLE_AURA = make({
-    name: 'Scramble Aura',
-    note: `16", COST: ${COST_COMMAND}, Refresh phase`,
-    desc: `While within 12" and LOS of this Unit, enemy Units suffer -2 TARG. ${UPKEEP_COMMAND_POINT_TEXT}`,
-})
-
 export const QUICK = make({
     name: 'Quick',
     desc: 'After all Priority Rolls are resolved in a Reaction Engagement, This Unit may swap the results of its Priority Roll with any other Unit participating in the Reaction Engagement.',
@@ -165,7 +159,8 @@ export const COVERT = makeTrait({
 })
 export const REGROUP = makeTrait({
     name: 'Regroup',
-    desc: 'When this Unit has an Overwatch Token, it may be Placed within 3" of their current position immediately after Taskforce Designation (including in Reaction Engagements).',
+    note: '6"',
+    desc: 'When this Unit has an Overwatch Token, it may be Placed within 6" of their current position immediately after Taskforce Designation (including in Reaction Engagements).',
 })
 
 export const OBSCURED = makeTrait({

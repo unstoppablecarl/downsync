@@ -2,11 +2,11 @@ import { makeAction, makeCommandAbility, makeTrait, makeWeapon } from '../suppor
 import { COST_COMMAND, TYPE_INFANTRY } from '../constants.js'
 import { TRAIT_CLUSTERED, TRAIT_EXTREME_RANGE } from './weapon-traits.js'
 import { oncePerActivation } from './actions.js'
+import { AURORA, PHANTOM, WIDOW_SCOUT } from '../cards/coalition-units.js'
 
-export const TRAIT_GRANTED_SCAN_STAT = makeTrait({
+export const TRAIT_GRANTED_UNITS = (units) => makeTrait({
     name: 'Granted',
-    note: 'SCAN',
-    desc: `Units with a SCAN stat may use this Action.`,
+    desc: `The following Units gain this Action: ${units.join(', ')}.`,
 })
 
 export const REPOSITION = (type, count) => {
@@ -60,9 +60,13 @@ export const ADVISOR_ARTILLERY_STRIKE = makeWeapon({
     effect: 'KILL',
     desc: oncePerActivation,
     traits: [
-        TRAIT_GRANTED_SCAN_STAT,
         TRAIT_CLUSTERED(3),
         TRAIT_EXTREME_RANGE,
+        TRAIT_GRANTED_UNITS([
+            WIDOW_SCOUT.full_name,
+            PHANTOM.full_name,
+            AURORA.full_name,
+        ]),
     ],
 })
 
@@ -77,5 +81,5 @@ export const UNIT_RESTRICTIONS = (units) => {
 export const PRIORITIZE = makeCommandAbility({
     name: 'Prioritize',
     cost: COST_COMMAND,
-    desc: 'You may swap the Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved.',
+    desc: 'You may swap the Priority Rolls of 2 friendly Units participating in a Reaction Engagement immediately after all Priority Rolls are resolved. This may be used multiple times.',
 })
