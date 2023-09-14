@@ -3,10 +3,9 @@
     {{#content 'page-content'}}
 
         {{#> cards-print-header
-            title='Downsync Unit Cards'
+            title='Unit Cards'
             print_all_url='/unit-cards-print.html'
-
-            download_all_url='/assets/pdfs/unit-cards-print.pdf'
+            pdf_all_url='/assets/pdfs/unit-cards-print.pdf'
         }}
 
             {{#*inline 'view_url'}}
@@ -26,7 +25,7 @@
             {{/inline}}
 
             {{#*inline 'other_faction_print_url'}}/cards-print/{{slug}}.html{{/inline}}
-            {{#*inline 'faction_cards_pdf'}}/assets/pdfs/{{slug}}-unit-cards-print.pdf{{/inline}}
+            {{#*inline 'pdf_faction_url'}}/assets/pdfs/{{slug}}-cards-print.pdf{{/inline}}
 
         {{/cards-print-header}}
 

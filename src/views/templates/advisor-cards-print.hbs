@@ -2,11 +2,31 @@
 
     {{#content 'page-content'}}
 
-        {{> cards-print-header
-            title='Downsync Advisor Cards'
+        {{#> cards-print-header
+            title='Advisor Cards'
             print_all_url='/advisor-cards-print.html'
+            pdf_all_url='/assets/pdfs/advisor-cards-print.pdf'
         }}
+            {{#*inline 'view_url'}}
+                {{~#if faction~}}
+                    /advisor-cards.html#{{faction_slug}}
+                    {{~else~}}
+                    /advisor-cards.html
+                {{~/if~}}
+            {{/inline}}
 
+            {{#*inline 'print_url'}}
+                {{~#if faction~}}
+                    /advisor-cards-print/{{faction_slug}}.html
+                    {{~else~}}
+                    /advisor-cards-print.html
+                {{~/if~}}
+            {{/inline}}
+
+            {{#*inline 'other_faction_print_url'}}/advisor-cards-print/{{slug}}.html{{/inline}}
+            {{#*inline 'pdf_faction_url'}}/assets/pdfs/{{slug}}-advisor-cards-print.pdf{{/inline}}
+
+        {{/cards-print-header}}
         <div class="page-previews-container" data-bs-theme="light">
             <div class="output-container card-grid-container-to-scale-print">
                 {{#each cardPages as |cardPage|}}
