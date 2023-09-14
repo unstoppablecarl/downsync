@@ -1,39 +1,48 @@
 {{#extend 'layout/html' title='Starter Unit Cards Print' body_class="body-print"}}
 
     {{#content 'page-content'}}
-        <div class="header">
-            <div class="container-ex">
-                <h1>Downsync Starter Set Unit Cards</h1>
+        {{#> cards-print-header
+            title='Unit Cards'
+            print_all_url='/unit-cards-starter-print.html'
+        }}
 
-                {{> starter-set-top-content}}
+            {{#*inline 'view_url'}}
+                {{~#if faction~}}
+                    /unit-cards-starter.html#{{faction_slug}}
+                    {{~else~}}
+                    /unit-cards-starter.html
+                {{~/if~}}
+            {{/inline}}
 
-                <div class="row">
-                    <div class="col">
-                        <div id="vue-card-filter" class="m-1 d-inline-block"></div>
-                        {{> btn-starter-view view='Print'}}
-                    </div>
-                    <div class="col">
-                        <div class="float-md-end text-end m-1">
-                            <a class="btn btn-primary"
-                               href="/assets/pdfs/unit-cards-starter-print.pdf">Download Starter Unit Cards
-                                {{> svg-icon icon='pdf'}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {{#*inline 'print_url'}}
+                {{~#if faction~}}
+                    /cards-print/{{faction_slug}}.html
+                    {{~else~}}
+                    /unit-cards-starter-print.html
+                {{~/if~}}
+            {{/inline}}
+
+            {{#*inline 'pdf_url'}}
+                {{~#if faction~}}
+                    /assets/pdfs/{{faction_slug}}-cards-starter-print.pdf
+                    {{~else~}}
+                    /assets/pdfs/unit-cards-starter-print.pdf
+                {{~/if~}}
+            {{/inline}}
+
+            {{#*inline 'other_faction_print_url'}}/unit-cards-starter-print/{{slug}}.html{{/inline}}
+
+        {{/cards-print-header}}
 
         <div class="page-previews-container" data-bs-theme="light">
             <div class="output-container card-grid-container-to-scale-print">
                 {{#each cardPages as |cardPage|}}
-                    <div class="faction-{{faction_slug}}">
-                        <div class="page page-preview page-letter" style="background-color:white">
-                            <div class="page-card-grid">
-                                {{#each cardPage.factionCards as |cardData|}}
-                                    {{> (lookup cardData 'template') cardData}}
-                                {{/each}}
-                            </div>
+
+                    <div class="page page-preview page-letter" style="background-color:white">
+                        <div class="page-card-grid">
+                            {{#each cardPage as |cardData|}}
+                                {{> (lookup cardData 'template') cardData}}
+                            {{/each}}
                         </div>
                     </div>
                 {{/each}}

@@ -7,11 +7,14 @@
                 {{> starter-set-top-content}}
                 <div class="row">
                     <div class="col">
-                        <div id="vue-card-filter" class="m-1 d-inline-block"></div>
+                        <div id="vue-card-filter" class="m-1 d-inline-block"
+                             data-print_all_url="/unit-cards-starter-print.html"
+                             data-print_faction_dir="/unit-cards-starter-print"
+                             data-web_url="/unit-cards-starter.html"
+                        ></div>
                         {{> btn-starter-view view='Web'}}
                     </div>
                     <div class="col">
-
                     </div>
                 </div>
             </div>
@@ -19,7 +22,7 @@
 
         <div class="web-cards primary-content">
             {{#each cardData}}
-                <div class="container">
+                <div class="container faction-{{faction_slug}}">
                     <h2 class="faction-heading">{{faction}}</h2>
                 </div>
                 <div class="faction-cards faction-{{faction_slug}}">

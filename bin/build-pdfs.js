@@ -54,6 +54,11 @@ server.listen(8080, async () => {
             url: domain + '/advisor-cards-print/' + faction_slug + '.html',
             output: faction_slug + '-advisor-cards-print',
         })
+
+        pages.push({
+            url: domain + '/unit-cards-starter-print/' + faction_slug + '.html',
+            output: faction_slug + '-unit-cards-starter-print',
+        })
     })
 
     const browser = await puppeteer.launch({
