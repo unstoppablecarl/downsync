@@ -807,6 +807,11 @@ When a Unit or Ping is **Placed** it may not be placed within 2" of an enemy Pin
 </div>
 </div>
 
+### Rule Specificity
+
+Rules text on Unit Cards take precedence over rulebook text.
+Unit Cards are intended to modify the core rules of the game.
+
 ## Unit Tokens
 
 Each Unit has tokens represented by 8mm colored cubes.
