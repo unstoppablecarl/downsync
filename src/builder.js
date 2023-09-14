@@ -7,6 +7,7 @@ import Handlebars from 'handlebars'
 import {
     ALL_UNITS,
     cardsToPages,
+    FACTION_ADVISORS,
     FACTION_UNITS,
     prepareSplitCards,
 } from './views/templates-data/support/page-card-data.js'
@@ -31,7 +32,8 @@ export default async function (baseRootData = {}) {
     return Promise.all([
         buildPages(templates, rootData),
         buildSingleCardPages(rootData),
-        buildFactionCardPages(rootData),
+        buildFactionUnitCardPages(rootData),
+        buildFactionAdvisorCardPages(rootData),
     ])
 }
 
@@ -43,7 +45,7 @@ function buildPages(templates, rootData) {
     )
 }
 
-async function buildFactionCardPages(rootData) {
+async function buildFactionUnitCardPages(rootData) {
 
     let contents = await fs.promises.readFile('./src/views/templates/unit-cards-print.hbs', 'utf-8')
     let template = Handlebars.compile(contents)
@@ -63,6 +65,35 @@ async function buildFactionCardPages(rootData) {
             const pageTitle = `${faction} Unit Cards Print`
 
             let dest = `${dist}/cards-print/${faction_slug}.html`
+            let data = Object.assign({}, rootData, {
+                faction,
+                faction_slug,
+                cardPages,
+                pageTitle,
+            })
+            let contents = template(data)
+
+            return fs.promises.writeFile(dest, contents, 'utf8')
+        }),
+    )
+}
+
+async function buildFactionAdvisorCardPages(rootData) {
+
+    let contents = await fs.promises.readFile('./src/views/templates/advisor-cards-print.hbs', 'utf-8')
+    let template = Handlebars.compile(contents)
+
+    return Promise.all(
+        FACTION_ADVISORS.map(({
+                                  faction,
+                                  faction_slug,
+                                  factionCards,
+                              }) => {
+
+            const cardPages = cardsToPages(factionCards, 9)
+            const pageTitle = `${faction} Advisor Cards Print`
+
+            let dest = `${dist}/advisor-cards-print/${faction_slug}.html`
             let data = Object.assign({}, rootData, {
                 faction,
                 faction_slug,
@@ -138,6 +169,7 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
 async function prepareDirs() {
     let factionSlugs = getFactionSlugs()
     await makeDir(dist + '/cards-print')
+    await makeDir(dist + '/advisor-cards-print')
 
     await makeDir(dist + '/cards')
     await makeDir(dist + '/html-to-pdf')

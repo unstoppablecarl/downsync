@@ -25,6 +25,9 @@ server.listen(8080, async () => {
 
     const pages = [
         {
+            url: domain + '/advisor-cards-print.html',
+        },
+        {
             url: domain + '/unit-cards-print.html',
         },
         {
@@ -45,6 +48,11 @@ server.listen(8080, async () => {
         pages.push({
             url: domain + '/cards-print/' + faction_slug + '.html',
             output: faction_slug + '-cards-print',
+        })
+
+        pages.push({
+            url: domain + '/advisor-cards-print/' + faction_slug + '.html',
+            output: faction_slug + '-advisor-cards-print',
         })
     })
 

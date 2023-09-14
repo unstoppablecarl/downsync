@@ -42,7 +42,7 @@
                 View: Web
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" :href="`/unit-cards.html#${currentHash}`">Web</a></li>
+                <li><a class="dropdown-item" :href="`${web_url}#${currentHash}`">Web</a></li>
                 <li><a class="dropdown-item" :href="printUrl">Print</a></li>
             </ul>
         </div>
@@ -55,6 +55,9 @@ let count = 0
 export default {
     props: [
         'factions',
+        'web_url',
+        'print_all_url',
+        'print_faction_dir',
     ],
     inject: ['SVG_SPRITE_PATH'],
     data() {
@@ -114,10 +117,10 @@ export default {
         },
         printUrl() {
             if (this.checkedFactions.length === 1) {
-                return `/cards-print/${this.checkedFactions}.html`
+                return `${this.print_faction_dir}/${this.checkedFactions}.html`
             }
 
-            return '/unit-cards-print.html'
+            return this.print_all_url
         },
     },
     methods: {

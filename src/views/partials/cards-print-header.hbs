@@ -1,7 +1,7 @@
 <div class="header">
     <div class="container-ex">
         <h1>
-            Downsync Unit Cards
+            {{title}}
         </h1>
         {{#if faction}}
             <h3>{{faction}}</h3>
@@ -20,24 +20,29 @@
 
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/unit-cards-print.html">All</a></li>
+                        <li><a class="dropdown-item" href="{{print_all_url}}">All</a></li>
                         {{#each factions}}
-                            <li><a class="dropdown-item" href="/cards-print/{{faction_slug}}.html">{{faction}}</a></li>
+                            <li><a class="dropdown-item"
+                                   href="/advisor-cards-print/{{faction_slug}}.html">{{faction}}</a></li>
                         {{/each}}
                     </ul>
                 </div>
-                {{> btn-cards-view view='Print' view_url='/unit-cards.html' view_hash=faction_slug print_url='/unit-cards-print.html' }}
+                {{> btn-cards-view view='Print'
+                    view_url='/advisor-cards.html'
+                    view_hash=faction_slug
+                    print_url='/advisoer-cards-print.html'
+                }}
 
             </div>
             <div class="col">
                 <div class="float-md-end text-end m-1">
                     {{#if faction}}
                         <a class="btn btn-primary"
-                           href="/assets/pdfs/{{faction_slug}}-cards-print.pdf">Download {{faction}} Unit Cards
+                           href="/assets/pdfs/{{faction_slug}}-advisor-cards-print.pdf">Download {{faction}} Unit Cards
                             {{> svg-icon icon='pdf'}}
                         </a>
                     {{else}}
-                        <a class="btn btn-primary" href="/assets/pdfs/unit-cards-print.pdf">Download Unit Cards
+                        <a class="btn btn-primary" href="/assets/pdfs/advisor-cards-print.pdf">Download Unit Cards
                             {{> svg-icon icon='pdf'}}
                         </a>
                     {{/if}}

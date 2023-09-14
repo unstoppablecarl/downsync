@@ -1,17 +1,27 @@
 import { makeAction, makeAdvisor } from '../support/factories.js'
-import { COALITION_CARD_DEFAULTS, SENTINEL_HUNTER, SENTINEL_TAGGER } from './coalition-units.js'
+import { COALITION_CARD_DEFAULTS } from './coalition-units.js'
 import { ADVISOR_ARTILLERY_STRIKE, UNIT_RESTRICTIONS } from '../cards-data/command-abilities.js'
 import { REGROUP } from '../cards-data/unit-traits.js'
 
-export const WOLF_AI_ADVISOR = make({
-    name: 'Wolf AI',
-    slug: 'wolf_ai',
-    type: 'Combined Arms Specialist',
+export const HAWK_AI_ADVISOR = make({
+    name: 'Hawk AI',
+    slug: 'hawk_ai',
+    type: 'Support Specialist',
     command_points: 7,
     command_abilities: [],
     actions: [
         ADVISOR_ARTILLERY_STRIKE,
     ],
+    command_passive_abilities: [],
+})
+
+export const WOLF_AI_ADVISOR = make({
+    name: 'Wolf AI',
+    slug: 'wolf_ai',
+    type: 'Infantry Specialist',
+    command_points: 7,
+    command_abilities: [],
+    actions: [],
     command_passive_abilities: [
         makeAction({
             name: 'Unit Upgrades',
@@ -25,13 +35,12 @@ export const WOLF_AI_ADVISOR = make({
             ],
         }),
         UNIT_RESTRICTIONS([
-            SENTINEL_TAGGER.full_name,
-            SENTINEL_HUNTER.full_name,
         ]),
     ],
 })
 
 export const COALITION_ADVISORS = [
+    HAWK_AI_ADVISOR,
     WOLF_AI_ADVISOR,
 ]
 

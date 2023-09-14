@@ -13,6 +13,8 @@ import {
     REPUBLIC_FACTION_NAME,
     REPUBLIC_FACTION_SLUG,
 } from '../../../data/constants.js'
+import { COALITION_ADVISORS } from '../../../data/cards/coalition-advisors.js'
+import { REPUBLIC_ADVISORS } from '../../../data/cards/republic-advisors.js'
 
 const TIMESTAMP = getTimestamp()
 
@@ -37,6 +39,19 @@ export const FACTION_UNITS = [
     //    factionCards: prepareCards(MERCENARY_UNITS),
     //},
 ]
+export const FACTION_ADVISORS = [
+    {
+        faction: COALITION_FACTION_NAME,
+        faction_slug: COALITION_FACTION_SLUG,
+        factionCards: prepareCards(COALITION_ADVISORS),
+    },
+    {
+        faction: REPUBLIC_FACTION_NAME,
+        faction_slug: REPUBLIC_FACTION_SLUG,
+        factionCards: prepareCards(REPUBLIC_ADVISORS),
+    },
+]
+export const ALL_ADVISORS = FACTION_ADVISORS.flatMap((faction) => faction.factionCards)
 
 export const FACTION_DEMO_UNITS = [
     {
