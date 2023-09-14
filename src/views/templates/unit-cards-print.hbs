@@ -2,12 +2,33 @@
 
     {{#content 'page-content'}}
 
-        {{> unit-cards-print-header}}
-
-        {{> cards-print-header
+        {{#> cards-print-header
             title='Downsync Unit Cards'
             print_all_url='/unit-cards-print.html'
+
+            download_all_url='/assets/pdfs/unit-cards-print.pdf'
         }}
+
+            {{#*inline 'view_url'}}
+                {{~#if faction~}}
+                    /unit-cards.html#{{faction_slug}}
+                    {{~else~}}
+                    /unit-cards.html
+                {{~/if~}}
+            {{/inline}}
+
+            {{#*inline 'print_url'}}
+                {{~#if faction~}}
+                    /cards-print/{{faction_slug}}.html
+                    {{~else~}}
+                    /unit-cards-print.html
+                {{~/if~}}
+            {{/inline}}
+
+            {{#*inline 'other_faction_print_url'}}/cards-print/{{slug}}.html{{/inline}}
+            {{#*inline 'faction_cards_pdf'}}/assets/pdfs/{{slug}}-unit-cards-print.pdf{{/inline}}
+
+        {{/cards-print-header}}
 
         <div class="page-previews-container" data-bs-theme="light">
             <div class="output-container card-grid-container-to-scale-print">

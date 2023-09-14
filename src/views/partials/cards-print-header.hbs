@@ -21,28 +21,37 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{print_all_url}}">All</a></li>
-                        {{#each factions}}
-                            <li><a class="dropdown-item"
-                                   href="/advisor-cards-print/{{faction_slug}}.html">{{faction}}</a></li>
+
+                        {{#each factions as | fac |}}
+                            <li>
+                                <a class="dropdown-item"
+                                   href="{{#> other_faction_print_url
+                                       slug=fac.faction_slug}}{{/other_faction_print_url}}">{{fac.faction}}</a></li>
                         {{/each}}
                     </ul>
                 </div>
-                {{> btn-cards-view view='Print'
-                    view_url='/advisor-cards.html'
-                    view_hash=faction_slug
-                    print_url='/advisoer-cards-print.html'
-                }}
+                <div class="dropdown my-1 me-1 d-inline-block">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        View: Print
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{#> view_url}}{{/view_url}}">Web</a></li>
+                        <li><a class="dropdown-item" href="{{#> print_url}}{{/print_url}}">Print</a></li>
+                    </ul>
+                </div>
 
             </div>
             <div class="col">
                 <div class="float-md-end text-end m-1">
                     {{#if faction}}
                         <a class="btn btn-primary"
-                           href="/assets/pdfs/{{faction_slug}}-advisor-cards-print.pdf">Download {{faction}} Unit Cards
+                           href="{{#> faction_cards_pdf
+                               slug=faction_slug}}{{/faction_cards_pdf}}">Download {{faction}} Unit Cards
                             {{> svg-icon icon='pdf'}}
                         </a>
                     {{else}}
-                        <a class="btn btn-primary" href="/assets/pdfs/advisor-cards-print.pdf">Download Unit Cards
+                        <a class="btn btn-primary" href="{{download_all_url}}">Download Unit Cards
                             {{> svg-icon icon='pdf'}}
                         </a>
                     {{/if}}
