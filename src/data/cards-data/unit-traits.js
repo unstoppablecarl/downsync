@@ -108,18 +108,14 @@ export const EMERGENCY_CM = make({
     desc: `This Unit begins the game with 1 Emergency Countermeasure Token (indicated as +1 under CM). Emergency CMs automatically succeed and do not regenerate.`,
 })
 
-export const CLOSE_AND_PERSONAL = make({
-    name: 'Close and Personal',
-    note: '+1 TARG',
-    desc: 'This Unit gains an additional +1 TARG against targets within short range.',
-})
 export const COVERT = makeTrait({
     name: 'Covert',
     desc: `When a this Unit is Revealed in your Reveal Phase, you may pay ${COST_COMMAND}, if you do it gains a Stealth Token.`,
 })
 export const REGROUP = makeTrait({
     name: 'Regroup',
-    desc: 'When this Unit has an Overwatch Token, it may be Placed within 3" of their current position immediately after Taskforce Designation (including in Reaction Engagements).',
+    note: '6"',
+    desc: 'When this Unit has an Overwatch Token, it may be Placed within 6" of their current position immediately after Taskforce Designation (including in Reaction Engagements).',
 })
 
 function make(trait) {
