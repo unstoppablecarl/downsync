@@ -25,10 +25,12 @@ export const FACTIONS = [
     {
         faction: COALITION_FACTION_NAME,
         faction_slug: COALITION_FACTION_SLUG,
+        svg_icon: COALITION_FACTION_SVG_SPRITE,
     },
     {
         faction: REPUBLIC_FACTION_NAME,
         faction_slug: REPUBLIC_FACTION_SLUG,
+        svg_icon: COALITION_FACTION_SVG_SPRITE,
     },
     //{
     //    faction: 'Nomad',

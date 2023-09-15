@@ -7,66 +7,67 @@ import {
 } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
-import {
-    COALITION_FACTION_NAME,
-    COALITION_FACTION_SLUG,
-    REPUBLIC_FACTION_NAME,
-    REPUBLIC_FACTION_SLUG,
-} from '../../../data/constants.js'
+import { COALITION_FACTION_SLUG, FACTIONS, REPUBLIC_FACTION_SLUG } from '../../../data/constants.js'
 import { COALITION_ADVISORS } from '../../../data/cards/coalition-advisors.js'
 import { REPUBLIC_ADVISORS } from '../../../data/cards/republic-advisors.js'
 
 const TIMESTAMP = getTimestamp()
 
-export const FACTION_UNITS = [
-    {
-        faction: COALITION_FACTION_NAME,
-        faction_slug: COALITION_FACTION_SLUG,
-        factionCards: prepareCards(COALITION_UNITS),
-    },
-    {
-        faction: REPUBLIC_FACTION_NAME,
-        faction_slug: REPUBLIC_FACTION_SLUG,
-        factionCards: prepareCards(REPUBLIC_UNITS),
-    },
-    //{
-    //    faction: 'Nomad',
-    //    faction_slug: 'nomad',
-    //    factionCards: [],
-    //},
-    //{
-    //    faction: 'Mercenaries',
-    //    factionCards: prepareCards(MERCENARY_UNITS),
-    //},
-]
-export const FACTION_ADVISORS = [
-    {
-        faction: COALITION_FACTION_NAME,
-        faction_slug: COALITION_FACTION_SLUG,
-        factionCards: prepareCards(COALITION_ADVISORS),
-    },
-    {
-        faction: REPUBLIC_FACTION_NAME,
-        faction_slug: REPUBLIC_FACTION_SLUG,
-        factionCards: prepareCards(REPUBLIC_ADVISORS),
-    },
-]
-export const ALL_ADVISORS = FACTION_ADVISORS.flatMap((faction) => faction.factionCards)
+const FACTION_DATA = (() => {
 
-export const FACTION_DEMO_UNITS = [
-    {
-        faction: COALITION_FACTION_NAME,
-        faction_slug: COALITION_FACTION_SLUG,
-        factionCards: prepareCards(COALITION_DEMO_UNITS),
-    },
-    {
-        faction: REPUBLIC_FACTION_NAME,
-        faction_slug: REPUBLIC_FACTION_SLUG,
-        factionCards: prepareCards(REPUBLIC_DEMO_UNITS),
-    },
-]
+    const FACTION_CARD_DATA = {
+        [COALITION_FACTION_SLUG]: {
+            units: COALITION_UNITS,
+            advisors: COALITION_ADVISORS,
+            demo_units: COALITION_DEMO_UNITS,
+        },
+        [REPUBLIC_FACTION_SLUG]: {
+            units: REPUBLIC_UNITS,
+            advisors: REPUBLIC_ADVISORS,
+            demo_units: REPUBLIC_DEMO_UNITS,
+        },
+    }
 
+    let result = FACTIONS.map((faction) => {
+        return Object.assign({ faction }, FACTION_CARD_DATA[faction.faction_slug])
+    })
+
+    return Object.freeze(result)
+})()
+
+export const FACTION_UNITS = FACTION_DATA.map(({
+                                                   faction,
+                                                   units,
+                                               }) => {
+    return {
+        faction: faction.faction,
+        faction_slug: faction.faction_slug,
+        factionCards: prepareCards(units),
+    }
+})
 export const ALL_UNITS = FACTION_UNITS.flatMap((faction) => faction.factionCards)
+export const FACTION_DEMO_UNITS = FACTION_DATA.map(({
+                                                        faction,
+                                                        demo_units,
+                                                    }) => {
+    return {
+        faction: faction.faction,
+        faction_slug: faction.faction_slug,
+        factionCards: prepareCards(demo_units),
+    }
+})
+
+export const FACTION_ADVISORS = FACTION_DATA.map(({
+                                                      faction,
+                                                      advisors,
+                                                  }) => {
+    return {
+        faction: faction.faction,
+        faction_slug: faction.faction_slug,
+        factionCards: prepareCards(advisors),
+    }
+})
+export const ALL_ADVISORS = FACTION_ADVISORS.flatMap((faction) => faction.factionCards)
 
 export function cardsToPages(cards, cardsPerPage) {
     return chunk(cards, cardsPerPage)

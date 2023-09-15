@@ -1,14 +1,14 @@
 <template>
     <div class="app-card-filter">
         <div class="dropdown my-1 me-1 d-inline-block">
-            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown"
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     data-bs-auto-close="outside"
                     aria-expanded="false">
-
-                Filter Factions
                 <svg class="bi" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false">
                     <use :href="SVG_SPRITE_PATH + '#filter'"></use>
                 </svg>
+                Filter Factions
+
 
             </button>
             <form class="dropdown-menu p-4">
@@ -16,7 +16,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" v-model="allSelected" @change="onCheckAll"
                                id="filter-all"/>
-                        <label class="form-check-label">All</label>
+                        <label class="form-check-label" for="filter-all">All</label>
                     </div>
                 </div>
                 <div class="mb-3" v-for="faction in factions">
@@ -37,13 +37,14 @@
         </div>
 
         <div class="dropdown my-1 me-1 d-inline-block">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-               aria-expanded="false">
-                View: Web
-            </a>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                View: {{ current_view }}
+            </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" :href="`${web_url}#${currentHash}`">Web</a></li>
-                <li><a class="dropdown-item" :href="printUrl">Print</a></li>
+                <li><a class="dropdown-item" :href="`${print_url}#${currentHash}`">Print</a></li>
+                <li><a class="dropdown-item" :href="`${print_landscape_url}#${currentHash}`">Print Landscape</a></li>
             </ul>
         </div>
     </div>
@@ -56,8 +57,9 @@ export default {
     props: [
         'factions',
         'web_url',
-        'print_all_url',
-        'print_faction_dir',
+        'print_url',
+        'print_landscape_url',
+        'current_view',
     ],
     inject: ['SVG_SPRITE_PATH'],
     data() {
@@ -117,10 +119,10 @@ export default {
         },
         printUrl() {
             if (this.checkedFactions.length === 1) {
-                return `${this.print_faction_dir}/${this.checkedFactions}.html`
+                return `${this.print_url}#${this.checkedFactions}`
             }
 
-            return this.print_all_url
+            return this.print_url
         },
     },
     methods: {
