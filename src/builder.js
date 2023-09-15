@@ -5,6 +5,7 @@ import util from 'util'
 import { buildRootData } from './views/root-template-data.js'
 import Handlebars from 'handlebars'
 import { ALL_UNITS } from './views/templates-data/support/page-card-data.js'
+import { FEATURE_ADVISOR_CARD } from './versioning.js'
 
 const dist = './dist'
 const tplDataPath = './src/views/templates-data'
@@ -29,6 +30,18 @@ export default async function (baseRootData = {}) {
 }
 
 function buildPages(templates, rootData) {
+
+    let exclude = [
+        'advisor-cards',
+        'advisor-cards-print',
+        'advisor-cards-print-landscape',
+    ]
+    if (!FEATURE_ADVISOR_CARD) {
+        exclude.forEach((slug) => {
+            delete templates[slug]
+        })
+    }
+
     return Promise.all(
         Object.keys(templates).map((key) => {
             return renderTemplate(templates, key, rootData)

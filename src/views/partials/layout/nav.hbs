@@ -18,16 +18,11 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/unit-cards.html">Unit Cards</a></li>
-                        <li><a class="dropdown-item" href="/unit-cards-print.html">Unit Cards Print</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="/unit-cards-starter.html">Unit Cards Starter</a>
-                        <li><a class="dropdown-item" href="/unit-cards-starter-print.html">Unit Cards Starter Print</a>
-                        </li>
-                        <li><a class="dropdown-item"
-                               href="/unit-cards-starter-print-landscape.html">Unit Cards Starter Print Landscape</a>
-                        </li>
+                    <li><a class="dropdown-item" href="/unit-cards-starter.html">Starter Set Unit Cards</a>
+                        {{#if FEATURE_ADVISOR_CARD}}
+                        <li><a class="dropdown-item" href="/advisor-cards.html">Advisor Cards</a>
+                        {{/if}}
+                    </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

@@ -3,6 +3,7 @@ import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
 import { FACTIONS } from '../src/data/constants.js'
+import { FEATURE_ADVISOR_CARD } from '../src/versioning.js'
 
 const pdfGeneratedDir = './static-assets/pdfs'
 
@@ -45,19 +46,19 @@ server.listen(8080, async () => {
             'unit-cards-starter-print-landscape',
         ]
 
+        if (FEATURE_ADVISOR_CARD) {
+            slugs = slugs.concat([
+                'advisor-cards-print',
+                'advisor-cards-print-landscape',
+            ])
+        }
+
         slugs.forEach((slug) => {
             pages.push({
                 url: `${domain}/${slug}.html#${faction_slug}`,
                 output: `${faction_slug}-${slug}`,
             })
         })
-
-        //
-        //pages.push({
-        //    url: domain + '/advisor-cards-print/' + faction_slug + '.html',
-        //    output: faction_slug + '-advisor-cards-print',
-        //})
-        //
     })
 
     const browser = await puppeteer.launch({
