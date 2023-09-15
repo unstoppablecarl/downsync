@@ -12,7 +12,7 @@
         {{#each factions as |fac|}}
             <li>
                 <a class="dropdown-item"
-                   href="{{#> download_faction_url slug=fac.faction_slug}}{{/download_faction_url}}"
+                   href="{{> download_faction_url slug=fac.faction_slug}}"
                 >
 
                     {{> svg-icon icon='pdf'}}
@@ -30,7 +30,7 @@
         {{#each factions as |fac|}}
             <li>
                 <a class="dropdown-item"
-                   href="{{#> download_faction_landscape_url slug=fac.faction_slug}}{{/download_faction_landscape_url}}"
+                   href="{{> download_faction_landscape_url slug=fac.faction_slug}}"
                 >
 
                     {{> svg-icon icon='pdf'}}

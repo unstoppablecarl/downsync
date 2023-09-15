@@ -1,31 +1,13 @@
 {{#extend 'layout/html' title='Advisor Cards'}}
 
     {{#content 'page-content'}}
-
-        <div class="header">
-            <div class="container-ex">
-                <h1>Downsync Advisor Cards</h1>
-                <div class="row">
-                    <div class="col">
-                        <div id="vue-card-filter"
-                             data-print_all_url="/advisor-cards-print.html"
-                             data-print_faction_dir="/advisor-cards-print"
-                             data-web_url="/advisor-cards.html"
-                        ></div>
-                    </div>
-                    <div class="col">
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{> advisor-cards-header current_view='Web'}}
 
         <div class="web-cards primary-content">
-            {{#each cardData}}
-                <div class="faction-{{faction_slug}}">
-
+            {{#each cardData as |fac|}}
+                <div class="faction-{{fac.faction_slug}}">
                     <div class="container">
-                        <h2 class="faction-heading">{{faction}}</h2>
+                        <h2 class="faction-heading">{{> svg-icon icon=fac.svg_icon}}{{fac.faction}}</h2>
                     </div>
                     <div class="faction-cards">
                         {{#each factionCards as |singleCardData|}}
