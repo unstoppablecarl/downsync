@@ -14,11 +14,12 @@ export const COST_FREE = 'COST_FREE'
 export const COST_COMMAND_X2 = 'COST_COMMAND_X2'
 
 export const COALITION_FACTION_NAME = 'Coalition'
+export const COALITION_FACTION_SLUG = 'coalition'
+export const COALITION_FACTION_SVG_SPRITE = 'faction_' + COALITION_FACTION_SLUG
 
 export const REPUBLIC_FACTION_NAME = 'Republic of Terra'
-
-export const COALITION_FACTION_SLUG = 'coalition'
 export const REPUBLIC_FACTION_SLUG = 'republic-of-terra'
+export const REPUBLIC_FACTION_SVG_SPRITE = 'faction_' + REPUBLIC_FACTION_SLUG
 
 export const FACTIONS = [
     {

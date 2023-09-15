@@ -15,7 +15,14 @@ import {
     TAG_CANNON,
     TARGET_LOCK,
 } from '../cards-data/weapons.js'
-import { COALITION_FACTION_NAME, COALITION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
+import {
+    COALITION_FACTION_NAME,
+    COALITION_FACTION_SLUG,
+    COALITION_FACTION_SVG_SPRITE,
+    SIZE_LARGE,
+    SIZE_MEDIUM,
+    SIZE_SMALL,
+} from '../constants.js'
 
 import {
     ADAPTIVE_CAMO,
@@ -38,7 +45,7 @@ import { makeUnit } from '../support/factories.js'
 export const COALITION_CARD_DEFAULTS = {
     faction: COALITION_FACTION_NAME,
     faction_slug: COALITION_FACTION_SLUG,
-    faction_svg_sprite: 'faction_coalition',
+    faction_svg_sprite: COALITION_FACTION_SVG_SPRITE,
 }
 
 export const WIDOW_SCOUT = make({

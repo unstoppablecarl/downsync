@@ -1,6 +1,7 @@
 import {
     REPUBLIC_FACTION_NAME,
     REPUBLIC_FACTION_SLUG,
+    REPUBLIC_FACTION_SVG_SPRITE,
     SIZE_LARGE,
     SIZE_MEDIUM,
     SIZE_SMALL,
@@ -37,7 +38,7 @@ import { makeUnit, modifyAction } from '../support/factories.js'
 export const REPUBLIC_CARD_DEFAULTS = {
     faction: REPUBLIC_FACTION_NAME,
     faction_slug: REPUBLIC_FACTION_SLUG,
-    faction_svg_sprite: 'faction_republic',
+    faction_svg_sprite: REPUBLIC_FACTION_SVG_SPRITE,
 }
 
 export const VECTOR_SQUAD = make({
