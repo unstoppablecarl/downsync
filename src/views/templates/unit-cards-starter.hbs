@@ -3,18 +3,7 @@
     {{#content 'page-content'}}
         {{> unit-cards-starter-header current_view='Web'}}
 
-        <div class="web-cards primary-content">
-            {{#each cardData}}
-                <div class="container faction-{{faction_slug}}">
-                    <h2 class="faction-heading">{{faction}}</h2>
-                </div>
-                <div class="faction-cards faction-{{faction_slug}}">
-                    {{#each factionCards as |singleCardData|}}
-                        {{> (lookup singleCardData 'template') singleCardData}}
-                    {{/each}}
-                </div>
-            {{/each}}
-        </div>
+        {{> cards-view-grid}}
 
     {{/content}}
 {{/extend}}

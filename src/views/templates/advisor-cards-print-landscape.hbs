@@ -11,22 +11,7 @@
 
         {{> advisor-cards-header current_view='Print Landscape'}}
 
-        <div class="page-previews-container" data-bs-theme="light">
-            <div class="output-container card-grid-container-flex-landscape-print">
-                {{#each factionCards as |fac|}}
-                    {{#each cardPages as |cardPage|}}
-                        <div class="page-preview page-letter-landscape faction-{{fac.faction_slug}}"
-                             style="background-color:white">
-                            <div class="page-card-grid">
-                                {{#each cardPage as |cardData|}}
-                                    {{> (lookup cardData 'template') cardData}}
-                                {{/each}}
-                            </div>
-                        </div>
-                    {{/each}}
-                {{/each}}
-            </div>
-        </div>
+        {{> cards-print-pages-landscape}}
 
     {{/content}}
 {{/extend}}

@@ -3,20 +3,7 @@
     {{#content 'page-content'}}
         {{> advisor-cards-header current_view='Web'}}
 
-        <div class="web-cards primary-content">
-            {{#each cardData as |fac|}}
-                <div class="faction-{{fac.faction_slug}}">
-                    <div class="container">
-                        <h2 class="faction-heading">{{> svg-icon icon=fac.svg_icon}}{{fac.faction}}</h2>
-                    </div>
-                    <div class="faction-cards">
-                        {{#each factionCards as |singleCardData|}}
-                            {{> (lookup singleCardData 'template') singleCardData}}
-                        {{/each}}
-                    </div>
-                </div>
-            {{/each}}
-        </div>
+        {{> cards-view-grid}}
 
     {{/content}}
 {{/extend}}
