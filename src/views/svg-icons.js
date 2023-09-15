@@ -19,8 +19,13 @@ export const svgIcons = {
     check2: bootstrapDir + '/check2.svg',
     moon_stars_fill: bootstrapDir + '/moon-stars-fill.svg',
     circle_half: bootstrapDir + '/circle-half.svg',
+
+    image_portrait: fontAwesomeDir + '/solid/image-portrait.svg',
+    image_landscape: fontAwesomeDir + '/solid/image.svg',
+
     [COALITION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-coalition.svg',
     [REPUBLIC_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-republic.svg',
+
 }
 
 export const svgIconsReversed = {}
