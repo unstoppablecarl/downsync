@@ -1,11 +1,11 @@
 <div class="web-cards primary-content">
-    {{#each cardData as |fac|}}
+    {{#each factionCards as |fac|}}
         <div class="faction-{{fac.faction_slug}}">
             <div class="container">
                 <h2 class="faction-heading">{{> svg-icon icon=fac.svg_icon}}{{fac.faction}}</h2>
             </div>
             <div class="faction-cards">
-                {{#each factionCards as |singleCardData|}}
+                {{#each cards as |singleCardData|}}
                     {{> (lookup singleCardData 'template') singleCardData}}
                 {{/each}}
             </div>

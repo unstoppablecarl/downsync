@@ -42,10 +42,10 @@ export const FACTION_UNITS = FACTION_DATA.map(({
     return {
         faction: faction.faction,
         faction_slug: faction.faction_slug,
-        factionCards: prepareCards(units),
+        cards: prepareCards(units),
     }
 })
-export const ALL_UNITS = FACTION_UNITS.flatMap((faction) => faction.factionCards)
+export const ALL_UNITS = FACTION_UNITS.flatMap((faction) => faction.cards)
 export const FACTION_DEMO_UNITS = FACTION_DATA.map(({
                                                         faction,
                                                         demo_units,
@@ -53,7 +53,7 @@ export const FACTION_DEMO_UNITS = FACTION_DATA.map(({
     return {
         faction: faction.faction,
         faction_slug: faction.faction_slug,
-        factionCards: prepareCards(demo_units),
+        cards: prepareCards(demo_units),
     }
 })
 
@@ -64,10 +64,10 @@ export const FACTION_ADVISORS = FACTION_DATA.map(({
     return {
         faction: faction.faction,
         faction_slug: faction.faction_slug,
-        factionCards: prepareCards(advisors),
+        cards: prepareCards(advisors),
     }
 })
-export const ALL_ADVISORS = FACTION_ADVISORS.flatMap((faction) => faction.factionCards)
+export const ALL_ADVISORS = FACTION_ADVISORS.flatMap((faction) => faction.cards)
 
 export function cardsToPages(cards, cardsPerPage) {
     return chunk(cards, cardsPerPage)
