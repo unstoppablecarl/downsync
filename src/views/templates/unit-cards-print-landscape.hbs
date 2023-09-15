@@ -1,14 +1,21 @@
 {{#extend 'layout/html' title=pageTitle body_class='body-print'}}
 
     {{#content 'page-content'}}
+        <style>
+            @media print {
+                @page {
+                    size: letter landscape;
+                }
+            }
+        </style>
 
-        {{> unit-cards-header current_view='Print'}}
+        {{> unit-cards-header current_view='Print Landscape'}}
 
         <div class="page-previews-container" data-bs-theme="light">
-            <div class="output-container card-grid-container-to-scale-print">
+            <div class="output-container card-grid-container-flex-landscape-print">
                 {{#each factionCards as |fac|}}
                     {{#each cardPages as |cardPage|}}
-                        <div class="page-preview page-letter faction-{{fac.faction_slug}}"
+                        <div class="page-preview page-letter-landscape faction-{{fac.faction_slug}}"
                              style="background-color:white">
                             <div class="page-card-grid">
                                 {{#each cardPage as |cardData|}}

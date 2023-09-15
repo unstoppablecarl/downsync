@@ -1,0 +1,27 @@
+<div class="header">
+    <div class="container-ex">
+        <h1>Downsync Unit Cards</h1>
+        <div class="row">
+            <div class="col">
+                <div id="vue-card-filter"
+                     data-print_url="/unit-cards-print.html"
+                     data-print_landscape_url="/unit-cards-print-landscape.html"
+                     data-web_url="/unit-cards.html"
+                     data-current_view="{{current_view}}"
+                ></div>
+            </div>
+            <div class="col">
+                <div class="float-md-end text-end m-1">
+                    {{#> btn-download-cards
+                        download_all_url='/assets/pdfs/all-unit-cards-print.pdf'
+                        download_all_landscape_url='/assets/pdfs/all-unit-cards-print-landscape.pdf'
+                    }}
+                        {{#*inline 'download_faction_url'}}/assets/pdfs/{{slug}}-unit-cards-print.pdf{{/inline}}
+                        {{#*inline
+                            'download_faction_landscape_url'}}/assets/pdfs/{{slug}}-unit-cards-print-landscape.pdf{{/inline}}
+                    {{/btn-download-cards}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
