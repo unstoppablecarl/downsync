@@ -1,24 +1,7 @@
 {{#extend 'layout/html' title='Unit Cards Starter Sets'}}
 
     {{#content 'page-content'}}
-        <div class="header">
-            <div class="container-ex">
-                <h1>Downsync Starter Set Unit Cards</h1>
-                {{> starter-set-top-content}}
-                <div class="row">
-                    <div class="col">
-                        <div id="vue-card-filter" class="m-1 d-inline-block"
-                             data-print_all_url="/unit-cards-starter-print.html"
-                             data-print_faction_dir="/unit-cards-starter-print"
-                             data-web_url="/unit-cards-starter.html"
-                        ></div>
-                        {{> btn-starter-view view='Web'}}
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{> unit-cards-starter-header current_view='Web'}}
 
         <div class="web-cards primary-content">
             {{#each cardData}}

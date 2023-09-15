@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="container-ex">
+        <h1>Downsync Starter Set Unit Cards</h1>
+
+        <div class="row">
+            {{#each armyLists}}
+                <div class="col-md-6 col-sm-12">
+                    {{> army-list-table class='table-sm'}}
+                </div>
+            {{/each}}
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="vue-card-filter"
+                     data-print_url="/unit-cards-starter-print.html"
+                     data-print_landscape_url="/unit-cards-starter-print-landscape.html"
+                     data-web_url="/unit-cards-starter.html"
+                     data-current_view="{{current_view}}"
+                ></div>
+            </div>
+            <div class="col">
+                <div class="float-md-end text-end m-1">
+                    {{#> btn-download-cards
+                        download_all_url='/assets/pdfs/all-unit-cards-starter-print.pdf'
+                        download_all_landscape_url='/assets/pdfs/all-unit-cards-starter-print-landscape.pdf'
+                    }}
+                        {{#*inline 'download_faction_url'}}/assets/pdfs/{{slug}}-unit-cards-starter-print.pdf{{/inline}}
+                        {{#*inline
+                            'download_faction_landscape_url'}}/assets/pdfs/{{slug}}-unit-cards-starter-print-landscape.pdf{{/inline}}
+                    {{/btn-download-cards}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

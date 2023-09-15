@@ -25,18 +25,6 @@ server.listen(8080, async () => {
 
     const pages = [
         {
-            url: domain + '/advisor-cards-print.html',
-        },
-        {
-            url: domain + '/unit-cards-print.html',
-        },
-        {
-            url: domain + '/unit-cards-starter-print.html',
-        },
-        {
-            url: domain + '/unit-cards-starter-print-landscape.html',
-        },
-        {
             url: domain + '/quick-reference.html',
         },
         {
@@ -44,21 +32,32 @@ server.listen(8080, async () => {
         },
     ]
 
-    FACTIONS.forEach(({ faction_slug }) => {
-        pages.push({
-            url: domain + '/cards-print/' + faction_slug + '.html',
-            output: faction_slug + '-cards-print',
+    let filterSlugs = FACTIONS.map(({ faction_slug }) => faction_slug)
+    filterSlugs.push('all')
+
+    filterSlugs.forEach((faction_slug) => {
+
+        let slugs = [
+            'unit-cards-print',
+            'unit-cards-print-landscape',
+
+            'unit-cards-starter-print',
+            'unit-cards-starter-print-landscape',
+        ]
+
+        slugs.forEach((slug) => {
+            pages.push({
+                url: `${domain}/${slug}.html#${faction_slug}`,
+                output: `${faction_slug}-${slug}`,
+            })
         })
 
-        pages.push({
-            url: domain + '/advisor-cards-print/' + faction_slug + '.html',
-            output: faction_slug + '-advisor-cards-print',
-        })
-
-        pages.push({
-            url: domain + '/unit-cards-starter-print/' + faction_slug + '.html',
-            output: faction_slug + '-unit-cards-starter-print',
-        })
+        //
+        //pages.push({
+        //    url: domain + '/advisor-cards-print/' + faction_slug + '.html',
+        //    output: faction_slug + '-advisor-cards-print',
+        //})
+        //
     })
 
     const browser = await puppeteer.launch({
@@ -100,7 +99,7 @@ server.listen(8080, async () => {
                 format: 'letter',
                 printBackground: true,
             })
-
+            console.log(dest)
             return fs.promises.writeFile(dest, content)
         }
     })

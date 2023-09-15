@@ -4,15 +4,7 @@ import buildTemplates from './templates.js'
 import util from 'util'
 import { buildRootData } from './views/root-template-data.js'
 import Handlebars from 'handlebars'
-import {
-    ALL_UNITS,
-    cardsToPages,
-    FACTION_ADVISORS,
-    FACTION_DEMO_UNITS,
-    FACTION_UNITS,
-    prepareSplitCards,
-} from './views/templates-data/support/page-card-data.js'
-import { COALITION_FACTION_SLUG } from './data/constants.js'
+import { ALL_UNITS } from './views/templates-data/support/page-card-data.js'
 
 const dist = './dist'
 const tplDataPath = './src/views/templates-data'
@@ -33,9 +25,6 @@ export default async function (baseRootData = {}) {
     return Promise.all([
         buildPages(templates, rootData),
         buildSingleCardPages(rootData),
-        buildFactionUnitCardPages(rootData),
-        buildFactionStarterUnitCardPages(rootData),
-        //buildFactionAdvisorCardPages(rootData),
     ])
 }
 
@@ -43,99 +32,6 @@ function buildPages(templates, rootData) {
     return Promise.all(
         Object.keys(templates).map((key) => {
             return renderTemplate(templates, key, rootData)
-        }),
-    )
-}
-
-async function buildFactionUnitCardPages(rootData) {
-
-    let contents = await fs.promises.readFile('./src/views/templates/unit-cards-print.hbs', 'utf-8')
-    let template = Handlebars.compile(contents)
-
-    return Promise.all(
-        FACTION_UNITS.map(({
-                               faction,
-                               faction_slug,
-                               factionCards,
-                           }) => {
-
-            if (faction_slug === COALITION_FACTION_SLUG) {
-                factionCards = prepareSplitCards(factionCards)
-            }
-
-            const cardPages = cardsToPages(factionCards, 9)
-            const pageTitle = `${faction} Unit Cards Print`
-
-            let dest = `${dist}/cards-print/${faction_slug}.html`
-            let data = Object.assign({}, rootData, {
-                faction,
-                faction_slug,
-                cardPages,
-                pageTitle,
-            })
-            let contents = template(data)
-
-            return fs.promises.writeFile(dest, contents, 'utf8')
-        }),
-    )
-}
-
-async function buildFactionStarterUnitCardPages(rootData) {
-
-    let contents = await fs.promises.readFile('./src/views/templates/unit-cards-starter-print.hbs', 'utf-8')
-    let template = Handlebars.compile(contents)
-
-    return Promise.all(
-        FACTION_DEMO_UNITS.map(({
-                                    faction,
-                                    faction_slug,
-                                    factionCards,
-                                }) => {
-
-            const cardPages = cardsToPages(factionCards, 9)
-            const pageTitle = `${faction} Starter Unit Cards Print`
-
-            console.log(cardPages)
-            //console.log(cardPages)
-            let dest = `${dist}/unit-cards-starter-print/${faction_slug}.html`
-            let data = Object.assign({}, rootData, {
-                faction,
-                faction_slug,
-                cardPages,
-                pageTitle,
-            })
-            let contents = template(data)
-
-            return fs.promises.writeFile(dest, contents, 'utf8')
-        }),
-    )
-}
-
-async function buildFactionAdvisorCardPages(rootData) {
-
-    let contents = await fs.promises.readFile('./src/views/templates/advisor-cards-print.hbs', 'utf-8')
-    let template = Handlebars.compile(contents)
-
-    return Promise.all(
-        FACTION_ADVISORS.map(({
-                                  faction,
-                                  faction_slug,
-                                  factionCards,
-                              }) => {
-
-            const cardPages = cardsToPages(factionCards, 9)
-            const pageTitle = `${faction} Advisor Cards Print`
-
-            let dest = `${dist}/advisor-cards-print/${faction_slug}.html`
-            let data = Object.assign({}, rootData, {
-                faction,
-                faction_slug,
-                cardPages,
-                pageTitle,
-            })
-            let contents = template(data)
-
-            return fs.promises.writeFile(dest, contents, 'utf8')
         }),
     )
 }
@@ -148,7 +44,7 @@ async function buildSingleCardPages(rootData) {
     return Promise.all(
         ALL_UNITS.map((unit) => {
 
-            let dest = `${dist}/cards/${unit.faction_slug}/${unit.slug}.html`
+            let dest = `${dist}/unit-cards/${unit.faction_slug}/${unit.slug}.html`
             let data = Object.assign({}, rootData, {
                 singleCardData: unit,
             })
@@ -213,14 +109,11 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
 
 async function prepareDirs() {
     let factionSlugs = getFactionSlugs()
-    await makeDir(dist + '/cards-print')
-    await makeDir(dist + '/advisor-cards-print')
-    await makeDir(dist + '/unit-cards-starter-print')
-    await makeDir(dist + '/cards')
+    await makeDir(dist + '/unit-cards')
 
     await Promise.all(
         factionSlugs.map((slug) => {
-            return makeDir(dist + '/cards/' + slug)
+            return makeDir(dist + '/unit-cards/' + slug)
         }),
     )
 }
