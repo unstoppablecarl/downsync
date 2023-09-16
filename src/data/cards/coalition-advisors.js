@@ -1,7 +1,7 @@
 import { makeAction, makeAdvisor } from '../support/factories.js'
-import { COALITION_CARD_DEFAULTS } from './coalition-units.js'
 import { ADVISOR_ARTILLERY_STRIKE, UNIT_RESTRICTIONS } from '../cards-data/command-abilities.js'
 import { REGROUP } from '../cards-data/unit-traits.js'
+import { COALITION_FACTION } from '../constants.js'
 
 export const HAWK_AI_ADVISOR = make({
     name: 'Hawk AI',
@@ -34,8 +34,7 @@ export const WOLF_AI_ADVISOR = make({
                 REGROUP,
             ],
         }),
-        UNIT_RESTRICTIONS([
-        ]),
+        UNIT_RESTRICTIONS([]),
     ],
 })
 
@@ -46,7 +45,7 @@ export const COALITION_ADVISORS = [
 
 function make(unit) {
 
-    unit = Object.assign({}, COALITION_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, COALITION_FACTION, unit)
 
     return makeAdvisor(unit)
 }

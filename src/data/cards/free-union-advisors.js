@@ -1,6 +1,6 @@
 import { makeAdvisor } from '../support/factories.js'
 import { PRIORITIZE } from '../cards-data/command-abilities.js'
-import { FREE_UNION_CARD_DEFAULTS } from './free-union-units.js'
+import { FREE_UNION_FACTION } from '../constants.js'
 
 export const FU_ADVISOR_1 = make({
     slug: 'fu-advisor-1',
@@ -19,7 +19,7 @@ export const FREE_UNION_ADVISORS = [
 
 function make(unit) {
 
-    unit = Object.assign({}, FREE_UNION_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, FREE_UNION_FACTION, unit)
 
     return makeAdvisor(unit)
 }

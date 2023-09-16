@@ -1,3 +1,4 @@
+import { FEATURE_FREE_UNION } from '../versioning.js'
 
 export const SIZE_SMALL = 'Small'
 export const SIZE_MEDIUM = 'Medium'
@@ -16,33 +17,39 @@ export const COST_COMMAND_X2 = 'COST_COMMAND_X2'
 export const COALITION_FACTION_NAME = 'Coalition'
 export const COALITION_FACTION_SLUG = 'coalition'
 export const COALITION_FACTION_SVG_SPRITE = 'faction_' + COALITION_FACTION_SLUG
+export const COALITION_FACTION = {
+    faction: COALITION_FACTION_NAME,
+    faction_slug: COALITION_FACTION_SLUG,
+    faction_svg_sprite: COALITION_FACTION_SVG_SPRITE,
+}
 
 export const REPUBLIC_FACTION_NAME = 'Republic of Terra'
 export const REPUBLIC_FACTION_SLUG = 'republic-of-terra'
 export const REPUBLIC_FACTION_SVG_SPRITE = 'faction_' + REPUBLIC_FACTION_SLUG
+export const REPUBLIC_FACTION = {
+    faction: REPUBLIC_FACTION_NAME,
+    faction_slug: REPUBLIC_FACTION_SLUG,
+    faction_svg_sprite: COALITION_FACTION_SVG_SPRITE,
+}
 
 export const FREE_UNION_FACTION_NAME = 'Free Union'
 export const FREE_UNION_FACTION_SLUG = 'free-union'
 export const FREE_UNION_FACTION_SVG_SPRITE = 'faction_' + FREE_UNION_FACTION_SLUG
+export const FREE_UNION_FACTION = {
+    faction: FREE_UNION_FACTION_NAME,
+    faction_slug: FREE_UNION_FACTION_SLUG,
+    faction_svg_sprite: FREE_UNION_FACTION_SVG_SPRITE,
+}
 
 export const FACTIONS = [
-    {
-        faction: COALITION_FACTION_NAME,
-        faction_slug: COALITION_FACTION_SLUG,
-        svg_icon: COALITION_FACTION_SVG_SPRITE,
-    },
-    {
-        faction: REPUBLIC_FACTION_NAME,
-        faction_slug: REPUBLIC_FACTION_SLUG,
-        svg_icon: COALITION_FACTION_SVG_SPRITE,
-    },
-    {
-        faction: FREE_UNION_FACTION_NAME,
-        faction_slug: FREE_UNION_FACTION_SLUG,
-        svg_icon: FREE_UNION_FACTION_SVG_SPRITE,
-    },
+    COALITION_FACTION,
+    REPUBLIC_FACTION,
+
 ]
 
+if (FEATURE_FREE_UNION) {
+    FACTIONS.push(FREE_UNION_FACTION)
+}
 export const EMPHASIS_KEYWORDS = [
 
     // unit stats

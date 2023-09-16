@@ -15,7 +15,7 @@ import {
     SMALL_ARMS,
     SMART_BOMBS,
 } from '../cards-data/weapons.js'
-import { FREE_UNION_FACTION_NAME, FREE_UNION_FACTION_SLUG, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
+import { FREE_UNION_FACTION, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL } from '../constants.js'
 
 import {
     ALL_TERRAIN,
@@ -36,12 +36,6 @@ import { SCAN } from '../cards-data/actions.js'
 import { makeAction, makeUnit, modifyAction } from '../support/factories.js'
 import { STABILIZER, TRAIT_BREACH_EXPLOIT, TRAIT_TAKE_UP } from '../cards-data/weapon-traits.js'
 import { NOTE_JAMMED } from '../definitions.js'
-
-export const FREE_UNION_CARD_DEFAULTS = {
-    faction: FREE_UNION_FACTION_NAME,
-    faction_slug: FREE_UNION_FACTION_SLUG,
-    faction_svg_sprite: 'faction_free_union',
-}
 
 export const INFANTRY_SQUAD = make({
     slug: 'infantry-squad',
@@ -327,8 +321,16 @@ export const FREE_UNION_UNITS = [
     //ABILITY_IDEAS,
 ]
 
+export const FREE_UNION_DEMO_UNITS = [
+    INFANTRY_SQUAD,
+    BANDIT,
+    SUPPORT_TANK,
+    MED_TANK,
+    HEAVY_TANK,
+]
+
 function make(unit) {
-    unit = Object.assign({}, FREE_UNION_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, FREE_UNION_FACTION, unit)
 
     return makeUnit(unit)
 }

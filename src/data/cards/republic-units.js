@@ -1,12 +1,4 @@
-import {
-    REPUBLIC_FACTION_NAME,
-    REPUBLIC_FACTION_SLUG,
-    REPUBLIC_FACTION_SVG_SPRITE,
-    SIZE_LARGE,
-    SIZE_MEDIUM,
-    SIZE_SMALL,
-    TYPE_INFANTRY,
-} from '../constants.js'
+import { REPUBLIC_FACTION, SIZE_LARGE, SIZE_MEDIUM, SIZE_SMALL, TYPE_INFANTRY } from '../constants.js'
 import {
     ADVANCED_CANNON,
     AT_CHARGES,
@@ -34,12 +26,6 @@ import {
 } from '../cards-data/unit-traits.js'
 import { FORWARD_OBSERVE, GO_DARK, SCAN, TRANSPORT_LOAD, TRANSPORT_UNLOAD } from '../cards-data/actions.js'
 import { makeUnit, modifyAction } from '../support/factories.js'
-
-export const REPUBLIC_CARD_DEFAULTS = {
-    faction: REPUBLIC_FACTION_NAME,
-    faction_slug: REPUBLIC_FACTION_SLUG,
-    faction_svg_sprite: REPUBLIC_FACTION_SVG_SPRITE,
-}
 
 export const VECTOR_SQUAD = make({
     slug: 'vector-squad',
@@ -235,7 +221,7 @@ export const REPUBLIC_DEMO_UNITS = [
 
 export function make(unit) {
 
-    unit = Object.assign({}, REPUBLIC_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, REPUBLIC_FACTION, unit)
 
     return makeUnit(unit)
 }

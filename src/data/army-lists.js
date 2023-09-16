@@ -32,11 +32,13 @@ import {
     HEAVY_TANK,
     INFANTRY_SQUAD,
     MED_TANK,
+    SUPPORT_TANK,
     TANK_HUNTERS,
     TECHNICAL,
 } from './cards/free-union-units.js'
+import { FEATURE_FREE_UNION } from '../versioning.js'
 
-export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'EX1', [
+export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'Standard Game', [
     {
         unit: WIDOW_SCOUT,
         count: 1,
@@ -75,7 +77,7 @@ export const COALITION_FULL_ARMY_LIST = make(COALITION_FACTION_NAME, 'EX1', [
     },
 ])
 
-export const REPUBLIC_FULL_ARMY_LIST = make(REPUBLIC_FACTION_NAME, 'EX1', [
+export const REPUBLIC_FULL_ARMY_LIST = make(REPUBLIC_FACTION_NAME, 'Standard Game', [
     {
         unit: VECTOR_SQUAD,
         count: 2,
@@ -106,7 +108,7 @@ export const REPUBLIC_FULL_ARMY_LIST = make(REPUBLIC_FACTION_NAME, 'EX1', [
     },
 ])
 
-export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
+export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'Standard Game', [
     {
         unit: INFANTRY_SQUAD,
         count: 2,
@@ -136,6 +138,15 @@ export const FREE_UNION_FULL_ARMY_LIST = make(FREE_UNION_FACTION_NAME, 'EX1', [
         count: 1,
     },
 ])
+
+export const FULL_ARMY_LISTS = [
+    COALITION_FULL_ARMY_LIST,
+    REPUBLIC_FULL_ARMY_LIST,
+]
+
+if (FEATURE_FREE_UNION) {
+    FULL_ARMY_LISTS.push(FREE_UNION_FULL_ARMY_LIST)
+}
 
 export const COALITION_STARTER_LIST = make(COALITION_FACTION_NAME, 'Starter Set', [
     {
@@ -182,6 +193,38 @@ export const REPUBLIC_STARTER_LIST = make(REPUBLIC_FACTION_NAME, 'Starter Set', 
         count: 1,
     },
 ])
+
+export const FREE_UNION_STARTER_LIST = make(FREE_UNION_FACTION_NAME, 'Starter Set', [
+    {
+        unit: INFANTRY_SQUAD,
+        count: 1,
+    },
+    {
+        unit: BANDIT,
+        count: 1,
+    },
+    {
+        unit: SUPPORT_TANK,
+        count: 1,
+    },
+    {
+        unit: MED_TANK,
+        count: 2,
+    },
+    {
+        unit: HEAVY_TANK,
+        count: 1,
+    },
+])
+
+export const STARTER_SET_LISTS = [
+    COALITION_STARTER_LIST,
+    REPUBLIC_STARTER_LIST,
+]
+
+if (FEATURE_FREE_UNION) {
+    STARTER_SET_LISTS.push(FREE_UNION_STARTER_LIST)
+}
 
 function make(faction, name, units) {
 

@@ -16,6 +16,7 @@ import {
     TARGET_LOCK,
 } from '../cards-data/weapons.js'
 import {
+    COALITION_FACTION,
     COALITION_FACTION_NAME,
     COALITION_FACTION_SLUG,
     COALITION_FACTION_SVG_SPRITE,
@@ -305,7 +306,7 @@ export const COALITION_DEMO_UNITS = [
 ]
 
 function make(unit) {
-    unit = Object.assign({}, COALITION_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, COALITION_FACTION, unit)
 
     return makeUnit(unit)
 }

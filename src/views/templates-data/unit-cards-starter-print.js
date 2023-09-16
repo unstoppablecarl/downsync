@@ -1,5 +1,5 @@
 import { cardsToPages, FACTION_DEMO_UNITS } from './support/page-card-data.js'
-import { COALITION_STARTER_LIST, REPUBLIC_STARTER_LIST } from '../../data/army-lists.js'
+import { STARTER_SET_LISTS } from '../../data/army-lists.js'
 
 export const factionCards = FACTION_DEMO_UNITS.map((faction) => {
     let UNITS = faction.cards
@@ -8,7 +8,4 @@ export const factionCards = FACTION_DEMO_UNITS.map((faction) => {
     return faction
 })
 
-export const armyLists = [
-    COALITION_STARTER_LIST,
-    REPUBLIC_STARTER_LIST,
-]
+export const armyLists = STARTER_SET_LISTS

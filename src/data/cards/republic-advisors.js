@@ -1,7 +1,7 @@
 import { makeAction, makeAdvisor } from '../support/factories.js'
-import { HARBINGER_RECON, REPUBLIC_CARD_DEFAULTS } from './republic-units.js'
+import { HARBINGER_RECON } from './republic-units.js'
 import { BRACE_INFANTRY, REPOSITION, UNIT_RESTRICTIONS } from '../cards-data/command-abilities.js'
-import { TYPE_INFANTRY } from '../constants.js'
+import { REPUBLIC_FACTION, TYPE_INFANTRY } from '../constants.js'
 import { COVERT } from '../cards-data/unit-traits.js'
 
 export const SOFIA_AVERY = make({
@@ -29,14 +29,13 @@ export const SOFIA_AVERY = make({
     ],
 })
 
-
 export const REPUBLIC_ADVISORS = [
     SOFIA_AVERY,
 ]
 
 function make(unit) {
 
-    unit = Object.assign({}, REPUBLIC_CARD_DEFAULTS, unit)
+    unit = Object.assign({}, REPUBLIC_FACTION, unit)
 
     return makeAdvisor(unit)
 }

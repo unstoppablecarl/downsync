@@ -6,11 +6,17 @@ import {
     SENTINEL_TAGGER,
 } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
-import { FREE_UNION_UNITS } from '../../../data/cards/free-union-units.js'
+import { FREE_UNION_DEMO_UNITS, FREE_UNION_UNITS } from '../../../data/cards/free-union-units.js'
 import { CARDS_VERSION } from '../../../versioning.js'
-import { COALITION_FACTION_SLUG, FACTIONS, REPUBLIC_FACTION_SLUG } from '../../../data/constants.js'
+import {
+    COALITION_FACTION_SLUG,
+    FACTIONS,
+    FREE_UNION_FACTION_SLUG,
+    REPUBLIC_FACTION_SLUG,
+} from '../../../data/constants.js'
 import { COALITION_ADVISORS } from '../../../data/cards/coalition-advisors.js'
 import { REPUBLIC_ADVISORS } from '../../../data/cards/republic-advisors.js'
+import { FREE_UNION_ADVISORS } from '../../../data/cards/free-union-advisors.js'
 
 const TIMESTAMP = getTimestamp()
 

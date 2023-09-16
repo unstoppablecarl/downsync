@@ -1,18 +1,5 @@
-import {
-    COALITION_FULL_ARMY_LIST,
-    COALITION_STARTER_LIST,
-    FREE_UNION_FULL_ARMY_LIST,
-    REPUBLIC_FULL_ARMY_LIST,
-    REPUBLIC_STARTER_LIST,
-} from '../../data/army-lists.js'
+import { FULL_ARMY_LISTS, STARTER_SET_LISTS } from '../../data/army-lists.js'
 
-export const standardArmyLists = [
-    COALITION_FULL_ARMY_LIST,
-    REPUBLIC_FULL_ARMY_LIST,
-    FREE_UNION_FULL_ARMY_LIST,
-]
+export const standardArmyLists = FULL_ARMY_LISTS
 
-export const smallArmyLists = [
-    COALITION_STARTER_LIST,
-    REPUBLIC_STARTER_LIST,
-]
+export const smallArmyLists = STARTER_SET_LISTS
