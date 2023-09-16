@@ -1,0 +1,24 @@
+{{#> card-filter-header
+    title="Starter Set Unit Cards"
+    current_view=current_view
+    print_url='/unit-cards-starter-print.html'
+    print_landscape_url='/unit-cards-starter-print-landscape.html'
+    web_url='/unit-cards.html'
+
+    download_all_url='/assets/pdfs/all-unit-cards-starter-print.pdf'
+    download_all_landscape_url='/assets/pdfs/all-unit-cards-starter-print-landscape.pdf'
+}}
+    {{#*inline 'download_faction_url'}}/assets/pdfs/{{slug}}-unit-cards-starter-print.pdf{{/inline}}
+    {{#*inline 'download_faction_landscape_url'}}/assets/pdfs/{{slug}}-unit-cards-starter-print-landscape.pdf{{/inline}}
+
+
+    {{#*inline 'after_header'}}
+        <div class="row">
+            {{#each armyLists}}
+                <div class="col-md-6 col-sm-12">
+                    {{> army-list-table class='table-sm'}}
+                </div>
+            {{/each}}
+        </div>
+    {{/inline}}
+{{/card-filter-header}}

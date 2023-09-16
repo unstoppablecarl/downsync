@@ -7,9 +7,9 @@ const SVG_SPRITE_PATH = __SVG_SPRITE_PATH__
 
 elementExists('vue-card-filter', (el) => {
 
-    let props = {
+    let props = Object.assign({ ...el.dataset }, {
         factions: FACTIONS,
-    }
+    })
 
     const app = createApp(CardFactionFilter, props).provide('SVG_SPRITE_PATH', SVG_SPRITE_PATH)
     app.mount(el)

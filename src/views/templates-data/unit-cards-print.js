@@ -1,7 +1,15 @@
-import { ALL_UNITS, cardsToPages, prepareSplitCards } from './support/page-card-data.js'
+import { cardsToPages, FACTION_UNITS, prepareSplitCards } from './support/page-card-data.js'
+import { COALITION_FACTION_SLUG } from '../../data/constants.js'
 
-const UNITS = prepareSplitCards(ALL_UNITS)
+export const factionCards = FACTION_UNITS.map((faction) => {
+    let UNITS = faction.cards
 
-export const cardPages = cardsToPages(UNITS, 9)
+    if (faction.faction_slug === COALITION_FACTION_SLUG) {
+        UNITS = prepareSplitCards(UNITS)
+    }
+
+    faction.cardPages = cardsToPages(UNITS, 9)
+    return faction
+})
 
 export const pageTitle = 'Unit Cards Print'

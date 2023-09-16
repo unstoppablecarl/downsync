@@ -1,0 +1,13 @@
+{{#> card-filter-header
+    title="Advisor Cards"
+    current_view=current_view
+    print_url='/advisor-cards-print.html'
+    print_landscape_url='/advisor-cards-print-landscape.html'
+    web_url='/advisor-cards.html'
+
+    download_all_url='/assets/pdfs/all-advisor-cards-print.pdf'
+    download_all_landscape_url='/assets/pdfs/all-advisor-cards-print-landscape.pdf'
+}}
+    {{#*inline 'download_faction_url'}}/assets/pdfs/{{slug}}-advisor-cards-print.pdf{{/inline}}
+    {{#*inline 'download_faction_landscape_url'}}/assets/pdfs/{{slug}}-advisor-cards-print-landscape.pdf{{/inline}}
+{{/card-filter-header}}

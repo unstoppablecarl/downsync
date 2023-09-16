@@ -1,3 +1,5 @@
+import { COALITION_FACTION_SVG_SPRITE, REPUBLIC_FACTION_SVG_SPRITE, FREE_UNION_FACTION_SVG_SPRITE } from '../data/constants.js'
+
 const fontAwesomeDir = './node_modules/@fortawesome/fontawesome-free/svgs'
 const bootstrapDir = './node_modules/bootstrap-icons/icons'
 
@@ -18,9 +20,12 @@ export const svgIcons = {
     moon_stars_fill: bootstrapDir + '/moon-stars-fill.svg',
     circle_half: bootstrapDir + '/circle-half.svg',
 
-    faction_coalition: './static-assets/images/factions/icon-coalition.svg',
-    faction_republic: './static-assets/images/factions/icon-republic.svg',
-    faction_free_union: './static-assets/images/factions/icon-free-union.svg',
+    image_portrait: fontAwesomeDir + '/solid/image-portrait.svg',
+    image_landscape: fontAwesomeDir + '/solid/image.svg',
+
+    [COALITION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-coalition.svg',
+    [REPUBLIC_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-republic.svg',
+    [FREE_UNION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-free-union.svg',
 
 }
 

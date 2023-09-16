@@ -1,0 +1,18 @@
+{{#extend 'layout/html' title=pageTitle body_class='body-print'}}
+
+    {{#content 'page-content'}}
+        <style>
+            @media print {
+                @page {
+                    size: letter landscape;
+                }
+            }
+        </style>
+
+        {{> advisor-cards-header current_view='Print Landscape'}}
+
+        {{> cards-print-pages-landscape}}
+
+    {{/content}}
+{{/extend}}
+

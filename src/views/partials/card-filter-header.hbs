@@ -1,0 +1,25 @@
+<div class="header">
+    <div class="container-ex">
+        <h1>Downsync {{title}}</h1>
+
+        {{#> after_header}}{{/after_header}}
+
+        <div class="row">
+            <div class="col">
+                <div id="vue-card-filter"
+                     data-print_url="{{print_url}}"
+                     data-print_landscape_url="{{print_landscape_url}}"
+                     data-web_url="{{web_url}}"
+                     data-current_view="{{current_view}}"
+                ></div>
+            </div>
+            <div class="col">
+                <div class="float-md-end text-end m-1">
+
+                    {{> btn-download-cards}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

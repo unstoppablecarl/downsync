@@ -4,13 +4,8 @@ import buildTemplates from './templates.js'
 import util from 'util'
 import { buildRootData } from './views/root-template-data.js'
 import Handlebars from 'handlebars'
-import {
-    ALL_UNITS,
-    cardsToPages,
-    FACTION_UNITS,
-    prepareSplitCards,
-} from './views/templates-data/support/page-card-data.js'
-import { COALITION_FACTION_SLUG } from './data/constants.js'
+import { ALL_UNITS } from './views/templates-data/support/page-card-data.js'
+import { FEATURE_ADVISOR_CARD } from './versioning.js'
 
 const dist = './dist'
 const tplDataPath = './src/views/templates-data'
@@ -31,47 +26,25 @@ export default async function (baseRootData = {}) {
     return Promise.all([
         buildPages(templates, rootData),
         buildSingleCardPages(rootData),
-        buildFactionCardPages(rootData),
     ])
 }
 
 function buildPages(templates, rootData) {
+
+    let exclude = [
+        'advisor-cards',
+        'advisor-cards-print',
+        'advisor-cards-print-landscape',
+    ]
+    if (!FEATURE_ADVISOR_CARD) {
+        exclude.forEach((slug) => {
+            delete templates[slug]
+        })
+    }
+
     return Promise.all(
         Object.keys(templates).map((key) => {
             return renderTemplate(templates, key, rootData)
-        }),
-    )
-}
-
-async function buildFactionCardPages(rootData) {
-
-    let contents = await fs.promises.readFile('./src/views/templates/unit-cards-print.hbs', 'utf-8')
-    let template = Handlebars.compile(contents)
-
-    return Promise.all(
-        FACTION_UNITS.map(({
-                               faction,
-                               faction_slug,
-                               factionCards,
-                           }) => {
-
-            if (faction_slug === COALITION_FACTION_SLUG) {
-                factionCards = prepareSplitCards(factionCards)
-            }
-
-            const cardPages = cardsToPages(factionCards, 9)
-            const pageTitle = `${faction} Unit Cards Print`
-
-            let dest = `${dist}/cards-print/${faction_slug}.html`
-            let data = Object.assign({}, rootData, {
-                faction,
-                faction_slug,
-                cardPages,
-                pageTitle,
-            })
-            let contents = template(data)
-
-            return fs.promises.writeFile(dest, contents, 'utf8')
         }),
     )
 }
@@ -84,7 +57,7 @@ async function buildSingleCardPages(rootData) {
     return Promise.all(
         ALL_UNITS.map((unit) => {
 
-            let dest = `${dist}/cards/${unit.faction_slug}/${unit.slug}.html`
+            let dest = `${dist}/unit-cards/${unit.faction_slug}/${unit.slug}.html`
             let data = Object.assign({}, rootData, {
                 singleCardData: unit,
             })
@@ -108,7 +81,6 @@ export function getDataFilePathFromKey(key) {
 }
 
 function renderTemplate(templates, key, rootData, outputFileName = null) {
-
     let template = templates[key]
     outputFileName = outputFileName || key
     let dest = `${dist}/${outputFileName}.html`
@@ -117,9 +89,15 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
         .then((target) => {
 
             if (!target) {
-                let contents = template(rootData)
+                try {
+                    let contents = template(rootData)
 
-                return fs.promises.writeFile(dest, contents, 'utf8')
+                    return fs.promises.writeFile(dest, contents, 'utf8')
+
+                } catch (e) {
+                    console.log('rendering: ', key)
+                    throw e
+                }
 
             } else {
 
@@ -127,9 +105,16 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
                     .then((tplData) => {
 
                         let mergedData = Object.assign({}, rootData, tplData)
-                        let contents = template(mergedData)
 
-                        return fs.promises.writeFile(dest, contents, 'utf8')
+                        try {
+                            let contents = template(mergedData)
+
+                            return fs.promises.writeFile(dest, contents, 'utf8')
+
+                        } catch (e) {
+                            console.log('rendering: ', key)
+                            throw e
+                        }
                     })
             }
         })
@@ -137,14 +122,11 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
 
 async function prepareDirs() {
     let factionSlugs = getFactionSlugs()
-    await makeDir(dist + '/cards-print')
-
-    await makeDir(dist + '/cards')
-    await makeDir(dist + '/html-to-pdf')
+    await makeDir(dist + '/unit-cards')
 
     await Promise.all(
         factionSlugs.map((slug) => {
-            return makeDir(dist + '/cards/' + slug)
+            return makeDir(dist + '/unit-cards/' + slug)
         }),
     )
 }

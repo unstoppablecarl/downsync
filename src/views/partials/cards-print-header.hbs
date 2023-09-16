@@ -1,0 +1,55 @@
+<div class="header">
+    <div class="container-ex">
+        <h1>
+            Downsync {{title}}
+        </h1>
+        {{#if faction}}
+            <h3>{{faction}}</h3>
+        {{/if}}
+        <div class="row">
+            <div class="col">
+                <div class="dropdown my-1 me-1 d-inline-block">
+                    <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                        {{#if faction}}
+                            Faction: {{faction}}
+                        {{else}}
+                            Factions: All
+                        {{/if}}
+
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{print_all_url}}">All</a></li>
+
+                        {{#each factions as | fac |}}
+                            <li>
+                                <a class="dropdown-item"
+                                   href="{{#> other_faction_print_url
+                                       slug=fac.faction_slug}}{{/other_faction_print_url}}">{{fac.faction}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="dropdown my-1 me-1 d-inline-block">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        View: Print
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{#> view_url}}{{/view_url}}">Web</a></li>
+                        <li><a class="dropdown-item" href="{{#> print_url}}{{/print_url}}">Print</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="float-md-end text-end m-1">
+                    <a class="btn btn-primary"
+                       href="{{#> pdf_url}}{{/pdf_url}}">Download {{faction}} {{title}}
+                        {{> svg-icon icon='pdf'}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

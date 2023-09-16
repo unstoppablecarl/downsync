@@ -5,6 +5,7 @@ export default {
     sum,
     eq,
     svg_icon_path,
+    concat,
 }
 
 function json(context) {
@@ -49,4 +50,9 @@ function eq(a, b, options) {
 function svg_icon_path(svgId, context) {
 
     return context.data.root.SVG_SPRITE_PATH + '#' + svgId
+}
+
+function concat(...args) {
+    args.pop()
+    return args.join('')
 }

@@ -1,0 +1,13 @@
+{{#> card-filter-header
+    title="Unit Cards"
+    current_view=current_view
+    print_url='/unit-cards-print.html'
+    print_landscape_url='/unit-cards-print-landscape.html'
+    web_url='/unit-cards.html'
+
+    download_all_url='/assets/pdfs/all-unit-cards-print.pdf'
+    download_all_landscape_url='/assets/pdfs/all-unit-cards-print-landscape.pdf'
+}}
+    {{#*inline 'download_faction_url'}}/assets/pdfs/{{slug}}-unit-cards-print.pdf{{/inline}}
+    {{#*inline 'download_faction_landscape_url'}}/assets/pdfs/{{slug}}-unit-cards-print-landscape.pdf{{/inline}}
+{{/card-filter-header}}

@@ -8,44 +8,11 @@
                 }
             }
         </style>
-        <div class="header">
-            <div class="container-ex">
-                <h1>Downsync Starter Sets</h1>
 
-                {{> starter-set-top-content}}
+        {{> unit-cards-starter-header current_view='Print Landscape'}}
 
-                <div class="row">
-                    <div class="col">
-                        <div id="vue-card-filter" class="m-1 d-inline-block"></div>
-                        {{> btn-starter-view view='Print Landscape'}}
-                    </div>
-                    <div class="col">
-                        <div class="float-md-end text-end m-1">
-                            <a class="btn btn-primary"
-                               href="/assets/pdfs/unit-cards-starter-print-landscape.pdf">Download Starter Unit Cards Landscape
-                                {{> svg-icon icon='pdf'}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{> cards-print-pages-landscape}}
 
-        <div class="page-previews-container" data-bs-theme="light">
-            <div class="output-container card-grid-container-flex-landscape-print">
-                {{#each cardPages as |cardPage|}}
-                    <div class="faction-{{faction_slug}}">
-                        <div class="page-preview page-letter-landscape" style="background-color:white">
-                            <div class="page-card-grid">
-                                {{#each cardPage.factionCards as |cardData|}}
-                                    {{> (lookup cardData 'template') cardData}}
-                                {{/each}}
-                            </div>
-                        </div>
-                    </div>
-                {{/each}}
-            </div>
-        </div>
     {{/content}}
 
 {{/extend}}

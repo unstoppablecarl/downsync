@@ -1,0 +1,11 @@
+{{#extend 'layout/html' title=pageTitle body_class='body-print'}}
+
+    {{#content 'page-content'}}
+
+        {{> advisor-cards-header current_view='Print'}}
+
+        {{> cards-print-pages}}
+
+    {{/content}}
+{{/extend}}
+

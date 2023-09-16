@@ -1,34 +1,10 @@
 {{#extend 'layout/html' title='Unit Cards Starter Sets'}}
 
     {{#content 'page-content'}}
-        <div class="header">
-            <div class="container-ex">
-                <h1>Downsync Starter Set Unit Cards</h1>
-                {{> starter-set-top-content}}
-                <div class="row">
-                    <div class="col">
-                        <div id="vue-card-filter" class="m-1 d-inline-block"></div>
-                        {{> btn-starter-view view='Web'}}
-                    </div>
-                    <div class="col">
 
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{> unit-cards-starter-header current_view='Web'}}
 
-        <div class="web-cards primary-content">
-            {{#each cardData}}
-                <div class="container">
-                    <h2 class="faction-heading">{{faction}}</h2>
-                </div>
-                <div class="faction-cards faction-{{faction_slug}}">
-                    {{#each factionCards as |singleCardData|}}
-                        {{> (lookup singleCardData 'template') singleCardData}}
-                    {{/each}}
-                </div>
-            {{/each}}
-        </div>
+        {{> cards-view-grid}}
 
     {{/content}}
 {{/extend}}
