@@ -14,7 +14,6 @@ import {
     TRAIT_SMART,
     TRAIT_SPECIALIZED_VS,
     TRAIT_TAGGED_EFFECT,
-    TRAIT_TAKE_UP,
 } from './weapon-traits.js'
 import {
     COST_ACTION,
@@ -302,7 +301,6 @@ export const MICRO_ARTILLERY = make({
     traits: [
         TRAIT_INFANTRY_NETWORK,
         TRAIT_ADVANCED,
-        TRAIT_TAKE_UP,
     ],
 })
 
