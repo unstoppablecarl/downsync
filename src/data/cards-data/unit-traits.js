@@ -125,7 +125,6 @@ export const EMERGENCY_CM = make({
     desc: `This Unit begins the game with 1 Emergency Countermeasure Token (indicated as +1 under CM). Emergency CMs automatically succeed and do not regenerate.`,
 })
 
-
 export const HIT_AND_RUN = make({
     name: 'Hit and Run',
     note: `2" Place`,
