@@ -4,6 +4,7 @@ import {
     markdownSectionToHtml,
     stripLinks,
 } from '../../markdown/support/markdown-helpers.js'
+import { NOTE_STEALTH_TOKEN } from '../../data/definitions.js'
 
 let path = 'src/markdown/downsync-rules.md'
 let markdown = await fs.promises.readFile(path, 'utf-8')
@@ -18,7 +19,7 @@ export const taskforceActivationPhases = markdownSectionToHtml(
     - **Move Action:** Move up to SPD in inches
     - **Overwatch Action:** Unit gains an Overwatch Token`,
 )
-
+export const stealthTokenDesc = NOTE_STEALTH_TOKEN.desc
 export const attacks = markdownSectionToHtml(markdown, 'Attacks')
 export const scanCheck = markdownSectionToHtml(markdown, 'Scan Check')
 scanCheck.content = captureQuickReferenceContentToHtml(markdown, 'scan_check_content_quick_reference')

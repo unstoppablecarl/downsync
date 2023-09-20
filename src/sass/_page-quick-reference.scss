@@ -1,5 +1,7 @@
 .container-quick-reference {
 
+    line-height: 1.2;
+
     h3 {
         border-bottom: 3px solid $heading-border-color;
         padding-bottom: 5px;
@@ -94,6 +96,7 @@
             }
 
             ul:last-child,
+            li:last-child,
             p:last-child {
                 margin-bottom: 0;
             }

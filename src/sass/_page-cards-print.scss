@@ -46,7 +46,9 @@ $page-height: 11 * 72pt;
 
 .card-grid-container-flex-landscape-print {
 
-    @include pageCards(1.34);
+    @include pageCards(1.34, 1);
+
+    $card-height: 3.75 * 72pt;
 
     .page-card-grid {
         padding: 32pt 48pt;
@@ -63,11 +65,18 @@ $page-height: 11 * 72pt;
     }
 
     .card {
-        height: auto;
+        height: $card-height;
         width: auto;
     }
 
+    .split-card {
+        .card {
+            height: $card-height * 0.5;
+            z-index: 10;
+        }
+    }
+
     .card-content-container {
-        padding-bottom: 6pt;
+        padding-bottom: 3pt;
     }
 }

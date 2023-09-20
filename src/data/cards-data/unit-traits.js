@@ -103,6 +103,7 @@ export const WIDOW_SCOUT_CARRIED = make({
     name: 'Packaged',
     note: 'Widow Scout',
     desc: 'This Unit cannot be added directly to a Force. It is automatically included with a Widow Scout Unit.',
+    desc_keywords_after: ['Widow Scout'],
 })
 
 export const SPIDER_DRONE_INFILTRATOR_CARRIER = make({
