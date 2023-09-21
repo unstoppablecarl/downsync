@@ -83,6 +83,11 @@ export const MECHANIZED_INFANTRY = make({
     desc: 'This Unit may begin the game mounted in a Courier transport. If it does its Ping is not used for the game.',
 })
 
+export const MOTORIZED_INFANTRY = make({
+    name: 'Motorized Infantry',
+    desc: `This Unit may enter buildings. It is a Vehicle Unit while not in a building and an Infantry Unit while within a building.`,
+})
+
 export const PREDATOR = make({
     name: 'Predator',
     note: '+2 TARG',

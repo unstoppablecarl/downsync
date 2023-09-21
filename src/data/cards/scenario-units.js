@@ -1,6 +1,6 @@
 import { SCENARIO_FACTION, SIZE_SMALL } from '../constants.js'
 
-import { STEALTHY } from '../cards-data/unit-traits.js'
+import { MOTORIZED_INFANTRY, STEALTHY } from '../cards-data/unit-traits.js'
 import { GO_DARK } from '../cards-data/actions.js'
 import { makeAction, makeUnit } from '../support/factories.js'
 
@@ -10,7 +10,7 @@ export const ENGINEER_TEAM = make({
     //img: '',
     img_svg: 'engineer_unit',
     signature: SIZE_SMALL,
-    type: 'Light Vehicle',
+    type: 'Light Motorized Infantry',
     speed: 6,
     targeting: null,
     defense: 14,
@@ -28,6 +28,7 @@ export const ENGINEER_TEAM = make({
     ],
     traits: [
         STEALTHY,
+        MOTORIZED_INFANTRY,
     ],
 })
 
