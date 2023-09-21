@@ -7,16 +7,18 @@ import {
 } from '../../../data/cards/coalition-units.js'
 import { REPUBLIC_DEMO_UNITS, REPUBLIC_UNITS } from '../../../data/cards/republic-units.js'
 import { FREE_UNION_DEMO_UNITS, FREE_UNION_UNITS } from '../../../data/cards/free-union-units.js'
-import { CARDS_VERSION } from '../../../versioning.js'
+import { CARDS_VERSION, FEATURE_SCENARIO_UNITS } from '../../../versioning.js'
 import {
     COALITION_FACTION_SLUG,
     FACTIONS,
     FREE_UNION_FACTION_SLUG,
     REPUBLIC_FACTION_SLUG,
+    SCENARIO_FACTION,
 } from '../../../data/constants.js'
 import { COALITION_ADVISORS } from '../../../data/cards/coalition-advisors.js'
 import { REPUBLIC_ADVISORS } from '../../../data/cards/republic-advisors.js'
 import { FREE_UNION_ADVISORS } from '../../../data/cards/free-union-advisors.js'
+import { SCENARIO_UNITS } from '../../../data/cards/scenario-units.js'
 
 const TIMESTAMP = getTimestamp()
 
@@ -57,6 +59,16 @@ export const FACTION_UNITS = FACTION_DATA.map(({
         cards: prepareCards(units),
     }
 })
+
+let _FACTION_AND_SCENARIO_UNITS = [].concat(FACTION_UNITS)
+
+if (FEATURE_SCENARIO_UNITS) {
+    _FACTION_AND_SCENARIO_UNITS.push(Object.assign({}, SCENARIO_FACTION, {
+        cards: prepareCards(SCENARIO_UNITS),
+    }))
+}
+
+export const FACTION_AND_SCENARIO_UNITS = _FACTION_AND_SCENARIO_UNITS
 export const ALL_UNITS = FACTION_UNITS.flatMap((faction) => faction.cards)
 export const FACTION_DEMO_UNITS = FACTION_DATA.map(({
                                                         faction,
@@ -79,7 +91,6 @@ export const FACTION_ADVISORS = FACTION_DATA.map(({
         cards: prepareCards(advisors),
     }
 })
-export const ALL_ADVISORS = FACTION_ADVISORS.flatMap((faction) => faction.cards)
 
 export function cardsToPages(cards, cardsPerPage) {
     return chunk(cards, cardsPerPage)

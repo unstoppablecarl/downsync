@@ -1,16 +1,17 @@
 <div class="header">
     <div class="container-ex">
-        <h1>Downsync {{title}}</h1>
+        <h1>Downsync {{require 'title'}}</h1>
 
         {{#> after_header}}{{/after_header}}
 
         <div class="row">
             <div class="col">
                 <div id="vue-card-filter"
-                     data-print_url="{{print_url}}"
-                     data-print_landscape_url="{{print_landscape_url}}"
-                     data-web_url="{{web_url}}"
-                     data-current_view="{{current_view}}"
+                     data-print_url="{{require 'print_url'}}"
+                     data-print_landscape_url="{{require 'print_landscape_url'}}"
+                     data-web_url="{{require 'web_url'}}"
+                     data-current_view="{{require 'current_view'}}"
+                     data-json_factions="{{json (require 'filterFactions')}}"
                 ></div>
             </div>
             <div class="col">

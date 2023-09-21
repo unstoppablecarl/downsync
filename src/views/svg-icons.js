@@ -1,4 +1,9 @@
-import { COALITION_FACTION_SVG_SPRITE, REPUBLIC_FACTION_SVG_SPRITE, FREE_UNION_FACTION_SVG_SPRITE } from '../data/constants.js'
+import {
+    COALITION_FACTION_SVG_SPRITE,
+    FREE_UNION_FACTION_SVG_SPRITE,
+    REPUBLIC_FACTION_SVG_SPRITE,
+    SCENARIO_FACTION_SVG_SPRITE,
+} from '../data/constants.js'
 
 const fontAwesomeDir = './node_modules/@fortawesome/fontawesome-free/svgs'
 const bootstrapDir = './node_modules/bootstrap-icons/icons'
@@ -23,10 +28,12 @@ export const svgIcons = {
     image_portrait: fontAwesomeDir + '/solid/image-portrait.svg',
     image_landscape: fontAwesomeDir + '/solid/image.svg',
 
+    engineer_unit: fontAwesomeDir + '/solid/users-gear.svg',
+
     [COALITION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-coalition.svg',
     [REPUBLIC_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-republic.svg',
     [FREE_UNION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-free-union.svg',
-
+    [SCENARIO_FACTION_SVG_SPRITE]: bootstrapDir + '/globe2.svg',
 }
 
 export const svgIconsReversed = {}

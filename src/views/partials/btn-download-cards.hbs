@@ -8,8 +8,8 @@
         <li>
             <div class="dropdown-header">{{> svg-icon icon='image_portrait'}} Portrait</div>
         </li>
-        <li><a class="dropdown-item" href="{{download_all_url}}">{{> svg-icon icon='pdf'}} All</a></li>
-        {{#each factions as |fac|}}
+        <li><a class="dropdown-item" href="{{require 'download_all_url'}}">{{> svg-icon icon='pdf'}} All</a></li>
+        {{#each filterFactions as |fac|}}
             <li>
                 <a class="dropdown-item"
                    href="{{> download_faction_url slug=fac.faction_slug}}"
@@ -26,8 +26,9 @@
         <li>
             <div class="dropdown-header">{{> svg-icon icon='image_landscape'}} Landscape</div>
         </li>
-        <li><a class="dropdown-item" href="{{download_all_landscape_url}}">{{> svg-icon icon='pdf'}} All</a></li>
-        {{#each factions as |fac|}}
+        <li><a class="dropdown-item" href="{{require 'download_all_landscape_url'}}">{{> svg-icon icon='pdf'}} All</a>
+        </li>
+        {{#each filterFactions as |fac|}}
             <li>
                 <a class="dropdown-item"
                    href="{{> download_faction_landscape_url slug=fac.faction_slug}}"

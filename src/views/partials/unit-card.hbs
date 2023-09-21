@@ -29,6 +29,11 @@
             {{#if img}}
                 <img src="/assets/img/units/{{img}}" class="card-portrait" alt="{{name}} {{variant_name}} portrait"/>
             {{/if}}
+            {{#if img_svg}}
+                <svg class="icon" fill="#8bafc9" stroke="black" stroke-width="6px" aria-hidden="true" focusable="false">
+                    <use href="{{svg_icon_path img_svg}}"></use>
+                </svg>
+            {{/if}}
         </div>
 
         <table class="table-stats">
@@ -120,41 +125,42 @@
                                     </td>
                                 </tr>
                             {{/if}}
-                {{#if traits}}
-                    <tr class="action-features-row">
-                        <td colspan="{{#if ../has_teams}}6{{else}}5{{/if}}"{{{style_font_size ../body_font_size}}}>
-                            <div class="features">
-                                {{#each traits as |trait|}}
-                                    {{> key-value trait class='feature'}}
-                                {{/each}}
-                            </div>
-                        </td>
-                    </tr>
-                {{/if}}
-                {{/if}}
-                {{/each}}
-                </tbody>
-            </table>
-        </div>
+                            {{#if traits}}
+                                <tr class="action-features-row">
+                                    <td colspan="{{#if ../has_teams}}6{{else}}5{{/if}}"{{{style_font_size
+                                        ../body_font_size}}}>
+                                        <div class="features">
+                                            {{#each traits as |trait|}}
+                                                {{> key-value trait class='feature'}}
+                                            {{/each}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
         {{/if}}
 
         {{#if traits.length}}
-        <h3 class="section-heading">
-            Traits
-        </h3>
-        <div class="traits content-padding"{{{style_font_size body_font_size}}}>
-            {{#each traits as |unit_trait|}}
-            {{> key-value unit_trait}}
+            <h3 class="section-heading">
+                Traits
+            </h3>
+            <div class="traits content-padding"{{{style_font_size body_font_size}}}>
+                {{#each traits as |unit_trait|}}
+                    {{> key-value unit_trait}}
 
-            {{#if unit_trait.traits}}
-                <div class="features">
-                    {{#each unit_trait.traits as |trait|}}
-                        {{> key-value trait class='feature'}}
-                    {{/each}}
-                </div>
-            {{/if}}
-            {{/each}}
-        </div>
+                    {{#if unit_trait.traits}}
+                        <div class="features">
+                            {{#each unit_trait.traits as |trait|}}
+                                {{> key-value trait class='feature'}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
         {{/if}}
 
         {{#if notes.length}}

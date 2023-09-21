@@ -54,13 +54,28 @@
 
 let count = 0
 export default {
-    props: [
-        'factions',
-        'web_url',
-        'print_url',
-        'print_landscape_url',
-        'current_view',
-    ],
+    props: {
+        factions: {
+            type: Array,
+            required: true,
+        },
+        web_url: {
+            type: String,
+            required: true,
+        },
+        print_url: {
+            type: String,
+            required: true,
+        },
+        print_landscape_url: {
+            type: String,
+            required: true,
+        },
+        current_view: {
+            type: String,
+            required: true,
+        },
+    },
     inject: ['SVG_SPRITE_PATH'],
     data() {
         return {

@@ -2,8 +2,8 @@ import puppeteer from 'puppeteer'
 import { createServer } from 'http-server'
 import path from 'path'
 import fs from 'fs'
-import { FACTIONS } from '../src/data/constants.js'
-import { FEATURE_ADVISOR_CARD } from '../src/versioning.js'
+import { FACTIONS, SCENARIO_FACTION_SLUG } from '../src/data/constants.js'
+import { FEATURE_ADVISOR_CARD, FEATURE_SCENARIO_UNITS } from '../src/versioning.js'
 
 const pdfGeneratedDir = './static-assets/pdfs'
 
@@ -35,6 +35,10 @@ server.listen(8080, async () => {
 
     let filterSlugs = FACTIONS.map(({ faction_slug }) => faction_slug)
     filterSlugs.push('all')
+
+    if (FEATURE_SCENARIO_UNITS) {
+        filterSlugs.push(SCENARIO_FACTION_SLUG)
+    }
 
     filterSlugs.forEach((faction_slug) => {
 
