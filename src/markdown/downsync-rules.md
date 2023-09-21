@@ -794,7 +794,7 @@ moved through.
 
 **Scoring**: Players score by capturing the VIP on their opponents side of the table.
 When a player ends a Taskforce Activation, each Unit within 1" of the opposing VIP scores 1 Victory Point.
-Each opposing Unit within 4" subtracts 1 Victory Point from this amount.
+Each opposing Unit within 6" subtracts 1 Victory Point from this amount.
 Multi-Base Units must have more than half of their starting Infantry Bases within 1".
 
 **Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
