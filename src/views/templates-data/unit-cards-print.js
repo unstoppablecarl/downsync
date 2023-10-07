@@ -9,8 +9,11 @@ export const factionCards = FACTION_AND_SCENARIO_UNITS.map((faction) => {
         UNITS = prepareSplitCards(UNITS)
     }
 
-    faction.cardPages = cardsToPages(UNITS, 9)
-    return faction
+    return {
+        faction: faction.faction,
+        faction_slug: faction.faction_slug,
+        cardPages: cardsToPages(UNITS, 9),
+    }
 })
 
 export const pageTitle = 'Unit Cards Print'

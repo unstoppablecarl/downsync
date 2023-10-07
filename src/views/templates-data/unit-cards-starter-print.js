@@ -5,8 +5,11 @@ import { FACTIONS } from '../../data/constants.js'
 export const factionCards = FACTION_DEMO_UNITS.map((faction) => {
     let UNITS = faction.cards
 
-    faction.cardPages = cardsToPages(UNITS, 9)
-    return faction
+    return {
+        faction: faction.faction,
+        faction_slug: faction.faction_slug,
+        cardPages: cardsToPages(UNITS, 9),
+    }
 })
 
 export const armyLists = STARTER_SET_LISTS
