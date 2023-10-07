@@ -29,7 +29,7 @@ export const REPUBLIC_FACTION_SVG_SPRITE = 'faction_' + REPUBLIC_FACTION_SLUG
 export const REPUBLIC_FACTION = {
     faction: REPUBLIC_FACTION_NAME,
     faction_slug: REPUBLIC_FACTION_SLUG,
-    faction_svg_sprite: COALITION_FACTION_SVG_SPRITE,
+    faction_svg_sprite: REPUBLIC_FACTION_SVG_SPRITE,
 }
 
 export const FREE_UNION_FACTION_NAME = 'Free Union'
