@@ -66,7 +66,7 @@
         "node-notifier": "^10.0.1",
         "node-sass": "^8.0.0",
         "pagedjs": "^0.4.1",
-        "puppeteer": "^19.6.3",
+        "puppeteer": "^21.3.8",
         "sass": "^1.56.1",
         "sass-loader": "^13.2.2",
         "style-loader": "^3.3.1",

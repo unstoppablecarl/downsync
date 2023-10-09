@@ -26,7 +26,8 @@ server.listen(8080, async () => {
 
     const pages = [
         {
-            url: domain + '/quick-reference.html',
+            url: domain + '/quick-reference-print.html',
+            output: `quick-reference`,
         },
         {
             url: domain + '/rules-print.html',
