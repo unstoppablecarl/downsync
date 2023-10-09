@@ -52,7 +52,6 @@ export const SCENARIO_FACTION = {
 export const FACTIONS = [
     COALITION_FACTION,
     REPUBLIC_FACTION,
-
 ]
 
 if (FEATURE_FREE_UNION) {
