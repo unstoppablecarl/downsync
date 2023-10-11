@@ -28,7 +28,8 @@
                                :id="'filter-' + faction.faction_slug"
                         />
                         <label class="form-check-label" :for="'filter-' + faction.faction_slug">
-                            {{ faction.faction }}
+                            {{ faction.faction_name }}
+
                         </label>
                         <span class="btn btn-light btn-only" @click="selectOnly(faction.faction_slug)">only</span>
                     </div>

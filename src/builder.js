@@ -3,7 +3,7 @@ import path from 'path'
 import buildTemplates from './templates.js'
 import util from 'util'
 import { buildRootData } from './views/root-template-data.js'
-import Handlebars from 'handlebars'
+import Handlebars from './handlebars.js'
 import { ALL_UNITS } from './views/templates-data/support/page-card-data.js'
 import { FEATURE_ADVISOR_CARD } from './versioning.js'
 
@@ -52,7 +52,7 @@ function buildPages(templates, rootData) {
 async function buildSingleCardPages(rootData) {
 
     let contents = await fs.promises.readFile('./src/views/templates-dynamic/unit-card-single.hbs', 'utf-8')
-    let template = Handlebars.compile(contents)
+    let template = Handlebars.compile(contents, { strict: true })
 
     return Promise.all(
         ALL_UNITS.map((unit) => {
@@ -61,8 +61,14 @@ async function buildSingleCardPages(rootData) {
             let data = Object.assign({}, rootData, {
                 singleCardData: unit,
             })
-            let contents = template(data)
-            return fs.promises.writeFile(dest, contents, 'utf8')
+            try {
+
+                let contents = template(data)
+                return fs.promises.writeFile(dest, contents, 'utf8')
+            } catch (e) {
+                console.log('rendering single unit: ' + unit.name)
+                throw e
+            }
         }),
     )
 }
@@ -95,7 +101,7 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
                     return fs.promises.writeFile(dest, contents, 'utf8')
 
                 } catch (e) {
-                    console.log('rendering: ', key)
+                    console.log('rendering: ' + key)
                     throw e
                 }
 
@@ -112,7 +118,7 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
                             return fs.promises.writeFile(dest, contents, 'utf8')
 
                         } catch (e) {
-                            console.log('rendering: ', key)
+                            console.log('rendering: ' + key)
                             throw e
                         }
                     })

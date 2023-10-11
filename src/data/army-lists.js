@@ -226,7 +226,7 @@ if (FEATURE_FREE_UNION) {
     STARTER_SET_LISTS.push(FREE_UNION_STARTER_LIST)
 }
 
-function make(faction, name, units) {
+function make(faction_name, name, units) {
 
     const modelCount = units.reduce((total, item) => {
         return total + item.count
@@ -237,7 +237,7 @@ function make(faction, name, units) {
     const largeCount = countBySignature(units, SIZE_LARGE)
 
     return {
-        faction,
+        faction_name,
         name,
         units,
         modelCount,

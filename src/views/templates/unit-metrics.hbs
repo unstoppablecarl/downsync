@@ -12,7 +12,7 @@
 
             {{#each cardListData}}
                 <div class="container">
-                    <h2>{{faction}}</h2>
+                    <h2>{{faction_name}}</h2>
 
                     <div class="clearfix">
                         <table class="table table-bordered table-width-auto float-start me-2">
@@ -24,7 +24,7 @@
                             <tbody>
                             {{#each factionCards}}
                                 <tr>
-                                    <th>{{name}}{{#if variant_name}}:{{/if}} {{variant_name}}</th>
+                                    <th>{{full_name}}</th>
                                     <td>{{signature}}</td>
                                 </tr>
                             {{/each}}

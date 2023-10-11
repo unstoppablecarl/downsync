@@ -43,6 +43,7 @@ const FACTION_DATA = (() => {
     }
 
     let result = FACTIONS.map((faction) => {
+        Object.freeze(faction)
         return Object.assign({ faction }, FACTION_CARD_DATA[faction.faction_slug])
     })
 
@@ -53,11 +54,12 @@ export const FACTION_UNITS = FACTION_DATA.map(({
                                                    faction,
                                                    units,
                                                }) => {
-    return {
-        faction: faction.faction,
+    return Object.freeze({
+        faction_name: faction.faction_name,
         faction_slug: faction.faction_slug,
+        faction_svg_sprite: faction.faction_svg_sprite,
         cards: prepareCards(units),
-    }
+    })
 })
 
 let _FACTION_AND_SCENARIO_UNITS = [].concat(FACTION_UNITS)
@@ -75,8 +77,9 @@ export const FACTION_DEMO_UNITS = FACTION_DATA.map(({
                                                         demo_units,
                                                     }) => {
     return {
-        faction: faction.faction,
+        faction_name: faction.faction_name,
         faction_slug: faction.faction_slug,
+        faction_svg_sprite: faction.faction_svg_sprite,
         cards: prepareCards(demo_units),
     }
 })
@@ -86,8 +89,9 @@ export const FACTION_ADVISORS = FACTION_DATA.map(({
                                                       advisors,
                                                   }) => {
     return {
-        faction: faction.faction,
+        faction_name: faction.faction_name,
         faction_slug: faction.faction_slug,
+        faction_svg_sprite: faction.faction_svg_sprite,
         cards: prepareCards(advisors),
     }
 })
@@ -128,6 +132,7 @@ export function prepareSplitCards(targetUnits) {
 
     units.splice(1, 0, {
         template: 'unit-split-card',
+        faction: SENTINEL_TAGGER.faction,
         splitCards: [
             SENTINEL_TAGGER,
             SENTINEL_HUNTER,
@@ -135,4 +140,43 @@ export function prepareSplitCards(targetUnits) {
     })
 
     return units
+}
+
+export function prepareSplitCards2(factionData) {
+
+    return factionData.map(({
+                                faction_name,
+                                faction_slug,
+                                faction_svg_sprite,
+                                cards,
+                            }) => {
+        let UNITS = cards
+
+        if (faction_slug === COALITION_FACTION_SLUG) {
+            UNITS = prepareSplitCards(UNITS)
+        }
+
+        return {
+            faction_name,
+            faction_slug,
+            faction_svg_sprite,
+            cards: UNITS,
+        }
+    })
+}
+
+export function factionCardsToPrintPages(factionData, cardsPerPage) {
+    return factionData.map(({
+                                faction_name,
+                                faction_slug,
+                                faction_svg_sprite,
+                                cards,
+                            }) => {
+        return {
+            faction_name,
+            faction_slug,
+            faction_svg_sprite,
+            cardPages: cardsToPages(cards, cardsPerPage),
+        }
+    })
 }

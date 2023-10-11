@@ -61,7 +61,8 @@ $page-height: 11 * 72pt;
     }
 
     .page-card-grid {
-        padding: 36pt;
+        // should be 36pt but causes extra empty page
+        padding: 35.5pt;
     }
 
     .card {

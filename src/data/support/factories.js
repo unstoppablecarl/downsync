@@ -34,7 +34,10 @@ export function makeAdvisor(advisor) {
         img: 'advisor-placeholder.svg',
         template: 'advisor-card',
         actions: [],
+        command_abilities: [],
+        command_passive_abilities: [],
         traits: [],
+        notes: [],
     }
 
     advisor = Object.assign(defaults, advisor)

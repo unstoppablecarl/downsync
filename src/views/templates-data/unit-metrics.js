@@ -10,11 +10,11 @@ const sizeOrder = [
 ]
 
 export const cardListData = FACTION_UNITS.map(({
-                                                   faction,
+                                                   faction_name,
                                                    cards,
                                                }) => {
     return {
-        faction,
+        faction_name,
         factionCards: sortBy(cards, sortBySize),
         counts: countBy(cards, 'signature'),
     }

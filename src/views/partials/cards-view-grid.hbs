@@ -2,7 +2,7 @@
     {{#each factionCards as |fac|}}
         <div class="faction-{{fac.faction_slug}}">
             <div class="container">
-                <h2 class="faction-heading">{{> svg-icon icon=fac.svg_icon}}{{fac.faction}}</h2>
+                <h2 class="faction-heading">{{> svg-icon icon=fac.faction_svg_sprite}}{{fac.faction_name}}</h2>
             </div>
             <div class="faction-cards">
                 {{#each cards as |singleCardData|}}

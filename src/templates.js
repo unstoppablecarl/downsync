@@ -53,7 +53,7 @@ function dirToTemplates(tplDir, glob) {
                                       }) => {
                 return fs.promises.readFile(filePath, 'utf-8')
                     .then((tpl) => {
-                        templates[key] = Handlebars.compile(tpl)
+                        templates[key] = Handlebars.compile(tpl, { strict: true })
                     })
             })
 

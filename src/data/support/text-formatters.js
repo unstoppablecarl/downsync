@@ -86,7 +86,7 @@ let costTemplate
 function getCostTemplate() {
     if (!costTemplate) {
         let tpl = fs.readFileSync('./src/views/partials/cost-icon.hbs', 'utf-8')
-        costTemplate = Handlebars.compile(tpl)
+        costTemplate = Handlebars.compile(tpl, { strict: true })
     }
 
     return costTemplate

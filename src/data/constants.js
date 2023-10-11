@@ -18,7 +18,7 @@ export const COALITION_FACTION_NAME = 'Coalition'
 export const COALITION_FACTION_SLUG = 'coalition'
 export const COALITION_FACTION_SVG_SPRITE = 'faction_' + COALITION_FACTION_SLUG
 export const COALITION_FACTION = {
-    faction: COALITION_FACTION_NAME,
+    faction_name: COALITION_FACTION_NAME,
     faction_slug: COALITION_FACTION_SLUG,
     faction_svg_sprite: COALITION_FACTION_SVG_SPRITE,
 }
@@ -27,7 +27,7 @@ export const REPUBLIC_FACTION_NAME = 'Republic of Terra'
 export const REPUBLIC_FACTION_SLUG = 'republic-of-terra'
 export const REPUBLIC_FACTION_SVG_SPRITE = 'faction_' + REPUBLIC_FACTION_SLUG
 export const REPUBLIC_FACTION = {
-    faction: REPUBLIC_FACTION_NAME,
+    faction_name: REPUBLIC_FACTION_NAME,
     faction_slug: REPUBLIC_FACTION_SLUG,
     faction_svg_sprite: REPUBLIC_FACTION_SVG_SPRITE,
 }
@@ -36,7 +36,7 @@ export const FREE_UNION_FACTION_NAME = 'Free Union'
 export const FREE_UNION_FACTION_SLUG = 'free-union'
 export const FREE_UNION_FACTION_SVG_SPRITE = 'faction_' + FREE_UNION_FACTION_SLUG
 export const FREE_UNION_FACTION = {
-    faction: FREE_UNION_FACTION_NAME,
+    faction_name: FREE_UNION_FACTION_NAME,
     faction_slug: FREE_UNION_FACTION_SLUG,
     faction_svg_sprite: FREE_UNION_FACTION_SVG_SPRITE,
 }
@@ -45,7 +45,7 @@ export const SCENARIO_FACTION_NAME = 'Scenario Units'
 export const SCENARIO_FACTION_SLUG = 'scenario'
 export const SCENARIO_FACTION_SVG_SPRITE = 'faction_' + SCENARIO_FACTION_SLUG
 export const SCENARIO_FACTION = {
-    faction: SCENARIO_FACTION_NAME,
+    faction_name: SCENARIO_FACTION_NAME,
     faction_slug: SCENARIO_FACTION_SLUG,
     faction_svg_sprite: SCENARIO_FACTION_SVG_SPRITE,
 }
@@ -58,7 +58,6 @@ if (FEATURE_FREE_UNION) {
     FACTIONS.push(FREE_UNION_FACTION)
 }
 
-export const FACTIONS_WITH_SCENARIO = [].concat(FACTIONS, [SCENARIO_FACTION])
 export const EMPHASIS_KEYWORDS = [
 
     // unit stats

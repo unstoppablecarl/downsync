@@ -7,6 +7,7 @@ export default {
     svg_icon_path,
     concat,
     require,
+    optional,
 }
 
 function json(context) {
@@ -58,8 +59,16 @@ function concat(...args) {
     return args.join('')
 }
 
+function optional(val, options) {
+    if (val !== undefined) {
+        return val
+    }
+}
+
 function require(key, options) {
 
+    console.log(key)
+    return key
     let val = options.lookupProperty(this, key)
     if (val === undefined) {
         throw new Error('required value is undefined: ' + key)
