@@ -16,7 +16,6 @@ export default async function (baseRootData = {}) {
     let [templates, rootData] = await Promise.all([
         buildTemplates(),
         buildRootData(),
-        makeDir(dist),
     ])
 
     rootData = Object.assign({}, baseRootData, rootData)
@@ -93,36 +92,26 @@ function renderTemplate(templates, key, rootData, outputFileName = null) {
 
     getDataFilePathFromKey(key)
         .then((target) => {
-
-            if (!target) {
-                try {
-                    let contents = template(rootData)
-
-                    return fs.promises.writeFile(dest, contents, 'utf8')
-
-                } catch (e) {
-                    console.log('rendering: ' + key)
-                    throw e
-                }
-
-            } else {
-
+            if (target) {
                 return import(target)
                     .then((tplData) => {
-
-                        let mergedData = Object.assign({}, rootData, tplData)
-
-                        try {
-                            let contents = template(mergedData)
-
-                            return fs.promises.writeFile(dest, contents, 'utf8')
-
-                        } catch (e) {
-                            console.log('rendering: ' + key)
-                            throw e
-                        }
+                        return Object.assign({}, rootData, tplData)
                     })
             }
+            return rootData
+        })
+        .then((tplData) => {
+
+            let dir = path.dirname(dest)
+            return makeDir(dir).then(() => tplData)
+        })
+        .then(tplData => {
+            let contents = template(tplData)
+            return fs.promises.writeFile(dest, contents, 'utf8')
+        })
+        .catch(e => {
+            console.log('rendering: ' + key)
+            throw e
         })
 }
 

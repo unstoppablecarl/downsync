@@ -1,6 +1,6 @@
 @import 'bootstrap/scss/mixins/banner';
 
-@include bsBanner("");
+@include bsBanner('');
 // scss-docs-start import-stack
 // Configuration
 @import 'bootstrap/scss/functions';
@@ -26,7 +26,7 @@
 @import 'bootstrap/scss/button-group';
 @import 'bootstrap/scss/nav';
 @import 'bootstrap/scss/navbar';
-//@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/card';
 //@import 'bootstrap/scss/accordion';
 //@import 'bootstrap/scss/breadcrumb';
 @import 'bootstrap/scss/pagination';

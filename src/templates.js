@@ -12,7 +12,7 @@ partialsDir = path.resolve(partialsDir)
 export default async function buildTemplates() {
     return Promise.all([
         dirToTemplates(partialsDir, '/**/*.hbs'),
-        dirToTemplates(tplDir, '/*.hbs'),
+        dirToTemplates(tplDir, '/**/*.hbs'),
     ]).then((results) => {
 
         let partials = results[0]
