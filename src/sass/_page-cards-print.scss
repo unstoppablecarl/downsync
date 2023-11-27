@@ -18,6 +18,8 @@ $page-height: 11 * 72pt;
     .card {
         width: $card-width;
         height: $card-height;
+        border: 0;
+        border-radius: 0;
     }
 
 
@@ -68,6 +70,8 @@ $page-height: 11 * 72pt;
     .card {
         height: $card-height;
         width: auto;
+        border: 0;
+        border-radius: 0;
     }
 
     .split-card {
