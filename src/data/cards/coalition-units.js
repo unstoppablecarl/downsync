@@ -244,7 +244,7 @@ export const SPIDER_DRONE_INFILTRATOR = make({
 export const SPIDER_DRONE_SOLDIER = make({
     slug: 'spider-drone-soldier',
     name: 'Spider Drone',
-    variant_name: 'Solder',
+    variant_name: 'Soldier',
     squad_size: 4,
     img: 'spider-drone.png',
     signature: SIZE_SMALL,
