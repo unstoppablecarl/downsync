@@ -37,3 +37,39 @@ svg.bi {
     font-size: 1rem;
     font-weight: bold;
 }
+
+a.anchor {
+    display: block;
+    cursor: pointer;
+    float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 1;
+}
+
+.header-link {
+    vertical-align: middle;
+    display: inline-block;
+    overflow: visible !important;
+    visibility: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &:hover {
+        .header-link {
+            visibility: visible;
+        }
+    }
+}
+
+@media print {
+
+    a.anchor {
+        display: none;
+    }
+}
