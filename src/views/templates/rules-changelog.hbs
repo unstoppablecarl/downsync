@@ -1,0 +1,16 @@
+{{#extend 'layout/html' title='Downsync'}}
+
+    {{#content 'page-content'}}
+        <div class="header">
+            <div class="container-ex">
+                <h1 class="primary-heading">Rules Change Log</h1>
+            </div>
+        </div>
+
+        <div class="container primary-content rulebook">
+
+            {{{convertedMarkdown}}}
+        </div>
+
+    {{/content}}
+{{/extend}}
