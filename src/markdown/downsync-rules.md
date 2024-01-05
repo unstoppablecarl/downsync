@@ -90,7 +90,7 @@ If multiple effects cause a roll to be Boosted more than once, it has no additio
     - **Unit**:               A vehicle model on a base (small/medium/large) or a group of multiple Sub-Unit bases (
       40mm)
         - **Multi-Base Unit**:  A Unit that has multiple Sub-Units instead of one larger base, typically infantry.
-        - **Sub-Unit Base**:  A 40mm circular base with infantry or other model(s) on it.
+        - **Sub-Unit Base**:  A 40mm circular base with infantry or other models on it.
         - **Unit Activation**:  Performing a single Unit's action(s).
         - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
     - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
@@ -779,6 +779,15 @@ A Unit has already been Refreshed this Round when it is in the Active Player's T
 When a Unit is [Refreshed](#refresh) it removes its **Overwatch Token** if it has one.
 When activating, Units may perform an Overwatch Action as normal and gain an Overwatch Token to be used in a later
 Reaction Engagement.
+
+##### Reactions and Overwatch Actions
+
+When resolving a reaction a Unit may spend its Action Point to perform an Overwatch Action and gain a new Overwatch
+Token to be used in a future Reaction Engagement. Units performing an Overwatch Action this way may not perform any
+other actions during this activation.
+
+*A Unit resolving its reaction may want to perform an Overwatch Action if it no longer has any targets to attack.
+Saving its action for later.*
 
 #### Cleanup
 

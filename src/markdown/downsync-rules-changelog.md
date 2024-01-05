@@ -33,3 +33,11 @@ Removed the LOS requirement from "A Ping may never move within 2" and LOS of an 
 #### Rename Infantry Bases
 
 Infantry Bases are now referred to as Sub-Units or sometimes Sub-Unit Bases.
+
+#### Reactions and Overwatch Actions
+
+Added the following clarification:
+
+"When resolving a reaction a Unit may spend its Action Point to perform an Overwatch Action and gain a new Overwatch
+Token to be used in a future Reaction Engagement. Units performing an Overwatch Action this way may not perform any
+other actions during this activation."
