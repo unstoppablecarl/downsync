@@ -771,7 +771,7 @@ Point.
 
 In reaction priority order, each Unit may perform a Unit Activation.
 Instead of performing a Unit Activation, a Unit may hold its reaction by reducing the value of its Reaction Priority die
-by 1.
+by 1. This can be done multiple times, but the Reaction Priority die may not be less than 1.
 
 Units that have not Refreshed this Round are [Refreshed](#refresh) immediately before resolving their Unit Activation.
 A Unit has already been Refreshed this Round when it is in the Active Player's Taskforce or has an Activated Token.
