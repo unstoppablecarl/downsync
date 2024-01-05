@@ -1,6 +1,6 @@
-# Downsync Rules (Beta)
+# Downsync Rules
 
-Last Updated: June 27, 2023
+[Beta 4.0.0] - [Change Log](/rules-changelog.html) - *Last Updated: Jan 5, 2024*
 
 [[toc]]
 
@@ -32,7 +32,7 @@ stealth, and deception.
 - Circular bases of size: 40mm, 70mm, 80mm, 90mm
 - Tokens (8mm colored wooden cubes)
 - Models
-- 4x4 ft play area
+- 4x6 ft play area
 - Terrain
 
 #### Scale and Abstraction
@@ -67,7 +67,7 @@ If multiple effects cause a roll to be Boosted more than once, it has no additio
 ### Terminology
 
 - **Active Player**:          The player who is currently taking their turn.
-- **Battlefield**:            The 4x4 ft. surface containing models and terrain where the game is taking place.
+- **Battlefield**:            The 4x6 ft. surface containing models and terrain where the game is taking place.
 - **Command Point**:          A resource players have each turn to spend on Command Point Abilities and Unit Actions.
     - **Command Point Ability**:  An Ability that all players may spend Command Points to activate.
     - **Command Point Capacity**: The number of Command Points each player starts each Round with.
@@ -431,12 +431,12 @@ Pings may only be targeted by actions that have the REVEAL effect.
 
 ### Movement
 
-A Ping may never move within 2" and LOS of an enemy Unit or Ping. Pings can never move through or end their movement in,
+A Ping may never move within 2" of an enemy Unit or Ping. Pings can never move through or end their movement in,
 a position that would cause them to be automatically revealed by an enemy.
 
 All Pings have a **SPD** stat of 4".
 
-*The minimum Unit **SPD** is 4, so a Unit is always the same speed or faster than a Ping.*
+*The minimum Unit **SPD** is 4", so a Unit is always the same speed or faster than a Ping.*
 
 ### Activating
 
@@ -782,7 +782,7 @@ After all reactions are resolved each participating Unit gains an Activated Toke
 
 ## Missions
 
-All missions are played on a 4x4 foot table and have players on opposite sides of the table.
+Missions are typically played on a 4x6 foot table and have players on opposite sides of the table.
 
 ### Mission: VIP Capture
 
@@ -902,7 +902,7 @@ Token: Command Point, Action Point, Countermeasure Token, Emergency Countermeasu
 | **Color**             | <span class="token" style="background:orange"></span> Orange                                                                     |
 | **Gained**            | After suffering the STUN effect                                                                                                  |
 | **Can have multiple** | No                                                                                                                               |
-| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases suffer the effects of STUN                                                              |
+| **Multi-Base Units**  | 1 Token for each Infantry-Base. Each must remove its own Stun Token                                                              |
 | **Removed**           | After resolving an activation that suffered its effect or spending a Command Point to remove it in the [Refresh](#refresh) phase |
 
 ### Stealth Token
