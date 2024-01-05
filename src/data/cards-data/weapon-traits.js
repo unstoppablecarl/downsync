@@ -18,7 +18,7 @@ export const TRAIT_CLUSTERED = (radius) => {
 
 export const TRAIT_TAGGED_EFFECT = make({
     name: 'Tagged',
-    desc: 'Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit can only be Tagged once.',
+    desc: 'Units/Infantry Bases hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit/Infantry Base can only be Tagged once.',
 })
 
 export const TRAIT_SPECIALIZED_VS = (types) => {
