@@ -571,9 +571,10 @@ If the target is a Ping the **Target Defense** depends on its Signature.
 | Medium         | 13            |
 | Large          | 12            |
 
-| Modifiers                    |    |
-|------------------------------|----|
-| Ping Concealed or out of LOS | -1 |
+| Modifiers             |    |
+|-----------------------|----|
+| Ping Concealed in LOS | -1 |
+| Ping out of LOS       | -2 |
 
 | Outcome                     | Result  |
 |-----------------------------|---------|
