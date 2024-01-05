@@ -29,3 +29,7 @@ costing more resources. This balances out some of the advantages infantry units 
 #### Auto Revealing
 
 Removed the LOS requirement from "A Ping may never move within 2" and LOS of an enemy Unit or Ping."
+
+#### Rename Infantry Bases
+
+Infantry Bases are now referred to as Sub-Units or sometimes Sub-Unit Bases.

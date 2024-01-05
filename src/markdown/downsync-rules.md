@@ -29,7 +29,7 @@ stealth, and deception.
 
 - Dice: d6
 - Measuring tape
-- Circular bases of size: 40mm, 70mm, 80mm, 90mm
+- Pings: Small/Medium/Large circles 60mm/70mm/80mm
 - Tokens (8mm colored wooden cubes)
 - Models
 - 4x6 ft play area
@@ -87,10 +87,10 @@ If multiple effects cause a roll to be Boosted more than once, it has no additio
         - **Small**: 60mm
         - **Medium**: 70mm
         - **Large**: 80mm
-    - **Unit**:               A vehicle model on a base (small/medium/large) or a group of multiple infantry bases (
+    - **Unit**:               A vehicle model on a base (small/medium/large) or a group of multiple Sub-Unit bases (
       40mm)
-        - **Multi-Base Unit**:  A Unit that has multiple Infantry Bases instead of one larger base.
-        - **Infantry Base**:  A 40mm circular base with infantry model(s) on it.
+        - **Multi-Base Unit**:  A Unit that has multiple Sub-Units instead of one larger base, typically infantry.
+        - **Sub-Unit Base**:  A 40mm circular base with infantry or other model(s) on it.
         - **Unit Activation**:  Performing a single Unit's action(s).
         - **Activated Unit**: Unit that has already completed its Unit Activation this Round.
     - **Ping**:               Circular marker or base representing a sensor Signature indicating a hidden Unit.
@@ -331,7 +331,7 @@ When measuring the distance from or to a Unit in a building the height of the bu
 Only infantry Units may enter a building and a building may only contain as many infantry Units as can fit on its roof.
 Moving into or out of a building has no movement penalty.
 
-*Players should agree on what terrain pieces are considered buildings and how many 40mm infantry bases can fit on each
+*Players should agree on what terrain pieces are considered buildings and how many 40mm Sub-Units can fit on each
 building before the game starts.*
 
 #### Building Abstraction
@@ -348,16 +348,16 @@ Building height only affects LOS.
 
 #### Building Size
 
-Buildings should have a footprint of around 3.5x5 inches at most with a height around 1-6 inches.
-A building this size would allow 6 infantry bases to fit on the roof comfortably.
+Buildings should have a footprint of around 3.5x3.5 inches at most with a height around 1-6 inches.
+A building this size would allow 4 Sub-Units (40mm diameter) to fit on the roof comfortably.
 Buildings with a larger footprint should be handled in sections where each section is considered a different building.
 
 *Units in tall buildings will have a wide field of view, but will also be visible from a wider range of positions.*
 
 ## Units
 
-A Unit is represented by a vehicle model on a base (60mm/70mm/80mm) or multiple infantry bases (40mm) each with one or
-more infantry models on it.
+A Unit is represented by a vehicle model on a base (60mm/70mm/80mm) or multiple Sub-Units (40mm) each with one or
+more models on it.
 
 ### Stats
 
@@ -372,50 +372,54 @@ more infantry models on it.
 
 ### Multi-Base Units
 
-Some Units have multiple Infantry Bases instead of a vehicle model. How many Infantry Bases a multi-base Unit has is
+Some Units have multiple Sub-Units instead of a vehicle model. How many Sub-Units a multi-base Unit has is
 indicated on its Unit Card by a number in a circle at the top of the card next to the Unit description. Multi-Base Units
-have 1-4 Infantry Bases.
+have 1-4 Sub-Units.
 
 See: [Revealing Infantry Units](#revealing-infantry-units)
 
 ### Targeting Multi-Base Units
 
-When performing a Combat Action against a Multi-Base Unit select a single Infantry base to be the target.
-Only that Infantry Base is used for determining LOS and Concealment for the Combat Action.
-If the Combat Action's effect is KILL, it is applied only to the targeted Infantry Base.
+When performing a Combat Action against a Multi-Base Unit select a single Sub-Unit to be the target.
+Only that Sub-Unit is used for determining LOS and Concealment for the Action targeting it.
+The Combat Action's effect is applied only to the targeted Sub-Unit.
 
-If targeting a building containing Infantry Bases, the Attacker may choose any Infantry Base in the building to be the
+If targeting a building containing Infantry Bases, the Attacker may choose any Sub-Unit in the building to be the
 target.
+
+*Some Action effects will specify that they apply to the whole Unit if any Sub-Unit is hit.*
 
 #### Multi-Base Unit Countermeasures
 
-Each Infantry Base in a Multi-Base Unit begins the game with a number of Countermeasure Tokens equal to the Unit's
+Each Sub-Unit in a Multi-Base Unit begins the game with a number of Countermeasure Tokens equal to the Unit's
 **CM** stat and regenerate Countermeasures the same as Single-Base Units.
-When an Infantry Base is hit by a Combat Action it may only use its own Countermeasure Tokens to negate the effect.
+When a Sub-Unit is hit by a Combat Action it may only use its own Countermeasure Tokens to negate the effect.
 
 #### Multi-Base Unit Coherency
 
-Multi-Base Units must end their movement such that all Infantry Bases in the Unit are within 6" of every other Infantry
-Base in the Unit. In other words all infantry bases in a Unit must fit within a 6" diameter circle.
+Multi-Base Units must end their movement such that all Sub-Unit in the Unit are within 6" of every other Sub-Unit in the
+Unit.
+In other words all Sub-Unit in a Unit must fit within a 6" diameter circle.
 
 #### Multi-Base Unit Activation
 
-When a Multi-Base Unit activates each Infantry Base gains 1 Action Point and activates one at a time in an order
+When a Multi-Base Unit activates each Sub-Unit gains 1 Action Point and activates one at a time in an order
 determined by its Controlling Player.
-Infantry Base Activations of the same Unit can not be split up and must be completed before activating another Unit.
+Sub-Unit Activations of the same Unit can not be split up and must be completed before activating another Unit.
 
 #### Multi-Base Unit Actions
 
-Some Multi-Base Units have actions that only specific Teams (single Infantry Base in the Unit) can perform.
+Some Multi-Base Units have actions that only specific Teams (single Sub-Unit in the Unit) can perform.
 For example a Unit may have an action with a team value of "1" or "1-3".
 Only the team(s) indicated may perform this action.
-Actions that do not specify a team can be performed by all Infantry Bases in a Unit.
+Actions that do not specify a team can be performed by all Sub-Unit in a Unit.
 
 #### Multi-Base Unit Tokens
 
-In Multi-Base Units all non-Countermeasure Tokens belong to the Unit as a whole.
-They must be on an Infantry Base to indicate that the Unit is the owner of the Token, but it does not matter which
-infantry base(s) they are on. See: [Unit Tokens](#unit-tokens)
+In Multi-Base Units Activated Tokens and Stealth Tokens apply to the Unit as a whole.
+They must be on Sub-Unit to indicate that the Unit is the owner of the Token, but it does not matter which
+Sub-Unit they are on. See: [Unit Tokens](#unit-tokens)
+All other tokens belong to an individual Sub-Unit.
 
 ## Pings
 
@@ -463,9 +467,9 @@ When Revealed the Unit's model is placed on the Ping (circular base). The circul
 Revealed Unit instead of a Ping.
 What was the Ping becomes the Unit's base.
 
-#### Revealing Infantry Units
+#### Revealing Multi-Base Units
 
-When Revealed, Infantry Units **Place** each Infantry Base within 3" of the Ping (including the space occupied by the
+When Revealed, Multi-Base Units **Place** each Sub-Unit within 3" of the Ping (including the space occupied by the
 Ping), and the Ping is removed.
 
 See: [Multi-Base Units](#multi-base-units)
@@ -639,10 +643,10 @@ The target may attempt to negate the effects of the Combat Action with [Counterm
 
 If an Attack results in a successful hit, resolve the Combat Action's effect against the targeted Unit.
 
-| Effect   | Description                                                                                                            |
-|----------|------------------------------------------------------------------------------------------------------------------------|
-| **KILL** | The targeted Unit or Infantry Base of a Multi-Base Unit is destroyed and removed from the game.                        |
-| **STUN** | The targeted Unit gains a [Stun Token](#stun-token). If the Unit already has a Stun Token, there is no further effect. |
+| Effect   | Description                                                                                                                                               |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **KILL** | The targeted Unit or Sub-Unit of a Multi-Base Unit is destroyed and removed from the game.                                                                |
+| **STUN** | The targeted Unit or Sub-Unit of a Multi-Base Unit gains a [Stun Token](#stun-token). If the target already has a Stun Token, there is no further effect. |
 
 ## Special Actions
 
@@ -796,7 +800,7 @@ moved through.
 **Scoring**: Players score by capturing the VIP on their opponents side of the table.
 When a player ends a Taskforce Activation, each Unit within 1" of the opposing VIP scores 1 Victory Point.
 Each opposing Unit within 6" subtracts 1 Victory Point from this amount.
-Multi-Base Units must have more than half of their starting Infantry Bases within 1".
+Multi-Base Units must have more than half of their starting Sub-Units within 1".
 
 **Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
 
@@ -812,12 +816,12 @@ Including if an ability with the same name comes from multiple sources.
 <div class="row">
 <div class="col-md-6">
 
-Some abilities describe **Placing** a Unit or Ping within X".
+Some abilities describe **Placing** a Unit, Sub-Unit, or Ping within X".
 **Placing** is different from moving it does not suffer terrain movement penalties and does not require a clear path.
-When **Placing** a Multi-Base Unit, Place each Infantry Base anywhere within X" of its current position and within 6" of
-every other Infantry Base in the Unit.
+When **Placing** a Multi-Base Unit, Place each Sub-Unit anywhere within X" of its current position and within 6" of
+every other Sub-Unit in the Unit.
 After **Placing** a Unit/Ping it must not overlap any other Units/Pings or impassible terrain.
-Only infantry Units may be **Placed** within buildings.
+Only Sub-Unit may be **Placed** within buildings.
 When a Unit or Ping is **Placed** it may not be placed within 2" of an enemy Ping.
 
 </div>
@@ -844,13 +848,13 @@ When a Unit *spends* a token it is removed from the Unit's base and set aside.
 A Unit with an Activated Token has been activated this Round.
 The Unit cannot activate, be part of a Taskforce, or participate in Reaction Engagements until the next round.
 
-|                       |                                                                           |
-|-----------------------|:--------------------------------------------------------------------------|
-| **Color**             | <span class="token token-shadow" style="background:green"></span> Green   |
-| **Gained**            | After Unit Activates                                                      |
-| **Can have multiple** | No                                                                        |
-| **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together |
-| **Removed**           | Round start                                                               |
+|                       |                                                                         |
+|-----------------------|:------------------------------------------------------------------------|
+| **Color**             | <span class="token token-shadow" style="background:green"></span> Green |
+| **Gained**            | After Unit Activates                                                    |
+| **Can have multiple** | No                                                                      |
+| **Multi-Base Units**  | 1 Token for the Unit as each Sub-Unit in the Unit activates together    |
+| **Removed**           | Round start                                                             |
 
 ### Countermeasure Token
 
@@ -862,7 +866,7 @@ a [Countermeasure Check](#countermeasure-check).
 | **Color**             | <span class="token token-shadow" style="background:white"></span> White        |
 | **Gained**            | When Unit is first [Revealed](#revealing) and when it is [Refreshed](#refresh) |
 | **Can have multiple** | Yes                                                                            |
-| **Multi-Base Units**  | Each Infantry Base gains Countermeasure Tokens equal to the Unit's CM stat     |
+| **Multi-Base Units**  | Each Sub-Unit gains Countermeasure Tokens equal to the Unit's CM stat          |
 | **Removed**           | When spent                                                                     |
 
 ### Emergency Countermeasure Token
@@ -871,13 +875,13 @@ When a Unit is hit by an Attack it may spend an Emergency Countermeasure Token t
 a [Countermeasure Check](#countermeasure-check).
 Emergency Countermeasures do not [Regenerate](#regenerating-countermeasures).
 
-|                       |                                                                                       |
-|-----------------------|---------------------------------------------------------------------------------------|
-| **Color**             | <span class="token token-shadow" style="background:yellow"></span> Yellow             |
-| **Gained**            | When Unit is first Revealed                                                           |
-| **Can have multiple** | Yes                                                                                   |
-| **Multi-Base Units**  | Each Infantry Base gains Emergency Countermeasure Tokens equal to the Unit's CM+ stat |
-| **Removed**           | When spent                                                                            |
+|                       |                                                                                  |
+|-----------------------|----------------------------------------------------------------------------------|
+| **Color**             | <span class="token token-shadow" style="background:yellow"></span> Yellow        |
+| **Gained**            | When Unit is first Revealed                                                      |
+| **Can have multiple** | Yes                                                                              |
+| **Multi-Base Units**  | Each Sub-Unit gains Emergency Countermeasure Tokens equal to the Unit's CM+ stat |
+| **Removed**           | When spent                                                                       |
 
 ### Overwatch Token
 
@@ -889,7 +893,7 @@ A Unit with an Overwatch Token can participate in Reaction Engagements even if i
 | **Color**             | <span class="token" style="background:purple"></span> Purple                    |
 | **Gained**            | After performing an [Overwatch Action](#overwatch-action)                       |
 | **Can have multiple** | No                                                                              |
-| **Multi-Base Units**  | 1 Token for the Unit as each Infantry Base in the Unit activates together       |
+| **Multi-Base Units**  | 1 Token for the Unit as each Sub-Unit in the Unit activates together            |
 | **Removed**           | Taskforce Designation or after resolving an Activation in a Reaction Engagement |
 
 ### Stun Token
@@ -917,7 +921,7 @@ A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 | **Color**             | <span class="token" style="background:black"></span> Black                                                                                                          |
 | **Gained**            | By Unit special abilities                                                                                                                                           |
 | **Can have multiple** | No                                                                                                                                                                  |
-| **Multi-Base Units**  | 1 Token for the Unit. All Infantry bases benefit from the effects of a Stealth Token                                                                                |
+| **Multi-Base Units**  | 1 Token for the Unit. All Sub-Units benefit from the effects of a Stealth Token                                                                                     |
 | **Removed**           | A Unit loses the token when it makes an attack action or an enemy Unit successfully REVEALS it or an enemy Unit (or it) ends a movement or **Placement** within 2". |
 
 ### Unit Token Quick Reference
@@ -931,16 +935,3 @@ A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 | **[Overwatch](#overwatch-token)**                               | <span class="token" style="background:purple"></span> Purple              |
 | **[Stun](#stun-token)**                                         | <span class="token" style="background:orange"></span> Orange              |
 | **[Stealth](#stealth-token)**                                   | <span class="token" style="background:black"></span> Black                |
-
-## Areas That Could Be Improved
-
-There are still areas of the rules that could use improvement. Please share any suggestions you may have.
-
-### Naming
-
-The following names are ok but could be better:
-
-- Multi-Based Unit
-- Infantry Base
-- Reaction Engagement
-- Reaction Priority
