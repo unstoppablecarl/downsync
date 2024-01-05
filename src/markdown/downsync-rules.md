@@ -802,7 +802,7 @@ Missions are typically played on a 4x6 foot table and have players on opposite s
 
 ### Mission: VIP Capture
 
-**Deployment Zones**: Both players deploy Pings within 10" of their table edge
+**Deployment Zones**: Both players deploy Pings within 8" of their table edge
 
 **Setup**: Place a VIP token in the bottom right corner of each player's table side 12" from the right and the back
 edge.
@@ -810,11 +810,13 @@ The token may be represented by a civilian vehicle or other model but is not ter
 moved through.
 
 **Scoring**: Players score by capturing the VIP on their opponents side of the table.
-When a player ends a Taskforce Activation, each Unit within 1" of the opposing VIP scores 1 Victory Point.
+At the end of each round after the first, each Unit within 1" of the opposing VIP scores 1 Victory Point.
 Each opposing Unit within 6" subtracts 1 Victory Point from this amount.
 Multi-Base Units must have more than half of their starting Sub-Units within 1".
 
 **Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
+
+**Variations**: Place the 2 objectives on the center line of the table allowing both players to capture either of them.
 
 ## Special Rules
 
