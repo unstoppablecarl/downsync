@@ -41,3 +41,10 @@ Added the following clarification:
 "When resolving a reaction a Unit may spend its Action Point to perform an Overwatch Action and gain a new Overwatch
 Token to be used in a future Reaction Engagement. Units performing an Overwatch Action this way may not perform any
 other actions during this activation."
+
+##### Unit Taskforces at the end of the Round
+
+The following has been part of play forever, but was missing:
+
+"If the Non-Active Player has activated all of their Units this Round, the Active Player must include all of their
+remaining Units in one Taskforce."

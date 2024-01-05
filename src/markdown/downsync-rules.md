@@ -210,6 +210,9 @@ The Active Player declares which Units/Pings will be included in the Taskforce.
 Any un-activated Units/Pings in the player's force may be included.
 Designated Units are now considered to be in the Taskforce (aka Taskforce Units).
 
+If the Non-Active Player has activated all of their Units this Round, the Active Player must include all of their
+remaining Units in one Taskforce.
+
 #### Reveal
 
 Any Pings in the Taskforce may be Revealed. See: [Revealing](#revealing)
