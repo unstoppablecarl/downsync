@@ -10,13 +10,13 @@ export const STEALTHY = make({
 
 export const MOUNTED_INFANTRY = make({
     name: 'Mounted Infantry',
-    desc: `Infantry Bases in this Unit may not enter buildings.`,
+    desc: `Sub-Units in this Unit may not enter buildings.`,
 })
 
 export const CLEAR_THE_WAY = make({
     name: 'Clear The Way',
     note: `COST: ${COST_COMMAND}, Movement phase`,
-    desc: 'While within 8" of an Infantry Base in this Unit, other Units in the same Taskforce gain All Terrain.',
+    desc: 'While within 8" of a Sub-Unit in this Unit, other Units in the same Taskforce gain All Terrain.',
     desc_keywords_after: ['All Terrain'],
 })
 
@@ -51,7 +51,7 @@ export const DEFENSE_NET = (type) => {
     return make({
         name: 'Defense Net',
         note: `${type}, 4"`,
-        desc: `When resolving an attack against an Infantry Base in this Unit, it may spent up to 1 Countermeasure token controlled by a friendly Infantry Base in this Unit within 4" in addition to its own Countermeasure tokens.`,
+        desc: `When resolving an attack against a Sub-Unit in this Unit, it may spent up to 1 Countermeasure token controlled by a friendly Sub-Unit in this Unit within 4" in addition to its own Countermeasure tokens.`,
     })
 }
 

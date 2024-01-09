@@ -55,7 +55,7 @@ export const DEPLOY_DRONES = make({
     name: 'Deploy Drones',
     cost: COST_COMMAND,
     effect: '&starf;',
-    desc: 'Place the Infantry Bases of a Spider Drone: Infiltrator Unit within 3" of this Unit. They are not part of the current Taskforce. This Unit may use this Action once per game.',
+    desc: 'Place the Sub-Units of a Spider Drone: Infiltrator Unit within 3" of this Unit. They are not part of the current Taskforce. This Unit may use this Action once per game.',
     desc_keywords_after: ['Spider Drone: Infiltrator'],
 })
 
@@ -116,7 +116,7 @@ export const CM_HACK = make({
     range: 16,
     rof: 2,
     effect: '&starf;',
-    desc: `Units hit by this weapon resolve a CM check for each CM (not Emergency CM) it has and removes a CM for each failed check. Multi-Base Units must resolve checks for each Infantry Base separately. ${oncePerActivation}`,
+    desc: `Units hit by this weapon resolve a CM check for each CM (not Emergency CM) it has and removes a CM for each failed check. Multi-Base Units must resolve checks for each Sub-Unit separately. ${oncePerActivation}`,
 })
 
 export const POSITION_HACK = make({

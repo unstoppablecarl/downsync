@@ -18,7 +18,7 @@ export const TRAIT_CLUSTERED = (radius) => {
 
 export const TRAIT_TAGGED_EFFECT = make({
     name: 'Tagged',
-    desc: 'Units/Infantry Bases hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit/Infantry Base can only be Tagged once.',
+    desc: 'Units/Sub-Units hit by this weapon suffer -2 DEF until the end of this Taskforce Activation. A Unit/Infantry Base can only be Tagged once.',
 })
 
 export const TRAIT_SPECIALIZED_VS = (types) => {
@@ -85,7 +85,7 @@ export const TRAIT_BREACH_EXPLOIT = makeTrait({
 
 export const TRAIT_TAKE_UP = makeTrait({
     name: 'Take Up',
-    desc: 'When an Infantry Base with this weapon is killed, an Infantry Base in this Unit within 1" may be killed instead.',
+    desc: 'When a Sub-Unit with this weapon is killed, a Sub-Unit in this Unit within 1" may be killed instead.',
 })
 
 export const TRAIT_CLOSE_AND_PERSONAL = makeTrait({

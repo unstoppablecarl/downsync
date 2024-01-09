@@ -1,4 +1,4 @@
-export const CARDS_VERSION = 'B4.0.0'
+export const CARDS_VERSION = 'B4.0.1'
 
 export const FEATURE_ADVISOR_CARD = false
 

@@ -48,7 +48,7 @@ export const BRACE_INFANTRY = makeCommandAbility({
     name: 'Brace',
     cost: COST_COMMAND,
     note: `Infantry, 3 CM`,
-    desc: 'Immediately after a Reaction Engagement is declared and before resolving Reaction Priority Rolls, up to 3 Infantry Bases belonging to friendly Taskforce Units gain 1 Countermeasure Token. They are removed at the end of the Taskforce Activation.',
+    desc: 'Immediately after a Reaction Engagement is declared and before resolving Reaction Priority Rolls, up to 3 Sub-Units belonging to friendly Taskforce Units gain 1 Countermeasure Token. They are removed at the end of the Taskforce Activation.',
     traits: [],
 })
 
