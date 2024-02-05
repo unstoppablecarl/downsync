@@ -975,7 +975,7 @@ Use a 4x4 ft battlefield for small size games and 6x4 ft for a standard size gam
 4. Starting with the attacker, both players place a Control Objective touching the center line parallel with the
    attacker/defender table edges, and not within 1" of concealing terrain.
 
-## Deployment
+### Deployment
 
 1. The attacker deploys all of their Pings completely within 8" of their table edge
 2. The defender deploys all of their Pings completely within 8" of their table edge
@@ -984,6 +984,6 @@ Use a 4x4 ft battlefield for small size games and 6x4 ft for a standard size gam
 
 Both Player's Units can score and block points on both Control Objectives.
 
-## Winning The Game
+### Winning The Game
 
 A Player wins the game when they have scored 3 or more points or the opposing side is wiped out.
