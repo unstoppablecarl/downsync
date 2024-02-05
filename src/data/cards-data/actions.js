@@ -58,6 +58,13 @@ export const GO_DARK = make({
 
 export const BASIC_SCAN = SCAN(1, 12)
 
+export const SPRINT = make({
+    name: 'Sprint',
+    cost: COST_COMMAND,
+    effect: '&starf;',
+    desc: `Place this Unit/Sub-Units within SPD" of their current position. ${oncePerActivation}`,
+})
+
 function make(action) {
     return makeAction(action)
 }

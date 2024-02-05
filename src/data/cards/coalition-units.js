@@ -40,7 +40,7 @@ import {
 } from '../cards-data/unit-traits.js'
 
 import { NOTE_STEALTH_TOKEN } from '../definitions.js'
-import { BASIC_SCAN, GO_DARK, SCAN } from '../cards-data/actions.js'
+import { BASIC_SCAN, GO_DARK, SCAN, SPRINT } from '../cards-data/actions.js'
 import { makeUnit } from '../support/factories.js'
 
 export const COALITION_CARD_DEFAULTS = {
@@ -255,6 +255,7 @@ export const SPIDER_DRONE_SOLDIER = make({
     scan: null,
     actions: [
         CLAWS,
+        SPRINT,
     ],
     traits: [
         ALL_TERRAIN,

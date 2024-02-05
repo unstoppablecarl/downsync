@@ -1,3 +1,19 @@
+## Beta 4.2.0 Feb 5, 2024
+
+#### Seeker Team stealth
+
+The seeker team no longer loses its Stealth Token after performing an attack.
+
+*The Seeker Team was a little under powered*
+
+#### Spider Drone Soldier Sprint
+
+Added the Sprint action to the spider drone soldier unit: cost C, place this Unit's sub-units within 6" of their current
+position. This Action may be only used once per Activation.
+
+*The spider drone soldier unit was a little under powered and not useful for reactions. This update should correct
+this.*
+
 ## Beta 4.0.0 Jan 5, 2024
 
 #### Table Size

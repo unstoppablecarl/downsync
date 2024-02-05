@@ -65,6 +65,11 @@ export const TRAIT_DOUBLE_TAP = make({
     desc: `This weapon's effect is KILL for Stunned targets.`,
 })
 
+export const SILENT = make({
+    name: 'Silent',
+    desc: `Units do not lose their Stealth Token after performing this action.`,
+})
+
 export const STABILIZER = make({
     name: 'Stabilizer',
     desc: `This weapon does not suffer Long Range penalties.`,

@@ -1,5 +1,6 @@
 import {
     DEADLY_VS,
+    SILENT,
     TRAIT_ADVANCED,
     TRAIT_CLOSE_AND_PERSONAL,
     TRAIT_CLOSE_COMBAT,
@@ -339,6 +340,7 @@ export const SHOCK_SNIPER_RIFLE = make({
     traits: [
         DEADLY_VS('Infantry'),
         TRAIT_DOUBLE_TAP,
+        SILENT,
     ],
 })
 
