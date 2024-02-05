@@ -965,6 +965,7 @@ block them.
 ## Intro Scenario: VIP Capture
 
 This scenario is intended for new players learning the game. It is simple, fast, and brutal.
+Use a 4x4 ft battlefield for small size games and 6x4 ft for a standard size games.
 
 ### Setup
 
