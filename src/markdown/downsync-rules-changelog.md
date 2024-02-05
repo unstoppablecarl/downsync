@@ -1,5 +1,9 @@
 ## Beta 4.2.0 Feb 5, 2024
 
+#### Improved Scenario rules
+
+Cleaned up and improved scenario rules in the rulebook
+
 #### Seeker Team stealth
 
 The seeker team no longer loses its Stealth Token after performing an attack.

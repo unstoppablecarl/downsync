@@ -1,6 +1,6 @@
 # Downsync Rules
 
-[Beta 4.0.0] - [Change Log](/rules-changelog.html) - *Last Updated: Jan 5, 2024*
+[Beta 4.0.0] - [Change Log](/rules-changelog.html) - *Last Updated: Feb 5, 2024*
 
 [[toc]]
 
@@ -796,28 +796,6 @@ Saving its action for later.*
 
 After all reactions are resolved each participating Unit gains an Activated Token.
 
-## Missions
-
-Missions are typically played on a 4x6 foot table and have players on opposite sides of the table.
-
-### Mission: VIP Capture
-
-**Deployment Zones**: Both players deploy Pings within 8" of their table edge
-
-**Setup**: Place a VIP token in the bottom right corner of each player's table side 12" from the right and the back
-edge.
-The token may be represented by a civilian vehicle or other model but is not terrain and does not block LOS and can be
-moved through.
-
-**Scoring**: Players score by capturing the VIP on their opponents side of the table.
-At the end of each round after the first, each Unit within 1" of the opposing VIP scores 1 Victory Point.
-Each opposing Unit within 6" subtracts 1 Victory Point from this amount.
-Multi-Base Units must have more than half of their starting Sub-Units within 1".
-
-**Victory Conditions**: The game ends when a Force gains its 3rd Victory Point or one side is wiped out.
-
-**Variations**: Place the 2 objectives on the center line of the table allowing both players to capture either of them.
-
 ## Special Rules
 
 ### Ability Stacking
@@ -949,3 +927,62 @@ A Unit cannot gain a Stealth Token if an enemy Unit is within 2".
 | **[Overwatch](#overwatch-token)**                               | <span class="token" style="background:purple"></span> Purple              |
 | **[Stun](#stun-token)**                                         | <span class="token" style="background:orange"></span> Orange              |
 | **[Stealth](#stealth-token)**                                   | <span class="token" style="background:black"></span> Black                |
+
+## Scenarios
+
+Scenarios are typically played on a 4x6 foot table with players on opposite table edges.
+
+### Control Objectives
+
+A Control Objective is a miniature on a medium Ping or terrain with the same footprint (70mm diameter circle).
+
+Control Objectives do not block LOS and may be moved through by either player's Units, but Units may not end their
+movement overlapping a Control Objective.
+
+The scenario will specify:
+
+- Where Control Objectives are placed.
+- Which Control Objectives each Player's Units can score and block points on.
+- When Control Objective points are scored. Typically, it will be at the end of each Round after the first.
+
+#### Scoring Points
+
+Resolve the scoring of each Control Objective by selecting them one at a time.
+For each Unit that can score points on the selected Control Objective within 1", the Unit's owner scores 1 point.
+For each Unit that can block points on the selected Control Objective within 6", the Unit owner's opponent scores 1 less
+point.
+
+If a Unit can score or block a point on multiple Control Objectives, its owner selects which Control Objective it will
+target.
+
+A scenario may specify a Control Objective that a Player's Units can both score and block points on.
+A Unit may both score and block points at the same time, but must do so targeting the same Control Objective.
+
+Multi-Base Units must have at least one Sub-Unit within 1" to score a point and within 6" to block a point.
+Multi-Base Units that have lost more than half of their starting number of Sub-Units can not score points but may still
+block them.
+
+## Intro Scenario: VIP Capture
+
+This scenario is intended for new players learning the game. It is simple, fast, and brutal.
+
+### Setup
+
+1. Both players roll a die. The highest-scoring player is the attacker and the other is the defender.
+2. The defender selects which of the table edges to defend from.
+3. The attacker will attack from the opposite edge.
+4. Starting with the attacker, both players place a Control Objective touching the center line parallel with the
+   attacker/defender table edges, and not within 1" of concealing terrain.
+
+## Deployment
+
+1. The attacker deploys all of their Pings completely within 8" of their table edge
+2. The defender deploys all of their Pings completely within 8" of their table edge
+
+### Scoring Control Objectives
+
+Both Player's Units can score and block points on both Control Objectives.
+
+## Winning The Game
+
+A Player wins the game when they have scored 3 or more points or the opposing side is wiped out.
