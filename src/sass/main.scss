@@ -68,6 +68,12 @@ html {
     background: rgb(var(--bs-dark-rgb));
 }
 
+.btn-xl {
+    $btn-font-size-lg: 30px;
+
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+
 @include color-mode(dark) {
     .navbar-primary {
         background: #000;

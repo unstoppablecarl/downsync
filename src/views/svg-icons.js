@@ -30,6 +30,8 @@ export const svgIcons = {
 
     engineer_unit: fontAwesomeDir + '/solid/users-gear.svg',
 
+    box: bootstrapDir + '/box-seam.svg',
+
     [COALITION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-coalition.svg',
     [REPUBLIC_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-republic.svg',
     [FREE_UNION_FACTION_SVG_SPRITE]: './static-assets/images/factions/icon-free-union.svg',
