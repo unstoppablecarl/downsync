@@ -1,6 +1,6 @@
 # Downsync Rules
 
-[Beta 4.0.0] - [Change Log](/rules-changelog.html) - *Last Updated: Feb 5, 2024*
+[{{RULES_VERSION}}] - [Change Log](/rules-changelog.html) - *{{RULES_LAST_UPDATED}}*
 
 [[toc]]
 

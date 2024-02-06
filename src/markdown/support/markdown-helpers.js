@@ -18,6 +18,22 @@ export function captureMarkdownSection(markdown, heading) {
     }
 }
 
+export function renderTemplateVariables(markdown, keyValues) {
+    Object.keys(keyValues).forEach(key => {
+        const value = keyValues[key]
+
+        markdown = renderTemplateVariable(markdown, key, value)
+    })
+
+    return markdown
+}
+
+export function renderTemplateVariable(markdown, key, value) {
+    let regex = new RegExp(`\{\{${key}\}\}`, 'gi')
+
+    return markdown.replaceAll(regex, value)
+}
+
 export function stripQuickReferenceContentTags(markdown) {
     let regex = new RegExp(`\%\%\%\-\-\- (.*?) \-\-\-\%\%\%`, 'gi')
 

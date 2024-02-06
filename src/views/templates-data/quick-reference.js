@@ -6,6 +6,8 @@ import {
 } from '../../markdown/support/markdown-helpers.js'
 import { NOTE_STEALTH_TOKEN } from '../../data/definitions.js'
 
+export { RULES_LAST_UPDATED, RULES_VERSION } from '../../versioning.js'
+
 let path = 'src/markdown/downsync-rules.md'
 let markdown = await fs.promises.readFile(path, 'utf-8')
 
